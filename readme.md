@@ -50,19 +50,14 @@ Not yet on packagist. needs further development.
 ```
 
 
-### Maby?
+### Todo
 
-##### config
+##### array
 ```php
-@config('key', 'val') // set
-@config('key') // get
-```
-
-##### do
-```php
-@do($key++)
-@do(1 + 1)
-```
+@array('newArr', [     // multi-line support
+    'key' => 'val',
+    'key2' => 'val'
+])
 
 ##### debug
 ```php
