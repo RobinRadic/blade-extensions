@@ -15,15 +15,31 @@ Laravel package providing remote access to a Bukkit server console using JS/PHP/
 #### Documentation
 
 ##### ForEach
-As with Twig, @foreach now has a $loop variable in the block available.
 ```php
 @foreach ($data as $key => $val)
-    {{ $loop->index }}      {{ $loop->odd ? 'This is odd' : 'But this is even' }}    
+    Zero based index: {{ $loop->index }} - Starts at 1: {{ $loop->index1 }}
+    {{ $loop->revindex }}  {{ $loop->revindex1 }}
+    {{ $loop->first ? 'is first!' : 'not first' }} {{ $loop->last ? 'is last' : 'not last' }}
+    {{ $loop->odd ? 'This is odd' : 'But this is even' }}
+    {{ $loop->length }}            
+    @foreach ($val as $subkey => $subval)
+        Like usual: {{ $loop->index }}
+        Access parent loop: {{ $loop->parentLoop->index }}
+    @endforeach
+@endforeach
+```
+
+##### Break, Continue
+```php
+@foreach ($data as $item)
+    @continue(1)
+    @break
+    @continue(5)
 @endforeach
 ```
 
 ### Credits
-- [Robin Radic](https://github.com/RobinRadic) created [Laravel Bukkit SwiftApi](https://github.com/RobinRadic/laravel-bukkit-swiftapi)
+- [Robin Radic](https://github.com/RobinRadic)
 
 ### License
-MIT
+MIT. Check license.txt.
