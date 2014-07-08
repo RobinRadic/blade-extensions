@@ -38,8 +38,19 @@ abstract class BaseLoopManager
         end(static::$stack)->after();
     }
 
-    public static function endLoop()
+    public static function endLoop(&$loop)
     {
         array_pop(static::$stack);
+        if(count(static::$stack) > 0)
+        {
+            // This loop was inside another loop. We persist the loop variable and assign back the parent loop
+            $loop = end(static::$stack);
+        }
+        else
+        {
+            // This loop was not inside another loop. We remove the var
+            echo "l:(" . count(static::$stack) . ") ";
+            $loop = null;
+        }
     }
 }

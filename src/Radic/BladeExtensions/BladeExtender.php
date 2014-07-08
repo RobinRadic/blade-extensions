@@ -37,13 +37,18 @@ class BladeExtender
     public function addBreak($value, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('break');
-        return preg_replace($matcher, '$1<?php break; ?>$2', $value);
+        return preg_replace($matcher, '$1<?php
+        break;
+        ?>$2', $value);
     }
 
     public function addContinue($value, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('continue');
-        return preg_replace($matcher, '$1<?php continue; ?>$2', $value);
+        return preg_replace($matcher, '$1<?php
+        \Radic\BladeExtensions\Extensions\ForEachManager::looped();
+        continue;
+        ?>$2', $value);
     }
 
     public function openForeach($value, Application $app, Compiler $blade)
@@ -60,10 +65,10 @@ class BladeExtender
     {
         $matcher = $blade->createPlainMatcher('endforeach');
         return preg_replace($matcher, '$1<?php
-            unset($loop);
+
             \Radic\BladeExtensions\Extensions\ForEachManager::looped();
             endforeach;
-            \Radic\BladeExtensions\Extensions\ForEachManager::endLoop();
+            \Radic\BladeExtensions\Extensions\ForEachManager::endLoop($loop);
         ?>$2', $value);
     }
 }

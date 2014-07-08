@@ -31,10 +31,14 @@ Not yet on packagist. needs further development.
 
 ##### break, continue
 ```php
-@foreach ($data as $item)
-    @continue(1)
-    @break
-    @continue(5)
+@foreach ($loopData as $key => $val)
+    @if ($loop->index > 10)
+        @break
+    @endif
+    @if ($loop->odd)
+        @continue
+    @endif
+    {{ $loop->index }} - {{ $key }} - {{ $val }}
 @endforeach
 ```
 
