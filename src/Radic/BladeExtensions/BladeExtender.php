@@ -40,6 +40,12 @@ class BladeExtender
         return preg_replace($matcher, '$1<?php break; ?>$2', $value);
     }
 
+    public function addContinue($value, Application $app, Compiler $blade)
+    {
+        $matcher = $blade->createPlainMatcher('continue');
+        return preg_replace($matcher, '$1<?php continue; ?>$2', $value);
+    }
+
     public function openForeach($value, Application $app, Compiler $blade)
     {
         #$op = '/@'.$function.'(\s*\(.*)\)/';

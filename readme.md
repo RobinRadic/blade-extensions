@@ -10,11 +10,11 @@ Laravel package providing remote access to a Bukkit server console using JS/PHP/
 
 
 #### Installation
-...
+Not yet on packagist. needs further development.
 
 #### Documentation
 
-##### ForEach
+##### foreach
 ```php
 @foreach ($data as $key => $val)
     Zero based index: {{ $loop->index }} - Starts at 1: {{ $loop->index1 }}
@@ -29,7 +29,7 @@ Laravel package providing remote access to a Bukkit server console using JS/PHP/
 @endforeach
 ```
 
-##### Break, Continue
+##### break, continue
 ```php
 @foreach ($data as $item)
     @continue(1)
@@ -37,6 +37,13 @@ Laravel package providing remote access to a Bukkit server console using JS/PHP/
     @continue(5)
 @endforeach
 ```
+
+##### set
+```php
+@set('varKey', 'varVal')
+{{ $varKey }}
+```
+
 
 ### Credits
 - [Robin Radic](https://github.com/RobinRadic)
