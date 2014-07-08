@@ -58,6 +58,7 @@ Not yet on packagist. needs further development.
     'key' => 'val',
     'key2' => 'val'
 ])
+```
 
 ##### debug
 ```php
