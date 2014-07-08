@@ -1,5 +1,12 @@
 ## Laravel Blade Extensions
-Laravel package providing remote access to a Bukkit server console using JS/PHP/Laravel and the SwiftAPI Bukkit plugin.
+Laravel package providing additional Blade extensions.
+
+- foreach (with $loop data)
+- break, continue
+- set
+- array (multiline)
+- debug
+
 
 ### Version 0.1.0 (Pre Alpha - Development)
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-console/blob/master/changelog.md)
