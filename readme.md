@@ -42,6 +42,27 @@ Not yet on packagist. needs further development.
 ```php
 @set('varKey', 'varVal')
 {{ $varKey }}
+@set('varKey2', $varKey)
+```
+
+
+### Maby?
+
+##### config
+```php
+@config('key', 'val') // set
+@config('key') // get
+```
+
+##### do
+```php
+@do($key++)
+@do(1 + 1)
+```
+
+##### debug
+```php
+@debug($val) // die(var_dump($val))
 ```
 
 
