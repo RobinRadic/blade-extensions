@@ -1,3 +1,10 @@
+### Todo
+- Implement remaining planned features: set, debug, array
+- Write unit tests / remove potential bugs / more testing
+- Add PHPDoc where missing
+- Generate API documentation
+- And some minor stuff
+
 ### Changelog
 
 ##### 0.2.0
@@ -9,6 +16,3 @@
 
 ##### 0.1.0
 Initial pre-alpha release
-
-### Todo
-- A lot
