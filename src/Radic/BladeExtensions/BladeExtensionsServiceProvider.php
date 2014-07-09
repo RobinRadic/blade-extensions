@@ -1,12 +1,12 @@
 <?php namespace Radic\BladeExtensions;
 /**
- * Part of Radic Blade Extensions.
+ * Part of Radic - Blade Extensions.
  *
- * @package    Radic Blade Extensions
+ * @package    Blade Extensions
  * @version    1.0.0
  * @author     Robin Radic
- * @license    MIT License
- * @copyright  (c) 2011-2014, Radic Technologies
+ * @license    MIT License - http://radic.mit-license.org
+ * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
  */
 
@@ -43,12 +43,17 @@ class BladeExtensionsServiceProvider extends ServiceProvider {
 		return array();
 	}
 
+    /**
+     * Boots the services provided. Attaches the blade extensions to the current Application's - ViewEnvironment
+     *
+     * @todo remove test-blade route/view for stable release
+     * @return void
+     */
     public function boot()
     {
         BladeExtender::attach($this->app);
 
-
-        Route::get('test-blade', function()
+        Route::get('radic/test-blade', function()
         {
             return View::make('radic/blade-extensions::testpage')->with(['loopData' => $_SERVER]);
         });

@@ -1,17 +1,18 @@
 <?php namespace Radic\BladeExtensions;
-/**
- * Part of Radic Blade Extensions.
- *
- * @package    Radic Blade Extensions
- * @version    1.0.0
- * @author     Robin Radic
- * @license    MIT License
- * @copyright  (c) 2011-2014, Radic Technologies
- * @link       http://radic.nl
- */
 
 use Illuminate\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler as Compiler;
+
+/**
+ * Part of Radic - Blade Extensions.
+ *
+ * @package    Blade Extensions
+ * @version    1.0.0
+ * @author     Robin Radic
+ * @license    MIT License - http://radic.mit-license.org
+ * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
+ * @link       http://radic.nl
+ */
 
 
 class BladeExtender

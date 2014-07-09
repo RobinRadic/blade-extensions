@@ -1,16 +1,17 @@
 ## Laravel Blade Extensions
 Laravel package providing additional Blade extensions.
 
-- foreach (with $loop data)
-- break, continue
-- set
-- array (multiline)
-- debug
+- @foreach (with $loop data, like twig)
+- @break
+- @continue
+- @set
+- @array (multiline)
+- @debug
 
 
-
-### Version 0.1.0 (Pre Alpha - Development)
+### Version 0.2.0 alpha (Development Preview)
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-console/blob/master/changelog.md)
+
 
 #### Requirements
 - PHP > 5.3 
@@ -18,9 +19,26 @@ Laravel package providing additional Blade extensions.
 
 
 #### Installation
-Not yet on packagist. needs further development.
+Add to `composer.json`
+```JSON
+{
+    "require": {
+        "radic/blade-extensions": "0.2.*"
+    }
+}
+
+Add to `app/config/app.php` to register the service provider
+```php
+return array(
+    'providers' => array(
+        'Radic\BladeExtensions\BladeExtensionsServiceProvider'
+    )
+);
+```
+
 
 #### Documentation
+Shows the current implemented functionality.
 
 ##### foreach
 ```php
@@ -50,15 +68,17 @@ Not yet on packagist. needs further development.
 @endforeach
 ```
 
+
+
+### Roadmap
+The following functionality is planned for the initial v1.0.0 stable release, but hasn't been (fully) implemented and/or tested yet.
+
 ##### set
 ```php
 @set('varKey', 'varVal')
 {{ $varKey }}
 @set('varKey2', $varKey)
 ```
-
-
-### Todo
 
 ##### array
 ```php
@@ -73,9 +93,5 @@ Not yet on packagist. needs further development.
 @debug($val) // die(var_dump($val))
 ```
 
-
-### Credits
-- [Robin Radic](https://github.com/RobinRadic)
-
-### License
-MIT. Check license.txt.
+### Copyright/License
+Copyright 2014 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org)

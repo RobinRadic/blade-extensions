@@ -1,24 +1,25 @@
 <?php namespace Radic\BladeExtensions\Extensions;
+
+use Radic\BladeExtensions\Core\LoopManager;
+
 /**
- * Part of Radic Blade Extensions.
+ * Class ForEachManager
+ * Part of Radic - Blade Extensions
  *
- * @package    Radic Blade Extensions
- * @version    1.0.0
+ * @package    Radic\BladeExtensions\Extensions
  * @author     Robin Radic
- * @license    MIT License
- * @copyright  (c) 2011-2014, Radic Technologies
+ * @license    MIT License - http://radic.mit-license.org
+ * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
  */
-
-use Radic\BladeExtensions\Core\BaseLoopManager;
-
-class ForEachManager extends BaseLoopManager
+class ForEachManager extends LoopManager
 {
-    protected static $stack = [];
-
+    /**
+     * Creates a new ForEachStatement stack
+     * @param array $items
+     */
     public static function newLoop($items)
     {
-        static::$stack[] = new ForEachStatement($items);
-        parent::newLoop($items);
+        static::addLoopStack(new ForEachStatement($items));
     }
 }

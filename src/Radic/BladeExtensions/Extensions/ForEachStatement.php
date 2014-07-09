@@ -1,16 +1,17 @@
 <?php namespace Radic\BladeExtensions\Extensions;
+use Radic\BladeExtensions\Core\LoopStackInterface;
+
 /**
- * Part of Radic Blade Extensions.
+ * Part of Radic - Blade Extensions.
  *
- * @package    Radic Blade Extensions
+ * @package    Blade Extensions
  * @version    1.0.0
  * @author     Robin Radic
- * @license    MIT License
- * @copyright  (c) 2011-2014, Radic Technologies
+ * @license    MIT License - http://radic.mit-license.org
+ * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
  */
-
-class ForEachStatement
+class ForEachStatement implements LoopStackInterface
 {
     protected $items = [];
 
@@ -18,7 +19,11 @@ class ForEachStatement
 
     protected $parentLoop;
 
-    function setParentLoop($parentLoop)
+    /**
+     * @param LoopStackInterface $parentLoop
+     * {@inheritdocs}
+     */
+    public function setParentLoop(LoopStackInterface $parentLoop)
     {
         $this->parentLoop = $parentLoop;
         $this->data['parent'] = $parentLoop;
