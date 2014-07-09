@@ -1,4 +1,10 @@
 ## Laravel Blade Extensions
+[![Build Status](https://travis-ci.org/RobinRadic/blade-extensions.svg?branch=master)](https://travis-ci.org/RobinRadic/blade-extensions)
+[![Latest Stable Version](https://poser.pugx.org/radic/blade-extensions/v/stable.svg)](https://packagist.org/packages/radic/blade-extensions)
+[![Total Downloads](https://poser.pugx.org/radic/blade-extensions/downloads.svg)](https://packagist.org/packages/radic/blade-extensions)
+[![Latest Unstable Version](https://poser.pugx.org/radic/blade-extensions/v/unstable.svg)](https://packagist.org/packages/radic/blade-extensions)
+[![License](https://poser.pugx.org/radic/blade-extensions/license.svg)](https://packagist.org/packages/radic/blade-extensions)
+
 Laravel package providing additional Blade extensions.
 
 - @foreach (with $loop data, like twig)
@@ -26,6 +32,7 @@ Add to `composer.json`
         "radic/blade-extensions": "0.2.*"
     }
 }
+```
 
 Add to `app/config/app.php` to register the service provider
 ```php
