@@ -8,6 +8,7 @@ Laravel package providing additional Blade extensions.
 - debug
 
 
+
 ### Version 0.1.0 (Pre Alpha - Development)
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-console/blob/master/changelog.md)
 
