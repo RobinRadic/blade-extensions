@@ -14,7 +14,7 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
  * @link       http://radic.nl
  */
 
-
+// http://packalyst.com/packages/package/crhayes/blade-partials
 class BladeExtender
 {
 
@@ -31,6 +31,11 @@ class BladeExtender
                 return $class->$method($value, $app, $blade);
             });
         }
+    }
+
+    public function addSet($value, Application $app, Compiler $blade)
+    {
+        return preg_replace("/@set\('(.*?)'\,(.*)\)/", '<?php $$1 = $2; ?>', $value);
     }
 
     public function addBreak($value, Application $app, Compiler $blade)

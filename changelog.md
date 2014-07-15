@@ -10,7 +10,7 @@
 
 ##### 0.3.0
 - Added foreach loop testing
--
+- Added @set
 
 ##### 0.2.0
 - Renamed BaseLoopManager to LoopManager and made it an abstract class

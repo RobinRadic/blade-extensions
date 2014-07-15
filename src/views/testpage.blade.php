@@ -1,3 +1,7 @@
+going to test set<br>
+@set('testvar', 'testvalue')
+testvar: {{ $testvar }}<br>
+
 going to test ForEach loop<br>
 <br>
 @foreach ($loopData as $key => $val)
