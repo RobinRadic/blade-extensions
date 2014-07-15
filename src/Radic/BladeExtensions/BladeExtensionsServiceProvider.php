@@ -55,6 +55,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider {
 
         Route::get('radic/test-blade', function()
         {
+            //var_dump('asdf');
             return View::make('radic/blade-extensions::testpage')->with(['loopData' => $_SERVER]);
         });
 

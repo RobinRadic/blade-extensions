@@ -15,7 +15,7 @@ abstract class LoopManager
     /**
      * @var array $stack
      */
-    protected static $stack = [];
+    protected static $stack = array();
 
     /**
      * Add a new loop to the stack using the defined parameter as loop data.
@@ -33,6 +33,16 @@ abstract class LoopManager
         }
 
         array_push(static::$stack, $stackItem);
+    }
+
+    public static function getStack()
+    {
+        return static::$stack;
+    }
+
+    public static function reset()
+    {
+        static::$stack = array();
     }
 
     /**
