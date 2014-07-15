@@ -39,17 +39,33 @@ Add to `app/config/app.php` to register the service provider
 [Check out the complete documentation](https://github.com/RobinRadic/blade-extensions/wiki)
 
 #### Overview
-
-###### foreach
 ```php
-    @foreach($stuff as $key => $val)
-        $loop->index;       // int, zero based
-        $loop->index1;      // int, starts at 1
-        $loop->revindex;    // int
-        $loop->revindex1;   // int
-        $loop->first;       // bool
-        $loop->last;        // bool
-    @endforeach
+@foreach($stuff as $key => $val)
+    $loop->index;       // int, zero based
+    $loop->index1;      // int, starts at 1
+    $loop->revindex;    // int
+    $loop->revindex1;   // int
+    $loop->first;       // bool
+    $loop->last;        // bool
+    $loop->even;        // bool
+    $loop->odd;         // bool
+    $loop->length;      // int
+
+    @break
+
+    @continue
+@endforeach
+
+@set('newvar', 'value')
+{{ $newvar }}
+
+@array('somearr',
+    'some' => 'stuff',
+    'is' => 'better'
+)
+@include('something', $somearr)
+
+@debug($somearr)
 ```
 
 
