@@ -16,14 +16,6 @@ abstract class LoopManager
      * @var array $stack
      */
     protected static $stack = array();
-
-    /**
-     * Add a new loop to the stack using the defined parameter as loop data.
-     *
-     * @param array $items
-     */
-    abstract public static function newLoop($items);
-
     protected static function addLoopStack(LoopStackInterface $stackItem)
     {
         // Check stack for parent loop to register it with this loop

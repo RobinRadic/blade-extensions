@@ -8,6 +8,7 @@ class ForEachTest extends Orchestra\Testbench\TestCase
 {
     protected $loopData;
     protected $loopData2;
+
     public function setUp()
     {
         parent::setUp();
