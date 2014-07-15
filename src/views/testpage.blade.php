@@ -1,6 +1,10 @@
 going to test set<br>
 @set('testvar', 'testvalue')
 testvar: {{ $testvar }}<br>
+<br>
+debug: @debug($loopData)
+<br>
+
 
 going to test ForEach loop<br>
 <br>

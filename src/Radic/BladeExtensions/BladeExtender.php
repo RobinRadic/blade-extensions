@@ -38,6 +38,16 @@ class BladeExtender
         return preg_replace("/@set\('(.*?)'\,(.*)\)/", '<?php $$1 = $2; ?>', $value);
     }
 
+    public function addDebug($value, Application $app, Compiler $blade)
+    {
+
+        $matcher = $blade->createOpenMatcher('debug');
+        return preg_replace($matcher,
+            '$1<?php
+            var_dump(["asfd"])
+            ?>$2', $value);
+    }
+
     public function addBreak($value, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('break');
