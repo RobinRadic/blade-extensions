@@ -7,6 +7,11 @@
 
 ### Changelog
 
+
+##### 0.3.0
+- Added foreach loop testing
+-
+
 ##### 0.2.0
 - Renamed BaseLoopManager to LoopManager and made it an abstract class
 - LoopManager::newLoop is now abstract and requires override code by the child class

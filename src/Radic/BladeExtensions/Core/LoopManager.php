@@ -16,6 +16,8 @@ abstract class LoopManager
      * @var array $stack
      */
     protected static $stack = array();
+
+
     protected static function addLoopStack(LoopStackInterface $stackItem)
     {
         // Check stack for parent loop to register it with this loop
