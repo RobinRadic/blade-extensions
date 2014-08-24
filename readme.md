@@ -7,27 +7,28 @@
 
 Laravel package providing additional Blade extensions.
 
+Implemented and tested directives:
 - @foreach (with $loop data, like twig)
 - @break
 - @continue
 - @set
-- @array (multiline)
 - @debug
 
 
-### Version 0.3.0 (Development Preview)
+### Version 1.0.0beta
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-console/blob/master/changelog.md)
 
 
 #### Requirements
 - PHP > 5.3 
 - Laravel > 4.0
+- (optional) raveren/kint > 0.9.1
 
 
 #### Installation
 Add to `composer.json`
 ```JSON
-"radic/blade-extensions": "0.2.*"
+"radic/blade-extensions": "1.*"
 ```
 
 Add to `app/config/app.php` to register the service provider
@@ -59,10 +60,6 @@ Add to `app/config/app.php` to register the service provider
 @set('newvar', 'value')
 {{ $newvar }}
 
-@array('somearr',
-    'some' => 'stuff',
-    'is' => 'better'
-)
 @include('something', $somearr)
 
 @debug($somearr)

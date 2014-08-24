@@ -42,10 +42,8 @@ class BladeExtender
     {
 
         $matcher = $blade->createOpenMatcher('debug');
-        return preg_replace($matcher,
-            '$1<?php
-            var_dump(["asfd"])
-            ?>$2', $value);
+        return preg_replace("/@debug(?:s?)\(([^()]+)*\)/", #$matcher,
+            $app->config['radic/blade-extensions::debug.prepend'] . '$1' . $app->config['radic/blade-extensions::debug.append'], $value);
     }
 
     public function addBreak($value, Application $app, Compiler $blade)
