@@ -95,5 +95,8 @@ return array(
 );
 ```
 
+#### @debug with raveren/kint
+![Screenshot](http://raveren.github.com/kint/img/preview.png)
+
 ### Copyright/License
 Copyright 2014 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org)

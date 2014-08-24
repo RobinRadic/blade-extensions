@@ -22,9 +22,11 @@ class BladeExtender
     {
         $blade = $app['view']->getEngineResolver()->resolve('blade')->getCompiler();
         $class = new static;
+        $blacklist = $app->config['radic/blade-extensions::blacklist'];
         foreach(get_class_methods($class) as $method)
         {
             if($method == 'attach') continue;
+            if(is_array($blacklist) && in_array($method, $blacklist)) continue;
 
             $blade->extend(function($value) use ($app, $class, $blade, $method)
             {
