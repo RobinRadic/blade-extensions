@@ -60,5 +60,40 @@ Add to `app/config/app.php` to register the service provider
 'Radic\BladeExtensions\BladeExtensionsServiceProvider'
 ```
 
+#### Configuration
+Publish the configuration file
+`php artisan config:publish radic/blade-extensions`
+
+```php
+
+return array(
+    /*
+     * Blacklisting of directives. These directives will not be extended. Example:
+     *
+     * 'blacklist' => array('foreach', 'set', 'debug')
+     */
+    'blacklist' => array(),
+
+    /*
+     * Prepend and append the debug output.
+     */
+    'debug' => array(
+        /*
+         * Prepend any code in front of our variable name
+         *
+         * The default config also checks if Kint is installed for sweet debug output.
+         * Check https://github.com/raveren/kint.
+         *
+         */
+        'prepend' => "<h1>DEBUG OUTPUT:</h1><pre><code><?php " . (class_exists('Kint') ? "Kint::dump(" : "var_dump("),
+
+        /*
+         * Append any code behind our variable name
+         */
+        'append' => ") ?></code></pre>"
+    )
+);
+```
+
 ### Copyright/License
 Copyright 2014 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org)
