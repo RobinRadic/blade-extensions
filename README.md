@@ -19,26 +19,6 @@ Implemented and tested directives:
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-console/blob/master/changelog.md)
 
 
-#### Requirements
-- PHP > 5.3 
-- Laravel > 4.0
-- (optional) raveren/kint > 0.9.1
-
-
-#### Installation
-Add to `composer.json`
-```JSON
-"radic/blade-extensions": "1.*"
-```
-
-Add to `app/config/app.php` to register the service provider
-```php
-'Radic\BladeExtensions\BladeExtensionsServiceProvider'
-```
-
-#### Documentation
-[Check out the complete documentation](https://github.com/RobinRadic/blade-extensions/wiki)
-
 #### Overview
 ```php
 @foreach($stuff as $key => $val)
@@ -60,11 +40,25 @@ Add to `app/config/app.php` to register the service provider
 @set('newvar', 'value')
 {{ $newvar }}
 
-@include('something', $somearr)
 
 @debug($somearr)
 ```
 
+#### Requirements
+- PHP > 5.3
+- Laravel > 4.0
+- (optional) raveren/kint > 0.9.1
+
+#### Installation
+Add to `composer.json`
+```JSON
+"radic/blade-extensions": "1.*"
+```
+
+Add to `app/config/app.php` to register the service provider
+```php
+'Radic\BladeExtensions\BladeExtensionsServiceProvider'
+```
 
 ### Copyright/License
 Copyright 2014 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org)
