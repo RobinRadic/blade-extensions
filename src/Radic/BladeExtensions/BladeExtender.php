@@ -67,6 +67,24 @@ class BladeExtender
         ?>$2', $value);
     }
 
+    public function addMacro($value, Application $app, Compiler $blade)
+    {
+        $matcher = "/@domacro\('(\w*)', (.*)?\)/";
+        return preg_replace($matcher, '<?php echo \HTML::$1($2); ?>', $value);
+    }
+
+    public function openMacro($value, Application $app, Compiler $blade)
+    {
+        #$matcher = "/@macro\('(\w*)', (.*)?\){(.*)?}\)/s";
+
+        $matcher = "/@macro\('(\w*)', (.*)?\)/";
+        return preg_replace($matcher, "<?php \\HTML::macro('$1', function($2) {", $value);
+    }
+
+    public function closeMacro($value, Application $app, Compiler $blade){
+        $matcher = $blade->createPlainMatcher('endmacro');
+        return preg_replace($matcher, '}); ?>', $value);
+    }
     public function openForeach($value, Application $app, Compiler $blade)
     {
         $matcher = '/@foreach(\s?)\(\$(.[0-9a-zA-Z_]+)(\s?)(.*)\)/';
