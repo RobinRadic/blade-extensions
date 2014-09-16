@@ -31,6 +31,12 @@ class BladeExtensionsServiceProvider extends ServiceProvider {
 	public function register()
 	{
         $this->package('radic/blade-extensions', 'radic/blade-extensions');
+        $this->app->bind('stringview', 'Radic\BladeExtensions\StringView');
+        $this->app->booting(function()
+        {
+            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+            $loader->alias('StringView', 'Radic\BladeExtensions\Facades\StringView');
+        });
 	}
 
 	/**

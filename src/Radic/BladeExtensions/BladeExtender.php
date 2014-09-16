@@ -12,6 +12,9 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
  * @license    MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
+ *
+ *
+ * @makeview\(((?>[^()]+))*\)
  */
 
 // http://packalyst.com/packages/package/crhayes/blade-partials
@@ -67,24 +70,44 @@ class BladeExtender
         ?>$2', $value);
     }
 
-    public function addMacro($value, Application $app, Compiler $blade)
-    {
-        $matcher = "/@domacro\('(\w*)', (.*)?\)/";
-        return preg_replace($matcher, '<?php echo \HTML::$1($2); ?>', $value);
-    }
 
     public function openMacro($value, Application $app, Compiler $blade)
     {
         #$matcher = "/@macro\('(\w*)', (.*)?\){(.*)?}\)/s";
 
-        $matcher = "/@macro\('(\w*)', (.*)?\)/";
-        return preg_replace($matcher, "<?php \\HTML::macro('$1', function($2) {", $value);
+        $matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
+        #return preg_replace($matcher, '<?php \Radic\BladeExtensions\Extensions\MacroManager::open("$1"); ? >', $value);
+        return preg_replace($matcher, '<?php \Radic\BladeExtensions\Extensions\MacroManager::open("$1", function($data){ extract($data); ?>', $value);
     }
 
     public function closeMacro($value, Application $app, Compiler $blade){
         $matcher = $blade->createPlainMatcher('endmacro');
-        return preg_replace($matcher, '}); ?>', $value);
+       // return preg_replace($matcher, '<?php \Radic\BladeExtensions\Extensions\MacroManager::close(); ? >', $value);
+
+        return preg_replace($matcher, '<?php });  ?>', $value);
     }
+
+
+    public function addMacro($value, Application $app, Compiler $blade)
+    {
+        #$matcher = "/@macro\('(\w*)', (.*)?\){(.*)?}\)/s";
+
+        $matcher = '/@macro\([\'\"](\w*)[\'\"],((?>[^()]+))*\)/';
+       # return preg_replace($matcher, '<?php var_dump(\Radic\BladeExtensions\Extensions\MacroManager::render("$1", $2));  ? >', $value);
+        return preg_replace($matcher, '<?php echo call_user_func(\Radic\BladeExtensions\Extensions\MacroManager::get("$1"), $2); ?>', $value);
+    }
+
+
+    public function addSubViews($value, Application $app, Compiler $blade)
+    {
+        $matcher = $blade->createPlainMatcher('subviews');
+        return preg_replace($matcher,
+            '$1<?php
+        var_dump(\Radic\BladeExtensions\Extensions\MacroManager::get());
+        ?>$2', $value);
+    }
+
+
     public function openForeach($value, Application $app, Compiler $blade)
     {
         $matcher = '/@foreach(\s?)\(\$(.[0-9a-zA-Z_]+)(\s?)(.*)\)/';
