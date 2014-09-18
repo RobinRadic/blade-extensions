@@ -15,7 +15,7 @@ Implemented and tested directives:
 - @debug
 - @macro
 
-### Version 1.1.0b
+### Version 1.1.0
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-console/blob/master/changelog.md)
 
 
