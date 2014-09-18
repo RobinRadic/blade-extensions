@@ -13,9 +13,9 @@ Implemented and tested directives:
 - @continue
 - @set
 - @debug
+- @macro
 
-
-### Version 1.0.0beta
+### Version 1.1.0b
 [View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-console/blob/master/changelog.md)
 
 
@@ -42,6 +42,18 @@ Implemented and tested directives:
 
 
 @debug($somearr)
+
+@macro('settings_field')
+    <div class="form-group{{ $field['errors']->first($field['slug'], ' has-error') }}">
+        <label for="{{ $field['name'] }}" class="control-label col-md-3"> {{{ $field['title'] }}}</label>
+        <div class="col-md-9">
+            {{ $field->render() }}
+            <span class="help-block">{{ $field['errors']->has($field['slug']) ? $field['errors']->first($field['slug'], ':message') : $field['help']  }}</span>
+        </div>
+    </div>
+@endmacro
+
+@macro('settings_field', ['form' => $form, 'field' => $field])
 ```
 
 #### Requirements

@@ -98,19 +98,11 @@ class BladeExtender
     }
 
 
-    public function addSubViews($value, Application $app, Compiler $blade)
-    {
-        $matcher = $blade->createPlainMatcher('subviews');
-        return preg_replace($matcher,
-            '$1<?php
-        var_dump(\Radic\BladeExtensions\Extensions\MacroManager::get());
-        ?>$2', $value);
-    }
 
 
     public function openForeach($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@foreach(\s?)\(\$(.[0-9a-zA-Z_]+)(\s?)(.*)\)/';
+        $matcher = '/@foreach(\s?)\(\$(.[0-9a-zA-Z_\->]+)(\s?)(.*)\)/';
         return preg_replace($matcher,
         '$1<?php
         \Radic\BladeExtensions\Extensions\ForEachManager::newLoop($$2);
