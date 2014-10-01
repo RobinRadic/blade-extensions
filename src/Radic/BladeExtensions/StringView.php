@@ -24,7 +24,7 @@ class StringView extends \Illuminate\View\View implements ArrayAccess, Renderabl
     /**
      * Get a evaluated view contents for the given view.
      *
-     * @param  object  $view
+     * @param  mixed  $view
      * @param  array   $data
      * @param  array   $mergeData
      * @return \Illuminate\View\View
@@ -223,7 +223,7 @@ class StringView extends \Illuminate\View\View implements ArrayAccess, Renderabl
      *
      * @return bool
      */
-    function is_timestamp($timestamp)
+    public function is_timestamp($timestamp)
     {
         $check = (is_int($timestamp) OR is_float($timestamp))
             ? $timestamp
