@@ -102,11 +102,11 @@ class BladeExtender
 
     public function openForeach($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@foreach(\s?)\(\$(.[0-9a-zA-Z_\->]+)(\s?)(.*)\)/';
+        $matcher = '/@foreach\s*\((.[0-9a-zA-Z_\->]+(?:\([^)]*\))?)\s?(.*)\)/';
         return preg_replace($matcher,
-        '$1<?php
-        \Radic\BladeExtensions\Extensions\ForEachManager::newLoop($$2);
-        foreach($$2 $4):
+        '<?php
+        \Radic\BladeExtensions\Extensions\ForEachManager::newLoop($1);
+        foreach($1 $2):
         $loop = \Radic\BladeExtensions\Extensions\ForEachManager::loop();
         ?>', $value);
     }
