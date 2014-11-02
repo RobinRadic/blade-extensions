@@ -1,10 +1,8 @@
-<?php
-use Illuminate\Foundation\Application;
-use Illuminate\View\Compilers\BladeCompiler as Compiler;
+<?php namespace Radic\BladeExtensions\Testing;
 
 trait BladeViewTestingTrait
 {
-    public function addBladeViewAssertions()
+    public function addTestAssertsBladeDirectives()
     {
         $view = $this->app['view'];
 
@@ -13,8 +11,8 @@ trait BladeViewTestingTrait
 
         // Lets make those assertions callable by fancy blade directives, nom nom nom
         $blade = $view->getEngineResolver()->resolve('blade')->getCompiler();
-        $blade->extend(function($value){
-            preg_replace('@assert(\w*)\((.*)\)$/g', "<?php \$testClassInstance->assert$1($2) ?>", $value);
+        $blade->extend(function ($value) {
+            preg_replace('/@assert(\w*)\((.*)\)$/', "<?php \$testClassInstance->assert$1($2) ?>", $value);
         });
     }
 }

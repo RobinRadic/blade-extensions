@@ -1,5 +1,6 @@
-<?php namespace Radic\BladeExtensions\Extensions;
-use Radic\BladeExtensions\Core\LoopStackInterface;
+<?php namespace Radic\BladeExtensions\Directives;
+
+use Radic\BladeExtensions\Core\LoopItemInterface;
 
 /**
  * Part of Radic - Blade Extensions.
@@ -11,7 +12,7 @@ use Radic\BladeExtensions\Core\LoopStackInterface;
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
  */
-class ForEachStatement implements LoopStackInterface
+class ForeachLoopItem implements LoopItemInterface
 {
     protected $items = [];
 
@@ -20,10 +21,10 @@ class ForEachStatement implements LoopStackInterface
     protected $parentLoop;
 
     /**
-     * @param LoopStackInterface $parentLoop
+     * @param LoopItemInterface $parentLoop
      * {@inheritdocs}
      */
-    public function setParentLoop(LoopStackInterface $parentLoop)
+    public function setParentLoop(LoopItemInterface $parentLoop)
     {
         $this->parentLoop = $parentLoop;
         $this->data['parent'] = $parentLoop;
@@ -36,7 +37,7 @@ class ForEachStatement implements LoopStackInterface
 
     public function setItems($items)
     {
-        if(isset($data)) return;
+        if (isset($data)) return;
         $this->items = $items;
         $total = count($items);
         $this->data = array(
@@ -51,6 +52,7 @@ class ForEachStatement implements LoopStackInterface
             'length' => $total
         );
     }
+
     public function __get($key)
     {
         return $this->data[$key];
@@ -58,30 +60,21 @@ class ForEachStatement implements LoopStackInterface
 
     public function before()
     {
-        if($this->data['index'] % 2 == 0)
-        {
+        if ($this->data['index'] % 2 == 0) {
             $this->data['odd'] = false;
             $this->data['even'] = true;
-        }
-        else
-        {
+        } else {
             $this->data['odd'] = true;
             $this->data['even'] = false;
         }
-        if ($this->data['index'] == 0)
-        {
+        if ($this->data['index'] == 0) {
             $this->data['first'] = true;
-        }
-        else
-        {
+        } else {
             $this->data['first'] = false;
         }
-        if ($this->data['revindex'] == 0)
-        {
+        if ($this->data['revindex'] == 0) {
             $this->data['last'] = true;
-        }
-        else
-        {
+        } else {
             $this->data['last'] = false;
         }
     }

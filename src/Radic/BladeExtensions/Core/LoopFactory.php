@@ -10,7 +10,7 @@
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
  */
-abstract class LoopManager
+abstract class LoopFactory
 {
     /**
      * @var array $stack
@@ -18,7 +18,7 @@ abstract class LoopManager
     protected static $stack = array();
 
 
-    protected static function addLoopStack(LoopStackInterface $stackItem)
+    protected static function addLoopStack(LoopItemInterface $stackItem)
     {
         // Check stack for parent loop to register it with this loop
         if(count(static::$stack) > 0)

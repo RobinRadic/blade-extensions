@@ -1,25 +1,28 @@
-## Laravel Blade Extensions
+Laravel Blade Extensions
+========================
+
 [![Build Status](https://travis-ci.org/RobinRadic/blade-extensions.svg?branch=master)](https://travis-ci.org/RobinRadic/blade-extensions)
 [![Latest Stable Version](https://poser.pugx.org/radic/blade-extensions/v/stable.svg)](https://packagist.org/packages/radic/blade-extensions)
 [![Total Downloads](https://poser.pugx.org/radic/blade-extensions/downloads.svg)](https://packagist.org/packages/radic/blade-extensions)
 [![Latest Unstable Version](https://poser.pugx.org/radic/blade-extensions/v/unstable.svg)](https://packagist.org/packages/radic/blade-extensions)
 [![License](https://poser.pugx.org/radic/blade-extensions/license.svg)](https://packagist.org/packages/radic/blade-extensions)
 
+Version 1.2
+-----------
+
 Laravel package providing additional Blade extensions.
 
-Implemented and tested directives:
-- @foreach (with $loop data, like twig)
+Implemented, tested and documentated directives:
+- [@foreach](docs/foreach.md) - Provides loop data, like `$loop->index; $loop->odd`
 - @break
 - @continue
 - @set
 - @debug
 - @macro
+- @partial
+- @block
 
-### Version 1.1.1
-[View changelog and todo](https://github.com/RobinRadic/laravel-bukkit-console/blob/master/changelog.md)
-
-
-#### Overview
+#### Overview of most common features
 ```php
 @foreach($stuff as $key => $val)
     $loop->index;       // int, zero based
@@ -106,6 +109,11 @@ return array(
     )
 );
 ```
+
+#### Testing
+Auto generated array's using [JSON Generator](http://www.json-generator.com) with `json_decode()`
+Using [Regex101](http://regex101.com) for regex creation. Each regex string has a link to it's regex101 document
+
 
 #### @debug with raveren/kint
 ![Screenshot](http://raveren.github.com/kint/img/preview.png)

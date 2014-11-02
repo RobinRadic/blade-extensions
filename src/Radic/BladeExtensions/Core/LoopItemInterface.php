@@ -9,13 +9,13 @@
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
  */
-interface LoopStackInterface {
+interface LoopItemInterface {
 
     /**
-     * @param LoopStackInterface $parentLoop
+     * @param LoopItemInterface $parentLoop
      * @return void
      */
-    public function setParentLoop(LoopStackInterface $parentLoop);
+    public function setParentLoop(LoopItemInterface $parentLoop);
 
     /**
      * Set the loop items for the current stack

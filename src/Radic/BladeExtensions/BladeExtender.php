@@ -16,7 +16,6 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
  *
  * @makeview\(((?>[^()]+))*\)
  */
-
 // http://packalyst.com/packages/package/crhayes/blade-partials
 class BladeExtender
 {
@@ -26,13 +25,11 @@ class BladeExtender
         $blade = $app['view']->getEngineResolver()->resolve('blade')->getCompiler();
         $class = new static;
         $blacklist = $app->config['radic/blade-extensions::blacklist'];
-        foreach(get_class_methods($class) as $method)
-        {
-            if($method == 'attach') continue;
-            if(is_array($blacklist) && in_array($method, $blacklist)) continue;
+        foreach (get_class_methods($class) as $method) {
+            if ($method == 'attach') continue;
+            if (is_array($blacklist) && in_array($method, $blacklist)) continue;
 
-            $blade->extend(function($value) use ($app, $class, $blade, $method)
-            {
+            $blade->extend(function ($value) use ($app, $class, $blade, $method) {
                 return $class->$method($value, $app, $blade);
             });
         }
@@ -51,11 +48,57 @@ class BladeExtender
             $app->config['radic/blade-extensions::debug.prepend'] . '$1' . $app->config['radic/blade-extensions::debug.append'], $value);
     }
 
+
+    # MACRO
+
+    public function openMacro($value, Application $app, Compiler $blade)
+    {
+        $matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
+        return preg_replace($matcher, '<?php \Radic\BladeExtensions\Directives\MacroManager::open("$1", function($data){ extract($data); ?>', $value);
+    }
+
+    public function closeMacro($value, Application $app, Compiler $blade)
+    {
+        $matcher = $blade->createPlainMatcher('endmacro');
+        return preg_replace($matcher, '<?php });  ?>', $value);
+    }
+
+    public function addMacro($value, Application $app, Compiler $blade)
+    {
+        $matcher = '/@macro\([\'\"](\w*)[\'\"],((?>[^()]+))*\)/';
+        return preg_replace($matcher, '<?php echo call_user_func(\Radic\BladeExtensions\Directives\MacroManager::get("$1"), $2); ?>', $value);
+    }
+
+
+    # LOOPS
+
+    public function openForeach($value, Application $app, Compiler $blade)
+    {
+        $matcher = '/@foreach(\s?)\(\$(.[0-9a-zA-Z_\->]+)(\s?)(.*)\)/';
+        return preg_replace($matcher,
+            '$1<?php
+        \Radic\BladeExtensions\Directives\ForeachLoopFactory::newLoop($$2);
+        foreach($$2 $4):
+        $loop = \Radic\BladeExtensions\Directives\ForeachLoopFactory::loop();
+        ?>', $value);
+    }
+
+    public function closeForeach($value, Application $app, Compiler $blade)
+    {
+        $matcher = $blade->createPlainMatcher('endforeach');
+        return preg_replace($matcher,
+            '$1<?php
+        \Radic\BladeExtensions\Directives\ForeachLoopFactory::looped();
+        endforeach;
+        \Radic\BladeExtensions\Directives\ForeachLoopFactory::endLoop($loop);
+        ?>$2', $value);
+    }
+
     public function addBreak($value, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('break');
         return preg_replace($matcher,
-        '$1<?php
+            '$1<?php
         break;
         ?>$2', $value);
     }
@@ -64,61 +107,48 @@ class BladeExtender
     {
         $matcher = $blade->createPlainMatcher('continue');
         return preg_replace($matcher,
-        '$1<?php
-        \Radic\BladeExtensions\Extensions\ForEachManager::looped();
+            '$1<?php
+        \Radic\BladeExtensions\Directives\ForeachLoopFactory::looped();
         continue;
         ?>$2', $value);
     }
 
 
-    public function openMacro($value, Application $app, Compiler $blade)
+    # PARTIALS
+
+    public function addPartial($value, Application $app, Compiler $blade)
     {
-        #$matcher = "/@macro\('(\w*)', (.*)?\){(.*)?}\)/s";
-
-        $matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
-        #return preg_replace($matcher, '<?php \Radic\BladeExtensions\Extensions\MacroManager::open("$1"); ? >', $value);
-        return preg_replace($matcher, '<?php \Radic\BladeExtensions\Extensions\MacroManager::open("$1", function($data){ extract($data); ?>', $value);
-    }
-
-    public function closeMacro($value, Application $app, Compiler $blade){
-        $matcher = $blade->createPlainMatcher('endmacro');
-       // return preg_replace($matcher, '<?php \Radic\BladeExtensions\Extensions\MacroManager::close(); ? >', $value);
-
-        return preg_replace($matcher, '<?php });  ?>', $value);
-    }
-
-
-    public function addMacro($value, Application $app, Compiler $blade)
-    {
-        #$matcher = "/@macro\('(\w*)', (.*)?\){(.*)?}\)/s";
-
-        $matcher = '/@macro\([\'\"](\w*)[\'\"],((?>[^()]+))*\)/';
-       # return preg_replace($matcher, '<?php var_dump(\Radic\BladeExtensions\Extensions\MacroManager::render("$1", $2));  ? >', $value);
-        return preg_replace($matcher, '<?php echo call_user_func(\Radic\BladeExtensions\Extensions\MacroManager::get("$1"), $2); ?>', $value);
-    }
-
-
-
-
-    public function openForeach($value, Application $app, Compiler $blade)
-    {
-        $matcher = '/@foreach(\s?)\(\$(.[0-9a-zA-Z_\->]+)(\s?)(.*)\)/';
+        $matcher = $blade->createOpenMatcher('partial');
         return preg_replace($matcher,
-        '$1<?php
-        \Radic\BladeExtensions\Extensions\ForEachManager::newLoop($$2);
-        foreach($$2 $4):
-        $loop = \Radic\BladeExtensions\Extensions\ForEachManager::loop();
-        ?>', $value);
+            '$1<?php $__env->renderPartial$2, get_defined_vars(), function($file, $vars) use ($__env) {
+					$vars = array_except($vars, array(\'__data\', \'__path\'));
+					extract($vars); ?>'
+            , $value);
     }
 
-    public function closeForeach($value, Application $app, Compiler $blade)
+    public function endPartial($value, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endforeach');
-        return preg_replace($matcher,
-        '$1<?php
-        \Radic\BladeExtensions\Extensions\ForEachManager::looped();
-        endforeach;
-        \Radic\BladeExtensions\Extensions\ForEachManager::endLoop($loop);
-        ?>$2', $value);
+        $pattern = $blade->createPlainMatcher('endpartial');
+        return preg_replace($pattern, '$1<?php echo $__env->make($file, $vars)->render(); }); ?>$2', $value);
     }
+
+    public function openBlock($value, Application $app, Compiler $blade)
+    {
+        $pattern = $blade->createMatcher('block');
+        return preg_replace($pattern, '$1<?php $__env->startBlock$2; ?>', $value);
+    }
+
+    public function endBlock($value, Application $app, Compiler $blade)
+    {
+        $pattern = $blade->createPlainMatcher('endblock');
+        return preg_replace($pattern, '$1<?php $__env->stopBlock(); ?>$2', $value);
+    }
+
+    public function addRender($value, Application $app, Compiler $blade)
+    {
+        $pattern = $blade->createMatcher('render');
+        return preg_replace($pattern, '$1<?php echo $__env->renderBlock$2; ?>', $value);
+    }
+
+
 }

@@ -1,7 +1,7 @@
 <?php
 
-use Radic\BladeExtensions\Extensions\ForEachManager;
-use Radic\BladeExtensions\Core\LoopStackInterface;
+use Radic\BladeExtensions\Directives\ForeachLoopFactory;
+use Radic\BladeExtensions\Core\LoopItemInterface;
 use \Mockery as m;
 
 class ForEachTest extends Orchestra\Testbench\TestCase
@@ -28,25 +28,26 @@ class ForEachTest extends Orchestra\Testbench\TestCase
             array('name' => 'mikael', 'age' => 24, 'gender' => 'male'),
             array('name' => 'strump', 'age' => 35, 'gender' => 'does-not-know')
         );
-        ForEachManager::reset();
+        ForeachLoopFactory::reset();
     }
 
 
 
     public function testNewLoopCreatesStack()
     {
-        ForEachManager::newLoop($this->loopData);
-        $stack = ForEachManager::getStack();
+
+        ForeachLoopFactory::newLoop($this->loopData);
+        $stack = ForeachLoopFactory::getStack();
         $this->assertTrue(!empty($stack) && count($stack) == 1);
     }
 
     public function testResetEmptiesStacks()
     {
-        ForEachManager::newLoop($this->loopData);
-        $stack = ForEachManager::getStack();
+        ForeachLoopFactory::newLoop($this->loopData);
+        $stack = ForeachLoopFactory::getStack();
         $this->assertTrue(!empty($stack) && count($stack) == 1);
-        ForEachManager::reset();
-        $stack = ForEachManager::getStack();
+        ForeachLoopFactory::reset();
+        $stack = ForeachLoopFactory::getStack();
         $this->assertTrue(empty($stack), 'stack should be empty array');
     }
 
@@ -54,12 +55,12 @@ class ForEachTest extends Orchestra\Testbench\TestCase
     public function testLooping()
     {
         $total = count($this->loopData);
-        ForEachManager::newLoop($this->loopData);
+        ForeachLoopFactory::newLoop($this->loopData);
         foreach($this->loopData as $key => $val)
         {
-            $loop = ForEachManager::loop();
+            $loop = ForeachLoopFactory::loop();
 
-            $this->assertTrue($loop instanceof LoopStackInterface);
+            $this->assertTrue($loop instanceof LoopItemInterface);
 
             // check for valid loop data
             $this->assertTrue($loop->index == $key, 'index');
@@ -96,33 +97,33 @@ class ForEachTest extends Orchestra\Testbench\TestCase
                 $this->assertNotTrue($loop->last, 'last should be false');
             }
 
-            ForEachManager::looped();
+            ForeachLoopFactory::looped();
         }
-        ForEachManager::endLoop($loop);
+        ForeachLoopFactory::endLoop($loop);
 
         $this->assertNull($loop, 'End of loop stack should be null but is not null');
     }
 
     public function testLoopStack()
     {
-        ForEachManager::newLoop($this->loopData);
+        ForeachLoopFactory::newLoop($this->loopData);
         foreach($this->loopData as $key => $val)
         {
-            $loop = ForEachManager::loop();
+            $loop = ForeachLoopFactory::loop();
 
             $index = $loop->index;
 
             // Create child loop with loopdata2
-            ForEachManager::newLoop($this->loopData2);
+            ForeachLoopFactory::newLoop($this->loopData2);
             foreach($this->loopData2 as $childKey => $childVal)
             {
-                $loop = ForEachManager::loop();
+                $loop = ForeachLoopFactory::loop();
 
                 $this->assertTrue($loop->index == $childKey);
 
-                ForEachManager::looped();
+                ForeachLoopFactory::looped();
             }
-            ForEachManager::endLoop($loop);
+            ForeachLoopFactory::endLoop($loop);
             // end child loop
 
             // Check if $loop is back to this loop and not child
@@ -131,9 +132,9 @@ class ForEachTest extends Orchestra\Testbench\TestCase
 
             $this->assertTrue($loop->index == $key);
 
-            ForEachManager::looped();
+            ForeachLoopFactory::looped();
         }
-        ForEachManager::endLoop($loop);
+        ForeachLoopFactory::endLoop($loop);
 
         $this->assertNull($loop, 'End of loop stack should be null but is not null');
     }
