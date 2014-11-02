@@ -6,3 +6,4 @@ commit.bat
 /src/views/*
 /docs
 /_ide_helper.php
+/.idea
