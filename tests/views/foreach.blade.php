@@ -1,35 +1,95 @@
-@assertTrue(true)
 
-@foreach(true)
-	@assertTrue($loop->index);
-@endforeach
-@foreach($array)
-	{{ $loop->index }}
-@endforeach
+
 @foreach($array as $item)
-	{{ $loop->index }}
+	@assertTrue($loop->first)
+	@break
+	@assertFalse(true, 'Break should exit the loop')
 @endforeach
+
 @foreach($array as $key => $val)
-	{{ $loop->index }}
+	@assertTrue($loop->first)
+	@break
 @endforeach
-@foreach(getArray())
-	{{ $loop->index }}
+
+@foreach($getArray() as $key)
+	@assertTrue($loop->first)
+	@break
 @endforeach
-@foreach(getArray() as $key => $val)
-	{{ $loop->index }}
+
+
+@foreach(array_merge($array, $getArray()) as $key)
+	@assertTrue($loop->first)
+	@break
 @endforeach
-@foreach($value->array)
-	{{ $loop->index }}
+
+@foreach($getArray(true) as $key => $val)
+	@assertTrue($loop->first)
+	@break
 @endforeach
-@foreach($value->array as $key => $val)
-	{{ $loop->index }}
+
+@foreach($dataClass->array as $key => $val)
+	@assertTrue($loop->first)
+	@break
 @endforeach
-@foreach($value->getArray())
-	{{ $loop->index }}
+
+@foreach($dataClass->getArray() as $key => $val)
+	@assertTrue($loop->first)
+	@break
 @endforeach
-@foreach($value->getArray() as $key => $val)
-	{{ $loop->index }}
+
+@foreach($dataClass->getArray(true) as $key => $val)
+	@assertTrue($loop->first)
+	@break
 @endforeach
-@foreach($value->getArray(true) as $key => $val)
-	{{ $loop->index }}
+
+
+@foreach($dataClass->getArray(true) as $key => $val)
+	@assertTrue($loop->first)
+	@break
+
+	@foreach($dataClass->getArray() as $key2 => $val2)
+		@assertTrue(is_int($loop->index))
+
+	@endforeach
 @endforeach
+
+
+
+@set('testArray', $dataClass->getArray())
+@set('total', count($testArray))
+
+@foreach($dataClass->getArray() as $key => $val)
+
+	@assertTrue($loop instanceof \Radic\BladeExtensions\Core\LoopItemInterface, '$loop should be an instance of LoopItemInterface')
+	@assertTrue($loop->index == $key, 'index')
+	@assertTrue($loop->index1 == $key + 1, '1 based index')
+	@assertTrue($loop->revindex == ($total - 1) - $key, 'revindex')
+	@assertTrue($loop->revindex1 == $total - $key, '1 based revindex')
+
+	@if($key == 0)
+		@assertTrue($loop->length == $total, 'total')
+
+		@assertTrue($loop->first, 'first should be true')
+		@assertNotTrue($loop->last, 'last should be false')
+
+		@assertTrue($loop->even, 'even should be true')
+		@assertNotTrue($loop->odd, 'odd should be false')
+	@elseif($key == 1)
+		@assertTrue($loop->odd, 'odd should be true')
+		@assertNotTrue($loop->even, 'even should be false')
+
+		@assertNotTrue($loop->first, 'first should be false')
+		@assertNotTrue($loop->last, 'last should be false')
+	@elseif($key == $total - 1)
+		@assertTrue($loop->last, 'last should be true')
+		@assertNotTrue($loop->first, 'last should be false')
+	@else
+		@assertNotTrue($loop->first, 'first should be false')
+		@assertNotTrue($loop->last, 'last should be false')
+	@endif
+
+@endforeach
+
+@assertNull($loop, 'End of loop stack should be null but is not null')
+
+

@@ -1,8 +1,8 @@
 <?php
 
-use Radic\BladeExtensions\Directives\ForeachLoopFactory;
+use Mockery as m;
 use Radic\BladeExtensions\Core\LoopItemInterface;
-use \Mockery as m;
+use Radic\BladeExtensions\Directives\ForeachLoopFactory;
 
 class ForEachTest extends Orchestra\Testbench\TestCase
 {
@@ -32,7 +32,6 @@ class ForEachTest extends Orchestra\Testbench\TestCase
     }
 
 
-
     public function testNewLoopCreatesStack()
     {
 
@@ -56,8 +55,7 @@ class ForEachTest extends Orchestra\Testbench\TestCase
     {
         $total = count($this->loopData);
         ForeachLoopFactory::newLoop($this->loopData);
-        foreach($this->loopData as $key => $val)
-        {
+        foreach ($this->loopData as $key => $val) {
             $loop = ForeachLoopFactory::loop();
 
             $this->assertTrue($loop instanceof LoopItemInterface);
@@ -68,8 +66,7 @@ class ForEachTest extends Orchestra\Testbench\TestCase
             $this->assertTrue($loop->revindex == ($total - 1) - $key, 'revindex');
             $this->assertTrue($loop->revindex1 == $total - $key, '1 based revindex');
 
-            if($key == 0)
-            {
+            if ($key == 0) {
                 $this->assertTrue($loop->length == $total, 'total');
 
                 $this->assertTrue($loop->first, 'first should be true');
@@ -77,22 +74,16 @@ class ForEachTest extends Orchestra\Testbench\TestCase
 
                 $this->assertTrue($loop->even, 'even should be true');
                 $this->assertNotTrue($loop->odd, 'odd should be false');
-            }
-            elseif($key == 1)
-            {
+            } elseif ($key == 1) {
                 $this->assertTrue($loop->odd, 'odd should be true');
                 $this->assertNotTrue($loop->even, 'even should be false');
 
                 $this->assertNotTrue($loop->first, 'first should be false');
                 $this->assertNotTrue($loop->last, 'last should be false');
-            }
-            elseif($key == $total - 1)
-            {
+            } elseif ($key == $total - 1) {
                 $this->assertTrue($loop->last, 'last should be true');
                 $this->assertNotTrue($loop->first, 'last should be false');
-            }
-            else
-            {
+            } else {
                 $this->assertNotTrue($loop->first, 'first should be false');
                 $this->assertNotTrue($loop->last, 'last should be false');
             }
@@ -107,16 +98,14 @@ class ForEachTest extends Orchestra\Testbench\TestCase
     public function testLoopStack()
     {
         ForeachLoopFactory::newLoop($this->loopData);
-        foreach($this->loopData as $key => $val)
-        {
+        foreach ($this->loopData as $key => $val) {
             $loop = ForeachLoopFactory::loop();
 
             $index = $loop->index;
 
             // Create child loop with loopdata2
             ForeachLoopFactory::newLoop($this->loopData2);
-            foreach($this->loopData2 as $childKey => $childVal)
-            {
+            foreach ($this->loopData2 as $childKey => $childVal) {
                 $loop = ForeachLoopFactory::loop();
 
                 $this->assertTrue($loop->index == $childKey);

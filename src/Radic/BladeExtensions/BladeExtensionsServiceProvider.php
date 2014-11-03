@@ -1,4 +1,5 @@
 <?php namespace Radic\BladeExtensions;
+
 /**
  * Part of Radic - Blade Extensions.
  *
@@ -12,35 +13,33 @@
 
 use Illuminate\Support\ServiceProvider;
 use Radic\BladeExtensions\Directives\PartialFactory;
-use Route;
-use View;
 
-class BladeExtensionsServiceProvider extends ServiceProvider {
+class BladeExtensionsServiceProvider extends ServiceProvider
+{
 
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
 
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
         $this->package('radic/blade-extensions', 'radic/blade-extensions');
 
-        $this->registerPartialFactory();
-	}
+        // $this->registerPartialFactory();
+    }
 
 
     protected function registerPartialFactory()
     {
-        $this->app->bindShared('view', function($app)
-        {
+        $this->app->bindShared('view', function ($app) {
             // Next we need to grab the engine resolver instance that will be used by the
             // environment. The resolver will be used by an environment to get each of
             // the various engine implementations such as plain PHP or Blade engine.
@@ -57,15 +56,15 @@ class BladeExtensionsServiceProvider extends ServiceProvider {
         });
     }
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array();
-	}
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return array();
+    }
 
     /**
      * Boots the services provided. Attaches the blade extensions to the current Application's - ViewEnvironment

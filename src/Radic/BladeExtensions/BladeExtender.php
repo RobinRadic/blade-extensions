@@ -74,11 +74,11 @@ class BladeExtender
 
     public function openForeach($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@foreach(\s?)\(\$(.[0-9a-zA-Z_\->]+)(\s?)(.*)\)/';
+        $matcher = '/@foreach\((.*)(?:\sas)(.*)\)/';
         return preg_replace($matcher,
-            '$1<?php
-        \Radic\BladeExtensions\Directives\ForeachLoopFactory::newLoop($$2);
-        foreach($$2 $4):
+            '<?php
+        \Radic\BladeExtensions\Directives\ForeachLoopFactory::newLoop($1);
+        foreach($1 as $2):
         $loop = \Radic\BladeExtensions\Directives\ForeachLoopFactory::loop();
         ?>', $value);
     }

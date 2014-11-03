@@ -14,23 +14,26 @@ class ForeachViewTest extends Orchestra\Testbench\TestCase
     {
         parent::setUp();
 
+        require_once('TestData.php');
+        $this->data = new TestData();
+
         $this->addTestAssertsBladeDirectives();
 
         $this->app->register(new BladeExtensionsServiceProvider($this->app));
         //$this->app->register(new IdeHelperServiceProvider($this->app));
         //$this->app->artisan->call('ide-helper:generate');
-        $this->data = json_decode(File::get(__DIR__ . '/data.json'), true);
+
         View::addLocation(__DIR__ . '/views');
     }
 
 
     public function testForeachSetCount()
     {
-        $html = View::make('foreach', ['value' => $this->data, 'array' => $this->data[0], 'getArray' => function () {
-            return $this->data;
-        }])->render();
+        $view = View::make('foreach', ['dataClass' => $this->data, 'array' => $this->data->array, 'getArray' => $this->data->getArrayGetterFn()]);
+        $view->render();
         $this->assertTrue(true);
-
+        //File::put(__DIR__ . '/foreach.html', var_dump($view->render()));
+        //echo "sad" . $view;
     }
 
 

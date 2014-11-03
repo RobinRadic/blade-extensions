@@ -111,8 +111,8 @@ return array(
 ```
 
 #### Testing
-Auto generated array's using [JSON Generator](http://www.json-generator.com) with `json_decode()`
-Using [Regex101](http://regex101.com) for regex creation. Each regex string has a link to it's regex101 document
+- Auto generated array's using [JSON Generator](http://www.json-generator.com) with `json_decode()`
+- Using [Regex101](http://regex101.com) for regex creation. Each regex string has a link to it's regex101 document
 
 
 #### @debug with raveren/kint
