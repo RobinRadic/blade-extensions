@@ -35,9 +35,17 @@ class BladeExtender
         }
     }
 
+
+    // regex:: http://regex101.com/r/yN1gO5/2
     public function addSet($value, Application $app, Compiler $blade)
     {
-        return preg_replace("/@set\('(.*?)'\,(.*)\)/", '<?php $$1 = $2; ?>', $value);
+        return preg_replace('/@set\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/', '<?php \$$1 = $2; ?>', $value);
+    }
+
+    public function addUnset($value, Application $app, Compiler $blade)
+    {
+
+        return preg_replace('/@unset\((.*)\)/', '<?php unset($1); ?>', $value);
     }
 
     public function addDebug($value, Application $app, Compiler $blade)
@@ -46,6 +54,7 @@ class BladeExtender
         $matcher = $blade->createOpenMatcher('debug');
         return preg_replace("/@debug(?:s?)\(([^()]+)*\)/", #$matcher,
             $app->config['radic/blade-extensions::debug.prepend'] . '$1' . $app->config['radic/blade-extensions::debug.append'], $value);
+
     }
 
 
@@ -71,7 +80,7 @@ class BladeExtender
 
 
     # LOOPS
-
+    // regex test: http://regex101.com/r/qH9eO7/2
     public function openForeach($value, Application $app, Compiler $blade)
     {
         $matcher = '/@foreach\((.*)(?:\sas)(.*)\)/';

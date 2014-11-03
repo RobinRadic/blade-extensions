@@ -8,6 +8,11 @@ class TestData
 
     public $json;
 
+    public static $name = 'john';
+
+    public $someVal = 'maria';
+
+
     public function __construct()
     {
         $this->json = File::get(__DIR__ . '/data.json');

@@ -4,7 +4,7 @@ use Mockery as m;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\BladeExtensions\Testing\BladeViewTestingTrait;
 
-class ForeachViewTest extends Orchestra\Testbench\TestCase
+class ViewTest extends Orchestra\Testbench\TestCase
 {
     use BladeViewTestingTrait;
 
@@ -27,13 +27,16 @@ class ForeachViewTest extends Orchestra\Testbench\TestCase
     }
 
 
-    public function testForeachSetCount()
+    public function testSet()
     {
-        $view = View::make('foreach', ['dataClass' => $this->data, 'array' => $this->data->array, 'getArray' => $this->data->getArrayGetterFn()]);
-        $view->render();
-        $this->assertTrue(true);
-        //File::put(__DIR__ . '/foreach.html', var_dump($view->render()));
-        //echo "sad" . $view;
+        //print_r($this->data);
+        View::make('set', ['dataString' => 'hello', 'dataArray' => $this->data->array, 'dataClassInstance' => $this->data, 'dataClassName' => 'TestData'])->render();
+    }
+
+
+    public function testForeach()
+    {
+        View::make('foreach', ['dataClass' => $this->data, 'array' => $this->data->array, 'getArray' => $this->data->getArrayGetterFn()])->render();
     }
 
 

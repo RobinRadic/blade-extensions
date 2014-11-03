@@ -10,19 +10,18 @@ Laravel Blade Extensions
 Version 1.2
 -----------
 
-Laravel package providing additional Blade extensions.
+Laravel package providing additional Blade functionality.
 
-Implemented, tested and documentated directives:
-- [@foreach](docs/foreach.md) - Provides loop data, like `$loop->index; $loop->odd`
-- @break
-- @continue
-- @set
-- @debug
-- @macro
-- @partial
-- @block
+- [@set @unset](docs/set.html) Setting and unsetting of values
+- [@foreach @break @continue](docs/foreach.html) Loop data and extras
+- [@partial @block @render](docs/partials.html) Creating view partials and blocks. Nest them, extend them, render them.
+- [@macro](docs/macro.html) Defining and running macros
+- [@debug](docs/debug.html) Debugging values in views
+- [BladeViewTestingTrait](docs/testViews.html) enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
 
-#### Overview of most common features
+[**Check the documentation for all features and options**](docs/.index.md)
+
+#### Overview of some features
 ```php
 @foreach($stuff as $key => $val)
     $loop->index;       // int, zero based
@@ -65,58 +64,13 @@ Implemented, tested and documentated directives:
 - (optional) raveren/kint > 0.9.1
 
 #### Installation
-Add to `composer.json`
+You probably know what to do with these:
 ```JSON
 "radic/blade-extensions": "1.*"
 ```
-
-Add to `app/config/app.php` to register the service provider
 ```php
 'Radic\BladeExtensions\BladeExtensionsServiceProvider'
 ```
-
-#### Configuration
-Publish the configuration file
-`php artisan config:publish radic/blade-extensions`
-
-```php
-
-return array(
-    /*
-     * Blacklisting of directives. These directives will not be extended. Example:
-     *
-     * 'blacklist' => array('foreach', 'set', 'debug')
-     */
-    'blacklist' => array(),
-
-    /*
-     * Prepend and append the debug output.
-     */
-    'debug' => array(
-        /*
-         * Prepend any code in front of our variable name
-         *
-         * The default config also checks if Kint is installed for sweet debug output.
-         * Check https://github.com/raveren/kint.
-         *
-         */
-        'prepend' => "<h1>DEBUG OUTPUT:</h1><pre><code><?php " . (class_exists('Kint') ? "Kint::dump(" : "var_dump("),
-
-        /*
-         * Append any code behind our variable name
-         */
-        'append' => ") ?></code></pre>"
-    )
-);
-```
-
-#### Testing
-- Auto generated array's using [JSON Generator](http://www.json-generator.com) with `json_decode()`
-- Using [Regex101](http://regex101.com) for regex creation. Each regex string has a link to it's regex101 document
-
-
-#### @debug with raveren/kint
-![Screenshot](http://raveren.github.com/kint/img/preview.png)
 
 ### Copyright/License
 Copyright 2014 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org)

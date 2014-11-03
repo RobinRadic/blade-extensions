@@ -4,6 +4,7 @@ composer.lock
 .DS_Store
 commit.bat
 /src/views/*
-/docs
 /_ide_helper.php
 /.idea
+/lara5
+/play.php
