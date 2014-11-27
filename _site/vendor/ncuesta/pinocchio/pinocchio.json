@@ -1,0 +1,4 @@
+{
+    "ignore": "/(^\\.|templates|src\\/bootstrap.php)/",
+    "index_title": "Pinocchio's annotated source"
+}

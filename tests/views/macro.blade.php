@@ -1,4 +1,4 @@
-@macro('asdf', $data, $data2)
-    @set('output', $data + $data2)
+@macro('simple', $first, $second = 3)
+return $first . $second;
 @endmacro
-{{ $count }}
+@domacro('simple', 'my age is')

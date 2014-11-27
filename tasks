@@ -37,6 +37,7 @@ function servedoc {
 }
 
 function test {
+    rm -rf vendor/orchestra/testbench/src/fixture/app/storage/views/*
     echo "Starting tests"
     php vendor/bin/phpunit -c phpunit.xml
 }

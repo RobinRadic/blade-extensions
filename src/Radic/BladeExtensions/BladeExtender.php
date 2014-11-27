@@ -62,20 +62,21 @@ class BladeExtender
 
     public function openMacro($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
-        return preg_replace($matcher, '<?php \Radic\BladeExtensions\Directives\MacroManager::open("$1", function($data){ extract($data); ?>', $value);
+        //$matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
+        $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        return preg_replace($matcher, '<?php HTML::macro("$1", function($2){ ', $value);
     }
 
     public function closeMacro($value, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('endmacro');
-        return preg_replace($matcher, '<?php });  ?>', $value);
+        return preg_replace($matcher, '  });  ?>', $value);
     }
 
-    public function addMacro($value, Application $app, Compiler $blade)
+    public function DoMacro($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@macro\([\'\"](\w*)[\'\"],((?>[^()]+))*\)/';
-        return preg_replace($matcher, '<?php echo call_user_func(\Radic\BladeExtensions\Directives\MacroManager::get("$1"), $2); ?>', $value);
+        $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        return preg_replace($matcher, '<?php echo HTML::$1($2); ?>', $value);
     }
 
 

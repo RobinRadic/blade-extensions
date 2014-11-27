@@ -24,13 +24,6 @@
 @assertTrue($mams === 'childs', '@set should accept a string as key, and override the old value')
 
 
-
-
-
-{{-- [0] => Array
-                     (
-                         [_id] => 542231ae3749519f2775a6b2
-                         [index] => 0 --}}
 @set($testArray, $dataArray)
 @assertTrue(is_array($testArray))
 @assertArrayHasKey(0, $testArray)

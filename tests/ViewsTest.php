@@ -14,7 +14,7 @@ class ViewTest extends Orchestra\Testbench\TestCase
     {
         parent::setUp();
 
-        require_once('TestData.php');
+        require_once('data/TestData.php');
         $this->data = new TestData();
 
         $this->addTestAssertsBladeDirectives();
@@ -37,6 +37,23 @@ class ViewTest extends Orchestra\Testbench\TestCase
     public function testForeach()
     {
         View::make('foreach', ['dataClass' => $this->data, 'array' => $this->data->array, 'getArray' => $this->data->getArrayGetterFn()])->render();
+    }
+
+
+
+    public function testMacros()
+    {
+        $this->assertEquals('my age is3', View::make('macro')->render());
+        $this->assertEquals('my age is 6', View::make('macro2')->render());
+        $this->assertEquals('patatmy age is3', View::make('macro3')->render());
+    }
+
+
+
+    public function testPartials()
+    {
+        View::make('partials', ['dataClass' => $this->data, 'array' => $this->data->array, 'getArray' => $this->data->getArrayGetterFn()])->render();
+
     }
 
 
