@@ -24,6 +24,11 @@
 @assertTrue($mams === 'childs', '@set should accept a string as key, and override the old value')
 
 
+
+@unset('mams')
+@assertFalse(isset($mams), '@unset should accept a string as key')
+
+
 @set($testArray, $dataArray)
 @assertTrue(is_array($testArray))
 @assertArrayHasKey(0, $testArray)
