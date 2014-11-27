@@ -45,7 +45,7 @@ class BladeExtender
     public function addUnset($value, Application $app, Compiler $blade)
     {
 
-        return preg_replace('/@unset\((.*)\)/', '<?php unset($1); ?>', $value);
+        return preg_replace('/@unset\((?:\$|(?:\'))(.*?)(?:\'|)\)/', '<?php unset(\$$1); ?>', $value);
     }
 
     public function addDebug($value, Application $app, Compiler $blade)
