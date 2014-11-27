@@ -17,9 +17,9 @@ class ViewTest extends Orchestra\Testbench\TestCase
         require_once('data/TestData.php');
         $this->data = new TestData();
 
-        $this->addTestAssertsBladeDirectives();
 
         $this->app->register(new BladeExtensionsServiceProvider($this->app));
+        $this->addTestAssertsBladeDirectives();
         //$this->app->register(new IdeHelperServiceProvider($this->app));
         //$this->app->artisan->call('ide-helper:generate');
 
@@ -52,8 +52,8 @@ class ViewTest extends Orchestra\Testbench\TestCase
 
     public function testPartials()
     {
-        View::make('partials', ['dataClass' => $this->data, 'array' => $this->data->array, 'getArray' => $this->data->getArrayGetterFn()])->render();
-
+        $partials = View::make('partials')->render();
+        $this->assertEquals("okokok", str_replace("\n",'',$partials));
     }
 
 

@@ -33,7 +33,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $this->package('radic/blade-extensions', 'radic/blade-extensions');
 
-        // $this->registerPartialFactory();
+        $this->registerPartialFactory();
     }
 
 
