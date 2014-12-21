@@ -1,6 +1,7 @@
 <?php
 
 
+
 class TestData
 {
     public $array;
@@ -15,7 +16,7 @@ class TestData
 
     public function __construct()
     {
-        $this->json = File::get(__DIR__ . '/data.json');
+        $this->json = file_get_contents(__DIR__ . '/data.json');
         $this->array = json_decode($this->json, true);
         $this->_array = json_decode($this->json, true);
     }
@@ -32,4 +33,4 @@ class TestData
         };
     }
 
-} 
+}

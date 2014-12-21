@@ -6,7 +6,10 @@
     "loop",
     "extensions",
     "blade",
-    "laravel"
+    "laravel",
+    "theme",
+    "template",
+    "view"
   ],
   "license": "MIT",
   "authors": [
@@ -18,17 +21,14 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "illuminate/support": "4.*"
+    "illuminate/support": "5.*"
   },
   "suggest": {
     "raveren/kent": ">0.9.1"
   },
   "require-dev": {
-    "orchestra/testbench": "2.2.*",
-    "laravel/framework": "4.2.*",
-    "mockery/mockery": "dev-master",
+    "laravel/framework": "5.*@dev",
     "phpunit/phpunit": "*",
-    "barryvdh/laravel-ide-helper": "1.*",
     "ncuesta/pinocchio": "dev-master"
   },
   "scripts": {
@@ -40,5 +40,10 @@
       "Radic\\BladeExtensions": "src/"
     }
   },
-  "minimum-stability": "stable"
+  "autoload-dev": {
+    "classmap": [
+      "tests"
+    ]
+  },
+  "minimum-stability": "dev"
 }

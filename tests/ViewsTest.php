@@ -1,10 +1,10 @@
 <?php
 
-use Mockery as m;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\BladeExtensions\Testing\BladeViewTestingTrait;
 
-class ViewTest extends Orchestra\Testbench\TestCase
+
+class ViewTest extends TestBase
 {
     use BladeViewTestingTrait;
 
@@ -57,4 +57,15 @@ class ViewTest extends Orchestra\Testbench\TestCase
     }
 
 
+    /**
+     * Creates the application.
+     *
+     * Needs to be implemented by subclasses.
+     *
+     * @return \Symfony\Component\HttpKernel\HttpKernelInterface
+     */
+    public function createApplication()
+    {
+        // TODO: Implement createApplication() method.
+    }
 }

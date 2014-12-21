@@ -1,19 +1,11 @@
 Changelog
 =============
 
-Core
-LoopFactory
-LoopingItemInterface
+2.0.0
+-------------
+#### Laravel 5
+- Laravel 5 compatibility. 
 
-Directives
-ForeachLoopFactory
-ForeachLoopingItem
-PartialFactory
-
-Testing
-
-
-BladeExtender
 
 1.2.0
 -------------

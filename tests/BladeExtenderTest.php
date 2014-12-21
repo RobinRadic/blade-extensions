@@ -1,9 +1,8 @@
 <?php
 
-use Mockery as m;
 use Radic\BladeExtensions\BladeExtender;
 
-class BladeExtenderTest extends Orchestra\Testbench\TestCase
+class BladeExtenderTest extends TestBase
 {
     public function setUp()
     {
