@@ -22,7 +22,7 @@ Laravel package providing additional Blade functionality.
 [**Check the documentation for all features and options**](http://robinradic.github.io/blade-extensions/)
 
 #### Requirements
-- PHP > 5.3
+- PHP > 5.4
 - Laravel > 4.0
 - (optional) raveren/kint > 0.9.1
 
