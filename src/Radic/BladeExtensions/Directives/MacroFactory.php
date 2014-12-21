@@ -1,16 +1,19 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: radic
- * Date: 9/16/14
- * Time: 1:07 PM
- */
-
-namespace Radic\BladeExtensions\Extensions;
+<?php namespace Radic\BladeExtensions\Extensions;
 
 
 use View;
 
+/**
+ * Part of Radic - Blade Extensions.
+ *
+ * @package    Blade Extensions
+ * @version    1.2.0
+ * @author     Robin Radic
+ * @license    MIT License - http://radic.mit-license.org
+ * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
+ * @link       http://radic.nl
+ *
+ */
 class MacroManager {
     static public $macros = [];
 
@@ -28,4 +31,4 @@ class MacroManager {
         if(isset(static::$macros[$name])) return static::$macros[$name];
         throw new \Exception("Macro '$name' not found in BladeExtensions\\MacroManager");
     }
-} 
+}

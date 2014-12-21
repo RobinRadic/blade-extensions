@@ -1,14 +1,15 @@
 <?php namespace Radic\BladeExtensions\Core;
 
 /**
- * Class BaseLoopManager
- * Part of Radic - Blade Extensions
+ * Part of Radic - Blade Extensions.
  *
- * @package    Radic\BladeExtensions\Core
+ * @package    Blade Extensions
+ * @version    1.2.0
  * @author     Robin Radic
  * @license    MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
+ *
  */
 abstract class LoopFactory
 {

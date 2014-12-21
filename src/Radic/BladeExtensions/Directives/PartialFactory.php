@@ -1,25 +1,15 @@
 <?php namespace Radic\BladeExtensions\Directives;
-    /**
-     * Part of the RadiCMS packges.
-     *
-     * NOTICE OF LICENSE
-     *
-     * Licensed under the RadiCMS Propietary License.
-     *
-     * This source file is subject to the RadiCMS Propietary License that is
-     * bundled with this package in the LICENSE.html file.
-     *
-     * @package    blade-extensions
-     * @version    1.0.0
-     * @author     Radic Technologies
-     * @license    Propietary
-     * @copyright  (c) 2011-2014, Radic Technologies
-     * @link       http://radic.nl
-     */
+
 /**
- * PartialFactory
+ * Part of Radic - Blade Extensions.
  *
- * @package Radic\BladeExtensions\Directives${NAME}
+ * @package    Blade Extensions
+ * @version    1.2.0
+ * @author     Robin Radic
+ * @license    MIT License - http://radic.mit-license.org
+ * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
+ * @link       http://radic.nl
+ *
  */
 class PartialFactory extends \Illuminate\View\Factory
 {
@@ -106,4 +96,4 @@ class PartialFactory extends \Illuminate\View\Factory
         $this->blocks = array();
     }
 
-} 
+}

@@ -7,16 +7,13 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
  * Part of Radic - Blade Extensions.
  *
  * @package    Blade Extensions
- * @version    1.0.0
+ * @version    1.2.0
  * @author     Robin Radic
  * @license    MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
  * @link       http://radic.nl
  *
- *
- * @makeview\(((?>[^()]+))*\)
  */
-// http://packalyst.com/packages/package/crhayes/blade-partials
 class BladeExtender
 {
 
