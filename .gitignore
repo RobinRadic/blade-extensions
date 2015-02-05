@@ -12,6 +12,6 @@ commit.bat
 /laravel
 /tasks
 /theme
-
+/build
 
 echo "Startup"
