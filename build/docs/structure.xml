@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="Laravel Blade Extensions" version="2.8.1">
+  <partials/>
+  <file path="config/config.php" generated-path="config.config.html" hash="f3f855a6a6f96ec7638ea147974fd7a6" package="Default">
+    <docblock line="0">
+      <description>Part of Radic - Blade Extensions</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+      <tag name="author" line="0" description="Robin Radic"/>
+      <tag name="license" line="0" description="MIT License - http://radic.mit-license.org"/>
+      <tag name="copyright" line="0" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+      <tag name="link" line="0" description="http://radic.nl" link="http://radic.nl"/>
+    </docblock>
+    <source>eJx9U1FvmzAQfudXnPJCiBJYpj0xlm7dqmnapkUVfa6MObAVx0a2SZt/vzOQNumiIcGd7bvvvvvOFDed6KJssYhgAVtmPZgG7lktOazgVrEa4e7Zo3bSaEcxIewz670wFsJzbyqpx4ThSElOwRiOfv8o4de0XIHwvsuzzIbIdC/9aopMjW2HTG66o5Wt8ABznsD7d+v1ij4fluc1CGi0JXKhjTKtRDcV1jsYn4tSWtFxFkUWfW81MGvZcR6FsGwxGEqmPvlOSeelbkP/tbTIvTygS6EUSPxfd+BJKgXaeKgQMEhTY52SSGzfKcwnyBNyXJ2gY/i0marHjbHIuIiXEDv0wdRY9W2cTGnZYK/mJsvoDfmtxY5IAAtvN7heEOOACKb3Xe/TS9yx2CtmNOn2AvoW+Ajc0EWgITTW6OGKmN7CgVnJKoWg2R7PMs9ByoFKw3rlCUQ3sgWmnAEukO8cyAZ+SkKU5GrnmVJYA8kD7gnRX2tihP0a0odBO5p0K73oq5SbPQ39gBZ1tiPU9Dqn7MWPu7HFQYtZIdabb3e3D9/hz0O5fSjzIqOdgmI2Reh/U4R/BWaQ0gVVzLlHfKbhuHkcWogTuIFZ8PK87vfdfAY5zEiix3F1Gty/On/pLmWuUEha/0/hsxbGkY8dEIVNkY1cs8B7NsQlUfIx+gtA6xtd</source>
+  </file>
+  <file path="Radic/BladeExtensions/Traits/BladeViewTestingTrait.php" generated-path="Radic.BladeExtensions.Traits.BladeViewTestingTrait.html" hash="6bfe188fc6faad329f083abb4ff3b8f7" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="BladeExtensionsServiceProvider">\Radic\BladeExtensions\BladeExtensionsServiceProvider</namespace-alias>
+    <trait namespace="Radic\BladeExtensions\Traits" line="16" package="Blade Extensions">
+      <name>BladeViewTestingTrait</name>
+      <full_name>\Radic\BladeExtensions\Traits\BladeViewTestingTrait</full_name>
+      <docblock line="16">
+        <description>Part of Radic - Blade Extensions.</description>
+        <long-description></long-description>
+        <tag name="package" line="16" description="Blade Extensions"/>
+        <tag name="version" line="16" description="1.2.0"/>
+        <tag name="author" line="16" description="Robin Radic"/>
+        <tag name="license" line="16" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="16" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="16" description="http://radic.nl" link="http://radic.nl"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Traits" line="22" package="Blade Extensions">
+        <name>$view</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeViewTestingTrait::view</full_name>
+        <default></default>
+        <docblock line="22">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="22" description="&lt;p&gt;views&lt;/p&gt;" type="\Illuminate\View\Factory" variable="">
+            <type>\Illuminate\View\Factory</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Traits" line="27" package="Blade Extensions">
+        <name>$blade</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeViewTestingTrait::blade</full_name>
+        <default></default>
+        <docblock line="27">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="27" description="" type="\Illuminate\View\Compilers\BladeCompiler" variable="">
+            <type>\Illuminate\View\Compilers\BladeCompiler</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="35" package="Blade Extensions">
+        <name>addBladeViewTesting</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeViewTestingTrait::addBladeViewTesting()</full_name>
+        <docblock line="35">
+          <description>Adds all class methods prefixed with assert* as blade view directives
+and assigns the $view and $blade class properties</description>
+          <long-description></long-description>
+          <tag name="param" line="35" description="&lt;p&gt;[$viewDirectoryPath] - The path to the directory containing test views&lt;/p&gt;" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$viewDirectoryPath</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="57" package="Blade Extensions">
+        <name>registerBladeProvider</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeViewTestingTrait::registerBladeProvider()</full_name>
+        <docblock line="57">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="64" package="Blade Extensions">
+        <name>doDirectiveTest</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeViewTestingTrait::doDirectiveTest()</full_name>
+        <docblock line="64">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$directiveClass</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </trait>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="35" code="PPC:ERR-50015">Argument $viewDirectoryPath is missing from the Docblock of addBladeViewTesting</error>
+      <error line="57" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="64" code="PPC:ERR-50015">Argument $directiveClass is missing from the Docblock of doDirectiveTest</error>
+      <error line="64" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="27" code="PPC:ERR-50007">No summary for property $blade</error>
+    </parse_markers>
+    <source>eJydVm1v2zYQ/u5fcSsMmDL80gT7VNdut7YDAmRAkBjdh7owaOlsEZFJgaScBEP++46kJOvFGYYRsGWSd8899yp//JSnOUh+RJPzGOGeJyLe/J7xBL89W5RGKGk2a82FNYvBoDBviXT2D6hPIsY7rU4iQU2q8/F4AGO449qC2gcUmILXg7PijISc3Gei88gPCOXqynmZE2q3qWSuZtez9/6CFzZVujqHe7UTMpj01xlRk6bG/vNmDbfl0RRSa/MP87l20rOjsNNSeqb0wWvHKn/R4pBaABZHcP3+6mpKX79OmnYIKDzXGKdSZeog0JTG5SOcV8uczIL784F1IQ9efxf4tEZjhTz4RAz+Hgycpo+oWy4SXMPmJsuKo5Dc4sbpbP7gsVX6BU60MaXo3D9zrSzGFhMYusvFfwT8oo65yCjoId3V9i3onRPqY/+WJAZ4lkGccWPgiJQrOsk17sUz6T0JmwLdoLZjeoKH8U5AIjRhixNW7gCXiZMVB2nAphj88afBfGmEWOWEJ2rF2tGca34EYzWFF3549a/eCkXujtv0J2VyTcA5/QarvJGkEoBYScuFdLqWUnQp1MWOCgj2hSTiVKs8SbpZZX2rsARZZFnkIcp8uzW0qTDTlXdyWe14nv8YuaPRz8VZdD53kQYhjeWSWpuaLi60RmkDVR+YCTgIQMl3GTr3YpeYEPyasyGQpmdtHtOVSblGNnKoXxzoTWlyNAlyUZvVLVrKOn8ke6milgvWvB1n3TPZvcCeIF7K5J/zPgGpjtWnSycIL9vsDmi/yYOQeI9GZTQyWDRd6fCbjbzKKPJiVT2zJuEm9HSFbgAlrL51q04t5ZFnBUaUMOgsjbbQ0tX4Yasxz2jWstH8c3CdbZ7G0YaxGX1Hc4rau49+LG+GvZBSsr3K8IoNr6MFfFq9oyAHs4uW1dd61/RG7OFStf2yLOutQ70VSKrcWxVz5+oFjIb5YPp1cLH+KQLCWNS+Car3A6sKvWOYKtvlKmgwSUX/7+8ZdtaLSkJE4zKRRH2tqsr1IRvWReYj3m+9alAtgWpl69tnW571lBeNgqcXgAKap9ukOOasgmlmZa808jiF+tKNvfL3GykJZbDWBbIgt8VnilKPyaTGaSXo7BWFqjVJzlLDTjs1x/n/ZN3uon7juP8XzFEi2j0/vPKkaaHXZj7UpcCidzukKe/caSNPV6VCyWICJQFvL7oA08zAg39xPFj6W2P+ohcXG/nedaOPrDWTXK1yFLjrTsdeaqHXwT/I1eRn</source>
+  </file>
+  <file path="Radic/BladeExtensions/Traits/BladeExtenderTrait.php" generated-path="Radic.BladeExtensions.Traits.BladeExtenderTrait.html" hash="30bc1bd22d09bc0624099c7baad2aa8f" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Application">\Illuminate\Foundation\Application</namespace-alias>
+    <trait namespace="Radic\BladeExtensions\Traits" line="5" package="Default">
+      <name>BladeExtenderTrait</name>
+      <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait</full_name>
+      <docblock line="5">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="5" description="Default"/>
+      </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="8" package="Default">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default>array()</default>
+        <docblock line="8">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Traits" line="10" package="Default">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="10">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+      </method>
+    </trait>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="5" code="PPC:ERR-50010">No summary for trait ""</error>
+      <error line="10" code="PPC:ERR-50015">Argument $app is missing from the Docblock of attach</error>
+      <error line="10" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="8" code="PPC:ERR-50007">No summary for property $blacklist</error>
+    </parse_markers>
+    <source>eJyVks9ugzAMxu88hQ+oBAmegJVpmzpp12q3UlVpcNdoIURJaDdVffclgf5haIf5gBK+zz8bm4dHtVcgaYNGUYawpDVn1bOgNS6+LErDW2mqd025NUUUdQbhTYiu4ZJarF7bTtbUOk/1pJTgLJydz/oEuGFq1IERnaIIXKhu69wQbwVln4IbC3NYrYuRaKyjMdh1knkqUGsp25O7QhBTpdKQcwpPH55Zo+N5cZUcOB6TdV5+oF3IDy5xiaYVB9QkzUvdn0kScpI02F7aRnHhDcUNygQ1xkElHofGbuKu1eg6A+KSN8G4adDu29qQPi8FaiDu36V3rfrgOyCDBPM5JP1XJr9tPlgrLZcdFiPlPMFxs6Fa0++hel5ep5zCbAZcXuS+bAZT33/Kj6799PMSw9bJBHLdJokPVHSYgv+liN/VpY9sgGR/jewSGm2n5bX7wT2AMxiYgZUWE8J4bneGXjhH5+gH93XiTw==</source>
+  </file>
+  <file path="Radic/BladeExtensions/Helpers/Partial.php" generated-path="Radic.BladeExtensions.Helpers.Partial.html" hash="f0931a198d08eca0dbb0775a84481ea4" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="14" package="Blade Extensions">
+      <extends/>
+      <name>Partial</name>
+      <full_name>\Radic\BladeExtensions\Helpers\Partial</full_name>
+      <docblock line="14">
+        <description>Part of Radic - Blade Extensions.</description>
+        <long-description></long-description>
+        <tag name="package" line="14" description="Blade Extensions"/>
+        <tag name="version" line="14" description="1.2.0"/>
+        <tag name="author" line="14" description="Robin Radic"/>
+        <tag name="license" line="14" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="14" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="14" description="http://radic.nl" link="http://radic.nl"/>
+      </docblock>
+      <property static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="22" package="Blade Extensions">
+        <name>$blocks</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Partial::blocks</full_name>
+        <default>array()</default>
+        <docblock line="22">
+          <description>Storage for our blocks.</description>
+          <long-description></long-description>
+          <tag name="var" line="22" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="34" package="Blade Extensions">
+        <name>renderPartial</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Partial::renderPartial()</full_name>
+        <docblock line="34">
+          <description>Render a partial by echoing its contents.</description>
+          <long-description>The variables defined outside the scope of this block
+(i.e. within our template) are passed in so we can use them.</long-description>
+          <tag name="param" line="34" description="" type="string" variable="$file">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="34" description="" type="array" variable="$vars">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="34" description="" type="\Closure" variable="$callback">
+            <type>\Closure</type>
+          </tag>
+          <tag name="return" line="34" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$file</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$vars</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$callback</name>
+          <default></default>
+          <type>\Closure</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="47" package="Blade Extensions">
+        <name>startBlock</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Partial::startBlock()</full_name>
+        <docblock line="47">
+          <description>Start injecting content into a block.</description>
+          <long-description></long-description>
+          <tag name="param" line="47" description="" type="string" variable="$block">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="47" description="" type="string" variable="$content">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="47" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$block</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$content</name>
+          <default>''</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="63" package="Blade Extensions">
+        <name>stopBlock</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Partial::stopBlock()</full_name>
+        <docblock line="63">
+          <description>Stop injecting content into a block.</description>
+          <long-description></long-description>
+          <tag name="return" line="63" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="76" package="Blade Extensions">
+        <name>renderBlock</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Partial::renderBlock()</full_name>
+        <docblock line="76">
+          <description>Get the string contents of a block.</description>
+          <long-description></long-description>
+          <tag name="param" line="76" description="" type="string" variable="$block">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="76" description="" type="string" variable="$default">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="76" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$block</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$default</name>
+          <default>''</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="86" package="Blade Extensions">
+        <name>getBlocks</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Partial::getBlocks()</full_name>
+        <docblock line="86">
+          <description>Get the entire array of blocks.</description>
+          <long-description></long-description>
+          <tag name="return" line="86" description="" type="array">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="96" package="Blade Extensions">
+        <name>flushBlocks</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Partial::flushBlocks()</full_name>
+        <docblock line="96">
+          <description>Flush all the block contents.</description>
+          <long-description></long-description>
+          <tag name="return" line="96" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="34" code="PPC:ERR-50015">Argument $file is missing from the Docblock of renderPartial</error>
+      <error line="47" code="PPC:ERR-50015">Argument $block is missing from the Docblock of startBlock</error>
+      <error line="76" code="PPC:ERR-50015">Argument $block is missing from the Docblock of renderBlock</error>
+    </parse_markers>
+    <source>eJytVctu2zAQvOsr9mAgsuFHEvTkNEiQoi+gBYo0t6YIKJmy2NAkQVJJg8L/3uVDskXbSBNUhyjWLmdnZ0ertxeqViDIihpFSgrXZMHK2ytOFvT9b0uFYVKY20+UK6rNWZbNRqMMRvCNaAuyCukwAX8ANiemmOTyLhH0niwpxCvN8zkPCI0/2pyT6en02AdIY2up2+dwLQsmQkkf5qxEmA776+cb+BIfTaC2Vs1nM+2ypytmJzF7KvXSny6letJsWVuAvBzC6fHJyQT/vBlv10GgcL+hZS0kl0tGTSwu7mFz9coJHtqfZSUnxni1GOHZnyxzuV5Dd43gu5XayVNhm7LRUHBZ3jv1fLjNunwgGojW5Ck+mfm7scQiNaWlpaWlCxiE43AekvPh2U7BayoWFMFABU5QPAG2JplYArMGSilwNrajADc1BSzPSMGpgQWtmMBKsrGG4SQtRg0qSZ0ZbM1M6KA9nLMpncIjw4jw/Vm6UpxYOkSGFDkYg2AYMxIeKZREQGM86mpHAyRMVq5p7bgCDCrGaRr1fbtHA+Rs0ujtOy5Ng4UHJeG8IBuil5raRgt4kGzR01g1BRqnlbpqRGmdVbWXMc4191TGoeZ4T5Whh/qTtWbpAr2TOK02IZSbzyvemPrKDzWP4fUeD7mXkYlfaAInTRwhPrESB+0H8oyag97U0mAEfK1WxvHzTeShzriDRKceHaXqsAryTcK5T9kKtymyuPPI+TCNbisYX4kfP7FU+P+sl7vufq2BcvReHyqFCXcPFhlu4NYH5yPVS8fzYomlCgrvWA0XkE3FgXZD3Cmp8qTHPTbsundgrnnUfkntXckpEYeN+ZHasCCCj9rV4lbF/7Al7iLS8B1bhvC/v8SJMyPqXmfGCgy3lk1la60xhIuDrpl38M9Jhjox3CBhnaFeB74LkdDup+FAxzi0dpvsby1hfojmB7eXAJeYJ+tzd74cr/Vyb+clLBN62x+6QHSd/QU7WIA5</source>
+  </file>
+  <file path="Radic/BladeExtensions/Helpers/Loop.php" generated-path="Radic.BladeExtensions.Helpers.Loop.html" hash="12feead2baede53f722b97f342e6f9fd" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="15" package="Blade Extensions">
+      <extends/>
+      <name>Loop</name>
+      <full_name>\Radic\BladeExtensions\Helpers\Loop</full_name>
+      <docblock line="15">
+        <description>Part of Radic - Blade Extensions.</description>
+        <long-description></long-description>
+        <tag name="package" line="15" description="Blade Extensions"/>
+        <tag name="version" line="15" description="1.2.0"/>
+        <tag name="author" line="15" description="Robin Radic"/>
+        <tag name="license" line="15" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="15" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="15" description="http://radic.nl" link="http://radic.nl"/>
+      </docblock>
+      <property static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="21" package="Blade Extensions">
+        <name>$stack</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::stack</full_name>
+        <default>array()</default>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="21" description="" type="array" variable="$stack">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="23" package="Blade Extensions">
+        <name>newLoop</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::newLoop()</full_name>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$items</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="28" package="Blade Extensions">
+        <name>addLoopStack</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::addLoopStack()</full_name>
+        <docblock line="28">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$stackItem</name>
+          <default></default>
+          <type>\Radic\BladeExtensions\Helpers\LoopItem</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="38" package="Blade Extensions">
+        <name>getStack</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::getStack()</full_name>
+        <docblock line="38">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="43" package="Blade Extensions">
+        <name>reset</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::reset()</full_name>
+        <docblock line="43">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="51" package="Blade Extensions">
+        <name>loop</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::loop()</full_name>
+        <docblock line="51">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="51" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="62" package="Blade Extensions">
+        <name>looped</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::looped()</full_name>
+        <docblock line="62">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="73" package="Blade Extensions">
+        <name>endLoop</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::endLoop()</full_name>
+        <docblock line="73">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="73" description="" type="" variable="$loop"/>
+        </docblock>
+        <argument line="0" by_reference="true">
+          <name>$loop</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="23" code="PPC:ERR-50015">Argument $items is missing from the Docblock of newLoop</error>
+      <error line="23" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="28" code="PPC:ERR-50015">Argument $stackItem is missing from the Docblock of addLoopStack</error>
+      <error line="28" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="38" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="43" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="51" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="62" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="73" code="PPC:ERR-50015">Argument $loop is missing from the Docblock of endLoop</error>
+      <error line="73" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="21" code="PPC:ERR-50007">No summary for property $stack</error>
+    </parse_markers>
+    <source>eJyVVe9r2zAQ/e6/4ghlJKW2m7JPyZqNjcEKHZQ2sC+FodgXW9SRjCQ3LSX/+06SndiO+2P6kDjWu3fvTu+UL1/LvATBNqhLliDcspQn998LluLPJ4NCcyn0/S8sSlR6HgTx6WkAp3DDlAG59nAIwQXAISIikMV9I9IHliHUq49zmEeiph8NZhpdROdug1Uml6p5D7dyxYVP6bYLnhDNnvv31RKu61ch5MaUszhWFh1tuAlrdCRV5qITWT4rnuUGYJxM4OJ8Og3p4/NZOw8R+e8lJrmQhcw46jq5eIDD6qQThS8/DoKkYFrDtZRl8BIEFuk6aJetnClgSrFnONGGOlVvxO67VNJgYjAF2jOkwWPg0oeMJ3NPWFYrqq0BrSuRGNtNgVubdnzCDW70xEFfgkavR89mLE0t6s4yjynESb2iiCaOslj8LhjWtE/XIWpIasn2sS8gjuFHjlSOL2pN51wyhcJAQcFgJCjMuDaogBvYcpODybl2u3sSvqazk5Uw46Yen3ACCziftLLZddASLjSaG5fNtYjO6IihrrtVu12u83/LSuc9/Fm71G7Lho8nQ+N71W+MQlMpAV36jzAqpKqO6Lo8bfO0GNuerPNv+BOmXT8Op7UHcpT1JKmUO8xLQJH2ezs/woWLFZIFcG/qVicazCuKP6oR0yOV1j64Kc3z0eH3rOOVtB3RPA1UFy7Ymmz7RovJ6Ixm42Dlt9VTDmfTTy6iX0RtSdp/tcv/NSY0mMtm0GDLNHC6qunSZkKanKbRvo/gD4L9R6ABpbFED6bbjLNVYaEp0LXHMwErazqLaA13dypd6Ds22QEWdKu/I5QEvipW4UY+olNCMns8dLdLGBWz8QgiGG5UBKMJjOaD0kVVFH1v7IJd8A9NOBpl</source>
+  </file>
+  <file path="Radic/BladeExtensions/Helpers/LoopItem.php" generated-path="Radic.BladeExtensions.Helpers.LoopItem.html" hash="30b21a31afbba9a355cc9eecc9a68bb5" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="13" package="Blade Extensions">
+      <extends/>
+      <name>LoopItem</name>
+      <full_name>\Radic\BladeExtensions\Helpers\LoopItem</full_name>
+      <docblock line="13">
+        <description>Part of Radic - Blade Extensions.</description>
+        <long-description></long-description>
+        <tag name="package" line="13" description="Blade Extensions"/>
+        <tag name="version" line="13" description="1.2.0"/>
+        <tag name="author" line="13" description="Robin Radic"/>
+        <tag name="license" line="13" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="13" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="13" description="http://radic.nl" link="http://radic.nl"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="16" package="Blade Extensions">
+        <name>$items</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::items</full_name>
+        <default>array()</default>
+        <docblock line="16">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="18" package="Blade Extensions">
+        <name>$data</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::data</full_name>
+        <default></default>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="20" package="Blade Extensions">
+        <name>$parentLoop</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::parentLoop</full_name>
+        <default></default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="26" package="Blade Extensions">
+        <name>setParentLoop</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::setParentLoop()</full_name>
+        <docblock line="26">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="26" description="&lt;p&gt;{@inheritdocs}&lt;/p&gt;" type="\Radic\BladeExtensions\Helpers\LoopItem" variable="$parentLoop">
+            <type>\Radic\BladeExtensions\Helpers\LoopItem</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$parentLoop</name>
+          <default></default>
+          <type>\Radic\BladeExtensions\Helpers\LoopItem</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="32" package="Blade Extensions">
+        <name>__construct</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::__construct()</full_name>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$items</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="37" package="Blade Extensions">
+        <name>setItems</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::setItems()</full_name>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$items</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="57" package="Blade Extensions">
+        <name>__get</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::__get()</full_name>
+        <docblock line="57">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="62" package="Blade Extensions">
+        <name>before</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::before()</full_name>
+        <docblock line="62">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="83" package="Blade Extensions">
+        <name>after</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopItem::after()</full_name>
+        <docblock line="83">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="26" code="PPC:ERR-50015">Argument $parentLoop is missing from the Docblock of setParentLoop</error>
+      <error line="26" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="32" code="PPC:ERR-50015">Argument $items is missing from the Docblock of __construct</error>
+      <error line="32" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="37" code="PPC:ERR-50015">Argument $items is missing from the Docblock of setItems</error>
+      <error line="37" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="57" code="PPC:ERR-50015">Argument $key is missing from the Docblock of __get</error>
+      <error line="57" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="62" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="83" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="16" code="PPC:ERR-50007">No summary for property $items</error>
+      <error line="18" code="PPC:ERR-50007">No summary for property $data</error>
+      <error line="20" code="PPC:ERR-50007">No summary for property $parentLoop</error>
+    </parse_markers>
+    <source>eJydlE1P4zAQhu/5FXNglRRIP9CetlsWrbTSIrESQtygqowzaaymdmS7CIT639d2vhqTFIQPrTrzzMzrmXF//iqyAjjZoioIRbgjCaOPv3OS4J8XjVwxwdXjX8wLlGoeBJPT0wBO4ZZIDSItcYjBBUAbMTaQ5a5M0g1ZI1TH5xzzbFKbHzUzG1+Mp85BdjoTsrbDnXhivCzp3DmjJk2T+9/1PdxUphgyrYsfk4m09HjLdFzRYyHXLpqK4lWydaYBIjqCi+lsFpuP7+eHdUyi8vseacZFLtYMVVWcb6A9nXI8N8gkoDlRCm6EKK41boO3ILBkIYVGqjGBE2bMChbwsJy/8yVEk/fWgkjk2qasfG4e9rheS7Jt6h3CNfJ2xXiGkulEULWvrJOyyO7JdAjSHafaDkOhvm3io76kIxf3FtQtONEZU/FlCzjroivag+0tH8ISCJd98D7olbdaUbM+Wu6ojso+Dsgx97DCVU0dzerDXkqWQsSUgSI3ntHowGePRL2TvL3k3hdTD7xMf9gNoUle/VgAFTuuu4K9nlmKSEleo46AkPEEX2ahS3MJs/MebwiVd+p5JT7X4cZbShpAQmgR80T8OimTSjd1zJDQA8zDqPwWSEmufEIkSQhHCXxG3uboK4J8rbO6F6XYhji+B6vV2g55g6/+CpQj7qyvxZZH0z1hKiRGfevUeQdlb5fwDS5gsYCpv18d2HZoaffANWc+DLpG2bdle3SwnIAm7lMVuoHDBTwl+49v+uEty1X6ivo28vOymv3+hDK3w18R1gT26hpYIZJqlO82qK+nZ2cD/7LV4x4G2tvH8QfIrGX2wT74D+HTNWI=</source>
+  </file>
+  <file path="Radic/BladeExtensions/BladeExtensionsServiceProvider.php" generated-path="Radic.BladeExtensions.BladeExtensionsServiceProvider.html" hash="6da8b96da4160d23e7a0abf755029547" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="ServiceProvider">\Illuminate\Support\ServiceProvider</namespace-alias>
+    <namespace-alias name="ForeachDirective">\Radic\BladeExtensions\Directives\ForeachDirective</namespace-alias>
+    <namespace-alias name="MacroDirective">\Radic\BladeExtensions\Directives\MacroDirective</namespace-alias>
+    <namespace-alias name="PartialDirective">\Radic\BladeExtensions\Directives\PartialDirective</namespace-alias>
+    <namespace-alias name="VariablesDirective">\Radic\BladeExtensions\Directives\VariablesDirective</namespace-alias>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="20" package="Default">
+      <extends>\Illuminate\Support\ServiceProvider</extends>
+      <name>BladeExtensionsServiceProvider</name>
+      <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider</full_name>
+      <docblock line="20">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="20" description="Default"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="28" package="Default">
+        <name>$defer</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::defer</full_name>
+        <default>false</default>
+        <docblock line="28">
+          <description>Indicates if loading of the provider is deferred.</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="boolean" variable="">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions" line="69" package="Default">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::blacklist</full_name>
+        <default>array()</default>
+        <docblock line="69">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="35" package="Default">
+        <name>register</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::register()</full_name>
+        <docblock line="35">
+          <description>Register the service provider.</description>
+          <long-description></long-description>
+          <tag name="return" line="35" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="45" package="Default">
+        <name>provides</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::provides()</full_name>
+        <docblock line="45">
+          <description>Get the services provided by the provider.</description>
+          <long-description></long-description>
+          <tag name="return" line="45" description="" type="array">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="56" package="Default">
+        <name>boot</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::boot()</full_name>
+        <docblock line="56">
+          <description>Boots the services provided. Attaches the blade extensions to the current Application's - ViewEnvironment</description>
+          <long-description></long-description>
+          <tag name="todo" line="56" description="remove test-blade route/view for stable release"/>
+          <tag name="return" line="56" description="" type="void">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="71" package="Default">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::attach()</full_name>
+        <docblock line="71">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <markers>
+      <todo line="56">remove test-blade route/view for stable release</todo>
+    </markers>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="20" code="PPC:ERR-50005">No summary for class ""</error>
+      <error line="71" code="PPC:ERR-50015">Argument $class is missing from the Docblock of attach</error>
+      <error line="71" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="69" code="PPC:ERR-50007">No summary for property $blacklist</error>
+    </parse_markers>
+    <source>eJyVVd9v0zAQfs9fcQ/Vkk5NwxBPKysbMNAkkKYN8bKiyU2urTXXjmwnMKH975wdpz+SDpgfmsb33Xffne+ct+/KVQmSrdGULEe4YQXPZ+8FK/Dyl0VpuJJmEkXZ8XEEx3DNtAW1aGCQggfCFjkmkMOdE9kDWyKE1cV5TI3avbSYk/Hr8StvYJVdKd3uw42ac9mE9GbBc6LZcH+9+gZfwlYKK2vL0yzTDj1ec5sG9FjppffOVfmo+XJlAZJ8CK9fnZyk9PNmtBuHiJrnN8xXUgm15GhCcPkA27UXTgqCZFFUkZIrIao1l8zi7LYqS6Xt7BZ1TWKutap5gXricQcLPvvINeaW12hmn5RGlq82O//p9pXlWr3UyR0vZ+Klbt+Z5mwu0Ow4RrlgxkDHq1MCQGcpDHT2o99R5Krru86tY7iSJIKqaYAvQCiSJJeuE+0KoWzpuIECF6g1FuPg2Pqf10zDXCkRNjL/JE9LirGAgXeEM1gwYZz+TvwbXHJjCeECmkbuJnAvmEZbaQm14sV+vGpO/QiLSlKZqPV1YE2G3vw7avtqYFfcpNMwRknsGyybu2qmuClnPILnLMOJ53rqJfIZ7W4Opk2igPnjXjWfS4ppzR7/mlVgML2sdhmSZxW+V8qawxrHcGEtTQM2dp81bLMGq/x+XlELSAsXZSlc15AtNjTT3zn+vJQ110quyd5N0KpCkca1qhGo02za8GtVWcxq8oUFXUvGul4nnEBm8MVHTj1oe4XJsv4MnZ4yn2sSeoGVZSiZd4D9Cf8XunuN/AvfvQoO47v9GjCSStVPaMt/AN7V15JTe+yWcUBHkj8IGhoa1bsfk+hgjVup/g7qjVZzqmewzeQudqcb/0inS7SXcskl3qBRonaTmU518z+JvWc89LAPal1y4QA7aRHXHvHWtGjyg4Rc772u+zXSZ64wrUxgBgbN3nBHrlt05SXBBGdnEDf5xV2YW7mSlssKJ3uWpx4dN/fNGDbR0+mmsEM4OgIuW3MTdgR93EvC7702J5BOm9s/6ZFszjEZ1ExUOAT3GUpcdVsdo0Ayeq5k7Qpj2aoP6EA8gsDpuYaTHsN+3XYAT6E5n6I/ZkbFfA==</source>
+  </file>
+  <file path="Radic/BladeExtensions/Directives/MacroDirective.php" generated-path="Radic.BladeExtensions.Directives.MacroDirective.html" hash="7eef27b413129098e2a7441fb568a0ea" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Application">\Illuminate\Foundation\Application</namespace-alias>
+    <namespace-alias name="Compiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
+    <namespace-alias name="BladeExtenderTrait">\Radic\BladeExtensions\Traits\BladeExtenderTrait</namespace-alias>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Directives" line="18" package="Blade Extensions">
+      <extends/>
+      <name>MacroDirective</name>
+      <full_name>\Radic\BladeExtensions\Directives\MacroDirective</full_name>
+      <docblock line="18">
+        <description>Part of Radic - Blade Extensions.</description>
+        <long-description></long-description>
+        <tag name="package" line="18" description="Blade Extensions"/>
+        <tag name="version" line="18" description="1.2.0"/>
+        <tag name="author" line="18" description="Robin Radic"/>
+        <tag name="license" line="18" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="18" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="18" description="http://radic.nl" link="http://radic.nl"/>
+      </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="8" package="Default">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default>array()</default>
+        <docblock line="8">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="23" package="Blade Extensions">
+        <name>openMacro</name>
+        <full_name>\Radic\BladeExtensions\Directives\MacroDirective::openMacro()</full_name>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="32" package="Blade Extensions">
+        <name>closeMacro</name>
+        <full_name>\Radic\BladeExtensions\Directives\MacroDirective::closeMacro()</full_name>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="39" package="Blade Extensions">
+        <name>doMacro</name>
+        <full_name>\Radic\BladeExtensions\Directives\MacroDirective::doMacro()</full_name>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="10" package="Default">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="10">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="23" code="PPC:ERR-50015">Argument $value is missing from the Docblock of openMacro</error>
+      <error line="23" code="PPC:ERR-50015">Argument $app is missing from the Docblock of openMacro</error>
+      <error line="23" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of openMacro</error>
+      <error line="23" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="32" code="PPC:ERR-50015">Argument $value is missing from the Docblock of closeMacro</error>
+      <error line="32" code="PPC:ERR-50015">Argument $app is missing from the Docblock of closeMacro</error>
+      <error line="32" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of closeMacro</error>
+      <error line="32" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="39" code="PPC:ERR-50015">Argument $value is missing from the Docblock of doMacro</error>
+      <error line="39" code="PPC:ERR-50015">Argument $app is missing from the Docblock of doMacro</error>
+      <error line="39" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of doMacro</error>
+      <error line="39" code="PPC:ERR-50008">No summary for method ""</error>
+    </parse_markers>
+    <source>eJy1U99r2zAQfvdfcQSD7eDYTdhT3LXdT1ZooJSwlyoMRVZtUVkSkpyslP7vk+U4zUIGhW16sKW777677046v1S1AoEbahQmFO5wyQj6yHFJv/y0VBgmhUGfmabEsg01RRC0hsI1523DBLYUfZWtKLF1OPRBKc6I3xfHsO+MbtEn2SjGqTZ9huEI2MCw7wNPl7HUmFlzYC6p9jZXVT4eBzCGW6wtyIeeACbgsfDKkTlQh7tyah9xRWG3jnEes3GVusOAmWaz7Mw7cGtrqQc73Mk1E31K73ZNcDR77sX1Em52pgnU1qp5nusOnTXMTnboTOrKRxOpnjSragsQkwRmZ9PpxH3epYd5HFH/X1JSC8llxajZJReP8Lp+Syd4Lz8PCMfGwAITLffDDZ6DLqLr/8kWe69q165geGgF6eYMUlHhaeJwg3lLUzi4BRBipdL9bCFcd7yJJ+qTdSvPwwZbUjvAe4jyq6ajQ/E9itBoFaPtOOm3KMmjItiH/SnIxdyjLSpXPm60SuNsnBzFampbLUBpWv3QVHF39eOBL4Xo3L+Kb8vFzXzuieNROB2le9VxOEueIUqh15wUnvjldIcIl4b+ZYsOtPaAyQXR1L2rW46Z6793xpEbly83St6u1dWdFACXF2+UU8p/p8XNrZT/YXLuTcjd+MJpN6zipL6X4Bf7cYYO</source>
+  </file>
+  <file path="Radic/BladeExtensions/Directives/VariablesDirective.php" generated-path="Radic.BladeExtensions.Directives.VariablesDirective.html" hash="d10f854dc2658f678f780a74e4e0987c" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Application">\Illuminate\Foundation\Application</namespace-alias>
+    <namespace-alias name="Compiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
+    <namespace-alias name="BladeExtenderTrait">\Radic\BladeExtensions\Traits\BladeExtenderTrait</namespace-alias>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Directives" line="18" package="Blade Extensions">
+      <extends/>
+      <name>VariablesDirective</name>
+      <full_name>\Radic\BladeExtensions\Directives\VariablesDirective</full_name>
+      <docblock line="18">
+        <description>Part of Radic - Blade Extensions.</description>
+        <long-description></long-description>
+        <tag name="package" line="18" description="Blade Extensions"/>
+        <tag name="version" line="18" description="1.2.0"/>
+        <tag name="author" line="18" description="Robin Radic"/>
+        <tag name="license" line="18" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="18" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="18" description="http://radic.nl" link="http://radic.nl"/>
+      </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="21" package="Blade Extensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Directives\VariablesDirective::blacklist</full_name>
+        <default>array()</default>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="23" package="Blade Extensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Directives\VariablesDirective::attach()</full_name>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="44" package="Blade Extensions">
+        <name>addSet</name>
+        <full_name>\Radic\BladeExtensions\Directives\VariablesDirective::addSet()</full_name>
+        <docblock line="44">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="49" package="Blade Extensions">
+        <name>addUnset</name>
+        <full_name>\Radic\BladeExtensions\Directives\VariablesDirective::addUnset()</full_name>
+        <docblock line="49">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="54" package="Blade Extensions">
+        <name>addDebug</name>
+        <full_name>\Radic\BladeExtensions\Directives\VariablesDirective::addDebug()</full_name>
+        <docblock line="54">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="23" code="PPC:ERR-50015">Argument $app is missing from the Docblock of attach</error>
+      <error line="23" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="44" code="PPC:ERR-50015">Argument $value is missing from the Docblock of addSet</error>
+      <error line="44" code="PPC:ERR-50015">Argument $app is missing from the Docblock of addSet</error>
+      <error line="44" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of addSet</error>
+      <error line="44" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="49" code="PPC:ERR-50015">Argument $value is missing from the Docblock of addUnset</error>
+      <error line="49" code="PPC:ERR-50015">Argument $app is missing from the Docblock of addUnset</error>
+      <error line="49" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of addUnset</error>
+      <error line="49" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="54" code="PPC:ERR-50015">Argument $value is missing from the Docblock of addDebug</error>
+      <error line="54" code="PPC:ERR-50015">Argument $app is missing from the Docblock of addDebug</error>
+      <error line="54" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of addDebug</error>
+      <error line="54" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="21" code="PPC:ERR-50007">No summary for property $blacklist</error>
+    </parse_markers>
+    <source>eJytVd9P2zAQfs9fcQ8RibukoWh7aWjLNjYJab/EGC+kQ27qphapE9lOAQH/+y7Oj6YtQ2KaH1Lb9913353P7vEkX+Yg6IqpnMYMzumcx9GHlM7ZpzvNhOKZUNEplyzWfM1UaFmFYnCWpsWKC6pZ9DkrxJxqxEXv8zzlsZmHu7BLzm6jj9kq5ymTqorQLIEqaOaV4/MyLiTlWnW250yaPVQV9HoW9OAHlRqyRUUAPhgsbDj6CCpxJ5jtDU0Y1GMXZzBrVIqLBjPoH/UPjYEWepnJZh/OsxkXVUhjxiIgTcv99ewCvtRbPiy1zodBIEt0f8W1X6P7mUyMd5zl95InSw3gxgSODgcDHz9vvW4cJKp+L1i8FFmaJZypOri4gc3YCifSKv3AilOqFFxSyeksZao9YOvBskq3vJihLrBnKdYp5UrDCK6m4ZZRaTzqGBaFiMsjB6o1jZdupwvApnlOjM+D1SgqObHWI2O8ctbYGM7UHydMfxIJF+ycqSzF0rvEH8tq7jrGxyEG1rSKS8INaZXQCAS7rYVtjItMMlQGLjpfG+D1iuEJzpVb+ZGyA+1qj3SkloMvwK1NMBqBU2Xp7MLKEWdCc1GwcMvytEfH1TWVkt7X0f1xW2UCBwfARWOuwnqwj3tN+K1lVX1/zMz9cfdI2tN07TVNC0agvI9ueVaNDq8m8f5WsmZIpgspWvU1uib2oOY0XCTcY9iuWwdQGeq8ggDDJOxuOGxbvVwODgf9OFsFMrj/Nki+vwuOup27adn5/CfTraLd1vXaZ6mRudPLdYY5xryWLMfjwV4NThTTketOhpH9WH4dQtx+b0LM/JF4kcIliUjgeOAcmxc4su1BeSWOQpiMcbsufthN9Rnxv/Dh+P/yC/FyAlvKDdgt9ZPXaT9lsyL5d+32iup4iWa8k8HJ3JBNhmpCUPjVb5dM35BeKbT7RmRiwROonx5/XK2vHPM4BtXFYO1fwHBoSJ1ph6EuUsnQOGPxcrxJzhT64NgDB39aG0YxptB6seRNKl4bYK+IT9YfD949aA==</source>
+  </file>
+  <file path="Radic/BladeExtensions/Directives/ForeachDirective.php" generated-path="Radic.BladeExtensions.Directives.ForeachDirective.html" hash="343978794dc209798d7bae474495262e" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Application">\Illuminate\Foundation\Application</namespace-alias>
+    <namespace-alias name="Compiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
+    <namespace-alias name="BladeExtenderTrait">\Radic\BladeExtensions\Traits\BladeExtenderTrait</namespace-alias>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Directives" line="18" package="Blade Extensions">
+      <extends/>
+      <name>ForeachDirective</name>
+      <full_name>\Radic\BladeExtensions\Directives\ForeachDirective</full_name>
+      <docblock line="18">
+        <description>Part of Radic - Blade Extensions.</description>
+        <long-description></long-description>
+        <tag name="package" line="18" description="Blade Extensions"/>
+        <tag name="version" line="18" description="1.2.0"/>
+        <tag name="author" line="18" description="Robin Radic"/>
+        <tag name="license" line="18" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="18" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="18" description="http://radic.nl" link="http://radic.nl"/>
+      </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="8" package="Default">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default>array()</default>
+        <docblock line="8">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="23" package="Blade Extensions">
+        <name>openForeach</name>
+        <full_name>\Radic\BladeExtensions\Directives\ForeachDirective::openForeach()</full_name>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Blade Extensions">
+        <name>closeForeach</name>
+        <full_name>\Radic\BladeExtensions\Directives\ForeachDirective::closeForeach()</full_name>
+        <docblock line="35">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="47" package="Blade Extensions">
+        <name>addBreak</name>
+        <full_name>\Radic\BladeExtensions\Directives\ForeachDirective::addBreak()</full_name>
+        <docblock line="47">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="60" package="Blade Extensions">
+        <name>addContinue</name>
+        <full_name>\Radic\BladeExtensions\Directives\ForeachDirective::addContinue()</full_name>
+        <docblock line="60">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="10" package="Default">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="10">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="23" code="PPC:ERR-50015">Argument $value is missing from the Docblock of openForeach</error>
+      <error line="23" code="PPC:ERR-50015">Argument $app is missing from the Docblock of openForeach</error>
+      <error line="23" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of openForeach</error>
+      <error line="23" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="35" code="PPC:ERR-50015">Argument $value is missing from the Docblock of closeForeach</error>
+      <error line="35" code="PPC:ERR-50015">Argument $app is missing from the Docblock of closeForeach</error>
+      <error line="35" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of closeForeach</error>
+      <error line="35" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="47" code="PPC:ERR-50015">Argument $value is missing from the Docblock of addBreak</error>
+      <error line="47" code="PPC:ERR-50015">Argument $app is missing from the Docblock of addBreak</error>
+      <error line="47" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of addBreak</error>
+      <error line="47" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="60" code="PPC:ERR-50015">Argument $value is missing from the Docblock of addContinue</error>
+      <error line="60" code="PPC:ERR-50015">Argument $app is missing from the Docblock of addContinue</error>
+      <error line="60" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of addContinue</error>
+      <error line="60" code="PPC:ERR-50008">No summary for method ""</error>
+    </parse_markers>
+    <source>eJy1Uttu2zAMffdX8MFA7CCx62DAsKRru3YrWqDFiqLYk4FBkZlYqCJpktx2GPrvk3xL0gW7FIseEpo8PCQPeXisSgWCrNAoQhFuScFofspJgZ+eLArDpDD5R6aRWvaAZhYElUG45LxaMUEs5ueyEgWxDpd/UIozWtuzl7AvDB/zM7lSjKM2TYXuE4iBzm4Sd7dxpwmzZsNdoK59rqt0OAxgCDdEW5CLhgDGUGNhzZE4kMeduGnvyRKhfS9xNebBdeo+OkyWTJKDOkAqW0rd+eFWzploStZhJ4Kj6bmvL+/gqnWNobRWTdNUe3SyYnbcohOpl3U2leq7ZsvSAkQ0hslBlo3dz5vRZh1H1PzfIS2F5HLJ0LTFxT2s31Y5wZvx04ByYgycS42Elv16gx+Bz/Eb2CmyD6YpaFziE1g0dtrze1d2kCVUrlKdfrt4h5/fppM6Q1VzNyMsKkH9aYBUKNrKUfhAeIUj2DgdCIlSo/4gIJz7VuKaqunPv3BFLC1d+D0M0pNFQ5dHUTKMo+NpboiJvZ3H6WC2TtKouD9zl3ToL7+P5Lsv7gK58ud6JaWaTgU+eiMKs3jNuegmyfwZh5N4ui7HHdrV+ityj402eI+PBq3i/mm0lRagnM5f2yGiToJRP5ezaj1bmudgp/6US4P/cwENYHxEHaXFG06YuG6C0cDdT6vQIN69iDB7xSq8Wlhs6rUuNPs3KpfYbNVzbi0gnOxrBaQoTl2v93uXf+6reOV/O0Yf3GQebXl/WVPN/EKt7ZRmtt71R0XOpLBMVLh3UWhbaC+6vPJ8u55epehz8BOwxFA0</source>
+  </file>
+  <file path="Radic/BladeExtensions/Directives/PartialDirective.php" generated-path="Radic.BladeExtensions.Directives.PartialDirective.html" hash="5a981e0006dea2bf2cdadfd3ddabe3c5" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Application">\Illuminate\Foundation\Application</namespace-alias>
+    <namespace-alias name="Compiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
+    <namespace-alias name="BladeExtenderTrait">\Radic\BladeExtensions\Traits\BladeExtenderTrait</namespace-alias>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Directives" line="18" package="Blade Extensions">
+      <extends/>
+      <name>PartialDirective</name>
+      <full_name>\Radic\BladeExtensions\Directives\PartialDirective</full_name>
+      <docblock line="18">
+        <description>Part of Radic - Blade Extensions.</description>
+        <long-description></long-description>
+        <tag name="package" line="18" description="Blade Extensions"/>
+        <tag name="version" line="18" description="1.2.0"/>
+        <tag name="author" line="18" description="Robin Radic"/>
+        <tag name="license" line="18" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="18" description="(c) 2011-2014, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="18" description="http://radic.nl" link="http://radic.nl"/>
+      </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="8" package="Default">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default>array()</default>
+        <docblock line="8">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="22" package="Blade Extensions">
+        <name>addPartial</name>
+        <full_name>\Radic\BladeExtensions\Directives\PartialDirective::addPartial()</full_name>
+        <docblock line="22">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="36" package="Blade Extensions">
+        <name>endPartial</name>
+        <full_name>\Radic\BladeExtensions\Directives\PartialDirective::endPartial()</full_name>
+        <docblock line="36">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="43" package="Blade Extensions">
+        <name>openBlock</name>
+        <full_name>\Radic\BladeExtensions\Directives\PartialDirective::openBlock()</full_name>
+        <docblock line="43">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="50" package="Blade Extensions">
+        <name>endBlock</name>
+        <full_name>\Radic\BladeExtensions\Directives\PartialDirective::endBlock()</full_name>
+        <docblock line="50">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="57" package="Blade Extensions">
+        <name>addRender</name>
+        <full_name>\Radic\BladeExtensions\Directives\PartialDirective::addRender()</full_name>
+        <docblock line="57">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$blade</name>
+          <default></default>
+          <type>\Illuminate\View\Compilers\BladeCompiler</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="10" package="Default">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="10">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="22" code="PPC:ERR-50015">Argument $value is missing from the Docblock of addPartial</error>
+      <error line="22" code="PPC:ERR-50015">Argument $app is missing from the Docblock of addPartial</error>
+      <error line="22" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of addPartial</error>
+      <error line="22" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="36" code="PPC:ERR-50015">Argument $value is missing from the Docblock of endPartial</error>
+      <error line="36" code="PPC:ERR-50015">Argument $app is missing from the Docblock of endPartial</error>
+      <error line="36" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of endPartial</error>
+      <error line="36" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="43" code="PPC:ERR-50015">Argument $value is missing from the Docblock of openBlock</error>
+      <error line="43" code="PPC:ERR-50015">Argument $app is missing from the Docblock of openBlock</error>
+      <error line="43" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of openBlock</error>
+      <error line="43" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="50" code="PPC:ERR-50015">Argument $value is missing from the Docblock of endBlock</error>
+      <error line="50" code="PPC:ERR-50015">Argument $app is missing from the Docblock of endBlock</error>
+      <error line="50" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of endBlock</error>
+      <error line="50" code="PPC:ERR-50008">No summary for method ""</error>
+      <error line="57" code="PPC:ERR-50015">Argument $value is missing from the Docblock of addRender</error>
+      <error line="57" code="PPC:ERR-50015">Argument $app is missing from the Docblock of addRender</error>
+      <error line="57" code="PPC:ERR-50015">Argument $blade is missing from the Docblock of addRender</error>
+      <error line="57" code="PPC:ERR-50008">No summary for method ""</error>
+    </parse_markers>
+    <source>eJy9VN1r2zAQf57/insw2C5O0oQ9tV26dR9ssLJSyp4MRpEvsYhjCVnOWkb/950kx0m6UNqOTg+xfHe60+8jPjtXpYKarbBRjCNcs0Lw7KJiBX6+NVg3QtZN9klo5EassTkNgrZB+FZV7UrUzGD2RbZ1wQzVZR+UqgR3+9OHZT8F/so+ypUSFerGT9i8Amtgs/cHD1/jRjNhmp1wgdrF6Fajo6MAjuCKaQNy7hvAAFwtbHsMqcjWvSe0S7ZA6NbDOlezppvSy6ZmPJwMj12CtaaUehOHazkTtR/p0kQCtel7X367ge9daAClMepkNNK2ergSZtBVD6VeuNNcqjstFqUBiHkCk+PxeEA/b9PdOdTIP2+Ql7Ws5EJg0w2vl7Bde+PqysMfBbxiTePYEqzq5Q1+B/aMVeAgyTap2hndGOZtza3QwIqiaxOHa1a1mMKODyBkSqW9uhDObN/EdfLD7ApXzPCS0u+6gsGUayTb/FBYX/pcHCk/Jkq6m9il0bS6BqVxkWtUFXk4Dnbg963TvWgUjs+c87PDTvuKlbI27ZCdnGjHQ/caTtIIhvsNF2jyAueixiJfM93ESdpzFIdzAp9CaBOJozcO8xzrdUIkvLHLpQg+05rd5XjLUZnYBVMfi7Moz+l/xrIoBbtXzJRZlBAZrgHeGs14dyY5hfNptA/Zi9OH6Jx93B8WldD+u6h0Q4MkzkNRryomtqrSqKcKu+mYbvUj90vwXA6mK7bEfa4HUy9cTIzcO1bCSZR2XDxOgSTrXVSSL1+BgR78zA54Ce6n+rYxtHMwwok3xZPAE2mvhf0v9f8DB1J5NM9zAH3Zrr17XtEB3p8vtv7zvl+PGuE++APru4S5</source>
+  </file>
+  <package name="Blade Extensions" full_name="Blade Extensions"/>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="Radic" full_name="Radic">
+    <namespace name="BladeExtensions" full_name="Radic\BladeExtensions">
+      <namespace name="Directives" full_name="Radic\BladeExtensions\Directives"/>
+      <namespace name="Helpers" full_name="Radic\BladeExtensions\Helpers"/>
+      <namespace name="Traits" full_name="Radic\BladeExtensions\Traits"/>
+    </namespace>
+  </namespace>
+  <deprecated count="0"/>
+</project>

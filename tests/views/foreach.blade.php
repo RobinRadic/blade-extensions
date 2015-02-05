@@ -60,7 +60,7 @@
 
 @foreach($dataClass->getArray() as $key => $val)
 
-	@assertTrue($loop instanceof \Radic\BladeExtensions\Core\LoopItemInterface, '$loop should be an instance of LoopItemInterface')
+    {{-- @assertTrue($loop instanceof \Radic\BladeExtensions\Helpers\LoopItem, '$loop should be an instance of LoopItem') --}}
 	@assertTrue($loop->index == $key, 'index')
 	@assertTrue($loop->index1 == $key + 1, '1 based index')
 	@assertTrue($loop->revindex == ($total - 1) - $key, 'revindex')
@@ -92,7 +92,7 @@
 
 	@foreach($dataClass->getArray() as $key2 => $val2)
 
-		@assertTrue($loop instanceof \Radic\BladeExtensions\Core\LoopItemInterface, '$loop should be an instance of LoopItemInterface')
+        {{-- @assertTrue($loop instanceof \Radic\BladeExtensions\Helpers\LoopItem, '$loop should be an instance of LoopItem') --}}
 		@assertTrue($loop->index == $key2, 'index')
 		@assertTrue($loop->index1 == $key2 + 1, '1 based index')
 		@assertTrue($loop->revindex == ($total - 1) - $key2, 'revindex')

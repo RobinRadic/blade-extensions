@@ -3,16 +3,19 @@
 /**
  * Part of Radic - Blade Extensions.
  *
- * @package    Blade Extensions
- * @version    1.2.0
- * @author     Robin Radic
- * @license    MIT License - http://radic.mit-license.org
+ * @package        Blade Extensions
+ * @version        1.2.0
+ * @author         Robin Radic
+ * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
- * @link       http://radic.nl
+ * @link           http://radic.nl
  */
 
 use Illuminate\Support\ServiceProvider;
-use Radic\BladeExtensions\Directives\PartialFactory;
+use Radic\BladeExtensions\Directives\ForeachDirective;
+use Radic\BladeExtensions\Directives\MacroDirective;
+use Radic\BladeExtensions\Directives\PartialDirective;
+use Radic\BladeExtensions\Directives\VariablesDirective;
 
 class BladeExtensionsServiceProvider extends ServiceProvider
 {
@@ -32,28 +35,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->package('radic/blade-extensions', 'radic/blade-extensions');
-
-        $this->registerPartialFactory();
-    }
-
-
-    protected function registerPartialFactory()
-    {
-        $this->app->bindShared('view', function ($app) {
-            // Next we need to grab the engine resolver instance that will be used by the
-            // environment. The resolver will be used by an environment to get each of
-            // the various engine implementations such as plain PHP or Blade engine.
-            $resolver = $app['view.engine.resolver'];
-            $finder = $app['view.finder'];
-            $env = new PartialFactory($resolver, $finder, $app['events']);
-
-            // We will also set the container instance on this view environment since the
-            // view composers may be classes registered in the container, which allows
-            // for great testable, flexible composers for the application developer.
-            $env->setContainer($app);
-            $env->share('app', $app);
-            return $env;
-        });
     }
 
     /**
@@ -74,8 +55,36 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        BladeExtender::attach($this->app);
+        //VariablesDirective::attach($this->app);
+       // MacroDirective::attach($this->app);
+       // ForeachDirective::attach($this->app);
+       // PartialDirective::attach($this->app);
+
+        $this->attach(new VariablesDirective);
+        $this->attach(new ForeachDirective);
 
     }
 
+
+    public $blacklist = [];
+
+    public function attach($class)
+    {
+        $blade = $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler();
+        $app = $this->app;
+        foreach (get_class_methods($class) as $method) {
+            if ($method == 'attach') {
+                continue;
+            }
+            if (is_array($class->blacklist) && in_array($method, $class->blacklist)) {
+                continue;
+            }
+
+            $blade->extend(
+                function ($value) use ($app, $class, $blade, $method) {
+                    return $class->$method($value, $app, $blade);
+                }
+            );
+        }
+    }
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="blade-extensions" default="debug" basedir=".">
+    <taskdef name="bin" classname="dev.BinTask" />
+
+    <property name="builddir" value="${project.basedir}/build" />
+    <property name="bindir" value="${project.basedir}/vendor/bin"/>
+    <property name="srcdir" value="${project.basedir}/src" />
+    <property name="debug" value="true" />
+
+    <target name="prepare">
+        <exec command="composer dumpautoload"  />
+        <delete dir="${builddir}"/>
+        <mkdir dir="${builddir}" />
+    </target>
+
+    <target name="debug" depends="prepare">
+        <echo message="Running PHP Mess Detector" />
+        <bin command="phpmd ${srcdir} text codesize,naming" passthru="true" />
+
+        <echo message="Running PHP Code Sniffer" />
+        <bin command="phpcs --report-info --standard=PSR2 ${srcdir}" passthru="true" />
+
+        <echo message="Running PHPUnit" />
+        <bin command="phpunit --configuration ${project.basedir}/phpunit.xml" passthru="true" />
+    </target>
+
+    <target name="build" depends="debug">
+        <echo message="PHP Mess Detector generating reportfile to ${builddir}/phpmd.xml" />
+        <bin command="phpmd ${srcdir} xml codesize,naming --reportfile ${builddir}/phpmd.xml " />
+
+
+        <echo message="PHP Code Sniffer generating reportfile to ${builddir}/phpmd.xml" />
+        <bin command="phpcs --standard=PSR2 ${srcdir} --report-xml --report-file=${builddir}/phpcs.xml"/>
+
+
+        <echo message="PHPUnit generating several reports (xml, html, clover, junit)" />
+        <bin command="phpunit --configuration ${project.basedir}/phpunit.xml --coverage-xml ${builddir}/coverage-xml --coverage-html ${builddir}/coverage --coverage-clover ${builddir}/phpunit.clover.xml --log-junit ${builddir}/phpunit.junit.xml" />
+
+        <echo message="PHPDocumentator generating documentation" />
+        <bin command="phpdoc -c ${project.basedir}/phpdoc.xml" />
+
+        <echo message="Reports and logs generated"/>
+    </target>
+
+
+</project>

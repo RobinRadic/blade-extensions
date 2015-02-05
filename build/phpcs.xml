@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpcs version="2.2.0">
+<file name="/mnt/safe/projects/blade-extensions/src/Radic/BladeExtensions/Traits/BladeViewTestingTrait.php" errors="1" warnings="0" fixable="1">
+ <error line="89" column="1" source="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" severity="5" fixable="1">The closing brace for the trait must go on the next line after the body</error>
+</file>
+</phpcs>
+

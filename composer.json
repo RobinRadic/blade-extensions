@@ -1,44 +1,49 @@
 {
-  "name": "radic/blade-extensions",
-  "description": "Laravel package providing additional Blade extensions: foreach (with $loop data like twig), break, continue, set,array (multiline), etc",
-  "homepage": "https://github.com/RobinRadic/blade-extensions",
-  "keywords": [
-    "loop",
-    "extensions",
-    "blade",
-    "laravel"
-  ],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Robin Radic",
-      "email": "robin@radic.nl",
-      "role": "Package Author/Developer"
-    }
-  ],
-  "require": {
-    "php": ">=5.4.0",
-    "illuminate/support": "4.*"
-  },
-  "suggest": {
-    "raveren/kent": ">0.9.1"
-  },
-  "require-dev": {
-    "orchestra/testbench": "2.2.*",
-    "laravel/framework": "4.2.*",
-    "mockery/mockery": "dev-master",
-    "phpunit/phpunit": "*",
-    "barryvdh/laravel-ide-helper": "1.*",
-    "ncuesta/pinocchio": "dev-master"
-  },
-  "scripts": {
-    "test": "phpunit",
-    "livedoc": "grip --gfm --context=robinradic/blade-extensions"
-  },
-  "autoload": {
-    "psr-0": {
-      "Radic\\BladeExtensions": "src/"
-    }
-  },
-  "minimum-stability": "stable"
+    "name": "radic/blade-extensions",
+    "description": "Laravel package providing additional Blade extensions: foreach (with $loop data like twig), break, continue, set,array (multiline), etc",
+    "homepage": "https://github.com/RobinRadic/blade-extensions",
+    "keywords": [
+        "loop",
+        "extensions",
+        "blade",
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robin Radic",
+            "email": "robin@radic.nl",
+            "role": "Package Author/Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.*"
+    },
+    "suggest": {
+        "raveren/kent": ">0.9.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "2.2.*",
+        "laravel/framework": "4.2.*",
+        "mockery/mockery": "dev-master",
+        "barryvdh/laravel-ide-helper": "1.*",
+        "phpunit/phpunit": "4.*",
+        "phing/phing": "2.*",
+        "phpmd/phpmd": "~2.2",
+        "squizlabs/php_codesniffer": "2.*",
+        "phpdocumentor/phpdocumentor": "2.*",
+
+        "phploc/phploc": "*"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpmd": "php vendor/bin/phpmd"
+    },
+    "autoload": {
+        "psr-0": {
+            "Radic\\BladeExtensions": "src/"
+        }
+    },
+    "minimum-stability": "stable"
 }
