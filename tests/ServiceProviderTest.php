@@ -1,24 +1,29 @@
 <?php
 
 use Mockery as m;
-use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
+use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 
-
+/**
+ * Class ViewTest
+ *
+ * @author     Robin Radic
+ *
+ */
 class ServiceProviderTest extends Orchestra\Testbench\TestCase
 {
-    use BladeViewTestingTrait;
+
 
     public function setUp()
     {
         parent::setUp();
-        $this->addBladeViewTesting(__DIR__ . '/views');
     }
+
 
     public function testServiceProvider()
     {
-        $this->registerBladeProvider();
-        $loadedProviders = $this->app->getLoadedProviders();
-        $this->assertArrayHasKey('Radic\BladeExtensions\BladeExtensionsServiceProvider', $loadedProviders);
-        $this->assertTrue($loadedProviders['Radic\BladeExtensions\BladeExtensionsServiceProvider']);
+        $this->app->register(new BladeExtensionsServiceProvider($this->app));
+        $providers = $this->app->getLoadedProviders();
+        $this->assertArrayHasKey('Radic\BladeExtensions\BladeExtensionsServiceProvider', $providers);
+        $this->assertTrue($providers['Radic\BladeExtensions\BladeExtensionsServiceProvider']);
     }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="Partial.php">
+    <totals>
+      <lines total="101" comments="56" code="45" executable="17" executed="16" percent="94.12%"/>
+      <methods count="6" tested="5" percent="83.33%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="0" percent="0.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="Partial" start="15" executable="17" executed="16" crap="9.02">
+      <package full="Radic.Helpers" name="Radic" sub="Helpers" category=""/>
+      <namespace name="Radic\BladeExtensions\Helpers"/>
+      <method name="renderPartial" signature="renderPartial($file, $vars, \Closure $callback)" start="35" end="39" crap="1" executable="3" executed="3" coverage="100"/>
+      <method name="startBlock" signature="startBlock($block, $content = '')" start="48" end="57" crap="3" executable="7" executed="7" coverage="100"/>
+      <method name="stopBlock" signature="stopBlock()" start="64" end="68" crap="1" executable="3" executed="3" coverage="100"/>
+      <method name="renderBlock" signature="renderBlock($block, $default = '')" start="77" end="80" crap="2" executable="1" executed="1" coverage="100"/>
+      <method name="getBlocks" signature="getBlocks()" start="87" end="90" crap="2" executable="1" executed="0" coverage="0"/>
+      <method name="flushBlocks" signature="flushBlocks()" start="97" end="100" crap="1" executable="2" executed="2" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="37">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="38">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="39">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="50">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="51">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="52">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="53">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="54">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="55">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="57">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="66">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="67">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="68">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="79">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="99">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="100">
+        <covered by="ViewTest::testPartials"/>
+      </line>
+    </coverage>
+  </file>
+</phpunit>

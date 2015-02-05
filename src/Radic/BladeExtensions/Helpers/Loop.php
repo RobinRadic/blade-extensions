@@ -1,85 +1,149 @@
 <?php namespace Radic\BladeExtensions\Helpers;
 
 /**
- * Part of Radic - Blade Extensions.
+ * Represents the $loop variable in the foreach directive. Handles all data.
  *
- * @package        Blade Extensions
- * @version        1.2.0
+ * @package        Radic\BladeExtensions
+ * @subpackage     Helpers
+ * @version        1.3.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
- * @link           http://radic.nl
+ * @link           http://robin.radic.nl/blade-extensions
  *
  */
-
 class Loop
 {
 
     /**
-     * @var array $stack
-     */
-    protected static $stack = array();
-
-    public static function newLoop($items)
-    {
-        static::addLoopStack(new LoopItem($items));
-    }
-
-    protected static function addLoopStack(LoopItem $stackItem)
-    {
-        // Check stack for parent loop to register it with this loop
-        if (count(static::$stack) > 0) {
-            $stackItem->setParentLoop(last(static::$stack));
-        }
-
-        array_push(static::$stack, $stackItem);
-    }
-
-    public static function getStack()
-    {
-        return static::$stack;
-    }
-
-    public static function reset()
-    {
-        static::$stack = array();
-    }
-
-    /**
-     * @return mixed
-     */
-    public static function loop()
-    {
-        $current = end(static::$stack);
-        $current->before();
-
-        return $current;
-    }
-
-    /**
+     * The array that is being iterated
      *
+     * @var array
      */
-    public static function looped()
+    protected $items = [];
+
+    /**
+     * The data for the current $loop item
+     *
+     * @var array
+     */
+    protected $data;
+
+    /**
+     * The parent loop, if any
+     *
+     * @var Loop
+     */
+    protected $parentLoop;
+
+    /**
+     * Sets the parent loop
+     *
+     * @param Loop $parentLoop
+     * {@inheritdocs}
+     */
+    public function setParentLoop(Loop $parentLoop)
     {
-        if (empty(static::$stack)) {
+        $this->parentLoop     = $parentLoop;
+        $this->data['parent'] = $parentLoop;
+    }
+
+    /**
+     * Returns the full loop stack of the LoopFactory
+     *
+     * @return array
+     */
+    public function getLoopStack()
+    {
+        return LoopFactory::getStack();
+    }
+
+    /**
+     * Resets the loop stack of the LoopFactory
+     */
+    public function resetLoopStack()
+    {
+        LoopFactory::reset();
+    }
+
+    /**
+     * Instantiates the class
+     *
+     * @param array $items The array that's being iterated
+     */
+    public function __construct($items)
+    {
+        $this->setItems($items);
+    }
+
+    /**
+     * Sets the array to monitor
+     *
+     * @param array $items The array that's being iterated
+     */
+    public function setItems($items)
+    {
+        if (isset($data)) {
             return;
         }
-        end(static::$stack)->after();
+        $this->items = $items;
+        $total       = count($items);
+        $this->data  = array(
+            'index1'    => 1,
+            'index'     => 0,
+            'revindex1' => $total,
+            'revindex'  => $total - 1,
+            'first'     => true,
+            'last'      => false,
+            'odd'       => false,
+            'even'      => true,
+            'length'    => $total
+        );
     }
 
     /**
-     * @param $loop
+     * Magic method to access the loop data properties
+     *
+     * @param $key
+     * @return mixed
      */
-    public static function endLoop(&$loop)
+    public function __get($key)
     {
-        array_pop(static::$stack);
-        if (count(static::$stack) > 0) {
-            // This loop was inside another loop. We persist the loop variable and assign back the parent loop
-            $loop = end(static::$stack);
+        return $this->data[$key];
+    }
+
+    /**
+     * To be called first in a loop before anything else
+     */
+    public function before()
+    {
+        if ($this->data['index'] % 2 == 0) {
+            $this->data['odd']  = false;
+            $this->data['even'] = true;
         } else {
-            // This loop was not inside another loop. We remove the var
-            //echo "l:(" . count(static::$stack) . ") ";
-            $loop = null;
+            $this->data['odd']  = true;
+            $this->data['even'] = false;
         }
+        if ($this->data['index'] == 0) {
+            $this->data['first'] = true;
+        } else {
+            $this->data['first'] = false;
+        }
+        if ($this->data['revindex'] == 0) {
+            $this->data['last'] = true;
+        } else {
+            $this->data['last'] = false;
+        }
+    }
+
+    /**
+     * To be called last in a loop after everything else
+     */
+    public function after()
+    {
+        $this->data['index']++;
+        $this->data['index1']++;
+        $this->data['revindex']--;
+        $this->data['revindex1']--;
     }
 }

@@ -22,8 +22,7 @@
 <li><a>Namespaces</a></li>
 <li><a href="../namespaces/Radic.html"><i class="icon-th"></i> Radic</a></li>
 <li><a>Packages</a></li>
-<li><a href="../packages/Blade%20Extensions.html"><i class="icon-folder-open"></i> Blade Extensions</a></li>
-<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Radic.html"><i class="icon-folder-open"></i> Radic</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -34,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">113</span></a></li>
+                <span class="label label-info">42</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -63,12 +62,11 @@
 <ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
 <li class="nav-header">
 <i title="Methods" class="icon-custom icon-method"></i> Methods
-                    <ul><li class="method public "><a href="#method_attach" title="attach() :: "><span class="description">attach()
-        </span><pre>attach()</pre></a></li></ul>
+                    <ul><li class="method public "><a href="#method_attach" title="attach() :: Instanciate and execute all functions as blade extends"><span class="description">Instanciate and execute all functions as blade extends</span><pre>attach()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
-                    <ul><li class="property public "><a href="#property_blacklist" title="$blacklist() :: "><span class="description"></span><pre>$blacklist</pre></a></li></ul>
+                    <ul><li class="property public "><a href="#property_blacklist" title="$blacklist() :: An array of methods that should be excluded by attach"><span class="description"></span><pre>$blacklist</pre></a></li></ul>
 </li>
 </ul>
 </div>
@@ -89,31 +87,59 @@
 </li>
 </ul>
 <div xmlns:php="http://php.net/xsl" class="element trait">
-<p class="short_description"></p>
+<p class="short_description">Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends</p>
 <div class="details">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>package</th>
-<td><a href="../packages/Default.html">Default</a></td>
-</tr></table>
+<td><a href="../packages/Radic.BladeExtensions.Traits.html">Radic\BladeExtensions</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Traits</td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.3.0</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Robin Radic</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="">MIT License - http://radic.mit-license.org</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>(c) 2011-2014, Robin Radic - Radic Technologies</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://robin.radic.nl/blade-extensions">http://robin.radic.nl/blade-extensions</a></td>
+</tr>
+</table>
 <h3>
 <i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
 <a id="method_attach"></a><div class="element clickable method public method_attach " data-toggle="collapse" data-target=".method_attach .collapse" title="public">
-<h2>attach()
-        </h2>
+<h2>Instanciate and execute all functions as blade extends</h2>
 <pre>attach(\Illuminate\Foundation\Application $app) </pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$app</h4></div>
+<div class="subelement argument">
+<h4>$app</h4>
+<code>\Illuminate\Foundation\Application</code>
+</div>
 </div></div>
 </div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_blacklist"> </a><div class="element clickable property public property_blacklist" data-toggle="collapse" data-target=".property_blacklist .collapse" title="public">
-<h2>$blacklist</h2>
-<pre>$blacklist </pre>
+<h2>An array of methods that should be excluded by attach</h2>
+<pre>$blacklist : array</pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"><code>array()</code></div>
@@ -128,7 +154,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.1</a> and<br>
-            generated on 2015-02-05T01:34:48+01:00.<br></footer></div>
+            generated on 2015-02-05T04:46:09+01:00.<br></footer></div>
 </div>
 </body>
 </html>

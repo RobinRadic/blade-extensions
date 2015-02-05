@@ -5,52 +5,58 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
 /**
- * Part of Radic - Blade Extensions.
+ * Variable manipulation directives like `set`, `unset`, `debug`
  *
- * @package        Blade Extensions
- * @version        1.2.0
+ * @package        Radic\BladeExtensions
+ * @subpackage     Directives
+ * @version        1.3.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
- * @link           http://radic.nl
+ * @link           http://robin.radic.nl/blade-extensions
  *
  */
 class VariablesDirective
 {
 
-    public $blacklist = [];
+    use BladeExtenderTrait;
 
-    public static function attach(Application $app)
-    {
-        $blade = $app['view']->getEngineResolver()->resolve('blade')->getCompiler();
-        $class = new static;
-        foreach (get_class_methods($class) as $method) {
-            if ($method == 'attach') {
-                continue;
-            }
-            if (is_array($class->blacklist) && in_array($method, $class->blacklist)) {
-                continue;
-            }
 
-            $blade->extend(
-                function ($value) use ($app, $class, $blade, $method) {
-                    return $class->$method($value, $app, $blade);
-                }
-            );
-        }
-    }
-
-    // regex:: http://regex101.com/r/yN1gO5/2
+    /**
+     * Adds `set` directive
+     *
+     * @param             $value
+     * @param Application $app
+     * @param Compiler    $blade
+     * @return mixed
+     */
     public function addSet($value, Application $app, Compiler $blade)
     {
+        // regex:: http://regex101.com/r/yN1gO5/2
         return preg_replace('/@set\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/', '<?php \$$1 = $2; ?>', $value);
     }
 
+    /**
+     * Adds `unset` directive
+     *
+     * @param             $value
+     * @param Application $app
+     * @param Compiler    $blade
+     * @return mixed
+     */
     public function addUnset($value, Application $app, Compiler $blade)
     {
         return preg_replace('/@unset\((?:\$|(?:\'))(.*?)(?:\'|)\)/', '<?php unset(\$$1); ?>', $value);
     }
 
+    /**
+     * Adds `debug` directive
+     *
+     * @param             $value
+     * @param Application $app
+     * @param Compiler    $blade
+     * @return mixed
+     */
     public function addDebug($value, Application $app, Compiler $blade)
     {
         $matcher = '/@debug(?:s?)\(([^()]+)*\)/';

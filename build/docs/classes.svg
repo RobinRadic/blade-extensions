@@ -26,7 +26,7 @@
 <text text-anchor="middle" x="460" y="-621.2" font-family="Times,serif" font-size="11.00" fill="gray">Traits</text>
 </g>
 <g id="clust5" class="cluster"><title>cluster_\Radic\BladeExtensions\Helpers</title>
-<path fill="none" stroke="gray" d="M428,-320C428,-320 492,-320 492,-320 498,-320 504,-326 504,-332 504,-332 504,-488 504,-488 504,-494 498,-500 492,-500 492,-500 428,-500 428,-500 422,-500 416,-494 416,-488 416,-488 416,-332 416,-332 416,-326 422,-320 428,-320"/>
+<path fill="none" stroke="gray" d="M418,-320C418,-320 502,-320 502,-320 508,-320 514,-326 514,-332 514,-332 514,-488 514,-488 514,-494 508,-500 502,-500 502,-500 418,-500 418,-500 412,-500 406,-494 406,-488 406,-488 406,-332 406,-332 406,-326 412,-320 418,-320"/>
 <text text-anchor="middle" x="460" y="-487.2" font-family="Times,serif" font-size="11.00" fill="gray">Helpers</text>
 </g>
 <g id="clust6" class="cluster"><title>cluster_\Radic\BladeExtensions\Directives</title>
@@ -48,15 +48,15 @@
 <polygon fill="none" stroke="black" points="492,-472 428,-472 428,-436 492,-436 492,-472"/>
 <text text-anchor="middle" x="460" y="-451.2" font-family="Courier,monospace" font-size="11.00">Partial</text>
 </g>
-<!-- \\Radic\\BladeExtensions\\Helpers\\Loop -->
-<g id="node4" class="node"><title>\\Radic\\BladeExtensions\\Helpers\\Loop</title>
-<polygon fill="none" stroke="black" points="487,-418 433,-418 433,-382 487,-382 487,-418"/>
-<text text-anchor="middle" x="460" y="-397.2" font-family="Courier,monospace" font-size="11.00">Loop</text>
+<!-- \\Radic\\BladeExtensions\\Helpers\\LoopFactory -->
+<g id="node4" class="node"><title>\\Radic\\BladeExtensions\\Helpers\\LoopFactory</title>
+<polygon fill="none" stroke="black" points="505.5,-418 414.5,-418 414.5,-382 505.5,-382 505.5,-418"/>
+<text text-anchor="middle" x="460" y="-397.2" font-family="Courier,monospace" font-size="11.00">LoopFactory</text>
 </g>
-<!-- \\Radic\\BladeExtensions\\Helpers\\LoopItem -->
-<g id="node5" class="node"><title>\\Radic\\BladeExtensions\\Helpers\\LoopItem</title>
-<polygon fill="none" stroke="black" points="495.5,-364 424.5,-364 424.5,-328 495.5,-328 495.5,-364"/>
-<text text-anchor="middle" x="460" y="-343.2" font-family="Courier,monospace" font-size="11.00">LoopItem</text>
+<!-- \\Radic\\BladeExtensions\\Helpers\\Loop -->
+<g id="node5" class="node"><title>\\Radic\\BladeExtensions\\Helpers\\Loop</title>
+<polygon fill="none" stroke="black" points="487,-364 433,-364 433,-328 487,-328 487,-364"/>
+<text text-anchor="middle" x="460" y="-343.2" font-family="Courier,monospace" font-size="11.00">Loop</text>
 </g>
 <!-- \\Radic\\BladeExtensions\\Directives\\MacroDirective -->
 <g id="node6" class="node"><title>\\Radic\\BladeExtensions\\Directives\\MacroDirective</title>

@@ -23,6 +23,9 @@
         <whitelist>
             <directory suffix=".php">./src/Radic/BladeExtensions</directory>
         </whitelist>
+        <blacklist>
+            <directory suffix=".php">./src/Radic/BladeExtensions/Directives</directory>
+        </blacklist>
     </filter>
 
 </phpunit>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Package Test Suite" tests="5" assertions="1247" failures="0" errors="0" time="0.648022">
+    <testsuite name="ServiceProviderTest" file="/mnt/safe/projects/blade-extensions/tests/ServiceProviderTest.php" tests="1" assertions="2" failures="0" errors="0" time="0.084539">
+      <testcase name="testServiceProvider" class="ServiceProviderTest" file="/mnt/safe/projects/blade-extensions/tests/ServiceProviderTest.php" line="22" assertions="2" time="0.084539"/>
+    </testsuite>
+    <testsuite name="ViewTest" file="/mnt/safe/projects/blade-extensions/tests/ViewsTest.php" tests="4" assertions="1245" failures="0" errors="0" time="0.563483">
+      <testcase name="testSet" class="ViewTest" file="/mnt/safe/projects/blade-extensions/tests/ViewsTest.php" line="35" assertions="17" time="0.069334"/>
+      <testcase name="testForeach" class="ViewTest" file="/mnt/safe/projects/blade-extensions/tests/ViewsTest.php" line="50" assertions="1224" time="0.339718"/>
+      <testcase name="testMacros" class="ViewTest" file="/mnt/safe/projects/blade-extensions/tests/ViewsTest.php" line="64" assertions="3" time="0.083256"/>
+      <testcase name="testPartials" class="ViewTest" file="/mnt/safe/projects/blade-extensions/tests/ViewsTest.php" line="72" assertions="1" time="0.071175"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

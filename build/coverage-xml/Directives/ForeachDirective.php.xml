@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="ForeachDirective.php">
+    <totals>
+      <lines total="106" comments="44" code="62" executable="16" executed="16" percent="100.00%"/>
+      <methods count="4" tested="4" percent="100.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="1" percent="100.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="ForeachDirective" start="19" executable="16" executed="16" crap="4">
+      <package full="Radic.Directives" name="Radic" sub="Directives" category=""/>
+      <namespace name="Radic\BladeExtensions\Directives"/>
+      <method name="openForeach" signature="openForeach($value, Application $app, Compiler $blade)" start="31" end="42" crap="1" executable="3" executed="3" coverage="100"/>
+      <method name="closeForeach" signature="closeForeach($value, Application $app, Compiler $blade)" start="52" end="62" crap="1" executable="3" executed="3" coverage="100"/>
+      <method name="addBreak" signature="addBreak($value, Application $app, Compiler $blade)" start="72" end="83" crap="1" executable="5" executed="5" coverage="100"/>
+      <method name="addContinue" signature="addContinue($value, Application $app, Compiler $blade)" start="93" end="105" crap="1" executable="5" executed="5" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="33">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="39">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="41">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="54">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="59">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="61">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="74">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="76">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="77">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="80">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="82">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="95">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="97">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="98">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="102">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="104">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+    </coverage>
+  </file>
+</phpunit>

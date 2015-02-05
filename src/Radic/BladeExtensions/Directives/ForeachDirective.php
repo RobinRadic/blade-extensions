@@ -5,45 +5,70 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
 /**
- * Part of Radic - Blade Extensions.
+ * Foreach directives
  *
- * @package        Blade Extensions
- * @version        1.2.0
+ * @package        Radic\BladeExtensions
+ * @subpackage     Directives
+ * @version        1.3.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
- * @link           http://radic.nl
+ * @link           http://robin.radic.nl/blade-extensions
  *
  */
 class ForeachDirective
 {
     use BladeExtenderTrait;
 
-    // regex test: http://regex101.com/r/qH9eO7/2
+    /**
+     * Starts `foreach` directive
+     *
+     * @param             $value
+     * @param Application $app
+     * @param Compiler    $blade
+     * @return mixed
+     */
     public function openForeach($value, Application $app, Compiler $blade)
     {
         $matcher = '/@foreach\((.*)(?:\sas)(.*)\)/';
         $replace = '<?php
-        \Radic\BladeExtensions\Helpers\Loop::newLoop($1);
+        \Radic\BladeExtensions\Helpers\LoopFactory::newLoop($1);
         foreach($1 as $2):
-        $loop = \Radic\BladeExtensions\Helpers\Loop::loop();
+        $loop = \Radic\BladeExtensions\Helpers\LoopFactory::loop();
+
         ?>';
 
         return preg_replace($matcher, $replace, $value);
     }
 
+    /**
+     * Ends `foreach` directive
+     *
+     * @param             $value
+     * @param Application $app
+     * @param Compiler    $blade
+     * @return mixed
+     */
     public function closeForeach($value, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('endforeach');
         $replace = '$1<?php
-        \Radic\BladeExtensions\Helpers\Loop::looped();
+        \Radic\BladeExtensions\Helpers\LoopFactory::looped();
         endforeach;
-        \Radic\BladeExtensions\Helpers\Loop::endLoop($loop);
+        \Radic\BladeExtensions\Helpers\LoopFactory::endLoop($loop);
         ?>$2';
 
         return preg_replace($matcher, $replace, $value);
     }
 
+    /**
+     * Adds `break` directive
+     *
+     * @param             $value
+     * @param Application $app
+     * @param Compiler    $blade
+     * @return mixed
+     */
     public function addBreak($value, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('break');
@@ -57,6 +82,14 @@ class ForeachDirective
         );
     }
 
+    /**
+     * Adds `continue` directive
+     *
+     * @param             $value
+     * @param Application $app
+     * @param Compiler    $blade
+     * @return mixed
+     */
     public function addContinue($value, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('continue');
@@ -64,7 +97,7 @@ class ForeachDirective
         return preg_replace(
             $matcher,
             '$1<?php
-        \Radic\BladeExtensions\Helpers\Loop::looped();
+        \Radic\BladeExtensions\Helpers\LoopFactory::looped();
         continue;
         ?>$2',
             $value

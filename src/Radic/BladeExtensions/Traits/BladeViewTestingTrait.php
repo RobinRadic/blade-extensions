@@ -3,25 +3,30 @@
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 
 /**
- * Part of Radic - Blade Extensions.
+ * Adds functionality to test blade views in PHPUnit Tests
  *
- * @package        Blade Extensions
- * @version        1.2.0
+ * @package        Radic\BladeExtensions
+ * @subpackage     Traits
+ * @version        1.3.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
- * @link           http://radic.nl
+ * @link           http://robin.radic.nl/blade-extensions
  *
  */
 trait BladeViewTestingTrait
 {
 
     /**
+     * The Laravel View Factory instance
+     *
      * @var \Illuminate\View\Factory views
      */
     protected $view;
 
     /**
+     * The View factory's blade compiler
+     *
      * @var \Illuminate\View\Compilers\BladeCompiler
      */
     protected $blade;
@@ -30,7 +35,7 @@ trait BladeViewTestingTrait
      * Adds all class methods prefixed with assert* as blade view directives
      * and assigns the $view and $blade class properties
      *
-     * @param string [$viewDirectoryPath] - The path to the directory containing test views
+     * @param string $viewDirectoryPath The path to the directory containing test views
      */
     public function addBladeViewTesting($viewDirectoryPath = null)
     {
@@ -54,36 +59,11 @@ trait BladeViewTestingTrait
         }
     }
 
+    /**
+     * Registers the service provider with the app
+     */
     public function registerBladeProvider()
     {
         $this->app->register(new BladeExtensionsServiceProvider($this->app));
     }
-
-
-
-    public function doDirectiveTest($directiveClass)
-    {
-
-        $methods = get_class_methods($directiveClass);
-        //echo var_dump($methods);
-
-        foreach ($methods as $method) {
-            $this->assertTrue(method_exists($directiveClass, $method));
-        }
-
-        $app = $this->app;
-        $blade = $this->blade;
-
-        foreach ($methods as $method) {
-            $this->blade->extend(function ($value) use ($app, $directiveClass, $blade, $method) {
-
-                echo $method;
-                $str = $directiveClass->$method($value, $app, $blade);
-                $this->assertStringStartsWith('<?php', $str);
-
-                return $str;
-            });
-        }
-    }
-
 }

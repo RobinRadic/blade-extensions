@@ -22,8 +22,7 @@
 <li><a>Namespaces</a></li>
 <li><a href="../namespaces/Radic.html"><i class="icon-th"></i> Radic</a></li>
 <li><a>Packages</a></li>
-<li><a href="../packages/Blade%20Extensions.html"><i class="icon-folder-open"></i> Blade Extensions</a></li>
-<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Radic.html"><i class="icon-folder-open"></i> Radic</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -34,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">113</span></a></li>
+                <span class="label label-info">42</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -67,10 +66,7 @@
 <li class="method public "><a href="#method_addBladeViewTesting" title="addBladeViewTesting() :: Adds all class methods prefixed with assert* as blade view directives
 and assigns the $view and $blade class properties"><span class="description">Adds all class methods prefixed with assert* as blade view directives
 and assigns the $view and $blade class properties</span><pre>addBladeViewTesting()</pre></a></li>
-<li class="method public "><a href="#method_doDirectiveTest" title="doDirectiveTest() :: "><span class="description">doDirectiveTest()
-        </span><pre>doDirectiveTest()</pre></a></li>
-<li class="method public "><a href="#method_registerBladeProvider" title="registerBladeProvider() :: "><span class="description">registerBladeProvider()
-        </span><pre>registerBladeProvider()</pre></a></li>
+<li class="method public "><a href="#method_registerBladeProvider" title="registerBladeProvider() :: Registers the service provider with the app"><span class="description">Registers the service provider with the app</span><pre>registerBladeProvider()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -79,8 +75,8 @@ and assigns the $view and $blade class properties</span><pre>addBladeViewTesting
 </li>
 <li class="nav-header protected">» Protected
                     <ul>
-<li class="property protected "><a href="#property_blade" title="$blade() :: "><span class="description"></span><pre>$blade</pre></a></li>
-<li class="property protected "><a href="#property_view" title="$view() :: "><span class="description">views</span><pre>$view</pre></a></li>
+<li class="property protected "><a href="#property_blade" title="$blade() :: The View factory's blade compiler"><span class="description"></span><pre>$blade</pre></a></li>
+<li class="property protected "><a href="#property_view" title="$view() :: The Laravel View Factory instance"><span class="description"></span><pre>$view</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -102,17 +98,21 @@ and assigns the $view and $blade class properties</span><pre>addBladeViewTesting
 </li>
 </ul>
 <div xmlns:php="http://php.net/xsl" class="element trait">
-<p class="short_description">Part of Radic - Blade Extensions.</p>
+<p class="short_description">Adds functionality to test blade views in PHPUnit Tests</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
-<td><a href="../packages/Blade%20Extensions.html">Blade Extensions</a></td>
+<td><a href="../packages/Radic.BladeExtensions.Traits.html">Radic\BladeExtensions</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Traits</td>
 </tr>
 <tr>
 <th>version</th>
-<td>1.2.0</td>
+<td>1.3.0</td>
 </tr>
 <tr>
 <th>author</th>
@@ -128,7 +128,7 @@ and assigns the $view and $blade class properties</span><pre>addBladeViewTesting
 </tr>
 <tr>
 <th>link</th>
-<td><a href="http://radic.nl">http://radic.nl</a></td>
+<td><a href="http://robin.radic.nl/blade-extensions">http://robin.radic.nl/blade-extensions</a></td>
 </tr>
 </table>
 <h3>
@@ -136,28 +136,18 @@ and assigns the $view and $blade class properties</span><pre>addBladeViewTesting
 <a id="method_addBladeViewTesting"></a><div class="element clickable method public method_addBladeViewTesting " data-toggle="collapse" data-target=".method_addBladeViewTesting .collapse" title="public">
 <h2>Adds all class methods prefixed with assert* as blade view directives
 and assigns the $view and $blade class properties</h2>
-<pre>addBladeViewTesting($viewDirectoryPath<code> = null</code>) </pre>
+<pre>addBladeViewTesting(string $viewDirectoryPath<code> = null</code>) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$viewDirectoryPath</h4></div>
-</div></div>
-</div>
-<a id="method_doDirectiveTest"></a><div class="element clickable method public method_doDirectiveTest " data-toggle="collapse" data-target=".method_doDirectiveTest .collapse" title="public">
-<h2>doDirectiveTest()
-        </h2>
-<pre>doDirectiveTest($directiveClass) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$directiveClass</h4></div>
+<div class="subelement argument">
+<h4>$viewDirectoryPath</h4>
+<code>string</code><p>The path to the directory containing test views</p></div>
 </div></div>
 </div>
 <a id="method_registerBladeProvider"></a><div class="element clickable method public method_registerBladeProvider " data-toggle="collapse" data-target=".method_registerBladeProvider .collapse" title="public">
-<h2>registerBladeProvider()
-        </h2>
+<h2>Registers the service provider with the app</h2>
 <pre>registerBladeProvider() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
@@ -165,7 +155,7 @@ and assigns the $view and $blade class properties</h2>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_blade"> </a><div class="element clickable property protected property_blade" data-toggle="collapse" data-target=".property_blade .collapse" title="protected">
-<h2>$blade</h2>
+<h2>The View factory's blade compiler</h2>
 <pre>$blade : \Illuminate\View\Compilers\BladeCompiler</pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
@@ -175,7 +165,7 @@ and assigns the $view and $blade class properties</h2>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property_view"> </a><div class="element clickable property protected property_view" data-toggle="collapse" data-target=".property_view .collapse" title="protected">
-<h2>views</h2>
+<h2>The Laravel View Factory instance</h2>
 <pre>$view : \Illuminate\View\Factory</pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
@@ -191,7 +181,7 @@ and assigns the $view and $blade class properties</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.1</a> and<br>
-            generated on 2015-02-05T01:34:48+01:00.<br></footer></div>
+            generated on 2015-02-05T04:46:09+01:00.<br></footer></div>
 </div>
 </body>
 </html>

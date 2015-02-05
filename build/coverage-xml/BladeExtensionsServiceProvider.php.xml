@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="BladeExtensionsServiceProvider.php">
+    <totals>
+      <lines total="53" comments="27" code="26" executable="7" executed="7" percent="100.00%"/>
+      <methods count="2" tested="2" percent="100.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="1" percent="100.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="BladeExtensionsServiceProvider" start="20" executable="7" executed="7" crap="2">
+      <package full="Radic" name="Radic" sub="" category=""/>
+      <namespace name="Radic\BladeExtensions"/>
+      <method name="register" signature="register()" start="35" end="38" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="boot" signature="boot()" start="46" end="52" crap="1" executable="5" executed="5" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="37">
+        <covered by="ServiceProviderTest::testServiceProvider"/>
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="38">
+        <covered by="ServiceProviderTest::testServiceProvider"/>
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="48">
+        <covered by="ServiceProviderTest::testServiceProvider"/>
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="49">
+        <covered by="ServiceProviderTest::testServiceProvider"/>
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="50">
+        <covered by="ServiceProviderTest::testServiceProvider"/>
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="51">
+        <covered by="ServiceProviderTest::testServiceProvider"/>
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="52">
+        <covered by="ServiceProviderTest::testServiceProvider"/>
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+    </coverage>
+  </file>
+</phpunit>

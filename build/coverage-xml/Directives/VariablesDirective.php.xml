@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="VariablesDirective.php">
+    <totals>
+      <lines total="68" comments="38" code="30" executable="6" executed="6" percent="100.00%"/>
+      <methods count="3" tested="3" percent="100.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="1" percent="100.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="VariablesDirective" start="19" executable="6" executed="6" crap="3">
+      <package full="Radic.Directives" name="Radic" sub="Directives" category=""/>
+      <namespace name="Radic\BladeExtensions\Directives"/>
+      <method name="addSet" signature="addSet($value, Application $app, Compiler $blade)" start="33" end="37" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="addUnset" signature="addUnset($value, Application $app, Compiler $blade)" start="47" end="50" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="addDebug" signature="addDebug($value, Application $app, Compiler $blade)" start="60" end="67" crap="1" executable="4" executed="4" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="36">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="49">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="62">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="63">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="64">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+      <line nr="66">
+        <covered by="ViewTest::testSet"/>
+        <covered by="ViewTest::testForeach"/>
+        <covered by="ViewTest::testMacros"/>
+        <covered by="ViewTest::testPartials"/>
+      </line>
+    </coverage>
+  </file>
+</phpunit>

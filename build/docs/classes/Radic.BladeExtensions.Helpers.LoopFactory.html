@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>Laravel Blade Extensions » \Radic\BladeExtensions\Helpers\LoopItem</title>
+<title>Laravel Blade Extensions » \Radic\BladeExtensions\Helpers\LoopFactory</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -22,8 +22,7 @@
 <li><a>Namespaces</a></li>
 <li><a href="../namespaces/Radic.html"><i class="icon-th"></i> Radic</a></li>
 <li><a>Packages</a></li>
-<li><a href="../packages/Blade%20Extensions.html"><i class="icon-folder-open"></i> Blade Extensions</a></li>
-<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Radic.html"><i class="icon-folder-open"></i> Radic</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -34,7 +33,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">113</span></a></li>
+                <span class="label label-info">42</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -64,35 +63,28 @@
 <li class="nav-header">
 <i title="Methods" class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method___get" title="__get() :: "><span class="description">__get()
-        </span><pre>__get()</pre></a></li>
-<li class="method public "><a href="#method_after" title="after() :: "><span class="description">after()
-        </span><pre>after()</pre></a></li>
-<li class="method public "><a href="#method_before" title="before() :: "><span class="description">before()
-        </span><pre>before()</pre></a></li>
-<li class="method public "><a href="#method_setItems" title="setItems() :: "><span class="description">setItems()
-        </span><pre>setItems()</pre></a></li>
-<li class="method public "><a href="#method_setParentLoop" title="setParentLoop() :: "><span class="description">setParentLoop()
-        </span><pre>setParentLoop()</pre></a></li>
+<li class="method public "><a href="#method_endLoop" title="endLoop() :: Should be called after the loop has finished"><span class="description">Should be called after the loop has finished</span><pre>endLoop()</pre></a></li>
+<li class="method public "><a href="#method_getStack" title="getStack() :: Returns the stack"><span class="description">Returns the stack</span><pre>getStack()</pre></a></li>
+<li class="method public "><a href="#method_loop" title="loop() :: To be called first inside the foreach loop. Returns the current loop"><span class="description">To be called first inside the foreach loop. Returns the current loop</span><pre>loop()</pre></a></li>
+<li class="method public "><a href="#method_looped" title="looped() :: To be called before the end of the loop"><span class="description">To be called before the end of the loop</span><pre>looped()</pre></a></li>
+<li class="method public "><a href="#method_newLoop" title="newLoop() :: Creates a new loop with the given array and adds it to the stack"><span class="description">Creates a new loop with the given array and adds it to the stack</span><pre>newLoop()</pre></a></li>
+<li class="method public "><a href="#method_reset" title="reset() :: Resets the stack"><span class="description">Resets the stack</span><pre>reset()</pre></a></li>
 </ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_addLoopStack" title="addLoopStack() :: Adds a Loop to the stack"><span class="description">Adds a Loop to the stack</span><pre>addLoopStack()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Properties" class="icon-custom icon-property"></i> Properties
                     <ul></ul>
 </li>
 <li class="nav-header protected">» Protected
-                    <ul>
-<li class="property protected "><a href="#property_data" title="$data() :: "><span class="description"></span><pre>$data</pre></a></li>
-<li class="property protected "><a href="#property_items" title="$items() :: "><span class="description"></span><pre>$items</pre></a></li>
-<li class="property protected "><a href="#property_parentLoop" title="$parentLoop() :: "><span class="description"></span><pre>$parentLoop</pre></a></li>
-</ul>
+                    <ul><li class="property protected "><a href="#property_stack" title="$stack() :: The stack of Loop instances"><span class="description"></span><pre>$stack</pre></a></li></ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a xmlns:php="http://php.net/xsl" id="\Radic\BladeExtensions\Helpers\LoopItem"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<a xmlns:php="http://php.net/xsl" id="\Radic\BladeExtensions\Helpers\LoopFactory"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
 <li>
 <a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -104,21 +96,25 @@
 <span class="divider">\</span><a href="../namespaces/Radic.BladeExtensions.Helpers.html">Helpers</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/Radic.BladeExtensions.Helpers.LoopItem.html">LoopItem</a>
+<span class="divider">\</span><a href="../classes/Radic.BladeExtensions.Helpers.LoopFactory.html">LoopFactory</a>
 </li>
 </ul>
 <div xmlns:php="http://php.net/xsl" class="element class">
-<p class="short_description">Part of Radic - Blade Extensions.</p>
+<p class="short_description">Manages the Loop instances</p>
 <div class="details">
 <div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
-<td><a href="../packages/Blade%20Extensions.html">Blade Extensions</a></td>
+<td><a href="../packages/Radic.BladeExtensions.Helpers.html">Radic\BladeExtensions</a></td>
+</tr>
+<tr>
+<th>subpackage</th>
+<td>Helpers</td>
 </tr>
 <tr>
 <th>version</th>
-<td>1.2.0</td>
+<td>1.3.0</td>
 </tr>
 <tr>
 <th>author</th>
@@ -134,101 +130,89 @@
 </tr>
 <tr>
 <th>link</th>
-<td><a href="http://radic.nl">http://radic.nl</a></td>
+<td><a href="http://robin.radic.nl/blade-extensions">http://robin.radic.nl/blade-extensions</a></td>
 </tr>
 </table>
 <h3>
 <i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
-<h2>__construct()
-        </h2>
-<pre>__construct($items) </pre>
-<div class="labels"></div>
+<a id="method_endLoop"></a><div class="element clickable method public method_endLoop " data-toggle="collapse" data-target=".method_endLoop .collapse" title="public">
+<h2>Should be called after the loop has finished</h2>
+<pre>endLoop($loop) </pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$items</h4></div>
+<div class="subelement argument"><h4>$loop</h4></div>
 </div></div>
 </div>
-<a id="method___get"></a><div class="element clickable method public method___get " data-toggle="collapse" data-target=".method___get .collapse" title="public">
-<h2>__get()
-        </h2>
-<pre>__get($key) </pre>
-<div class="labels"></div>
+<a id="method_getStack"></a><div class="element clickable method public method_getStack " data-toggle="collapse" data-target=".method_getStack .collapse" title="public">
+<h2>Returns the stack</h2>
+<pre>getStack() : array</pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$key</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
-<a id="method_after"></a><div class="element clickable method public method_after " data-toggle="collapse" data-target=".method_after .collapse" title="public">
-<h2>after()
-        </h2>
-<pre>after() </pre>
-<div class="labels"></div>
+<a id="method_loop"></a><div class="element clickable method public method_loop " data-toggle="collapse" data-target=".method_loop .collapse" title="public">
+<h2>To be called first inside the foreach loop. Returns the current loop</h2>
+<pre>loop() : \Radic\BladeExtensions\Helpers\Loop</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Radic\BladeExtensions\Helpers\Loop</code>$current The current loop data</div>
+</div></div>
+</div>
+<a id="method_looped"></a><div class="element clickable method public method_looped " data-toggle="collapse" data-target=".method_looped .collapse" title="public">
+<h2>To be called before the end of the loop</h2>
+<pre>looped() </pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="method_before"></a><div class="element clickable method public method_before " data-toggle="collapse" data-target=".method_before .collapse" title="public">
-<h2>before()
-        </h2>
-<pre>before() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_setItems"></a><div class="element clickable method public method_setItems " data-toggle="collapse" data-target=".method_setItems .collapse" title="public">
-<h2>setItems()
-        </h2>
-<pre>setItems($items) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$items</h4></div>
-</div></div>
-</div>
-<a id="method_setParentLoop"></a><div class="element clickable method public method_setParentLoop " data-toggle="collapse" data-target=".method_setParentLoop .collapse" title="public">
-<h2>setParentLoop()
-        </h2>
-<pre>setParentLoop(\Radic\BladeExtensions\Helpers\LoopItem $parentLoop) </pre>
-<div class="labels"></div>
+<a id="method_newLoop"></a><div class="element clickable method public method_newLoop " data-toggle="collapse" data-target=".method_newLoop .collapse" title="public">
+<h2>Creates a new loop with the given array and adds it to the stack</h2>
+<pre>newLoop(array $items) </pre>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$parentLoop</h4>
-<code>\Radic\BladeExtensions\Helpers\LoopItem</code><p>{@inheritdocs}</p></div>
+<h4>$items</h4>
+<code>array</code><p>The array that will be iterated</p></div>
+</div></div>
+</div>
+<a id="method_reset"></a><div class="element clickable method public method_reset " data-toggle="collapse" data-target=".method_reset .collapse" title="public">
+<h2>Resets the stack</h2>
+<pre>reset() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_addLoopStack"></a><div class="element clickable method protected method_addLoopStack " data-toggle="collapse" data-target=".method_addLoopStack .collapse" title="protected">
+<h2>Adds a Loop to the stack</h2>
+<pre>addLoopStack(\Radic\BladeExtensions\Helpers\Loop $stackItem) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$stackItem</h4>
+<code>\Radic\BladeExtensions\Helpers\Loop</code>
+</div>
 </div></div>
 </div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_data"> </a><div class="element clickable property protected property_data" data-toggle="collapse" data-target=".property_data .collapse" title="protected">
-<h2>$data</h2>
-<pre>$data </pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_items"> </a><div class="element clickable property protected property_items" data-toggle="collapse" data-target=".property_items .collapse" title="protected">
-<h2>$items</h2>
-<pre>$items </pre>
+<a id="property_stack"> </a><div class="element clickable property protected property_stack" data-toggle="collapse" data-target=".property_stack .collapse" title="protected">
+<h2>The stack of Loop instances</h2>
+<pre>$stack : array</pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"><code>array()</code></div>
 </div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_parentLoop"> </a><div class="element clickable property protected property_parentLoop" data-toggle="collapse" data-target=".property_parentLoop .collapse" title="protected">
-<h2>$parentLoop</h2>
-<pre>$parentLoop </pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
+<div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 </div>
@@ -238,7 +222,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.1</a> and<br>
-            generated on 2015-02-05T01:34:48+01:00.<br></footer></div>
+            generated on 2015-02-05T04:46:09+01:00.<br></footer></div>
 </div>
 </body>
 </html>

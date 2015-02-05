@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="blade-extensions" default="debug" basedir=".">
-    <taskdef name="bin" classname="dev.BinTask" />
+    <taskdef name="bin" classname="tests.BinTask" />
 
     <property name="builddir" value="${project.basedir}/build" />
     <property name="bindir" value="${project.basedir}/vendor/bin"/>

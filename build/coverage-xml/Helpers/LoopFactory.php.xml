@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="LoopFactory.php">
+    <totals>
+      <lines total="109" comments="56" code="53" executable="23" executed="20" percent="86.96%"/>
+      <methods count="7" tested="5" percent="71.43%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="0" percent="0.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="LoopFactory" start="15" executable="23" executed="20" crap="10.22">
+      <package full="Radic.Helpers" name="Radic" sub="Helpers" category=""/>
+      <namespace name="Radic\BladeExtensions\Helpers"/>
+      <method name="newLoop" signature="newLoop($items)" start="30" end="33" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="addLoopStack" signature="addLoopStack(Loop $stackItem)" start="40" end="48" crap="2" executable="5" executed="5" coverage="100"/>
+      <method name="getStack" signature="getStack()" start="55" end="58" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="reset" signature="reset()" start="63" end="66" crap="2" executable="2" executed="0" coverage="0"/>
+      <method name="loop" signature="loop()" start="73" end="79" crap="1" executable="3" executed="3" coverage="100"/>
+      <method name="looped" signature="looped()" start="84" end="90" crap="2.06" executable="4" executed="3" coverage="75"/>
+      <method name="endLoop" signature="endLoop(&amp;$loop)" start="97" end="108" crap="2" executable="6" executed="6" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="32">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="33">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="43">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="44">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="45">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="47">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="48">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="57">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="75">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="76">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="78">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="86">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="89">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="90">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="99">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="100">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="102">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="103">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="106">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+      <line nr="108">
+        <covered by="ViewTest::testForeach"/>
+      </line>
+    </coverage>
+  </file>
+</phpunit>
