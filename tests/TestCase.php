@@ -1,7 +1,4 @@
-<?php
-
-
-namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\BladeExtensionsTests;
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Html\HtmlServiceProvider;
@@ -9,8 +6,6 @@ use Mockery as m;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
-use TestData;
-
 
 /**
  * Class ViewTest
@@ -30,7 +25,6 @@ class TestCase extends BaseTestCase
     public function setUp()
     {
         parent::setUp();
-        require_once(__DIR__ . '/data/TestData.php');
         $this->data = new TestData();
     }
 

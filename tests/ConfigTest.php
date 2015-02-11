@@ -1,7 +1,6 @@
 <?php namespace Radic\BladeExtensionsTests;
 
 use Mockery as m;
-use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 
 /**
  * Class ViewTest
@@ -16,6 +15,7 @@ class ConfigTest extends TestCase
     public function setUp()
     {
         parent::setUp();
+        $this->registerBlade();
     }
 
     public function getConfig()
@@ -25,10 +25,18 @@ class ConfigTest extends TestCase
 
     public function testConfigSettings()
     {
-        //$this->generateIdeHelper();
-        //$this->getKernel()->call('vendor:publish');
         $config = $this->getConfig();
-        //$this->assertArrayNotHasKey('doMacro', $config);
+        $this->assertTrue(is_array($config), 'Config should be an array');
+        $this->assertTrue(is_array($config['blacklist']), 'config.blacklist should be an array');
+        $this->assertTrue(count($config['blacklist']) === 0, 'config.blacklist should be empty');
+        $this->app['config']->set('blade-extensions.blacklist', array('debug', 'unset', 'set'));
+        $config = $this->getConfig();
+        $this->assertTrue(count($config['blacklist']) === 3, 'config.blacklist should have 3 items');
+    }
 
+    public function testConfigReset()
+    {
+        \File::delete(\File::glob(app_path('config/blade-') . '*'));
+        $this->command('vendor:publish');
     }
 }

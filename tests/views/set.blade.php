@@ -1,9 +1,6 @@
-{{-- View::make('set', ['dataString' => 'hello', 'dataArray' => $this->data->array, 'dataClassInstance' => $this->data, 'dataClassName' => 'TestData'])->render(); --}}
 
-{{-- Test view data --}}
-@assertTrue($dataString === 'hello')
-@assertTrue(is_array($dataArray))
-@assertTrue($dataClassInstance instanceof TestData);
+@assertTrue($dataString === 'hello', 'datastring should equal hello')
+@assertTrue(is_array($dataArray), 'dataArray should be an array')
 
 
 @set('mams', 'mamsVal')
@@ -30,16 +27,16 @@
 
 
 @set($testArray, $dataArray)
-@assertTrue(is_array($testArray))
-@assertArrayHasKey(0, $testArray)
-@assertTrue($testArray[0]['index'] === 0)
+@assertTrue(is_array($testArray), 'testArray should be an array')
+@assertArrayHasKey(0, $testArray, 'testArray should have key 0')
+@assertTrue($testArray[0]['index'] === 0, 'testArray key 0 should have key index on 0')
 
 
 @set($testArray[0]['index'], 1)
-@assertTrue($testArray[0]['index'] === 1)
+@assertTrue($testArray[0]['index'] === 1, 'testArray key 1 should have key index on 1')
 
 @set('pops', $testArray[0]['index'])
-@assertTrue($pops === $testArray[0]['index'])
+@assertTrue($pops === $testArray[0]['index'], 'pops should equal testArray.0.index')
 
 @unset($pops);
-@assertFalse(isset($pops))
+@assertFalse(isset($pops), 'pops should not be set')
