@@ -34,7 +34,7 @@ class MacroDirective
         //$matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
 
         $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
-        $replace = 'if(in_array("form", $__env->getContainer()->getBindings())){ '
+        $replace = 'if(array_key_exists("form", $__env->getContainer()->getBindings())){ '
             . '  app("form")->macro("$1", function($2){ ';
 
         return preg_replace($matcher, "<?php $replace", $value);
@@ -68,12 +68,14 @@ class MacroDirective
     {
         $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
         $replace = <<<'EOT'
-if(in_array("form", $__env->getContainer()->getBindings())){
+if(array_key_exists("form", $__env->getContainer()->getBindings())){
     echo app("form")->$1($2);
 } else {
     echo "WARNING: YOU HAVE USED THE @domacro BLADE DIRECTIVE WHILE NOT HAVING Illuminate\Html\FormBuilder INSTALLED";
+    var_dump($__env->getContainer()->getBindings());
 }
 EOT;
+
         return preg_replace($matcher, "<?php $replace ?>", $value);
     }
 }

@@ -30,7 +30,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     /**
      * Boots the services provided. Attaches the blade extensions to the current Application's - ViewEnvironment
      *
-     * @todo remove test-blade route/view for stable release
      * @return void
      */
     public function boot()
@@ -53,6 +52,5 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $configPath = __DIR__ . '/../../config/blade-extensions.php';
         $this->mergeConfigFrom($configPath, 'blade-extensions');
-        // TODO: Implement register() method.
     }
 }
