@@ -1,5 +1,12 @@
 # Changelog 
 
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/ed3e4ae9bfa8f61f91ade321815a4b53c1c2698d)  Fixed and added unit test  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/6169afeb58f040d16ad654c9a0d7e710d42dcc9f)  Fixed unit test  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/861890b2ca8da05f3a99cdf0420410d6a4391127)  Added some examples to  readme  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/46a6333b449160bcaef144b1dd1a6fe3d4921372)  Added some examples to  readme  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/52d2713f37f0bcf5df957d0b6e90bbe29b9cbdda)  New changelist  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/73e640205c28f16a563eae8a0e12069ffe182c38)  Removing application trait from test case as its duplicate  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/afa02d5783a1614fcc27d947f1bc5096b3c77c88)  Updated docs. Ready for 2.0 push  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/293cfcdf28df5a4aec0618be02441aae735597b3)  - Placed all directive replacement code into the config files. - Sorted out macros directive, which now does not load if FormBuilder ain't installed. - Updated and added unit testing. - Achieved 95% code coverage. - Fixed config publish/loading - And some other things  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/2302b67081a077b2957a286ca8524113df4a333f)  cleaned up old files  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/2ff9fa079173cea29c567c17bdc5d27882b96b7a)  created artisan that interacts with the testing environment  
