@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="blade-extensions" description="Dev tasks" default="debug" basedir=".">
-    <taskdef name="bin" classname="tests.BinTask"/>
+    <taskdef name="bin" classname="vendor.radic.phing-tasks.src.BinTask"/>
 
     <property name="builddir" value="${project.basedir}/build"/>
     <property name="bindir" value="${project.basedir}/vendor/bin"/>
@@ -54,10 +54,15 @@
         <echo message="Reports and logs generated"/>
     </target>
 
+    <target name="changelog2">
+        <delete file="${changelog.filename}"/>
+        <exec command="github_changelog_generator --user robinradic --project blade-extensions --output ${changelog.filename}" logoutput="true"/>
+
+    </target>
+
     <target name="changelog">
         <delete file="${changelog.filename}"/>
         <exec command="echo '${changelog.header} \n' >> ${changelog.filename}"/>
         <exec command='git log --date=short --format="- [%cd](https://github.com/robinradic/blade-extensions/commit/%H) %gs %s  " >> ${changelog.filename}'/>
     </target>
-
 </project>
