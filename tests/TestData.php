@@ -1,9 +1,10 @@
-<?php
-
+<?php namespace Radic\BladeExtensionsTests;
 
 class TestData
 {
+
     public $array;
+
     protected $_array;
 
     public $json;
@@ -15,8 +16,8 @@ class TestData
 
     public function __construct()
     {
-        $this->json = File::get(__DIR__ . '/data.json');
-        $this->array = json_decode($this->json, true);
+        $this->json   = file_get_contents(__DIR__ . '/data/data.json');
+        $this->array  = json_decode($this->json, true);
         $this->_array = json_decode($this->json, true);
     }
 
@@ -27,9 +28,8 @@ class TestData
 
     public function getArrayGetterFn()
     {
-        return function($protected = false){
+        return function ($protected = false) {
             return $protected === true ? $this->_array : $this->array;
         };
     }
-
-} 
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <title>Laravel Blade Extensions</title>
+    <parser>
+        <target>build/docs</target>
+        <encoding>utf8</encoding>
+        <markers>
+            <item>TODO</item>
+            <item>FIXME</item>
+        </markers>
+        <extensions>
+            <extension>php</extension>
+            <extension>php3</extension>
+            <extension>phtml</extension>
+        </extensions>
+        <visibility></visibility>
+    </parser>
+    <transformer>
+        <target>build/docs</target>
+    </transformer>
+    <logging>
+        <level>warn</level>
+        <paths>
+            <default>{APP_ROOT}/data/log/{DATE}.log</default>
+            <errors>{APP_ROOT}/data/log/{DATE}.errors.log</errors>
+        </paths>
+    </logging>
+    <transformations>
+        <template name="responsive" />
+    </transformations>
+    <files>
+        <directory>src</directory>
+        <ignore>test/*</ignore>
+    </files>
+</phpdoc>
