@@ -10,7 +10,7 @@ Laravel Blade Extensions
 Version 2.0
 -----------
 
-**Laravel 5** package providing additional Blade functionality.
+**Laravel 5** package providing additional Blade functionality. [**Thoroughly**](http://robinradic.github.io/blade-extensions/) documented and **100%** code coverage.
 
 - **@set @unset** Setting and unsetting of values
 - **@foreach @break @continue** Loop data and extras
@@ -20,16 +20,25 @@ Version 2.0
 - **BladeViewTestingTrait** enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
 
 
-#### Requirements
-- PHP > 5.4
-- Laravel > 5.0
-- (optional) raveren/kint > 0.9.1
-
-#### Installation
-You probably know what to do with these:
+#### Installation  
+###### Requirements
+```JSON
+"PHP": ">=5.4.0",
+"illuminate/support": "~5.0"
+```
+  
+###### Recommended
+```JSON
+"illuminate/html": "~5.0",
+"raveren/kint": ">=0.9.1"
+```
+  
+  
+###### Composer
 ```JSON
 "radic/blade-extensions": "2.*"
 ```
+###### Laravel
 ```php
 'Radic\BladeExtensions\BladeExtensionsServiceProvider'
 ```
