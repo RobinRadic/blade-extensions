@@ -19,7 +19,6 @@ Version 2.0
 - **@debug** Debugging values in views
 - **BladeViewTestingTrait** enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
 
-[**Check the documentation for all features and options**](http://robinradic.github.io/blade-extensions/)
 
 #### Requirements
 - PHP > 5.4
@@ -33,6 +32,62 @@ You probably know what to do with these:
 ```
 ```php
 'Radic\BladeExtensions\BladeExtensionsServiceProvider'
+```
+
+
+#### Some examples
+
+[**Check the documentation for all features and options**](http://robinradic.github.io/blade-extensions/)
+
+```php
+@foreach($stuff as $key => $val)
+    $loop->index;       // int, zero based
+    $loop->index1;      // int, starts at 1
+    $loop->revindex;    // int
+    $loop->revindex1;   // int
+    $loop->first;       // bool
+    $loop->last;        // bool
+    $loop->even;        // bool
+    $loop->odd;         // bool
+    $loop->length;      // int
+
+    @foreach($other as $name => $age)
+        $loop->parent->odd;
+        @foreach($friends as $foo => $bar)
+            $loop->parent->index;
+            $loop->parent->parentLoop->index;
+        @endforeach
+    @endforeach
+    
+    
+    @section('content')
+        @partial('partials.danger-panel')
+            @block('title', 'This is the panel title')
+    
+            @block('body')
+                This is the panel body.
+            @endblock
+        @endpartial
+    @stop
+    
+    @partial('partials.panel')
+        @block('type', 'danger')
+    
+        @block('title')
+            Danger! @render('title')
+        @endblock
+    @endpartial
+    
+    @break
+
+    @continue
+@endforeach
+
+@set('newvar', 'value')
+{{ $newvar }}
+
+
+@debug($somearr)
 ```
 
 ### Copyright/License
