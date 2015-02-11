@@ -7,7 +7,6 @@ use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Orchestra\Testbench\Traits\ApplicationTrait;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
 use TestData;
@@ -22,6 +21,7 @@ use TestData;
 class TestCase extends BaseTestCase
 {
     use BladeViewTestingTrait
+
 
     /**
      * @var TestData
