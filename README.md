@@ -7,7 +7,7 @@ Laravel Blade Extensions
 [![Goto repository](http://img.shields.io/badge/goto-repository-orange.svg)](https://github.com/robinradic/blade-extensions)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](http://radic.mit-license.org)
 
-Version 1.2
+Version 2.0
 -----------
 
 Laravel package providing additional Blade functionality.

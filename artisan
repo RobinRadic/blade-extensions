@@ -1,0 +1,44 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Orchestra\Testbench\Traits\ApplicationTrait;
+use Orchestra\Testbench\Traits\ClientTrait;
+
+class RadicTestArtisan
+{
+    use ApplicationTrait, ClientTrait;
+
+    /**
+     * @return \Illuminate\Foundation\Application
+     */
+    public static function start()
+    {
+        $appFactory = new RadicTestArtisan();
+        return $appFactory->createApplication();
+    }
+
+    /**
+     * Define environment setup.
+     *
+     * @param  \Illuminate\Foundation\Application $app
+     * @return void
+     */
+    protected function getEnvironmentSetUp($app)
+    {
+        // Define your environment setup.
+    }
+}
+
+$app = RadicTestArtisan::start();
+$kernel = $app->make('Illuminate\Contracts\Console\Kernel');
+
+$status = $kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
+
+$kernel->terminate($input, $status);
+
+exit($status);
