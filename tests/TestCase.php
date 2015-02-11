@@ -6,6 +6,7 @@ use Mockery as m;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
+use TestData;
 
 /**
  * Class ViewTest
@@ -32,7 +33,7 @@ class TestCase extends BaseTestCase
     /**
      * Adds assertion directives to blade and removes cached views
      */
-    protected function loadViewTests()
+    protected function loadViewTesting()
     {
         $this->addBladeViewTesting(__DIR__ . '/views');
         \File::delete(\File::glob(base_path('storage/framework/views') . '/*'));

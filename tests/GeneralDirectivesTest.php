@@ -11,11 +11,14 @@ use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
  * @author     Robin Radic
  *
  */
-class ViewTest extends TestCase
+class GeneralDirectivesTest extends TestCase
 {
     public function setUp()
     {
         parent::setUp();
+        $this->loadViewTesting();
+        $this->registerHtml();
+        $this->registerBlade();
     }
 
     public function testSet()
@@ -42,14 +45,6 @@ class ViewTest extends TestCase
                 'getArray'  => $this->data->getArrayGetterFn()
             ]
         )->render();
-    }
-
-
-    public function testMacros()
-    {
-        $this->assertEquals('my age is3', $this->view->make('macro')->render());
-        $this->assertEquals('my age is 6', $this->view->make('macro2')->render());
-        $this->assertEquals('patatmy age is3', $this->view->make('macro3')->render());
     }
 
 

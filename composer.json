@@ -48,5 +48,10 @@
             "Radic\\BladeExtensions": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Radic\\BladeExtensionsTests\\": "tests/"
+        }
+    },
     "minimum-stability": "stable"
 }
