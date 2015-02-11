@@ -20,6 +20,7 @@ class MacroDirective
 {
     use BladeExtenderTrait;
 
+
     /**
      * Starts `macro` directive
      *
@@ -33,8 +34,10 @@ class MacroDirective
         //$matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
 
         $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        $replace = 'if(in_array("form", $__env->getContainer()->getBindings())){ '
+            . '  app("form")->macro("$1", function($2){ ';
 
-        return preg_replace($matcher, '<?php HTML::macro("$1", function($2){ ', $value);
+        return preg_replace($matcher, "<?php $replace", $value);
     }
 
     /**
@@ -49,7 +52,7 @@ class MacroDirective
     {
         $matcher = $blade->createPlainMatcher('endmacro');
 
-        return preg_replace($matcher, '  });  ?>', $value);
+        return preg_replace($matcher, '  }); } ?>', $value);
     }
 
     /**
@@ -64,7 +67,13 @@ class MacroDirective
     public function doMacro($value, Application $app, Compiler $blade)
     {
         $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
-
-        return preg_replace($matcher, '<?php echo HTML::$1($2); ?>', $value);
+        $replace = <<<'EOT'
+if(in_array("form", $__env->getContainer()->getBindings())){
+    echo app("form")->$1($2);
+} else {
+    echo "WARNING: YOU HAVE USED THE @domacro BLADE DIRECTIVE WHILE NOT HAVING Illuminate\Html\FormBuilder INSTALLED";
+}
+EOT;
+        return preg_replace($matcher, "<?php $replace ?>", $value);
     }
 }

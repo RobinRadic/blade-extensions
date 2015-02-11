@@ -13,5 +13,5 @@ commit.bat
 /tasks
 /theme
 /build
-
-echo "Startup"
+/test.php
+/test.md

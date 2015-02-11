@@ -59,11 +59,4 @@ trait BladeViewTestingTrait
         }
     }
 
-    /**
-     * Registers the service provider with the app
-     */
-    public function registerBladeProvider()
-    {
-        $this->app->register(new BladeExtensionsServiceProvider($this->app));
-    }
 }

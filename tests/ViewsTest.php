@@ -1,6 +1,8 @@
-<?php
+<?php namespace Radic\BladeExtensionsTests;
 
+use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
+use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
 
 /**
@@ -9,32 +11,15 @@ use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
  * @author     Robin Radic
  *
  */
-class ViewTest extends Orchestra\Testbench\TestCase
+class ViewTest extends TestCase
 {
-    use BladeViewTestingTrait;
-
-    /**
-     * @var TestData
-     */
-    protected $data;
-
     public function setUp()
     {
         parent::setUp();
-
-        require_once(__DIR__ . '/data/TestData.php');
-        $this->data = new TestData();
-
-        $this->registerBladeProvider();
-        $this->addBladeViewTesting(__DIR__ . '/views');
-
-        File::delete(File::glob(base_path('app/storage/views') . '/*'));
     }
-
 
     public function testSet()
     {
-
         $this->view->make(
             'set',
             [
@@ -49,7 +34,6 @@ class ViewTest extends Orchestra\Testbench\TestCase
 
     public function testForeach()
     {
-
         $this->view->make(
             'foreach',
             [

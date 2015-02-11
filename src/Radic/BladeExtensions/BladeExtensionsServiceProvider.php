@@ -28,16 +28,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->package('radic/blade-extensions', 'radic/blade-extensions');
-    }
-
-    /**
      * Boots the services provided. Attaches the blade extensions to the current Application's - ViewEnvironment
      *
      * @todo remove test-blade route/view for stable release
@@ -45,9 +35,24 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $configPath = __DIR__ . '/../../config/blade-extensions.php';
+        $this->publishes([$configPath => config_path('blade-extensions.php')], 'config');
+
         VariablesDirective::attach($this->app);
         MacroDirective::attach($this->app);
         ForeachDirective::attach($this->app);
         PartialDirective::attach($this->app);
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $configPath = __DIR__ . '/../../config/blade-extensions.php';
+        $this->mergeConfigFrom($configPath, 'blade-extensions');
+        // TODO: Implement register() method.
     }
 }

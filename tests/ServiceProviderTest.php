@@ -1,4 +1,4 @@
-<?php
+<?php namespace Radic\BladeExtensionsTests;
 
 use Mockery as m;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
@@ -9,7 +9,7 @@ use Radic\BladeExtensions\BladeExtensionsServiceProvider;
  * @author     Robin Radic
  *
  */
-class ServiceProviderTest extends Orchestra\Testbench\TestCase
+class ServiceProviderTest extends TestCase
 {
 
 
