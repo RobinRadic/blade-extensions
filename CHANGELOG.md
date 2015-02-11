@@ -1,5 +1,12 @@
 # Changelog 
 
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/293cfcdf28df5a4aec0618be02441aae735597b3)  - Placed all directive replacement code into the config files. - Sorted out macros directive, which now does not load if FormBuilder ain't installed. - Updated and added unit testing. - Achieved 95% code coverage. - Fixed config publish/loading - And some other things  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/2302b67081a077b2957a286ca8524113df4a333f)  cleaned up old files  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/2ff9fa079173cea29c567c17bdc5d27882b96b7a)  created artisan that interacts with the testing environment  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/0cf68cffd4eb335f81849c8cd45cb3f01f2dcef5)  Merge branch 'master' into develop  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/b3b7eaeb6a825aaf9509b73f5ac7aa477e7224d0)  making sure config works  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/455906ac5b4cb0c5322472009a7a4a23ddff3b0f)  making sure config is working  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/706cdd2b2a2ad47a56328459e16314425ed44124)  laravel 5.0 update  
 - [2015-02-05](https://github.com/robinradic/blade-extensions/commit/2c2479ea1e1e8ad9e0d5641caa4de3be04aef529)  after remove ignore files  
 - [2015-02-05](https://github.com/robinradic/blade-extensions/commit/faef025f31885b874bb43d5f9d201228b9167bdf)  updated doc and tests  
 - [2015-02-05](https://github.com/robinradic/blade-extensions/commit/8e3d6374c47319a92f93e671347fa657bc56f7fd)  stuff  
@@ -7,6 +14,7 @@
 - [2014-12-22](https://github.com/robinradic/blade-extensions/commit/112584385a948fd6db6b262cf9b53580bc63c9f2)  fixed readme  
 - [2014-12-22](https://github.com/robinradic/blade-extensions/commit/a90365aaf954b714ead8849415740552e739e27b)  Merge branch 'master' of https://github.com/RobinRadic/blade-extensions  
 - [2014-12-22](https://github.com/robinradic/blade-extensions/commit/95e852181295c3ecd91e1e4201bc763900f7a73b)  fixed the top comments on all classes  
+- [2014-12-22](https://github.com/robinradic/blade-extensions/commit/713765cf2a9e5e8a6d72263a8982033a17cb40e9)  Started working on v2.0.0 for Laravel 5  
 - [2014-12-04](https://github.com/robinradic/blade-extensions/commit/e2ce7287fc64bd241e5ea44660bfbb21e1c01b64)  Update README.md  
 - [2014-11-27](https://github.com/robinradic/blade-extensions/commit/b742698240e9735809a018654a3204d34ec317ce)  updated readme. ready for 1.2.0 tag  
 - [2014-11-27](https://github.com/robinradic/blade-extensions/commit/69413a82101def64fc8447259063645bbe1b7dab)  added tests for partials  

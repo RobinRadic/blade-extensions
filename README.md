@@ -10,7 +10,7 @@ Laravel Blade Extensions
 Version 2.0
 -----------
 
-Laravel package providing additional Blade functionality.
+**Laravel 5** package providing additional Blade functionality.
 
 - **@set @unset** Setting and unsetting of values
 - **@foreach @break @continue** Loop data and extras
@@ -23,13 +23,13 @@ Laravel package providing additional Blade functionality.
 
 #### Requirements
 - PHP > 5.4
-- Laravel > 4.0
+- Laravel > 5.0
 - (optional) raveren/kint > 0.9.1
 
 #### Installation
 You probably know what to do with these:
 ```JSON
-"radic/blade-extensions": "1.*"
+"radic/blade-extensions": "2.*"
 ```
 ```php
 'Radic\BladeExtensions\BladeExtensionsServiceProvider'
