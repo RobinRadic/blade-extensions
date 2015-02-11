@@ -40,8 +40,6 @@
         "phploc/phploc": "*"
     },
     "scripts": {
-        "test": "phpunit",
-        "phpmd": "php vendor/bin/phpmd"
     },
     "autoload": {
         "psr-0": {
