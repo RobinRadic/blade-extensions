@@ -3,20 +3,29 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
+use Illuminate\Html\HtmlServiceProvider;
 use Orchestra\Testbench\Traits\ApplicationTrait;
 use Orchestra\Testbench\Traits\ClientTrait;
+use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 
-class RadicTestArtisan
+class Artisan
 {
     use ApplicationTrait, ClientTrait;
 
+
+
+    /**
+     * @var Artisan
+     */
+    protected static $factory;
     /**
      * @return \Illuminate\Foundation\Application
      */
     public static function start()
     {
-        $appFactory = new RadicTestArtisan();
-        return $appFactory->createApplication();
+        static::$factory = new Artisan();
+        return static::$factory->createApplication();
     }
 
     /**
@@ -31,9 +40,14 @@ class RadicTestArtisan
     }
 }
 
-$app = RadicTestArtisan::start();
-$kernel = $app->make('Illuminate\Contracts\Console\Kernel');
+$app = Artisan::start();
+$app->register(new IdeHelperServiceProvider($app));
+$app->register(new HtmlServiceProvider($app));
+$app->register(new BladeExtensionsServiceProvider($app));
+//$config = $app->config->get('blade-extensions');
 
+
+$kernel = $app->make('Illuminate\Contracts\Console\Kernel');
 $status = $kernel->handle(
     $input = new Symfony\Component\Console\Input\ArgvInput,
     new Symfony\Component\Console\Output\ConsoleOutput

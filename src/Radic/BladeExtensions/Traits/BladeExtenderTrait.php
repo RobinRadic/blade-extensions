@@ -7,7 +7,7 @@ use Illuminate\Foundation\Application;
  *
  * @package        Radic\BladeExtensions
  * @subpackage     Traits
- * @version        1.3.0
+ * @version        2.0.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
@@ -32,6 +32,7 @@ trait BladeExtenderTrait
     public static function attach(Application $app)
     {
         $blade = $app['view']->getEngineResolver()->resolve('blade')->getCompiler();
+        $directives = $app['config']->get('blade-extensions.directives');
         $class = new static;
         foreach (get_class_methods($class) as $method) {
             if ($method == 'attach') {
@@ -41,9 +42,11 @@ trait BladeExtenderTrait
                 continue;
             }
 
+            $directive = isset($directives[$method]) ? $directives[$method] : false;
+
             $blade->extend(
-                function ($value) use ($app, $class, $blade, $method) {
-                    return $class->$method($value, $app, $blade);
+                function ($value) use ($app, $class, $blade, $method, $directive) {
+                    return $class->$method($value, $directive, $app, $blade);
                 }
             );
         }

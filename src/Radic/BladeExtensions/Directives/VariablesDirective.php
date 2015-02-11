@@ -9,7 +9,7 @@ use Radic\BladeExtensions\Traits\BladeExtenderTrait;
  *
  * @package        Radic\BladeExtensions
  * @subpackage     Directives
- * @version        1.3.0
+ * @version        2.0.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
@@ -26,43 +26,47 @@ class VariablesDirective
      * Adds `set` directive
      *
      * @param             $value
+     * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function addSet($value, Application $app, Compiler $blade)
+    public function addSet($value, $configured, Application $app, Compiler $blade)
     {
-        // regex:: http://regex101.com/r/yN1gO5/2
-        return preg_replace('/@set\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/', '<?php \$$1 = $2; ?>', $value);
+        $matcher = '/@set\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/';
+
+        return preg_replace($matcher, $configured, $value);
     }
 
     /**
      * Adds `unset` directive
      *
      * @param             $value
+     * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function addUnset($value, Application $app, Compiler $blade)
+    public function addUnset($value, $configured, Application $app, Compiler $blade)
     {
-        return preg_replace('/@unset\((?:\$|(?:\'))(.*?)(?:\'|)\)/', '<?php unset(\$$1); ?>', $value);
+        $matcher = '/@unset\((?:\$|(?:\'))(.*?)(?:\'|)\)/';
+
+        return preg_replace($matcher, $configured, $value);
     }
 
     /**
      * Adds `debug` directive
      *
      * @param             $value
+     * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function addDebug($value, Application $app, Compiler $blade)
+    public function addDebug($value, $configured, Application $app, Compiler $blade)
     {
         $matcher = '/@debug(?:s?)\(([^()]+)*\)/';
-        $config  = $app->config['radic/blade-extensions::debug'];
-        $replace = $config['prepend'] . '$1' . $config['append'];
 
-        return preg_replace($matcher, $replace, $value);
+        return preg_replace($matcher, $configured, $value);
     }
 }

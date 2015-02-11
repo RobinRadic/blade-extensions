@@ -1,12 +1,17 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php
+
+
+namespace Radic\BladeExtensionsTests;
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Orchestra\Testbench\Traits\ApplicationTrait;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
 use TestData;
+
 
 /**
  * Class ViewTest
@@ -16,7 +21,7 @@ use TestData;
  */
 class TestCase extends BaseTestCase
 {
-    use BladeViewTestingTrait;
+    use BladeViewTestingTrait, ApplicationTrait;
 
     /**
      * @var TestData
@@ -70,5 +75,15 @@ class TestCase extends BaseTestCase
     protected function getKernel()
     {
         return $this->app['Illuminate\Contracts\Console\Kernel'];
+    }
+
+    /**
+     * Executes a kernel command
+     *
+     * @param string $command
+     */
+    protected function command($command)
+    {
+        $this->getKernel()->call($command);
     }
 }

@@ -10,7 +10,7 @@ use Radic\BladeExtensions\Directives\VariablesDirective;
  * Class BladeExtensionsServiceProvider
  *
  * @package        Radic\BladeExtensions
- * @version        1.3.0
+ * @version        2.0.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
@@ -36,11 +36,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $configPath = __DIR__ . '/../../config/blade-extensions.php';
         $this->publishes([$configPath => config_path('blade-extensions.php')], 'config');
-
-        VariablesDirective::attach($this->app);
-        MacroDirective::attach($this->app);
-        ForeachDirective::attach($this->app);
-        PartialDirective::attach($this->app);
     }
 
     /**
@@ -52,5 +47,12 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $configPath = __DIR__ . '/../../config/blade-extensions.php';
         $this->mergeConfigFrom($configPath, 'blade-extensions');
+
+        VariablesDirective::attach($this->app);
+        if (array_key_exists('form', $this->app->getBindings())) {
+            MacroDirective::attach($this->app);
+        }
+        ForeachDirective::attach($this->app);
+        PartialDirective::attach($this->app);
     }
 }

@@ -27,11 +27,4 @@ class ServiceProviderTest extends TestCase
         $this->assertTrue($providers['Radic\BladeExtensions\BladeExtensionsServiceProvider']);
     }
 
-    public function testConfigSettings()
-    {
-        //$this->generateIdeHelper();
-        $this->getKernel()->call('config:clear');
-        //$this->getKernel()->call('vendor:publish');
-        var_dump($this->app['config']->get('blade-extensions'));
-    }
 }

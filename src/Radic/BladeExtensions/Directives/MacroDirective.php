@@ -9,7 +9,7 @@ use Radic\BladeExtensions\Traits\BladeExtenderTrait;
  *
  * @package        Radic\BladeExtensions
  * @subpackage     Directives
- * @version        1.3.0
+ * @version        2.0.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
@@ -25,34 +25,32 @@ class MacroDirective
      * Starts `macro` directive
      *
      * @param             $value
+     * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function openMacro($value, Application $app, Compiler $blade)
+    public function openMacro($value, $configured, Application $app, Compiler $blade)
     {
-        //$matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
-
         $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
-        $replace = 'if(array_key_exists("form", $__env->getContainer()->getBindings())){ '
-            . '  app("form")->macro("$1", function($2){ ';
 
-        return preg_replace($matcher, "<?php $replace", $value);
+        return preg_replace($matcher, $configured, $value);
     }
 
     /**
      * Ends `macro` directive
      *
      * @param             $value
+     * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function closeMacro($value, Application $app, Compiler $blade)
+    public function closeMacro($value, $configured, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('endmacro');
 
-        return preg_replace($matcher, '  }); } ?>', $value);
+        return preg_replace($matcher, $configured, $value);
     }
 
     /**
@@ -60,22 +58,15 @@ class MacroDirective
      * Executes a macro
      *
      * @param             $value
+     * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function doMacro($value, Application $app, Compiler $blade)
+    public function doMacro($value, $configured, Application $app, Compiler $blade)
     {
         $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
-        $replace = <<<'EOT'
-if(array_key_exists("form", $__env->getContainer()->getBindings())){
-    echo app("form")->$1($2);
-} else {
-    echo "WARNING: YOU HAVE USED THE @domacro BLADE DIRECTIVE WHILE NOT HAVING Illuminate\Html\FormBuilder INSTALLED";
-    var_dump($__env->getContainer()->getBindings());
-}
-EOT;
 
-        return preg_replace($matcher, "<?php $replace ?>", $value);
+        return preg_replace($matcher, $configured, $value);
     }
 }
