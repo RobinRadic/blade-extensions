@@ -11,3 +11,7 @@ commit.bat
 /_includes
 /laravel
 /tasks
+/theme
+/build
+/test.php
+/test.md

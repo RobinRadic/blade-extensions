@@ -2,10 +2,10 @@ Laravel Blade Extensions
 ========================
 
 [![Build Status](https://travis-ci.org/RobinRadic/blade-extensions.svg?branch=master)](https://travis-ci.org/RobinRadic/blade-extensions)
-[![Latest Stable Version](https://poser.pugx.org/radic/blade-extensions/v/stable.svg)](https://packagist.org/packages/radic/blade-extensions)
-[![Total Downloads](https://poser.pugx.org/radic/blade-extensions/downloads.svg)](https://packagist.org/packages/radic/blade-extensions)
-[![Latest Unstable Version](https://poser.pugx.org/radic/blade-extensions/v/unstable.svg)](https://packagist.org/packages/radic/blade-extensions)
-[![License](https://poser.pugx.org/radic/blade-extensions/license.svg)](https://packagist.org/packages/radic/blade-extensions)
+[![GitHub version](https://badge.fury.io/gh/robinradic%2Fblade-extensions.svg)](http://badge.fury.io/gh/robinradic%2Fblade-extensions)
+[![Goto documentation](http://img.shields.io/badge/goto-documentation-orange.svg)](http://robinradic.github.io/blade-extensions)
+[![Goto repository](http://img.shields.io/badge/goto-repository-orange.svg)](https://github.com/robinradic/blade-extensions)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg)](http://radic.mit-license.org)
 
 Version 1.2
 -----------
@@ -22,7 +22,7 @@ Laravel package providing additional Blade functionality.
 [**Check the documentation for all features and options**](http://robinradic.github.io/blade-extensions/)
 
 #### Requirements
-- PHP > 5.3
+- PHP > 5.4
 - Laravel > 4.0
 - (optional) raveren/kint > 0.9.1
 
