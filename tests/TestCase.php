@@ -20,8 +20,7 @@ use TestData;
  */
 class TestCase extends BaseTestCase
 {
-    use BladeViewTestingTrait
-
+    use BladeViewTestingTrait;
 
     /**
      * @var TestData
