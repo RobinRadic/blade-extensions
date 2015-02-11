@@ -64,5 +64,7 @@
         <delete file="${changelog.filename}"/>
         <exec command="echo '${changelog.header} \n' >> ${changelog.filename}"/>
         <exec command='git log --date=short --format="- [%cd](https://github.com/robinradic/blade-extensions/commit/%H) %gs %s  " >> ${changelog.filename}'/>
+        <exec command='git add ${changelog.filename}'/>
+
     </target>
 </project>

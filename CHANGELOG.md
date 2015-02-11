@@ -1,5 +1,7 @@
 # Changelog 
 
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/6c8bc2e8f56b06c5b0131e381d556e3b5dff445b)  Fixed and added unit test  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/9f1bcd7038a6bc5fffe5b19b97bd836504a36f02)  Fixed and added unit test  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/ed3e4ae9bfa8f61f91ade321815a4b53c1c2698d)  Fixed and added unit test  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/6169afeb58f040d16ad654c9a0d7e710d42dcc9f)  Fixed unit test  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/861890b2ca8da05f3a99cdf0420410d6a4391127)  Added some examples to  readme  
