@@ -1,5 +1,13 @@
 # Changelog 
 
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/25ccc6bda10ee8822bee97e8311c8218d859fae9)  Merge branch 'release/v2.0.0'  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/b1426ec8602d263023206c0f57cb375cad2ded2d)  enabled  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/e11faf9e1a659f01d8d8cdb23c44540e40dbf1dd)  enabled  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/34a5ed15e86c4a2591c3907dff906c39f33e2ec6)  Disabled travis  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/e0bb73ff0dfcd18bc9aedf326d17ee66fcf9a5f9)  Disabled travis phpunit, couldn't get it working  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/857412a70c4bfba8d95158288e28281a4e166786)  Disabled travis phpunit, couldn't get it working  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/136f791f4028b8e20a7279d4ec94d95a53b6676f)  Disabled travis phpunit, couldn't get it working  
+- [2015-02-11](https://github.com/robinradic/blade-extensions/commit/2bda6f6e2ce82a03888ee67b4cd1dd81e7af34be)  Fixed and added unit test  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/6c8bc2e8f56b06c5b0131e381d556e3b5dff445b)  Fixed and added unit test  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/9f1bcd7038a6bc5fffe5b19b97bd836504a36f02)  Fixed and added unit test  
 - [2015-02-11](https://github.com/robinradic/blade-extensions/commit/ed3e4ae9bfa8f61f91ade321815a4b53c1c2698d)  Fixed and added unit test  
