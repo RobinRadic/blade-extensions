@@ -28,6 +28,11 @@ class TestCase extends BaseTestCase
         $this->data = new TestData();
     }
 
+    public function getData()
+    {
+        return $this->data;
+    }
+
     /**
      * Adds assertion directives to blade and removes cached views
      */

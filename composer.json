@@ -28,16 +28,7 @@
         "orchestra/testbench": "3.0.*",
         "laravel/framework": "5.0.*",
         "illuminate/html": "~5.0",
-        "mockery/mockery": "dev-master",
-        "barryvdh/laravel-ide-helper": "2.*",
-        "phpunit/phpunit": "4.*",
-        "phing/phing": "2.*",
-        "phpmd/phpmd": "~2.2",
-        "squizlabs/php_codesniffer": "2.*",
-        "phpdocumentor/phpdocumentor": "2.*",
-        "radic/phing-tasks": "1.*",
-
-        "phploc/phploc": "*"
+      "barryvdh/laravel-ide-helper": "2.*"
     },
     "scripts": {
     },

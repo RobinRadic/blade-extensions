@@ -27,8 +27,8 @@ class GeneralDirectivesTest extends TestCase
             'set',
             [
                 'dataString'        => 'hello',
-                'dataArray'         => $this->data->array,
-                'dataClassInstance' => $this->data,
+                'dataArray'         => $this->getData()->array,
+                'dataClassInstance' => $this->getData(),
                 'dataClassName'     => 'TestData'
             ]
         )->render();
@@ -40,9 +40,9 @@ class GeneralDirectivesTest extends TestCase
         $this->view->make(
             'foreach',
             [
-                'dataClass' => $this->data,
-                'array'     => $this->data->array,
-                'getArray'  => $this->data->getArrayGetterFn()
+                'dataClass' => $this->getData(),
+                'array'     => $this->getData()->array,
+                'getArray'  => $this->getData()->getArrayGetterFn()
             ]
         )->render();
     }

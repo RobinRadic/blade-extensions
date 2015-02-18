@@ -1,6 +1,6 @@
 
 @assertTrue($dataString === 'hello', 'datastring should equal hello')
-@assertTrue(is_array($dataArray), 'dataArray should be an array')
+{{--@assertTrue(is_array($dataArray), 'dataArray should be an array')--}}
 
 
 @set('mams', 'mamsVal')
@@ -27,7 +27,7 @@
 
 
 @set($testArray, $dataArray)
-@assertTrue(is_array($testArray), 'testArray should be an array')
+{{--@assertTrue(is_array($testArray), 'testArray should be an array')--}}
 @assertArrayHasKey(0, $testArray, 'testArray should have key 0')
 @assertTrue($testArray[0]['index'] === 0, 'testArray key 0 should have key index on 0')
 
