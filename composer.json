@@ -18,9 +18,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "~5.0",
-        "laravel/laravel": "~5.0",
-        "raveren/kint": "0.9.*"
+        "illuminate/support": "~5.0"
     },
     "suggest": {
         "raveren/kent": ">0.9.1",
@@ -31,13 +29,13 @@
         "orchestra/testbench": "3.0.*",
         "laravel/framework": "5.0.*",
         "illuminate/html": "~5.0",
-      "barryvdh/laravel-ide-helper": "2.*",
+        "barryvdh/laravel-ide-helper": "2.*",
         "erusev/parsedown": "~1.5"
     },
     "scripts": {
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Radic\\BladeExtensions": "src/"
         }
     },

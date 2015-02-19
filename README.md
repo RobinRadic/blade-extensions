@@ -4,20 +4,21 @@ Laravel Blade Extensions
 [![Build Status](https://travis-ci.org/RobinRadic/blade-extensions.svg?branch=master)](https://travis-ci.org/RobinRadic/blade-extensions)
 [![GitHub version](https://badge.fury.io/gh/robinradic%2Fblade-extensions.svg)](http://badge.fury.io/gh/robinradic%2Fblade-extensions)
 [![Total Downloads](https://poser.pugx.org/radic/blade-extensions/downloads.svg)](https://packagist.org/packages/radic/blade-extensions)
-[![Goto documentation](http://img.shields.io/badge/goto-documentation-orange.svg)](http://robinradic.github.io/blade-extensions)
+[![Goto documentation](http://img.shields.io/badge/goto-documentation-orange.svg)](http://docs.radic.nl/blade-extensions)
 [![Goto repository](http://img.shields.io/badge/goto-repository-orange.svg)](https://github.com/robinradic/blade-extensions)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](http://radic.mit-license.org)
 
-Version 2.0
+Version 2.1
 -----------
 
-**Laravel 5** package providing additional Blade functionality. [**Thoroughly**](http://robinradic.github.io/blade-extensions/) documented and **100%** code coverage.
+**Laravel 5** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
 
 - **@set @unset** Setting and unsetting of values
 - **@foreach @break @continue** Loop data and extras
 - **@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.
-- **@macro** Defining and running macros
 - **@debug** Debugging values in views
+- **@macro** Defining and running macros (optional, requires [illuminate/html](https://github.com/erusev/parsedown))
+- **@markdown** Render github flavoured markdown (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown)
 - **BladeViewTestingTrait** enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
 
 
@@ -31,7 +32,8 @@ Version 2.0
 ###### Recommended
 ```JSON
 "illuminate/html": "~5.0",
-"raveren/kint": ">=0.9.1"
+"raveren/kint": ">=0.9.1",
+"erusev/parsedown": "~1.5"
 ```
   
   
@@ -47,7 +49,7 @@ Version 2.0
 
 #### Some examples
 
-[**Check the documentation for all features and options**](http://robinradic.github.io/blade-extensions/)
+[**Check the documentation for all features and options**](http://docs.radic.nl/blade-extensions/)
 
 ```php
 @foreach($stuff as $key => $val)
