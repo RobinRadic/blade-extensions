@@ -27,7 +27,7 @@ class Markdown
     public static function parse($text)
     {
         $text = static::transform($text);
-        $newText = app()->make('parsedown')->text($text);
+        $newText = app()->make('markdown')->render($text);
         return $newText;
     }
 }

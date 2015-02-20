@@ -3,9 +3,9 @@
 use Illuminate\Support\ServiceProvider;
 use Radic\BladeExtensions\Directives\ForeachDirective;
 use Radic\BladeExtensions\Directives\MacroDirective;
-use Radic\BladeExtensions\Directives\MarkdownDirective;
 use Radic\BladeExtensions\Directives\PartialDirective;
 use Radic\BladeExtensions\Directives\VariablesDirective;
+use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
 
 /**
  * Class BladeExtensionsServiceProvider
@@ -53,16 +53,16 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         ForeachDirective::attach($this->app);
         PartialDirective::attach($this->app);
 
-        # Optional directives
-        if (array_key_exists('form', $this->app->getBindings())) {
+        # Optional macro directives
+        if (array_key_exists('form', $this->app->getBindings()))
+        {
             MacroDirective::attach($this->app);
         }
 
-        if(class_exists('\Parsedown')){
-            $this->app->bind('parsedown', function(){
-                return new \Parsedown();
-            });
-            MarkdownDirective::attach($this->app);
+        # Optional markdown compiler, engines and directives
+        if (class_exists('\Ciconia\Ciconia') && $this->app['config']->get('blade-extensions.markdown.enabled'))
+        {
+            $this->app->register(new MarkdownServiceProvider($this->app));
         }
     }
 }

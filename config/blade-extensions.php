@@ -16,6 +16,11 @@ return array(
      */
     'blacklist' => array(),
 
+    'markdown' => [
+        'enabled' => true,
+        'views' => true,
+        'gfm' => true
+    ],
     /*
      * The replacement code for each directive.
      * Provides the ability to easily adjust helper classes and view execution logic
@@ -95,6 +100,16 @@ EOT
     <?php (class_exists('Kint') ? Kint::dump($1) : var_dump($1)) ?>
 </code></pre>
 EOT
+        ,'openMarkdown' => <<<'EOT'
+$1<?php echo \Radic\BladeExtensions\Helpers\Markdown::parse(<<<'EOT'$2
+EOT
+        ,'includeMarkdown' => <<<'EOT'
+\n<?php include('$1'); ?>
+EOT
+        ,'closeMarkdown' => "$1\nEOT\n); ?>$2"
+
+
+
 
     ]
 );

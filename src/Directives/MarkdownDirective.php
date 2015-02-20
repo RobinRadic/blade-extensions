@@ -31,11 +31,10 @@ class MarkdownDirective
      */
     public function openMarkdown($value, $configured, Application $app, Compiler $blade)
     {
-        //$matcher = '/@markdown([\w\W]*?)@endmarkdown/';
-        //preg_match_all($matcher, $value, $matches);
-        $replace = preg_replace($blade->createPlainMatcher('markdown'), "$1<?php echo \Radic\BladeExtensions\Helpers\Markdown::parse(<<<'EOT'$2", $value);
-        return $replace;
-
+        $matcher = '/(?<!\w)(\s*)@markdown(?!\()(\s*)/'; # matcher with negative lookahead, so ignores @markdown(...  includes
+        //$configured = "$1<? echo app()->make('markdown')->render(<<<'EOT'$2";
+        //$blade->createOpenMatcher()
+        return preg_replace($matcher, $configured, $value);
     }
 
     /**
@@ -46,14 +45,29 @@ class MarkdownDirective
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
-
      */
     public function closeMarkdown($value, $configured, Application $app, Compiler $blade)
     {
-        return preg_replace($blade->createPlainMatcher('endmarkdown'), "$1\nEOT\n); ?>$2", $value);
+        $matcher = $blade->createPlainMatcher('endmarkdown');
+
+        return preg_replace($matcher, $configured, $value);
     }
 
-
+    /**
+     * Adds include markdown file
+     *
+     * @param             $value
+     * @param             $configured
+     * @param Application $app
+     * @param Compiler    $blade
+     * @return mixed
+     */
+    public function includeMarkdown($value, $configured, Application $app, Compiler $blade)
+    {
+        $matcher = '/@markdown(?>\(\')(.*?)\'\)/'; # positive lookahead, cuts out the quoted part
+        $replace = '<?php include("$1"); ?>';
+        return preg_replace($matcher, $replace, $value);
+    }
     /*
      *
         if(isset($matches[1][0])){
