@@ -50,14 +50,18 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($configPath, 'blade-extensions');
 
         VariablesDirective::attach($this->app);
+        ForeachDirective::attach($this->app);
+        PartialDirective::attach($this->app);
+
+        # Optional directives
         if (array_key_exists('form', $this->app->getBindings())) {
             MacroDirective::attach($this->app);
         }
-        ForeachDirective::attach($this->app);
-        PartialDirective::attach($this->app);
-        if(class_exists('Parsedown')){
-           # \Kint::dump('parsedown exists');
 
+        if(class_exists('\Parsedown')){
+            $this->app->bind('parsedown', function(){
+                return new \Parsedown();
+            });
             MarkdownDirective::attach($this->app);
         }
     }

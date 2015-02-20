@@ -31,18 +31,11 @@ class MarkdownDirective
      */
     public function openMarkdown($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/@markdown([\w\W]*?)@endmarkdown/';
-        #var_dump($value);
+        //$matcher = '/@markdown([\w\W]*?)@endmarkdown/';
+        //preg_match_all($matcher, $value, $matches);
+        $replace = preg_replace($blade->createPlainMatcher('markdown'), "$1<?php echo \Radic\BladeExtensions\Helpers\Markdown::parse(<<<'EOT'$2", $value);
+        return $replace;
 
-        preg_match_all($matcher, $value, $matches);
-        #var_dump();
-
-        if(isset($matches[1][0])){
-            $parsedown = new \Parsedown();
-            return $parsedown->text($matches[1][0]);
-        }
-        return $value;
-        //return preg_replace('', '', $value);
     }
 
     /**
@@ -53,7 +46,22 @@ class MarkdownDirective
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
+
      */
+    public function closeMarkdown($value, $configured, Application $app, Compiler $blade)
+    {
+        return preg_replace($blade->createPlainMatcher('endmarkdown'), "$1\nEOT\n); ?>$2", $value);
+    }
 
 
+    /*
+     *
+        if(isset($matches[1][0])){
+            $parsedown = new \Parsedown();
+            $text = $parsedown->text($matches[1][0]); //preg_replace($matcher, 'asdf', $value);
+            return $text;
+        }
+        return $value;
+        //return preg_replace('', '', $value);
+     */
 }
