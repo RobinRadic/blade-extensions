@@ -32,22 +32,22 @@
 	@break
 @endforeach
 
-@foreach($dataClass->getArray() as $key => $val)
+@foreach($dataClass::getValues() as $key => $val)
 	@assertTrue($loop->first)
 	@break
 @endforeach
 
-@foreach($dataClass->getArray(true) as $key => $val)
+@foreach($dataClass::getRecords() as $key => $val)
 	@assertTrue($loop->first)
 	@break
 @endforeach
 
 
-@foreach($dataClass->getArray(true) as $key => $val)
+@foreach($dataClass::getRecords() as $key => $val)
 	@assertTrue($loop->first)
 	@break
 
-	@foreach($dataClass->getArray() as $key2 => $val2)
+	@foreach($dataClass::getRecords() as $key2 => $val2)
 		@assertTrue(is_int($loop->index))
 
 	@endforeach
@@ -55,10 +55,10 @@
 
 
 
-@set('testArray', $dataClass->getArray())
+@set('testArray', $dataClass::getRecords())
 @set('total', count($testArray))
 
-@foreach($dataClass->getArray() as $key => $val)
+@foreach($dataClass::getRecords() as $key => $val)
 
     {{--@assertTrue($loop instanceof \Radic\BladeExtensions\Core\LoopItemInterface, '$loop should be an instance of LoopItemInterface')--}}
 	@assertTrue($loop->index == $key, 'index')
@@ -90,7 +90,7 @@
 
 
 
-	@foreach($dataClass->getArray() as $key2 => $val2)
+	@foreach($dataClass::getRecords() as $key2 => $val2)
 
 		{{--@assertTrue($loop instanceof \Radic\BladeExtensions\Core\LoopItemInterface, '$loop should be an instance of LoopItemInterface')--}}
 		@assertTrue($loop->index == $key2, 'index')

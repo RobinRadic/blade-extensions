@@ -31,7 +31,9 @@
         "illuminate/html": "~5.0",
         "barryvdh/laravel-ide-helper": "2.*",
         "erusev/parsedown": "~1.5",
-        "radic/testing": "dev-master"
+        "radic/testing": "dev-master",
+        "kzykhys/ciconia": "~1.0",
+        "mockery/mockery": "0.9.*"
     },
     "scripts": {
     },
@@ -42,7 +44,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Radic\\BladeExtensionsTests\\": "tests/"
+            "Radic\\Tests\\BladeExtensions\\": "tests/"
         }
     },
     "minimum-stability": "stable"
