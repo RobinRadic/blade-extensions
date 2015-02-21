@@ -44,40 +44,31 @@ class MarkdownServiceProvider extends ServiceProvider
         }
 
         # Markdown engine
-        $view->getEngineResolver()->register(
-            'md',
-            function () use ($app)
-            {
-                $compiler = $app['markdown.compiler'];
+        $view->getEngineResolver()->register('md', function () use ($app)
+        {
+            $compiler = $app['markdown.compiler'];
 
-                return new CompilerEngine($compiler);
-            }
-        );
+            return new CompilerEngine($compiler);
+        });
         $view->addExtension('md', 'md');
 
         # Php markdown engine
-        $view->getEngineResolver()->register(
-            'phpmd',
-            function () use ($app)
-            {
-                $markdown = $app['markdown'];
+        $view->getEngineResolver()->register('phpmd', function () use ($app)
+        {
+            $markdown = $app['markdown'];
 
-                return new PhpMarkdownEngine($markdown);
-            }
-        );
+            return new PhpMarkdownEngine($markdown);
+        });
         $view->addExtension('md.php', 'phpmd');
 
         # Blade markdown engine
-        $view->getEngineResolver()->register(
-            'blademd',
-            function () use ($app)
-            {
-                $compiler = $app['blade.compiler'];
-                $markdown = $app['markdown'];
+        $view->getEngineResolver()->register('blademd', function () use ($app)
+        {
+            $compiler = $app['blade.compiler'];
+            $markdown = $app['markdown'];
 
-                return new BladeMarkdownEngine($compiler, $markdown);
-            }
-        );
+            return new BladeMarkdownEngine($compiler, $markdown);
+        });
         $view->addExtension('md.blade.php', 'blademd');
     }
 

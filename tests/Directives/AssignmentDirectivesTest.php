@@ -14,6 +14,9 @@ use Radic\Tests\BladeExtensions\TestCase;
 class AssignmentDirectivesTest extends TestCase
 {
 
+    /**
+     * Setup the test case
+     */
     public function setUp()
     {
         parent::setUp();
@@ -22,6 +25,9 @@ class AssignmentDirectivesTest extends TestCase
         $this->registerBlade();
     }
 
+    /**
+     * Test the set directive
+     */
     public function testSet()
     {
         $this->view()->make('set', [

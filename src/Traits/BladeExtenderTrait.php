@@ -6,11 +6,10 @@ use Illuminate\Foundation\Application;
  * Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends
  *
  * @package        Radic\BladeExtensions
- * @subpackage     Traits
- * @version        2.0.0
+ * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
- * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
+ * @copyright      (c) 2011-2015, Robin Radic
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
@@ -51,4 +50,27 @@ trait BladeExtenderTrait
             );
         }
     }
+
+    /**
+     * Get the blacklist array
+     * @return array
+     */
+    public function getBlacklist()
+    {
+        return $this->blacklist;
+    }
+
+    /**
+     * Set the blacklist array
+     * @param array $blacklist
+     * @return $this
+     */
+    public function setBlacklist(array $blacklist)
+    {
+        $this->blacklist = $blacklist;
+
+        return $this;
+    }
+
+
 }

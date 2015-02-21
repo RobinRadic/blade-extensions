@@ -10,13 +10,13 @@ use Radic\BladeExtensions\Directives\PartialDirectives;
 use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
 
 /**
- * Class BladeExtensionsServiceProvider
+ * A laravel service provider to register the class into the the IoC container
  *
  * @package        Radic\BladeExtensions
- * @version        2.0.0
+ * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
- * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
+ * @copyright      (c) 2011-2015, Robin Radic
  * @link           http://robin.radic.nl/blade-extensions
  *
  */

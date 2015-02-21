@@ -5,10 +5,10 @@
  *
  * @package        Radic\BladeExtensions
  * @subpackage     Helpers
- * @version        2.0.0
+ * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
- * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
+ * @copyright      (c) 2011-2014, Robin Radic - Radic Technologies
  * @link           http://robin.radic.nl/blade-extensions
  *
  */

@@ -8,6 +8,18 @@ use Illuminate\View\Compilers\Compiler;
 use Illuminate\View\Compilers\CompilerInterface;
 use Radic\BladeExtensions\Contracts\MarkdownRenderer;
 
+/**
+ * Markdown compiler
+ *
+ * @package            Radic\BladeExtensions
+ * @version            2.1.0
+ * @subpackage         Compilers
+ * @author             Robin Radic
+ * @license            MIT License - http://radic.mit-license.org
+ * @copyright          (c) 2011-2015, Robin Radic
+ * @link               http://robin.radic.nl/blade-extensions
+ *
+ */
 class MarkdownCompiler extends Compiler implements CompilerInterface
 {
 
