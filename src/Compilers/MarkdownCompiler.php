@@ -6,26 +6,27 @@ use Ciconia\Extension\Gfm;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Compilers\Compiler;
 use Illuminate\View\Compilers\CompilerInterface;
+use Radic\BladeExtensions\Contracts\MarkdownRenderer;
 
 class MarkdownCompiler extends Compiler implements CompilerInterface
 {
 
     /**
-     * @var Ciconia
+     * @var \Radic\BladeExtensions\Contracts\MarkdownRenderer
      */
-    protected $ciconia;
+    protected $renderer;
 
     /**
      * Create a new instance
      *
-     * @param Ciconia    $ciconia
+     * @param Ciconia    $renderer
      * @param Filesystem $files
      * @param            $cachePath
      */
-    public function __construct(Ciconia $ciconia, Filesystem $files, $cachePath)
+    public function __construct(MarkdownRenderer $renderer, Filesystem $files, $cachePath)
     {
         parent::__construct($files, $cachePath);
-        $this->ciconia = $ciconia;
+        $this->renderer = $renderer;
     }
 
     /**
@@ -36,19 +37,18 @@ class MarkdownCompiler extends Compiler implements CompilerInterface
      */
     public function compile($path)
     {
-        $content = $this->ciconia->render($this->files->get($path));
+        $content = $this->renderer->render($this->files->get($path));
         $this->files->put($this->getCompiledPath($path), $content);
     }
 
-
-    public function getCiconia()
+    public function getRenderer()
     {
-        return $this->ciconia;
+        return $this->renderer;
     }
 
-    public function setCiconia($ciconia)
+    public function setRenderer($renderer)
     {
-        $this->ciconia = $ciconia;
+        $this->renderer = $renderer;
 
         return $this;
     }

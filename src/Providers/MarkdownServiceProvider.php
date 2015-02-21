@@ -87,22 +87,12 @@ class MarkdownServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $this->app->config->get('blade-extensions.markdown.renderer'));
         $this->app->singleton(
             'markdown',
             function ($app)
             {
-                $gfm         = $app['config']->get('blade-extensions.markdown.gfm');
-                $ciconia = new Ciconia();
-                if($gfm === true)
-                {
-                    $ciconia->addExtension(new Gfm\FencedCodeBlockExtension());
-                    $ciconia->addExtension(new Gfm\TaskListExtension());
-                    $ciconia->addExtension(new Gfm\InlineStyleExtension());
-                    $ciconia->addExtension(new Gfm\WhiteSpaceExtension());
-                    $ciconia->addExtension(new Gfm\TableExtension());
-                    $ciconia->addExtension(new Gfm\UrlAutoLinkExtension());
-                }
-                return $ciconia;
+                return $this->app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
             }
         );
 
