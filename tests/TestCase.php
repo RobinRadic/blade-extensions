@@ -1,19 +1,20 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\Tests\BladeExtensions;
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Html\HtmlServiceProvider;
-use Mockery as m;
-use Orchestra\Testbench\TestCase as BaseTestCase;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
-use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
+
+use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
+use Radic\Testing\AbstractTestCase;
+use Radic\Testing\Traits\BladeViewTestingTrait;
 
 /**
  * Class ViewTest
  *
  * @author     Robin Radic
- *
+ * @inheritDoc
  */
-class TestCase extends BaseTestCase
+class TestCase extends AbstractTestCase
 {
     use BladeViewTestingTrait;
 
@@ -22,10 +23,28 @@ class TestCase extends BaseTestCase
      */
     protected $data;
 
+    /** @inheritDoc */
     public function setUp()
     {
         parent::setUp();
         $this->data = new TestData();
+    }
+
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * Get the service provider class.
+     *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass($app)
+    {
+        return 'Radic\BladeExtensions\BladeExtensionsServiceProvider';
     }
 
     /**
@@ -53,30 +72,9 @@ class TestCase extends BaseTestCase
         $this->app->register(new BladeExtensionsServiceProvider($this->app));
     }
 
-    /**
-     * Registers the IdeHelperServiceProvider and executes the ide-helper generate command
-     */
-    protected function generateIdeHelper()
+    protected function registerBladeMarkdown()
     {
-        $this->app->register(new IdeHelperServiceProvider($this->app));
-        $this->getKernel()->call('ide-helper:generate');
+        $this->app->register(new MarkdownServiceProvider($this->app));
     }
 
-    /**
-     * @return \Illuminate\Contracts\Console\Kernel
-     */
-    protected function getKernel()
-    {
-        return $this->app['Illuminate\Contracts\Console\Kernel'];
-    }
-
-    /**
-     * Executes a kernel command
-     *
-     * @param string $command
-     */
-    protected function command($command)
-    {
-        $this->getKernel()->call($command);
-    }
 }

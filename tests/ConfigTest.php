@@ -1,4 +1,4 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
 

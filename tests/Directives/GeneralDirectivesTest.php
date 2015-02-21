@@ -1,9 +1,10 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\Tests\BladeExtensions\Directives;
 
 use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
-use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
+use Radic\Testing\Traits\BladeViewTestingTrait;
+use Radic\Tests\BladeExtensions\TestCase;
 
 /**
  * Class ViewTest
@@ -13,6 +14,8 @@ use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
  */
 class GeneralDirectivesTest extends TestCase
 {
+    use BladeViewTestingTrait;
+
     public function setUp()
     {
         parent::setUp();
@@ -27,8 +30,8 @@ class GeneralDirectivesTest extends TestCase
             'set',
             [
                 'dataString'        => 'hello',
-                'dataArray'         => $this->data->array,
-                'dataClassInstance' => $this->data,
+                'dataArray'         => $this->getData()->array,
+                'dataClassInstance' => $this->getData(),
                 'dataClassName'     => 'TestData'
             ]
         )->render();
@@ -40,9 +43,9 @@ class GeneralDirectivesTest extends TestCase
         $this->view->make(
             'foreach',
             [
-                'dataClass' => $this->data,
-                'array'     => $this->data->array,
-                'getArray'  => $this->data->getArrayGetterFn()
+                'dataClass' => $this->getData(),
+                'array'     => $this->getData()->array,
+                'getArray'  => $this->getData()->getArrayGetterFn()
             ]
         )->render();
     }

@@ -21,29 +21,23 @@
         "illuminate/support": "~5.0"
     },
     "suggest": {
-        "raveren/kent": ">0.9.1",
-        "illuminate/html": "~5.0"
+        "raveren/kint": ">0.9.1",
+        "illuminate/html": "~5.0",
+        "erusev/parsedown": "~1.5"
     },
     "require-dev": {
         "orchestra/testbench": "3.0.*",
         "laravel/framework": "5.0.*",
         "illuminate/html": "~5.0",
-        "mockery/mockery": "dev-master",
         "barryvdh/laravel-ide-helper": "2.*",
-        "phpunit/phpunit": "4.*",
-        "phing/phing": "2.*",
-        "phpmd/phpmd": "~2.2",
-        "squizlabs/php_codesniffer": "2.*",
-        "phpdocumentor/phpdocumentor": "2.*",
-        "radic/phing-tasks": "1.*",
-
-        "phploc/phploc": "*"
+        "erusev/parsedown": "~1.5",
+        "radic/testing": "dev-master"
     },
     "scripts": {
     },
     "autoload": {
-        "psr-0": {
-            "Radic\\BladeExtensions": "src/"
+        "psr-4": {
+            "Radic\\BladeExtensions\\": "src/"
         }
     },
     "autoload-dev": {

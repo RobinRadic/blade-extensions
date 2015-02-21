@@ -1,9 +1,8 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
-use Radic\BladeExtensions\BladeExtensionsServiceProvider;
-use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
+use Radic\Testing\Traits\BladeViewTestingTrait;
+use Radic\Tests\BladeExtensions\TestCase;
 
 /**
  * Class ViewTest
@@ -13,6 +12,8 @@ use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
  */
 class MacrosDirectivesTest extends TestCase
 {
+    use BladeViewTestingTrait;
+
     public function setUp()
     {
         parent::setUp();
@@ -27,5 +28,4 @@ class MacrosDirectivesTest extends TestCase
         $this->assertEquals('my age is 6', $this->view->make('macro2')->render());
         $this->assertEquals('patatmy age is3', $this->view->make('macro3')->render());
     }
-
 }

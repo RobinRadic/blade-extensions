@@ -5,6 +5,7 @@ use Radic\BladeExtensions\Directives\ForeachDirective;
 use Radic\BladeExtensions\Directives\MacroDirective;
 use Radic\BladeExtensions\Directives\PartialDirective;
 use Radic\BladeExtensions\Directives\VariablesDirective;
+use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
 
 /**
  * Class BladeExtensionsServiceProvider
@@ -34,7 +35,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $configPath = __DIR__ . '/../../config/blade-extensions.php';
+        $configPath = __DIR__ . '/../config/blade-extensions.php';
         $this->publishes([$configPath => config_path('blade-extensions.php')], 'config');
     }
 
@@ -45,14 +46,23 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $configPath = __DIR__ . '/../../config/blade-extensions.php';
+        $configPath = __DIR__ . '/../config/blade-extensions.php';
         $this->mergeConfigFrom($configPath, 'blade-extensions');
 
         VariablesDirective::attach($this->app);
-        if (array_key_exists('form', $this->app->getBindings())) {
-            MacroDirective::attach($this->app);
-        }
         ForeachDirective::attach($this->app);
         PartialDirective::attach($this->app);
+
+        # Optional macro directives
+        if (array_key_exists('form', $this->app->getBindings()))
+        {
+            MacroDirective::attach($this->app);
+        }
+
+        # Optional markdown compiler, engines and directives
+        if ((class_exists('\Ciconia\Ciconia') or class_exists('\Parsedown')) && $this->app['config']->get('blade-extensions.markdown.enabled'))
+        {
+            $this->app->register(new MarkdownServiceProvider($this->app));
+        }
     }
 }
