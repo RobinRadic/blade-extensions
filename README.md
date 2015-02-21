@@ -20,7 +20,30 @@ Version 2.1
 - **@macro** Defining and running macros (optional, requires [illuminate/html](https://github.com/erusev/parsedown))
 - **@markdown** Render github flavoured markdown by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown)
 - **BladeViewTestingTrait** enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
+  
+  
+#### Changelog  
+[View the detailed changelog here](CHANGELOG.md)
+  
+###### 2.1
+- Several changes to improve extending, in preparation for:
+    - [radic/themes](https://github.com/robinradic/laravel-themes) - A laravel 5 theme manager
+    - [radic/docs](https://github.com/robinradic/laravel-themes) - LV5 doc generator. Uses my [packadic/theme](https://github.com/packadic/theme) admin theme.
+- New unit tests
+    - For existing directives and classes
+    - For the new markdown stuff
+- Added markdown support
+    - Directives for inline markdown `@markdown` and `@endmarkdown`
+    - Markdown compilers, eg: `View::make('path-to-md-file')` and `@include('path-to-md-file')`
+    - Natively supports [Parsedown](https://github.com/sdf/asdf) and [Ciconia](https://github.com/sdf/asdf)
+- Build scripts, tools and tasks added.
+    - Integration with Jenkins.
+    - API Documentation generator
+    - Code coverage generator
 
+  
+###### 2.0
+- Laravel 5 support
 
 #### Installation  
 ###### Requirements

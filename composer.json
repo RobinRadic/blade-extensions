@@ -18,7 +18,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "~5.0"
+        "illuminate/support": "~5.0",
+        "radic/phing-tasks": "~1.0"
     },
     "suggest": {
         "raveren/kint": ">0.9.1",

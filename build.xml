@@ -6,16 +6,20 @@
     <!-- Uncomment the following when the tools are in ${basedir}/vendor/bin -->
     <!-- <property name="toolsdir" value="${basedir}/vendor/bin/"/> -->
 
-    <target name="build"
-            depends="prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox"
-            description=""/>
+    <property name="changelog.header" value="# Changelog"/>
+    <property name="changelog.filename" value="CHANGELOG.md"/>
+    <target name="changelog">
+        <delete file="${changelog.filename}"/>
+        <exec command='echo "${changelog.header} \n" >> ${changelog.filename} $.ch'/>
+        <exec command='git log --date=short --format="- [%cd](https://github.com/robinradic/blade-extensions/commit/%H) %gs %s  " >> ${changelog.filename}' logoutput="false"/>
+    </target>
 
-    <target name="build-parallel"
-            depends="prepare,lint,tools-parallel,phpunit,phpdox"
-            description=""/>
+    <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox" description=""/>
+
+    <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpdox" description=""/>
 
     <target name="tools-parallel" description="Run tools in parallel">
-        <parallel threadCount="2">
+        <parallel threadCount="6">
             <sequential>
                 <antcall target="pdepend"/>
                 <antcall target="phpmd-ci"/>
