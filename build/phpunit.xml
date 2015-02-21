@@ -4,7 +4,10 @@
          bootstrap="../vendor/autoload.php"
          strict="true"
          verbose="true"
-         timeoutForSmallTests="10">
+         timeoutForSmallTests="30"
+         timeoutForMediumTests="50"
+         timeoutForLargeTests="60"
+    >
   <testsuites>
     <testsuite name="Blade Extensions">
       <directory suffix="Test.php">../tests</directory>
