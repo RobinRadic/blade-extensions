@@ -13,7 +13,6 @@ use Radic\Tests\BladeExtensions\TestCase;
  */
 class GeneralDirectivesTest extends TestCase
 {
-    use BladeViewTestingTrait;
 
     public function setUp()
     {

@@ -12,7 +12,6 @@ use Radic\Tests\BladeExtensions\TestCase;
  */
 class MacroDirectivesTest extends TestCase
 {
-    use BladeViewTestingTrait;
 
     public function setUp()
     {

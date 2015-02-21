@@ -14,7 +14,6 @@ use Radic\Tests\BladeExtensions\TestCase;
  */
 class ForeachDirectivesTest extends TestCase
 {
-    use BladeViewTestingTrait;
 
     public function setUp()
     {
