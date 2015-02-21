@@ -2,7 +2,6 @@
 
 use Mockery as m;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
-use Radic\Testing\AbstractTestCase;
 use Radic\Testing\Traits\ServiceProviderTestCaseTrait;
 
 /**
@@ -11,7 +10,7 @@ use Radic\Testing\Traits\ServiceProviderTestCaseTrait;
  * @author     Robin Radic
  * @inheritDoc
  */
-class ServiceProviderTest extends AbstractTestCase
+class ServiceProviderTest extends TestCase
 {
     use ServiceProviderTestCaseTrait;
 
@@ -19,26 +18,29 @@ class ServiceProviderTest extends AbstractTestCase
     public function setUp()
     {
         parent::setUp();
+        $this->registerBlade();
+        $this->registerBladeMarkdown();
     }
 
 
-    public function testServiceProvider()
+    public function testServiceProviderRegister()
     {
-        $this->app->register(new BladeExtensionsServiceProvider($this->app));
-        $providers = $this->app->getLoadedProviders();
-        $this->assertArrayHasKey('Radic\BladeExtensions\BladeExtensionsServiceProvider', $providers);
-        $this->assertTrue($providers['Radic\BladeExtensions\BladeExtensionsServiceProvider']);
+
+        $this->runServiceProviderRegisterTest('Radic\BladeExtensions\BladeExtensionsServiceProvider');
+        $this->runServiceProviderRegisterTest('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
     }
 
-    /**
-     * Get the service provider class.
-     *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
-     * @return string
-     */
-    protected function getServiceProviderClass($app)
+    public function testIsRenderersInjectable()
     {
-        return 'Radic\BladeExtensions\BladeExtensionsServiceProvider';
+        $this->assertIsInjectable('Radic\BladeExtensions\Renderers\ParsedownRenderer');
+        $this->assertIsInjectable('Radic\BladeExtensions\Renderers\CiconiaRenderer');
     }
+
+    public function testIsCompilerInjectable()
+    {
+        #$this->assertIsInjectable('Radic\BladeExtensions\Compilers\MarkdownCompiler');
+    }
+
+
+
 }

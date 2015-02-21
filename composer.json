@@ -30,13 +30,14 @@
         "laravel/framework": "5.0.*",
         "illuminate/html": "~5.0",
         "barryvdh/laravel-ide-helper": "2.*",
-        "erusev/parsedown": "~1.5"
+        "erusev/parsedown": "~1.5",
+        "radic/testing": "dev-master"
     },
     "scripts": {
     },
     "autoload": {
         "psr-4": {
-            "Radic\\BladeExtensions": "src/"
+            "Radic\\BladeExtensions\\": "src/"
         }
     },
     "autoload-dev": {

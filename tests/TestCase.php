@@ -4,6 +4,7 @@ use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Html\HtmlServiceProvider;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 
+use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
 use Radic\Testing\AbstractTestCase;
 use Radic\Testing\Traits\BladeViewTestingTrait;
 
@@ -35,6 +36,18 @@ class TestCase extends AbstractTestCase
     }
 
     /**
+     * Get the service provider class.
+     *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass($app)
+    {
+        return 'Radic\BladeExtensions\BladeExtensionsServiceProvider';
+    }
+
+    /**
      * Adds assertion directives to blade and removes cached views
      */
     protected function loadViewTesting()
@@ -57,6 +70,11 @@ class TestCase extends AbstractTestCase
     protected function registerBlade()
     {
         $this->app->register(new BladeExtensionsServiceProvider($this->app));
+    }
+
+    protected function registerBladeMarkdown()
+    {
+        $this->app->register(new MarkdownServiceProvider($this->app));
     }
 
 }
