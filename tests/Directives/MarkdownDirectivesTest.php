@@ -1,6 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Radic\BladeExtensions\Directives\MarkdownDirective;
+use Radic\BladeExtensions\Directives\MarkdownDirectives;
 use Radic\Tests\BladeExtensions\TestCase;
 
 /**
@@ -23,7 +23,7 @@ class MarkdownDirectivesTest extends TestCase
         $exists = class_exists('Parsedown');
         if ($exists === true)
         {
-            MarkdownDirective::attach($this->app);
+            MarkdownDirectives::attach($this->app);
             $this->view->make('markdown')->render();
         }
     }

@@ -5,7 +5,7 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
 /**
- * Partials directives
+ * Macro directives
  *
  * @package        Radic\BladeExtensions
  * @subpackage     Directives
@@ -16,76 +16,56 @@ use Radic\BladeExtensions\Traits\BladeExtenderTrait;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class PartialDirective
+class MacroDirectives
 {
     use BladeExtenderTrait;
 
+
     /**
+     * Starts `macro` directive
+     *
      * @param             $value
      * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function addPartial($value, $configured, Application $app, Compiler $blade)
+    public function openMacro($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createOpenMatcher('partial');
+        $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }
 
     /**
+     * Ends `macro` directive
+     *
      * @param             $value
      * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function endPartial($value, $configured, Application $app, Compiler $blade)
+    public function closeMacro($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endpartial');
+        $matcher = $blade->createPlainMatcher('endmacro');
 
         return preg_replace($matcher, $configured, $value);
     }
 
     /**
+     * Adds `domacro` directive.
+     * Executes a macro
+     *
      * @param             $value
      * @param             $configured
      * @param Application $app
      * @param Compiler    $blade
      * @return mixed
      */
-    public function openBlock($value, $configured, Application $app, Compiler $blade)
+    public function doMacro($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createMatcher('block');
-
-        return preg_replace($matcher, $configured, $value);
-    }
-
-    /**
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler    $blade
-     * @return mixed
-     */
-    public function endBlock($value, $configured, Application $app, Compiler $blade)
-    {
-        $matcher = $blade->createPlainMatcher('endblock');
-
-        return preg_replace($matcher, $configured, $value);
-    }
-
-    /**
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler    $blade
-     * @return mixed
-     */
-    public function addRender($value, $configured, Application $app, Compiler $blade)
-    {
-        $matcher = $blade->createMatcher('render');
+        $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }

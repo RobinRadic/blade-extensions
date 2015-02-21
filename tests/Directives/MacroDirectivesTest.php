@@ -10,7 +10,7 @@ use Radic\Tests\BladeExtensions\TestCase;
  * @author     Robin Radic
  *
  */
-class MacrosDirectivesTest extends TestCase
+class MacroDirectivesTest extends TestCase
 {
     use BladeViewTestingTrait;
 

@@ -16,7 +16,7 @@ use Radic\BladeExtensions\Traits\BladeExtenderTrait;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class ForeachDirective
+class ForeachDirectives
 {
     use BladeExtenderTrait;
 

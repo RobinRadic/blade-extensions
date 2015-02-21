@@ -11,7 +11,7 @@ use Radic\Tests\BladeExtensions\TestCase;
  * @author     Robin Radic
  *
  */
-class GeneralDirectivesTest extends TestCase
+class AssignmentDirectivesTest extends TestCase
 {
     use BladeViewTestingTrait;
 
@@ -23,10 +23,16 @@ class GeneralDirectivesTest extends TestCase
         $this->registerBlade();
     }
 
-
-
-    public function testGeneral()
+    public function testSet()
     {
-        $this->assertTrue(true);
+        $this->view->make('set', [
+                'dataString'        => 'hello',
+                'dataArray'         => $this->getData()->getValues()['names'],
+                'dataClassInstance' => $this->getData(),
+                'dataClassName'     => 'DataGenerator'
+            ]
+        )->render();
     }
+
+
 }

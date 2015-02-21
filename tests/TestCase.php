@@ -2,8 +2,6 @@
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Html\HtmlServiceProvider;
-use Radic\BladeExtensions\BladeExtensionsServiceProvider;
-
 use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
 use Radic\Testing\AbstractTestCase;
 use Radic\Testing\Traits\BladeViewTestingTrait;
@@ -14,25 +12,14 @@ use Radic\Testing\Traits\BladeViewTestingTrait;
  * @author     Robin Radic
  * @inheritDoc
  */
-class TestCase extends AbstractTestCase
+abstract class TestCase extends AbstractTestCase
 {
     use BladeViewTestingTrait;
-
-    /**
-     * @var TestData
-     */
-    protected $data;
 
     /** @inheritDoc */
     public function setUp()
     {
         parent::setUp();
-        $this->data = new TestData();
-    }
-
-    public function getData()
-    {
-        return $this->data;
     }
 
     /**
@@ -53,7 +40,7 @@ class TestCase extends AbstractTestCase
     protected function loadViewTesting()
     {
         $this->addBladeViewTesting(__DIR__ . '/views');
-        \File::delete(\File::glob(base_path('storage/framework/views') . '/*'));
+        $this->cleanViews();
     }
 
     /**
@@ -69,7 +56,9 @@ class TestCase extends AbstractTestCase
      */
     protected function registerBlade()
     {
-        $this->app->register(new BladeExtensionsServiceProvider($this->app));
+        $class = $this->getServiceProviderClass($this->app);
+        $instance = new $class($this->app);
+        $this->app->register($instance);
     }
 
     protected function registerBladeMarkdown()

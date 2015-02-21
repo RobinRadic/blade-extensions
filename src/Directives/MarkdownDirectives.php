@@ -16,7 +16,7 @@ use Radic\BladeExtensions\Traits\BladeExtenderTrait;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class MarkdownDirective
+class MarkdownDirectives
 {
     use BladeExtenderTrait;
 

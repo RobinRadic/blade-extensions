@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
 use Radic\BladeExtensions\Compilers\MarkdownCompiler;
 use Radic\BladeExtensions\Directives\MarkdownDirective;
+use Radic\BladeExtensions\Directives\MarkdownDirectives;
 use Radic\BladeExtensions\Engines\BladeMarkdownEngine;
 use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
 
@@ -108,7 +109,7 @@ class MarkdownServiceProvider extends ServiceProvider
             }
         );
 
-        MarkdownDirective::attach($this->app);
+        MarkdownDirectives::attach($this->app);
     }
 
     public function provides()

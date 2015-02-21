@@ -5,7 +5,7 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
 /**
- * Macro directives
+ * Variable manipulation directives like `set`, `unset`, `debug`
  *
  * @package        Radic\BladeExtensions
  * @subpackage     Directives
@@ -16,56 +16,39 @@ use Radic\BladeExtensions\Traits\BladeExtenderTrait;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class MacroDirective
+class AssignmentDirectives
 {
+
     use BladeExtenderTrait;
 
-
     /**
-     * Starts `macro` directive
+     * Adds `set` directive
      *
      * @param             $value
      * @param             $configured
      * @param Application $app
-     * @param Compiler    $blade
+     * @param Compiler $blade
      * @return mixed
      */
-    public function openMacro($value, $configured, Application $app, Compiler $blade)
+    public function addSet($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        $matcher = '/@set\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }
 
     /**
-     * Ends `macro` directive
+     * Adds `unset` directive
      *
      * @param             $value
      * @param             $configured
      * @param Application $app
-     * @param Compiler    $blade
+     * @param Compiler $blade
      * @return mixed
      */
-    public function closeMacro($value, $configured, Application $app, Compiler $blade)
+    public function addUnset($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endmacro');
-
-        return preg_replace($matcher, $configured, $value);
-    }
-
-    /**
-     * Adds `domacro` directive.
-     * Executes a macro
-     *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler    $blade
-     * @return mixed
-     */
-    public function doMacro($value, $configured, Application $app, Compiler $blade)
-    {
-        $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        $matcher = '/@unset\((?:\$|(?:\'))(.*?)(?:\'|)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }

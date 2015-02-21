@@ -27,8 +27,11 @@
 
 
 @set($testArray, $dataArray)
-{{--@assertTrue(is_array($testArray), 'testArray should be an array')--}}
+{{--@assertTrue(is_array($testArray), 'testArray should be an array')
 @assertArrayHasKey(0, $testArray, 'testArray should have key 0')
+{{ xdebug_break() }}
+
+@set($testArray[0]['index'], 0)
 @assertTrue($testArray[0]['index'] === 0, 'testArray key 0 should have key index on 0')
 
 
@@ -37,6 +40,6 @@
 
 @set('pops', $testArray[0]['index'])
 @assertTrue($pops === $testArray[0]['index'], 'pops should equal testArray.0.index')
-
+--}}
 @unset($pops);
 @assertFalse(isset($pops), 'pops should not be set')

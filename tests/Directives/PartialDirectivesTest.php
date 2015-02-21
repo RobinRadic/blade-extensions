@@ -11,7 +11,7 @@ use Radic\Tests\BladeExtensions\TestCase;
  * @author     Robin Radic
  *
  */
-class GeneralDirectivesTest extends TestCase
+class PartialDirectivesTest extends TestCase
 {
     use BladeViewTestingTrait;
 
@@ -23,10 +23,9 @@ class GeneralDirectivesTest extends TestCase
         $this->registerBlade();
     }
 
-
-
-    public function testGeneral()
+    public function testPartials()
     {
-        $this->assertTrue(true);
+        $partials = $this->view->make('partials')->render();
+        $this->assertEquals("okokok", str_replace("\n", '', $partials));
     }
 }

@@ -4,6 +4,7 @@ use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\BladeExtensions\Compilers\MarkdownCompiler;
+use Radic\Testing\AbstractTestCase;
 use Radic\Testing\Traits\BladeViewTestingTrait;
 use Radic\Tests\BladeExtensions\TestCase;
 
@@ -13,7 +14,7 @@ use Radic\Tests\BladeExtensions\TestCase;
  * @author     Robin Radic
  *
  */
-class MarkdownCompilerTest extends TestCase
+class MarkdownCompilerTest extends AbstractTestCase
 {
     public function testCompile()
     {
