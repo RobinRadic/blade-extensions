@@ -1,6 +1,7 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\Tests\BladeExtensions\Directives;
 
 use Radic\BladeExtensions\Directives\MarkdownDirective;
+use Radic\Tests\BladeExtensions\TestCase;
 
 /**
  * Class Markdown

@@ -1,9 +1,10 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\Tests\BladeExtensions\Directives;
 
 use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
 use Radic\BladeExtensions\BladeExtensionsServiceProvider;
-use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
+use Radic\Testing\Traits\BladeViewTestingTrait;
+use Radic\Tests\BladeExtensions\TestCase;
 
 /**
  * Class ViewTest
@@ -13,6 +14,8 @@ use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
  */
 class GeneralDirectivesTest extends TestCase
 {
+    use BladeViewTestingTrait;
+
     public function setUp()
     {
         parent::setUp();
