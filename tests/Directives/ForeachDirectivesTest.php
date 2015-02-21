@@ -29,7 +29,7 @@ class ForeachDirectivesTest extends TestCase
     {
         $dataClass = $this->getData();
         $dataClass->array = DataGenerator::getRecords();
-        $this->view->make(
+        $this->view()->make(
             'foreach',
             [
                 'dataClass' => $this->getData(),

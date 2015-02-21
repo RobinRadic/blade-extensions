@@ -25,7 +25,7 @@ class PartialDirectivesTest extends TestCase
 
     public function testPartials()
     {
-        $partials = $this->view->make('partials')->render();
+        $partials = $this->view()->make('partials')->render();
         $this->assertEquals("okokok", str_replace("\n", '', $partials));
     }
 }

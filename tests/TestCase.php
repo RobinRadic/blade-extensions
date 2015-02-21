@@ -23,6 +23,14 @@ abstract class TestCase extends AbstractTestCase
     }
 
     /**
+     * @return \Illuminate\Contracts\View\Factory
+     */
+    public function view()
+    {
+        return $this->app['view'];
+    }
+
+    /**
      * Get the service provider class.
      *
      * @param \Illuminate\Contracts\Foundation\Application $app

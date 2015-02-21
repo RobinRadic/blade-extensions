@@ -38,5 +38,6 @@ class ConfigTest extends TestCase
     {
         \File::delete(\File::glob(app_path('config/blade-') . '*'));
         $this->command('vendor:publish');
+        $this->assertTrue(true);
     }
 }

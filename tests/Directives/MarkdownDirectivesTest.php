@@ -24,7 +24,8 @@ class MarkdownDirectivesTest extends TestCase
         if ($exists === true)
         {
             MarkdownDirectives::attach($this->app);
-            $this->view->make('markdown')->render();
+            $this->view()->make('markdown')->render();
         }
+        $this->assertTrue(true);
     }
 }
