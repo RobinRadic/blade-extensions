@@ -18,7 +18,7 @@ Version 2.1
 - **@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.
 - **@debug** Debugging values in views
 - **@macro** Defining and running macros (optional, requires [illuminate/html](https://github.com/erusev/parsedown))
-- **@markdown** Render github flavoured markdown (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown)
+- **@markdown** Render github flavoured markdown by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown)
 - **BladeViewTestingTrait** enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
 
 
