@@ -1,6 +1,8 @@
 <?php namespace Radic\BladeExtensions;
 
-use Illuminate\Support\ServiceProvider;
+use App;
+use Config;
+use Radic\Support\ServiceProvider;
 
 use Radic\BladeExtensions\Directives\AssignmentDirectives;
 use Radic\BladeExtensions\Directives\DebugDirectives;
@@ -22,34 +24,21 @@ use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
  */
 class BladeExtensionsServiceProvider extends ServiceProvider
 {
+    /** @inheritdoc */
+    protected $configFiles = ['blade-extensions'];
 
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
+    /** @inheritdoc */
+    protected $dir = __DIR__;
 
-    /**
-     * Boots the services provided. Attaches the blade extensions to the current Application's - ViewEnvironment
-     *
-     * @return void
-     */
+    /** @inheritdoc */
     public function boot()
     {
-        $configPath = __DIR__ . '/../config/blade-extensions.php';
-        $this->publishes([$configPath => config_path('blade-extensions.php')], 'config');
+        parent::boot();
     }
-
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
+    /** @inheritdoc */
     public function register()
     {
-        $configPath = __DIR__ . '/../config/blade-extensions.php';
-        $this->mergeConfigFrom($configPath, 'blade-extensions');
+        parent::register();
 
         AssignmentDirectives::attach($this->app);
         DebugDirectives::attach($this->app);
@@ -57,13 +46,13 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         PartialDirectives::attach($this->app);
 
         # Optional macro directives
-        if (array_key_exists('form', $this->app->getBindings()))
+        if (array_key_exists('form', App::getBindings()))
         {
             MacroDirectives::attach($this->app);
         }
 
         # Optional markdown compiler, engines and directives
-        if ((class_exists('\Ciconia\Ciconia') or class_exists('\Parsedown')) && $this->app['config']->get('blade-extensions.markdown.enabled'))
+        if ((class_exists('\Ciconia\Ciconia') or class_exists('\Parsedown')) && Config::get('blade-extensions.markdown.enabled'))
         {
             $this->app->register(new MarkdownServiceProvider($this->app));
         }
