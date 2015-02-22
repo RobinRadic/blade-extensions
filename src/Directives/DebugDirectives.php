@@ -34,8 +34,8 @@ class DebugDirectives
     public function addBreakpoint($value, $configured, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('breakpoint');
-
-        return preg_replace($matcher, $configured, $value);
+        $configured = '';
+        return $value; // preg_replace($matcher, $configured, $value);
     }
 
     /**
@@ -50,7 +50,6 @@ class DebugDirectives
     public function addDebug($value, $configured, Application $app, Compiler $blade)
     {
         $matcher = '/@debug(?:s?)\(([^()]+)*\)/';
-
         return preg_replace($matcher, $configured, $value);
     }
 }

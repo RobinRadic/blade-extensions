@@ -80,25 +80,19 @@ class MarkdownServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $this->app->config->get('blade-extensions.markdown.renderer'));
-        $this->app->singleton(
-            'markdown',
-            function ($app)
-            {
-                return $this->app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
-            }
-        );
+        $this->app->singleton('markdown', function ($app)
+        {
+            return $this->app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
+        });
 
-        $this->app->singleton(
-            'markdown.compiler',
-            function ($app)
-            {
-                $ciconia     = $app['markdown'];
-                $files       = $app['files'];
-                $storagePath = $app['config']->get('view.compiled');
+        $this->app->singleton('markdown.compiler', function ($app)
+        {
+            $markdownRenderer = $app['markdown'];
+            $files            = $app['files'];
+            $storagePath      = $app['config']->get('view.compiled');
 
-                return new MarkdownCompiler($ciconia, $files, $storagePath);
-            }
-        );
+            return new MarkdownCompiler($markdownRenderer, $files, $storagePath);
+        });
 
         MarkdownDirectives::attach($this->app);
     }
