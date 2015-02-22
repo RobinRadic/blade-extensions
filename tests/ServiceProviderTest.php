@@ -1,7 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
-use Radic\BladeExtensions\BladeExtensionsServiceProvider;
 use Radic\Testing\Traits\ServiceProviderTestCaseTrait;
 
 /**
@@ -25,7 +24,6 @@ class ServiceProviderTest extends TestCase
 
     public function testServiceProviderRegister()
     {
-
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\BladeExtensionsServiceProvider');
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
     }
@@ -41,7 +39,4 @@ class ServiceProviderTest extends TestCase
         $this->assertTrue(true);
         #$this->assertIsInjectable('Radic\BladeExtensions\Compilers\MarkdownCompiler');
     }
-
-
-
 }
