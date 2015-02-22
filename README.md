@@ -4,9 +4,9 @@ Laravel Blade Extensions
 [![Build Status](https://travis-ci.org/RobinRadic/blade-extensions.svg?branch=master)](https://travis-ci.org/RobinRadic/blade-extensions)
 [![GitHub version](https://badge.fury.io/gh/robinradic%2Fblade-extensions.svg)](http://badge.fury.io/gh/robinradic%2Fblade-extensions)
 [![Total Downloads](https://poser.pugx.org/radic/blade-extensions/downloads.svg)](https://packagist.org/packages/radic/blade-extensions)
-[![Goto documentation](http://img.shields.io/badge/goto-documentation-orange.svg)](http://docs.radic.nl/blade-extensions)
-[![Goto repository](http://img.shields.io/badge/goto-repository-orange.svg)](https://github.com/robinradic/blade-extensions)
-[![License](http://img.shields.io/badge/license-MIT-blue.svg)](http://radic.mit-license.org)
+[![Goto documentation](http://img.shields.io/badge/goto-documentation-orange.svg?style=flat-square)](http://docs.radic.nl/blade-extensions)
+[![Goto repository](http://img.shields.io/badge/goto-repository-orange.svg?style=flat-square)](https://github.com/robinradic/blade-extensions)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://radic.mit-license.org)
 
 Version 2.1
 -----------
