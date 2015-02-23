@@ -2,7 +2,6 @@
 
 use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
-use Radic\Testing\Traits\BladeViewTestingTrait;
 use Radic\Tests\BladeExtensions\TestCase;
 
 /**

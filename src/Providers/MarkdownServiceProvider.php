@@ -2,6 +2,7 @@
 
 use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
+use Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
 use Radic\BladeExtensions\Compilers\MarkdownCompiler;
@@ -38,7 +39,7 @@ class MarkdownServiceProvider extends ServiceProvider
         $view = $app['view'];
 
         # Do not register the engine resolvers if defined in config
-        if ($app['config']->get('blade-extensions.markdown.views') === false)
+        if (Config::get('blade-extensions.markdown.views') === false)
         {
             return;
         }
@@ -79,7 +80,7 @@ class MarkdownServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $this->app->config->get('blade-extensions.markdown.renderer'));
+        $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', Config::get('blade-extensions.markdown.renderer'));
         $this->app->singleton('markdown', function ($app)
         {
             return $this->app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
@@ -89,7 +90,7 @@ class MarkdownServiceProvider extends ServiceProvider
         {
             $markdownRenderer = $app['markdown'];
             $files            = $app['files'];
-            $storagePath      = $app['config']->get('view.compiled');
+            $storagePath      = Config::get('view.compiled');
 
             return new MarkdownCompiler($markdownRenderer, $files, $storagePath);
         });

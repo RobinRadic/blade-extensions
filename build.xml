@@ -38,8 +38,13 @@
         <delete dir="${basedir}/build/phpdox"/>
         <property name="clean.done" value="true"/>
     </target>
+    <target name="clean.vendor" unless="clean.vendor.done" depends="clean" description="Cleanup composer and vendor">
+        <delete dir="${basedir}/vendor"/>
+        <delete file="${basedir}/composer.lock"/>
+        <property name="clean.vendor.done" value="true"/>
+    </target>
 
-    <target name="prepare" unless="prepare.done" depends="clean" description="Prepare for build">
+    <target name="prepare" unless="prepare.done" depends="clean.vendor" description="Prepare for build">
         <mkdir dir="${basedir}/build/api"/>
         <mkdir dir="${basedir}/build/coverage"/>
         <mkdir dir="${basedir}/build/logs"/>

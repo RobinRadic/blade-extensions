@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
 use Mockery as m;
-use Radic\Testing\Traits\BladeViewTestingTrait;
+
 use Radic\Tests\BladeExtensions\TestCase;
 
 /**

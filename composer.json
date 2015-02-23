@@ -19,7 +19,7 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "~5.0",
-        "radic/phing-tasks": "~1.0"
+        "radic/laravel-support": "dev-master"
     },
     "suggest": {
         "raveren/kint": ">0.9.1",
@@ -27,14 +27,12 @@
         "erusev/parsedown": "~1.5"
     },
     "require-dev": {
-        "orchestra/testbench": "3.0.*",
-        "laravel/framework": "5.0.*",
+        "radic/laravel-dev": "dev-master",
+        "radic/laravel-support": "dev-master",
+        "gooh/interface-distiller": "dev-master",
+        "raveren/kint": "0.9.*",
         "illuminate/html": "~5.0",
-        "barryvdh/laravel-ide-helper": "2.*",
-        "erusev/parsedown": "~1.5",
-        "radic/testing": "dev-master",
-        "kzykhys/ciconia": "~1.0",
-        "mockery/mockery": "0.9.*"
+        "erusev/parsedown": "~1.5"
     },
     "scripts": {
     },

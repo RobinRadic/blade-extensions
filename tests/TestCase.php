@@ -3,8 +3,8 @@
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Html\HtmlServiceProvider;
 use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
-use Radic\Testing\AbstractTestCase;
-use Radic\Testing\Traits\BladeViewTestingTrait;
+use Radic\Dev\AbstractTestCase;
+use Radic\Dev\Traits\BladeViewTestingTrait;
 
 /**
  * Class ViewTest
