@@ -27,3 +27,4 @@ commit.bat
 /app
 /.project
 /cache.properties
+/phing
