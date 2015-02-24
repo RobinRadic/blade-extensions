@@ -23,25 +23,33 @@
         <echo message="Created markdown changelog: ${changelog.filename}" />
     </target>
 
+    <target name="git.submodule.update">
+        <exec command="bash ${toolsdir}submodule-update.sh" dir="${project.basedir}" logoutput="true" />
+    </target>
+
     <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox,phpdoc" description=""/>
 
-    <target name="clean" unless="clean.done" description="Cleanup build artifacts">
+    <target name="clean.build" unless="clean.build.done" description="Cleanup build artifacts">
         <delete dir="${project.basedir}/build/api"/>
         <delete dir="${project.basedir}/build/coverage"/>
         <delete dir="${project.basedir}/build/logs"/>
         <delete dir="${project.basedir}/build/pdepend"/>
         <delete dir="${project.basedir}/build/phpdox"/>
         <delete dir="${project.basedir}/build/phpdoc"/>
-        <property name="clean.done" value="true"/>
+        <property name="clean.build.done" value="true"/>
     </target>
 
-    <target name="clean.vendor" unless="clean.vendor.done" depends="clean" description="Cleanup composer and vendor">
+    <target name="clean.vendor" unless="clean.vendor.done" description="Cleanup composer and vendor">
         <delete dir="${project.basedir}/vendor"/>
         <delete file="${project.basedir}/composer.lock"/>
         <property name="clean.vendor.done" value="true"/>
     </target>
 
-    <target name="prepare" unless="prepare.done" depends="clean.vendor" description="Prepare for build">
+    <target name="clean" unless="clean.done" depends="clean.build,clean.vendor" description="Cleanup all">
+        <property name="clean.done" value="true"/>
+    </target>
+
+    <target name="prepare" unless="prepare.done" depends="clean,git.submodule.update" description="Prepare for build">
         <mkdir dir="${project.basedir}/build/api"/>
         <mkdir dir="${project.basedir}/build/coverage"/>
         <mkdir dir="${project.basedir}/build/logs"/>

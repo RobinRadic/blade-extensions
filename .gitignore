@@ -19,6 +19,8 @@ commit.bat
 /build/pdepend
 /build/phpdoc
 /build/phpdox
+/cache.properties
+/phing
 .idea
 /test.php
 /test.md
@@ -26,5 +28,3 @@ commit.bat
 /psysh.phar
 /app
 /.project
-/cache.properties
-/phing
