@@ -14,9 +14,9 @@
         <exec command='git log --date=short --format="- [%cd](https://github.com/robinradic/blade-extensions/commit/%H) %gs %s  " >> ${changelog.filename}' logoutput="false"/>
     </target>
 
-    <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox" description=""/>
+    <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox,phpdoc" description=""/>
 
-    <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpdox" description=""/>
+    <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpdox,phpdoc" description=""/>
 
     <target name="tools-parallel" description="Run tools in parallel">
         <parallel threadCount="6">
@@ -36,6 +36,7 @@
         <delete dir="${basedir}/build/logs"/>
         <delete dir="${basedir}/build/pdepend"/>
         <delete dir="${basedir}/build/phpdox"/>
+        <delete dir="${basedir}/build/phpdoc"/>
         <property name="clean.done" value="true"/>
     </target>
     <target name="clean.vendor" unless="clean.vendor.done" depends="clean" description="Cleanup composer and vendor">
@@ -50,6 +51,7 @@
         <mkdir dir="${basedir}/build/logs"/>
         <mkdir dir="${basedir}/build/pdepend"/>
         <mkdir dir="${basedir}/build/phpdox"/>
+        <mkdir dir="${basedir}/build/phpdoc"/>
         <exec executable="composer">
             <arg line="install"/>
         </exec>
@@ -181,5 +183,13 @@
             depends="phploc-ci,phpcs-ci,phpmd-ci"
             description="Generate project documentation using phpDox">
         <exec executable="${toolsdir}phpdox.phar" dir="${basedir}/build"/>
+    </target>
+
+    <target name="phpdoc" description="Generate project documentation using phpDox">
+        <exec executable="${toolsdir}phpdoc.phar" dir="${basedir}/build">
+            <arg line="-t ./phpdoc"/>
+            <arg line="-d ../src"/>
+            <arg line="--template=responsive-twig"/>
+        </exec>
     </target>
 </project>

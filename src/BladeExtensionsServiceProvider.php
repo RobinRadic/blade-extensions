@@ -25,7 +25,7 @@ use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
 class BladeExtensionsServiceProvider extends ServiceProvider
 {
     /** @inheritdoc */
-    protected $configFiles = ['blade-extensions'];
+    protected $configFiles = ['blade_extensions'];
 
     /** @inheritdoc */
     protected $dir = __DIR__;
@@ -52,7 +52,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         }
 
         # Optional markdown compiler, engines and directives
-        if ((class_exists('\Ciconia\Ciconia') or class_exists('\Parsedown')) && Config::get('blade-extensions.markdown.enabled'))
+        if ((class_exists('\Ciconia\Ciconia') or class_exists('\Parsedown')) && Config::get('blade_extensions.markdown.enabled'))
         {
             $this->app->register(new MarkdownServiceProvider($this->app));
         }

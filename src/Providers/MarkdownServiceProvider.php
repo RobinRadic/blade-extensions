@@ -39,7 +39,7 @@ class MarkdownServiceProvider extends ServiceProvider
         $view = $app['view'];
 
         # Do not register the engine resolvers if defined in config
-        if (Config::get('blade-extensions.markdown.views') === false)
+        if (Config::get('blade_extensions.markdown.views') === false)
         {
             return;
         }
@@ -80,7 +80,7 @@ class MarkdownServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', Config::get('blade-extensions.markdown.renderer'));
+        $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', Config::get('blade_extensions.markdown.renderer'));
         $this->app->singleton('markdown', function ($app)
         {
             return $this->app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');

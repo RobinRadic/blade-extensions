@@ -44,7 +44,7 @@ class CiconiaRenderer implements MarkdownRenderer
     /** @inheritdoc */
     public function render($text)
     {
-        $gfm         = $this->config->get('blade-extensions.markdown.gfm');
+        $gfm         = $this->config->get('blade_extensions.markdown.gfm');
         $ciconia = new Ciconia();
         if($gfm === true)
         {
