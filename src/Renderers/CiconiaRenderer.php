@@ -1,6 +1,5 @@
 <?php namespace Radic\BladeExtensions\Renderers;
 
-
 use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
 use Radic\BladeExtensions\Contracts\MarkdownRenderer;
@@ -46,8 +45,7 @@ class CiconiaRenderer implements MarkdownRenderer
     {
         $gfm         = $this->config->get('blade_extensions.markdown.gfm');
         $ciconia = new Ciconia();
-        if($gfm === true)
-        {
+        if ($gfm === true) {
             $ciconia->addExtension(new Gfm\FencedCodeBlockExtension());
             $ciconia->addExtension(new Gfm\TaskListExtension());
             $ciconia->addExtension(new Gfm\InlineStyleExtension());

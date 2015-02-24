@@ -41,10 +41,8 @@ trait BladeExtenderTrait
         $directives = isset($class->directives) ? $class->directives : Config::get('blade_extensions.directives');
         $blacklist  = isset($class->blacklist) ? $class->blacklist : Config::get('blade_extensions.blacklist');
 
-        foreach (get_class_methods($class) as $method)
-        {
-            if ($method == 'attach' or (is_array($blacklist) && in_array($method, $blacklist)))
-            {
+        foreach (get_class_methods($class) as $method) {
+            if ($method == 'attach' or (is_array($blacklist) && in_array($method, $blacklist))) {
                 continue;
             }
 

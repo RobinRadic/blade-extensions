@@ -1,12 +1,10 @@
 <?php namespace Radic\BladeExtensions\Engines;
 
-
 use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
 use Illuminate\View\Compilers\CompilerInterface;
 use Illuminate\View\Engines\CompilerEngine;
 use Radic\BladeExtensions\Contracts\MarkdownRenderer;
-
 
 /**
  * The blade markdown engine

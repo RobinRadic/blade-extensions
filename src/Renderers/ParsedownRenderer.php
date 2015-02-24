@@ -1,9 +1,9 @@
 <?php namespace Radic\BladeExtensions\Renderers;
 
-
 use Radic\BladeExtensions\Contracts\MarkdownRenderer;
 use Illuminate\Contracts\Config\Repository as Config;
 use Parsedown;
+
 /**
  * The Parsedown markdown renderer implementation
  *
@@ -16,7 +16,7 @@ use Parsedown;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class ParsedownRenderer implements  MarkdownRenderer
+class ParsedownRenderer implements MarkdownRenderer
 {
 
     /**

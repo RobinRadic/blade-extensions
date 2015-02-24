@@ -34,9 +34,6 @@ class AssignmentDirectivesTest extends TestCase
                 'dataArray'         => $this->getData()->getValues()['names'],
                 'dataClassInstance' => $this->getData(),
                 'dataClassName'     => 'DataGenerator'
-            ]
-        )->render();
+            ])->render();
     }
-
-
 }

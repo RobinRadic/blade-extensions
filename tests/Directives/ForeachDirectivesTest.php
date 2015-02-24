@@ -33,9 +33,10 @@ class ForeachDirectivesTest extends TestCase
             [
                 'dataClass' => $this->getData(),
                 'array'     => $this->getData()->getRecords(),
-                'getArray'  => function(){ return $this->getData()->getValues()['names']; }
+                'getArray'  => function(){
+                    return $this->getData()->getValues()['names'];
+                }
             ]
         )->render();
     }
-
 }

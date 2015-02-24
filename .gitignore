@@ -17,8 +17,8 @@ commit.bat
 /build/coverage
 /build/logs
 /build/pdepend
-/build/phpdox
 /build/phpdoc
+/build/phpdox
 .idea
 /test.php
 /test.md

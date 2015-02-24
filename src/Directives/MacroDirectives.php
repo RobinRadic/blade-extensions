@@ -4,7 +4,6 @@ use Illuminate\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
-
 /**
  * Directives: macro, endmacro, domacro
  *

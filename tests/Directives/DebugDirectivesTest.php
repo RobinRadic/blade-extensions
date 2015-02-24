@@ -26,5 +26,4 @@ class DebugDirectivesTest extends TestCase
     {
         $this->assertTrue(true);
     }
-
 }

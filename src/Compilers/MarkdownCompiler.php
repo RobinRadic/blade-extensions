@@ -1,6 +1,5 @@
 <?php namespace Radic\BladeExtensions\Compilers;
 
-
 use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
 use Illuminate\Filesystem\Filesystem;
@@ -90,6 +89,4 @@ class MarkdownCompiler extends Compiler implements CompilerInterface
 
         return $this;
     }
-
-
 }

@@ -1,12 +1,10 @@
 <?php namespace Radic\BladeExtensions\Engines;
 
-
 use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
 use Illuminate\View\Engines\PhpEngine;
 use Radic\BladeExtensions\Contracts\MarkdownRenderer;
 use Radic\BladeExtensions\Traits\MarkdownEngineTrait;
-
 
 /**
  * The Parsedown markdown renderer implementation

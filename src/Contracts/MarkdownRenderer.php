@@ -1,6 +1,5 @@
 <?php namespace Radic\BladeExtensions\Contracts;
 
-
 /**
  * Directives: set, unset
  *

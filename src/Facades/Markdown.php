@@ -1,4 +1,9 @@
 <?php namespace Radic\BladeExtensions\Facades; /**
+
+
+
+
+
  * Part of the Radic packges.
  * Licensed under the MIT license.
  *
@@ -9,6 +14,7 @@
  * @link       http://radic.mit-license.org
  */
 use Illuminate\Support\Facades\Facade;
+
 /**
  * Markdown
  *

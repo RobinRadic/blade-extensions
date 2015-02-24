@@ -39,8 +39,7 @@ class MarkdownServiceProvider extends ServiceProvider
         $view = $app['view'];
 
         # Do not register the engine resolvers if defined in config
-        if (Config::get('blade_extensions.markdown.views') === false)
-        {
+        if (Config::get('blade_extensions.markdown.views') === false) {
             return;
         }
 

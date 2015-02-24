@@ -115,7 +115,19 @@
         </exec>
     </target>
 
-    <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
+    <target name="phpcbf" description="Fixes coding standard violations using PHP_CodeSniffer Fixer">
+
+        <exec executable="${toolsdir}phpcbf.phar" logoutput="true">
+            <arg value="--tabWidth=4"/>
+            <arg value="--standard=PSR2"/>
+            <arg value="--extensions=php"/>
+            <arg value="--ignore=autoload.php"/>
+            <arg path="${project.basedir}/src"/>
+            <arg path="${project.basedir}/tests"/>
+        </exec>
+    </target>
+
+    <target name="phpcs" depends="phpcbf" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
         <exec executable="${toolsdir}phpcs.phar" logoutput="true">
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
@@ -161,11 +173,12 @@
         <exec executable="${toolsdir}phpdox.phar" dir="${project.basedir}/build" logoutput="true"/>
     </target>
 
-    <target name="phpdoc" description="Generate project documentation using phpDox">
+    <target name="phpdoc" depends="prepare" description="Generate project documentation using phpDocumentator">
         <exec executable="${toolsdir}phpdoc.phar" dir="${project.basedir}/build" logoutput="true">
             <arg line="-t ./phpdoc"/>
             <arg line="-d ../src"/>
             <arg line="--template=responsive-twig"/>
         </exec>
     </target>
+
 </project>

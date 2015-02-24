@@ -73,5 +73,4 @@ abstract class TestCase extends AbstractTestCase
     {
         $this->app->register(new MarkdownServiceProvider($this->app));
     }
-
 }

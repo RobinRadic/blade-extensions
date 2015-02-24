@@ -21,8 +21,7 @@ class MarkdownDirectivesTest extends TestCase
     public function testMarkdown()
     {
         $exists = class_exists('Parsedown');
-        if ($exists === true)
-        {
+        if ($exists === true) {
             MarkdownDirectives::attach($this->app);
             $this->view()->make('markdown')->render();
         }
