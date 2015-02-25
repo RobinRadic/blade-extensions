@@ -1,4 +1,8 @@
-<?php namespace Radic\BladeExtensions\Directives;
+<?php
+/**
+ * Directives: markdown, endmarkdown
+ */
+namespace Radic\BladeExtensions\Directives;
 
 use Illuminate\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler as Compiler;
@@ -8,13 +12,12 @@ use Radic\BladeExtensions\Traits\BladeExtenderTrait;
  * Directives: markdown, endmarkdown
  *
  * @package            Radic\BladeExtensions
- * @version            2.1.0
  * @subpackage         Directives
+ * @version            2.1.0
  * @author             Robin Radic
  * @license            MIT License - http://radic.mit-license.org
- * @copyright          (c) 2011-2015, Robin Radic
+ * @copyright          2011-2015, Robin Radic
  * @link               http://robin.radic.nl/blade-extensions
- *
  */
 class MarkdownDirectives
 {

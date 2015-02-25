@@ -1,4 +1,8 @@
-<?php namespace Radic\BladeExtensions\Helpers;
+<?php
+/**
+ * Represents the $loop variable in the foreach directive. Handles all data.
+ */
+namespace Radic\BladeExtensions\Helpers;
 
 /**
  * Represents the $loop variable in the foreach directive. Handles all data.
@@ -8,7 +12,7 @@
  * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
- * @copyright      (c) 2011-2015, Robin Radic - Radic Technologies
+ * @copyright      2011-2015, Robin Radic - Radic Technologies
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
@@ -83,7 +87,8 @@ class Loop
      */
     public function setItems($items)
     {
-        if (isset($data)) {
+        if (isset($data))
+        {
             return;
         }
         $this->items = $items;
@@ -117,21 +122,30 @@ class Loop
      */
     public function before()
     {
-        if ($this->data['index'] % 2 == 0) {
+        if ($this->data['index'] % 2 == 0)
+        {
             $this->data['odd']  = false;
             $this->data['even'] = true;
-        } else {
+        }
+        else
+        {
             $this->data['odd']  = true;
             $this->data['even'] = false;
         }
-        if ($this->data['index'] == 0) {
+        if ($this->data['index'] == 0)
+        {
             $this->data['first'] = true;
-        } else {
+        }
+        else
+        {
             $this->data['first'] = false;
         }
-        if ($this->data['revindex'] == 0) {
+        if ($this->data['revindex'] == 0)
+        {
             $this->data['last'] = true;
-        } else {
+        }
+        else
+        {
             $this->data['last'] = false;
         }
     }

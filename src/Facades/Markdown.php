@@ -1,27 +1,28 @@
-<?php namespace Radic\BladeExtensions\Facades; /**
-
-
-
-
-
- * Part of the Radic packges.
- * Licensed under the MIT license.
- *
- * @package    dev9
- * @author     Robin Radic
- * @license    MIT
- * @copyright  (c) 2011-2015, Robin Radic
- * @link       http://radic.mit-license.org
+<?php
+/**
+ * The Markdown FAcad
  */
+namespace Radic\BladeExtensions\Facades;
+
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Markdown
+ * The Markdown Facad
  *
- * @package Radic\BladeExtensions\Facades${NAME}
+ * @package            Radic\BladeExtensions
+ * @subpackage         Facades
+ * @version            2.1.0
+ * @author             Robin Radic
+ * @license            MIT License - http://radic.mit-license.org
+ * @copyright          2011-2015, Robin Radic
+ * @link               http://robin.radic.nl/blade-extensions
+ *
  */
 class Markdown extends Facade
 {
+    /**
+     * {@inheritdoc}
+     */
     public static function getFacadeAccessor()
     {
         return 'markdown';

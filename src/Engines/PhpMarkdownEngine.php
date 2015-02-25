@@ -1,34 +1,38 @@
-<?php namespace Radic\BladeExtensions\Engines;
+<?php
+/**
+ * The Parsedown markdown renderer implementation
+ */
+namespace Radic\BladeExtensions\Engines;
 
-use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
 use Illuminate\View\Engines\PhpEngine;
 use Radic\BladeExtensions\Contracts\MarkdownRenderer;
-use Radic\BladeExtensions\Traits\MarkdownEngineTrait;
 
 /**
  * The Parsedown markdown renderer implementation
  *
  * @package            Radic\BladeExtensions
+ * @subpackage         Engines
  * @version            2.1.0
- * @subpackage         Renderers
  * @author             Robin Radic
  * @license            MIT License - http://radic.mit-license.org
- * @copyright      (c) 2011-2015, Robin Radic
+ * @copyright          2011-2015, Robin Radic
  * @link               http://robin.radic.nl/blade-extensions
  *
  */
 class PhpMarkdownEngine extends PhpEngine
 {
 
-    /** @var \Radic\BladeExtensions\Contracts\MarkdownRenderer */
+    /**
+     * The markdown renderer implementation
+     * @var \Radic\BladeExtensions\Contracts\MarkdownRenderer
+     */
     protected $renderer;
 
     /**
      * Create a new instance.
      *
-     * @param CompilerInterface $compiler
-     * @param MarkdownRenderer $renderer
+     * @param \Radic\BladeExtensions\Contracts\MarkdownRenderer $renderer
      */
     public function __construct(MarkdownRenderer $renderer)
     {

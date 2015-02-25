@@ -1,6 +1,9 @@
-<?php namespace Radic\BladeExtensions\Compilers;
+<?php
+/**
+ * Markdown compiler
+ */
+namespace Radic\BladeExtensions\Compilers;
 
-use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Compilers\Compiler;
@@ -11,11 +14,11 @@ use Radic\BladeExtensions\Contracts\MarkdownRenderer;
  * Markdown compiler
  *
  * @package            Radic\BladeExtensions
- * @version            2.1.0
  * @subpackage         Compilers
+ * @version            2.1.0
  * @author             Robin Radic
  * @license            MIT License - http://radic.mit-license.org
- * @copyright          (c) 2011-2015, Robin Radic
+ * @copyright          2011-2015, Robin Radic
  * @link               http://robin.radic.nl/blade-extensions
  *
  */
@@ -23,6 +26,7 @@ class MarkdownCompiler extends Compiler implements CompilerInterface
 {
 
     /**
+     * The markdown render instance
      * @var \Radic\BladeExtensions\Contracts\MarkdownRenderer
      */
     protected $renderer;
@@ -30,8 +34,8 @@ class MarkdownCompiler extends Compiler implements CompilerInterface
     /**
      * Create a new instance
      *
-     * @param Ciconia    $renderer
-     * @param Filesystem $files
+     * @param \Radic\BladeExtensions\Contracts\MarkdownRenderer $renderer
+     * @param \Illuminate\Filesystem\Filesystem $files
      * @param            $cachePath
      */
     public function __construct(MarkdownRenderer $renderer, Filesystem $files, $cachePath)
@@ -52,41 +56,4 @@ class MarkdownCompiler extends Compiler implements CompilerInterface
         $this->files->put($this->getCompiledPath($path), $content);
     }
 
-    public function getRenderer()
-    {
-        return $this->renderer;
-    }
-
-    public function setRenderer($renderer)
-    {
-        $this->renderer = $renderer;
-
-        return $this;
-    }
-
-
-
-    public function getFiles()
-    {
-        return $this->files;
-    }
-
-    public function setFiles($files)
-    {
-        $this->files = $files;
-
-        return $this;
-    }
-
-    public function getCachePath()
-    {
-        return $this->cachePath;
-    }
-
-    public function setCachePath($cachePath)
-    {
-        $this->cachePath = $cachePath;
-
-        return $this;
-    }
 }

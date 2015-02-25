@@ -3,7 +3,7 @@
     <property name="toolsdir" value="${project.basedir}/build/tools/"/>
     <property name="changelog.header" value="# Changelog"/>
     <property name="changelog.filename" value="CHANGELOG.md"/>
-    <property name="gitremote.url" value="https://github.com/"/>
+    <property name="gitremote.url" value="https://github.com"/>
     <property name="gitremote.owner" value="robinradic"/>
     <property name="gitremote.repo" value="${phing.project.name}"/>
 
@@ -19,7 +19,7 @@
     <target name="changelog">
         <delete file="${changelog.filename}" quiet="true" />
         <exec command='echo "${changelog.header} \n" >> ${changelog.filename}'/>
-        <exec command='git log --date=short --format="- [%cd](https://github.com/robinradic/blade-extensions/commit/%H) %gs %s  " >> ${changelog.filename}' logoutput="false"/>
+        <exec command='git log --date=short --format="- [%cd](${gitremote.url}/${gitremote.owner}/${gitremote.repo}/commit/%H) %gs %s  " >> ${changelog.filename}' logoutput="false"/>
         <echo message="Created markdown changelog: ${changelog.filename}" />
     </target>
 
@@ -27,27 +27,27 @@
         <exec command="bash ${toolsdir}git-submodule-update.sh" dir="${project.basedir}" logoutput="true" />
     </target>
 
-    <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox,phpdoc" description=""/>
+    <target name="build" depends="vendor,prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox,phpdoc" description=""/>
 
-    <target name="clean.build" unless="clean.build.done" description="Cleanup build artifacts">
+    <target name="clean" unless="clean.done" description="Cleanup build artifacts">
         <delete dir="${project.basedir}/build/api"/>
         <delete dir="${project.basedir}/build/coverage"/>
         <delete dir="${project.basedir}/build/logs"/>
         <delete dir="${project.basedir}/build/pdepend"/>
         <delete dir="${project.basedir}/build/phpdox"/>
         <delete dir="${project.basedir}/build/phpdoc"/>
-        <property name="clean.build.done" value="true"/>
-    </target>
-
-    <target name="clean.vendor" unless="clean.vendor.done" description="Cleanup composer and vendor">
-        <delete dir="${project.basedir}/vendor"/>
-        <delete file="${project.basedir}/composer.lock"/>
-        <property name="clean.vendor.done" value="true"/>
-    </target>
-
-    <target name="clean" unless="clean.done" depends="clean.build,clean.vendor" description="Cleanup all">
         <property name="clean.done" value="true"/>
     </target>
+
+    <target name="vendor" unless="vendor.done" description="Cleanup composer and vendor">
+        <delete dir="${project.basedir}/vendor"/>
+        <delete file="${project.basedir}/composer.lock"/>
+        <exec executable="composer" logoutput="true">
+            <arg line="install"/>
+        </exec>
+        <property name="vendor.done" value="true"/>
+    </target>
+
 
     <target name="prepare" unless="prepare.done" depends="clean,git.submodule.update" description="Prepare for build">
         <mkdir dir="${project.basedir}/build/api"/>

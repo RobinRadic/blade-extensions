@@ -1,4 +1,8 @@
-<?php namespace Radic\BladeExtensions\Engines;
+<?php
+/**
+ * The blade markdown engine
+ */
+namespace Radic\BladeExtensions\Engines;
 
 use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
@@ -10,25 +14,28 @@ use Radic\BladeExtensions\Contracts\MarkdownRenderer;
  * The blade markdown engine
  *
  * @package            Radic\BladeExtensions
- * @version            2.1.0
  * @subpackage         Engines
+ * @version            2.1.0
  * @author             Robin Radic
  * @license            MIT License - http://radic.mit-license.org
- * @copyright          (c) 2011-2015, Robin Radic
+ * @copyright          2011-2015, Robin Radic
  * @link               http://robin.radic.nl/blade-extensions
  *
  */
 class BladeMarkdownEngine extends CompilerEngine
 {
 
-    /** @var \Radic\BladeExtensions\Contracts\MarkdownRenderer */
+    /**
+     * The markdown renderer implementation
+     * @var \Radic\BladeExtensions\Contracts\MarkdownRenderer
+     */
     protected $renderer;
 
     /**
      * Create a new instance.
      *
-     * @param CompilerInterface $compiler
-     * @param MarkdownRenderer $renderer
+     * @param \Illuminate\View\Compilers\CompilerInterface $compiler
+     * @param \Radic\BladeExtensions\Contracts\MarkdownRenderer $renderer
      */
     public function __construct(CompilerInterface $compiler, MarkdownRenderer $renderer)
     {

@@ -1,21 +1,30 @@
-<?php namespace Radic\BladeExtensions\Helpers;
+<?php
+/**
+ * Markdown transformer Helpers
+ */
+namespace Radic\BladeExtensions\Helpers;
 
 use Stringy\Stringy;
 
 /**
- * Markdown transformer
+ * Markdown transformer Helpers
  *
- * @package                Radic\BladeExtensions
- * @version                2.1.0
- * @subpackage             Directives
- * @author                 Robin Radic
- * @license                MIT License - http://radic.mit-license.org
- * @copyright          (c) 2011-2015, Robin Radic
- * @link                   http://robin.radic.nl/blade-extensions
+ * @package                 Radic\BladeExtensions
+ * @subpackage              Helpers
+ * @version                 2.1.0
+ * @author                  Robin Radic
+ * @license                 MIT License - http://radic.mit-license.org
+ * @copyright               2011-2015, Robin Radic
+ * @link                    http://robin.radic.nl/blade-extensions
  *
  */
 class Markdown
 {
+    /**
+     * Removes indentation
+     * @param string $text The markdown text
+     * @return mixed
+     */
     protected static function transform($text)
     {
         $firstLine = explode("\n", $text, 1);
@@ -39,6 +48,11 @@ class Markdown
         //$parsedown->text()
     }
 
+    /**
+     * Parses markdown text into html
+     * @param string $text the markdown text
+     * @return string $newText html
+     */
     public static function parse($text)
     {
         $text = static::transform($text);

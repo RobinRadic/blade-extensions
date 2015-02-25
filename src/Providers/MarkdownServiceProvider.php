@@ -1,12 +1,14 @@
-<?php namespace Radic\BladeExtensions\Providers;
+<?php
+/**
+ * Class MarkdownServiceProvider
+ */
+namespace Radic\BladeExtensions\Providers;
 
-use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
 use Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
 use Radic\BladeExtensions\Compilers\MarkdownCompiler;
-use Radic\BladeExtensions\Directives\MarkdownDirective;
 use Radic\BladeExtensions\Directives\MarkdownDirectives;
 use Radic\BladeExtensions\Engines\BladeMarkdownEngine;
 use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
@@ -15,21 +17,17 @@ use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
  * Class MarkdownServiceProvider
  *
  * @package        Radic\BladeExtensions
- * @version        2.0.0
  * @subpackage     Providers
+ * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
- * @copyright  (c) 2011-2014, Robin Radic - Radic Technologies
+ * @copyright      2011-2015, Robin Radic - Radic Technologies
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
 class MarkdownServiceProvider extends ServiceProvider
 {
-    /**
-     * Boots the services provided.
-     *
-     * @return void
-     */
+    /** {@inheritdoc} */
     public function boot()
     {
         /** @var \Illuminate\Foundation\Application $app */
@@ -39,7 +37,8 @@ class MarkdownServiceProvider extends ServiceProvider
         $view = $app['view'];
 
         # Do not register the engine resolvers if defined in config
-        if (Config::get('blade_extensions.markdown.views') === false) {
+        if (Config::get('blade_extensions.markdown.views') === false)
+        {
             return;
         }
 
@@ -72,11 +71,7 @@ class MarkdownServiceProvider extends ServiceProvider
         $view->addExtension('md.blade.php', 'blademd');
     }
 
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
+    /** {@inheritdoc} */
     public function register()
     {
         $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', Config::get('blade_extensions.markdown.renderer'));
@@ -97,6 +92,7 @@ class MarkdownServiceProvider extends ServiceProvider
         MarkdownDirectives::attach($this->app);
     }
 
+    /** {@inheritdoc} */
     public function provides()
     {
         return ['markdown', 'markdown.compiler'];

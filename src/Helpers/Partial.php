@@ -1,4 +1,8 @@
-<?php namespace Radic\BladeExtensions\Helpers;
+<?php
+/**
+ * Manages the partial directive blocks
+ */
+namespace Radic\BladeExtensions\Helpers;
 
 /**
  * Manages the partial directive blocks
@@ -8,7 +12,7 @@
  * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
- * @copyright      (c) 2011-2015, Robin Radic - Radic Technologies
+ * @copyright      2011-2015, Robin Radic - Radic Technologies
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
@@ -27,8 +31,8 @@ class Partial
      * The variables defined outside the scope of this block
      * (i.e. within our template) are passed in so we can use them.
      *
-     * @param  string   $file
-     * @param  array    $vars
+     * @param  string $file
+     * @param  array $vars
      * @param  \Closure $callback
      * @return void
      */
@@ -47,11 +51,15 @@ class Partial
      */
     public static function startBlock($block, $content = '')
     {
-        if ($content === '') {
-            if (ob_start()) {
+        if ($content === '')
+        {
+            if (ob_start())
+            {
                 static::$blocks[] = $block;
             }
-        } else {
+        }
+        else
+        {
             static::$blocks[$block] = $content;
         }
     }

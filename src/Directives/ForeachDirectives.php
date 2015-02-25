@@ -1,4 +1,8 @@
-<?php namespace Radic\BladeExtensions\Directives;
+<?php
+/**
+ * Directives: foreach, endforeach, break, continue
+ */
+namespace Radic\BladeExtensions\Directives;
 
 use Illuminate\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler as Compiler;
@@ -8,11 +12,11 @@ use Radic\BladeExtensions\Traits\BladeExtenderTrait;
  * Directives: foreach, endforeach, break, continue
  *
  * @package            Radic\BladeExtensions
- * @version            2.1.0
  * @subpackage         Directives
+ * @version            2.1.0
  * @author             Robin Radic
  * @license            MIT License - http://radic.mit-license.org
- * @copyright          (c) 2011-2015, Robin Radic
+ * @copyright          2011-2015, Robin Radic
  * @link               http://robin.radic.nl/blade-extensions
  *
  */
@@ -26,12 +30,13 @@ class ForeachDirectives
      * @param             $value
      * @param             $directive
      * @param Application $app
-     * @param Compiler    $blade
+     * @param Compiler $blade
      * @return mixed
      */
     public function openForeach($value, $directive, Application $app, Compiler $blade)
     {
         $matcher = '/@foreach\((.*)(?:\sas)(.*)\)/';
+
         return preg_replace($matcher, $directive, $value);
     }
 
@@ -41,12 +46,13 @@ class ForeachDirectives
      * @param             $value
      * @param             $directive
      * @param Application $app
-     * @param Compiler    $blade
+     * @param Compiler $blade
      * @return mixed
      */
     public function closeForeach($value, $directive, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('endforeach');
+
         return preg_replace($matcher, $directive, $value);
     }
 
@@ -56,12 +62,13 @@ class ForeachDirectives
      * @param             $value
      * @param             $directive
      * @param Application $app
-     * @param Compiler    $blade
+     * @param Compiler $blade
      * @return mixed
      */
     public function addBreak($value, $directive, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('break');
+
         return preg_replace($matcher, $directive, $value);
     }
 
@@ -71,12 +78,13 @@ class ForeachDirectives
      * @param             $value
      * @param             $directive
      * @param Application $app
-     * @param Compiler    $blade
+     * @param Compiler $blade
      * @return mixed
      */
     public function addContinue($value, $directive, Application $app, Compiler $blade)
     {
         $matcher = $blade->createPlainMatcher('continue');
+
         return preg_replace($matcher, $directive, $value);
     }
 }

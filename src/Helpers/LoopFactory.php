@@ -1,4 +1,8 @@
-<?php namespace Radic\BladeExtensions\Helpers;
+<?php
+/**
+ * Manages the Loop instances
+ */
+namespace Radic\BladeExtensions\Helpers;
 
 /**
  * Manages the Loop instances
@@ -8,7 +12,7 @@
  * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
- * @copyright      (c) 2011-2014, Robin Radic - Radic Technologies
+ * @copyright      (2011-2014, Robin Radic - Radic Technologies
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
