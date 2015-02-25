@@ -24,7 +24,7 @@
     </target>
 
     <target name="git.submodule.update">
-        <exec command="bash ${project.basedir}/scripts/submodule-update.sh" dir="${project.basedir}" logoutput="true" />
+        <exec command="bash ${toolsdir}git-submodule-update.sh" dir="${project.basedir}" logoutput="true" />
     </target>
 
     <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox,phpdoc" description=""/>
