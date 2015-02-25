@@ -12,7 +12,7 @@ use Radic\BladeExtensions\Directives\ForeachDirectives;
 use Radic\BladeExtensions\Directives\MacroDirectives;
 use Radic\BladeExtensions\Directives\PartialDirectives;
 use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
-use Radic\Support\ServiceProvider;
+use Laradic\Support\ServiceProvider;
 
 /**
  * A laravel service provider to register the class into the the IoC container
