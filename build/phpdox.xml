@@ -16,7 +16,7 @@
     <source type="phpunit" />
    </enrich>
 
-   <build engine="html" enabled="true" output="api">
+   <build engine="html" enabled="true" output="phpdox">
     <file extension="html" />
    </build>
   </generator>
