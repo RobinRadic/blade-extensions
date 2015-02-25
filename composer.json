@@ -19,7 +19,7 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "~5.0",
-        "radic/laravel-support": "dev-master"
+        "laradic/support": "dev-master"
     },
     "suggest": {
         "raveren/kint": ">0.9.1",
@@ -27,8 +27,8 @@
         "erusev/parsedown": "~1.5"
     },
     "require-dev": {
-        "radic/laravel-dev": "dev-master",
-        "radic/laravel-support": "dev-master",
+        "laradic/dev": "dev-master",
+        "laradic/support": "dev-master",
         "gooh/interface-distiller": "dev-master",
         "raveren/kint": "0.9.*",
         "illuminate/html": "~5.0",

@@ -27,8 +27,8 @@ Version 2.1
   
 ###### 2.1
 - Several changes to improve extending, in preparation for:
-    - [radic/themes](https://github.com/robinradic/laravel-themes) - A laravel 5 theme manager
-    - [radic/docs](https://github.com/robinradic/laravel-themes) - LV5 doc generator. Uses my [packadic/theme](https://github.com/packadic/theme) admin theme.
+    - [radic/themes](https://github.com/robinlaradic/themes) - A laravel 5 theme manager
+    - [radic/docs](https://github.com/robinlaradic/themes) - LV5 doc generator. Uses my [packadic/theme](https://github.com/packadic/theme) admin theme.
 - New unit tests
     - For existing directives and classes
     - For the new markdown stuff
