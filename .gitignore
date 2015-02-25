@@ -19,6 +19,7 @@ commit.bat
 /build/pdepend
 /build/phpdoc
 /build/phpdox
+/build/phpdoxwd
 /cache.properties
 /phing
 .idea
