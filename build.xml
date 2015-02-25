@@ -35,6 +35,7 @@
         <delete dir="${project.basedir}/build/logs"/>
         <delete dir="${project.basedir}/build/pdepend"/>
         <delete dir="${project.basedir}/build/phpdox"/>
+        <delete dir="${project.basedir}/build/phpdoxwd"/>
         <delete dir="${project.basedir}/build/phpdoc"/>
         <property name="clean.done" value="true"/>
     </target>
@@ -50,11 +51,12 @@
 
 
     <target name="prepare" unless="prepare.done" depends="clean,git.submodule.update" description="Prepare for build">
-        <mkdir dir="${project.basedir}/build/api"/>
+
         <mkdir dir="${project.basedir}/build/coverage"/>
         <mkdir dir="${project.basedir}/build/logs"/>
         <mkdir dir="${project.basedir}/build/pdepend"/>
         <mkdir dir="${project.basedir}/build/phpdox"/>
+        <mkdir dir="${project.basedir}/build/phpdoxwd"/>
         <mkdir dir="${project.basedir}/build/phpdoc"/>
         <exec executable="composer" logoutput="true">
             <arg line="install"/>
