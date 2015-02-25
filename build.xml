@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="blade-extensions" default="build">
     <property name="toolsdir" value="${project.basedir}/build/tools/"/>
+    <property name="srcdir" value="${project.basedir}/src" />
+    <property name="testsdir" value="${project.basedir}/tests" />
     <property name="changelog.header" value="# Changelog"/>
     <property name="changelog.filename" value="CHANGELOG.md"/>
     <property name="gitremote.url" value="https://github.com"/>
@@ -68,11 +70,11 @@
         <apply executable="php" failonerror="true">
             <arg value="-l"/>
 
-            <fileset dir="${project.basedir}/src" >
+            <fileset dir="${srcdir}" >
                 <include name="**/*.php"/>
             </fileset>
 
-            <fileset dir="${project.basedir}/tests">
+            <fileset dir="${testsdir}">
                 <include name="**/*.php"/>
             </fileset>
         </apply>
@@ -81,8 +83,8 @@
     <target name="phploc" description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
         <exec executable="${toolsdir}phploc.phar" logoutput="true">
             <arg value="--count-tests"/>
-            <arg path="${project.basedir}/src"/>
-            <arg path="${project.basedir}/tests"/>
+            <arg path="${srcdir}"/>
+            <arg path="${testsdir}"/>
         </exec>
     </target>
 
@@ -93,8 +95,8 @@
             <arg path="${project.basedir}/build/logs/phploc.csv"/>
             <arg value="--log-xml"/>
             <arg path="${project.basedir}/build/logs/phploc.xml"/>
-            <arg path="${project.basedir}/src"/>
-            <arg path="${project.basedir}/tests"/>
+            <arg path="${srcdir}"/>
+            <arg path="${testsdir}"/>
         </exec>
     </target>
 
@@ -132,8 +134,8 @@
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
             <arg value="--ignore=autoload.php"/>
-            <arg path="${project.basedir}/src"/>
-            <arg path="${project.basedir}/tests"/>
+            <arg path="${srcdir}"/>
+            <arg path="${testsdir}"/>
         </exec>
     </target>
 
@@ -142,8 +144,8 @@
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
             <arg value="--ignore=autoload.php"/>
-            <arg path="${project.basedir}/src"/>
-            <arg path="${project.basedir}/tests"/>
+            <arg path="${srcdir}"/>
+            <arg path="${testsdir}"/>
         </exec>
     </target>
 
@@ -154,13 +156,13 @@
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
             <arg value="--ignore=autoload.php"/>
-            <arg path="${project.basedir}/src"/>
+            <arg path="${srcdir}"/>
         </exec>
     </target>
 
     <target name="phpcpd" description="Find duplicate code using PHPCPD and print human readable output. Intended for usage on the command line before committing.">
         <exec executable="${toolsdir}phpcpd.phar" logoutput="true">
-            <arg path="${project.basedir}/src"/>
+            <arg path="${srcdir}"/>
         </exec>
     </target>
 
@@ -168,7 +170,7 @@
         <exec executable="${toolsdir}phpcpd.phar" logoutput="true">
             <arg value="--log-pmd"/>
             <arg path="${project.basedir}/build/logs/pmd-cpd.xml"/>
-            <arg path="${project.basedir}/src"/>
+            <arg path="${srcdir}"/>
         </exec>
     </target>
 

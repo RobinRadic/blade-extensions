@@ -22,10 +22,10 @@ commit.bat
 /build/phpdoxwd
 /cache.properties
 /phing
+/.project
 .idea
 /test.php
 /test.md
 /docs
 /psysh.phar
 /app
-/.project
