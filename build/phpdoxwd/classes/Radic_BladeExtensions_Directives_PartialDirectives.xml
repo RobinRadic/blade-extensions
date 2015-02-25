@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\Directives\PartialDirectives" namespace="Radic\BladeExtensions\Directives" name="PartialDirectives" abstract="false" final="false" start="23" end="101">
+  <file path="../src/Directives" file="PartialDirectives.php" realpath="/mnt/safe/projects/blade-extensions/src/Directives/PartialDirectives.php" size="3023" time="2015-02-25T05:26:41+01:00" unixtime="1424838401" sha1="8aa5192fa184034b05d1eeb1e4e88061416bfd68" relative="Directives/PartialDirectives.php"/>
+  <docblock>
+    <description compact="Directives: partial, endpartial, block, endblock, render"/>
+    <package value="Radic\BladeExtensions"/>
+    <subpackage value="Directives"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="2011-2015, Robin Radic"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <method name="addPartial" start="35" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="the addPartial"/>
+      <param variable="$value"/>
+      <param variable="$configured"/>
+      <param type="object" variable="$app">
+        <type full="\Illuminate\Foundation\Application" namespace="\Illuminate\Foundation" name="Application"/>
+      </param>
+      <param type="object" variable="$blade">
+        <type full="\Illuminate\View\Compilers\BladeCompiler" namespace="\Illuminate\View\Compilers" name="BladeCompiler"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="configured" byreference="false" type="{unknown}"/>
+    <parameter name="app" byreference="false" type="object">
+      <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+    </parameter>
+    <parameter name="blade" byreference="false" type="object">
+      <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+    </parameter>
+  </method>
+  <method name="endPartial" start="50" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="the endPartial"/>
+      <param variable="$value"/>
+      <param variable="$configured"/>
+      <param type="object" variable="$app">
+        <type full="\Illuminate\Foundation\Application" namespace="\Illuminate\Foundation" name="Application"/>
+      </param>
+      <param type="object" variable="$blade">
+        <type full="\Illuminate\View\Compilers\BladeCompiler" namespace="\Illuminate\View\Compilers" name="BladeCompiler"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="configured" byreference="false" type="{unknown}"/>
+    <parameter name="app" byreference="false" type="object">
+      <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+    </parameter>
+    <parameter name="blade" byreference="false" type="object">
+      <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+    </parameter>
+  </method>
+  <method name="openBlock" start="65" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="the openBlock"/>
+      <param variable="$value"/>
+      <param variable="$configured"/>
+      <param type="object" variable="$app">
+        <type full="\Illuminate\Foundation\Application" namespace="\Illuminate\Foundation" name="Application"/>
+      </param>
+      <param type="object" variable="$blade">
+        <type full="\Illuminate\View\Compilers\BladeCompiler" namespace="\Illuminate\View\Compilers" name="BladeCompiler"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="configured" byreference="false" type="{unknown}"/>
+    <parameter name="app" byreference="false" type="object">
+      <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+    </parameter>
+    <parameter name="blade" byreference="false" type="object">
+      <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+    </parameter>
+  </method>
+  <method name="endBlock" start="80" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="the endBlock"/>
+      <param variable="$value"/>
+      <param variable="$configured"/>
+      <param type="object" variable="$app">
+        <type full="\Illuminate\Foundation\Application" namespace="\Illuminate\Foundation" name="Application"/>
+      </param>
+      <param type="object" variable="$blade">
+        <type full="\Illuminate\View\Compilers\BladeCompiler" namespace="\Illuminate\View\Compilers" name="BladeCompiler"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="configured" byreference="false" type="{unknown}"/>
+    <parameter name="app" byreference="false" type="object">
+      <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+    </parameter>
+    <parameter name="blade" byreference="false" type="object">
+      <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+    </parameter>
+  </method>
+  <method name="addRender" start="95" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="the addRender"/>
+      <param variable="$value"/>
+      <param variable="$configured"/>
+      <param type="object" variable="$app">
+        <type full="\Illuminate\Foundation\Application" namespace="\Illuminate\Foundation" name="Application"/>
+      </param>
+      <param type="object" variable="$blade">
+        <type full="\Illuminate\View\Compilers\BladeCompiler" namespace="\Illuminate\View\Compilers" name="BladeCompiler"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="configured" byreference="false" type="{unknown}"/>
+    <parameter name="app" byreference="false" type="object">
+      <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+    </parameter>
+    <parameter name="blade" byreference="false" type="object">
+      <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+    </parameter>
+  </method>
+</class>

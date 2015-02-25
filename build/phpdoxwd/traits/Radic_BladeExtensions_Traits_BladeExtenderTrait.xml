@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\Traits\BladeExtenderTrait" namespace="Radic\BladeExtensions\Traits" name="BladeExtenderTrait" abstract="false" final="false" start="22" end="67">
+  <file path="../src/Traits" file="BladeExtenderTrait.php" realpath="/mnt/safe/projects/blade-extensions/src/Traits/BladeExtenderTrait.php" size="2025" time="2015-02-25T05:17:16+01:00" unixtime="1424837836" sha1="4687a29f9d77619d887467da036ee4ae632c70c1" relative="Traits/BladeExtenderTrait.php"/>
+  <docblock>
+    <description compact="Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends"/>
+    <package value="Radic\BladeExtensions"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="2011-2015, Robin Radic"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <member name="blacklist" type="{unknown}" visibility="public" line="30">
+    <docblock>
+      <description compact="An array of methods that should be excluded by attach"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="directives" type="{unknown}" visibility="public" line="36">
+    <docblock>
+      <description compact="An array of methodName =&gt; directiveReplacement"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="attach" start="43" end="66" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Instanciate and execute all functions as blade extends"/>
+      <param description="The current application" type="object" variable="$app">
+        <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+      </param>
+    </docblock>
+    <parameter name="app" byreference="false" type="object">
+      <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+    </parameter>
+  </method>
+</trait>

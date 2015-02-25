@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\Helpers\LoopFactory" namespace="Radic\BladeExtensions\Helpers" name="LoopFactory" abstract="false" final="false" start="19" end="113">
+  <file path="../src/Helpers" file="LoopFactory.php" realpath="/mnt/safe/projects/blade-extensions/src/Helpers/LoopFactory.php" size="2571" time="2015-02-25T05:21:34+01:00" unixtime="1424838094" sha1="edc5fcf8caa68609b814eaed849b551def3a30a7" relative="Helpers/LoopFactory.php"/>
+  <docblock>
+    <description compact="Manages the Loop instances"/>
+    <package value="Radic\BladeExtensions"/>
+    <subpackage value="Helpers"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="(2011-2014, Robin Radic - Radic Technologies"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <member name="stack" type="array" visibility="protected" line="27">
+    <docblock>
+      <description compact="The stack of Loop instances"/>
+      <var description="$stack" type="array"/>
+    </docblock>
+  </member>
+  <method name="newLoop" start="34" end="37" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Creates a new loop with the given array and adds it to the stack"/>
+      <param description="The array that will be iterated" type="array" variable="$items"/>
+    </docblock>
+    <parameter name="items" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addLoopStack" start="44" end="52" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Adds a Loop to the stack"/>
+      <param type="object" variable="$stackItem">
+        <type full="Radic\BladeExtensions\Helpers\Loop" namespace="Radic\BladeExtensions\Helpers" name="Loop"/>
+      </param>
+    </docblock>
+    <parameter name="stackItem" byreference="false" type="object">
+      <type full="Radic\BladeExtensions\Helpers\Loop" namespace="Radic\BladeExtensions\Helpers" name="Loop"/>
+    </parameter>
+    <inline>
+      <comment value="Check stack for parent loop to register it with this loop" line="46"/>
+    </inline>
+  </method>
+  <method name="getStack" start="59" end="62" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the stack"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="reset" start="67" end="70" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Resets the stack"/>
+    </docblock>
+  </method>
+  <method name="loop" start="77" end="83" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="To be called first inside the foreach loop. Returns the current loop"/>
+      <return description="$current The current loop data" type="object">
+        <type full="Radic\BladeExtensions\Helpers\Loop" namespace="Radic\BladeExtensions\Helpers" name="Loop"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="looped" start="88" end="94" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="To be called before the end of the loop"/>
+    </docblock>
+  </method>
+  <method name="endLoop" start="101" end="112" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Should be called after the loop has finished"/>
+      <param variable="$loop"/>
+    </docblock>
+    <parameter name="loop" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="This loop was inside another loop. We persist the loop variable and assign back the parent loop" line="105"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\Renderers\CiconiaRenderer" namespace="Radic\BladeExtensions\Renderers" name="CiconiaRenderer" abstract="false" final="false" start="24" end="68">
+  <file path="../src/Renderers" file="CiconiaRenderer.php" realpath="/mnt/safe/projects/blade-extensions/src/Renderers/CiconiaRenderer.php" size="1877" time="2015-02-25T05:12:16+01:00" unixtime="1424837536" sha1="6de9a8e18ddb51ebf3c22b6d690eb5a0e8d79ca9" relative="Renderers/CiconiaRenderer.php"/>
+  <docblock>
+    <description compact="The Ciconia markdown renderer implementation"/>
+    <package value="Radic\BladeExtensions"/>
+    <subpackage value="Renderers"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="2011-2015, Robin Radic"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <implements full="Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+  <member name="ciconia" type="{unknown}" visibility="protected" line="31">
+    <docblock>
+      <description compact="The Ciconia implementation"/>
+      <var type="object">
+        <type full="\Ciconia\Ciconia" namespace="\Ciconia" name="Ciconia"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="config" type="{unknown}" visibility="protected" line="37">
+    <docblock>
+      <description compact="The config repository"/>
+      <var type="object">
+        <type full="\Illuminate\Contracts\Config\Repository" namespace="\Illuminate\Contracts\Config" name="Repository"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="44" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="In"/>
+      <param type="object" variable="$ciconia">
+        <type full="\Ciconia\Ciconia" namespace="\Ciconia" name="Ciconia"/>
+      </param>
+      <param type="object" variable="$config">
+        <type full="\Illuminate\Contracts\Config\Repository" namespace="\Illuminate\Contracts\Config" name="Repository"/>
+      </param>
+    </docblock>
+    <parameter name="ciconia" byreference="false" type="object">
+      <type full="Ciconia\Ciconia" namespace="Ciconia" name="Ciconia"/>
+    </parameter>
+    <parameter name="config" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Config\Repository" namespace="Illuminate\Contracts\Config" name="Repository"/>
+    </parameter>
+  </constructor>
+  <method name="render" start="54" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+      <param description="The text" type="string" variable="$text"/>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <interface full="Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="Radic\BladeExtensions\Contracts" name="MarkdownRenderer">
+    <method name="render" start="26" end="26" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Renders markdown text to html"/>
+        <param description="The text" type="string" variable="$text"/>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="text" byreference="false" type="{unknown}"/>
+    </method>
+  </interface>
+</class>

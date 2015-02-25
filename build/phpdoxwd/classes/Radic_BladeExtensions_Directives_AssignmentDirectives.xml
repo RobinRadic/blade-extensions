@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\Directives\AssignmentDirectives" namespace="Radic\BladeExtensions\Directives" name="AssignmentDirectives" abstract="false" final="false" start="21" end="57">
+  <file path="../src/Directives" file="AssignmentDirectives.php" realpath="/mnt/safe/projects/blade-extensions/src/Directives/AssignmentDirectives.php" size="1525" time="2015-02-25T04:26:27+01:00" unixtime="1424834787" sha1="c77d68e61efa5db2062123654ee17037df0575fe" relative="Directives/AssignmentDirectives.php"/>
+  <docblock>
+    <description compact="Directives: set, unset"/>
+    <package value="Radic\BladeExtensions"/>
+    <subpackage value="Directives"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="2011-2015, Robin Radic"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <method name="addSet" start="35" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds `set` directive"/>
+      <param variable="$value"/>
+      <param variable="$configured"/>
+      <param type="object" variable="$app">
+        <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+      </param>
+      <param type="object" variable="$blade">
+        <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="configured" byreference="false" type="{unknown}"/>
+    <parameter name="app" byreference="false" type="object">
+      <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+    </parameter>
+    <parameter name="blade" byreference="false" type="object">
+      <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+    </parameter>
+  </method>
+  <method name="addUnset" start="51" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds `unset` directive"/>
+      <param variable="$value"/>
+      <param variable="$configured"/>
+      <param type="object" variable="$app">
+        <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+      </param>
+      <param type="object" variable="$blade">
+        <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="configured" byreference="false" type="{unknown}"/>
+    <parameter name="app" byreference="false" type="object">
+      <type full="Illuminate\Foundation\Application" namespace="Illuminate\Foundation" name="Application"/>
+    </parameter>
+    <parameter name="blade" byreference="false" type="object">
+      <type full="Illuminate\View\Compilers\BladeCompiler" namespace="Illuminate\View\Compilers" name="BladeCompiler"/>
+    </parameter>
+  </method>
+</class>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="/mnt/safe/projects/blade-extensions/src">
+  <namespace name="Radic\BladeExtensions\Compilers">
+    <class name="MarkdownCompiler" src="Compilers/MarkdownCompiler.php" description="Markdown compiler" xml="classes/Radic_BladeExtensions_Compilers_MarkdownCompiler.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions\Renderers">
+    <class name="CiconiaRenderer" src="Renderers/CiconiaRenderer.php" description="The Ciconia markdown renderer implementation" xml="classes/Radic_BladeExtensions_Renderers_CiconiaRenderer.xml"/>
+    <class name="ParsedownRenderer" src="Renderers/ParsedownRenderer.php" description="The Parsedown markdown renderer implementation" xml="classes/Radic_BladeExtensions_Renderers_ParsedownRenderer.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions\Traits">
+    <trait name="BladeExtenderTrait" src="Traits/BladeExtenderTrait.php" description="Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends" xml="traits/Radic_BladeExtensions_Traits_BladeExtenderTrait.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions\Helpers">
+    <class name="Partial" src="Helpers/Partial.php" description="Manages the partial directive blocks" xml="classes/Radic_BladeExtensions_Helpers_Partial.xml"/>
+    <class name="Markdown" src="Helpers/Markdown.php" description="Markdown transformer Helpers" xml="classes/Radic_BladeExtensions_Helpers_Markdown.xml"/>
+    <class name="LoopFactory" src="Helpers/LoopFactory.php" description="Manages the Loop instances" xml="classes/Radic_BladeExtensions_Helpers_LoopFactory.xml"/>
+    <class name="Loop" src="Helpers/Loop.php" description="Represents the $loop variable in the foreach directive. Handles all data." xml="classes/Radic_BladeExtensions_Helpers_Loop.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions\Facades">
+    <class name="Markdown" src="Facades/Markdown.php" description="The Markdown Facad" xml="classes/Radic_BladeExtensions_Facades_Markdown.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions\Engines">
+    <class name="PhpMarkdownEngine" src="Engines/PhpMarkdownEngine.php" description="The Parsedown markdown renderer implementation" xml="classes/Radic_BladeExtensions_Engines_PhpMarkdownEngine.xml"/>
+    <class name="BladeMarkdownEngine" src="Engines/BladeMarkdownEngine.php" description="The blade markdown engine" xml="classes/Radic_BladeExtensions_Engines_BladeMarkdownEngine.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions">
+    <class name="BladeExtensionsServiceProvider" src="BladeExtensionsServiceProvider.php" description="A laravel service provider to register the class into the the IoC container" xml="classes/Radic_BladeExtensions_BladeExtensionsServiceProvider.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions\Providers">
+    <class name="MarkdownServiceProvider" src="Providers/MarkdownServiceProvider.php" description="Class MarkdownServiceProvider" xml="classes/Radic_BladeExtensions_Providers_MarkdownServiceProvider.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions\Directives">
+    <class name="PartialDirectives" src="Directives/PartialDirectives.php" description="Directives: partial, endpartial, block, endblock, render" xml="classes/Radic_BladeExtensions_Directives_PartialDirectives.xml"/>
+    <class name="DebugDirectives" src="Directives/DebugDirectives.php" description="Directives: breakpoint, debug" xml="classes/Radic_BladeExtensions_Directives_DebugDirectives.xml"/>
+    <class name="MacroDirectives" src="Directives/MacroDirectives.php" description="Directives: macro, endmacro, domacro" xml="classes/Radic_BladeExtensions_Directives_MacroDirectives.xml"/>
+    <class name="AssignmentDirectives" src="Directives/AssignmentDirectives.php" description="Directives: set, unset" xml="classes/Radic_BladeExtensions_Directives_AssignmentDirectives.xml"/>
+    <class name="MarkdownDirectives" src="Directives/MarkdownDirectives.php" description="Directives: markdown, endmarkdown" xml="classes/Radic_BladeExtensions_Directives_MarkdownDirectives.xml"/>
+    <class name="ForeachDirectives" src="Directives/ForeachDirectives.php" description="Directives: foreach, endforeach, break, continue" xml="classes/Radic_BladeExtensions_Directives_ForeachDirectives.xml"/>
+  </namespace>
+  <namespace name="Radic\BladeExtensions\Contracts">
+    <interface name="MarkdownRenderer" src="Contracts/MarkdownRenderer.php" description="Directives: set, unset" xml="interfaces/Radic_BladeExtensions_Contracts_MarkdownRenderer.xml"/>
+  </namespace>
+</index>

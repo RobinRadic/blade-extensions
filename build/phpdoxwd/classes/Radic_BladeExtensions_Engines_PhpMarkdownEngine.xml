@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\Engines\PhpMarkdownEngine" namespace="Radic\BladeExtensions\Engines" name="PhpMarkdownEngine" abstract="false" final="false" start="23" end="76">
+  <file path="../src/Engines" file="PhpMarkdownEngine.php" realpath="/mnt/safe/projects/blade-extensions/src/Engines/PhpMarkdownEngine.php" size="1767" time="2015-02-25T05:23:20+01:00" unixtime="1424838200" sha1="b2b8f82834d313d137cf822068ff228f4a20f453" relative="Engines/PhpMarkdownEngine.php"/>
+  <docblock>
+    <description compact="The Parsedown markdown renderer implementation"/>
+    <package value="Radic\BladeExtensions"/>
+    <subpackage value="Engines"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="2011-2015, Robin Radic"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <extends full="Illuminate\View\Engines\PhpEngine" namespace="Illuminate\View\Engines" name="PhpEngine"/>
+  <member name="renderer" type="{unknown}" visibility="protected" line="30">
+    <docblock>
+      <description compact="The markdown renderer implementation"/>
+      <var type="object">
+        <type full="\Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="\Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="37" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new instance."/>
+      <param type="object" variable="$renderer">
+        <type full="\Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="\Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+      </param>
+    </docblock>
+    <parameter name="renderer" byreference="false" type="object">
+      <type full="Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+    </parameter>
+  </constructor>
+  <method name="get" start="49" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the rendered contents"/>
+      <param type="string" variable="$path"/>
+      <param type="array" variable="$data"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="array"/>
+  </method>
+  <method name="getRenderer" start="60" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the renderer"/>
+      <return type="object">
+        <type full="\Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="\Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setRenderer" start="70" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the renderer"/>
+      <param type="object" variable="$renderer">
+        <type full="Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+      </param>
+      <return description="$this" type="object">
+        <type full="Radic\BladeExtensions\Engines\BladeMarkdownEngine" namespace="Radic\BladeExtensions\Engines" name="BladeMarkdownEngine"/>
+      </return>
+    </docblock>
+    <parameter name="renderer" byreference="false" type="object">
+      <type full="Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+    </parameter>
+  </method>
+</class>

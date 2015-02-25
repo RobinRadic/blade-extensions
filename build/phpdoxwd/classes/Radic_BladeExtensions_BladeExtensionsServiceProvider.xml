@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\BladeExtensionsServiceProvider" namespace="Radic\BladeExtensions" name="BladeExtensionsServiceProvider" abstract="false" final="false" start="28" end="65">
+  <file path="../src" file="BladeExtensionsServiceProvider.php" realpath="/mnt/safe/projects/blade-extensions/src/BladeExtensionsServiceProvider.php" size="1901" time="2015-02-25T05:23:50+01:00" unixtime="1424838230" sha1="0ee59a436ea108f5f93f787ed1b664015812bbf9" relative="BladeExtensionsServiceProvider.php"/>
+  <docblock>
+    <description compact="A laravel service provider to register the class into the the IoC container"/>
+    <package value="Radic\BladeExtensions"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="2011-2015, Robin Radic"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <extends full="Radic\Support\ServiceProvider" namespace="Radic\Support" name="ServiceProvider"/>
+  <member name="configFiles" type="array" visibility="protected" line="32">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </member>
+  <member name="__DIR__" type="{unknown}" visibility="protected" line="35">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </member>
+  <method name="boot" start="38" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="register" start="44" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <inline>
+      <comment value="Optional macro directives" line="53"/>
+      <comment value="Optional markdown compiler, engines and directives" line="59"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\Compilers\MarkdownCompiler" namespace="Radic\BladeExtensions\Compilers" name="MarkdownCompiler" abstract="false" final="false" start="25" end="59">
+  <file path="../src/Compilers" file="MarkdownCompiler.php" realpath="/mnt/safe/projects/blade-extensions/src/Compilers/MarkdownCompiler.php" size="1560" time="2015-02-25T04:53:58+01:00" unixtime="1424836438" sha1="ba6df2d52d15f76e7a7a33a5d85f20413612c52d" relative="Compilers/MarkdownCompiler.php"/>
+  <docblock>
+    <description compact="Markdown compiler"/>
+    <package value="Radic\BladeExtensions"/>
+    <subpackage value="Compilers"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="2011-2015, Robin Radic"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <extends full="Illuminate\View\Compilers\Compiler" namespace="Illuminate\View\Compilers" name="Compiler"/>
+  <implements full="Illuminate\View\Compilers\CompilerInterface" namespace="Illuminate\View\Compilers" name="CompilerInterface"/>
+  <member name="renderer" type="{unknown}" visibility="protected" line="32">
+    <docblock>
+      <description compact="The markdown render instance"/>
+      <var type="object">
+        <type full="\Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="\Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="41" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new instance"/>
+      <param type="object" variable="$renderer">
+        <type full="\Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="\Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+      </param>
+      <param type="object" variable="$files">
+        <type full="\Illuminate\Filesystem\Filesystem" namespace="\Illuminate\Filesystem" name="Filesystem"/>
+      </param>
+      <param variable="$cachePath"/>
+    </docblock>
+    <parameter name="renderer" byreference="false" type="object">
+      <type full="Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="Radic\BladeExtensions\Contracts" name="MarkdownRenderer"/>
+    </parameter>
+    <parameter name="files" byreference="false" type="object">
+      <type full="Illuminate\Filesystem\Filesystem" namespace="Illuminate\Filesystem" name="Filesystem"/>
+    </parameter>
+    <parameter name="cachePath" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="compile" start="53" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compile the view at the given path."/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="Radic\BladeExtensions\Compilers\void" namespace="Radic\BladeExtensions\Compilers" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+</class>

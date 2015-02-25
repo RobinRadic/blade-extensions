@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Radic\BladeExtensions\Contracts\MarkdownRenderer" namespace="Radic\BladeExtensions\Contracts" name="MarkdownRenderer" abstract="false" final="false" start="19" end="27">
+  <file path="../src/Contracts" file="MarkdownRenderer.php" realpath="/mnt/safe/projects/blade-extensions/src/Contracts/MarkdownRenderer.php" size="616" time="2015-02-25T05:09:23+01:00" unixtime="1424837363" sha1="3bfdfb0ccc5f6261c36deb29644ec9435ea8123b" relative="Contracts/MarkdownRenderer.php"/>
+  <docblock>
+    <description compact="Directives: set, unset"/>
+    <package value="Radic\BladeExtensions"/>
+    <subpackage value="Contracts"/>
+    <version value="2.1.0"/>
+    <author value="Robin Radic"/>
+    <license name="MIT License - http://radic.mit-license.org"/>
+    <copyright value="2011-2015, Robin Radic"/>
+    <link value="http://robin.radic.nl/blade-extensions"/>
+  </docblock>
+  <method name="render" start="26" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Renders markdown text to html"/>
+      <param description="The text" type="string" variable="$text"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <implementor full="Radic\BladeExtensions\Renderers\CiconiaRenderer" namespace="Radic\BladeExtensions\Renderers" name="CiconiaRenderer"/>
+  <implementor full="Radic\BladeExtensions\Renderers\ParsedownRenderer" namespace="Radic\BladeExtensions\Renderers" name="ParsedownRenderer"/>
+</interface>
