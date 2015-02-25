@@ -7,7 +7,7 @@ use Radic\Tests\BladeExtensions\TestCase;
  * Class Markdown
  *
  * @author     Robin Radic
- *
+ * @group blade-extensions
  */
 class MarkdownDirectivesTest extends TestCase
 {

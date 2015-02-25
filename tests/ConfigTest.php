@@ -7,6 +7,7 @@ use Mockery as m;
  * Class ViewTest
  *
  * @author     Robin Radic
+ * @group blade-extensions
  *
  */
 class ConfigTest extends TestCase

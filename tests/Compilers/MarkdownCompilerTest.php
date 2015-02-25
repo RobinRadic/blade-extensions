@@ -8,7 +8,7 @@ use Radic\Tests\BladeExtensions\TestCase;
  * Class ViewTest
  *
  * @author     Robin Radic
- *
+ * @group blade-extensions
  */
 class MarkdownCompilerTest extends TestCase
 {

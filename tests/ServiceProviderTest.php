@@ -7,7 +7,7 @@ use Radic\Dev\Traits\ServiceProviderTestCaseTrait;
  * Class ViewTest
  *
  * @author     Robin Radic
- * @inheritDoc
+ * @group blade-extensions
  */
 class ServiceProviderTest extends TestCase
 {
