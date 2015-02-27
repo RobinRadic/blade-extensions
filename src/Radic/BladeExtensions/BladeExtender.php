@@ -39,13 +39,13 @@ class BladeExtender
     // regex:: http://regex101.com/r/yN1gO5/2
     public function addSet($value, Application $app, Compiler $blade)
     {
-        return preg_replace('/@set\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/', '<?php \$$1 = $2; ?>', $value);
+        return preg_replace('/@set(\s*)\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/', '<?php \$$1 = $2; ?>', $value);
     }
 
     public function addUnset($value, Application $app, Compiler $blade)
     {
 
-        return preg_replace('/@unset\((?:\$|(?:\'))(.*?)(?:\'|)\)/', '<?php unset(\$$1); ?>', $value);
+        return preg_replace('/@unset(\s*)\((?:\$|(?:\'))(.*?)(?:\'|)\)/', '<?php unset(\$$1); ?>', $value);
     }
 
     public function addDebug($value, Application $app, Compiler $blade)
@@ -63,7 +63,7 @@ class BladeExtender
     public function openMacro($value, Application $app, Compiler $blade)
     {
         //$matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
-        $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        $matcher = '/@macro(\s*)\([\'"]([\w\d]*)[\'"],(.*)\)/';
         return preg_replace($matcher, '<?php HTML::macro("$1", function($2){ ', $value);
     }
 
@@ -75,7 +75,7 @@ class BladeExtender
 
     public function DoMacro($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        $matcher = '/@domacro(\s*)\([\'"]([\w\d]*)[\'"],(.*)\)/';
         return preg_replace($matcher, '<?php echo HTML::$1($2); ?>', $value);
     }
 
