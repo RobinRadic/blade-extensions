@@ -81,10 +81,10 @@ class BladeExtender
 
 
     # LOOPS
-    // regex test: http://regex101.com/r/qH9eO7/2
+    // regex test: https://regex101.com/r/qH9eO7/3
     public function openForeach($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@foreach\((.*)(?:\sas)(.*)\)/';
+        $matcher = '/@foreach(\s*)\((.*)(?:\sas)(.*)\)/';
         return preg_replace($matcher,
             '<?php
         \Radic\BladeExtensions\Directives\ForeachLoopFactory::newLoop($1);
