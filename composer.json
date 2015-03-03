@@ -30,6 +30,7 @@
         "laradic/dev": "dev-master",
         "laradic/support": "dev-master",
         "gooh/interface-distiller": "dev-master",
+        "radic/tmp-underscore-php": "dev-master",
         "raveren/kint": "0.9.*",
         "illuminate/html": "~5.0",
         "erusev/parsedown": "~1.5"
