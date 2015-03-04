@@ -6,13 +6,13 @@ namespace Radic\BladeExtensions;
 
 use App;
 use Config;
+use Laradic\Support\ServiceProvider;
 use Radic\BladeExtensions\Directives\AssignmentDirectives;
 use Radic\BladeExtensions\Directives\DebugDirectives;
 use Radic\BladeExtensions\Directives\ForeachDirectives;
 use Radic\BladeExtensions\Directives\MacroDirectives;
 use Radic\BladeExtensions\Directives\PartialDirectives;
 use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
-use Laradic\Support\ServiceProvider;
 
 /**
  * A laravel service provider to register the class into the the IoC container
@@ -28,19 +28,21 @@ use Laradic\Support\ServiceProvider;
 class BladeExtensionsServiceProvider extends ServiceProvider
 {
 
-    /** {@inheritdoc} */
+    /** {@inheritDoc} */
     protected $configFiles = ['blade_extensions'];
 
-    /** {@inheritdoc} */
+    /**
+     * {@inheritDoc}
+     */
     protected $dir = __DIR__;
 
-    /** {@inheritdoc} */
+    /** {@inheritDoc} */
     public function boot()
     {
         parent::boot();
     }
 
-    /** {@inheritdoc} */
+    /** {@inheritDoc} */
     public function register()
     {
         parent::register();
@@ -51,13 +53,13 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         PartialDirectives::attach($this->app);
 
         # Optional macro directives
-        if (array_key_exists('form', App::getBindings()))
+        if ( array_key_exists('form', App::getBindings()) )
         {
             MacroDirectives::attach($this->app);
         }
 
         # Optional markdown compiler, engines and directives
-        if ((class_exists('\Ciconia\Ciconia') or class_exists('\Parsedown')) && Config::get('blade_extensions.markdown.enabled'))
+        if ( (class_exists('\Ciconia\Ciconia') or class_exists('\Parsedown')) && Config::get('blade_extensions.markdown.enabled') )
         {
             $this->app->register(new MarkdownServiceProvider($this->app));
         }

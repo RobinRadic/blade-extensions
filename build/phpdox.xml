@@ -4,8 +4,9 @@
   <collector publiconly="false">
    <include mask="*.php" />
    <exclude mask="*autoload.php" />
-  </collector>
 
+
+  </collector>
   <generator output=".">
    <enrich base="logs">
     <source type="build" />

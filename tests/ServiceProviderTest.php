@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
-use Radic\Dev\Traits\ServiceProviderTestCaseTrait;
+use Laradic\Dev\Traits\ServiceProviderTestCaseTrait;
 
 /**
  * Class ViewTest

@@ -2,7 +2,7 @@
 
 use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
-use Radic\Dev\DataGenerator;
+use Laradic\Dev\DataGenerator;
 
 use Radic\Tests\BladeExtensions\TestCase;
 
