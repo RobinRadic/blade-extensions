@@ -16,6 +16,8 @@
             "role": "Package Author/Developer"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "~5.0",
@@ -28,9 +30,6 @@
     },
     "require-dev": {
         "laradic/dev": "dev-master",
-        "laradic/support": "dev-master",
-        "gooh/interface-distiller": "dev-master",
-        "radic/tmp-underscore-php": "dev-master",
         "raveren/kint": "0.9.*",
         "illuminate/html": "~5.0",
         "erusev/parsedown": "~1.5"
@@ -46,6 +45,5 @@
         "psr-4": {
             "Radic\\Tests\\BladeExtensions\\": "tests/"
         }
-    },
-    "minimum-stability": "stable"
+    }
 }
