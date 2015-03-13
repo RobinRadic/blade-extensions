@@ -53,16 +53,13 @@ class CiconiaRenderer implements MarkdownRenderer
      */
     public function render($text)
     {
-        $gfm         = $this->config->get('blade_extensions.markdown.gfm');
-        $ciconia = new Ciconia();
-        if ($gfm === true) {
-            $ciconia->addExtension(new Gfm\FencedCodeBlockExtension());
-            $ciconia->addExtension(new Gfm\TaskListExtension());
-            $ciconia->addExtension(new Gfm\InlineStyleExtension());
-            $ciconia->addExtension(new Gfm\WhiteSpaceExtension());
-            $ciconia->addExtension(new Gfm\TableExtension());
-            $ciconia->addExtension(new Gfm\UrlAutoLinkExtension());
-        }
+        $this->ciconia->addExtension(new Gfm\FencedCodeBlockExtension());
+        $this->ciconia->addExtension(new Gfm\TaskListExtension());
+        $this->ciconia->addExtension(new Gfm\InlineStyleExtension());
+        $this->ciconia->addExtension(new Gfm\WhiteSpaceExtension());
+        $this->ciconia->addExtension(new Gfm\TableExtension());
+        $this->ciconia->addExtension(new Gfm\UrlAutoLinkExtension());
+
         return $this->ciconia->render($text);
     }
 }

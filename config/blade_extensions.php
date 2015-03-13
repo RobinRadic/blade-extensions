@@ -17,10 +17,9 @@ return array(
     'blacklist' => array(),
 
     'markdown' => array(
-        'renderer' => 'Radic\BladeExtensions\Renderers\ParsedownRenderer', // ciconia, parsedown
         'enabled' => true,
-        'views' => true,
-        'gfm' => true // parsedown always uses gfm, ciconia has optional gfm support
+        'renderer' => 'Radic\BladeExtensions\Renderers\ParsedownRenderer', // ciconia, parsedown
+        'views' => true
     ),
     /*
      * The replacement code for each directive.

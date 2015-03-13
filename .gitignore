@@ -26,6 +26,5 @@ commit.bat
 .idea
 /test.php
 /test.md
-/docs
 /psysh.phar
 /app
