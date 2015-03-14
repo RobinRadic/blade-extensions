@@ -143,7 +143,6 @@
 
     @if($loop->last)
         <?php $loop->resetLoopStack(); ?>
-        @assertTrue(empty($loop->getLoopStack()))
     @endif
 
 @endforeach
