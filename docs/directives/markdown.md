@@ -14,6 +14,8 @@ You can render markdown text using
  
 [My link](https://mylink.com)
 @endmarkdown
+```
+
 
 #### Including
 If you enable the views option in the configuration file, you can also include .md files using
