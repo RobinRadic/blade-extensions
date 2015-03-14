@@ -1,6 +1,6 @@
 <!---
-Title: Miscellaneous
-Author: Robin Radic
+title: Miscellaneous
+author: Robin Radic
 -->
 
 #### Generated reports and documentation
