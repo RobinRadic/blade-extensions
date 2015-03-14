@@ -26,15 +26,12 @@ menu:
       Markdown: directives/markdown
 
   - name: Miscellaneous
-    icon: fa fa-puzzle-piece
-    children:
-      API Documentation: miscellaneous/api
-      Code coverage: miscellaneous/coverage
-      CI: miscellaneous/ci
-      Contributing: miscellaneous/contributing
+    icon: fa fa-ellipsis-h
+    page: miscellaneous
 
   - name: Links
     icon: fa fa-link
     children:
       Github: https://github.com/robinradic/blade-extensions
       Packagist: http://packagist.org/radic/blade-extensions
+      Jenkins: http://radic.nl:8080/job/blade-extensions
