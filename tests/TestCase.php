@@ -1,36 +1,45 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\Tests\BladeExtensions;
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Html\HtmlServiceProvider;
-use Mockery as m;
-use Orchestra\Testbench\TestCase as BaseTestCase;
-use Radic\BladeExtensions\BladeExtensionsServiceProvider;
-use Radic\BladeExtensions\Traits\BladeViewTestingTrait;
+use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
+use Laradic\Dev\AbstractTestCase;
+use Laradic\Dev\Traits\BladeViewTestingTrait;
 
 /**
  * Class ViewTest
  *
  * @author     Robin Radic
- *
+ * @inheritDoc
  */
-class TestCase extends BaseTestCase
+abstract class TestCase extends AbstractTestCase
 {
     use BladeViewTestingTrait;
 
-    /**
-     * @var TestData
-     */
-    protected $data;
-
+    /** @inheritDoc */
     public function setUp()
     {
         parent::setUp();
-        $this->data = new TestData();
     }
 
-    public function getData()
+    /**
+     * @return \Illuminate\Contracts\View\Factory
+     */
+    public function view()
     {
-        return $this->data;
+        return $this->app['view'];
+    }
+
+    /**
+     * Get the service provider class.
+     *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass($app)
+    {
+        return 'Radic\BladeExtensions\BladeExtensionsServiceProvider';
     }
 
     /**
@@ -39,7 +48,7 @@ class TestCase extends BaseTestCase
     protected function loadViewTesting()
     {
         $this->addBladeViewTesting(__DIR__ . '/views');
-        \File::delete(\File::glob(base_path('storage/framework/views') . '/*'));
+        $this->cleanViews();
     }
 
     /**
@@ -55,33 +64,13 @@ class TestCase extends BaseTestCase
      */
     protected function registerBlade()
     {
-        $this->app->register(new BladeExtensionsServiceProvider($this->app));
+        $class = $this->getServiceProviderClass($this->app);
+        #$instance = new $class($this->app);
+        $this->app->register($class);
     }
 
-    /**
-     * Registers the IdeHelperServiceProvider and executes the ide-helper generate command
-     */
-    protected function generateIdeHelper()
+    protected function registerBladeMarkdown()
     {
-        $this->app->register(new IdeHelperServiceProvider($this->app));
-        $this->getKernel()->call('ide-helper:generate');
-    }
-
-    /**
-     * @return \Illuminate\Contracts\Console\Kernel
-     */
-    protected function getKernel()
-    {
-        return $this->app['Illuminate\Contracts\Console\Kernel'];
-    }
-
-    /**
-     * Executes a kernel command
-     *
-     * @param string $command
-     */
-    protected function command($command)
-    {
-        $this->getKernel()->call($command);
+       # $this->app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider'); //new MarkdownServiceProvider($this->app));
     }
 }

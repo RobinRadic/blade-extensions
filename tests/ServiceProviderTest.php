@@ -1,30 +1,41 @@
-<?php namespace Radic\BladeExtensionsTests;
+<?php namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
-use Radic\BladeExtensions\BladeExtensionsServiceProvider;
+use Laradic\Dev\Traits\ServiceProviderTestCaseTrait;
 
 /**
  * Class ViewTest
  *
  * @author     Robin Radic
- *
+ * @group blade-extensions
  */
 class ServiceProviderTest extends TestCase
 {
+    use ServiceProviderTestCaseTrait;
 
-
+    /** @inheritDoc */
     public function setUp()
     {
         parent::setUp();
     }
 
 
-    public function testServiceProvider()
+    public function testServiceProviderRegister()
     {
-        $this->app->register(new BladeExtensionsServiceProvider($this->app));
-        $providers = $this->app->getLoadedProviders();
-        $this->assertArrayHasKey('Radic\BladeExtensions\BladeExtensionsServiceProvider', $providers);
-        $this->assertTrue($providers['Radic\BladeExtensions\BladeExtensionsServiceProvider']);
+        $this->registerBlade();
+        $this->registerBladeMarkdown();
+        $this->runServiceProviderRegisterTest('Radic\BladeExtensions\BladeExtensionsServiceProvider');
+        $this->runServiceProviderRegisterTest('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
     }
 
+    /**
+     * @expectedException \Exception
+     */
+    public function testNonexistentRenderer()
+    {
+        $this->app->config->set('blade_extensions.markdown.renderer', 'Class\\Does\\Not\\Exist');
+        $this->registerBlade();
+        $this->registerBladeMarkdown();
+
+    }
 }

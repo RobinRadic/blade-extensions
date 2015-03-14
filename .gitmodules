@@ -1,0 +1,4 @@
+[submodule "build/tools"]
+	path = build/tools
+	url = https://github.com/gi/php-build-tools
+	branch = master

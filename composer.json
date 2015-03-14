@@ -16,31 +16,35 @@
             "role": "Package Author/Developer"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "~5.0"
+        "illuminate/support": "~5.0",
+        "laradic/support": "~1.0"
     },
     "suggest": {
-        "raveren/kent": ">0.9.1",
-        "illuminate/html": "~5.0"
+        "raveren/kint": ">0.9.1",
+        "illuminate/html": "~5.0",
+        "erusev/parsedown": "~1.5"
     },
     "require-dev": {
-        "orchestra/testbench": "3.0.*",
-        "laravel/framework": "5.0.*",
+        "laradic/dev": "dev-master",
+        "raveren/kint": "0.9.*",
         "illuminate/html": "~5.0",
-      "barryvdh/laravel-ide-helper": "2.*"
+        "erusev/parsedown": "~1.5",
+        "kzykhys/ciconia": "1.0.*"
     },
     "scripts": {
     },
     "autoload": {
-        "psr-0": {
-            "Radic\\BladeExtensions": "src/"
+        "psr-4": {
+            "Radic\\BladeExtensions\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Radic\\BladeExtensionsTests\\": "tests/"
+            "Radic\\Tests\\BladeExtensions\\": "tests/"
         }
-    },
-    "minimum-stability": "stable"
+    }
 }
