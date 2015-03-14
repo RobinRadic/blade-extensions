@@ -62,7 +62,7 @@
     </target>
 
 
-    <target name="prepare" unless="prepare.done" depends="clean" description="Prepare for build">
+    <target name="prepare" unless="prepare.done" depends="clean,git.submodule.update" description="Prepare for build">
 
         <mkdir dir="${project.basedir}/build/coverage"/>
         <mkdir dir="${project.basedir}/build/logs"/>
