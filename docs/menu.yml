@@ -10,7 +10,7 @@ menu:
       License: preface/license
 
   - name: Getting Started
-    icon: fa fa-puzzle-piece
+    icon: fa fa-coffee
     children:
       Installation: getting-started/installation
       Configuration: getting-started/configuration
@@ -18,12 +18,12 @@ menu:
   - name: Directives
     icon: fa fa-puzzle-piece
     children:
+      Set - Unset: directives/assignment
       Foreach - break - continue: directives/foreach
-      Set - Unset: directives/set
       Partial - block - render: directives/partial
       Macro - domacro: directives/macro
-      Debug - breakpoint: asdf
-      Markdown: asdf
+      Debug - breakpoint: directives/debug
+      Markdown: directives/markdown
 
   - name: Miscellaneous
     icon: fa fa-puzzle-piece

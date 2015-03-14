@@ -1,7 +1,20 @@
+{{-- Test directive spaces and quotes --}}
+@set  (  'set_spaces', 'yes' )
+@assertEquals('yes', $set_spaces, 'set set_spaces should pass')
 
+@unset  (  'set_spaces' )
+@assertFalse(isset($set_spaces), 'unset set_spaces should pass')
+
+@set  (  "set_quotes", "yes" )
+@assertEquals('yes', $set_quotes, 'set set_quotes should pass')
+
+@unset  (  "set_quotes" )
+@assertFalse(isset($set_quotes), 'unset set_quotes should pass')
+
+
+
+{{-- Test directive input variants --}}
 @assertTrue($dataString === 'hello', 'datastring should equal hello')
-{{--@assertTrue(is_array($dataArray), 'dataArray should be an array')--}}
-
 
 @set('mams', 'mamsVal')
 @assertTrue(isset($mams), '@set mams should create a new var')
@@ -20,26 +33,17 @@
 @set('mams', 'childs');
 @assertTrue($mams === 'childs', '@set should accept a string as key, and override the old value')
 
-
-
 @unset('mams')
 @assertFalse(isset($mams), '@unset should accept a string as key')
 
 
 @set($testArray, $dataArray)
-{{--@assertTrue(is_array($testArray), 'testArray should be an array')
-@assertArrayHasKey(0, $testArray, 'testArray should have key 0')
-{{ xdebug_break() }}
-
-@set($testArray[0]['index'], 0)
-@assertTrue($testArray[0]['index'] === 0, 'testArray key 0 should have key index on 0')
-
-
-@set($testArray[0]['index'], 1)
-@assertTrue($testArray[0]['index'] === 1, 'testArray key 1 should have key index on 1')
-
-@set('pops', $testArray[0]['index'])
-@assertTrue($pops === $testArray[0]['index'], 'pops should equal testArray.0.index')
---}}
 @unset($pops);
 @assertFalse(isset($pops), 'pops should not be set')
+
+
+@set('myArr', ['my' => 'arr'])
+@assertEquals('arr', $myArr['my'])
+
+@set('myArr2', array('my' => 'arr'))
+@assertEquals('arr', $myArr2['my'])

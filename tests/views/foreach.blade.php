@@ -1,5 +1,11 @@
+{{-- Test spaces --}}
+@foreach  (   $array as $key => $val   )
+    @assertTrue($loop->first, 'foreach spaces test')
+    @break
+@endforeach
 
 
+{{-- Test input variants --}}
 @foreach($array as $item)
 	@assertTrue($loop->first)
 	@break
@@ -55,6 +61,7 @@
 
 
 
+{{-- Test loop helper --}}
 @set('testArray', $dataClass::getRecords())
 @set('total', count($testArray))
 
@@ -133,6 +140,11 @@
 	@endforeach
 
     @assertTrue(is_array($loop->getLoopStack()))
+
+    @if($loop->last)
+        <?php $loop->resetLoopStack(); ?>
+        @assertTrue(empty($loop->getLoopStack()))
+    @endif
 
 @endforeach
 

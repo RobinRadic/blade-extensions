@@ -3,6 +3,7 @@
 use Illuminate\Html\HtmlServiceProvider;
 use Mockery as m;
 
+use Radic\BladeExtensions\Directives\DebugDirectives;
 use Radic\Tests\BladeExtensions\TestCase;
 
 /**
@@ -19,11 +20,35 @@ class DebugDirectivesTest extends TestCase
         parent::setUp();
         $this->loadViewTesting();
         $this->registerHtml();
-        $this->registerBlade();
     }
 
+    /**
+     * debug with Kint renders an exception in console mode
+     * @expectedException \ErrorException
+     */
     public function testDebug()
     {
-        $this->assertTrue(true);
+        //
+        $this->registerBlade();
+        $this->view()->make('debug')->render();
+    }
+
+    public function testDebugVardump()
+    {
+        $this->app['config']->set('blade_extensions.directives.addDebug', '<pre><code><?php var_dump($1) ?></code></pre>');#<?php var_dump($1) ? >
+        $this->registerBlade();
+        $rendered = $this->view()->make('debug')->render();
+        $this->assertEquals(<<<'EOT'
+<pre><code>string(3) "sdf"
+</code></pre>
+
+EOT
+        , $rendered, 'testDebugVardump should render the exact value');
+    }
+
+    public function testBreakpoint()
+    {
+        $this->registerBlade();
+        #$this->assertEquals("<!-- breakpoint -->bool(true)\n", $this->view()->make('breakpoint')->render());
     }
 }

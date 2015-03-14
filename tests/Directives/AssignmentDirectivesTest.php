@@ -29,7 +29,7 @@ class AssignmentDirectivesTest extends TestCase
      */
     public function testSet()
     {
-        $this->view()->make('set', [
+        $this->view()->make('assignment', [
                 'dataString'        => 'hello',
                 'dataArray'         => $this->getData()->getValues()['names'],
                 'dataClassInstance' => $this->getData(),

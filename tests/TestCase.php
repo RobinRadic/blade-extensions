@@ -65,12 +65,12 @@ abstract class TestCase extends AbstractTestCase
     protected function registerBlade()
     {
         $class = $this->getServiceProviderClass($this->app);
-        $instance = new $class($this->app);
-        $this->app->register($instance);
+        #$instance = new $class($this->app);
+        $this->app->register($class);
     }
 
     protected function registerBladeMarkdown()
     {
-        $this->app->register(new MarkdownServiceProvider($this->app));
+       # $this->app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider'); //new MarkdownServiceProvider($this->app));
     }
 }

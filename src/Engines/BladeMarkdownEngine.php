@@ -40,7 +40,7 @@ class BladeMarkdownEngine extends CompilerEngine
     public function __construct(CompilerInterface $compiler, MarkdownRenderer $renderer)
     {
         parent::__construct($compiler);
-        $this->renderer = $renderer;
+        $this->setRenderer($renderer);
     }
 
     /**
@@ -54,7 +54,7 @@ class BladeMarkdownEngine extends CompilerEngine
     {
         $contents = parent::get($path, $data);
 
-        return $this->renderer->render($contents);
+        return $this->getRenderer()->render($contents);
     }
 
     /**

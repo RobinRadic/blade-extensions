@@ -6,6 +6,7 @@ namespace Radic\BladeExtensions;
 
 use App;
 use Config;
+use Exception;
 use Laradic\Support\ServiceProvider;
 use Radic\BladeExtensions\Directives\AssignmentDirectives;
 use Radic\BladeExtensions\Directives\DebugDirectives;
@@ -59,8 +60,11 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         }
 
         # Optional markdown compiler, engines and directives
-        if ( (class_exists('\Ciconia\Ciconia') or class_exists('\Parsedown')) && Config::get('blade_extensions.markdown.enabled') )
+        if ( Config::get('blade_extensions.markdown.enabled') )
         {
+            if( ! class_exists(Config::get('blade_extensions.markdown.renderer')) ){
+                throw new Exception("The configured markdown renderer class does not exist");
+            }
             $this->app->register(new MarkdownServiceProvider($this->app));
         }
     }

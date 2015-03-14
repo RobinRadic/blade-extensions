@@ -1,12 +1,15 @@
 Laravel Blade Extensions
 ========================
 
-[![Build Status](https://travis-ci.org/RobinRadic/blade-extensions.svg?branch=master)](https://travis-ci.org/RobinRadic/blade-extensions)
-[![GitHub version](https://badge.fury.io/gh/robinradic%2Fblade-extensions.svg)](http://badge.fury.io/gh/robinradic%2Fblade-extensions)
-[![Total Downloads](https://poser.pugx.org/radic/blade-extensions/downloads.svg)](https://packagist.org/packages/radic/blade-extensions)
-[![Goto documentation](http://img.shields.io/badge/goto-documentation-orange.svg?style=flat-square)](http://docs.radic.nl/blade-extensions)
-[![Goto repository](http://img.shields.io/badge/goto-repository-orange.svg?style=flat-square)](https://github.com/robinradic/blade-extensions)
-[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://radic.mit-license.org)
+[![Build Status](https://img.shields.io/travis/RobinRadic/blade-extensions.svg?branch=master&style=flat-square)](https://travis-ci.org/RobinRadic/blade-extensions)
+[![GitHub Version](https://img.shields.io/github/tag/robinradic/blade-extensions.svg?style=flat-square&label=version)](http://badge.fury.io/gh/robinradic%2Fblade-extensions)
+[![Code Coverage](https://img.shields.io/badge/coverage-100%-green.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/coverage)
+[![Total Downloads](https://img.shields.io/packagist/dt/radic/blade-extensions.svg?style=flat-square)](https://packagist.org/packages/radic/blade-extensions)
+[![License](http://img.shields.io/badge/license-MIT-ff69b4.svg?style=flat-square)](http://radic.mit-license.org)
+
+[![Goto Documentation](http://img.shields.io/badge/goto-docs-orange.svg?style=flat-square)](http://robinradic.github.io/blade-extensions)
+[![Goto API Documentation](https://img.shields.io/badge/goto-api--docs-orange.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/api)
+[![Goto Repository](http://img.shields.io/badge/goto-repo-orange.svg?style=flat-square)](https://github.com/robinradic/blade-extensions)
 
 Version 2.1
 -----------
@@ -16,34 +19,11 @@ Version 2.1
 - **@set @unset** Setting and unsetting of values
 - **@foreach @break @continue** Loop data and extras
 - **@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.
-- **@debug** Debugging values in views
+- **@debug @breakpoint** Dump values and set breakpoints in views
 - **@macro** Defining and running macros (optional, requires [illuminate/html](https://github.com/erusev/parsedown))
-- **@markdown** Render github flavoured markdown by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown)
+- **@markdown** Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
 - **BladeViewTestingTrait** enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
   
-  
-#### Changelog  
-[View the detailed changelog here](CHANGELOG.md)
-  
-###### 2.1
-- Several changes to improve extending, in preparation for:
-    - [radic/themes](https://github.com/robinlaradic/themes) - A laravel 5 theme manager
-    - [radic/docs](https://github.com/robinlaradic/themes) - LV5 doc generator. Uses my [packadic/theme](https://github.com/packadic/theme) admin theme.
-- New unit tests
-    - For existing directives and classes
-    - For the new markdown stuff
-- Added markdown support
-    - Directives for inline markdown `@markdown` and `@endmarkdown`
-    - Markdown compilers, eg: `View::make('path-to-md-file')` and `@include('path-to-md-file')`
-    - Natively supports [Parsedown](https://github.com/sdf/asdf) and [Ciconia](https://github.com/sdf/asdf)
-- Build scripts, tools and tasks added.
-    - Integration with Jenkins.
-    - API Documentation generator
-    - Code coverage generator
-
-  
-###### 2.0
-- Laravel 5 support
 
 #### Installation  
 ###### Requirements

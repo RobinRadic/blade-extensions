@@ -36,7 +36,7 @@ class PhpMarkdownEngine extends PhpEngine
      */
     public function __construct(MarkdownRenderer $renderer)
     {
-        $this->renderer = $renderer;
+        $this->setRenderer($renderer);
     }
 
     /**
@@ -50,7 +50,7 @@ class PhpMarkdownEngine extends PhpEngine
     {
         $contents = parent::get($path, $data);
 
-        return $this->renderer->render($contents);
+        return $this->getRenderer()->render($contents);
     }
 
     /**

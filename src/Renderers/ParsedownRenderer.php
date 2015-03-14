@@ -5,8 +5,7 @@
 namespace Radic\BladeExtensions\Renderers;
 
 use Radic\BladeExtensions\Contracts\MarkdownRenderer;
-use Illuminate\Contracts\Config\Repository as Config;
-use Parsedown;
+use \Parsedown;
 
 /**
  * The Parsedown markdown renderer implementation
@@ -29,20 +28,14 @@ class ParsedownRenderer implements MarkdownRenderer
      */
     protected $parsedown;
 
-    /**
-     * The config repo instance
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    protected $config;
 
     /**
      * Constructs the class
      * @param \Parsedown $parsedown
      * @param \Illuminate\Contracts\Config\Repository $config
      */
-    function __construct(\Parsedown $parsedown, Config $config)
+    function __construct(Parsedown $parsedown)
     {
-        $this->config = $config;
         $this->parsedown = $parsedown;
     }
 

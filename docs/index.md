@@ -14,6 +14,7 @@ toc:
 [![Code Coverage](https://img.shields.io/badge/coverage-100%-green.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/coverage)
 [![Total Downloads](https://img.shields.io/packagist/dt/radic/blade-extensions.svg?style=flat-square)](https://packagist.org/packages/radic/blade-extensions)
 [![License](http://img.shields.io/badge/license-MIT-ff69b4.svg?style=flat-square)](http://radic.mit-license.org)
+
 [![Goto Documentation](http://img.shields.io/badge/goto-docs-orange.svg?style=flat-square)](http://robinradic.github.io/blade-extensions)
 [![Goto API Documentation](https://img.shields.io/badge/goto-api--docs-orange.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/api)
 [![Goto Repository](http://img.shields.io/badge/goto-repo-orange.svg?style=flat-square)](https://github.com/robinradic/blade-extensions)
@@ -23,10 +24,11 @@ toc:
 - **@set @unset** Setting and unsetting of values
 - **@foreach @break @continue** Loop data and extras
 - **@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.
-- **@macro** Defining and running macros
-- **@debug** Debugging values in views
+- **@debug @breakpoint** Dump values and set breakpoints in views
+- **@macro** Defining and running macros (optional, requires [illuminate/html](https://github.com/erusev/parsedown))
+- **@markdown** Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
 - **BladeViewTestingTrait** enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
-
+  
 
 <a name="examples"></a>
 #### Some examples

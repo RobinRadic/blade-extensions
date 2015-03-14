@@ -30,17 +30,18 @@ class MarkdownServiceProvider extends ServiceProvider
     /** {@inheritdoc} */
     public function boot()
     {
+        # Do not register the engine resolvers if defined in config
+        if (Config::get('blade_extensions.markdown.views') !== true)
+        {
+            return;
+        }
+
+
         /** @var \Illuminate\Foundation\Application $app */
         $app = $this->app;
 
         /** @var \Illuminate\View\Factory $view */
         $view = $app['view'];
-
-        # Do not register the engine resolvers if defined in config
-        if (Config::get('blade_extensions.markdown.views') === false)
-        {
-            return;
-        }
 
         # Markdown engine
         $view->getEngineResolver()->register('md', function () use ($app)

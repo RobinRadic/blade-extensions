@@ -35,7 +35,7 @@ class ForeachDirectives
      */
     public function openForeach($value, $directive, Application $app, Compiler $blade)
     {
-        $matcher = '/@foreach\((.*)(?:\sas)(.*)\)/';
+        $matcher = '/(?<!\w)(?:\s*)@foreach(?:\s*)\((.*)(?:\sas)(.*)\)/';
 
         return preg_replace($matcher, $directive, $value);
     }

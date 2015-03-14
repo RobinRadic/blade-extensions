@@ -56,4 +56,13 @@ class MarkdownCompiler extends Compiler implements CompilerInterface
         $this->files->put($this->getCompiledPath($path), $content);
     }
 
+    /**
+     * @return MarkdownRenderer
+     */
+    public function getRenderer()
+    {
+        return $this->renderer;
+    }
+
+
 }

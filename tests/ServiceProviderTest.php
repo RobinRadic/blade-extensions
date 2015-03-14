@@ -17,27 +17,25 @@ class ServiceProviderTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->registerBlade();
-        $this->registerBladeMarkdown();
     }
 
 
     public function testServiceProviderRegister()
     {
+        $this->registerBlade();
+        $this->registerBladeMarkdown();
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\BladeExtensionsServiceProvider');
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
     }
 
-    public function testIsRenderersInjectable()
+    /**
+     * @expectedException \Exception
+     */
+    public function testNonexistentRenderer()
     {
-        $this->testMeOk();
-      #  $this->assertIsInjectable('Radic\BladeExtensions\Renderers\ParsedownRenderer');
-      #  $this->assertIsInjectable('Radic\BladeExtensions\Renderers\CiconiaRenderer');
-    }
+        $this->app->config->set('blade_extensions.markdown.renderer', 'Class\\Does\\Not\\Exist');
+        $this->registerBlade();
+        $this->registerBladeMarkdown();
 
-    public function testIsCompilerInjectable()
-    {
-        $this->assertTrue(true);
-        #$this->assertIsInjectable('Radic\BladeExtensions\Compilers\MarkdownCompiler');
     }
 }

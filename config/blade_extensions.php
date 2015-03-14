@@ -17,9 +17,21 @@ return array(
     'blacklist' => array(),
 
     'markdown' => array(
+        /*
+         * Enable markdown directives
+         */
         'enabled' => true,
-        'renderer' => 'Radic\BladeExtensions\Renderers\ParsedownRenderer', // ciconia, parsedown
-        'views' => true
+
+        /*
+         * Class that renders markdown. Needs to implement Radic\BladeExtensions\Contracts\MarkdownRenderer
+         */
+        'renderer' => 'Radic\BladeExtensions\Renderers\ParsedownRenderer',
+
+        /*
+         * Enable markdown view compiler.
+         * This will enable you to use View::make('my_markdown_file') on `my_markdown_file.md`.
+         */
+        'views' => false
     ),
     /*
      * The replacement code for each directive.
@@ -87,24 +99,26 @@ EOT
         ,'addRender' => <<<'EOT'
 $1<?php echo \Radic\BladeExtensions\Helpers\Partial::renderBlock$2; ?>
 EOT
-        // VariablesDirective
+        // AssignmentDirective
         ,'addSet' => <<<'EOT'
 <?php \$$1 = $2; ?>
 EOT
         ,'addUnset' => <<<'EOT'
 <?php unset(\$$1); ?>
 EOT
+        // DebugDirectives
         ,'addDebug' => <<<'EOT'
 <h1>DEBUG OUTPUT:</h1>
 <pre><code>
     <?php (class_exists('Kint') ? Kint::dump($1) : var_dump($1)) ?>
 </code></pre>
 EOT
+        ,'addBreakpoint' => <<<'EOT'
+<!-- breakpoint --><?php var_dump(xdebug_break()); ?>
+EOT
+        // MarkdownDirectives
         ,'openMarkdown' => <<<'EOT'
 $1<?php echo \Radic\BladeExtensions\Helpers\Markdown::parse(<<<'EOT'$2
-EOT
-        ,'includeMarkdown' => <<<'EOT'
-\n<?php include('$1'); ?>
 EOT
         ,'closeMarkdown' => "$1\nEOT\n); ?>$2"
 

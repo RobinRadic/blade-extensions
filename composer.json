@@ -32,7 +32,8 @@
         "laradic/dev": "dev-master",
         "raveren/kint": "0.9.*",
         "illuminate/html": "~5.0",
-        "erusev/parsedown": "~1.5"
+        "erusev/parsedown": "~1.5",
+        "kzykhys/ciconia": "1.0.*"
     },
     "scripts": {
     },

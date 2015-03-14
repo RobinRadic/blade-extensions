@@ -34,7 +34,7 @@ class AssignmentDirectives
      */
     public function addSet($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/@set\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/';
+        $matcher = '/(?<!\w)(?:\s*)@set(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|),\s(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -50,7 +50,7 @@ class AssignmentDirectives
      */
     public function addUnset($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/@unset\((?:\$|(?:\'))(.*?)(?:\'|)\)/';
+        $matcher = '/(?<!\w)(?:\s*)@unset(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|)(?:\s*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }

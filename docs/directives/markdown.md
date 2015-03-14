@@ -1,10 +1,23 @@
 <!---
-title: Set, unset
+title: Markdown
 author: Robin Radic
 -->
 
-## Foreach
+#### Inline
+You can render markdown text using
+```php
+@markdown
+# Header
 
-## Break
+- list item
+- list item 2
+ 
+[My link](https://mylink.com)
+@endmarkdown
 
-## Continue
+#### Including
+If you enable the views option in the configuration file, you can also include .md files using
+```php
+@include('my_markdown_file') # includes and renders my_markdown_file.md 
+```
+

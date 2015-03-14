@@ -36,7 +36,7 @@ class MacroDirectives
      */
     public function openMacro($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        $matcher = '/(?<!\w)(?:\s*)@macro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -69,7 +69,7 @@ class MacroDirectives
      */
     public function doMacro($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
+        $matcher = '/(?<!\w)(?:\s*)@domacro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }

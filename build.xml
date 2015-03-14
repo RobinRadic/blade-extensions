@@ -32,6 +32,12 @@
     <target name="build" depends="vendor,prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox,phpdoc" description=""/>
 
     <target name="clean" unless="clean.done" description="Cleanup build artifacts">
+        <phingcall target="clean.build"/>
+        <phingcall target="clean.vendor"/>
+        <property name="clean.done" value="true"/>
+    </target>
+
+    <target name="clean.build" unless="clean.build.done" description="Cleanup build artifacts">
         <delete dir="${project.basedir}/build/api"/>
         <delete dir="${project.basedir}/build/coverage"/>
         <delete dir="${project.basedir}/build/logs"/>
@@ -39,12 +45,16 @@
         <delete dir="${project.basedir}/build/phpdox"/>
         <delete dir="${project.basedir}/build/phpdoxwd"/>
         <delete dir="${project.basedir}/build/phpdoc"/>
-        <property name="clean.done" value="true"/>
+        <property name="clean.build.done" value="true"/>
     </target>
 
-    <target name="vendor" unless="vendor.done" description="Cleanup composer and vendor">
+    <target name="clean.vendor" unless="clean.vendor.done" description="Cleanup vendor files">
         <delete dir="${project.basedir}/vendor"/>
         <delete file="${project.basedir}/composer.lock"/>
+        <property name="clean.vendor.done" value="true"/>
+    </target>
+
+    <target name="vendor" depends="clean.vendor" unless="vendor.done" description="Cleanup composer and vendor">
         <exec executable="composer" logoutput="true">
             <arg line="install"/>
         </exec>
