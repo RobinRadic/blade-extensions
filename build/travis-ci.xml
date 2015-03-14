@@ -2,6 +2,9 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="http://phpunit.de/phpunit.xsd"
          backupGlobals="false"
+         timeoutForSmallTests="30"
+         timeoutForMediumTests="50"
+         timeoutForLargeTests="60"
          bootstrap="../vendor/autoload.php"
          verbose="true">
   <testsuite name="PHPUnit">
@@ -14,7 +17,7 @@
 
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">../src</directory> 
+      <directory suffix=".php">../src</directory>
     </whitelist>
   </filter>
 </phpunit>
