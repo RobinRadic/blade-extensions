@@ -37,6 +37,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     protected $dir = __DIR__;
 
+    protected $resourcesPath = '/../resources';
     /** {@inheritDoc} */
     public function boot()
     {
@@ -47,6 +48,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     public function register()
     {
         parent::register();
+
 
         AssignmentDirectives::attach($this->app);
         DebugDirectives::attach($this->app);
