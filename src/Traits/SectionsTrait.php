@@ -7,7 +7,7 @@ namespace Radic\BladeExtensions\Traits;
 use Illuminate\Contracts\View\Factory;
 
 /**
- * Class BladeSections
+ * Trait SectionsTrait
  *
  * @package     Radic\BladeExtensions\Traits
  * @author      Robin Radic
@@ -15,7 +15,7 @@ use Illuminate\Contracts\View\Factory;
  * @copyright   2011-2015, Robin Radic
  * @link        http://radic.mit-license.org
  */
-trait BladeSections
+trait SectionsTrait
 {
 
     /**
@@ -31,17 +31,31 @@ trait BladeSections
     /**
      * @var \Illuminate\View\Factory
      */
-    protected $factory;
+    protected $viewFactory;
 
     /**
-     * Instantiates the class
+     * setViewFactory
      *
-     * @param \Illuminate\View\Factory $factory
+     * @param \Illuminate\Contracts\View\Factory $factory
+     * @return $this
      */
-    public function setFactory(Factory $factory)
+    public function setViewFactory(Factory $factory)
     {
-        $this->factory = $factory;
+        $this->viewFactory = $factory;
+
+        return $this;
     }
+
+    /**
+     * Get the value of viewFactory
+     *
+     * @return \Illuminate\View\Factory
+     */
+    public function getViewFactory()
+    {
+        return $this->viewFactory;
+    }
+
 
     /**
      * Start injecting content into a section.
@@ -70,11 +84,13 @@ trait BladeSections
      *
      * @param  string $section
      * @param  string $content
-     * @return void
+     * @return SectionsTrait
      */
     public function inject($section, $content)
     {
         $this->startSection($section, $content);
+
+        return $this;
     }
 
     /**
@@ -135,7 +151,7 @@ trait BladeSections
      *
      * @param  string $section
      * @param  string $content
-     * @return void
+     * @return SectionsTrait
      */
     protected function extendSection($section, $content)
     {
@@ -145,6 +161,8 @@ trait BladeSections
         }
 
         $this->sections[$section] = $content;
+
+        return $this;
     }
 
     /**
@@ -173,25 +191,29 @@ trait BladeSections
     /**
      * Flush all of the section contents.
      *
-     * @return void
+     * @return SectionsTrait
      */
     public function flushSections()
     {
         $this->sections = array();
 
         $this->sectionStack = array();
+
+        return $this;
     }
 
     /**
      * Flush all of the section contents if done rendering.
      *
-     * @return void
+     * @return SectionsTrait
      */
     public function flushSectionsIfDoneRendering()
     {
-        if ( $this->factory->doneRendering() )
+        if ( $this->viewFactory->doneRendering() )
         {
             $this->flushSections();
+
+            return $this;
         }
     }
 

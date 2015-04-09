@@ -14,6 +14,7 @@ use Radic\BladeExtensions\Directives\DebugDirectives;
 use Radic\BladeExtensions\Directives\ForeachDirectives;
 use Radic\BladeExtensions\Directives\MacroDirectives;
 use Radic\BladeExtensions\Directives\PartialDirectives;
+use Radic\BladeExtensions\Directives\WidgetDirectives;
 use Radic\BladeExtensions\Helpers\Sections;
 use Radic\BladeExtensions\Widgets\Factory;
 
@@ -58,7 +59,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         AssignmentDirectives::attach($app);
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
-        PartialDirectives::attach($app);
+        #PartialDirectives::attach($app);
 
         # Optional macro directives
         if ( array_key_exists('form', App::getBindings()) )
@@ -84,9 +85,9 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $this->app->singleton('blade.widgets', function (Application $app)
         {
-            return new Factory(new Sections($app->make('view')));
+            return new Factory($app->make('view'));
         });
 
-
+        WidgetDirectives::attach($this->app);
     }
 }
