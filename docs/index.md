@@ -19,7 +19,7 @@ toc:
 [![Goto API Documentation](https://img.shields.io/badge/goto-api--docs-orange.svg?style=flat-square)](http://radic.nl:8080/job/blade-extensions/PHPDOX_Documentation/)
 [![Goto Repository](http://img.shields.io/badge/goto-repo-orange.svg?style=flat-square)](https://github.com/robinradic/blade-extensions)
 
-**Laravel 5** package providing additional Blade functionality.
+**Laravel 5** package providing additional Blade functionality....
 
 - **@set @unset** Setting and unsetting of values
 - **@foreach @break @continue** Loop data and extras
