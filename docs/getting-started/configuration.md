@@ -5,7 +5,7 @@ icon: fa fa-legal
 -->
 
 #### Blacklisting directives
-The Blade extender will ignore blacklisted directives. Use the name of the method inside the `Directives/*Directive.php`. For example:
+The Blade extender will ignore blacklisted directives. Use the name of the method inside the `Directives/*Directive.php`. For example::
 ```php
 return array(
     'blacklist' => array('openForeach', 'closeForeach'),
