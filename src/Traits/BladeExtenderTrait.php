@@ -5,7 +5,7 @@
 namespace Radic\BladeExtensions\Traits;
 
 use Config;
-use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 use View;
 
 /**

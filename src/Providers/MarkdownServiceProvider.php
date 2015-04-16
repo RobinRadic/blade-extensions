@@ -37,7 +37,7 @@ class MarkdownServiceProvider extends ServiceProvider
         }
 
 
-        /** @var \Illuminate\Foundation\Application $app */
+        /** @var \Illuminate\Contracts\Foundation\Application $app */
         $app = $this->app;
 
         /** @var \Illuminate\View\Factory $view */
