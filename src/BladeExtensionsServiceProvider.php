@@ -59,7 +59,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         AssignmentDirectives::attach($app);
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
-        #PartialDirectives::attach($app);
+        PartialDirectives::attach($app);
 
         # Optional macro directives
         if ( array_key_exists('form', App::getBindings()) )
@@ -78,7 +78,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         }
 
 
-        $this->registerWidgets();
+        #$this->registerWidgets();
     }
 
     public function registerWidgets()
@@ -88,6 +88,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             return new Factory($app->make('view'));
         });
 
-        WidgetDirectives::attach($this->app);
+        #WidgetDirectives::attach($this->app);
     }
 }

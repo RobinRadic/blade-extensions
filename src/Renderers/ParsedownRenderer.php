@@ -45,6 +45,7 @@ class ParsedownRenderer implements MarkdownRenderer
      */
     public function render($text)
     {
+        $text = preg_replace('/\s\s\n/', "<br>\n", $text);
         return $this->parsedown->text($text);
     }
 }

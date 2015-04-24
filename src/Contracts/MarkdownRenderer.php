@@ -23,5 +23,5 @@ interface MarkdownRenderer
      * @param string $text The text
      * @return mixed
      */
-    public function render($text);
+    function render($text);
 }
