@@ -12,7 +12,7 @@
 [![Goto Repository](http://img.shields.io/badge/goto-repo-orange.svg?style=flat-square)](https://github.com/robinradic/blade-extensions)
 
 
-Version 2.1
+Version 2.2
 -----------
 
 **Laravel 5** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
