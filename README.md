@@ -15,6 +15,7 @@
 Version 2.2
 -----------
   
+  
 **Laravel 5** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
 
 - **@set @unset** Setting and unsetting of values
