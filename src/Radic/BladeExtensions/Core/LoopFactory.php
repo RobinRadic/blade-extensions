@@ -45,7 +45,7 @@ abstract class LoopFactory
     public static function loop()
     {
         $current = end(static::$stack);
-        $current->before();
+        if ($current) $current->before();
         return $current;
     }
 
