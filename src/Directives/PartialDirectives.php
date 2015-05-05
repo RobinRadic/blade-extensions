@@ -28,7 +28,7 @@ class PartialDirectives
      * the addPartial
      * @param             $value
      * @param             $configured
-     * @param \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      * @param \Illuminate\View\Compilers\BladeCompiler $blade
      * @return mixed
      */
@@ -43,7 +43,7 @@ class PartialDirectives
      * the endPartial
      * @param             $value
      * @param             $configured
-     * @param \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      * @param \Illuminate\View\Compilers\BladeCompiler $blade
      * @return mixed
      */
@@ -58,7 +58,7 @@ class PartialDirectives
      * the openBlock
      * @param             $value
      * @param             $configured
-     * @param \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      * @param \Illuminate\View\Compilers\BladeCompiler $blade
      * @return mixed
      */
@@ -73,7 +73,7 @@ class PartialDirectives
      * the endBlock
      * @param             $value
      * @param             $configured
-     * @param \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      * @param \Illuminate\View\Compilers\BladeCompiler $blade
      * @return mixed
      */
@@ -88,7 +88,7 @@ class PartialDirectives
      * the addRender
      * @param             $value
      * @param             $configured
-     * @param \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      * @param \Illuminate\View\Compilers\BladeCompiler $blade
      * @return mixed
      */
