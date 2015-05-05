@@ -108,9 +108,9 @@ $1<?php unset(\$$2); ?>
 EOT
         // DebugDirectives
     ,'addDebug' => <<<'EOT'
-<h1>DEBUG OUTPUT:</h1>
+$1<h1>DEBUG OUTPUT:</h1>
 <pre><code>
-    <?php (class_exists('Kint') ? Kint::dump($1) : var_dump($1)) ?>
+    <?php (class_exists('Kint') ? Kint::dump($2) : var_dump($2)) ?>
 </code></pre>
 EOT
     ,'addBreakpoint' => <<<'EOT'
