@@ -39,20 +39,20 @@ class BladeExtender
     // regex:: http://regex101.com/r/yN1gO5/2
     public function addSet($value, Application $app, Compiler $blade)
     {
-        return preg_replace('/@set\((?:\$|(?:\'))(.*?)(?:\'|),\s(.*)\)/', '<?php \$$1 = $2; ?>', $value);
+        return preg_replace('/(?<!\w)(\s*)@set(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|),\s(.*)\)/', '$1<?php \$$2 = $3; ?>', $value);
     }
 
     public function addUnset($value, Application $app, Compiler $blade)
     {
 
-        return preg_replace('/@unset\((?:\$|(?:\'))(.*?)(?:\'|)\)/', '<?php unset(\$$1); ?>', $value);
+        return preg_replace('/(?<!\w)(\s*)@unset(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|)(?:\s*)\)/', '$1<?php unset(\$$2); ?>', $value);
     }
 
     public function addDebug($value, Application $app, Compiler $blade)
     {
 
         $matcher = $blade->createOpenMatcher('debug');
-        return preg_replace("/@debug(?:s?)\(([^()]+)*\)/", #$matcher,
+        return preg_replace('/@debug(?:s?)\(([^()]+)*\)/', #$matcher,
             $app->config['radic/blade-extensions::debug.prepend'] . '$1' . $app->config['radic/blade-extensions::debug.append'], $value);
 
     }
@@ -63,8 +63,8 @@ class BladeExtender
     public function openMacro($value, Application $app, Compiler $blade)
     {
         //$matcher = '/@macro\([\'\"](\w*)[\'\"]\)/';
-        $matcher = '/@macro\([\'"]([\w\d]*)[\'"],(.*)\)/';
-        return preg_replace($matcher, '<?php HTML::macro("$1", function($2){ ', $value);
+        $matcher = '/(?<!\w)(\s*)@macro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
+        return preg_replace($matcher, '$1<?php HTML::macro("$2", function($3){ ', $value);
     }
 
     public function closeMacro($value, Application $app, Compiler $blade)
@@ -75,8 +75,8 @@ class BladeExtender
 
     public function DoMacro($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@domacro\([\'"]([\w\d]*)[\'"],(.*)\)/';
-        return preg_replace($matcher, '<?php echo HTML::$1($2); ?>', $value);
+        $matcher = '/(?<!\w)(\s*)@domacro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
+        return preg_replace($matcher, '$1<?php echo HTML::$2($3); ?>', $value);
     }
 
 
@@ -84,11 +84,11 @@ class BladeExtender
     // regex test: http://regex101.com/r/qH9eO7/2
     public function openForeach($value, Application $app, Compiler $blade)
     {
-        $matcher = '/@foreach\((.*)(?:\sas)(.*)\)/';
+        $matcher = '/(?<!\w)(\s*)@foreach(?:\s*)\((.*)(?:\sas)(.*)\)/';
         return preg_replace($matcher,
-            '<?php
-        \Radic\BladeExtensions\Directives\ForeachLoopFactory::newLoop($1);
-        foreach($1 as $2):
+            '$1<?php
+        \Radic\BladeExtensions\Directives\ForeachLoopFactory::newLoop($2);
+        foreach($2 as $3):
         $loop = \Radic\BladeExtensions\Directives\ForeachLoopFactory::loop();
         ?>', $value);
     }
