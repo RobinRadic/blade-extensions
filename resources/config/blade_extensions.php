@@ -114,7 +114,11 @@ EOT
 </code></pre>
 EOT
     ,'addBreakpoint' => <<<'EOT'
-<!-- breakpoint --><?php var_dump(xdebug_break()); ?>
+<!-- breakpoint --><?php
+if(function_exists('xdebug_break')){
+    var_dump(xdebug_break());
+}
+?>
 EOT
         // MarkdownDirectives
     ,'openMarkdown' => <<<'EOT'
