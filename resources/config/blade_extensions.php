@@ -40,15 +40,15 @@ return array(
     'directives' => array(
         // MacroDirective
         'doMacro' => <<<'EOT'
-<?php
+$1<?php
 if(array_key_exists("form", $__env->getContainer()->getBindings())){
-    echo app("form")->$1($2);
+    echo app("form")->$2($3);
 } ?>
 EOT
     ,'openMacro' => <<<'EOT'
-<?php
+$1<?php
 if(array_key_exists("form", $__env->getContainer()->getBindings())){
-    app("form")->macro("$1", function($2){
+    app("form")->macro("$2", function($3){
 EOT
     ,'closeMacro' => <<<'EOT'
     });
@@ -56,9 +56,9 @@ EOT
 EOT
         // ForEachDirective
     ,'openForeach' => <<<'EOT'
-<?php
-\Radic\BladeExtensions\Helpers\LoopFactory::newLoop($1);
-foreach($1 as $2):
+$1<?php
+\Radic\BladeExtensions\Helpers\LoopFactory::newLoop($2);
+foreach($2 as $3):
     $loop = \Radic\BladeExtensions\Helpers\LoopFactory::loop();
 ?>
 EOT
@@ -101,10 +101,10 @@ $1<?php echo \Radic\BladeExtensions\Helpers\Partial::renderBlock$2; ?>
 EOT
         // AssignmentDirective
     ,'addSet' => <<<'EOT'
-<?php \$$1 = $2; ?>
+$1<?php \$$2 = $3; ?>
 EOT
     ,'addUnset' => <<<'EOT'
-<?php unset(\$$1); ?>
+$1<?php unset(\$$2); ?>
 EOT
         // DebugDirectives
     ,'addDebug' => <<<'EOT'

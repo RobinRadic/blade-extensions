@@ -1,6 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Illuminate\Html\HtmlServiceProvider;
+use Collective\Html\HtmlServiceProvider;
 use Mockery as m;
 use Radic\Tests\BladeExtensions\TestCase;
 

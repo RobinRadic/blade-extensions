@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions\Directives;
 
-use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
@@ -49,7 +49,7 @@ class DebugDirectives
      */
     public function addDebug($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(?:\s*)@debug(?:\s*)\((?:\s*)([^()]+)*\)/';
+        $matcher = '/(?<!\w)(\s*)@debug(?:\s*)\((?:\s*)([^()]+)*\)/';
         return preg_replace($matcher, $configured, $value);
     }
 }

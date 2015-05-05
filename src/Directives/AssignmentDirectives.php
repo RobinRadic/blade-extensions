@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions\Directives;
 
-use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
@@ -34,7 +34,7 @@ class AssignmentDirectives
      */
     public function addSet($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(?:\s*)@set(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|),\s(.*)\)/';
+        $matcher = '/(?<!\w)(\s*)@set(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|),\s(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -50,7 +50,7 @@ class AssignmentDirectives
      */
     public function addUnset($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(?:\s*)@unset(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|)(?:\s*)\)/';
+        $matcher = '/(?<!\w)(\s*)@unset(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|)(?:\s*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }

@@ -12,7 +12,7 @@
 [![Goto Repository](http://img.shields.io/badge/goto-repo-orange.svg?style=flat-square)](https://github.com/robinradic/blade-extensions)
 
 
-Version 2.3
+Version 3.0
 -----------
   
 **Laravel 5** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
@@ -21,10 +21,11 @@ Version 2.3
 - **@foreach @break @continue** Loop data and extras
 - **@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.
 - **@debug @breakpoint** Dump values and set breakpoints in views
-- **@macro** Defining and running macros (optional, requires [illuminate/html](https://github.com/erusev/parsedown))
+- **@macro** Defining and running macros (optional, requires [laravelcollective/html](https://github.com/erusev/parsedown))
 - **@markdown** Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
-- **BladeViewTestingTrait** enables all assert methods from your test class in your view as directives. `@assertTrue($hasIt)..`
-  
+- **BladeString** Render blade strings using the facade `BladeString::render('my val: {{ $val }}', array('val' => 'foo'))`
+
+
 
 #### Installation  
 ###### Requirements
@@ -35,7 +36,7 @@ Version 2.3
   
 ###### Recommended
 ```JSON
-"illuminate/html": "~5.0",
+"laravelcollective/html": "~5.0",
 "raveren/kint": ">=0.9.1",
 "erusev/parsedown": "~1.5"
 ```
@@ -43,8 +44,9 @@ Version 2.3
   
 ###### Composer
 ```JSON
-"radic/blade-extensions": "2.*"
+"radic/blade-extensions": "3.0.*"
 ```
+
 ###### Laravel
 ```php
 'Radic\BladeExtensions\BladeExtensionsServiceProvider'
@@ -107,7 +109,7 @@ Version 2.3
 ```
 
 ### Copyright/License
-Copyright 2014 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 
+Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 
  
  
  

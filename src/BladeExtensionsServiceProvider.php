@@ -8,7 +8,7 @@ namespace Radic\BladeExtensions;
 use App;
 use Config;
 use Exception;
-use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 use Laradic\Support\ServiceProvider;
 use Radic\BladeExtensions\Directives\AssignmentDirectives;
 use Radic\BladeExtensions\Directives\DebugDirectives;

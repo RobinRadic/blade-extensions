@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions\Directives;
 
-use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
@@ -36,7 +36,7 @@ class MacroDirectives
      */
     public function openMacro($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(?:\s*)@macro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
+        $matcher = '/(?<!\w)(\s*)@macro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -69,7 +69,7 @@ class MacroDirectives
      */
     public function doMacro($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(?:\s*)@domacro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
+        $matcher = '/(?<!\w)(\s*)@domacro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
 
         return preg_replace($matcher, $configured, $value);
     }

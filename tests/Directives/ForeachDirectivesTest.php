@@ -1,6 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Illuminate\Html\HtmlServiceProvider;
+use Collective\Html\HtmlServiceProvider;
 use Mockery as m;
 use Laradic\Dev\DataGenerator;
 
@@ -26,17 +26,28 @@ class ForeachDirectivesTest extends TestCase
 
     public function testForeach()
     {
-        $dataClass = $this->getData();
+        $dataClass = static::getData();
         $dataClass->array = DataGenerator::getRecords();
         $this->view()->make(
             'foreach',
             [
-                'dataClass' => $this->getData(),
-                'array'     => $this->getData()->getRecords(),
+                'dataClass' => static::getData(),
+                'array'     => static::getData()->getRecords(),
                 'getArray'  => function(){
-                    return $this->getData()->getValues()['names'];
+                    return static::getData()->getValues()['names'];
                 }
             ]
         )->render();
+    }
+
+    public function testIssue11()
+    {
+        $this->view()->make(
+            'issue11',
+            [
+                'array'     => static::getData()->getRecords()
+            ]
+        )->render();
+
     }
 }

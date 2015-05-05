@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions\Directives;
 
-use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\View\Compilers\BladeCompiler as Compiler;
 use Radic\BladeExtensions\Traits\BladeExtenderTrait;
 
@@ -35,7 +35,7 @@ class ForeachDirectives
      */
     public function openForeach($value, $directive, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(?:\s*)@foreach(?:\s*)\((.*)(?:\sas)(.*)\)/';
+        $matcher = '/(?<!\w)(\s*)@foreach(?:\s*)\((.*)(?:\sas)(.*)\)/';
 
         return preg_replace($matcher, $directive, $value);
     }

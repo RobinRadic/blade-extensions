@@ -18,7 +18,7 @@ before_script:
     - composer install
 
 script:
-    - ./build/tools/phpunit.phar --configuration ./build/travis-ci.xml
+    - ./resources/build/tools/phpunit.phar --configuration ./resources/build/travis-ci.xml
 
 notifications:
   email: false
