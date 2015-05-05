@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpdox xmlns="http://phpdox.net/config">
- <project name="Blade Extensions" source="../src" workdir="phpdoxwd">
+ <project name="Blade Extensions" source="../../src" workdir="phpdoxwd">
   <collector publiconly="false">
    <include mask="*.php" />
    <exclude mask="*autoload.php" />

@@ -5,10 +5,10 @@
          timeoutForSmallTests="30"
          timeoutForMediumTests="50"
          timeoutForLargeTests="60"
-         bootstrap="../vendor/autoload.php"
+         bootstrap="../../vendor/autoload.php"
          verbose="true">
   <testsuite name="PHPUnit">
-    <directory suffix="Test.php">../tests</directory>
+    <directory suffix="Test.php">../../tests</directory>
   </testsuite>
 
   <logging>
@@ -17,7 +17,7 @@
 
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">../src</directory>
+      <directory suffix=".php">../../src</directory>
     </whitelist>
   </filter>
 </phpunit>
