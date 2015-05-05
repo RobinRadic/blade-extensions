@@ -28,14 +28,4 @@ class ServiceProviderTest extends TestCase
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
     }
 
-    /**
-     * @expectedException \Exception
-     */
-    public function testNonexistentRenderer()
-    {
-        $this->app->config->set('blade_extensions.markdown.renderer', 'Class\\Does\\Not\\Exist');
-        $this->registerBlade();
-        $this->registerBladeMarkdown();
-
-    }
 }

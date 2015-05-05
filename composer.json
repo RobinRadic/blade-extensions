@@ -25,18 +25,16 @@
     },
     "suggest": {
         "raveren/kint": ">0.9.1",
-        "illuminate/html": "~5.0",
+        "laravelcollective/html": "~5.0",
         "erusev/parsedown": "~1.5"
     },
     "require-dev": {
         "laradic/dev": "dev-master",
-        "raveren/kint": "0.9.*",
-        "illuminate/html": "~5.0",
+        "laravelcollective/html": "~5.0",
         "erusev/parsedown": "~1.5",
         "kzykhys/ciconia": "1.0.*"
     },
-    "scripts": {
-    },
+
     "autoload": {
         "psr-4": {
             "Radic\\BladeExtensions\\": "src/"

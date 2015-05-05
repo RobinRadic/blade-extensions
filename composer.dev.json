@@ -1,21 +1,13 @@
 {
     "name": "radic/blade-extensions",
-    "description": "",
-    "authors": [
-        {
-            "name": "Robin Radic",
-            "email": "robin@radic.nl",
-            "homepage": "https://github.com/robinradic"
-        }
-    ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.0.*"
+        "illuminate/support": "~5.0",
+        "laradic/support": "1.2.*"
     },
     "autoload": {
         "psr-4": {
-            "Radic\\Blade-extensions\\": "src/"
+            "Radic\\BladeExtensions\\": "src/"
         }
-    },
-    "minimum-stability": "stable"
+    }
 }

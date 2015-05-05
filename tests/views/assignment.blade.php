@@ -1,4 +1,4 @@
-{{-- Test directive spaces and quotes --}}
+{{-- Test directive spaces and quotes--}}
 @set  (  'set_spaces', 'yes' )
 @assertEquals('yes', $set_spaces, 'set set_spaces should pass')
 
@@ -12,11 +12,11 @@
 @assertFalse(isset($set_quotes), 'unset set_quotes should pass')
 
 
-
 {{-- Test directive input variants --}}
 @assertTrue($dataString === 'hello', 'datastring should equal hello')
 
 @set('mams', 'mamsVal')
+@breakpoint
 @assertTrue(isset($mams), '@set mams should create a new var')
 @assertTrue($mams === 'mamsVal', 'should create new variable named $mams with value "mamsVal"')
 

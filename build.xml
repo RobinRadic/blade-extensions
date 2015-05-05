@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="blade-extensions" default="build">
-    <property name="toolsdir" value="${project.basedir}/build/tools/"/>
+    <property name="builddir" value="${project.basedir}/resources/build"/>
+    <property name="toolsdir" value="${project.basedir}/resources/build/tools/"/>
     <property name="srcdir" value="${project.basedir}/src" />
     <property name="testsdir" value="${project.basedir}/tests" />
     <property name="changelog.header" value="# Changelog"/>

@@ -2,6 +2,7 @@
 
 use File;
 use Mockery as m;
+use Symfony\Component\VarDumper\VarDumper;
 
 /**
  * Class ViewTest
@@ -28,7 +29,9 @@ class ConfigTest extends TestCase
     public function testConfigSettings()
     {
         $config = $this->getConfig();
+
         $this->assertTrue(is_array($config), 'Config should be an array');
+
         $this->assertTrue(is_array($config['blacklist']), 'config.blacklist should be an array');
         $this->assertTrue(count($config['blacklist']) === 0, 'config.blacklist should be empty');
         $this->app['config']->set('blade_extensions.blacklist', array('debug', 'unset', 'set'));
@@ -38,8 +41,8 @@ class ConfigTest extends TestCase
 
     public function testConfigReset()
     {
-        File::delete(File::glob(app_path('config/blade_') . '*'));
-        $this->command('vendor:publish');
-        $this->assertTrue(true);
+        #File::delete(File::glob(app_path('config/blade_') . '*'));
+        #$this->command('vendor:publish');
+        #$this->assertTrue(true);
     }
 }

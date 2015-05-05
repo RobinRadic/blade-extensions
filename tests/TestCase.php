@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
-use Illuminate\Html\HtmlServiceProvider;
+use Collective\Html\HtmlServiceProvider;
 use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
 use Laradic\Dev\AbstractTestCase;
 use Laradic\Dev\Traits\BladeViewTestingTrait;
@@ -71,6 +71,6 @@ abstract class TestCase extends AbstractTestCase
 
     protected function registerBladeMarkdown()
     {
-       # $this->app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider'); //new MarkdownServiceProvider($this->app));
+        $this->app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider'); //new MarkdownServiceProvider($this->app));
     }
 }

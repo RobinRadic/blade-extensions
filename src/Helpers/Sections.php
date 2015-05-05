@@ -20,7 +20,7 @@ class Sections
 {
     use SectionsTrait;
 
-    function __construct(Factory $view)
+    public function __construct(Factory $view)
     {
         $this->setViewFactory($view);
     }
