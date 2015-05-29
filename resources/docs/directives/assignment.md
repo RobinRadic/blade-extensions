@@ -6,7 +6,7 @@ author: Robin Radic
 Set or unset variables your blade views.   
 
 ```php
-@set('someVar', '213')
+@set('foo', '213')
 {{ $foo }} //> 213
 
 @set($foo, 'bar')
