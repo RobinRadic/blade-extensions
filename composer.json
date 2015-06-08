@@ -32,7 +32,7 @@
         "laradic/dev": "dev-master",
         "laravelcollective/html": "~5.0",
         "erusev/parsedown": "~1.5",
-        "kzykhys/ciconia": "1."
+        "kzykhys/ciconia": "~1.0.0"
     },
 
     "autoload": {
