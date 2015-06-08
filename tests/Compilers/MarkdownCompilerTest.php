@@ -26,7 +26,7 @@ class MarkdownCompilerTest extends TestCase
 
     public function testCompile()
     {
-        $renderers = ['Radic\BladeExtensions\Renderers\ParsedownRenderer' => 'Parsedown', 'Radic\BladeExtensions\Renderers\CiconiaRenderer' => 'Ciconia\Ciconia'];
+        $renderers = ['Radic\BladeExtensions\Renderers\ParsedownRenderer' => 'Parsedown']; //, 'Radic\BladeExtensions\Renderers\CiconiaRenderer' => 'Ciconia\Ciconia'];
 
         foreach ($renderers as $class => $renderer)
         {

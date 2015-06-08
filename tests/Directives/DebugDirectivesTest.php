@@ -22,17 +22,6 @@ class DebugDirectivesTest extends TestCase
         $this->registerHtml();
     }
 
-    /**
-     * debug with Kint renders an exception in console mode
-     * @expectedException \ErrorException
-     */
-    public function testDebug()
-    {
-        //
-        $this->registerBlade();
-        $this->view()->make('debug')->render();
-    }
-
     public function testDebugVardump()
     {
         return;
