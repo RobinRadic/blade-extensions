@@ -25,6 +25,11 @@ Version 3.0
 - **@markdown** Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
 - **BladeString** Render blade strings using the facade `BladeString::render('my val: {{ $val }}', array('val' => 'foo'))`
 
+## My other Laravel packages
+| Package | Description | |
+|----|----|----|
+| [Themes](https://github.com/laradic/themes) | L5 Theme package, providing multi-theme inherited cascading support. Works with PHP, Blade, Twig, etc. Includes asset management (Dependable assets or asset groups, caching, minification, etc), navigation & breadcrumb helpers and more. | [doc](http://docs.radic.nl/themes) |
+| [Blade Extensions](https://github.com/radic/blade-extensions) | A collection of usefull Laravel blade extensions, like $loop data in foreach, view partials, etc | [doc](http://docs.radic.nl/blade-extensions) |
 
 
 #### Installation  
