@@ -1,6 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions\Renderers;
 
 use Radic\Tests\BladeExtensions\TestCase;
+use Mockery as m;
 
 abstract class RendererTestCase extends TestCase
 {
@@ -10,6 +11,12 @@ abstract class RendererTestCase extends TestCase
         parent::setUp();
     }
 
+    /**
+     * getRendererInstance
+     *
+     * @return \Radic\BladeExtensions\Contracts\MarkdownRenderer;
+     *
+     */
     abstract protected function getRendererInstance();
 
     public function testHeader()
@@ -25,6 +32,13 @@ abstract class RendererTestCase extends TestCase
 
     public function testBold()
     {
+        $fs     = m::mock('Radic\BladeExtensions\Renderers\ParsedownRenderer')
+            ->shouldIgnoreMissing()
+            ->shouldReceive('render')
+            ->zeroOrMoreTimes()
+            ->with('**bold**')
+            ->andReturn('<p><strong>bold</strong></p>')
+            ->getMock();
         $renderer = $this->getRendererInstance();
         $this->assertEquals('<p><strong>bold</strong></p>', $renderer->render('**bold**'));
     }

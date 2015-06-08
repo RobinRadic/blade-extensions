@@ -34,7 +34,7 @@ class ParsedownRenderer implements MarkdownRenderer
      * @param \Parsedown $parsedown
      * @param \Illuminate\Contracts\Config\Repository $config
      */
-    function __construct(Parsedown $parsedown)
+    public function __construct(Parsedown $parsedown)
     {
         $this->parsedown = $parsedown;
     }

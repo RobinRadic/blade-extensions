@@ -40,6 +40,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected $dir = __DIR__;
 
 
+
     /** {@inheritDoc} */
     public function boot()
     {
