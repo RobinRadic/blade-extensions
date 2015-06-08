@@ -12,6 +12,10 @@
 @assertFalse(isset($set_quotes), 'unset set_quotes should pass')
 
 
+{{-- Test directive NO spaces. Issue #19 --}}
+@set('noSpace','ok')
+@assertEquals('ok', $noSpace)
+
 {{-- Test directive input variants --}}
 @assertTrue($dataString === 'hello', 'datastring should equal hello')
 
