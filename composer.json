@@ -21,7 +21,7 @@
     "require": {
         "php": "^5.5.9",
         "illuminate/support": "~5.0",
-        "laradic/support": "^1.2.7"
+        "laradic/support": "^1.2.8"
     },
     "suggest": {
         "raveren/kint": ">0.9.1",
