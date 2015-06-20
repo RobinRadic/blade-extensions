@@ -51,7 +51,7 @@ class ForeachDirectives
      */
     public function closeForeach($value, $directive, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endforeach');
+        $matcher = $this->createPlainMatcher('endforeach');
 
         return preg_replace($matcher, $directive, $value);
     }
@@ -67,7 +67,7 @@ class ForeachDirectives
      */
     public function addBreak($value, $directive, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('break');
+        $matcher = $this->createPlainMatcher('break');
 
         return preg_replace($matcher, $directive, $value);
     }
@@ -83,7 +83,7 @@ class ForeachDirectives
      */
     public function addContinue($value, $directive, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('continue');
+        $matcher = $this->createPlainMatcher('continue');
 
         return preg_replace($matcher, $directive, $value);
     }

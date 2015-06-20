@@ -51,7 +51,7 @@ class MarkdownDirectives
      */
     public function closeMarkdown($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endmarkdown');
+        $matcher = $this->createPlainMatcher('endmarkdown');
 
         return preg_replace($matcher, $configured, $value);
     }

@@ -34,7 +34,7 @@ class PartialDirectives
      */
     public function addPartial($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createOpenMatcher('partial');
+        $matcher = $this->createOpenMatcher('partial');
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -49,7 +49,7 @@ class PartialDirectives
      */
     public function endPartial($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endpartial');
+        $matcher = $this->createPlainMatcher('endpartial');
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -64,7 +64,7 @@ class PartialDirectives
      */
     public function openBlock($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createMatcher('block');
+        $matcher = $this->createMatcher('block');
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -79,7 +79,7 @@ class PartialDirectives
      */
     public function endBlock($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endblock');
+        $matcher = $this->createPlainMatcher('endblock');
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -94,7 +94,7 @@ class PartialDirectives
      */
     public function addRender($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createMatcher('render');
+        $matcher = $this->createMatcher('render');
 
         return preg_replace($matcher, $configured, $value);
     }

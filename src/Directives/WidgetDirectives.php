@@ -34,7 +34,7 @@ class WidgetDirectives
      */
     public function openWidget($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createMatcher('widget');
+        $matcher = $this->createMatcher('widget');
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -49,7 +49,7 @@ class WidgetDirectives
      */
     public function closeWidget($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endwidget');
+        $matcher = $this->createPlainMatcher('endwidget');
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -64,7 +64,7 @@ class WidgetDirectives
      */
     public function startWidgetBlock($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createMatcher('block');
+        $matcher = $this->createMatcher('block');
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -79,7 +79,7 @@ class WidgetDirectives
      */
     public function stopWidgetBlock($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createMatcher('endblock');
+        $matcher = $this->createMatcher('endblock');
 
         return preg_replace($matcher, $configured, $value);
     }
@@ -94,7 +94,7 @@ class WidgetDirectives
      */
     public function renderWidgetBlock($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createMatcher('render');
+        $matcher = $this->createMatcher('render');
 
         return preg_replace($matcher, $configured, $value);
     }

@@ -34,7 +34,7 @@ class DebugDirectives
      */
     public function addBreakpoint($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher    =  $blade->createPlainMatcher('breakpoint');
+        $matcher    =  $this->createPlainMatcher('breakpoint');
         return preg_replace($matcher, $configured, $value);
     }
 

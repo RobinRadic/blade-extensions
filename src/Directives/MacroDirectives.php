@@ -52,7 +52,7 @@ class MacroDirectives
      */
     public function closeMacro($value, $configured, Application $app, Compiler $blade)
     {
-        $matcher = $blade->createPlainMatcher('endmacro');
+        $matcher = $this->createPlainMatcher('endmacro');
 
         return preg_replace($matcher, $configured, $value);
     }
