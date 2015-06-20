@@ -12,10 +12,12 @@
 [![Goto Repository](http://img.shields.io/badge/goto-repo-orange.svg?style=flat-square)](https://github.com/robinradic/blade-extensions)
 
 
-Version 3.0
------------
+| **Laravel** | ~4.2 | 5.0 | 5.1 |
+|:-----------:|:----:|:---:|:----:|
+| Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v4.0](tree/master) |
   
-**Laravel 5** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
+**Laravel** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
+
 
 - **@set @unset** Setting and unsetting of values
 - **@foreach @break @continue** Loop data and extras
@@ -35,7 +37,7 @@ Version 3.0
 #### Installation  
 ###### Requirements
 ```JSON
-"PHP": ">=5.4.0",
+"PHP": ">=5.5.9",
 "illuminate/support": "~5.0"
 ```
   
@@ -49,12 +51,12 @@ Version 3.0
   
 ###### Composer
 ```JSON
-"radic/blade-extensions": "3.0.*"
+"radic/blade-extensions": "~4.0"
 ```
 
 ###### Laravel
 ```php
-'Radic\BladeExtensions\BladeExtensionsServiceProvider'
+Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 ```
 
 
