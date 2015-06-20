@@ -51,7 +51,7 @@ trait BladeExtenderTrait
 
         foreach (get_class_methods($class) as $method)
         {
-            if ($method == 'attach' or (is_array($blacklist) && in_array($method, $blacklist)))
+            if (in_array($method, ['attach', 'createMatcher', 'createOpenMatcher', 'createPlainMatcher']) or (is_array($blacklist) && in_array($method, $blacklist)))
             {
                 continue;
             }
