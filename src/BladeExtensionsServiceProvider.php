@@ -6,7 +6,6 @@ namespace Radic\BladeExtensions;
 
 
 use App;
-use Config;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Laradic\Support\ServiceProvider;
@@ -15,7 +14,6 @@ use Radic\BladeExtensions\Directives\DebugDirectives;
 use Radic\BladeExtensions\Directives\ForeachDirectives;
 use Radic\BladeExtensions\Directives\MacroDirectives;
 use Radic\BladeExtensions\Directives\PartialDirectives;
-use Radic\BladeExtensions\Renderers\BladeStringRenderer;
 
 /**
  * A laravel service provider to register the class into the the IoC container
@@ -40,7 +38,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected $dir = __DIR__;
 
 
-
     /** {@inheritDoc} */
     public function boot()
     {
@@ -61,11 +58,14 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         ForeachDirectives::attach($app);
         PartialDirectives::attach($app);
 
-        # Optional macro directives
-        if ( array_key_exists('form', App::getBindings()) )
+        $app->booting(function () use ($app)
         {
-            MacroDirectives::attach($app);
-        }
+            if ( array_key_exists('form', App::getBindings()) )
+            {
+                MacroDirectives::attach($app);
+            }
+        });
+
 
         # Optional markdown compiler, engines and directives
         if ( $config->get('blade_extensions.markdown.enabled') )
