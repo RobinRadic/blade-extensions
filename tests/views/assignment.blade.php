@@ -20,7 +20,7 @@
 @assertTrue($dataString === 'hello', 'datastring should equal hello')
 
 @set('mams', 'mamsVal')
-@breakpoint
+
 @assertTrue(isset($mams), '@set mams should create a new var')
 @assertTrue($mams === 'mamsVal', 'should create new variable named $mams with value "mamsVal"')
 

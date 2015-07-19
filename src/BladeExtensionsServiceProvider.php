@@ -43,6 +43,10 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         /** @var \Illuminate\Foundation\Application $app */
         $app = parent::boot();
+        if ( array_key_exists('form', $app->getBindings()) )
+        {
+            MacroDirectives::attach($app);
+        }
     }
 
     /** {@inheritDoc} */
@@ -57,15 +61,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
         PartialDirectives::attach($app);
-
-        $app->booting(function () use ($app)
-        {
-            if ( array_key_exists('form', App::getBindings()) )
-            {
-                MacroDirectives::attach($app);
-            }
-        });
-
 
         # Optional markdown compiler, engines and directives
         if ( $config->get('blade_extensions.markdown.enabled') )

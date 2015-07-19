@@ -110,10 +110,26 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 
 @set('newvar', 'value')
 {{ $newvar }}
+@unset('newvar')
+@unset($newvar)
 
 
 @debug($somearr)
+
+@breakpoint
+
+@markdown
+# Some markdown code
+** with some bold text too **
+@endmarkdown
+
+// including markdown files is also possible, the markdown will be converted to html. 
+// Exclude the file extension of the markdown file, similair to blade.php files
+@include('path/to/markdown/file')
+
+// Beside @include, View::make('path/to/markdown/file')->render() will also work (though it would be better to use the Markdown facade / markdown ioc binding 
 ```
+
 
 ### Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 
