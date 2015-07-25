@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Facade;
  * @link               http://robin.radic.nl/blade-extensions
  *
  */
-class Markdown extends Facade
+class BladeString extends Facade
 {
     /**
      * {@inheritdoc}
