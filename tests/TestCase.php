@@ -30,6 +30,14 @@ abstract class TestCase extends AbstractTestCase
         return $this->app['view'];
     }
 
+    protected function getEnvironmentSetUp($app)
+    {
+
+        $config = $app->make('config');
+        $config->set('app.key', 'sG7qHHCc0jAseXbQx5BEv8DiZn4x7p4C');
+        parent::getEnvironmentSetUp($app);
+    }
+
     /**
      * Get the service provider class.
      *
