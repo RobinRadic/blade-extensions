@@ -35,8 +35,6 @@
 | [Blade Extensions](https://github.com/radic/blade-extensions) | A collection of usefull Laravel blade extensions, like $loop data in foreach, view partials, etc | [doc](http://docs.radic.nl/blade-extensions) |
 
 
-#### The @partial @block and @render directives are deprecated and will not be included in the next major version. Instead, use @embed
-
 #### Installation  
 ###### Requirements
 ```JSON
