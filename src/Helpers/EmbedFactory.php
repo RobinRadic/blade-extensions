@@ -26,7 +26,10 @@ class EmbedFactory
 
     protected $bladeCompiler;
 
+    protected $vars;
+
     protected $viewPath;
+
 
     /**
      * Instantiates the class
@@ -41,9 +44,11 @@ class EmbedFactory
         $this->bladeCompiler = $bladeCompiler;
     }
 
-    public function open($viewPath)
+    public function open($viewPath, array $vars = [ ])
     {
         $this->viewPath = $viewPath;
+        $this->vars     = $vars;
+
 
         return $this;
     }
@@ -52,6 +57,7 @@ class EmbedFactory
     {
         $path = storage_path(uniqid(time(), true));
         $this->files->put($path, $bladeCompiledContent);
+        extract($this->vars);
         $__env = $this;
         ob_start();
         include($path);
@@ -63,13 +69,32 @@ class EmbedFactory
         ob_start();
         include($path);
         $this->files->delete($path);
+        $out = ob_get_clean();
+
+        return $this->recurse($out);
+    }
+
+    public function recurse($out)
+    {
+        preg_match_all('/(?<!\w)(\s*)@embed\s*(\([^)]*\))((?>(?!@(?:end)?embed).|(?0))*)@endembed/s', $out, $matches);
+        if ( count($matches[ 0 ]) > 0 )
+        {
+            $path = storage_path(uniqid(time(), true));
+            $this->files->put($path, $this->bladeCompiler->compileString($out));
+            ob_start();
+            include($path);
+            $this->files->delete($path);
+            $out = ob_get_clean();
+
+            return $this->recurse($out);
+        }
+        echo $out;
 
         return $this;
     }
 
     public function close()
     {
-        echo ob_get_clean();
         $this->flushSections();
 
         return $this;

@@ -77,7 +77,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
         $app->bind('blade.string', 'Radic\BladeExtensions\Renderers\BladeStringRenderer');
 
-        $app->bind('blade.embedding', function(Application $app){
+        $app->singleton('blade.embedding', function(Application $app){
             return new EmbedFactory($app->make('view'), $app->make('files'), $app->make('blade.compiler'));
         });
     }
