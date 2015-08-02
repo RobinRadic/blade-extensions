@@ -37,7 +37,7 @@ class BladeStringRenderer
 
     public function render($string, array $vars = array())
     {
-        $fileName = uniqid(time());
+        $fileName = uniqid(time(), true);
         $path = storage_path($fileName);
         $this->files->put($path, $this->compiler->compileString($string));
 

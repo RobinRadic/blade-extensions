@@ -125,21 +125,7 @@ EOT
 $1<?php echo \Radic\BladeExtensions\Helpers\Markdown::parse(<<<'EOT'$2
 EOT
     ,'closeMarkdown' => "$1\nEOT\n); ?>$2"
-        // WidgetDirectives
-    ,'openWidget' => <<<'EOT'
-$1<?php app('blade.widgets')->openWidget$2; ?>
-EOT
-    ,'closeWidget' => <<<'EOT'
-$1<?php app('blade.widgets')->closeWidget(); ?>
-EOT
-    ,'startWidgetBlock' => <<<'EOT'
-$1<?php app('blade.widgets')->getCurrentWidget()->startSection$2 ?>
-EOT
-    ,'stopWidgetBlock' => <<<'EOT'
-$1<?php app('blade.widgets')->getCurrentWidget()->stopSection$2 ?>
-EOT
-    ,'renderWidgetBlock' => <<<'EOT'
-$1<?php $__widget->yieldSection$2 ?>
-EOT
+
+
     )
 );

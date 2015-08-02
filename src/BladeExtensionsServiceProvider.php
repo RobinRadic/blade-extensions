@@ -11,9 +11,11 @@ use Illuminate\Contracts\Foundation\Application;
 use Laradic\Support\ServiceProvider;
 use Radic\BladeExtensions\Directives\AssignmentDirectives;
 use Radic\BladeExtensions\Directives\DebugDirectives;
+use Radic\BladeExtensions\Directives\EmbeddingDirectives;
 use Radic\BladeExtensions\Directives\ForeachDirectives;
 use Radic\BladeExtensions\Directives\MacroDirectives;
 use Radic\BladeExtensions\Directives\PartialDirectives;
+use Radic\BladeExtensions\Helpers\EmbedFactory;
 
 /**
  * A laravel service provider to register the class into the the IoC container
@@ -61,6 +63,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
         PartialDirectives::attach($app);
+        EmbeddingDirectives::attach($this->app);
 
         # Optional markdown compiler, engines and directives
         if ( $config->get('blade_extensions.markdown.enabled') )
@@ -72,7 +75,17 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             $app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
         }
 
-
         $app->bind('blade.string', 'Radic\BladeExtensions\Renderers\BladeStringRenderer');
+
+        $app->bind('blade.embedding', function(Application $app){
+            return new EmbedFactory($app->make('view'), $app->make('files'), $app->make('blade.compiler'));
+        });
+    }
+
+
+    /** {@inheritdoc} */
+    public function provides()
+    {
+        return [ 'blade.embedding' ];
     }
 }

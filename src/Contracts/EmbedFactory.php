@@ -13,7 +13,7 @@ namespace Radic\BladeExtensions\Contracts;
  * @copyright   2011-2015, Robin Radic
  * @link        http://radic.mit-license.org
  */
-interface Widget
+interface EmbedFactory
 {
 
 }

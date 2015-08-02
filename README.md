@@ -14,14 +14,15 @@
 
 | **Laravel** | ~4.2 | 5.0 | 5.1 |
 |:-----------:|:----:|:---:|:----:|
-| Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v4.0](tree/master) |
+| Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v4.1](tree/master) |
   
 **Laravel** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
 
 
 - **@set @unset** Setting and unsetting of values
-- **@foreach @break @continue** Loop data and extras
-- **@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.
+- **@foreach @break @continue** Loop data and extras (similair to twig `$loop`)
+- **@embed** Think of embed as combining the behaviour of include and extends. (similair to twig `embed`)
+- ~~**@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.~~ deprecated and will not be included in the next major version. Instead, use @embed
 - **@debug @breakpoint** Dump values and set breakpoints in views
 - **@macro** Defining and running macros (optional, requires [laravelcollective/html](https://github.com/erusev/parsedown))
 - **@markdown** Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
@@ -33,6 +34,8 @@
 | [Themes](https://github.com/laradic/themes) | L5 Theme package, providing multi-theme inherited cascading support. Works with PHP, Blade, Twig, etc. Includes asset management (Dependable assets or asset groups, caching, minification, etc), navigation & breadcrumb helpers and more. | [doc](http://docs.radic.nl/themes) |
 | [Blade Extensions](https://github.com/radic/blade-extensions) | A collection of usefull Laravel blade extensions, like $loop data in foreach, view partials, etc | [doc](http://docs.radic.nl/blade-extensions) |
 
+
+#### The @partial @block and @render directives are deprecated and will not be included in the next major version. Instead, use @embed
 
 #### Installation  
 ###### Requirements
@@ -82,26 +85,7 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
             $loop->parent->index;
             $loop->parent->parentLoop->index;
         @endforeach
-    @endforeach
-    
-    
-    @section('content')
-        @partial('partials.danger-panel')
-            @block('title', 'This is the panel title')
-    
-            @block('body')
-                This is the panel body.
-            @endblock
-        @endpartial
-    @stop
-    
-    @partial('partials.panel')
-        @block('type', 'danger')
-    
-        @block('title')
-            Danger! @render('title')
-        @endblock
-    @endpartial
+    @endforeach  
     
     @break
 
@@ -130,6 +114,44 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 // Beside @include, View::make('path/to/markdown/file')->render() will also work (though it would be better to use the Markdown facade / markdown ioc binding 
 ```
 
+#### @embed example
+**partials/box.blade.php**
+```php
+<div class="box @yield('box-class', 'box-style-light')">
+    <header>
+        <h3>@yield('title')</h3>
+    </header>
+    <section class="@yield('section-class')">
+        @yield('content')
+    </section>
+</div>
+```
+
+**index.blade.php**
+```php
+@extends('layouts/default')
+
+@section('content')
+    
+    <h1>Haai</h1>
+    
+    @embed('partials/box')
+        @section('title', 'Box title')
+        @section('content')
+            Box content
+        @stop
+    @endembed
+
+    <p>This is some text</p>
+
+    @embed('partials/box')
+        @section('title', 'Box2 title')
+        @section('content')
+            Box2 content
+        @stop
+    @endembed
+@stop
+```
 
 ### Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 
