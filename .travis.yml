@@ -12,7 +12,7 @@ before_script:
     - composer install --prefer-source --no-interaction
 
 script:
-    - ./resources/build/tools/phpunit.phar --configuration ./resources/build/travis-ci.xml
+    - ./build/tools/phpunit.phar --configuration ./build/travis-ci.xml
 
 notifications:
   email: false
