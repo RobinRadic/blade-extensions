@@ -98,6 +98,7 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 
 @debug($somearr)
 
+// xdebug_break breakpoints (configurable) to debug compiled views. Sweet? YES!
 @breakpoint
 
 @markdown
@@ -112,8 +113,10 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 // Beside @include, View::make('path/to/markdown/file')->render() will also work (though it would be better to use the Markdown facade / markdown ioc binding 
 ```
 
-#### @embed example
-**partials/box.blade.php**
+#### Lot of @embed examples
+Notice that the following examples aren't really consistent with yield/variable usage, which is intended for showcase.
+
+**components/box.blade.php**
 ```php
 <div class="box @yield('box-class', 'box-style-light')">
     <header>
@@ -125,30 +128,120 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 </div>
 ```
 
+**components/tabs.blade.php**
+```php
+<div class="tabbable {{ isset($boxed) && $boxed === true ? 'tabs-boxed' :' ' }} tabs-@yield('side', 'left')">
+
+    <ul class="nav nav-tabs">
+        @foreach($tabs as $id => $tab)
+            <li class="{{ isset($tab['active']) && $tab['active'] === true ? 'active' : '' }}" >
+                <a data-toggle="tab" href="#{{ $id }}" aria-expanded="true">
+                    @if(isset($tab['icon']))
+                    <i class="tab-icon fa {{ $tab['icon'] }}"></i>
+                    @endif
+                    @if(isset($tab['text']))
+                        {{ $tab['text'] }}
+                    @endif
+                </a>
+            </li>
+        @endforeach
+    </ul>
+    <div class="tab-content">
+        @foreach($tabs as $id => $tab)
+            <div id="{{ $id }}" class="tab-pane fade {{ isset($tab['active']) && $tab['active'] === true ? 'active' : '' }} in">
+                @yield($id)
+            </div>
+        @endforeach
+    </div>
+
+</div>
+```
+
+**components/timeline.blade.php**
+```php
+<ul class="@yield('class', 'small-timeline')">
+    @yield('items')
+</ul>
+```
+
+**components/timeline-item.blade.php**
+```php
+<li class="@yield('color', 'lime')">
+    <div class="timeline-icon"></div>
+    <div class="timeline-body">
+        <div class="timeline-content">
+            @if(isset($name))
+                <a href="@yield('name-href', '#')" class="name">{{ $name }}</a>
+            @endif
+            @yield('text')
+            <span class="time"><i class="fa fa-clock-o"></i>@yield('time-ago')</span>
+        </div>
+    </div>
+</li>
+```
+
 **index.blade.php**
 ```php
 @extends('layouts/default')
 
 @section('content')
-    
-    <h1>Haai</h1>
-    
-    @embed('partials/box')
-        @section('title', 'Box title')
-        @section('content')
-            Box content
-        @stop
-    @endembed
+    <div class="row">
+        <div class="col-md-6">
+            @embed('components/box')
+                @section('title', 'Box title')
+                @section('section-class', 'p-n')
+                @section('content')
 
-    <p>This is some text</p>
+                    @embed('components/tabs', [
+                        'boxed' => true,
+                        'tabs' => [
+                            'first' => [ 'icon' => 'text-green fa-pencil-square-o', 'text' => 'First tab', 'active' => true ],
+                            'second' => [ 'icon' => 'text-amber fa-puzzle-piece', 'text' => 'Second' ]
+                        ]
+                    ])
+                        @section('side', 'right')
+                        @section('first')
+                            <p>First tab contents</p>
+                            <p>Cur humani generis manducare?</p>
+                            <p>The simple peace of sainthood is to invent with purpose.</p>
+                        @stop
+                        @section('second')
+                            <p>Observare semper ducunt ad teres byssus.</p>
+                            <p>Protons malfunction with advice at the ugly habitat cunninglyshields up!</p>
+                            <p>Boil small chickpeas in a sauté pan with hollandaise sauce for about an hour to soothe their sweetness.</p>
+                        @stop
+                    @endembed
 
-    @embed('partials/box')
-        @section('title', 'Box2 title')
-        @section('content')
-            Box2 content
-        @stop
-    @endembed
+                @stop
+            @endembed
+        </div>
+        <div class="col-md-6">
+            @embed('components/box')
+                @section('title', 'Box2 title')
+                @section('content')
+                    <p>Box 2 content</p>
+
+                    @embed('components/timeline')
+                        @section('items')
+
+                            @embed('components/timeline-item', ['name' => 'Working good'])
+                                @section('text', 'Not so fast please')
+                                @section('time-ago', '5 minutes ago')
+                            @endembed
+                            @embed('components/timeline-item', ['name' => 'Robin RAdic'])
+                                @section('color', 'yellow')
+                                @section('text', 'Created a new github issue')
+                                @section('time-ago', '2 days ago')
+                            @endembed
+
+                        @stop
+                    @endembed
+                @stop
+            @endembed
+        </div>
+    </div>
 @stop
+
 ```
 
 ### Copyright/License

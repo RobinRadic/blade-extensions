@@ -20,8 +20,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.5.9",
-        "illuminate/support": "~5.0",
-        "laradic/support": "^1.2.8"
+        "caffeinated/beverage": "~3.0|*"
     },
     "suggest": {
         "raveren/kint": ">0.9.1",
@@ -29,7 +28,7 @@
         "erusev/parsedown": "~1.5"
     },
     "require-dev": {
-        "laradic/dev": "dev-master",
+        "caffeinated/dev": "dev-master@dev",
         "laravelcollective/html": "~5.0",
         "erusev/parsedown": "~1.5",
         "kzykhys/ciconia": "~1.0.0"

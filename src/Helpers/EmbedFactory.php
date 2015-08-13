@@ -30,6 +30,13 @@ class EmbedFactory
 
     protected $viewPath;
 
+    public function __call($name, $arguments)
+    {
+        if(method_exists($this->viewFactory, $name)){
+            return call_user_func_array([$this->viewFactory, $name], $arguments);
+        }
+    }
+
 
     /**
      * Instantiates the class
@@ -57,7 +64,8 @@ class EmbedFactory
     {
         $path = storage_path(uniqid(time(), true));
         $this->files->put($path, $bladeCompiledContent);
-        extract($this->vars);
+        $vars = $this->vars;
+        extract($vars);
         $__env = $this;
         ob_start();
         include($path);
@@ -81,10 +89,14 @@ class EmbedFactory
         {
             $path = storage_path(uniqid(time(), true));
             $this->files->put($path, $this->bladeCompiler->compileString($out));
+            $vars = $this->vars;
+            extract($vars);
+            $__env = $this;
             ob_start();
             include($path);
             $this->files->delete($path);
             $out = ob_get_clean();
+            $this->flushSections();
 
             return $this->recurse($out);
         }

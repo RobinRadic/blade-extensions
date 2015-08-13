@@ -17,6 +17,8 @@
         </then>
     </if>
 
+    <target name="fix" depends="phpcs" description=""/>
+
     <property name="changelog.header" value="# Changelog"/>
     <property name="changelog.filename" value="CHANGELOG.md"/>
     <target name="changelog">

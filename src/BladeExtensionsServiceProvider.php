@@ -5,10 +5,9 @@
 namespace Radic\BladeExtensions;
 
 
-use App;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
-use Laradic\Support\ServiceProvider;
+use Caffeinated\Beverage\ServiceProvider;
 use Radic\BladeExtensions\Directives\AssignmentDirectives;
 use Radic\BladeExtensions\Directives\DebugDirectives;
 use Radic\BladeExtensions\Directives\EmbeddingDirectives;
@@ -39,6 +38,9 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     protected $dir = __DIR__;
 
+    protected $providers = [ \Caffeinated\Beverage\BeverageServiceProvider::class ];
+
+    protected $provides = ['blade.embedding'];
 
     /** {@inheritDoc} */
     public function boot()
@@ -63,7 +65,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
         PartialDirectives::attach($app);
-        EmbeddingDirectives::attach($this->app);
+        EmbeddingDirectives::attach($app);
 
         # Optional markdown compiler, engines and directives
         if ( $config->get('blade_extensions.markdown.enabled') )
@@ -72,20 +74,16 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             {
                 throw new Exception('The configured markdown renderer class does not exist');
             }
-            $app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
+            $app->register(\Radic\BladeExtensions\Providers\MarkdownServiceProvider::class);
         }
 
-        $app->bind('blade.string', 'Radic\BladeExtensions\Renderers\BladeStringRenderer');
+        $app->bind('blade.string', \Radic\BladeExtensions\Renderers\BladeStringRenderer::class);
 
-        $app->singleton('blade.embedding', function(Application $app){
+        $app->singleton('blade.embedding', function (Application $app)
+        {
             return new EmbedFactory($app->make('view'), $app->make('files'), $app->make('blade.compiler'));
         });
     }
 
 
-    /** {@inheritdoc} */
-    public function provides()
-    {
-        return [ 'blade.embedding' ];
-    }
 }

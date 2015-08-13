@@ -8,7 +8,7 @@
 namespace Radic\BladeExtensions\Renderers;
 
 use Illuminate\View\Compilers\BladeCompiler;
-use Laradic\Support\Filesystem;
+use Caffeinated\Beverage\Filesystem;
 
 /**
  * This is the BladeStringRenderer.
@@ -28,7 +28,11 @@ class BladeStringRenderer
 
     protected $files;
 
-    /** Instantiates the class */
+    /** Instantiates the class
+     *
+     * @param \Illuminate\View\Compilers\BladeCompiler $compiler
+     * @param \Caffeinated\Beverage\Filesystem         $files
+     */
     public function __construct(BladeCompiler $compiler, Filesystem $files)
     {
         $this->compiler = $compiler;

@@ -1,0 +1,2 @@
+#!/bin/sh
+phing -f build.xml fix
