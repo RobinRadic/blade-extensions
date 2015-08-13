@@ -17,7 +17,7 @@
         </then>
     </if>
 
-    <target name="fix" depends="phpcs,submodule.update" description="fixes code violations"/>
+    <target name="fix" depends="submodule.update,phpcs" description="fixes code violations"/>
 
     <property name="changelog.header" value="# Changelog"/>
     <property name="changelog.filename" value="CHANGELOG.md"/>
