@@ -1,2 +1,3 @@
 #!/bin/sh
-phing -f build.xml fix
+git submodule update --init --remote --recursive --force
+phing -f build.xml fix clean
