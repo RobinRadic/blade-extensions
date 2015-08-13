@@ -28,8 +28,7 @@ class MarkdownCompilerTest extends TestCase
     {
         $renderers = ['Radic\BladeExtensions\Renderers\ParsedownRenderer' => 'Parsedown']; //, 'Radic\BladeExtensions\Renderers\CiconiaRenderer' => 'Ciconia\Ciconia'];
 
-        foreach ($renderers as $class => $renderer)
-        {
+        foreach ($renderers as $class => $renderer) {
             $compiler = $this->getCompiler($class, $renderer);
 
             $path = __DIR__ . '/../views/markdown/bold.md';

@@ -44,8 +44,7 @@ class LoopFactory
     protected static function addLoopStack(Loop $stackItem)
     {
         // Check stack for parent loop to register it with this loop
-        if ( count(static::$stack) > 0 )
-        {
+        if (count(static::$stack) > 0) {
             $stackItem->setParentLoop(last(static::$stack));
         }
 
@@ -88,8 +87,7 @@ class LoopFactory
      */
     public static function looped()
     {
-        if ( ! empty(static::$stack) )
-        {
+        if (! empty(static::$stack)) {
             end(static::$stack)->after();
         }
     }
@@ -102,13 +100,10 @@ class LoopFactory
     public static function endLoop(&$loop)
     {
         array_pop(static::$stack);
-        if ( count(static::$stack) > 0 )
-        {
-            // This loop was inside another loop. We persist the loop variable and assign back the parent loop
+        if (count(static::$stack) > 0) {
+        // This loop was inside another loop. We persist the loop variable and assign back the parent loop
             $loop = end(static::$stack);
-        }
-        else
-        {
+        } else {
             // This loop was not inside another loop. We remove the var
             //echo "l:(" . count(static::$stack) . ") ";
             $loop = null;

@@ -55,7 +55,4 @@ class MarkdownDirectives
 
         return preg_replace($matcher, $configured, $value);
     }
-
-
-
 }

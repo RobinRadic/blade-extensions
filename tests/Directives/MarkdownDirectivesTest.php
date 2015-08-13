@@ -44,5 +44,4 @@ class MarkdownDirectivesTest extends TestCase
 
         $this->assertTrue(true);
     }
-
 }

@@ -87,8 +87,7 @@ class Loop
      */
     public function setItems($items)
     {
-        if (isset($data))
-        {
+        if (isset($data)) {
             return;
         }
         $this->items = $items;
@@ -122,30 +121,21 @@ class Loop
      */
     public function before()
     {
-        if ($this->data['index'] % 2 == 0)
-        {
+        if ($this->data['index'] % 2 == 0) {
             $this->data['odd']  = false;
             $this->data['even'] = true;
-        }
-        else
-        {
+        } else {
             $this->data['odd']  = true;
             $this->data['even'] = false;
         }
-        if ($this->data['index'] == 0)
-        {
+        if ($this->data['index'] == 0) {
             $this->data['first'] = true;
-        }
-        else
-        {
+        } else {
             $this->data['first'] = false;
         }
-        if ($this->data['revindex'] == 0)
-        {
+        if ($this->data['revindex'] == 0) {
             $this->data['last'] = true;
-        }
-        else
-        {
+        } else {
             $this->data['last'] = false;
         }
     }

@@ -66,15 +66,11 @@ trait SectionsTrait
      */
     public function startSection($section, $content = '')
     {
-        if ( $content === '' )
-        {
-            if ( ob_start() )
-            {
+        if ($content === '') {
+            if (ob_start()) {
                 $this->sectionStack[] = $section;
             }
-        }
-        else
-        {
+        } else {
             $this->extendSection($section, $content);
         }
     }
@@ -113,12 +109,9 @@ trait SectionsTrait
     {
         $last = array_pop($this->sectionStack);
 
-        if ( $overwrite )
-        {
+        if ($overwrite) {
             $this->sections[$last] = ob_get_clean();
-        }
-        else
-        {
+        } else {
             $this->extendSection($last, ob_get_clean());
         }
 
@@ -134,12 +127,9 @@ trait SectionsTrait
     {
         $last = array_pop($this->sectionStack);
 
-        if ( isset($this->sections[$last]) )
-        {
+        if (isset($this->sections[$last])) {
             $this->sections[$last] .= ob_get_clean();
-        }
-        else
-        {
+        } else {
             $this->sections[$last] = ob_get_clean();
         }
 
@@ -155,8 +145,7 @@ trait SectionsTrait
      */
     protected function extendSection($section, $content)
     {
-        if ( isset($this->sections[$section]) )
-        {
+        if (isset($this->sections[$section])) {
             $content = str_replace('@parent', $content, $this->sections[$section]);
         }
 
@@ -176,15 +165,16 @@ trait SectionsTrait
     {
         $sectionContent = $default;
 
-        if ( isset($this->sections[$section]) )
-        {
+        if (isset($this->sections[$section])) {
             $sectionContent = $this->sections[$section];
         }
 
         $sectionContent = str_replace('@@parent', '--parent--holder--', $sectionContent);
 
         return str_replace(
-            '--parent--holder--', '@parent', str_replace('@parent', '', $sectionContent)
+            '--parent--holder--',
+            '@parent',
+            str_replace('@parent', '', $sectionContent)
         );
     }
 
@@ -209,8 +199,7 @@ trait SectionsTrait
      */
     public function flushSectionsIfDoneRendering()
     {
-        if ( $this->viewFactory->doneRendering() )
-        {
+        if ($this->viewFactory->doneRendering()) {
             $this->flushSections();
 
             return $this;

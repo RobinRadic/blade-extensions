@@ -44,7 +44,6 @@ $3
 \EOT
         )->close(); ?>
 EOT
-            , $value));
+        , $value));
     }
-
 }

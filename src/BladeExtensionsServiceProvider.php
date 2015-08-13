@@ -4,7 +4,6 @@
  */
 namespace Radic\BladeExtensions;
 
-
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Caffeinated\Beverage\ServiceProvider;
@@ -47,8 +46,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         /** @var \Illuminate\Foundation\Application $app */
         $app = parent::boot();
-        if ( array_key_exists('form', $app->getBindings()) )
-        {
+        if (array_key_exists('form', $app->getBindings())) {
             MacroDirectives::attach($app);
         }
     }
@@ -68,10 +66,8 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         EmbeddingDirectives::attach($app);
 
         # Optional markdown compiler, engines and directives
-        if ( $config->get('blade_extensions.markdown.enabled') )
-        {
-            if ( ! class_exists($config->get('blade_extensions.markdown.renderer')) )
-            {
+        if ($config->get('blade_extensions.markdown.enabled')) {
+            if (! class_exists($config->get('blade_extensions.markdown.renderer'))) {
                 throw new Exception('The configured markdown renderer class does not exist');
             }
             $app->register(\Radic\BladeExtensions\Providers\MarkdownServiceProvider::class);
@@ -79,11 +75,9 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
         $app->bind('blade.string', \Radic\BladeExtensions\Renderers\BladeStringRenderer::class);
 
-        $app->singleton('blade.embedding', function (Application $app)
-        {
+        $app->singleton('blade.embedding', function (Application $app) {
+        
             return new EmbedFactory($app->make('view'), $app->make('files'), $app->make('blade.compiler'));
         });
     }
-
-
 }

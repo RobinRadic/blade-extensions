@@ -17,7 +17,7 @@
         </then>
     </if>
 
-    <target name="fix" depends="submodule.update,phpcs" description="fixes code violations"/>
+    <target name="fix" depends="phpcs" description="fixes code violations"/>
 
     <property name="changelog.header" value="# Changelog"/>
     <property name="changelog.filename" value="CHANGELOG.md"/>
@@ -32,9 +32,6 @@
         <exec command="bash ${project.basedir}/scripts/submodule-update.sh" dir="${project.basedir}" logoutput="true" />
     </target>
 
-    <target name="submodule.update">
-        <exec command="git submodule update --init --remote --recursive --force" dir="${project.basedir}" logoutput="true" />
-    </target>
 
     <target name="build" depends="vendor,prepare,lint,phploc-ci,pdepend,phpcs-ci,phpcpd-ci,phpunit,phpdox,phpdoc" description=""/>
 

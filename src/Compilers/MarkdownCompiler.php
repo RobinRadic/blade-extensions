@@ -63,6 +63,4 @@ class MarkdownCompiler extends Compiler implements CompilerInterface
     {
         return $this->renderer;
     }
-
-
 }

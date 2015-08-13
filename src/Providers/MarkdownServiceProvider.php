@@ -31,8 +31,7 @@ class MarkdownServiceProvider extends ServiceProvider
     public function boot()
     {
         # Do not register the engine resolvers if defined in config
-        if (Config::get('blade_extensions.markdown.views') !== true)
-        {
+        if (Config::get('blade_extensions.markdown.views') !== true) {
             return;
         }
 
@@ -44,8 +43,8 @@ class MarkdownServiceProvider extends ServiceProvider
         $view = $app['view'];
 
         # Markdown engine
-        $view->getEngineResolver()->register('md', function () use ($app)
-        {
+        $view->getEngineResolver()->register('md', function () use ($app) {
+        
             $compiler = $app['markdown.compiler'];
 
             return new CompilerEngine($compiler);
@@ -53,8 +52,8 @@ class MarkdownServiceProvider extends ServiceProvider
         $view->addExtension('md', 'md');
 
         # Php markdown engine
-        $view->getEngineResolver()->register('phpmd', function () use ($app)
-        {
+        $view->getEngineResolver()->register('phpmd', function () use ($app) {
+        
             $markdown = $app['markdown'];
 
             return new PhpMarkdownEngine($markdown);
@@ -62,8 +61,8 @@ class MarkdownServiceProvider extends ServiceProvider
         $view->addExtension('md.php', 'phpmd');
 
         # Blade markdown engine
-        $view->getEngineResolver()->register('blademd', function () use ($app)
-        {
+        $view->getEngineResolver()->register('blademd', function () use ($app) {
+        
             $compiler = $app['blade.compiler'];
             $markdown = $app['markdown'];
 
@@ -76,13 +75,13 @@ class MarkdownServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', Config::get('blade_extensions.markdown.renderer'));
-        $this->app->singleton('markdown', function ($app)
-        {
+        $this->app->singleton('markdown', function ($app) {
+        
             return $this->app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
         });
 
-        $this->app->singleton('markdown.compiler', function ($app)
-        {
+        $this->app->singleton('markdown.compiler', function ($app) {
+        
             $markdownRenderer = $app['markdown'];
             $files            = $app['files'];
             $storagePath      = Config::get('view.compiled');

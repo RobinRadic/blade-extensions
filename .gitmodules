@@ -1,4 +1,4 @@
-[submodule "resources/build/tools"]
-	path = resources/build/tools
-	url = https://github.com/laradic/php-build-tools
+[submodule "build/tools"]
+	path = build/tools
+	url = http://github.com/laradic/php-build-tools
 	branch = master

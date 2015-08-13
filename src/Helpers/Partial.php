@@ -51,15 +51,11 @@ class Partial
      */
     public static function startBlock($block, $content = '')
     {
-        if ($content === '')
-        {
-            if (ob_start())
-            {
+        if ($content === '') {
+            if (ob_start()) {
                 static::$blocks[] = $block;
             }
-        }
-        else
-        {
+        } else {
             static::$blocks[$block] = $content;
         }
     }
