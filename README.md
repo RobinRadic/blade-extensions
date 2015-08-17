@@ -14,7 +14,7 @@
 
 | **Laravel** | ~4.2 | 5.0 | 5.1 |
 |:-----------:|:----:|:---:|:----:|
-| Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v4.1](tree/master) |
+| Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v5.0](tree/master) |
   
 **Laravel** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
 
@@ -27,7 +27,6 @@
 - **@markdown** (optional) Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
 - **@minify** (optional) Minify inline code. Supports CSS, JS and HTML.
 - **BladeString** Render blade strings using the facade `BladeString::render('my val: {{ $val }}', array('val' => 'foo'))`
-- ~~**@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.~~ deprecated and will not be included in the next major version. Instead, use @embed
 
 
 ## My other Laravel packages
@@ -41,20 +40,21 @@
 ###### Requirements
 ```JSON
 "PHP": ">=5.5.9",
-"illuminate/support": "~5.0"
+"caffeinated/beverage": "~3.0"
 ```
   
-###### Recommended
+###### Suggested
 ```JSON
-"laravelcollective/html": "~5.0",
-"raveren/kint": ">=0.9.1",
-"erusev/parsedown": "~1.5"
+"raveren/kint":             "Improved @debug output (1.0.*)",
+"laravelcollective/html":   "Enables the use of @macro directives (~5.0)",
+"erusev/parsedown":         "Enables the use of @markdown directives (~1.5)",
+"matthiasmullie/minify":    "Enables the use of @minify directives (~1.3)"
 ```
   
   
 ###### Composer
 ```JSON
-"radic/blade-extensions": "~4.0"
+"radic/blade-extensions": "~5.0"
 ```
 
 ###### Laravel
@@ -63,9 +63,8 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 ```
 
 
-#### Some examples
+#### Examples
 
-[**Check the documentation for all features and options**](http://docs.radic.nl/blade-extensions/)
 
 ```php
 @foreach($stuff as $key => $val)

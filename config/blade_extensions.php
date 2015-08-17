@@ -80,25 +80,7 @@ $1<?php
 continue;
 ?>$2
 EOT
-        // PartialDirective
-    ,'addPartial' => <<<'EOT'
-$1<?php \Radic\BladeExtensions\Helpers\Partial::renderPartial$2,
-get_defined_vars(), function($file, $vars) use ($__env) {
-        $vars = array_except($vars, array('__data', '__path'));
-        extract($vars); ?>
-EOT
-    ,'endPartial' => <<<'EOT'
-$1<?php echo $__env->make($file, $vars)->render(); }); ?>$2
-EOT
-    ,'openBlock' => <<<'EOT'
-$1<?php \Radic\BladeExtensions\Helpers\Partial::startBlock$2; ?>
-EOT
-    ,'endBlock' => <<<'EOT'
-$1<?php \Radic\BladeExtensions\Helpers\Partial::stopBlock(); ?>$2
-EOT
-    ,'addRender' => <<<'EOT'
-$1<?php echo \Radic\BladeExtensions\Helpers\Partial::renderBlock$2; ?>
-EOT
+
         // AssignmentDirective
     ,'addSet' => <<<'EOT'
 $1<?php \$$2 = $3; ?>

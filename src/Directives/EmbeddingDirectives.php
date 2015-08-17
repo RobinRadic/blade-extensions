@@ -34,8 +34,6 @@ class EmbeddingDirectives
      */
     public function embedView($value, $configured, Application $app, Compiler $blade)
     {
-        /*$matcher = '/(?=((?<!\w)(\s*)@embed\s*(\(.*?\))(?:(?>(?:(?!@embed|@endembed).)+)*|(?1))*@endembed))/';*/
-
         $pattern = '/(?<!\w)(\s*)@embed\s*(\([^)]*\))((?>(?!@(?:end)?embed).|(?0))*)@endembed/s';
 
         return str_replace('\\EOT', 'EOT', preg_replace($pattern, <<<'EOT'

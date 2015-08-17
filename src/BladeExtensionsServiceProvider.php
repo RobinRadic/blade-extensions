@@ -63,7 +63,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         AssignmentDirectives::attach($app);
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
-        PartialDirectives::attach($app);
         EmbeddingDirectives::attach($app);
 
         # Optional markdown compiler, engines and directives
