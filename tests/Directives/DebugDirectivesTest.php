@@ -30,7 +30,7 @@ class DebugDirectivesTest extends TestCase
 </code></pre>
 
 EOT
-            , $rendered, 'testDebugVardump should render the exact value');
+        , $rendered, 'testDebugVardump should render the exact value');
     }
 
     public function testBreakpoint()

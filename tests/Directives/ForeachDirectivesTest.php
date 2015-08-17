@@ -31,8 +31,8 @@ class ForeachDirectivesTest extends TestCase
             [
                 'dataClass' => static::getData(),
                 'array'     => static::getData()->getRecords(),
-                'getArray'  => function ()
-                {
+                'getArray'  => function () {
+                
                     return static::getData()->getValues()[ 'names' ];
                 }
             ]

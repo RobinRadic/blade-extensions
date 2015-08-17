@@ -49,19 +49,20 @@ class Minifier
      * @param $code
      * @return string
      */
-    protected static function minify($type, $code){
+    protected static function minify($type, $code)
+    {
         $types = ['html', 'css', 'js'];
 
-        if(!in_array($type, $types, true)){
+        if (!in_array($type, $types, true)) {
             $typeStr = implode(', ', $types);
             throw new \InvalidArgumentException("BladeExtensions Minifier could not minify your code, you haven't specified a valid type. Given: [{$type}]. Allowed: [{$typeStr}]");
         }
 
-        if($type === 'html'){
+        if ($type === 'html') {
             return static::compileMinify($code);
-        } elseif($type === 'css'){
+        } elseif ($type === 'css') {
             return with(new \MatthiasMullie\Minify\CSS($code))->execute();
-        } elseif($type === 'js'){
+        } elseif ($type === 'js') {
             return with(new \MatthiasMullie\Minify\JS($code))->execute();
         }
     }
@@ -108,7 +109,9 @@ class Minifier
                 '/>\s</'                    => '><'
             ];
             return preg_replace(
-                array_keys($replace), array_values($replace), $value
+                array_keys($replace),
+                array_values($replace),
+                $value
             );
         } else {
             return $value;

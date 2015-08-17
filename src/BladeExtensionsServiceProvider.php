@@ -75,7 +75,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         }
 
         # Optional minify directives
-        if(class_exists('MatthiasMullie\Minify\CSS')){
+        if (class_exists('MatthiasMullie\Minify\CSS')) {
             MinifyDirectives::attach($app);
         }
 

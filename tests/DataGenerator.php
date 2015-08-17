@@ -31,8 +31,7 @@ class DataGenerator
     protected static function generateIfRequired()
     {
         $fs = new Filesystem();
-        if (!isset(static::$values) || !isset(static::$records))
-        {
+        if (!isset(static::$values) || !isset(static::$records)) {
             static::$values  = json_decode($fs->get(Path::join(__DIR__, 'data/values.json')), true)[0];
             static::$records = json_decode($fs->get(Path::join(__DIR__, 'data/records.json')), true);
         }
