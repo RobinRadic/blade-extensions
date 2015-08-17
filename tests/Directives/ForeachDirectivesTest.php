@@ -1,16 +1,14 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Collective\Html\HtmlServiceProvider;
 use Mockery as m;
-use Laradic\Dev\DataGenerator;
-
+use Radic\Tests\BladeExtensions\DataGenerator;
 use Radic\Tests\BladeExtensions\TestCase;
 
 /**
  * Class ViewTest
  *
  * @author     Robin Radic
- * @group blade-extensions
+ * @group      blade-extensions
  */
 class ForeachDirectivesTest extends TestCase
 {
@@ -26,15 +24,16 @@ class ForeachDirectivesTest extends TestCase
 
     public function testForeach()
     {
-        $dataClass = static::getData();
+        $dataClass        = static::getData();
         $dataClass->array = DataGenerator::getRecords();
         $this->view()->make(
             'foreach',
             [
                 'dataClass' => static::getData(),
                 'array'     => static::getData()->getRecords(),
-                'getArray'  => function () {
-                    return static::getData()->getValues()['names'];
+                'getArray'  => function ()
+                {
+                    return static::getData()->getValues()[ 'names' ];
                 }
             ]
         )->render();
@@ -45,9 +44,8 @@ class ForeachDirectivesTest extends TestCase
         $this->view()->make(
             'issue11',
             [
-                'array'     => static::getData()->getRecords()
+                'array' => static::getData()->getRecords()
             ]
         )->render();
-
     }
 }

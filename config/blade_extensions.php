@@ -126,6 +126,14 @@ $1<?php echo \Radic\BladeExtensions\Helpers\Markdown::parse(<<<'EOT'$2
 EOT
     ,'closeMarkdown' => "$1\nEOT\n); ?>$2"
 
+        // MinifyDirectives
+    ,'openMinify' => <<<'EOT'
+$1<?php echo \Radic\BladeExtensions\Helpers\Minifier::open$2; ?>
+EOT
+
+    ,'closeMinify' => <<<'EOT'
+$1<?php echo \Radic\BladeExtensions\Helpers\Minifier::close(); ?>
+EOT
 
     )
 );

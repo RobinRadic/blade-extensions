@@ -1,10 +1,8 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
-use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
+use Caffeinated\Dev\Testing\AbstractTestCase;
+use Caffeinated\Dev\Testing\Traits\BladeViewTester;
 use Collective\Html\HtmlServiceProvider;
-use Radic\BladeExtensions\Providers\MarkdownServiceProvider;
-use Laradic\Dev\AbstractTestCase;
-use Laradic\Dev\Traits\BladeViewTestingTrait;
 
 /**
  * Class ViewTest
@@ -14,7 +12,7 @@ use Laradic\Dev\Traits\BladeViewTestingTrait;
  */
 abstract class TestCase extends AbstractTestCase
 {
-    use BladeViewTestingTrait;
+    use BladeViewTester;
 
     /** @inheritDoc */
     public function setUp()
@@ -22,12 +20,27 @@ abstract class TestCase extends AbstractTestCase
         parent::setUp();
     }
 
+    /** @var array */
+    public static $data;
+
+    /**
+     * @return DataGenerator
+     */
+    public static function getData()
+    {
+        if(!isset(static::$data))
+        {
+            static::$data = new DataGenerator();
+        }
+        return static::$data;
+    }
+
     /**
      * @return \Illuminate\Contracts\View\Factory
      */
     public function view()
     {
-        return $this->app['view'];
+        return $this->app[ 'view' ];
     }
 
     protected function getEnvironmentSetUp($app)

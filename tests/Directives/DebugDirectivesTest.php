@@ -1,16 +1,13 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Collective\Html\HtmlServiceProvider;
 use Mockery as m;
-
-use Radic\BladeExtensions\Directives\DebugDirectives;
 use Radic\Tests\BladeExtensions\TestCase;
 
 /**
  * Class ViewTest
  *
  * @author     Robin Radic
- * @group blade-extensions
+ * @group      blade-extensions
  */
 class DebugDirectivesTest extends TestCase
 {
@@ -25,7 +22,7 @@ class DebugDirectivesTest extends TestCase
     public function testDebugVardump()
     {
         return;
-        $this->app['config']->set('blade_extensions.directives.addDebug', '<pre><code><?php var_dump($1) ?></code></pre>');#<?php var_dump($1) ? >
+        $this->app[ 'config' ]->set('blade_extensions.directives.addDebug', '<pre><code><?php var_dump($1) ?></code></pre>');#<?php var_dump($1) ? >
         $this->registerBlade();
         $rendered = $this->view()->make('debug')->render();
         $this->assertEquals(<<<'EOT'
@@ -33,7 +30,7 @@ class DebugDirectivesTest extends TestCase
 </code></pre>
 
 EOT
-        , $rendered, 'testDebugVardump should render the exact value');
+            , $rendered, 'testDebugVardump should render the exact value');
     }
 
     public function testBreakpoint()

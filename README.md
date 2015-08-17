@@ -22,11 +22,13 @@
 - **@set @unset** Setting and unsetting of values
 - **@foreach @break @continue** Loop data and extras (similair to twig `$loop`)
 - **@embed** Think of embed as combining the behaviour of include and extends. (similair to twig `embed`)
-- ~~**@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.~~ deprecated and will not be included in the next major version. Instead, use @embed
 - **@debug @breakpoint** Dump values and set breakpoints in views
-- **@macro** Defining and running macros (optional, requires [laravelcollective/html](https://github.com/erusev/parsedown))
-- **@markdown** Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
+- **@macro** (optional) Defining and running macros (requires [laravelcollective/html](https://github.com/erusev/parsedown))
+- **@markdown** (optional) Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
+- **@minify** (optional) Minify inline code. Supports CSS, JS and HTML.
 - **BladeString** Render blade strings using the facade `BladeString::render('my val: {{ $val }}', array('val' => 'foo'))`
+- ~~**@partial @block @render** Creating view partials and blocks. Nest them, extend them, render them.~~ deprecated and will not be included in the next major version. Instead, use @embed
+
 
 ## My other Laravel packages
 | Package | Description | |
@@ -112,6 +114,60 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 
 // Beside @include, View::make('path/to/markdown/file')->render() will also work (though it would be better to use the Markdown facade / markdown ioc binding 
 ```
+
+#### Inline minification
+Adding `"matthiasmullie/minify": "~1.3"` will automaticly enable the `@minify` directive.
+
+###### Javascript
+```php
+<script>
+    @minify('js')
+    var exampleJavascript = {
+        this: 'that',
+        foo: 'bar',
+        doit: function(){
+            console.log('yesss');
+        }
+    };
+    @endminify
+</script>
+```
+
+###### CSS
+```php
+<style type="text/css">
+    @minify('css')      
+    a.bg-primary:hover,
+    a.bg-primary:focus {
+      background-color: #286090;
+    }
+    
+    .bg-success {
+      background-color: #dff0d8;
+    }
+    
+    a.bg-success:hover,
+    a.bg-success:focus {
+      background-color: #c1e2b3;
+    }
+    @endminify
+</style>
+```
+
+###### HTML
+```php
+@minify('html')
+<div class="block-loading">
+    <div id="block-loader">
+        <div class="loader loader-block"></div>
+    </div>
+    <div class="i-want-this-to-have-a-loader block-loader-content">
+
+    </div>
+</div>
+@endminify
+```
+
 
 #### Lot of @embed examples
 Notice that the following examples aren't really consistent with yield/variable usage, which is intended for showcase.

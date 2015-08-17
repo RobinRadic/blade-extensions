@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
-use Laradic\Dev\Traits\ServiceProviderTestCaseTrait;
+use Caffeinated\Dev\Testing\Traits\ServiceProviderTester;
 
 /**
  * Class ViewTest
@@ -11,7 +11,7 @@ use Laradic\Dev\Traits\ServiceProviderTestCaseTrait;
  */
 class ServiceProviderTest extends TestCase
 {
-    use ServiceProviderTestCaseTrait;
+    use ServiceProviderTester;
 
     /** @inheritDoc */
     public function setUp()

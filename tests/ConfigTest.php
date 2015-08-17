@@ -1,14 +1,12 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
-use File;
 use Mockery as m;
-use Symfony\Component\VarDumper\VarDumper;
 
 /**
  * Class ViewTest
  *
  * @author     Robin Radic
- * @group blade-extensions
+ * @group      blade-extensions
  *
  */
 class ConfigTest extends TestCase
@@ -23,7 +21,7 @@ class ConfigTest extends TestCase
 
     public function getConfig()
     {
-        return $this->app['config']->get('blade_extensions'); // . (isset($key) ? '.' . $key : ''));
+        return $this->app[ 'config' ]->get('blade_extensions'); // . (isset($key) ? '.' . $key : ''));
     }
 
     public function testConfigSettings()
@@ -32,11 +30,11 @@ class ConfigTest extends TestCase
 
         $this->assertTrue(is_array($config), 'Config should be an array');
 
-        $this->assertTrue(is_array($config['blacklist']), 'config.blacklist should be an array');
-        $this->assertTrue(count($config['blacklist']) === 0, 'config.blacklist should be empty');
-        $this->app['config']->set('blade_extensions.blacklist', array('debug', 'unset', 'set'));
+        $this->assertTrue(is_array($config[ 'blacklist' ]), 'config.blacklist should be an array');
+        $this->assertTrue(count($config[ 'blacklist' ]) === 0, 'config.blacklist should be empty');
+        $this->app[ 'config' ]->set('blade_extensions.blacklist', array( 'debug', 'unset', 'set' ));
         $config = $this->getConfig();
-        $this->assertTrue(count($config['blacklist']) === 3, 'config.blacklist should have 3 items');
+        $this->assertTrue(count($config[ 'blacklist' ]) === 3, 'config.blacklist should have 3 items');
     }
 
     public function testConfigReset()

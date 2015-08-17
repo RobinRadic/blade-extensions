@@ -1,15 +1,13 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Collective\Html\HtmlServiceProvider;
 use Mockery as m;
-
 use Radic\Tests\BladeExtensions\TestCase;
 
 /**
  * Class ViewTest
  *
  * @author     Robin Radic
- * @group blade-extensions
+ * @group      blade-extensions
  */
 class GeneralDirectivesTest extends TestCase
 {
@@ -21,7 +19,6 @@ class GeneralDirectivesTest extends TestCase
         $this->registerHtml();
         $this->registerBlade();
     }
-
 
 
     public function testGeneral()

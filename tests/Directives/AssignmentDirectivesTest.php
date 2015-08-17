@@ -1,6 +1,5 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Collective\Html\HtmlServiceProvider;
 use Mockery as m;
 use Radic\Tests\BladeExtensions\TestCase;
 
@@ -8,7 +7,7 @@ use Radic\Tests\BladeExtensions\TestCase;
  * Class ViewTest
  *
  * @author     Robin Radic
- * @group blade-extensions
+ * @group      blade-extensions
  */
 class AssignmentDirectivesTest extends TestCase
 {
@@ -30,10 +29,10 @@ class AssignmentDirectivesTest extends TestCase
     public function testSet()
     {
         $this->view()->make('assignment', [
-                'dataString'        => 'hello',
-                'dataArray'         => $this->getData()->getValues()['names'],
-                'dataClassInstance' => $this->getData(),
-                'dataClassName'     => 'DataGenerator'
-            ])->render();
+            'dataString'        => 'hello',
+            'dataArray'         => $this->getData()->getValues()[ 'names' ],
+            'dataClassInstance' => $this->getData(),
+            'dataClassName'     => 'DataGenerator'
+        ])->render();
     }
 }
