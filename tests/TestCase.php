@@ -29,7 +29,7 @@ abstract class TestCase extends AbstractTestCase
     public static function getData()
     {
         if (!isset(static::$data)) {
-        static::$data = new DataGenerator();
+            static::$data = new DataGenerator();
         }
         return static::$data;
     }
