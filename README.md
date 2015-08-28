@@ -29,11 +29,10 @@
 - **BladeString** Render blade strings using the facade `BladeString::render('my val: {{ $val }}', array('val' => 'foo'))`
 
 
-## My other Laravel packages
-| Package | Description | |
-|----|----|----|
-| [Themes](https://github.com/laradic/themes) | L5 Theme package, providing multi-theme inherited cascading support. Works with PHP, Blade, Twig, etc. Includes asset management (Dependable assets or asset groups, caching, minification, etc), navigation & breadcrumb helpers and more. | [doc](http://docs.radic.nl/themes) |
-| [Blade Extensions](https://github.com/radic/blade-extensions) | A collection of usefull Laravel blade extensions, like $loop data in foreach, view partials, etc | [doc](http://docs.radic.nl/blade-extensions) |
+## 5.0.0 changes
+If you are migrating to `5.0.0`, you will have to be alert of:
+- The `@partial`, `@block` & `@render` directives are removed. Instead, use `@embed`.
+- `vendor:publish` the config file again to include the recent changed.
 
 
 #### Installation  
@@ -48,6 +47,7 @@
 "raveren/kint":             "Improved @debug output (1.0.*)",
 "laravelcollective/html":   "Enables the use of @macro directives (~5.0)",
 "erusev/parsedown":         "Enables the use of @markdown directives (~1.5)",
+"kzykhys/ciconia":          "Enables the use of @markdown directives (~1.0)",
 "matthiasmullie/minify":    "Enables the use of @minify directives (~1.3)"
 ```
   
@@ -64,7 +64,6 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 
 
 #### Examples
-
 
 ```php
 @foreach($stuff as $key => $val)
