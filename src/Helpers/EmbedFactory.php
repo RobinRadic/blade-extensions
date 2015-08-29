@@ -51,8 +51,7 @@ class EmbedFactory
      */
     public function __call($name, $arguments)
     {
-        if ( method_exists($this->viewFactory, $name) )
-        {
+        if (method_exists($this->viewFactory, $name)) {
             return call_user_func_array([ $this->viewFactory, $name ], $arguments);
         }
     }
@@ -124,8 +123,7 @@ class EmbedFactory
     public function recurse($out)
     {
         preg_match_all('/(?<!\w)(\s*)@embed\s*(\([^)]*\))((?>(?!@(?:end)?embed).|(?0))*)@endembed/s', $out, $matches);
-        if ( count($matches[ 0 ]) > 0 )
-        {
+        if (count($matches[ 0 ]) > 0) {
             $path = storage_path(uniqid(time(), true));
             $this->files->put($path, $this->bladeCompiler->compileString($out));
             $vars = $this->vars;
