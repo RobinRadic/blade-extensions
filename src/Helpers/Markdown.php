@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions\Helpers;
 
-use Stringy\Stringy;
+use Caffeinated\Beverage\Str;
 
 /**
  * Markdown transformer Helpers
@@ -28,7 +28,7 @@ class Markdown
     protected static function transform($text)
     {
         $firstLine = explode("\n", $text, 1);
-        $firstLine = Stringy::create($firstLine[0])->toSpaces();
+        $firstLine = Str::toSpaces($firstLine[0], 4);
         preg_match('/([\s]*).*/', $firstLine, $firstLineSpacesMatches);
 
         if (isset($firstLineSpacesMatches[1])) {
@@ -43,7 +43,6 @@ class Markdown
         }
 
         return $text;
-        //$parsedown->text()
     }
 
     /**
@@ -54,10 +53,7 @@ class Markdown
     public static function parse($text)
     {
         $text = static::transform($text);
-        //$pd = new \Parsedown();
         $newText = app()->make('markdown')->render($text);
-
-        //$newText = $pd->text($text);
         return $newText;
     }
 }

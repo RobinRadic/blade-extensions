@@ -13,7 +13,6 @@ use Radic\BladeExtensions\Directives\EmbeddingDirectives;
 use Radic\BladeExtensions\Directives\ForeachDirectives;
 use Radic\BladeExtensions\Directives\MacroDirectives;
 use Radic\BladeExtensions\Directives\MinifyDirectives;
-use Radic\BladeExtensions\Directives\PartialDirectives;
 use Radic\BladeExtensions\Helpers\EmbedFactory;
 
 /**
@@ -81,7 +80,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $app->bind('blade.string', \Radic\BladeExtensions\Renderers\BladeStringRenderer::class);
 
         $app->singleton('blade.embedding', function (Application $app) {
-
             return new EmbedFactory($app->make('view'), $app->make('files'), $app->make('blade.compiler'));
         });
     }

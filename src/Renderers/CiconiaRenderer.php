@@ -7,7 +7,6 @@ namespace Radic\BladeExtensions\Renderers;
 use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm;
 use Radic\BladeExtensions\Contracts\MarkdownRenderer;
-use Illuminate\Contracts\Config\Repository as Config;
 
 /**
  * The Ciconia markdown renderer implementation
@@ -26,6 +25,7 @@ class CiconiaRenderer implements MarkdownRenderer
 
     /**
      * The Ciconia implementation
+     *
      * @var \Ciconia\Ciconia
      */
     protected $ciconia;
@@ -33,7 +33,8 @@ class CiconiaRenderer implements MarkdownRenderer
 
     /**
      * In
-     * @param \Ciconia\Ciconia $ciconia
+     *
+     * @param \Ciconia\Ciconia                        $ciconia
      * @param \Illuminate\Contracts\Config\Repository $config
      */
     function __construct(Ciconia $ciconia)

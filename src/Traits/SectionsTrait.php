@@ -56,7 +56,6 @@ trait SectionsTrait
         return $this->viewFactory;
     }
 
-
     /**
      * Start injecting content into a section.
      *

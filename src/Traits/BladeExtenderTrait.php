@@ -15,7 +15,7 @@ use View;
  * @version            2.1.0
  * @author             Robin Radic
  * @license            MIT License - http://radic.mit-license.org
- * @copyright       2011-2015, Robin Radic
+ * @copyright          2011-2015, Robin Radic
  * @link               http://robin.radic.nl/blade-extensions
  *
  */
@@ -31,6 +31,7 @@ trait BladeExtenderTrait
 
     /**
      * An array of methodName => directiveReplacement
+     *
      * @var array
      */
     public $directives;
@@ -49,15 +50,18 @@ trait BladeExtenderTrait
         $directives = isset($class->directives) ? $class->directives : Config::get('blade_extensions.directives');
         $blacklist  = isset($class->blacklist) ? $class->blacklist : Config::get('blade_extensions.blacklist');
 
-        foreach (get_class_methods($class) as $method) {
-            if (in_array($method, ['attach', 'createMatcher', 'createOpenMatcher', 'createPlainMatcher']) or (is_array($blacklist) && in_array($method, $blacklist))) {
+        foreach ( get_class_methods($class) as $method )
+        {
+            if ( in_array($method, [ 'attach', 'createMatcher', 'createOpenMatcher', 'createPlainMatcher' ]) or (is_array($blacklist) && in_array($method, $blacklist)) )
+            {
                 continue;
             }
 
-            $directive = isset($directives[$method]) ? $directives[$method] : false;
+            $directive = isset($directives[ $method ]) ? $directives[ $method ] : false;
 
-            $blade->extend(function ($value) use ($app, $class, $blade, $method, $directive) {
-            
+            $blade->extend(function ($value) use ($app, $class, $blade, $method, $directive)
+            {
+
                 return $class->$method($value, $directive, $app, $blade);
             });
         }
@@ -67,33 +71,33 @@ trait BladeExtenderTrait
     /**
      * Get the regular expression for a generic Blade function.
      *
-     * @param  string  $function
+     * @param  string $function
      * @return string
      */
     public function createMatcher($function)
     {
-        return '/(?<!\w)(\s*)@'.$function.'(\s*\(.*\))/';
+        return '/(?<!\w)(\s*)@' . $function . '(\s*\(.*\))/';
     }
 
     /**
      * Get the regular expression for a generic Blade function.
      *
-     * @param  string  $function
+     * @param  string $function
      * @return string
      */
     public function createOpenMatcher($function)
     {
-        return '/(?<!\w)(\s*)@'.$function.'(\s*\(.*)\)/';
+        return '/(?<!\w)(\s*)@' . $function . '(\s*\(.*)\)/';
     }
 
     /**
      * Create a plain Blade matcher.
      *
-     * @param  string  $function
+     * @param  string $function
      * @return string
      */
     public function createPlainMatcher($function)
     {
-        return '/(?<!\w)(\s*)@'.$function.'(\s*)/';
+        return '/(?<!\w)(\s*)@' . $function . '(\s*)/';
     }
 }

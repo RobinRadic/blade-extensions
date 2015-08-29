@@ -22,10 +22,19 @@ use Caffeinated\Beverage\Filesystem;
  */
 class BladeStringRenderer
 {
+    /**
+     * @var \Illuminate\View\Compilers\BladeCompiler
+     */
     protected $compiler;
 
+    /**
+     * @var
+     */
     protected $tmpDir;
 
+    /**
+     * @var \Caffeinated\Beverage\Filesystem
+     */
     protected $files;
 
     /** Instantiates the class
@@ -39,6 +48,13 @@ class BladeStringRenderer
         $this->files = $files;
     }
 
+    /**
+     * render
+     *
+     * @param       $string
+     * @param array $vars
+     * @return string
+     */
     public function render($string, array $vars = array())
     {
         $fileName = uniqid(time(), true);

@@ -67,7 +67,6 @@ class Minifier
         }
     }
 
-
     /**
      *
      * @author https://github.com/yocmen/html-minify
