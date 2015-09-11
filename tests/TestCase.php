@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Caffeinated\Dev\Testing\AbstractTestCase;
-use Caffeinated\Dev\Testing\Traits\BladeViewTester;
+use Caffeinated\Dev\Testing\Traits\ViewTester;
 use Collective\Html\HtmlServiceProvider;
 
 /**
@@ -12,7 +12,7 @@ use Collective\Html\HtmlServiceProvider;
  */
 abstract class TestCase extends AbstractTestCase
 {
-    use BladeViewTester;
+    use ViewTester;
 
     /** @inheritDoc */
     public function setUp()

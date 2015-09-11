@@ -7,14 +7,14 @@
  */
 namespace Radic\BladeExtensions\Renderers;
 
+
 use Illuminate\View\Compilers\BladeCompiler;
-use Caffeinated\Beverage\Filesystem;
+use Illuminate\Contracts\Filesystem\Filesystem;
 
 /**
  * This is the BladeStringRenderer.
  *
  * @package        Radic\BladeExtensions
- * @version        1.0.0
  * @author         Robin Radic
  * @license        MIT License
  * @copyright      2015, Robin Radic
@@ -28,24 +28,25 @@ class BladeStringRenderer
     protected $compiler;
 
     /**
-     * @var
+     * Path to the temporary file
+     * @var string
      */
-    protected $tmpDir;
+    protected $tmpFilePath;
 
     /**
      * @var \Caffeinated\Beverage\Filesystem
      */
     protected $files;
 
-    /** Instantiates the class
-     *
-     * @param \Illuminate\View\Compilers\BladeCompiler $compiler
-     * @param \Caffeinated\Beverage\Filesystem         $files
+    /**
+     * @param \Illuminate\View\Compilers\BladeCompiler    $compiler
+     * @param \Illuminate\Contracts\Filesystem\Filesystem $files
      */
     public function __construct(BladeCompiler $compiler, Filesystem $files)
     {
         $this->compiler = $compiler;
         $this->files = $files;
+        $this->tmpFilePath = storage_path(uniqid(time(), true));
     }
 
     /**
@@ -57,9 +58,7 @@ class BladeStringRenderer
      */
     public function render($string, array $vars = array())
     {
-        $fileName = uniqid(time(), true);
-        $path = storage_path($fileName);
-        $this->files->put($path, $this->compiler->compileString($string));
+        $this->files->put($this->tmpFilePath, $this->compiler->compileString($string));
 
         if (is_array($vars) && !empty($vars)) {
             extract($vars);
@@ -67,12 +66,59 @@ class BladeStringRenderer
 
 
         ob_start();
-        include($path);
+        include($this->tmpFilePath);
         $var=ob_get_contents();
         ob_end_clean();
 
-        $this->files->delete($path);
+        $this->files->delete($this->tmpFilePath);
         return $var;
-
     }
+
+    /**
+     * get tmpFilePath value
+     *
+     * @return mixed
+     */
+    public function getTmpFilePath()
+    {
+        return $this->tmpFilePath;
+    }
+
+    /**
+     * Set the tmpFilePath value
+     *
+     * @param mixed $tmpFilePath
+     * @return BladeStringRenderer
+     */
+    public function setTmpFilePath($tmpFilePath)
+    {
+        $this->tmpFilePath = $tmpFilePath;
+
+        return $this;
+    }
+
+    /**
+     * get files value
+     *
+     * @return \Caffeinated\Beverage\Filesystem
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Set the files value
+     *
+     * @param \Caffeinated\Beverage\Filesystem $files
+     * @return BladeStringRenderer
+     */
+    public function setFiles(Filesystem $files)
+    {
+        $this->files = $files;
+
+        return $this;
+    }
+
+
 }

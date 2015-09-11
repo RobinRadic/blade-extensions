@@ -9,11 +9,15 @@ use Illuminate\Contracts\Foundation\Application;
 use Caffeinated\Beverage\ServiceProvider;
 use Radic\BladeExtensions\Directives\AssignmentDirectives;
 use Radic\BladeExtensions\Directives\DebugDirectives;
+use Radic\BladeExtensions\Directives\Embedding2Directives;
 use Radic\BladeExtensions\Directives\EmbeddingDirectives;
 use Radic\BladeExtensions\Directives\ForeachDirectives;
 use Radic\BladeExtensions\Directives\MacroDirectives;
 use Radic\BladeExtensions\Directives\MinifyDirectives;
 use Radic\BladeExtensions\Helpers\EmbedFactory;
+use Radic\BladeExtensions\Helpers\EmbedFactory2;
+use Radic\BladeExtensions\Helpers\EmbedStacker;
+use Radic\BladeExtensions\Renderers\BladeStringRenderer;
 
 /**
  * A laravel service provider to register the class into the the IoC container
@@ -41,6 +45,10 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
     protected $provides = ['blade.embedding'];
 
+    protected $bindings = [
+        'blade.string' => BladeStringRenderer::class
+    ];
+
     /** {@inheritDoc} */
     public function boot()
     {
@@ -62,7 +70,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         AssignmentDirectives::attach($app);
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
-        EmbeddingDirectives::attach($app);
+        Embedding2Directives::attach($app);
 
         # Optional markdown compiler, engines and directives
         if ($config->get('blade_extensions.markdown.enabled')) {
@@ -80,7 +88,8 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $app->bind('blade.string', \Radic\BladeExtensions\Renderers\BladeStringRenderer::class);
 
         $app->singleton('blade.embedding', function (Application $app) {
-            return new EmbedFactory($app->make('view'), $app->make('files'), $app->make('blade.compiler'));
+            return new EmbedStacker($app);
+            //return new EmbedFactory2($app->make('view'), $app->make('files'), $app->make('blade.compiler'));
         });
     }
 }

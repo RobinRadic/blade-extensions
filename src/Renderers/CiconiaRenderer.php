@@ -37,7 +37,7 @@ class CiconiaRenderer implements MarkdownRenderer
      * @param \Ciconia\Ciconia                        $ciconia
      * @param \Illuminate\Contracts\Config\Repository $config
      */
-    function __construct(Ciconia $ciconia)
+    public function __construct(Ciconia $ciconia)
     {
         $this->ciconia = $ciconia;
     }
