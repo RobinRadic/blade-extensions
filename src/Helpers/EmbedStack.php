@@ -77,6 +77,7 @@ class EmbedStack implements Stack
         extract($this->vars);
         ob_start();
         include($path);
+        $this->remove($name);
         $out = ob_get_clean();
         echo $out;
 

@@ -25,66 +25,63 @@ class ForeachDirectives
     use BladeExtenderTrait;
 
     /**
-     * Starts `foreach` directive
+     * directiveForeach
      *
-     * @param             $value
-     * @param             $directive
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function openForeach($value, $directive, Application $app, Compiler $blade)
+    public function directiveForeach($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(\s*)@foreach(?:\s*)\((.*)(?:\sas)(.*)\)/';
-
-        return preg_replace($matcher, $directive, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Ends `foreach` directive
+     * directiveEndforeach
      *
-     * @param             $value
-     * @param             $directive
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function closeForeach($value, $directive, Application $app, Compiler $blade)
+    public function directiveEndforeach($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = $this->createPlainMatcher('endforeach');
-
-        return preg_replace($matcher, $directive, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Adds `break` directive
+     * directiveBreak
      *
-     * @param             $value
-     * @param             $directive
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function addBreak($value, $directive, Application $app, Compiler $blade)
+    public function directiveBreak($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = $this->createPlainMatcher('break');
-
-        return preg_replace($matcher, $directive, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Adds `continue` directive
+     * directiveContinue
      *
-     * @param             $value
-     * @param             $directive
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function addContinue($value, $directive, Application $app, Compiler $blade)
+    public function directiveContinue($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = $this->createPlainMatcher('continue');
-
-        return preg_replace($matcher, $directive, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
+
 }

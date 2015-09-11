@@ -23,34 +23,34 @@ class MinifyDirectives
     use BladeExtenderTrait;
 
     /**
-     * Adds `set` directive
+     * directiveMinify
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function openMinify($value, $configured, Application $app, Compiler $blade)
+    public function directiveMinify($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = $this->createMatcher('minify');
-
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Adds `unset` directive
+     * directiveEndminify
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function closeMinify($value, $configured, Application $app, Compiler $blade)
+    public function directiveEndminify($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = $this->createPlainMatcher('endminify');
-
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
+
+
 }

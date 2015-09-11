@@ -4,9 +4,7 @@
  */
 namespace Radic\BladeExtensions\Traits;
 
-use Config;
 use Illuminate\Foundation\Application;
-use View;
 
 /**
  * Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends
@@ -36,6 +34,10 @@ trait BladeExtenderTrait
      */
     public $directives;
 
+    public $directivesFile = __DIR__ . '/../directives.php';
+
+    public $overrides;
+
     /**
      * Instanciate and execute all functions as blade extends
      *
@@ -44,23 +46,40 @@ trait BladeExtenderTrait
     public static function attach(Application $app)
     {
         /** @var \Illuminate\View\Compilers\BladeCompiler $blade */
-        $blade = View::getEngineResolver()->resolve('blade')->getCompiler();
-
+        $blade      = $app->make('blade.compiler');
+        $config     = $app->make('config');
         $class      = new static;
-        $directives = isset($class->directives) ? $class->directives : Config::get('blade_extensions.directives');
-        $blacklist  = isset($class->blacklist) ? $class->blacklist : Config::get('blade_extensions.blacklist');
+        $blacklist  = isset($class->blacklist) ? $class->blacklist : $config->get('blade_extensions.blacklist');
+        $directives = isset($class->directives) ? $class->directives : $app->make('files')->getRequire($class->directivesFile);
+        $overrides  = isset($class->overrides) ? $class->overrides : $config->get('blade_extensions.overrides', [ ]);
 
-        foreach (get_class_methods($class) as $method) {
-            if (in_array($method, [ 'attach', 'createMatcher', 'createOpenMatcher', 'createPlainMatcher' ]) or (is_array($blacklist) && in_array($method, $blacklist))) {
+        foreach ( $overrides as $method => $override )
+        {
+            if ( ! isset($directives[ $method ]) )
+            {
+                continue;
+            }
+            if ( isset($override[ 'pattern' ]) )
+            {
+                $directives[ $method ][ 'pattern' ] = $override[ 'pattern' ];
+            }
+            if ( isset($override[ 'replacement' ]) )
+            {
+                $directives[ $method ][ 'replacement' ] = $override[ 'replacement' ];
+            }
+        }
+
+        foreach ( $directives as $name => $directive )
+        {
+            $method = 'directive' . ucfirst($name);
+            if ( (is_array($blacklist) && in_array($name, $blacklist, true)) || ! method_exists($class, $method) )
+            {
                 continue;
             }
 
-            $directive = isset($directives[ $method ]) ? $directives[ $method ] : false;
-
-            $blade->extend(function ($value) use ($app, $class, $blade, $method, $directive) {
-            
-
-                return $class->$method($value, $directive, $app, $blade);
+            $blade->extend(function ($value) use ($class, $method, $directive, $app, $blade)
+            {
+                return $class->$method($value, $directive[ 'pattern' ], $directive[ 'replacement' ], $app, $blade);
             });
         }
     }

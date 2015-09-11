@@ -26,51 +26,48 @@ class MacroDirectives
 
 
     /**
-     * Starts `macro` directive
+     * directiveMacro
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function openMacro($value, $configured, Application $app, Compiler $blade)
+    public function directiveMacro($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(\s*)@macro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
-
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Ends `macro` directive
+     * directiveEndmacro
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function closeMacro($value, $configured, Application $app, Compiler $blade)
+    public function directiveEndmacro($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = $this->createPlainMatcher('endmacro');
-
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Adds `domacro` directive.
-     * Executes a macro
+     * directiveDomacro
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function doMacro($value, $configured, Application $app, Compiler $blade)
+    public function directiveDomacro($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(\s*)@domacro(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/';
-
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
+
 }

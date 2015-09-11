@@ -25,28 +25,18 @@ class EmbeddingDirectives
     use BladeExtenderTrait;
 
     /**
-     * embedView
+     * directiveEmbed
      *
      * @param                                              $value
-     * @param                                              $configured
+     * @param                                              $pattern
+     * @param                                              $replacement
      * @param \Illuminate\Contracts\Foundation\Application $app
      * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function embedView($value, $configured, Application $app, Compiler $blade)
+    public function directiveEmbed($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $pattern = '/(?<!\w)(\s*)@embed\s*\((.*?)\)$((?>(?!@(?:end)?embed).|(?0))*)@endembed/sm';
-
-        $replacement = str_replace('\\EOT_', 'EOT_', <<<'EOT'
-$1<?php app('blade.helpers')->get('embed')->start($2)->setData($__data); ?>
-$1<?php app('blade.helpers')->get('embed')->current()->setContent(<<<'EOT_'
-$3
-\EOT_
-); ?>
-$1<?php app('blade.helpers')->get('embed')->end(); ?>
-EOT
-        );
-
+        $replacement = str_replace('\\EOT_', 'EOT_', $replacement);
         $replacement = str_replace('EOT_', 'EOT_' . uniqid('embed', false), $replacement);
 
         $res = array();
@@ -59,6 +49,7 @@ EOT
 
 
         return $str;
-
     }
+
+
 }

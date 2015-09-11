@@ -24,35 +24,33 @@ class MarkdownDirectives
     use BladeExtenderTrait;
 
     /**
-     * Starts `Markdown` directive
+     * directiveMarkdown
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler    $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function openMarkdown($value, $configured, Application $app, Compiler $blade)
+    public function directiveMarkdown($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(\s*)@markdown(?!\()(\s*)/'; # matcher with negative lookahead, so ignores @markdown(...  includes
-        //$configured = "$1<? echo app()->make('markdown')->render(<<<'EOT'$2";
-        //$blade->createOpenMatcher()
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Ends `Markdown` directive
+     * directiveEndmarkdown
      *
-     * @param             $value
-     * @param             $directive
-     * @param Application $app
-     * @param Compiler    $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function closeMarkdown($value, $configured, Application $app, Compiler $blade)
+    public function directiveEndmarkdown($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = $this->createPlainMatcher('endmarkdown');
-
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
+
 }

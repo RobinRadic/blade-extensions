@@ -22,34 +22,34 @@ class DebugDirectives
 {
     use BladeExtenderTrait;
 
-
     /**
-     * Adds `breakpoint` directive
+     * directiveBreakpoint
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function addBreakpoint($value, $configured, Application $app, Compiler $blade)
+    public function directiveBreakpoint($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher    =  $this->createPlainMatcher('breakpoint');
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Adds `debug` directive
+     * directiveDebug
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function addDebug($value, $configured, Application $app, Compiler $blade)
+    public function directiveDebug($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(\s*)@debug(?:\s*)\((?:\s*)([^()]+)*\)/';
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
+
 }

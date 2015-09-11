@@ -24,34 +24,32 @@ class AssignmentDirectives
     use BladeExtenderTrait;
 
     /**
-     * Adds `set` directive
+     * directiveSet
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function addSet($value, $configured, Application $app, Compiler $blade)
+    public function directiveSet($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(\s*)@set(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|),(?:\s|)(.*)\)/';
-
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 
     /**
-     * Adds `unset` directive
+     * directiveUnset
      *
-     * @param             $value
-     * @param             $configured
-     * @param Application $app
-     * @param Compiler $blade
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function addUnset($value, $configured, Application $app, Compiler $blade)
+    public function directiveUnset($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
-        $matcher = '/(?<!\w)(\s*)@unset(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|)(?:\s*)\)/';
-
-        return preg_replace($matcher, $configured, $value);
+        return preg_replace($pattern, $replacement, $value);
     }
 }
