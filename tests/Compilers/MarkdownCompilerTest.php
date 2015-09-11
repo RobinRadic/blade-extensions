@@ -62,5 +62,4 @@ class MarkdownCompilerTest extends TestCase
     {
        # $this->assertEquals('<h1>header</h1>', $this->view()->make('markdown/test_blademd')->render());
     }
-
 }

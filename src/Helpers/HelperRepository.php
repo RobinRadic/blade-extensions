@@ -34,10 +34,8 @@ class HelperRepository extends Collection
             'embed' => EmbedStacker::class
         ];
 
-        foreach($helpers as $name => $class){
+        foreach ($helpers as $name => $class) {
             $this->put($name, $container->make($class));
         }
     }
-
-
 }

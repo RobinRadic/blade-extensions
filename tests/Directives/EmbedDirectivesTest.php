@@ -24,6 +24,4 @@ class EmbedDirectivesTest extends TestCase
     {
         $this->assertTrue(true);
     }
-
-
 }

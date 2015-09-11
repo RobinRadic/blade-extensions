@@ -92,7 +92,7 @@ abstract class Stacker
     public function end()
     {
         if (!$this->isEmpty()) {
-        static::current()->end();
+            static::current()->end();
             array_pop($this->stack);
         }
     }

@@ -399,108 +399,113 @@
     </trait>
     <source>eJzVVVlv3DYQftevmAKLSFrsauMCefHGR2qkhYGkDQKjL1Hh0NKsRJhLCSRlxwj83zs8dOyBXkhRlA82Ncf3cc59fdHWbbSazyOYw5uy1MAkaMMML2DTycLwRsJnZgwr6s9gamaAb6BgQmC5gEcuBHBJ9rLgzCA5l4BfsOjsnXQ9BMFquBOsRFIblKUmvlUk2RZ1ywqEj6zkRf6DtXhrDbR1ym8U40avo6jTCFeN3PBq7e7XQnRbLoky/7HpZMksSf6mbQUv3N2b/crxkbz/m/As5SUFd88qhMk5GqozfkBlP6bG32cn2UunZJ2pGwU7SM0dlx7PmVDwBLdD9v76Bt4F8RJqY9rT1UpZj2zLzTJ4ZI2qHELRtE+KV7WZvODlycmS/rxaHOGT97B7egZrmXkeKVYuNUucRuvqb2x9YUxFicqVPPoaRRbNFc4eKp4EphR7gmYDW6RUUC1dvXTddKKEO5v6QnQl0v0JfEmDc49x+cCURwmSlfvfdneUB5jRK4t7wbVZ/wX2n6l14ewcSq6QeuABP2JL/rhFaf4e7YCgD3mv/2Hz7fK3TLEtTKYDZqxt4aZGKDql6MXARuWxR+6PjE9vsg+ZOp+vUd8NFImPPp8MrB3K/KrZtlxQv/tB6D9dESiQwG5PkJy5YT49rdC8lRWXlG/dCJqYJF2eK39PYmcbk4TMeswkDXl1aIVgWvv7GUh8DKGtR4uxHmTBtUaTeK/l+ahK4QIOpXAatpR7Z3jO7dj32Wgap+udEH3nwQHloJoyjvZ/RjhYxtMsbBqFVD9IyOnWYd6GmQq8qe2pmZelk4LaQwsy4fLWNXQSbBbwCWLfFPEC4oLgDb5npqhRjYJfWpQHwg+C8UEKv6VASy7husefxP/iBRzyTgzS/ZfaUzTScNnhekfzHO18jjUf8z+W6lOfCfu6CziuoUpsmNC43kP2q+/cT2YyDFAye2CiwxTsz1RiZ2cRqrsIPgsYYxwY9yOMDuJVaDolh04JGIFuCrWAwOrY0r38TL6fo5Cx/eX0ExpawUiUVSdoyPFLS4PofsGowYBBhRIVrQ034sPyyI6vJxpExWUFs95u0IeQvP7YdhqyutN3yYC0v5YCYLxKLl5/lz+mSa7n6WUM2UhO99iK8ySb52m6itd9Fv4nSZjM2jdLRJr/QSKuHC0F3NqBDuFu/Qv+9WinS+SbhDsJ9Dn6HToTUzc=</source>
   </file>
-  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="b5f8bf5263480b35cd375652086a1c4b" package="Default">
+  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="c9361112f58dc6923748f9e7e5ab742b" package="Default">
     <docblock line="0">
       <description>A laravel service provider to register the class into the the IoC container</description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="Exception">\Exception</namespace-alias>
-    <namespace-alias name="Application">\Illuminate\Contracts\Foundation\Application</namespace-alias>
     <namespace-alias name="ServiceProvider">\Caffeinated\Beverage\ServiceProvider</namespace-alias>
+    <namespace-alias name="Exception">\Exception</namespace-alias>
     <namespace-alias name="AssignmentDirectives">\Radic\BladeExtensions\Directives\AssignmentDirectives</namespace-alias>
     <namespace-alias name="DebugDirectives">\Radic\BladeExtensions\Directives\DebugDirectives</namespace-alias>
-    <namespace-alias name="Embedding2Directives">\Radic\BladeExtensions\Directives\Embedding2Directives</namespace-alias>
     <namespace-alias name="EmbeddingDirectives">\Radic\BladeExtensions\Directives\EmbeddingDirectives</namespace-alias>
     <namespace-alias name="ForeachDirectives">\Radic\BladeExtensions\Directives\ForeachDirectives</namespace-alias>
     <namespace-alias name="MacroDirectives">\Radic\BladeExtensions\Directives\MacroDirectives</namespace-alias>
     <namespace-alias name="MinifyDirectives">\Radic\BladeExtensions\Directives\MinifyDirectives</namespace-alias>
-    <namespace-alias name="EmbedFactory">\Radic\BladeExtensions\Helpers\EmbedFactory</namespace-alias>
-    <namespace-alias name="EmbedFactory2">\Radic\BladeExtensions\Helpers\EmbedFactory2</namespace-alias>
-    <namespace-alias name="EmbedStacker">\Radic\BladeExtensions\Helpers\EmbedStacker</namespace-alias>
     <namespace-alias name="BladeStringRenderer">\Radic\BladeExtensions\Renderers\BladeStringRenderer</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="33" package="Radic\BladeExtensions">
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="28" package="Radic\BladeExtensions">
       <extends>\Caffeinated\Beverage\ServiceProvider</extends>
       <name>BladeExtensionsServiceProvider</name>
       <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider</full_name>
-      <docblock line="33">
+      <docblock line="28">
         <description>A laravel service provider to register the class into the the IoC container</description>
         <long-description></long-description>
-        <tag name="package" line="33" description="Radic\BladeExtensions"/>
-        <tag name="version" line="33" description="2.1.0"/>
-        <tag name="author" line="33" description="Robin Radic"/>
-        <tag name="license" line="33" description="MIT License - http://radic.mit-license.org"/>
-        <tag name="copyright" line="33" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="33" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
+        <tag name="package" line="28" description="Radic\BladeExtensions"/>
+        <tag name="version" line="28" description="2.1.0"/>
+        <tag name="author" line="28" description="Robin Radic"/>
+        <tag name="license" line="28" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="28" description="2011-2015, Robin Radic"/>
+        <tag name="link" line="28" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="37" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="32" package="Radic\BladeExtensions">
         <name>$configFiles</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::configFiles</full_name>
         <default>array('blade_extensions')</default>
+        <docblock line="32">
+          <description>{@inheritDoc}</description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="37" package="Radic\BladeExtensions">
+        <name>$dir</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::dir</full_name>
+        <default>__DIR__</default>
         <docblock line="37">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="42" package="Radic\BladeExtensions">
-        <name>$dir</name>
-        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::dir</full_name>
-        <default>__DIR__</default>
-        <docblock line="42">
-          <description>{@inheritDoc}</description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="44" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="39" package="Radic\BladeExtensions">
         <name>$providers</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::providers</full_name>
         <default>array(\Caffeinated\Beverage\BeverageServiceProvider::class)</default>
-        <docblock line="44">
+        <docblock line="39">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="46" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="41" package="Radic\BladeExtensions">
         <name>$provides</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::provides</full_name>
-        <default>array('blade.embedding')</default>
-        <docblock line="46">
+        <default>array('blade.helpers', 'blade.string')</default>
+        <docblock line="41">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="48" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="43" package="Radic\BladeExtensions">
         <name>$bindings</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::bindings</full_name>
         <default>array('blade.string' =&gt; \Radic\BladeExtensions\Renderers\BladeStringRenderer::class)</default>
-        <docblock line="48">
+        <docblock line="43">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="53" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="47" package="Radic\BladeExtensions">
+        <name>$singletons</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::singletons</full_name>
+        <default>array('blade.helpers' =&gt; \Radic\BladeExtensions\Helpers\HelperRepository::class)</default>
+        <docblock line="47">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="52" package="Radic\BladeExtensions">
         <name>boot</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::boot()</full_name>
-        <docblock line="53">
+        <docblock line="52">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="63" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="62" package="Radic\BladeExtensions">
         <name>register</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::register()</full_name>
-        <docblock line="63">
+        <docblock line="62">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
     </class>
     <parse_markers>
-      <error line="44" code="PPC:ERR-50007">No summary for property $providers</error>
-      <error line="46" code="PPC:ERR-50007">No summary for property $provides</error>
-      <error line="48" code="PPC:ERR-50007">No summary for property $bindings</error>
+      <error line="39" code="PPC:ERR-50007">No summary for property $providers</error>
+      <error line="41" code="PPC:ERR-50007">No summary for property $provides</error>
+      <error line="43" code="PPC:ERR-50007">No summary for property $bindings</error>
+      <error line="47" code="PPC:ERR-50007">No summary for property $singletons</error>
     </parse_markers>
-    <source>eJy1Vm1v2zgM/u5fwWED7BR5WQvcl/Ta9R0rcMUNzb6dh0CxGVuIIxmSnC4o+t+Pku3EcZyhGTADbWyJfCiSD0n9/SVPc290cuLBCVxDxhRbYQYa1YpHCLmSKx6jAiNBYcK1se8pQpQxrYELWref9u9R3kIkhWFcoCK4kSfYEnXOCOeZxTwKbzIW4/1Pg0JzKfS55xUa4f5nhLmhhXP3+ZhlxZILZjC8JTTFIqPDB1mImFmh8DrPMx6xrcItm8/RKcThDa5QsQTDSenAt+r8pWTnKcI7rjAyfIU6vNaaJ2KJwmwX36l6h7MiOVrrfjnDOOYiOft91aM1H6RCFqVH6z2xSMnjtbjg8/X71L5ilqOqfHugzEu1Plb+7N0KE8Oixa+58YyC2GM13M7EKAp4vUj8/SOFYxGvqGwWRGSons7jOUEivP2oBc+Gp8PPboMVJpUKNghyxkWJ47apiAhmY+Dp8Tv8Uy0NIDUmH49GykoPl9wMKumhVInTjmS+VjxJTWX18+npgP791e+wIxawfWpkKzUs8UU2mlnHBtj0zHWQMlott1u1DU4t1tBa9149z1qkHMHrFRcpKm7uZPRmge0G5cgQKTGGTxT+OU8eeIYaLuA/8N2BptsD+fDjfAPnfqGFWi3uQcdcEeR0evf4PJ1WGI3tmiil3bCzmdUvLQfH4zI8Pw6iOtDSlyHW/cLvkKdk2C0n79WpqhS1I70PF5fQUQTVIZxSI0QHIl7MiEgwL0Rk+zfMpDRBz229bsxa7asVUxA2RkH3AIBPLM9rcPu47wvImaIePh6X+OebbT6HgCnF1tMFrim7VJY68OdSLf2+0x1cJmhuqmAEvV6vcS5XJbstcDxmhppIGljdhp2SDG9HRqPuE38yIlsbVa6cTEl/EitjsGQLDPxy0W8Kds3HQzFoDcRDYnvD6JBg16hsy26EP8K/7krBMlgytYjli6AWu8ypwFUfUCTUajUwEUO8AdthSRUSx4dgrxsMa9AhCjbLMPb3mGJBPpTdvibaezFVVVr+Pv/sY1IlX0Dgy/bmFPjf7Whx8IWigt44XWNVcyeW5LaQBtyR/EZ4t7RtMmdwuSFM2D0h62Zkrwelze4utVMdnXly94RD+dgJpP9EaU85009FlnGsrhjh7WSyn4f29eNwye6UzODStsRgtwX24UAQfnlN2AagZUGTUIbGpq/dovvbrhC0q7vtoUJTKFESonGtaTtoH5q7LeH60hQ0K3/F8cXv9Xe6wdzOxvZieey6sCj4jXhW72/em/c/6SsHIQ==</source>
+    <source>eJy1Vk1v2zAMvftXcNgAp0WTrAN2Sdeun8MKrNjQ7jYPgWIzthBbMiQ5XVD0v4+SbCd1HKw5zEBiWyIfKfKR9KfPZVYG48PDAA7hAnKm2BJz0KiWPEYolVzyBBUYCQpTro19zhDinGkNXNC6fbW/W3kFsRSGcYGK4MaBYAXqkhHOPUt4HF3mLMGbPwaF5lLokyCoNMIVm8+RC2YwiS5xiYqlGD14B37U9k+c5M2fGEtDqv61FzS65gpjw5eoowuteSoKFGa9+ErVa5xV6d5aN8UMk4SL/TW/SIUszvbWu2OxkvtrccHnq9ep3aOgBKDSfufBKDpfs0gp/C/csYjnxJwFcQHqq9c9J0icsS+N4IfR8ei922CVyaSCFkHOuPA4bjsnN4VuDdzd/oRv9dIQMmPKyXisrPSo4GZYS4+kSp12LMuV4mlmaqvvj4+H9PfxqMeOWMD6apCt1Mjji3w8swcb4ubJXBH5aHWO3SkPcGqJhs568BQE1iLlCJ7OuchQcXMt42cLbDcoR4Y4gAm8o/DPefqF56jhFH5B6Byarh0K4fdJC+fu0EGtF7egE64Icjq9vr2fTmuMje2GKN5u1NsPmofOAScTH57fO1E3DzPKMC/JTnjULGjH5rBPn5JjK9npB03qOmqnZ9BTFLVTTqkHWJNojoYi2gfduGixv/rnyN/vsZSaG6lWfQZ2p7iaEXNhXonYtk6YSWkGB27rqTVutc+XTEF0m+dV4aJPPakSCbNK0UVZEoh7hnesLBtwe7n3UyiZokY7mXj8k3abz2HAlGKr6QJXRCfqA3oQzqUqKA1Wd3iWormsoz04ODjY8MuV5csWN5kwY6hVDqzuhh3Pvuc9o9E0pv8ZkbWNOldOxtcbifkYFGyBg9AvhpuCfUNsVww6U2uX2Naw2SXYM8+6oq3sW/juZjPLoWBqkchHQS29KKmhqCNAkVJr18BEAkkL9oIkdUQcHQZb3WfUgI5QsFmOSbhFFAvyxk+XhmevxVR16Ybb9LOXyZR8BIGP60+QQfjTjjIHXymq6/bQDVY95xJJxxbSgHMp3IjumrWbxBmetXyJ+idy0/zs9Pc2+7vii+LozZP7DNiVjxeBDO8o7Rln+q7Kc471F0R09fCwnYfu18W/KvY5+AsmFWDV</source>
   </file>
   <file path="Providers/MarkdownServiceProvider.php" generated-path="Providers.MarkdownServiceProvider.html" hash="0ed9f04bfde755729e55c9018c972009" package="Default">
     <docblock line="0">
@@ -729,7 +734,7 @@
     </parse_markers>
     <source>eJyVVE1vm0AQvfMr5sDBsQzElXqJ29Sq1VaWGqmKop6QovUyhpVhQbuD3SjKf+/uGjDGH232YI+WN/PevBn49KXKKi8ajz0YwwNTm6TcSeBlUYkclbmMPMkK1BXjCI8sETz+mrMEv/0hlFqUUseLBqxnnldrhIXgpRQs7iDxj3Uxc4+WeV4XQjLC+LtJ0S+asOiFJ6jfAncHgi76X9xSEqq1kb5PuKRfkmKcdNz2/4gyQWVprjlj7+fGlw1LEXrnLIsD63o1xHeaHWBrAoPuV/sQTsNb95DVlJUKjqjKlZB7QgfJBTd8R2oelk/ws7kOICOq7qJI2YywEBQ0GWGpUleBl9WLEmlGPQW302lgfj5OzvDJDRyflsEiwz2PzKOVdSPAvh1ut3jOtO7cbc0AB0x05w6IosqxQEmHu2623qvnWWY3KnvG8JQhFO3IlJsmCKmJSQNvMPMtUxC/dyWa7Mj9V6ok5IQJ+OqwMgMtC4VmQ4GBxN1QRKelYooV71dz4B1W+tebBv7axoO03vE54xn+YpQdt1yvzMrAupac7KY+P5uXXZOqOY0uq5vACfOkx3DjSr96LbcRY0Z9d9cvfiZr1iX4lAkd3Ld08Lk/EAt4Ox3Lfo2AzKpszdcDGLk4FVuURgFl4fkhgREkZAp+dfAG5gqpVhK2pUiu+tV8P0Yue9i3b9o1Uyer/7ijNho1986M4D5FaiqdmtFAqpraJINuuk6sf03mpKO9ueRV2931l2HQqWFrcaNho029QZMt/Zv3Fz2BDHI=</source>
   </file>
-  <file path="Helpers/Stacker.php" generated-path="Helpers.Stacker.html" hash="a1610c36c4173e528aba5acb33da30d8" package="Default">
+  <file path="Helpers/Stacker.php" generated-path="Helpers.Stacker.html" hash="0b090b63eb55aa07d905c785194adae2" package="Default">
     <docblock line="0">
       <description>Manages the Loop instances</description>
       <long-description></long-description>
@@ -894,7 +899,7 @@
       <error line="100" code="PPC:ERR-50008">No summary for method isEmpty()</error>
       <error line="23" code="PPC:ERR-50007">No summary for property $container</error>
     </parse_markers>
-    <source>eJydVU1P4zAQvedXzEo9pBVtAe0Jtiz7gbRIcIHetqvKdaaNRWpHtoNAK/77jp2Pukko1eYAVufNzHtvxsmXr3maR9PRKIIR3DPJNmjApgh3SuUgpLFMcjQUnUaSbdHkjCM8sETwxfeMJXjzYlEaoaRZ/MIsR20uo6gwCLdZVmyFZBYXP5S0mnFr/IkJiXp3Ivgx7R3gmpo/EQSqp5eGB5piFWIrZj70TAfC1TXOJ2eTUx9ghU2Vhqa4WglZtvDhTHDq0PS+v53DXfXTGFJr84vpVDv0ZCvsuEJPlN74bK7yVy02qS2z4/PTs7Mx/fl8EjaiSuX/OfJUqkxtBJqqu3yC3VP3c6mTsqvMpivnxBhDK/zg2Mp4/4FnzBh4tGQN6uhv5ErlWlnkFhMY8GAmLuTn4p4RzGkmxuWBWneG4yE18vqZaWBas1cY+IwqMG13K8vNSmw87Pa8FjJFLexPxfdrFCuyF9aF5NZNcrkk4qSw4DZu1ipQM/RZpVr3DGwqzPiqiROHULqDvEUdNt+SxAArtVvll7RHXosaIbSNOwR84q3FLbWmsxX84oJrpLsSu9TlBu2S6Y2Jh8PLJsv7tMwLk8aVAl/mJCgXoHc/epxjsQtqtIWWAaZR3RJdkmpPuErfihdM9uQ3i7Ybc2NFpW/gdJHs3396Jv7gC5uOue3O3oqDxpODfs073tfSAwffE/+ABm2XTH9D7cDdSQdtwlXvbzhXsELgLMuccUIb626ZSNBzWCtykKeQ0QZO9qzihdYorY8cmhWteYWct7IgYZYd1FehuwrrMjNAmextZj3g0PYKfZQDK3SSvUIq7V487hiI7GfqaLRZijXEnypuwtxsc0tjGAaA5hbWMsdXvs7uzvj9Lq+gyts6a8BbqKtNrGncv5JcFdR4rzDMZjM4fc8s2nHYvcSeWVa8d1MXx36MP7pTDfCDe9V9nba4PxJ3v7qH+edMs+3x9IP3eNuC+qN3SKAJBf7396PXktqHt+gf6t63tA==</source>
+    <source>eJydVU1P4zAQvedXzEo9pBVtAe0Jtiz7gbRIcIHetqvKdaaNRWpH9gSBVvz3tZ2Pukko1frQWvGbmffejJMvX/M0j6ajUQQjuGeSbdAApQh3SuUgpCEmORp7Oo0k26LJGUd4YIngi+8ZS/DmhVAaoaRZ/MIsR20uo6gwCLdZVmyFZISLH0qSZpyM3zEhUe92Fn5MeQe4tsWfLASq1UvDA02xCrEVM3/0bDcWV+c4n5xNTv0BKyhVGprkaiVkWcIfZ4LbCk3t+9s53FWPxpAS5RfTqXboyVbQuEJPlN74aK7yVy02KZXR8fnp2dnY/nw+CQvZTOX/HHkqVaY2Ak1VXT7BbtX1XOikrCqz6co5McbQCt84tjLef+AZMwYeyVqDOvobuVS5VoScMIEBD3rijnxf3BrB3PbEuDhQ605zPKRGXj8zDUxr9goDH1EdTNvVynSzEhsPuzWvhUxRC/qp+H6OYmXthXUhOblOLpeWuFVYcIqbsQrUDH1UqdatAaXCjK+ac8shlO4gb1GHzbckMcBK7aT8kPbIa1GzCE1xh4APvCXc2tJ2T4JfXHCN9q7ELnS5QVoyvTHxcHjZRHmflnlh0rhS4NOcBOkC9O6hxzkWu0ONVGgZYBrVLdElqXaHq/CteMFkT34zaLs2N1ZU+gZOl5X9+09Pxx98YtMxt13ZW3HQeOugH/OO97X0wMH3xD+gQeqS6S+oHbjb6aBMOOr9BecKVgicZZkzTmhD7paJBD2HtbIO8hQyO4GTPat4oTVK8ieHemXHvELOW1GQMGIH9VXorsI6zQxQJnuTWTc4tL1CH+XACp1kr9Cmdi8etw1E9jN1NNosxRriTxU3YW62Odk2DAOAW81NrKWOr3yuyz1UdQ1V3tZaA95CbW1yTfH+seSqsIX3EsNsNoPT9wyzcw67F9kzy4r3buvi2A/yR/eqAX5wt7qv1Bb3R8vdj+9h/jnTbHs8/eBd3rag/vAdEmhCgf/9Dem1pPbhLfoHLvC4NA==</source>
   </file>
   <file path="Helpers/Markdown.php" generated-path="Helpers.Markdown.html" hash="416eaad498e28a659c530ae78b526c23" package="Default">
     <docblock line="0">
@@ -959,7 +964,7 @@
     </class>
     <source>eJyNVFtv2jAUfs+vOEJIuRQSmLYXKFvVadImtdLU9q1hk0kOYJE4kW160cR/37GTQCC0mx8I8vkuJz6fc/mlXJdOFAQOBHDL5CYtngVoyYRaFjJHCd8xK1EqqkeOYDmqkiUIdyzlSXydsRS/vWgUihdCxTV26jhbhfCVLZfIBdOYxtf4hJKtML7Xksr/Z2ggV2S3ISKcrrMdWIbaLs6SDsJwRd0YQkf1QzgORxbBtnpdyA4A7ooFF5W7xWU8IfNuf7c/HuCmrg1hrXU5iSJpaGHO9bCmhYVcWZmkKF8lX631aUOj8XhIP58GZ5zFptsf7L0MPKwcRRYtzEkNsX1UdqZJxpTaT8L54xgJOx+zArjDvHhCBVykKDTTxG1KNBvJclBacrGCviZxeFgj5Pux0s4eLFFvpYCcv2Bab0b2WcpCY0IpISXST2C5FYnxOcTCs+K+hVcdmtVfcqn0DRcIM8CXMitS9Hqx6A2qZgYw9qfn0RTDyUQX9ybMyjuUHkfzAXxssUqJq98508nacyPvMVbzwA+DyB209Nr/K8VbQ0BFOnshvgSPK4XaewP8OJ77fuvtbM/2tlUASW33etOjOp0NeH1OldEU6HlphpGheM/DAC8uTp26biHZxerEcPdue270y4XwVAdcLwz8KHePpfoCnx9MZOyaVSctscyI6x1JDMDtj916qO0zNauOVaN28NgdcA1G7wF1sZXzn0wqivlRdin0uqD7lGfvRV7/K/INunnhlmB9A7YL+h504l+alt6IvnWe1RSK8slNacW+cZ0BK0vPH37O2QY9t+nYpR2JdLllh3r2aHfOzvkLc1fDbg==</source>
   </file>
-  <file path="Helpers/Loop.php" generated-path="Helpers.Loop.html" hash="6e88cd97c7cd9f113d655e4bcb37a0b7" package="Default">
+  <file path="Helpers/Loop.php" generated-path="Helpers.Loop.html" hash="0b8eac5e6f48a74c9e1f57e7a14c9a5f" package="Default">
     <docblock line="0">
       <description>Represents the $loop variable in the foreach directive. Handles all data.</description>
       <long-description></long-description>
@@ -1016,13 +1021,22 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="49" package="Radic\BladeExtensions\Helpers">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="43" package="Radic\BladeExtensions\Helpers">
+        <name>$loopFactory</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::loopFactory</full_name>
+        <default></default>
+        <docblock line="43">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="51" package="Radic\BladeExtensions\Helpers">
         <name>setParentLoop</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::setParentLoop()</full_name>
-        <docblock line="49">
+        <docblock line="51">
           <description>Sets the parent loop</description>
           <long-description></long-description>
-          <tag name="param" line="49" description="&lt;p&gt;{@inheritdocs}&lt;/p&gt;" type="\Radic\BladeExtensions\Helpers\Loop" variable="$parentLoop">
+          <tag name="param" line="51" description="&lt;p&gt;{@inheritdocs}&lt;/p&gt;" type="\Radic\BladeExtensions\Helpers\Loop" variable="$parentLoop">
             <type>\Radic\BladeExtensions\Helpers\Loop</type>
           </tag>
         </docblock>
@@ -1032,48 +1046,53 @@
           <type>\Radic\BladeExtensions\Helpers\Loop</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="60" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="62" package="Radic\BladeExtensions\Helpers">
         <name>getLoopStack</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::getLoopStack()</full_name>
-        <docblock line="60">
+        <docblock line="62">
           <description>Returns the full loop stack of the LoopFactory</description>
           <long-description></long-description>
-          <tag name="return" line="60" description="" type="array">
+          <tag name="return" line="62" description="" type="array">
             <type>array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="68" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="70" package="Radic\BladeExtensions\Helpers">
         <name>resetLoopStack</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::resetLoopStack()</full_name>
-        <docblock line="68">
+        <docblock line="70">
           <description>Resets the loop stack of the LoopFactory</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="78" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="80" package="Radic\BladeExtensions\Helpers">
         <name>__construct</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::__construct()</full_name>
-        <docblock line="78">
+        <docblock line="80">
           <description>Instantiates the class</description>
           <long-description></long-description>
-          <tag name="param" line="78" description="&lt;p&gt;The array that's being iterated&lt;/p&gt;" type="array" variable="$items">
+          <tag name="param" line="80" description="&lt;p&gt;The array that's being iterated&lt;/p&gt;" type="array" variable="$items">
             <type>array</type>
           </tag>
         </docblock>
+        <argument line="0" by_reference="false">
+          <name>$loopFactory</name>
+          <default></default>
+          <type>\Radic\BladeExtensions\Helpers\LoopFactory</type>
+        </argument>
         <argument line="0" by_reference="false">
           <name>$items</name>
           <default></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="88" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="91" package="Radic\BladeExtensions\Helpers">
         <name>setItems</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::setItems()</full_name>
-        <docblock line="88">
+        <docblock line="91">
           <description>Sets the array to monitor</description>
           <long-description></long-description>
-          <tag name="param" line="88" description="&lt;p&gt;The array that's being iterated&lt;/p&gt;" type="array" variable="$items">
+          <tag name="param" line="91" description="&lt;p&gt;The array that's being iterated&lt;/p&gt;" type="array" variable="$items">
             <type>array</type>
           </tag>
         </docblock>
@@ -1083,14 +1102,14 @@
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="114" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="117" package="Radic\BladeExtensions\Helpers">
         <name>__get</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::__get()</full_name>
-        <docblock line="114">
+        <docblock line="117">
           <description>Magic method to access the loop data properties</description>
           <long-description></long-description>
-          <tag name="param" line="114" description="" type="" variable="$key"/>
-          <tag name="return" line="114" description="" type="mixed">
+          <tag name="param" line="117" description="" type="" variable="$key"/>
+          <tag name="return" line="117" description="" type="mixed">
             <type>mixed</type>
           </tag>
         </docblock>
@@ -1100,26 +1119,31 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="122" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="125" package="Radic\BladeExtensions\Helpers">
         <name>before</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::before()</full_name>
-        <docblock line="122">
+        <docblock line="125">
           <description>To be called first in a loop before anything else</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="146" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="149" package="Radic\BladeExtensions\Helpers">
         <name>after</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::after()</full_name>
-        <docblock line="146">
+        <docblock line="149">
           <description>To be called last in a loop after everything else</description>
           <long-description></long-description>
         </docblock>
       </method>
     </class>
-    <source>eJy1Vktr20AQvutXzCHFzsN2XOglqdtQaGmghZLm1pqwlsbSEnlX7K5MQvB/7+xq9bQUu4Xq4MfONzPfPFfvP2ZJFszOzgI4gzvMFGoURoNJEE5SKTPYMsXZKkXgwp2upUIWJhBxhaHhW5zCVyaiFDWwNIWIGTYlY7NAsA3qjIUIdyzi4e9PKYvw85NBobkU+vdXTDNU+jr4H+6tvRty/shiBP/00nBAna+aWM/Mibb0g3CljbfT+fTSCVhuEqmgMi5XxNC5cOKUh+Sh8v399h6++aMJJMZkV7OZsujphpuJR0+lip12KLNnxePEeK+X8/mEPt5dNP2QoeL7HsNEyFTGHLV3Lh6hfkp3VnVaOBXpbGUTMcFmJlzdwpRpDd8o+cFLEFh9Vx/7nME9lYApxZ6pGMwA17BCLmLgBhUzGHlcCb+h8hV4fzJz35mShqqHEZyQ4kbDAn4tr3ud2YLaorvih7lS1B++NazqX/uz9vo9ZczZtqYvgK+Biec+6y4xA8YLExax7+In+r5u+OnaJxHbOA9NW6X45YaLBBU3kQz1rs0hX1ELwToXNBPUrRrNj0p/3DV46nRegrI/TkzC9eRDDXCni3Y8HbDN469RARgt+8C7vRTcocmVKLKwzmlaXRm1odEDuXbHVv0LC41Ue8lXTruvup3gY3Qsflq7426s3krDz9UVKXjwMHNdlu8Yzv287HJ7hVmLksMO87kVxEAYTiNXsHJD299Oxbj6QWvP72hgfPv5PzyEtCaMykMzLswNNBJRv7XiEjUURTUSnpGEjRScEvCfA+ny60RBsz/m2ubfbYvT04asbqF6Inbd+MudVphvjo40LPV/FhDKXJh2jhpG3OIjlAty3CIw4iLCp/nImfkA84se6Qi89LIjVbgt1UlaUBqAjKCG0GXT9bPmSpvKD/UFdgDUk15uAWuW6i5CRtEIXkXgFkVto88JitgkZS4KshVisPW+s5g6YoN0h0e28VgYom4MuMs+bXZ6DzDuVnVqnYY8ecTn6sgvlg1/OjhGsW0t0h3YTc0Na2HLoSDuJXU9hPTeQ5ePq4Z9S2JFBCu0r0r2FiNzNBlIuX2VV6Gwt5bsNLR2ftEaS3gDb2GxgMvueLTAtsBL28auttfDQFdne4/YEjdmy/E+ykNbcdhBh8nucKQHoywm4V/Y15rH06rG8whmbgT/hVil2MvrQC9a5UYrsjVtZaACqGN70WnstWJfcc7PB15N/JIbBtRpnEwOQOY1Zhfsgj8XYZq0</source>
+    <parse_markers>
+      <error line="80" code="PPC:ERR-50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $loopFactory in __construct()</error>
+      <error line="80" code="PPC:ERR-50015">Argument $items is missing from the Docblock of __construct</error>
+      <error line="43" code="PPC:ERR-50007">No summary for property $loopFactory</error>
+    </parse_markers>
+    <source>eJy1Vktv2zgQvutXzCELO2lsxwV62azToMAuGiAFijS31ihoaWwRkUmBpIwYgf97hyPaekSKvQXqQ+xwvpn55kn+8zFP82hycRHBBTxgbtCichZcinCWaZ3DRhgpFhmCVHy61AZFnEIiDcZObnAMn4VKMrQgsgwS4cSYjE0iJdZocxEjPIhExj8+ZSLBf58dKiu1sj8+Y5ajsdfRn3Dv7d2S8yexQgifThoMtMWijg3MWLShH4Tb23g/no6vWCAKl2oDB+N6QQzZBYszGZOHg+8vd49wH45GkDqX/z2ZGI8er6UbBfRYmxVrxzrfGrlKXfB6NZ2O6M+Hy7ofMlR+P2KcKp3plUQbnKsnqD57d151XDpV2WThEzHCeia4bnEmrIV7Sn70EkVen+vjPxfwSCUQxogtFUM4kBYWKNUKpEMjHCYBt4ffUvlKfDiZ8HdutKPqYQJnpLi2MIPv8+tOZ76gvuhc/LgwhvojtIZX/d/+vL1uT7lg2970JcglCLXtss6J6TFemvCI4KIm83b/E7HTZvva/zcMTV8j0XZOIrFm93VHe/HLrVQpGukSHdtdk2CxoP6CZaFoYKiVLbqvB/1h2+A567xE++Y5c6m0o5sKwKezZrAtsE/y90EJGMy7wLtXKXhAVxhVZmFZ0Chzja2juQS95OP7KoXt5BjW7ip9K/gVMotv3u6wHWuwEqKoVWx0Q3pBpz8Au6/iKdS76fkF+AbBLmas0k/rThER5SRNZ0mO57u7ucrJDjPZHPVBz6R3h/HzZ0wbxZkidsNa6I0puAyOjsfoG6gxPi0oxX/nLQ2Dwb5UHKYshKVhrZUkk384G21+rYBp1wyl9UXk7XR+XpNVXVlFvWvHv9+hpfl6erQTWfhnBrEulGvmqGaEFy2hOMhhg8BAqgSfpwM2cwPTyw7pAIL0qiU1uNmrk7Sk1AMZQAWhy63tZymNdQc/1FzYAlBjB7kHLEVm2widJAN4E4EbVJWNLieoVi7d56Ike0D0tt4XsaKOWCO9GRLfeCKO0daWBWefbgt6dzi+xVmt1ZBnT7g9HIVdtZbPR2dx5VuLdN9ed7y0PWzeF8Sjpq6HmN5ZdKFxNfyrTJQRLNA/zfytSeZoMpBy+yavUuHVivPT0LhGytaYw1/wHmYzuGqPRwPsCzz3bcy1ve4Hcp391eRLXJst5n2Sh6Ziv4MWk93xSI9GWU7C77CvNE+ndRjPE5jxCP4OsYNiJ68jveiVa60olrSVgQpgTu1F1ui7bRvFefeu57UTllw/oErjaHQEMq0wu2gX/QJIZL/E</source>
   </file>
-  <file path="Helpers/EmbedStacker.php" generated-path="Helpers.EmbedStacker.html" hash="36f801d6c4233da2b3bb9eed66ee2a5b" package="Default">
+  <file path="Helpers/EmbedStacker.php" generated-path="Helpers.EmbedStacker.html" hash="0e23da123667a141cca11fabb056b0b8" package="Default">
     <docblock line="0">
       <description>Manages the Loop instances</description>
       <long-description></long-description>
@@ -1307,1030 +1331,7 @@
     <parse_markers>
       <error line="27" code="PPC:ERR-50015">Argument $args is missing from the Docblock of create</error>
     </parse_markers>
-    <source>eJyNkk1P4zAQhu/+FXNAalI1SYs4lU/tCmlXAglBb6UH15lNrCZ2ZE9ZEOK/469ADntYH2J75p3ntce5uB7agVXzOYM53HPFG7RALcKd1gNIZYkrgdZlK6Z4j3bgAuGR11I8/+h4jbevhMpKrezzL+wGNPac/RfPC24c7eAkkMY/uUFoj/upNlmF1ItbON3IOC1X5TIk+JFabeALrvdSRYuQ7qRwDl/e9783cJdCBbREw7qqjFeXvaQiqUttmlAt9PBmZNNSrM5Ol6tV4T5ni6mRI8V5g6JVutONRJvc1QG+x+jnS8voqrpq7ztR4LQV4SVEx62F236P9RO5tqCBIKotpD17Z8xzw0v4MQdhkBOm3Ri8MUhHoyIrBaswD0YTCsIa/hyVIN/hSMhOuGksXMIWdnmQvrPxGicvEv8+cGpdOsi2y935JMuNL5TWIkXMdrXL4RrGNaxhOy1AfyzPolba4qpB+qkVcanQZHlx1fMDZuHo63XoyQKE7t2PQtlsPMlsATPvO8vzb3C6deTH8Af7YJ+lseSW</source>
-  </file>
-  <file path="Helpers/EmbedFactory.php" generated-path="Helpers.EmbedFactory.html" hash="48dc9685a85c0c7f351261c7a30a9574" package="Default">
-    <docblock line="0">
-      <description>Part of the Laradic packages.</description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <namespace-alias name="ViewFactory">\Illuminate\Contracts\View\Factory</namespace-alias>
-    <namespace-alias name="Filesystem">\Illuminate\Filesystem\Filesystem</namespace-alias>
-    <namespace-alias name="BladeCompiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
-    <namespace-alias name="SectionsTrait">\Radic\BladeExtensions\Traits\SectionsTrait</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="21" package="Radic\BladeExtensions\Widgets">
-      <extends/>
-      <name>EmbedFactory</name>
-      <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory</full_name>
-      <docblock line="21">
-        <description>Class Factory</description>
-        <long-description></long-description>
-        <tag name="package" line="21" description="Radic\BladeExtensions\Widgets"/>
-        <tag name="author" line="21" description="Robin Radic"/>
-        <tag name="license" line="21" description="MIT" link="http://opensource.org/licenses/MIT"/>
-        <tag name="copyright" line="21" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="21" description="http://radic.mit-license.org" link="http://radic.mit-license.org"/>
-      </docblock>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="28" package="Radic\BladeExtensions\Widgets">
-        <name>$files</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::files</full_name>
-        <default></default>
-        <docblock line="28">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="28" description="" type="\Illuminate\Filesystem\Filesystem" variable="">
-            <type>\Illuminate\Filesystem\Filesystem</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="33" package="Radic\BladeExtensions\Widgets">
-        <name>$bladeCompiler</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::bladeCompiler</full_name>
-        <default></default>
-        <docblock line="33">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="33" description="" type="\Illuminate\View\Compilers\BladeCompiler" variable="">
-            <type>\Illuminate\View\Compilers\BladeCompiler</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="38" package="Radic\BladeExtensions\Widgets">
-        <name>$vars</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::vars</full_name>
-        <default></default>
-        <docblock line="38">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="38" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="43" package="Radic\BladeExtensions\Widgets">
-        <name>$viewPath</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::viewPath</full_name>
-        <default></default>
-        <docblock line="43">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="43" description="" type="string" variable="">
-            <type>string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="24" package="Radic\BladeExtensions\Traits">
-        <name>$sections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::sections</full_name>
-        <default>array()</default>
-        <docblock line="24">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="24" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="29" package="Radic\BladeExtensions\Traits">
-        <name>$sectionStack</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::sectionStack</full_name>
-        <default>array()</default>
-        <docblock line="29">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="29" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="34" package="Radic\BladeExtensions\Traits">
-        <name>$viewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::viewFactory</full_name>
-        <default></default>
-        <docblock line="34">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="34" description="" type="\Illuminate\View\Factory" variable="">
-            <type>\Illuminate\View\Factory</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="52" package="Radic\BladeExtensions\Widgets">
-        <name>__call</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::__call()</full_name>
-        <docblock line="52">
-          <description>__call</description>
-          <long-description></long-description>
-          <tag name="param" line="52" description="" type="" variable="$name"/>
-          <tag name="param" line="52" description="" type="" variable="$arguments"/>
-          <tag name="return" line="52" description="" type="mixed">
-            <type>mixed</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$name</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$arguments</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="66" package="Radic\BladeExtensions\Widgets">
-        <name>__construct</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::__construct()</full_name>
-        <docblock line="66">
-          <description>Instantiates the class</description>
-          <long-description></long-description>
-          <tag name="param" line="66" description="" type="\Illuminate\Contracts\View\Factory" variable="$viewFactory">
-            <type>\Illuminate\Contracts\View\Factory</type>
-          </tag>
-          <tag name="param" line="66" description="" type="\Illuminate\Filesystem\Filesystem" variable="$files">
-            <type>\Illuminate\Filesystem\Filesystem</type>
-          </tag>
-          <tag name="param" line="66" description="" type="\Illuminate\View\Compilers\BladeCompiler" variable="$bladeCompiler">
-            <type>\Illuminate\View\Compilers\BladeCompiler</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$viewFactory</name>
-          <default></default>
-          <type>\Illuminate\Contracts\View\Factory</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$files</name>
-          <default></default>
-          <type>\Illuminate\Filesystem\Filesystem</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$bladeCompiler</name>
-          <default></default>
-          <type>\Illuminate\View\Compilers\BladeCompiler</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="80" package="Radic\BladeExtensions\Widgets">
-        <name>open</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::open()</full_name>
-        <docblock line="80">
-          <description>open</description>
-          <long-description></long-description>
-          <tag name="param" line="80" description="" type="" variable="$viewPath"/>
-          <tag name="param" line="80" description="" type="array" variable="$vars">
-            <type>array</type>
-          </tag>
-          <tag name="return" line="80" description="" type="\Radic\BladeExtensions\Helpers\EmbedFactory">
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory</type>
-          </tag>
-          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$viewPath</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$vars</name>
-          <default>array()</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="95" package="Radic\BladeExtensions\Widgets">
-        <name>insert</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::insert()</full_name>
-        <docblock line="95">
-          <description>insert</description>
-          <long-description></long-description>
-          <tag name="param" line="95" description="" type="" variable="$bladeCompiledContent"/>
-          <tag name="return" line="95" description="" type="$this|\Radic\BladeExtensions\Helpers\EmbedFactory">
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory</type>
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory</type>
-          </tag>
-          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$bladeCompiledContent</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="123" package="Radic\BladeExtensions\Widgets">
-        <name>recurse</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::recurse()</full_name>
-        <docblock line="123">
-          <description>recurse</description>
-          <long-description></long-description>
-          <tag name="param" line="123" description="" type="" variable="$out"/>
-          <tag name="return" line="123" description="" type="$this|\Radic\BladeExtensions\Helpers\EmbedFactory">
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory</type>
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory</type>
-          </tag>
-          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$out</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="150" package="Radic\BladeExtensions\Widgets">
-        <name>close</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::close()</full_name>
-        <docblock line="150">
-          <description>close</description>
-          <long-description></long-description>
-          <tag name="return" line="150" description="" type="\Radic\BladeExtensions\Helpers\EmbedFactory">
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory</type>
-          </tag>
-          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="162" package="Radic\BladeExtensions\Widgets">
-        <name>getAbsoluteViewPath</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::getAbsoluteViewPath()</full_name>
-        <docblock line="162">
-          <description>getAbsoluteViewPath</description>
-          <long-description></long-description>
-          <tag name="return" line="162" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="173" package="Radic\BladeExtensions\Widgets">
-        <name>getViewFileContent</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::getViewFileContent()</full_name>
-        <docblock line="173">
-          <description>getViewFileContent</description>
-          <long-description></long-description>
-          <tag name="return" line="173" description="" type="string">
-            <type>string</type>
-          </tag>
-          <tag name="throws" line="173" description="" type="\Illuminate\Contracts\Filesystem\FileNotFoundException">
-            <type>\Illuminate\Contracts\Filesystem\FileNotFoundException</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="183" package="Radic\BladeExtensions\Widgets">
-        <name>getBladeCompiledViewFileContent</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory::getBladeCompiledViewFileContent()</full_name>
-        <docblock line="183">
-          <description>getBladeCompiledViewFileContent</description>
-          <long-description></long-description>
-          <tag name="return" line="183" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="42" package="Radic\BladeExtensions\Traits">
-        <name>setViewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::setViewFactory()</full_name>
-        <docblock line="42">
-          <description>setViewFactory</description>
-          <long-description></long-description>
-          <tag name="param" line="42" description="" type="\Illuminate\Contracts\View\Factory" variable="$factory">
-            <type>\Illuminate\Contracts\View\Factory</type>
-          </tag>
-          <tag name="return" line="42" description="" type="\Radic\BladeExtensions\Helpers\EmbedFactory">
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory</type>
-          </tag>
-          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$factory</name>
-          <default></default>
-          <type>\Illuminate\Contracts\View\Factory</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="54" package="Radic\BladeExtensions\Traits">
-        <name>getViewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::getViewFactory()</full_name>
-        <docblock line="54">
-          <description>Get the value of viewFactory</description>
-          <long-description></long-description>
-          <tag name="return" line="54" description="" type="\Illuminate\View\Factory">
-            <type>\Illuminate\View\Factory</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="66" package="Radic\BladeExtensions\Traits">
-        <name>startSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::startSection()</full_name>
-        <docblock line="66">
-          <description>Start injecting content into a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="66" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="66" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="66" description="" type="void">
-            <type>void</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default>''</default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="84" package="Radic\BladeExtensions\Traits">
-        <name>inject</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::inject()</full_name>
-        <docblock line="84">
-          <description>Inject inline content into a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="84" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="84" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="84" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="96" package="Radic\BladeExtensions\Traits">
-        <name>yieldSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::yieldSection()</full_name>
-        <docblock line="96">
-          <description>Stop injecting content into a section and return its contents.</description>
-          <long-description></long-description>
-          <tag name="return" line="96" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="107" package="Radic\BladeExtensions\Traits">
-        <name>stopSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::stopSection()</full_name>
-        <docblock line="107">
-          <description>Stop injecting content into a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="107" description="" type="boolean" variable="$overwrite">
-            <type>boolean</type>
-          </tag>
-          <tag name="return" line="107" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$overwrite</name>
-          <default>false</default>
-          <type>boolean</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="125" package="Radic\BladeExtensions\Traits">
-        <name>appendSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::appendSection()</full_name>
-        <docblock line="125">
-          <description>Stop injecting content into a section and append it.</description>
-          <long-description></long-description>
-          <tag name="return" line="125" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="145" package="Radic\BladeExtensions\Traits">
-        <name>extendSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::extendSection()</full_name>
-        <docblock line="145">
-          <description>Append content to a given section.</description>
-          <long-description></long-description>
-          <tag name="param" line="145" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="145" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="145" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="163" package="Radic\BladeExtensions\Traits">
-        <name>yieldContent</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::yieldContent()</full_name>
-        <docblock line="163">
-          <description>Get the string contents of a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="163" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="163" description="" type="string" variable="$default">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="163" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$default</name>
-          <default>''</default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="185" package="Radic\BladeExtensions\Traits">
-        <name>flushSections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::flushSections()</full_name>
-        <docblock line="185">
-          <description>Flush all of the section contents.</description>
-          <long-description></long-description>
-          <tag name="return" line="185" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="199" package="Radic\BladeExtensions\Traits">
-        <name>flushSectionsIfDoneRendering</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::flushSectionsIfDoneRendering()</full_name>
-        <docblock line="199">
-          <description>Flush all of the section contents if done rendering.</description>
-          <long-description></long-description>
-          <tag name="return" line="199" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="213" package="Radic\BladeExtensions\Traits">
-        <name>getSections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::getSections()</full_name>
-        <docblock line="213">
-          <description>Get the entire array of sections.</description>
-          <long-description></long-description>
-          <tag name="return" line="213" description="" type="array">
-            <type>array</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="28" code="PPC:ERR-50007">No summary for property $files</error>
-      <error line="33" code="PPC:ERR-50007">No summary for property $bladeCompiler</error>
-      <error line="38" code="PPC:ERR-50007">No summary for property $vars</error>
-      <error line="43" code="PPC:ERR-50007">No summary for property $viewPath</error>
-    </parse_markers>
-    <source>eJy1Vltv2zYUfvevYIEApQw7Tgf0pensbEGCBViLYi26hygTaIm2iEqkRlKJgzX/fYcUbVOyqBgtwgdbJM/lO3e+X1R5NZqNxyM0Rp+I1EiskM4p+pNIkrEUVST9RtZUnQLBbMRJSRUcUfSXuY1/L0hGrzaacsUEV/EftKioVOejUa0ouimKumScaBpfCq4lSbWKvzL6EF/Dp5CPiChk9m573uW6ZgVVj0rT0vs8oLISL0VZAYlUDabttiHuB/tFEgaAPtNUm73dAnLnjMuCKIUcMjgwZxfOG8isfqF/s2xNtbLUpNa5kKihFkvGGx57V7AUWBpJH26+2LNUVI+SrXMNZ7+cvXkzhZ+3kx5W/g25lWtdvZvNbKxOS6anTu6pkGsbsdSacVUuaba15b+R4TR+6Zpuzq35ZoGmeyJR/Fw8HPXM/ldSaBBKM3SyMhRHCB0KX0j2sh3jXh1ESvIYEgAEIWxKS8bXQUZA+4no/JA5SVJSFG63k1hBHZXoxBRO94zIdV1SbpLFXUiqa8lRyTY0awOolxBYtKq5DZjTha3YiScpstRNgM1iK4RLClmYJXTDlFb4ROdMTef3+6qbNOiiyOMzy4ExihJIFpkY7Yn1Kr5FQTnorgXofCfzadT8dv12w5UmXDPIBWVbj03Zfj/Gz7eUZp14wAZk9Cb0FnCTwQPcQ5nbydHnoglFqGWdauy1w5YRE+QBbJBN0JDGbiq4gCmqPRXYV+HFyhFbNbuE+HVX0x2yll5D1inP/riLivL+KHshNKXWubUZ2FRwt3AsnkFXG6V4J3niCwPgt+gu4LYth7Fu3wK6REaK85RrMDsSH2HIIwwat9SBDuL7NDO5D+XVa//3eHA2x61ZMOSrBg7u1XzgpqpxjgKpMCATs8U1Z/+yDGtWUhxNECQ4dJn+JJvOqxpUVTYo/Ro9Rhcuz+37S7qxXQFbIp8pSSi/33Ltz8Uygf4Ddnq0jKdFndEGTxBxRguqe4gEzHBoEIUDDipBBzwKkrSghBs9L+S25gI0+X0hs+UOHw4O9mW9gPH1oMF+ok7nkqa1VCAFuKJQVTiiQFkA58tWQQtjJ+srSddJSXSaJ2Ycv57hxftX8UOEYzWOLqhRAV84xrf/RHfjOIowXszx4tUFXryjPIsWliQ6/Y4XZ1FkWHhmj2bq9cTaBr9WPvVT2Uz1VNQQy+3lLTqD1oXm6Kw7xX8kw47JslaLn87T5uuzfTs1vuoKHCpas0KFa5kDxRvK4aE8PjqXLWF/PvfJKmqVbx/UrZw369m8N+tp38TSXFjdgdIJ1UpaiMNKOXo4Wm4cmIBh+44BBt77balEUWv6tT3WuzAHn987qD3yDoC3fb5uP3wie3LNoOCk2azgC3eGfbAlbWXtu+oxxqALnUvxoAKv2M5b9KPQ11Dj2dUmpZWx+QiXHLT6QY+47Ac+vPfRoVeHvDA0aH42vsNDbNCy4ebUzoeeyfg0ehr9D2DhBLk=</source>
-  </file>
-  <file path="Helpers/EmbedFactory2.php" generated-path="Helpers.EmbedFactory2.html" hash="6986436a0d65c9cc30ad9d32150602f3" package="Default">
-    <docblock line="0">
-      <description>Part of the Laradic packages.</description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <namespace-alias name="Path">\Caffeinated\Beverage\Path</namespace-alias>
-    <namespace-alias name="Str">\Caffeinated\Beverage\Str</namespace-alias>
-    <namespace-alias name="ViewFactory">\Illuminate\Contracts\View\Factory</namespace-alias>
-    <namespace-alias name="Filesystem">\Illuminate\Filesystem\Filesystem</namespace-alias>
-    <namespace-alias name="BladeCompiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
-    <namespace-alias name="SectionsTrait">\Radic\BladeExtensions\Traits\SectionsTrait</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="23" package="Radic\BladeExtensions\Widgets">
-      <extends/>
-      <name>EmbedFactory2</name>
-      <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2</full_name>
-      <docblock line="23">
-        <description>Class Factory</description>
-        <long-description></long-description>
-        <tag name="package" line="23" description="Radic\BladeExtensions\Widgets"/>
-        <tag name="author" line="23" description="Robin Radic"/>
-        <tag name="license" line="23" description="MIT" link="http://opensource.org/licenses/MIT"/>
-        <tag name="copyright" line="23" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="23" description="http://radic.mit-license.org" link="http://radic.mit-license.org"/>
-      </docblock>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="30" package="Radic\BladeExtensions\Widgets">
-        <name>$files</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::files</full_name>
-        <default></default>
-        <docblock line="30">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="30" description="" type="\Illuminate\Filesystem\Filesystem" variable="">
-            <type>\Illuminate\Filesystem\Filesystem</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="35" package="Radic\BladeExtensions\Widgets">
-        <name>$bladeCompiler</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::bladeCompiler</full_name>
-        <default></default>
-        <docblock line="35">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="35" description="" type="\Illuminate\View\Compilers\BladeCompiler" variable="">
-            <type>\Illuminate\View\Compilers\BladeCompiler</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="40" package="Radic\BladeExtensions\Widgets">
-        <name>$vars</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::vars</full_name>
-        <default></default>
-        <docblock line="40">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="40" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="45" package="Radic\BladeExtensions\Widgets">
-        <name>$viewPath</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::viewPath</full_name>
-        <default></default>
-        <docblock line="45">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="45" description="" type="string" variable="">
-            <type>string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="47" package="Radic\BladeExtensions\Widgets">
-        <name>$out</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::out</full_name>
-        <default></default>
-        <docblock line="47">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="24" package="Radic\BladeExtensions\Traits">
-        <name>$sections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::sections</full_name>
-        <default>array()</default>
-        <docblock line="24">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="24" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="29" package="Radic\BladeExtensions\Traits">
-        <name>$sectionStack</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::sectionStack</full_name>
-        <default>array()</default>
-        <docblock line="29">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="29" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="34" package="Radic\BladeExtensions\Traits">
-        <name>$viewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::viewFactory</full_name>
-        <default></default>
-        <docblock line="34">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="34" description="" type="\Illuminate\View\Factory" variable="">
-            <type>\Illuminate\View\Factory</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="56" package="Radic\BladeExtensions\Widgets">
-        <name>__call</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::__call()</full_name>
-        <docblock line="56">
-          <description>__call</description>
-          <long-description></long-description>
-          <tag name="param" line="56" description="" type="" variable="$name"/>
-          <tag name="param" line="56" description="" type="" variable="$arguments"/>
-          <tag name="return" line="56" description="" type="mixed">
-            <type>mixed</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$name</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$arguments</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="70" package="Radic\BladeExtensions\Widgets">
-        <name>__construct</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::__construct()</full_name>
-        <docblock line="70">
-          <description>Instantiates the class</description>
-          <long-description></long-description>
-          <tag name="param" line="70" description="" type="\Illuminate\Contracts\View\Factory" variable="$viewFactory">
-            <type>\Illuminate\Contracts\View\Factory</type>
-          </tag>
-          <tag name="param" line="70" description="" type="\Illuminate\Filesystem\Filesystem" variable="$files">
-            <type>\Illuminate\Filesystem\Filesystem</type>
-          </tag>
-          <tag name="param" line="70" description="" type="\Illuminate\View\Compilers\BladeCompiler" variable="$bladeCompiler">
-            <type>\Illuminate\View\Compilers\BladeCompiler</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$viewFactory</name>
-          <default></default>
-          <type>\Illuminate\Contracts\View\Factory</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$files</name>
-          <default></default>
-          <type>\Illuminate\Filesystem\Filesystem</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$bladeCompiler</name>
-          <default></default>
-          <type>\Illuminate\View\Compilers\BladeCompiler</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="84" package="Radic\BladeExtensions\Widgets">
-        <name>open</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::open()</full_name>
-        <docblock line="84">
-          <description>open</description>
-          <long-description></long-description>
-          <tag name="param" line="84" description="" type="" variable="$viewPath"/>
-          <tag name="param" line="84" description="" type="array" variable="$vars">
-            <type>array</type>
-          </tag>
-          <tag name="return" line="84" description="" type="\Radic\BladeExtensions\Helpers\EmbedFactory2">
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory2</type>
-          </tag>
-          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$viewPath</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$vars</name>
-          <default>array()</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="93" package="Radic\BladeExtensions\Widgets">
-        <name>close</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::close()</full_name>
-        <docblock line="93">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="98" package="Radic\BladeExtensions\Widgets">
-        <name>write</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::write()</full_name>
-        <docblock line="98">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$name</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="114" package="Radic\BladeExtensions\Widgets">
-        <name>remove</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::remove()</full_name>
-        <docblock line="114">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$name</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="126" package="Radic\BladeExtensions\Widgets">
-        <name>getAbsoluteViewPath</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::getAbsoluteViewPath()</full_name>
-        <docblock line="126">
-          <description>getAbsoluteViewPath</description>
-          <long-description></long-description>
-          <tag name="return" line="126" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="137" package="Radic\BladeExtensions\Widgets">
-        <name>getViewFileContent</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::getViewFileContent()</full_name>
-        <docblock line="137">
-          <description>getViewFileContent</description>
-          <long-description></long-description>
-          <tag name="return" line="137" description="" type="string">
-            <type>string</type>
-          </tag>
-          <tag name="throws" line="137" description="" type="\Illuminate\Contracts\Filesystem\FileNotFoundException">
-            <type>\Illuminate\Contracts\Filesystem\FileNotFoundException</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="147" package="Radic\BladeExtensions\Widgets">
-        <name>getBladeCompiledViewFileContent</name>
-        <full_name>\Radic\BladeExtensions\Helpers\EmbedFactory2::getBladeCompiledViewFileContent()</full_name>
-        <docblock line="147">
-          <description>getBladeCompiledViewFileContent</description>
-          <long-description></long-description>
-          <tag name="return" line="147" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="42" package="Radic\BladeExtensions\Traits">
-        <name>setViewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::setViewFactory()</full_name>
-        <docblock line="42">
-          <description>setViewFactory</description>
-          <long-description></long-description>
-          <tag name="param" line="42" description="" type="\Illuminate\Contracts\View\Factory" variable="$factory">
-            <type>\Illuminate\Contracts\View\Factory</type>
-          </tag>
-          <tag name="return" line="42" description="" type="\Radic\BladeExtensions\Helpers\EmbedFactory2">
-            <type>\Radic\BladeExtensions\Helpers\EmbedFactory2</type>
-          </tag>
-          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$factory</name>
-          <default></default>
-          <type>\Illuminate\Contracts\View\Factory</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="54" package="Radic\BladeExtensions\Traits">
-        <name>getViewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::getViewFactory()</full_name>
-        <docblock line="54">
-          <description>Get the value of viewFactory</description>
-          <long-description></long-description>
-          <tag name="return" line="54" description="" type="\Illuminate\View\Factory">
-            <type>\Illuminate\View\Factory</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="66" package="Radic\BladeExtensions\Traits">
-        <name>startSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::startSection()</full_name>
-        <docblock line="66">
-          <description>Start injecting content into a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="66" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="66" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="66" description="" type="void">
-            <type>void</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default>''</default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="84" package="Radic\BladeExtensions\Traits">
-        <name>inject</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::inject()</full_name>
-        <docblock line="84">
-          <description>Inject inline content into a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="84" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="84" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="84" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="96" package="Radic\BladeExtensions\Traits">
-        <name>yieldSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::yieldSection()</full_name>
-        <docblock line="96">
-          <description>Stop injecting content into a section and return its contents.</description>
-          <long-description></long-description>
-          <tag name="return" line="96" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="107" package="Radic\BladeExtensions\Traits">
-        <name>stopSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::stopSection()</full_name>
-        <docblock line="107">
-          <description>Stop injecting content into a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="107" description="" type="boolean" variable="$overwrite">
-            <type>boolean</type>
-          </tag>
-          <tag name="return" line="107" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$overwrite</name>
-          <default>false</default>
-          <type>boolean</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="125" package="Radic\BladeExtensions\Traits">
-        <name>appendSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::appendSection()</full_name>
-        <docblock line="125">
-          <description>Stop injecting content into a section and append it.</description>
-          <long-description></long-description>
-          <tag name="return" line="125" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="145" package="Radic\BladeExtensions\Traits">
-        <name>extendSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::extendSection()</full_name>
-        <docblock line="145">
-          <description>Append content to a given section.</description>
-          <long-description></long-description>
-          <tag name="param" line="145" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="145" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="145" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="163" package="Radic\BladeExtensions\Traits">
-        <name>yieldContent</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::yieldContent()</full_name>
-        <docblock line="163">
-          <description>Get the string contents of a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="163" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="163" description="" type="string" variable="$default">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="163" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$default</name>
-          <default>''</default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="185" package="Radic\BladeExtensions\Traits">
-        <name>flushSections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::flushSections()</full_name>
-        <docblock line="185">
-          <description>Flush all of the section contents.</description>
-          <long-description></long-description>
-          <tag name="return" line="185" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="199" package="Radic\BladeExtensions\Traits">
-        <name>flushSectionsIfDoneRendering</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::flushSectionsIfDoneRendering()</full_name>
-        <docblock line="199">
-          <description>Flush all of the section contents if done rendering.</description>
-          <long-description></long-description>
-          <tag name="return" line="199" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="213" package="Radic\BladeExtensions\Traits">
-        <name>getSections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::getSections()</full_name>
-        <docblock line="213">
-          <description>Get the entire array of sections.</description>
-          <long-description></long-description>
-          <tag name="return" line="213" description="" type="array">
-            <type>array</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="93" code="PPC:ERR-50008">No summary for method close()</error>
-      <error line="98" code="PPC:ERR-50015">Argument $content is missing from the Docblock of write</error>
-      <error line="98" code="PPC:ERR-50015">Argument $name is missing from the Docblock of write</error>
-      <error line="98" code="PPC:ERR-50008">No summary for method write()</error>
-      <error line="114" code="PPC:ERR-50015">Argument $name is missing from the Docblock of remove</error>
-      <error line="114" code="PPC:ERR-50008">No summary for method remove()</error>
-      <error line="30" code="PPC:ERR-50007">No summary for property $files</error>
-      <error line="35" code="PPC:ERR-50007">No summary for property $bladeCompiler</error>
-      <error line="40" code="PPC:ERR-50007">No summary for property $vars</error>
-      <error line="45" code="PPC:ERR-50007">No summary for property $viewPath</error>
-      <error line="47" code="PPC:ERR-50007">No summary for property $out</error>
-    </parse_markers>
-    <source>eJydVm1v2zYQ/q5fwQEGIgd23BYoCjir19ZLsABtUSxF9yEKBFo622wkUiOpJEbR/77jixVJluSs+mCL5N1zL8/dUb//UWyLYHZ6GpBT8oVKTcSa6C2Qj1TSlCWkoMkd3YA6Q4FZwGkOCreA/G1Oow8ZTeHiUQNXTHAV/QVZAVKdB0GpgCzpeg2MUw1p9AHuQSJQ9IXq7Xn/8bWW7vQqy8rcnkZLwbWkiVbRNwYP0SW+CrkjVBGz9ssDrUuWgdopDXnt9UDKIi5FXqCIVC6g/dIJd0f6VVKGDl1Dos3aLjFsn8llRpUi3jPcMHvvfCqJebpB/2HpBrSy0rTUWyGJkxYrxp2OPctYgioO6dPVV7uXiGIn2Warce/Vi5cvp/jzetKhyu+If7ZaF/PZzBJ9ljM99bhnQm4s3YkN4yJfQepjeRX8CIyqSUw7drNv4zcPmrqnkkTHCPHSM/tfSKERFFIyWhuJZ4AO8deHvWqS3GmDSkl3fQAo0Oeb0pLxTa8ieusaoH0iyo4UxnFCs8yvKjMFtmZORqYX23tUbsocuCkhfyBBl5KTnD1C2vSqXCHdZF1yy6K3FVrYSQ1pbKUd6+ZhaxLmgLWZxvDIlFbhSG+Zmi7un3px4rwbj2t65vHOGEMxVpCMjfXYpjq8Ib045Lbh0HmF+TNwv+28XXGlKdcMC0TZaWYLuTuP0fFB455RzbEBjM4q3zvsynpAe6icW4V7jE3sTC3LRIe1IdkIYkJqDjrPJmTIYrsUPGEKdM1EWDdR48oLWzNVQbytGr0l1rBrxFo92827KIB3s1yj0PRf69RWoGvrduNYfwZTbYyGFfKkDoaO35DbnrTtNUx0T3OhLWRQfKb81KlE6h42MtL2MMmEgnDvxpDkg2QawhHWDt5Jet9+bwkvs6yh71zMiz+ZYUch13izxQWGEJ5YqqZQXWsntSow0+O3Ri1MF9UYsXAHQ6MpnNM7QCnwteZ0JuTFm9d42WG9w8F42JtlKjZhhN2jaR8pfn/M5yorN2y9C1tMjckZOYnjE/wrOfuXpaFmOSZ2wPCocAwb9fn8u2D8yWfnSHeHTBdFqUOrjYKej/H5Afk3+3ltJG8Hq0BCLu7Bh39Qkv+fyl8PLYUMTJkZgHFfL+OH0PuVElmp4Vuza9stOnjlVuF34IXtNNQ7arrYNOfa2O5cMp6CNIs1vh1UyEA0FgsTsHRkPicY8k5vpXhQPZdU66r5LPSlKHl68ZhAYWJ+RkpaTh3JiOcP9cKnHB1mdSgL9fsl/YWUDAUzhH0kssb1Ml0k7u3aWg5b9VAHrUL9GfwHeNf9Qg==</source>
+    <source>eJyNUk1P4zAUvPtXvANSk6pJWsSpfIoV0q4EEgJupQfXeSRWEzuyX9ldIf47/grNYQ/rQ2y/mTdjj3NxPbQDq+ZzBnN44Io3aIFahHutB5DKElcCrUMrpniPduAC4YnXUrzedrzGuz+Eykqt7OtP7AY09pz9l54n3Di1vaNAGv/UDUR72E25ySpA727heKPGabkqlwHgB2q1gW9xvZMqWgS4k8I5fHs//HqB+1QqoCUa1lVlPLvsJRWJXWrThG6hh79GNi3F7ux0uVoV7nO2mBo5pTi/oGiV7nQj0SZ3tYfjGP18axldVVftfBIFTqMILyE6bi3c9Tusn8nFggYCqbaQ9uyDMa8bXsKPOQiDnDDtxuKNQToYFbVSsQrzYDShIKzh7aAE+YSjQnbCTWPhEjawzQP1g43XOHmX+PuRU+vgQNsst+cTlBvfKK1FijKb1TaHaxjXsIbNtAH9sbwWtdIWVw3SD62IS4Umy4urnu8xO8awXodgFiB07/4WymbjcWYLmHnzWZ4f1dPVo0ksf7JP9gVHZeaM</source>
   </file>
   <file path="Helpers/Minifier.php" generated-path="Helpers.Minifier.html" hash="a16536488b4f5268b9b21b0949f65120" package="Default">
     <docblock line="0">
@@ -2452,7 +1453,7 @@
     </parse_markers>
     <source>eJzNVltP4zgUfu+vOIOQkrIt2RlpX6CUnWXRwoiu0MJb00Gu4zYeHCeynUIF/e977FymScNtn9aq1MQ+33fuxxmdZnHWCw4OenAA10QZSBdgYgZnZLFgXBLDIri+uIaM0HuyZPoQBa3s5PIWrjhlUjMgMgKaZmvFl7EBLhepSojhqYR5LiOBDA/cxEjLdcWDUk7N1eXZ+d8357DggiFt0JMkYRqFGPxDIk7DPwSJ2PmjQUVIqMMLJjKm9HGvMvrWsuLPsk245AvOVGXk75W2cnVSOkGSmzhVlVzD+z/ZCm4ZSZzcTzcLufrVp3348uvn3wbbWAcRZZTKFRuT6aMgMCJSgi2JOKRpEpRCQcLNsAJshdiFhgqide1j76ln6VwU7EJNK6LK58D9Zyo1jFoftMF8UNg364xh6FrANGOyfK65MqJIUgCanPkc7asIF7mkLtGWwnfSfSdWGGdXIXl05A7hBIziia+NMqlIH5gqQf3jGpDO7xCjjF/ubXbspSLV77LKCfpti/ZpGllLUNGSmTsqGJH+lgGMxmltdmLDvfYbXgwKii1I20mZC/GS9QXj2/Gu96yuek8xkyuJChWXy9ezXYeh9KFhezsm9kyj5VMvNonwBuBRre3fD+3NypKxiy/A/8TlHVGK/KR06AHmNsdUbtHW1DdGITlPMoHKfctbobaiaJeJVfoAkj1AeClXRPDoq1rmCZPm/JGyzPrj77U6uO4JnEK5iECmpvQZ1mludyM0Eh8hJismPQM6Y9QiIiDglIC15RD+4nh+BNMnZ9tmdghfhS3TqN5DRzazvS2jN83YlBVwcgJFINvRqPNXFAz2foajb1JmqFVWG2BCsxatzcsLrHbM+i52E2Jw3BI9wULkLCz4w7Obm1JHfzhmj4zmhvlv6fvxn9V9e0Nbd4PUpV7O5GpgLlFbPnfTcp1SrIjABnjYaKeqZ4r2gH3Mbc7c1UBTieVidHW/rTjaXdw6Ta2lb/M0Fe9sLx3bqqtS6FS228uGNFNseYf3Io19L9D3PEPLA9sGW4hqPT9DQ3xk0c+GPeJgZKT/bpimimdm+j08PR3PDsbT76MwKPbGs/eSOJETf+859Pr+4UHfn8Ls6ctgU7y47S6qF2pmQbDC2hXXLWqnyW61NIsFb+AErdXF/X9xO7mCNDdZbmDO8DOEgSYrWwnc/K+q60PjuzUjXiywaqZ01ePOUFYsE/YrCyd+48AuLJxPwyFWzXSGOT7t49NsNhyOA+3ByRg8b9AFCe2nZOC1T8BBRvYQOoGh9Kfhzay/C7VA2P/cjVJdqirUC4o+DjGvQbr9gV8+jhmHetSNspjxyGtgZsdd7eKatkyrv6PD3dd392yt/Sr3/V1LCilXMq/KFVXV2N65RrqbukDutvWm9y8wXV1X</source>
   </file>
-  <file path="Helpers/Embed.php" generated-path="Helpers.Embed.html" hash="7e3f027042ff0a4bb14d3d3428950879" package="Default">
+  <file path="Helpers/EmbedStack.php" generated-path="Helpers.EmbedStack.html" hash="be8b403a35ee48fd9bbbda7ba531c8ef" package="Default">
     <docblock line="0">
       <description>Manages the Loop instances</description>
       <long-description></long-description>
@@ -2468,8 +1469,8 @@
     <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="27" package="Radic\BladeExtensions\Helpers">
       <extends/>
       <implements>\Radic\BladeExtensions\Contracts\Stack</implements>
-      <name>Embed</name>
-      <full_name>\Radic\BladeExtensions\Helpers\Embed</full_name>
+      <name>EmbedStack</name>
+      <full_name>\Radic\BladeExtensions\Helpers\EmbedStack</full_name>
       <docblock line="27">
         <description>Manages the Loop instances</description>
         <long-description></long-description>
@@ -2483,7 +1484,7 @@
       </docblock>
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="31" package="Radic\BladeExtensions\Helpers">
         <name>$files</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::files</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::files</full_name>
         <default></default>
         <docblock line="31">
           <description></description>
@@ -2492,7 +1493,7 @@
       </property>
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="33" package="Radic\BladeExtensions\Helpers">
         <name>$bladeCompiler</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::bladeCompiler</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::bladeCompiler</full_name>
         <default></default>
         <docblock line="33">
           <description></description>
@@ -2501,7 +1502,7 @@
       </property>
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="35" package="Radic\BladeExtensions\Helpers">
         <name>$viewPath</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::viewPath</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::viewPath</full_name>
         <default></default>
         <docblock line="35">
           <description></description>
@@ -2510,7 +1511,7 @@
       </property>
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="37" package="Radic\BladeExtensions\Helpers">
         <name>$vars</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::vars</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::vars</full_name>
         <default></default>
         <docblock line="37">
           <description></description>
@@ -2519,7 +1520,7 @@
       </property>
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="39" package="Radic\BladeExtensions\Helpers">
         <name>$content</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::content</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::content</full_name>
         <default></default>
         <docblock line="39">
           <description></description>
@@ -2528,7 +1529,7 @@
       </property>
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="41" package="Radic\BladeExtensions\Helpers">
         <name>$_data</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::_data</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::_data</full_name>
         <default></default>
         <docblock line="41">
           <description></description>
@@ -2573,7 +1574,7 @@
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="43" package="Radic\BladeExtensions\Helpers">
         <name>__construct</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::__construct()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::__construct()</full_name>
         <docblock line="43">
           <description></description>
           <long-description></long-description>
@@ -2606,7 +1607,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="53" package="Radic\BladeExtensions\Helpers">
         <name>setData</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::setData()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::setData()</full_name>
         <docblock line="53">
           <description></description>
           <long-description></long-description>
@@ -2619,7 +1620,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="58" package="Radic\BladeExtensions\Helpers">
         <name>start</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::start()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::start()</full_name>
         <docblock line="58">
           <description>start</description>
           <long-description></long-description>
@@ -2628,7 +1629,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="63" package="Radic\BladeExtensions\Helpers">
         <name>setContent</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::setContent()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::setContent()</full_name>
         <docblock line="63">
           <description></description>
           <long-description></long-description>
@@ -2641,7 +1642,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="69" package="Radic\BladeExtensions\Helpers">
         <name>end</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::end()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::end()</full_name>
         <docblock line="69">
           <description>end</description>
           <long-description></long-description>
@@ -2650,7 +1651,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="92" package="Radic\BladeExtensions\Helpers">
         <name>getAbsoluteViewPath</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::getAbsoluteViewPath()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::getAbsoluteViewPath()</full_name>
         <docblock line="92">
           <description>getAbsoluteViewPath</description>
           <long-description></long-description>
@@ -2661,7 +1662,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="103" package="Radic\BladeExtensions\Helpers">
         <name>getViewFileContent</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::getViewFileContent()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::getViewFileContent()</full_name>
         <docblock line="103">
           <description>getViewFileContent</description>
           <long-description></long-description>
@@ -2675,7 +1676,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="113" package="Radic\BladeExtensions\Helpers">
         <name>getBladeCompiledViewFileContent</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::getBladeCompiledViewFileContent()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::getBladeCompiledViewFileContent()</full_name>
         <docblock line="113">
           <description>getBladeCompiledViewFileContent</description>
           <long-description></long-description>
@@ -2686,7 +1687,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="119" package="Radic\BladeExtensions\Helpers">
         <name>write</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::write()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::write()</full_name>
         <docblock line="119">
           <description></description>
           <long-description></long-description>
@@ -2704,7 +1705,7 @@
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="135" package="Radic\BladeExtensions\Helpers">
         <name>remove</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Embed::remove()</full_name>
+        <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::remove()</full_name>
         <docblock line="135">
           <description></description>
           <long-description></long-description>
@@ -2724,8 +1725,8 @@
           <tag name="param" line="42" description="" type="\Illuminate\Contracts\View\Factory" variable="$factory">
             <type>\Illuminate\Contracts\View\Factory</type>
           </tag>
-          <tag name="return" line="42" description="" type="\Radic\BladeExtensions\Helpers\Embed">
-            <type>\Radic\BladeExtensions\Helpers\Embed</type>
+          <tag name="return" line="42" description="" type="\Radic\BladeExtensions\Helpers\EmbedStack">
+            <type>\Radic\BladeExtensions\Helpers\EmbedStack</type>
           </tag>
           <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
         </docblock>
@@ -2966,7 +1967,58 @@
       <error line="39" code="PPC:ERR-50007">No summary for property $content</error>
       <error line="41" code="PPC:ERR-50007">No summary for property $_data</error>
     </parse_markers>
-    <source>eJylVttu2zgQfddXcIEAkQJfmqJPzrZN6ybYAm1RbIO81IVAS2ObG4nUklQuKPLvHVKUREm24O7qwRY5wzMzZy7Un2+LXRHMz84CckY+U063oIjeAfkkREEYV5ryBBRK5wGnOaiCJkD+pilLVu8zmsLVowaumOBq9RdkBUh1EQSlArKkmw0wTjWkq/dwDxKhV1+p3l0cFn/TspJ+zLIyt9LVUnAtaaLV6pploJ6Uhtx7HdG/ZfCwusZXIZ8Gala4FHmBSFJVsdTLSnl/kC38N02TuzHVG0mZ0YNEm7VdIjnHkG0ULpHqO1Qh7tlrxCqqcu3rujxYERJr9GqMl7Pz2QsroKXeCUkacLFmvDJhxRlL0EJj+/PHG/LJbU3JTutiMZ9Loz3LmZ467ZmQW3s6EcWTZNudrk6HL1+cn0/x59XEN4RI1f8NJDsuMrFloJx1fkfap7Znjs4qqzybrw0TU/CpsGWaZFQpcpWvISUsLzLIgWtFbLqCn4EBNDnrp8XsF1Jo3MaDJxtTYcPtdbdO+uJ7rKqqxgcSKvfAJVhN6N1QEKdU03q7XCPBZFNy6zGJYzymtCwTHbryriy7xYS07eECmZBOgffimLSOTypPyWvynfyIrPmKMvOc6B1T0zcK9G1rLfRNRxd9ZWu+yeTrhtieWscfo9Yjuqdeu9ugtsT3NU00vv0qEWbxHOznF+P7gOyHVRIOkGBlBs9lygHuxdNU6rCPI0GXkldw48dBL6syCet6OeCTkxqvmsL6bXPA04GvJx7ynnwZy/YN5zfj27Drjl8TJk3LPtYWtF+dqS0ufKmj9gAyppAFcxFhoRaY76iFeZBMQ0MRmXWseRg4McwAD/1E+j7GTWo9hY4c+H0tPghrysxDFevYlUG7x3iSlSm6bAPxLIjSsINHkJk4yYBy/xgOS2F13Hg4mF37b28b85wRRHu3ViIrNdy6dnGiWuPS4SibR7c7782mplL24I1Wuc20Pzkiu3PNeArSLDb4FvY6POoUazeaXqEcEwy51DspHhRZHfOJ8UXoa1Hy9OoxgcLEfAQlg+odZcROQ0tD2HI0ZHWMhbHe+b/5He/L0ciOmRD76IrGh3O3y3EKmGGA3cLLLKsd8uZiXnxg5j5RWHD4fRSbVgtP+58Op35Xbkj4Ry898IhzR4UOLoq8oCszvnJO7wC1wN2O7kxr4LljiqnYuF4NtSGyiw5pWyxUVm7Z5mnQITjqTuP4FP9Kzv5laahZDmE0IfiJAHsN24mDsOb4YvGPYLz20xF64B6fvilKXc2rSXMpRMM59J34M5r8GL1wJOTiHhwBg4vt9xNY2ST/KbwUMtDdifwcPAe/AJEW+zg=</source>
+    <source>eJylVttu2zgQfddXcIEAkQJfmqJPzrZN6ybYAm1RbIO81IVAS2ObG4nUklQuKPLvHVKUREm24O7qwRY5wzMzZy7Un2+LXRHMz84CckY+U063oIjeAfkkREEYV5ryBBRK5wGnOaiCJkD+pilLVu8zmsLVowaumOBq9RdkBUh1EQSlArKkmw0wTjWkq/dwDxKhV1+p3l0cFn/TspJ+zLIyt9LVUnAtaaLV6pploJ6Uhtx7HdG/ZfCwusZXIZ8Gala4FHmBSFJVsdTLSnl/kC38N02TuzHVG0mZ0YNEm7VdIjnHkG0ULpHqO1Qh7tlrxCqqcu3rujxYERJr9GqMl7Pz2QsroKXeCUkacLFmvDJhxRlL0EJj+/PHG/LJbU3JTutiMZ9Loz3LmZ467ZmQW3s6EcWTZNudrk6HL1+cn0/x59XEN4RI1f8NJDsuMrFloJx1fkfap7Znjs4qqzybrw0TU/CpsGWaZFQpcpWvIbUpIiwvMsiBa0XsRvAzMKgmcf3cmP1CCo3bkJKTjSmz4fa6Wyx98T2WVlXoAwmVe+ASLCn0biiIU6ppvV2ukWWyKbn1mMQxHlNalokOXY1Xlt1iQtoecYFMSKfKe3FMWscnlafkNflOfkTWfEWZeU70jqnpGwX6trUW+qaji76yNd+k83VDbE+t449R6xHdU6/dbVBb4vuaJhrffpUIs3gO9vOL8X1A9sMqCQdIsDKD5zLlAPfiaSp12MeRoEvJK7jx46CXVZmEdb0c8MlJjVdNYf22OeDpwNcTD3lPvoxl+4ZDnPFt2HXHrwmTpmUfawvar87UFhe+1FF7ABlTyIK5jbBQC8x31MI8SKahoYjMOtY8DBwbZoqHfiJ9H+MmtZ5CRw78vhYfhDVl5qGKdezKoN1jPMnKFF22gXgWRGnYwSPITJxkQLl/DCemsDpuPBzMrv23V455zgiivVsrkZUabl27OFGtcelwlM2j2533ZlNTKXvwRqvcZtqfHJHduWY8BWkWG3wLex0edYq1G02vUI4JhlzqnRQPiqyO+c74IvS1KHl69ZhAYWI+gpJB9Y4yYqehpSFsORqyOsbCWO/83/yO9+VoZMdMiH10RePDudvlOAXMMMBu4WWW1Q55czEvPjBznygsOPxIik2rhaf974dTvys3JPyjlx54xLmjQgcXRV7QlRlfOad3gFrgbkd3pjXw3DHFVGxcr4baENlFh7QtFiort2zzNOgQHHWncXyKfyVn/7I01CyHMJoQ/ESAvYbtxEFYc3yx+EcwXvvpCD1wj0/fFKWu5tWkuRSi4Rz6TvwZTX6MXjgScnEPjoDBxfb7Caxskv8UXgoZ6O5Efg6eg1+Fnv0u</source>
+  </file>
+  <file path="Helpers/HelperRepository.php" generated-path="Helpers.HelperRepository.html" hash="084f56bf1b9cab58bccfa606b52b9be5" package="Default">
+    <docblock line="0">
+      <description>Part of the Caffeinated PHP packages.</description>
+      <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Container">\Illuminate\Contracts\Container\Container</namespace-alias>
+    <namespace-alias name="Collection">\Illuminate\Support\Collection</namespace-alias>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="20" package="Radic\BladeExtensions">
+      <extends>\Illuminate\Support\Collection</extends>
+      <name>HelperRepository</name>
+      <full_name>\Radic\BladeExtensions\Helpers\HelperRepository</full_name>
+      <docblock line="20">
+        <description>This is the HelperRepository.</description>
+        <long-description></long-description>
+        <tag name="package" line="20" description="Radic\BladeExtensions"/>
+        <tag name="author" line="20" description="Caffeinated Dev Team"/>
+        <tag name="copyright" line="20" description="Copyright (c) 2015, Caffeinated"/>
+        <tag name="license" line="20" description="MIT License" link="https://tldrlegal.com/license/mit-license"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="22" package="Radic\BladeExtensions">
+        <name>$container</name>
+        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::container</full_name>
+        <default></default>
+        <docblock line="22">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="26" package="Radic\BladeExtensions">
+        <name>__construct</name>
+        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::__construct()</full_name>
+        <docblock line="26">
+          <description></description>
+          <long-description></long-description>
+          <tag name="inheritDoc" line="26" description=""/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$container</name>
+          <default></default>
+          <type>\Illuminate\Contracts\Container\Container</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="26" code="PPC:ERR-50015">Argument $container is missing from the Docblock of __construct</error>
+      <error line="26" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="22" code="PPC:ERR-50007">No summary for property $container</error>
+    </parse_markers>
+    <source>eJxtU+9v2jAQ/Z6/4j4gFRA026R9gZVNo0xFYhMqfCtVZZwLserYlu1sq6r+7zs7PwjbrCi62O+9u3u+fPpsCpOk43ECY9gy60Hn4AuEJctzFIp5zGB7twXD+DM7obsmYMB+X+9hIzgqh8BUBlybFytOhQehcm1L5oVWcKxUJknhl/AFyQrX6hAqptmsl6sfuxXkQiLJpoliJToCIdyzTPDDV8kyXP32lIgE3eEOpUHr5klSUea1lFUZqzwstfKWce9ixIRCe47mf6N3lTHaekJIiTzUSoqNDftQJz2hvjrdPRrthNf2pW3/S9tHs/5bbASyyhfatrgLX2/xJ+yRlRF3NrDGdZ9DPoIP795/nPS5kSIb/5tVeG/cLE29zKzEE5PXXJdpA0pL4actoXd50XQumXP/9AoYOskcnE1KXpOQyVjtaYNaGPCzxeEkWhgWlSdUgVb4W82brbQmV0eqA/JKRUl4eiIN523F/bC7sJ7wKLLqxJHPLCo/m/V5D48jur8WMQiTNl10CnBzUecZV9TDROcP3WZYV1JrcwU3C9hQ8I2miuyYzaJNk0sklkfMInQVop2nuUDbYDvoYy8r/R3IeAHDLj1zMAhzH1QGkTjq9dvryFR+GJGTXkPTRcmecdgQR/OO+JbU77fkDxacM+M=</source>
   </file>
   <file path="Helpers/Sections.php" generated-path="Helpers.Sections.html" hash="5b506801f020fffbac25c21b38a28618" package="Default">
     <docblock line="0">
@@ -3270,7 +2322,7 @@
     </parse_markers>
     <source>eJxtkEFLxDAQhe/5FXPYw1ps6wperKi4KC4oiC56KSzZdLYN2yYhmaqL7H83SetFOofSmfneI/OubkxjWJ4kDBJ44ZZA74AahCdueSUFGC72vEaXeSBninfo/AjhNWzLu5ZXeP9NqJzUypWP2Bq0rmCsdwirtu07qThhudSKLBfkyneJX+WD/9X2UERs2mptufT4GwoKfWy97/jUZcudgw9Z1Ui+D6Pb8akQatpz4F2keU+NtjDQeivVoIm7VgovGZyeV+s4E9ocrKwb8rPzs8Ui9Z+L0wmp2sNYDZG5zPMYZNZJSkffTNs6xiniFX8nsh8WVCGS/1eHuem3Xg+7XsUdbDbCE2R7QfMxT5h9+nRPIj6YhZpRI1167ZBC9iM6H9AiUkd2ZL+tO6aC</source>
   </file>
-  <file path="Helpers/LoopFactory.php" generated-path="Helpers.LoopFactory.html" hash="5f0362633c1db866283fe7c06e2bf7d2" package="Default">
+  <file path="Helpers/LoopFactory.php" generated-path="Helpers.LoopFactory.html" hash="8b656965572c2a45a004b0a5f867bd3a" package="Default">
     <docblock line="0">
       <description>Manages the Loop instances</description>
       <long-description></long-description>
@@ -3291,7 +2343,7 @@
         <tag name="copyright" line="19" description="(2011-2014, Robin Radic - Radic Technologies"/>
         <tag name="link" line="19" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
-      <property static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="27" package="Radic\BladeExtensions\Helpers">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="27" package="Radic\BladeExtensions\Helpers">
         <name>$stack</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::stack</full_name>
         <default>array()</default>
@@ -3303,7 +2355,7 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="34" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="34" package="Radic\BladeExtensions\Helpers">
         <name>newLoop</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::newLoop()</full_name>
         <docblock line="34">
@@ -3319,7 +2371,7 @@
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="44" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="44" package="Radic\BladeExtensions\Helpers">
         <name>addLoopStack</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::addLoopStack()</full_name>
         <docblock line="44">
@@ -3335,7 +2387,7 @@
           <type>\Radic\BladeExtensions\Helpers\Loop</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="59" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="59" package="Radic\BladeExtensions\Helpers">
         <name>getStack</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::getStack()</full_name>
         <docblock line="59">
@@ -3346,7 +2398,7 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="67" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="67" package="Radic\BladeExtensions\Helpers">
         <name>reset</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::reset()</full_name>
         <docblock line="67">
@@ -3354,7 +2406,7 @@
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="77" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="77" package="Radic\BladeExtensions\Helpers">
         <name>loop</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::loop()</full_name>
         <docblock line="77">
@@ -3365,7 +2417,7 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="88" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="88" package="Radic\BladeExtensions\Helpers">
         <name>looped</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::looped()</full_name>
         <docblock line="88">
@@ -3373,7 +2425,7 @@
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="100" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="100" package="Radic\BladeExtensions\Helpers">
         <name>endLoop</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::endLoop()</full_name>
         <docblock line="100">
@@ -3388,7 +2440,7 @@
         </argument>
       </method>
     </class>
-    <source>eJyNVlFv2jAQfs+vuKFqAlSgrfYEK+tWbdqkVppapL1UmpzkIFaNHdkOHar633e2kzQk0JIHQPi7++777s7w+Uue5dFkOIxgCLdMshUasBnCjVI5cGkskwkaOp1Ekq3R5CxBuGMpTx6+CZbi938WpeFKmoefKHLUZhYdlc8BrijbI0GgfPbm9UBTxE1sSeWPNvSBcFWOi/H5+MwfsMJmSkOdXMVcBgp/LHhCDDX37a8F3JRfjSCzNp9OJtqhx2tuRyV6rPTKRycq32q+ymyI7l+cnZ+P6OXTaZOIMoX3BSaZVEKtOJqSXT7C61PxudBxYJViEjsnRti0wnciEcwYb+kPllilt9FzFLk03nj3DGFBppPbySOoZcd9D6mQVxumgWnNtnDiI8qDiX/PtbKYWExdNktSAgYuQ0h/MOtQX2tklvrOQOITCMf9xG3m52DFNyhLNiZTYGlqgFuwyh83+ev6cqbZuqqQW1wbry58YTNmKb0QECMlQk3U6a6CIqbuVeUvC5lYNy9Um7OlHzIOPPQ5qhoS0NMp1edQ966uvpPTjCHtDvvSceCrU8WC7e8r87Bg6y/K+7b9df07lbVStNVMJnCdIXUt9G5Ja0HUKG3oDpWoccUNued6UTaLG39aJ+FL6CeqkLZfmRMIBzCHs0GDzT2vtYzmBu1vz+a9o9ntZCiNbJjpHt/gv3lhshb+tCn1UA/u0BZamsPmaw8ILMcMzAptMLvtbplot8bDZZEd3areZNYupkO7y9dcyP3MC+VWJGFC0DQtuTbWXQk8RV8MzQSyJPMtH++YlxS6HpUDHobxq4CLVhCkzLJjdDpwR2ad9hJQpu3JmXVwo3mMTkx9MzVaVGGOsiik8RYQsbtG3ceGC+9qwbSjxi3RB8B1bredJWit0B61ozlb0pL2d/Zlv5T7TBUibcjxkbUEyJihIZDcZPV12bqWTo6VSoX6zf7oI9qKyy2m84OtO/pmoXtsUd1L8EQKygFmUpEwXQ7vHwT374Dus1e59BvHWSww/OgYw1cSYrc2DtG4C3cvMR/6zty9AAr6z7Dbu06hVODBYjWu1SYMGpXZykN/HBT0xLTfgzHsN2kMvQH0ZntLl4UQ3WF5if4DNgXgLg==</source>
+    <source>eJyNVV1P20AQfPev2EaoSiKSAOoTKZQWtWolkCqI1Bek6mxv4hOXO+vuHIoQ/717HzaOnQB+SKLc7M7s7N7685eyKJPZeJzAGK6ZZCs0YAuEK6VK4NJYJjM0dDpLJFujKVmGcMNynt19EyzH7/8sSsOVNHc/UZSozTx5Vz4HuKBs9wSB+OzM64GmStvYSOWPNvSDcHWOk+nx9MgfsMoWSkOTXKVcBgp/LHhGDA339a8FXMW/JlBYW57OZtqhp2tuJxE9VXrlozNVPmq+KmyIHp4cHR9P6OPTYZuIMoXvBWaFVEKtOJrILu/h5an5XOg0sEoxS50TE2xb4TuRCWaMt/QHy6zSj8lTkrg03nj3jGFBppPb2T2oZc99D6mRFxumgWnNHuHAR8SDmf8utbKYWczjIZwF7HA073FeamSWGs5A4gMIR/rAbeEHYMU3KCMNkzmwPDfALVjlj9vEjbCSabaupXGLa+PLCn/YgllKLwSkSIlQE3W+Lb1KqW2wrGRm3YSQKGfEMKQaecxTUrfgwBbcTM5JlwPdOj1DV0YIcYeHUcSISncRzz0DvrqiWLD77cI8LLj6i/Lusb2Rv6WsE9stZjaDywKpW6FnS7oHxInShq6QNo0rbsg114PYJG78aZOEL2GYqUraYfTGJxvBORyNWlzevEYJodD+9lzeORrVTnx0r+Wge3xT/5aVKbbQh+0i99l+g7bS0uz3W3tA4Hh1RFZog79dQ2OGtrT9asiBvpjdhNqBe2xtmvaF2024UO4KZEwINy5cG+vuOs/Ra6DeI8sK39rpllVZpZuR2ONYGLMauOgEQc4se7U8h+pXV+c4A5T59nDMe6jJeYquhmbhtNsRMe9yJqTxlROtW4vuZ6v4/SVg3ivCXY4PgOvSPnbGu3M1eiXSjlnSxRtu3YPd+m8LVYm8VYOPbHRDwQw1XHJTNKuvs2MO3qyP9PmL+tFDu2XGa1mvwH6b3rkkaCEt6gUDDyQ7TiiTiqrRcTr/ILj3Oi2mlxrp7cRZKjC8NYzhKwmpuxcO0Vpq2/vIh746X8+Agt71283qySR5e6VqXKtNGCgS2clDL3wFA3E6HMAUdhk0hcEIBvOdsmUlRH86npP/tETCNQ==</source>
   </file>
   <file path="Directives/MarkdownDirectives.php" generated-path="Directives.MarkdownDirectives.html" hash="99861a903033112e06cd1cf2b87e02eb" package="Default">
     <docblock line="0">
@@ -4047,173 +3099,6 @@
     </class>
     <source>eJzdVE1v00AQvftXDChSbMuxGyQuSVEavqRKcCmFkyW6saf2qvZ6tR9pUdP/zu76I8EJICS4sAfveue9eTPznJyveMm9JAw9COEtFZgpukW5AIkqAs3MZiKJx0iNkpMM4YrkNEtfVyTHdw8KmaQNk+meuvQ8LREuq0rXlBGF6ZuGKUEyJdP3jWY5UYaRrjmvaObOyzHhC8V7w6o5rVDIVqt/BSKhP7fE0wVdC0KVPLjOUbg7U9/v2oUL0+kdKRBG66SUI0i9OcXZSzjU1rRjKOO0L+J5fOYARKuyEeM4XDUbylp1BzOTM+JH5X28vIYPXWgGpVJ8kSTCsuKaqlnHihtRuCxZw78JWpRqVM3ZfD4zj5fRCV12d1QcDEoWHbd6rEo2dkwzPJxT4mUVkRLWUtKC1cjUwYAePc8ms5aedM0GnXN2hbDOcwk3xrAbyPskXayHGBsFqX8odbIllcZfAbKG3dJCC8xHqIMvFiaE81F4+EAnrvEhKlBpwaCmD0PGxO1cb0w+uNUsczlJnn9C5bcVRoeFREfa0VgucCkfvaGNmqisNOFXME381fmz9D7wUxkGF2Zi/mphj6nfHew22dnndJc+3wWBH4erYP8eOdzOXgdpkEw7M+zquuMCi68CeWX+Ifxee9RD21iwdNynn/jpfoL/kaOfbT//3FM3tT91tcf/LUOfvO9FmdQO</source>
   </file>
-  <file path="Directives/Embedding2Directives.php" generated-path="Directives.Embedding2Directives.html" hash="92b7bf088b02c91003f4a5fbcc332e2a" package="Default">
-    <docblock line="0">
-      <description>Directives: partial, endpartial, block, endblock, render</description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <namespace-alias name="Application">\Illuminate\Contracts\Foundation\Application</namespace-alias>
-    <namespace-alias name="Compiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
-    <namespace-alias name="BladeExtenderTrait">\Radic\BladeExtensions\Traits\BladeExtenderTrait</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Directives" line="23" package="Radic\BladeExtensions\Directives">
-      <extends/>
-      <name>Embedding2Directives</name>
-      <full_name>\Radic\BladeExtensions\Directives\Embedding2Directives</full_name>
-      <docblock line="23">
-        <description>Directives: partial, endpartial, block, endblock, render</description>
-        <long-description></long-description>
-        <tag name="package" line="23" description="Radic\BladeExtensions"/>
-        <tag name="subpackage" line="23" description="Directives"/>
-        <tag name="version" line="23" description="2.1.0"/>
-        <tag name="author" line="23" description="Robin Radic"/>
-        <tag name="license" line="23" description="MIT License - http://radic.mit-license.org"/>
-        <tag name="copyright" line="23" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="23" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
-      </docblock>
-      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="30" package="Radic\BladeExtensions">
-        <name>$blacklist</name>
-        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
-        <default></default>
-        <docblock line="30">
-          <description>An array of methods that should be excluded by attach</description>
-          <long-description></long-description>
-          <tag name="var" line="30" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions">
-        <name>$directives</name>
-        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
-        <default></default>
-        <docblock line="37">
-          <description>An array of methodName =&gt; directiveReplacement</description>
-          <long-description></long-description>
-          <tag name="var" line="37" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="36" package="Radic\BladeExtensions\Directives">
-        <name>embedView</name>
-        <full_name>\Radic\BladeExtensions\Directives\Embedding2Directives::embedView()</full_name>
-        <docblock line="36">
-          <description>the addPartial</description>
-          <long-description></long-description>
-          <tag name="param" line="36" description="" type="" variable="$value"/>
-          <tag name="param" line="36" description="" type="" variable="$configured"/>
-          <tag name="param" line="36" description="" type="\Illuminate\Foundation\Application" variable="$app">
-            <type>\Illuminate\Foundation\Application</type>
-          </tag>
-          <tag name="param" line="36" description="" type="\Illuminate\View\Compilers\BladeCompiler" variable="$blade">
-            <type>\Illuminate\View\Compilers\BladeCompiler</type>
-          </tag>
-          <tag name="return" line="36" description="" type="mixed">
-            <type>mixed</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$value</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$configured</name>
-          <default></default>
-          <type/>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$app</name>
-          <default></default>
-          <type>\Illuminate\Foundation\Application</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$blade</name>
-          <default></default>
-          <type>\Illuminate\View\Compilers\BladeCompiler</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="44" package="Radic\BladeExtensions">
-        <name>attach</name>
-        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
-        <docblock line="44">
-          <description>Instanciate and execute all functions as blade extends</description>
-          <long-description></long-description>
-          <tag name="param" line="44" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
-            <type>\Illuminate\Foundation\Application</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$app</name>
-          <default></default>
-          <type>\Illuminate\Foundation\Application</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="75" package="Radic\BladeExtensions">
-        <name>createMatcher</name>
-        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="75">
-          <description>Get the regular expression for a generic Blade function.</description>
-          <long-description></long-description>
-          <tag name="param" line="75" description="" type="string" variable="$function">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="75" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$function</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="86" package="Radic\BladeExtensions">
-        <name>createOpenMatcher</name>
-        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="86">
-          <description>Get the regular expression for a generic Blade function.</description>
-          <long-description></long-description>
-          <tag name="param" line="86" description="" type="string" variable="$function">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="86" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$function</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="97" package="Radic\BladeExtensions">
-        <name>createPlainMatcher</name>
-        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="97">
-          <description>Create a plain Blade matcher.</description>
-          <long-description></long-description>
-          <tag name="param" line="97" description="" type="string" variable="$function">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="97" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$function</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
-      </method>
-    </class>
-    <source>eJzFVt9v2zYQftdfwQIGRBq2HCfoS+xF2dYMKNBhRRHsJcoEWmJsIhKlkVTSovP/viP1w5SrJGo6YHyw6BPv++6+O569Dstd6S2mUw9N0TsuWaL5A1PnqKRSc5rNEBNpt99kRXJvTc1OwpZJ8F14guZMlTRh6BNNeRL9ktGUXX3WTCheCBUdwFeeVymG3mdZlXNBNYt+LYSWNNEq+q2oREo1eEQ/l2XGE7tfHTv8ydkjeOUlz5hUNVf7FVGF2n3tOBzQtaRcK8cMmVgbxPfjghj3S5Djnm4ZctZgLPawqjbH5w/89sQD5ArHXbjTYBmc2Je00rtCoh5XseGiZrRHQE4g7IXz+/tr9KExz9FO6/J8sZDGI8i5njceQSG3FiEpyi+Sb3faieBkuZzDx9vZAJ+4R/3VMpiTQc0jssXGyDFnrh62p5KMKoWu8g1LUy62p44eXz0DZ6o7WEDz0hbRrCnSO4Zomn6s69ZY25dQJklzNHpNHmhWsVd7J4W449tKsvQIInIafPgetBC0LJ/xffZyTKzWnbdkupIC5fxzF87CPstqA6zorhKJZWamCAYZ1+nP3ERmyA3ShDdDR4zEotZVszmUVGsG1D8hf4HD9ZvokeBITcmlZYJdhHEwDUlEJhiHFzh8c4nDcygyCe0JEvyDwxNCjAdU3pgWKveb2tf175E0wAY5wjd/kVt4kvHQgNwBL0ZFbznI93GA+geJJCszGKg5ExqIlJZxY8F+FF39cR37M+Q3z/V6bba+N1muzUxHUATsW+kD1l4gn8wvlIZLgCenZsv0O6opnsQx9BolKxRevOifVBKGnMa1v5nc5ltDHwP/mWdj88bBQfK4PglOXerEFRu1GPwOPwXD1VVe6i+YkK8I0mHiARRr8rrxrcG/XaE9YhmMDOfMi2mC07iS9AqCAlQJ/jdPsW9h4cUdBWoy62GQ1TD26WC9G/Shar+YT1f2uipn31GY/1v+geboqaYMjpQU6A9tMwH5TAx2WB3MjzuYSQiXkm3jnOpkF9Msw+11nlk3+CwqTYgzrX6s9mDI07fYYJMn+6BHVQdvo2w5nBgdxzriY3dHkzhncgveYKrzulneOsf3jpTNb4EBXMG1G8du9XXbuEF5rnufQB49woqSiXqCcfhzIrvp0w2fQ6tAJ2WFYs6I6WJ2Z8y0p99zffVCf72yz77xH2i4sT8AnfsrVYwdiLNuW8/0Tlcr51gmtwStj1sldw1IPaDFfzp4B8r62pvnhDv2BrZr/21A7oXsvdw3f9L23t77F1hz5MM=</source>
-  </file>
   <file path="Directives/MinifyDirectives.php" generated-path="Directives.MinifyDirectives.html" hash="5f9dae9a1261ece30f5fc2d2461982e9" package="Default">
     <docblock line="0">
       <description>Directives: set, unset</description>
@@ -4420,7 +3305,7 @@
     </class>
     <source>eJzdU0tr3DAQvvtXzGEhm8WPbKGXpE2aPgKBLpQQejI0WnnWFpEloccmoeS/V5Yfcb1ueyk9VAc/NPPN98180psLVakoW60iWMFHppFatkdzCgZtDE74l49kkSA1GkUowg0pGM3fc1Lgp0eLwjApTP4CPYsiZxCuOXc1E8Ri/kEKqwm1Jr+SThTEekR+qRRnNHyfTQFfGT54VK0YR21arv4XiIH+uwXOC7rVhFkz2i5Qhz2v70/twjvf6T0pESZrlioAjNvOYV4oQtbet+Mh07Kv0nV6EhKIs5XU0zjcyC0TLXtI85Pz5AfyNte38LkLJVBZq06zTDeotGY26VCp1GWoQqV60qys7ETNyXqd+MfreIZX3B+Ig4GpyU5bPsGzbTOmBMdzyiLKiTGwYYLtnkbD+R41dRo3Zw1rgsG0Zq3gsigM3Hmv7qDoa3SxPsU7qEn9k8rFnnCHv0ugUuxY6TQWk6zRYYUFUWoSHs7mIvQ8RDVapwXU7HGomIW3cltfD3ZO0FBTKhTtTJatyngsJj7gj6eUx6FsO8XQSk0srXz4LSxsxUxyTjX6q7Vpt5dHdWA7Ou6G26xOrdJYftOouL/sy77ORE8r0oMb3PMv/Am36X9xiHJp8J9Y9IUTJgaf/DX4q1Y9Rz8ANt3ETw==</source>
   </file>
-  <file path="Directives/EmbeddingDirectives.php" generated-path="Directives.EmbeddingDirectives.html" hash="9a03277d65df3588083d765b69220aef" package="Default">
+  <file path="Directives/EmbeddingDirectives.php" generated-path="Directives.EmbeddingDirectives.html" hash="c5a36037067cf76b91f8e00d3add8438" package="Default">
     <docblock line="0">
       <description>Directives: partial, endpartial, block, endblock, render</description>
       <long-description></long-description>
@@ -4468,21 +3353,21 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions\Directives">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="36" package="Radic\BladeExtensions\Directives">
         <name>embedView</name>
         <full_name>\Radic\BladeExtensions\Directives\EmbeddingDirectives::embedView()</full_name>
-        <docblock line="35">
-          <description>the addPartial</description>
+        <docblock line="36">
+          <description>embedView</description>
           <long-description></long-description>
-          <tag name="param" line="35" description="" type="" variable="$value"/>
-          <tag name="param" line="35" description="" type="" variable="$configured"/>
-          <tag name="param" line="35" description="" type="\Illuminate\Foundation\Application" variable="$app">
-            <type>\Illuminate\Foundation\Application</type>
+          <tag name="param" line="36" description="" type="" variable="$value"/>
+          <tag name="param" line="36" description="" type="" variable="$configured"/>
+          <tag name="param" line="36" description="" type="\Illuminate\Contracts\Foundation\Application" variable="$app">
+            <type>\Illuminate\Contracts\Foundation\Application</type>
           </tag>
-          <tag name="param" line="35" description="" type="\Illuminate\View\Compilers\BladeCompiler" variable="$blade">
+          <tag name="param" line="36" description="" type="\Illuminate\View\Compilers\BladeCompiler" variable="$blade">
             <type>\Illuminate\View\Compilers\BladeCompiler</type>
           </tag>
-          <tag name="return" line="35" description="" type="mixed">
+          <tag name="return" line="36" description="" type="mixed">
             <type>mixed</type>
           </tag>
         </docblock>
@@ -4499,7 +3384,7 @@
         <argument line="0" by_reference="false">
           <name>$app</name>
           <default></default>
-          <type>\Illuminate\Foundation\Application</type>
+          <type>\Illuminate\Contracts\Foundation\Application</type>
         </argument>
         <argument line="0" by_reference="false">
           <name>$blade</name>
@@ -4585,7 +3470,7 @@
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
     </class>
-    <source>eJylVN9r2zAQfvdfcYWAJePYTcdemizufnRQ2NgYZS/TNhT7mojaspDktmPr/z5JjlMnhDKYHuLL6b777r47e1GojYryJIkggXdCY2nFHZpzUFxbwesUUFY7e1W35W1wbS3tTNQOm0eSN2gULxG+8EqU7E3NK7x8sCiNaKVhT8nnUdQZhKu67hohuUX2tpVW89Ia9r7tZMWtQ7DXStWiDPb8EPBV4L1DNUrUqE3PNfwFbmCwe+Dxgq41F9aM3K6T4HP1/b8gHn7h5Ljla4TROVpLCDbd6jD+iT9E3LleXfg43Vk2y07DJe/sptWwx9WuhOwZQ4iT0xHulfPx6ho+bN1T2FirzvNce0TWCDvdIrJWr0OGslW/tFhv7KiC09ls6n5epkf45C3sn4HBR2Y9j6zzlZdjimM9wk6VNTcGLpsVVpWQ65EcvyOfzQ/36Pz8ZZihPwnYDQKvqs/92AavG4/mzV55kzted/hcQNnKG7HuNFYHUWy0nse3GCZcqWdQzy71JGi0Q2u0nZbQiIddIXl4qm7l+OCmk2XgRC+ez0z63tJxCykclpfCASMNWXu5e1WBFIsTdk8JMwm9CPmdxQjJkoIyOiGkWJLi5IIU524mtAgRNPtDilNKPcINyrty0wxFB2UVtxZdT68gzo9SEEa+/aDfE0bpv3PE223wZyuasfqnRlW7bxWJGbv8dB2nEPcPpXG9uxxKSmGxWISAaDJb+C8mOKlIHATKcFjPmE6XrUI5OZsuhXtrtCVPuBeRJ9qV4kLLujVI6ByKZTS+SrdbSOk8+B6jx+gvbLaz9w==</source>
+    <source>eJylVF1vmzAUfedXuFIk7IhA06kvbVa6rZ00adOkqdrLmJADLrFqjGebfmjrf9+1gYREWbWofgBzufec4+NrL1K1UkEynQZoiq64ZoXl98ycIUW15VREiMlyPV+KprjzoX6mYco01CaBpDUzihYMfaMlL7L3gpbs+tEyaXgjTbYBPw+C1jD0SYi25pJaln1opNW0sCb72LSypBYqsndKCV74+fluwXfOHqCqVlwwbTqu4RNRg4Z5V7hf0I2m3JpRGFbiY6Dv9Ya48kuw445WDI3GXi0+2bTL3fwNv8+4h7VC+hjuJJ7Hx/4nbe2q0WiLq1ly2TH6FLATCLfkfPl0gz734RlaWavOkkS7irjmdtZXxI2uPELRqCfNq5UdKTiez2fwOI328Mk7tD0GBpcZdzxSJEtnx4yN/fA9VQhqDLqul6wsuaxGdvwOHJrb3L375376PXRjiphDcD3TB4Y4bJCmNTpoTO6paNmrEIpG3vKq1azcgckOOBNoQpV6of7FI+JleNfXCJrZVktU88e1rMS/VbsETnTbysLzrs3EnRXReEER2pUYrQ9jz0g8areBXoei1jKgfovCBKeLo+yB4MxMyaVnglmGcTxNSUYmGKcXOD26xOkZ7DdJfQaJ/+D0mBBXAU3gQompw74NPIVmSsDVVDNpgcZYnfcRHGbZ9debPIxQ2L8Xi4WbhsFkvnC3I4JF4NBLj1dMKHAzJLOLilkcejL3ZSxcCXhy4qbMXlFL8STPYdcoOUfpxUFYRavhGrG4w3J94L56WTnoehN4zcHh0OAP7qoAYG0P+U+rtoxCMWol/8XLAT5Ct1QYRqItjB1sA5hUa/oEMjZxYIF4106b8MMKugZhpVmV19QWq5wKgYd2iXwZPJvWEjLqp9etAgJ1eYodNvnniraoOvFe5cAx0jgq7BTvlo88yWumK6iGULeuH/Ofo/TnYGNlf1odYG/wc/Ac/AUgEUpC</source>
   </file>
   <file path="Directives/ForeachDirectives.php" generated-path="Directives.ForeachDirectives.html" hash="d2625acbb2679df4551f1cea79474b0e" package="Default">
     <docblock line="0">
@@ -5397,27 +4282,6 @@
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
     </parse_markers>
     <source>eJy1UE1LxDAQvedXzHG36EYFLyq4uHoQ9KI99jKm0yZsmoZkKor4303TdhERPDkEkpm8j+RdXXvthcOOokdF8IS1UdWNxZru3phcNL2L1a53HFBxvBRCFoWAAkptIqTFmuCZUe03aTpebJPOHluCuX5VzEAcWPdhwcEOm4aMQ6YabukVSsIu41Tv34NpNc+4Q7tSazg7OT0/+s7NFGtUcjq8QTP7eCEl2zpYatFuVN/JGSQ7w8cL4fG+hIfpnISkMI4pNGMy+ZPiQ4x6OYOxCoiMgedmmW0D8RAcVH+kWU2aE0vm3Q8v6SnQDE5xAk/yq3XK/Ycvufr/XJP46PkpvgBLcaPa</source>
-  </file>
-  <file path="Contracts/EmbedFactory.php" generated-path="Contracts.EmbedFactory.html" hash="689f8820c4625b0b2edf838ac6faa9bf" package="Default">
-    <docblock line="0">
-      <description>Part of the Laradic packages.</description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <interface namespace="Radic\BladeExtensions\Contracts" line="16" package="Radic\BladeExtensions\Contracts">
-      <name>EmbedFactory</name>
-      <full_name>\Radic\BladeExtensions\Contracts\EmbedFactory</full_name>
-      <docblock line="16">
-        <description>Class Widget</description>
-        <long-description></long-description>
-        <tag name="package" line="16" description="Radic\BladeExtensions\Contracts"/>
-        <tag name="author" line="16" description="Robin Radic"/>
-        <tag name="license" line="16" description="MIT" link="http://opensource.org/licenses/MIT"/>
-        <tag name="copyright" line="16" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="16" description="http://radic.mit-license.org" link="http://radic.mit-license.org"/>
-      </docblock>
-    </interface>
-    <source>eJyFj0GLwjAQhe/5FXMu2uqCl1VQFAVhBVkW9uJlTKdNsE1CMoIi+983TetNcA6BvHnvY95i6ZQTRZYJyOCInsFWwIrgCz2WWoJDecGaQh4NhTDYUogSwXe3Pa0bLGl7YzJBWxNOG2vYo+QwF0/opsEQ4FeXNXH8d9JqgEI3b0DJj1dW1kPvt2dt+lTaNVrGUM867H+SJq27e10rjtrHZDodx2c2ehE1FxhGMbvPokil81bzeODm1tepujZMvuqqb9szlbt4nPV38RDiT/wDn6VkRw==</source>
   </file>
   <file path="Renderers/BladeStringRenderer.php" generated-path="Renderers.BladeStringRenderer.html" hash="4d9b6b377ffc11b8a0957663d3c5c3df" package="Default">
     <docblock line="0">
