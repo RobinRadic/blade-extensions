@@ -3,10 +3,10 @@
 return [
 
     // AssignmentDirectives
-    'set'        => [
-        'pattern'     => '/(?<!\w)(\s*)@set(?:\s*)\((?:\s*)(?:\$|(?:\'|\"|))(.*?)(?:\'|\"|),(?:\s|)(.*)\)/',
+    'set'        => [    // https://regex101.com/r/uD8bI1/1
+        'pattern'     => '/(?<!\w)(\s*)@set\s*\(\s*\${0,1}[\'"\s]*(.*?)[\'"\s]*,\s*([\W\w^]*?)\)\s*$/m',
         'replacement' => <<<'EOT'
-$1<?php \$$2 = $3; ?>
+$1<?php \$$2 = $3; $__data['$2'] = $3; ?>
 EOT
     ],
     'unset'      => [
@@ -22,7 +22,15 @@ EOT
         'replacement' => <<<'EOT'
 $1<h1>DEBUG OUTPUT:</h1>
 <pre><code>
-    <?php (class_exists('Kint') ? Kint::dump($2) : var_dump($2)) ?>
+    <?php
+    if(class_exists('Kint')) {
+        Kint::dump($2);
+    } elseif(class_exists('Illuminate\Support\Debug\HtmlDumper')){
+        \Illuminate\Support\Debug\HtmlDumper::dump($2);
+    } else {
+        var_dump($2);
+    }
+    ?>
 </code></pre>
 EOT
     ],
@@ -39,10 +47,10 @@ EOT
 
     // EmbeddingDirectives
     'embed' => [
-        'pattern' => '/(?<!\\w)(\\s*)@embed\\s*\\((.*?)\\)$((?>(?!@(?:end)?embed).|(?0))*)@endembed/sm',
+        'pattern' => '/(?<!\\w)(\\s*)@embed\\s*\\((.*?)\\)\\s*$((?>(?!@(?:end)?embed).|(?0))*)@endembed/sm',
         'replacement' => <<<'EOT'
-$1<?php app('blade.helpers')->get('embed')->start($2)->setData($__data); ?>
-$1<?php app('blade.helpers')->get('embed')->current()->setContent(<<<'EOT_'
+$1<?php app('blade.helpers')->get('embed')->start($2); ?>
+$1<?php app('blade.helpers')->get('embed')->current()->setData(\$__data)->setContent(<<<'EOT_'
 $3
 \EOT_
 ); ?>
@@ -90,28 +98,22 @@ EOT
     ],
 
     // MacroDirectives
-    'domacro'       => [
-        'pattern'     => '/(?<!\\w)(\\s*)@domacro(?:\\s*)\\((?:\\s*)[\'"]([\\w\\d]*)[\'"],(.*)\\)/',
+    'macro'       => [
+        'pattern'     => '/(?<!\\w)(\\s*)@macro(?:\\s*)\\((?:\\s*)[\'"]([\\w\\d]*)[\'"](?:,|)(.*)\\)/',
         'replacement' => <<<'EOT'
-$1<?php
-if(array_key_exists("form", $__env->getContainer()->getBindings())){
-    echo app("form")->$2($3);
-} ?>
+$1<?php echo app("blade.helpers")->$2($3); ?>
 EOT
     ],
-    'macro'     => [
-        'pattern'     => '/(?<!\\w)(\\s*)@macro(?:\\s*)\\((?:\\s*)[\'"]([\\w\\d]*)[\'"],(.*)\\)/',
+    'macrodef'     => [
+        'pattern'     => '/(?<!\w)(\s*)@macrodef(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/',
         'replacement' => <<<'EOT'
-$1<?php
-if(array_key_exists("form", $__env->getContainer()->getBindings())){
-    app("form")->macro("$2", function($3){
+$1<?php app("blade.helpers")->macro("$2", function($3){ ?>
 EOT
     ],
     'endmacro'    => [
         'pattern'     => '/(?<!\\w)(\\s*)@endmacro(\\s*)/',
         'replacement' => <<<'EOT'
-    });
-} ?>
+$1<?php }); ?>$2
 EOT
     ],
 
@@ -119,7 +121,7 @@ EOT
     'markdown'  => [
         'pattern'     => '/(?<!\\w)(\\s*)@markdown(?!\\()(\\s*)/',
         'replacement' => <<<'EOT'
-$1<?php echo \Radic\BladeExtensions\Helpers\Markdown::parse(<<<'EOT'$2
+$1<?php echo app("blade.helpers")->get('markdown')->parse(<<<'EOT'$2
 EOT
     ],
     'endmarkdown' => [
@@ -132,14 +134,14 @@ EOT
     'minify'    => [
         'pattern'     => '/(?<!\\w)(\\s*)@minify(\\s*\\(.*\\))/',
         'replacement' => <<<'EOT'
-$1<?php echo \Radic\BladeExtensions\Helpers\Minifier::open$2; ?>
+$1<?php echo app("blade.helpers")->get('minifier')->open$2; ?>
 EOT
 
     ],
     'endminify'   => [
         'pattern'     => '/(?<!\\w)(\\s*)@endminify(\\s*)/',
         'replacement' => <<<'EOT'
-$1<?php echo \Radic\BladeExtensions\Helpers\Minifier::close(); ?>
+$1<?php echo app("blade.helpers")->get('minifier')->close(); ?>
 EOT
     ],
 

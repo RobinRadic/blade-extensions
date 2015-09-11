@@ -51,5 +51,4 @@ class DebugDirectives
     {
         return preg_replace($pattern, $replacement, $value);
     }
-
 }

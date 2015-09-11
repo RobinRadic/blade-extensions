@@ -37,7 +37,7 @@ class EmbeddingDirectives
     public function directiveEmbed($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
         $replacement = str_replace('\\EOT_', 'EOT_', $replacement);
-        $replacement = str_replace('EOT_', 'EOT_' . uniqid('embed', false), $replacement);
+        #$replacement = str_replace('EOT_', 'EOT_' . uniqid('embed', false), $replacement);
 
         $res = array();
         $str = $value;
@@ -50,6 +50,4 @@ class EmbeddingDirectives
 
         return $str;
     }
-
-
 }

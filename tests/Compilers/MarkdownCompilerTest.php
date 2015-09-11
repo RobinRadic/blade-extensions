@@ -19,6 +19,8 @@ class MarkdownCompilerTest extends TestCase
         parent::loadViewTesting();
         parent::registerHtmlServiceProvider();
         $this->app->config->set('blade_extensions.markdown.views', true);
+        $this->app->config->set('blade_extensions.markdown.enabled', true);
+        $this->app->config->set('blade_extensions.markdown.renderer', 'Radic\\BladeExtensions\\Renderers\\ParsedownRenderer');
         parent::registerServiceProvider();
         parent::registerBladeMarkdownServiceProvider();
         $this->app->config->set('blade_extensions.markdown.views', true);
@@ -48,18 +50,5 @@ class MarkdownCompilerTest extends TestCase
         return new MarkdownCompiler($markdown, $files, $cachePath);
     }
 
-    public function testMarkdownEngine()
-    {
-       # $this->assertEquals('<h1>header</h1>', $this->view()->make('markdown/test_md')->render());
-    }
 
-    public function testPhpMarkdownEngine()
-    {
-       # $this->assertEquals('<h1>header</h1>', $this->view()->make('markdown/test_phpmd')->render());
-    }
-
-    public function testBladeMarkdownEngine()
-    {
-       # $this->assertEquals('<h1>header</h1>', $this->view()->make('markdown/test_blademd')->render());
-    }
 }

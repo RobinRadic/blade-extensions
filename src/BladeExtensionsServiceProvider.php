@@ -53,9 +53,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         /** @var \Illuminate\Foundation\Application $app */
         $app = parent::boot();
-        if (array_key_exists('form', $app->getBindings())) {
-            MacroDirectives::attach($app);
-        }
     }
 
     /** {@inheritDoc} */
@@ -64,24 +61,26 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         /** @var \Illuminate\Foundation\Application $app */
         $app = parent::register();
 
-        $config = $app->make('config');
+        $config = array_dot($this->app['config']['blade_extensions']);
+
+        if($config['example_views'] === true){
+            $this->viewDirs = [ 'views' => 'blade-ext' ];
+        }
 
         AssignmentDirectives::attach($app);
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
         EmbeddingDirectives::attach($app);
+        MacroDirectives::attach($app);
+        MinifyDirectives::attach($app);
 
         # Optional markdown compiler, engines and directives
-        if ($config->get('blade_extensions.markdown.enabled')) {
-            if (! class_exists($config->get('blade_extensions.markdown.renderer'))) {
+        if ($config['markdown.enabled']) {
+            if (! class_exists($config['markdown.renderer'])) {
                 throw new Exception('The configured markdown renderer class does not exist');
             }
             $app->register(\Radic\BladeExtensions\Providers\MarkdownServiceProvider::class);
         }
 
-        # Optional minify directives
-        if (class_exists('MatthiasMullie\Minify\CSS')) {
-            MinifyDirectives::attach($app);
-        }
     }
 }

@@ -51,6 +51,4 @@ class MinifyDirectives
     {
         return preg_replace($pattern, $replacement, $value);
     }
-
-
 }

@@ -83,5 +83,4 @@ class ForeachDirectives
     {
         return preg_replace($pattern, $replacement, $value);
     }
-
 }

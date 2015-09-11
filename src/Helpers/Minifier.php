@@ -19,27 +19,27 @@ class Minifier
     /**
      * @var
      */
-    protected static $type;
+    protected $type;
 
     /**
      * open
      *
      * @param $type
      */
-    public static function open($type)
+    public function open($type)
     {
-        static::$type = trim(strtolower($type));
+        $this->type = trim(strtolower($type));
         ob_start();
     }
 
     /**
      * close
      */
-    public static function close()
+    public function close()
     {
         $code = ob_get_clean();
-        echo static::minify(static::$type, $code);
-        static::$type = null;
+        echo $this->minify($this->type, $code);
+        $this->type = null;
     }
 
     /**
@@ -49,7 +49,7 @@ class Minifier
      * @param $code
      * @return string
      */
-    protected static function minify($type, $code)
+    protected function minify($type, $code)
     {
         $types = ['html', 'css', 'js'];
 
@@ -59,11 +59,13 @@ class Minifier
         }
 
         if ($type === 'html') {
-            return static::compileMinify($code);
-        } elseif ($type === 'css') {
+            return $this->compileMinify($code);
+        } elseif ($type === 'css' && class_exists('MatthiasMullie\Minify\CSS')) {
             return with(new \MatthiasMullie\Minify\CSS($code))->execute();
-        } elseif ($type === 'js') {
+        } elseif ($type === 'js' && class_exists('MatthiasMullie\Minify\CSS')) {
             return with(new \MatthiasMullie\Minify\JS($code))->execute();
+        } else {
+            return $code;
         }
     }
 
@@ -74,7 +76,7 @@ class Minifier
      *
      * @return bool
      */
-    protected static function shouldMinify($value)
+    protected function shouldMinify($value)
     {
         if (preg_match('/skipmin/', $value)
             || preg_match('/<(pre|textarea)/', $value)
@@ -94,9 +96,9 @@ class Minifier
      *
      * @return string
      */
-    protected static function compileMinify($value)
+    protected function compileMinify($value)
     {
-        if (static::shouldMinify($value)) {
+        if ($this->shouldMinify($value)) {
             $replace = [
                 '/<!--[^\[](.*?)[^\]]-->/s' => '',
                 '/<\?php/'                  => '<?php ',

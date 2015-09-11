@@ -31,10 +31,10 @@
 @assertTrue(isset($mams), '@set $mams should create a new var')
 @assertTrue($mams === 'oelala', 'should create new variable named $mams with value "oelala"')
 
-@set($mams, 'pops');
+@set($mams, 'pops')
 @assertTrue($mams === 'pops', '@set should accept a $variable as key, and override the old value')
 
-@set('mams', 'childs');
+@set('mams', 'childs')
 @assertTrue($mams === 'childs', '@set should accept a string as key, and override the old value')
 
 @unset('mams')

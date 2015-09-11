@@ -56,7 +56,7 @@ class MacroDirectives
     }
 
     /**
-     * directiveDomacro
+     * directiveMacrodef
      *
      * @param                                              $value
      * @param                                              $pattern
@@ -65,7 +65,7 @@ class MacroDirectives
      * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
-    public function directiveDomacro($value, $pattern, $replacement, Application $app, Compiler $blade)
+    public function directiveMacrodef($value, $pattern, $replacement, Application $app, Compiler $blade)
     {
         return preg_replace($pattern, $replacement, $value);
     }

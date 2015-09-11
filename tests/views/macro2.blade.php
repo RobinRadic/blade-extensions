@@ -1,4 +1,6 @@
-@macro('simple', $first, $second = 3)
+@macrodef('simple', $first, $second = 3)
+<?php
 return $first . $second;
+?>
 @endmacro
-@domacro('simple', 'my age is ', 6)
+@macro('simple', 'my age is ', 6)

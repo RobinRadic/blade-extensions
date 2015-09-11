@@ -53,6 +53,7 @@ class EmbedStack implements Stack
     public function setData($_data)
     {
         $this->_data = $_data;
+        return $this;
     }
 
     public function start()
@@ -117,7 +118,7 @@ class EmbedStack implements Stack
     }
 
 
-    public function write($content, $name = null)
+    protected function write($content, $name = null)
     {
 
         $tmpDir = storage_path('blade-extensions');
@@ -133,10 +134,11 @@ class EmbedStack implements Stack
         return [ $name, $path ];
     }
 
-    public function remove($name)
+    protected function remove($name)
     {
         $tmpDir = storage_path('blade-extensions');
         $path   = Path::join($tmpDir, $name);
         $this->files->delete($path);
+        return $this;
     }
 }

@@ -44,7 +44,7 @@ class MarkdownServiceProvider extends ServiceProvider
 
         # Markdown engine
         $view->getEngineResolver()->register('md', function () use ($app) {
-        
+
             $compiler = $app['markdown.compiler'];
 
             return new CompilerEngine($compiler);
@@ -53,7 +53,7 @@ class MarkdownServiceProvider extends ServiceProvider
 
         # Php markdown engine
         $view->getEngineResolver()->register('phpmd', function () use ($app) {
-        
+
             $markdown = $app['markdown'];
 
             return new PhpMarkdownEngine($markdown);
@@ -62,7 +62,7 @@ class MarkdownServiceProvider extends ServiceProvider
 
         # Blade markdown engine
         $view->getEngineResolver()->register('blademd', function () use ($app) {
-        
+
             $compiler = $app['blade.compiler'];
             $markdown = $app['markdown'];
 
@@ -74,14 +74,14 @@ class MarkdownServiceProvider extends ServiceProvider
     /** {@inheritdoc} */
     public function register()
     {
-        $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', Config::get('blade_extensions.markdown.renderer'));
+        $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $this->app['config']['blade_extensions.markdown.renderer']);
         $this->app->singleton('markdown', function ($app) {
-        
-            return $this->app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
+
+            return $app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
         });
 
         $this->app->singleton('markdown.compiler', function ($app) {
-        
+
             $markdownRenderer = $app['markdown'];
             $files            = $app['files'];
             $storagePath      = Config::get('view.compiled');

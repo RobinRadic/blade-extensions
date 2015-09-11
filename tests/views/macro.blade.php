@@ -1,4 +1,4 @@
-@macro('simple', $first, $second = 3)
-return $first . $second;
+@macrodef('simple', $first, $second = 3)
+<?php return $first . $second; ?>
 @endmacro
-@domacro('simple', 'my age is')
+@macro('simple', 'my age is')

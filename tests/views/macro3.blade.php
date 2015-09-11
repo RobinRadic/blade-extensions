@@ -1,5 +1,7 @@
-@macro('simple', $first, $second = 3, $what)
+@macrodef('simple', $first, $second = 3, $what)
+<?php
 $who = $first . $second;
 return $what . $who;
+?>
 @endmacro
-@domacro('simple', 'my age is', 3, 'patat')
+@macro('simple', 'my age is', 3, 'patat')

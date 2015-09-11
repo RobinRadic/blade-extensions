@@ -53,32 +53,26 @@ trait BladeExtenderTrait
         $directives = isset($class->directives) ? $class->directives : $app->make('files')->getRequire($class->directivesFile);
         $overrides  = isset($class->overrides) ? $class->overrides : $config->get('blade_extensions.overrides', [ ]);
 
-        foreach ( $overrides as $method => $override )
-        {
-            if ( ! isset($directives[ $method ]) )
-            {
+        foreach ($overrides as $method => $override) {
+            if (! isset($directives[ $method ])) {
                 continue;
             }
-            if ( isset($override[ 'pattern' ]) )
-            {
+            if (isset($override[ 'pattern' ])) {
                 $directives[ $method ][ 'pattern' ] = $override[ 'pattern' ];
             }
-            if ( isset($override[ 'replacement' ]) )
-            {
+            if (isset($override[ 'replacement' ])) {
                 $directives[ $method ][ 'replacement' ] = $override[ 'replacement' ];
             }
         }
 
-        foreach ( $directives as $name => $directive )
-        {
+        foreach ($directives as $name => $directive) {
             $method = 'directive' . ucfirst($name);
-            if ( (is_array($blacklist) && in_array($name, $blacklist, true)) || ! method_exists($class, $method) )
-            {
+            if ((is_array($blacklist) && in_array($name, $blacklist, true)) || ! method_exists($class, $method)) {
                 continue;
             }
 
-            $blade->extend(function ($value) use ($class, $method, $directive, $app, $blade)
-            {
+            $blade->extend(function ($value) use ($class, $method, $directive, $app, $blade) {
+            
                 return $class->$method($value, $directive[ 'pattern' ], $directive[ 'replacement' ], $app, $blade);
             });
         }

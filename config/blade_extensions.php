@@ -68,5 +68,15 @@ return array(
         )
         */
     ),
+    /*
+    |---------------------------------------------------------------------
+    | Enable example views
+    |---------------------------------------------------------------------
+    |
+    | If enabled, several example views including layout, views and embed partials
+    | will be available under the blade-ext::<view> namespace. Use vendor:publish --tag=view
+    | to publish to your own resources folder. Based on bootstrap 3.3
+    */
+    'example_views' => env('BLADE_EXTENSIONS_EXAMPLE_VIEWS', false)
 
 );
