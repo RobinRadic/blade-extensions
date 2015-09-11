@@ -24,7 +24,7 @@ use Radic\BladeExtensions\Traits\SectionsTrait;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class Embed implements Stack
+class EmbedStack implements Stack
 {
     use SectionsTrait;
 
@@ -50,7 +50,8 @@ class Embed implements Stack
     }
 
 
-    public function setData($_data){
+    public function setData($_data)
+    {
         $this->_data = $_data;
     }
 
@@ -119,12 +120,10 @@ class Embed implements Stack
     {
 
         $tmpDir = storage_path('blade-extensions');
-        if ( ! $this->files->exists($tmpDir) )
-        {
+        if (! $this->files->exists($tmpDir)) {
             $this->files->makeDirectory($tmpDir);
         }
-        if ( is_null($name) )
-        {
+        if (is_null($name)) {
             $name = Str::slugify($this->viewPath) . '__' . uniqid(time(), true);
         }
         $path = Path::join($tmpDir, $name);

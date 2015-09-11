@@ -25,24 +25,40 @@ class EmbeddingDirectives
     use BladeExtenderTrait;
 
     /**
-     * the addPartial
-     * @param             $value
-     * @param             $configured
-     * @param \Illuminate\Foundation\Application $app
-     * @param \Illuminate\View\Compilers\BladeCompiler $blade
+     * embedView
+     *
+     * @param                                              $value
+     * @param                                              $configured
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
      * @return mixed
      */
     public function embedView($value, $configured, Application $app, Compiler $blade)
     {
-        /* (?<!\w)(\s*)@embed\s*\((.*?)\)$((?>(?!@(?:end)?embed).|(?0))*)@endembed/sm */
-        $pattern = '/(?<!\w)(\s*)@embed\s*(\([^)]*\))((?>(?!@(?:end)?embed).|(?0))*)@endembed/s';
+        $pattern = '/(?<!\w)(\s*)@embed\s*\((.*?)\)$((?>(?!@(?:end)?embed).|(?0))*)@endembed/sm';
 
-        return str_replace('\\EOT', 'EOT', preg_replace($pattern, <<<'EOT'
-$1<?php app('blade.embedding')->open$2->insert(<<<'EOT'
+        $replacement = str_replace('\\EOT_', 'EOT_', <<<'EOT'
+$1<?php app('blade.helpers')->get('embed')->start($2)->setData($__data); ?>
+$1<?php app('blade.helpers')->get('embed')->current()->setContent(<<<'EOT_'
 $3
-\EOT
-        )->close(); ?>
+\EOT_
+); ?>
+$1<?php app('blade.helpers')->get('embed')->end(); ?>
 EOT
-        , $value));
+        );
+
+        $replacement = str_replace('EOT_', 'EOT_' . uniqid('embed', false), $replacement);
+
+        $res = array();
+        $str = $value;
+        while (preg_match_all($pattern, $str, $out)) {
+            $replacement = str_replace('EOT_', 'EOT_' . uniqid('embed' . md5($str), false), $replacement);
+            $str = preg_replace($pattern, $replacement, $str);
+            $res = array_merge($res, $out[1]);
+        }
+
+
+        return $str;
+
     }
 }

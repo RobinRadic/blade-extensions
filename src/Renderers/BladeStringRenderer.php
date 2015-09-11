@@ -7,7 +7,6 @@
  */
 namespace Radic\BladeExtensions\Renderers;
 
-
 use Illuminate\View\Compilers\BladeCompiler;
 use Illuminate\Contracts\Filesystem\Filesystem;
 
@@ -119,6 +118,4 @@ class BladeStringRenderer
 
         return $this;
     }
-
-
 }

@@ -1,4 +1,4 @@
-<?php namespace Radic\Tests\BladeExtensions\Directives;
+<?php namespace Radic\Tests\BladeExtensions\Compilers;
 
 use Mockery as M;
 use Radic\BladeExtensions\Compilers\MarkdownCompiler;
@@ -17,10 +17,10 @@ class MarkdownCompilerTest extends TestCase
         parent::setUp();
 
         parent::loadViewTesting();
-        parent::registerHtml();
+        parent::registerHtmlServiceProvider();
         $this->app->config->set('blade_extensions.markdown.views', true);
-        parent::registerBlade();
-        parent::registerBladeMarkdown();
+        parent::registerServiceProvider();
+        parent::registerBladeMarkdownServiceProvider();
         $this->app->config->set('blade_extensions.markdown.views', true);
     }
 
@@ -62,4 +62,5 @@ class MarkdownCompilerTest extends TestCase
     {
        # $this->assertEquals('<h1>header</h1>', $this->view()->make('markdown/test_blademd')->render());
     }
+
 }

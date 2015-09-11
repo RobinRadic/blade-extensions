@@ -42,24 +42,19 @@ abstract class TestCase extends AbstractTestCase
         return $this->app[ 'view' ];
     }
 
-    protected function getEnvironmentSetUp($app)
-    {
-
-        $config = $app->make('config');
-        $config->set('app.key', 'sG7qHHCc0jAseXbQx5BEv8DiZn4x7p4C');
-        parent::getEnvironmentSetUp($app);
-    }
-
     /**
      * Get the service provider class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return string
      */
-    protected function getServiceProviderClass($app)
+    protected function getServiceProviderClass()
     {
         return 'Radic\BladeExtensions\BladeExtensionsServiceProvider';
+    }
+
+    protected function getPackageRootPath()
+    {
+        return realpath(__DIR__ . '/..');
     }
 
     /**
@@ -67,29 +62,19 @@ abstract class TestCase extends AbstractTestCase
      */
     protected function loadViewTesting()
     {
-        $this->addBladeViewTesting(__DIR__ . '/views');
+        $this->addViewTesting(true, __DIR__ . '/views');
         $this->cleanViews();
     }
 
     /**
      * Registers the HtmlServiceProvider required for the macro directives
      */
-    protected function registerHtml()
+    protected function registerHtmlServiceProvider()
     {
         $this->app->register(new HtmlServiceProvider($this->app));
     }
 
-    /**
-     * Registers the BladeExtensionsServiceProvider
-     */
-    protected function registerBlade()
-    {
-        $class = $this->getServiceProviderClass($this->app);
-        #$instance = new $class($this->app);
-        $this->app->register($class);
-    }
-
-    protected function registerBladeMarkdown()
+    protected function registerBladeMarkdownServiceProvider()
     {
         $this->app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider'); //new MarkdownServiceProvider($this->app));
     }

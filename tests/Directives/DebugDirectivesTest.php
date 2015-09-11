@@ -16,14 +16,14 @@ class DebugDirectivesTest extends TestCase
     {
         parent::setUp();
         $this->loadViewTesting();
-        $this->registerHtml();
+        $this->registerHtmlServiceProvider();
     }
 
     public function testDebugVardump()
     {
         return;
         $this->app[ 'config' ]->set('blade_extensions.directives.addDebug', '<pre><code><?php var_dump($1) ?></code></pre>');#<?php var_dump($1) ? >
-        $this->registerBlade();
+        $this->registerServiceProvider();
         $rendered = $this->view()->make('debug')->render();
         $this->assertEquals(<<<'EOT'
 <pre><code>string(3) "sdf"
@@ -35,7 +35,7 @@ EOT
 
     public function testBreakpoint()
     {
-        $this->registerBlade();
+        $this->registerServiceProvider();
         #$this->assertEquals("<!-- breakpoint -->bool(true)\n", $this->view()->make('breakpoint')->render());
     }
 }

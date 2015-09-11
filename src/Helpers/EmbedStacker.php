@@ -28,9 +28,7 @@ class EmbedStacker extends Stacker
     {
         $viewPath = $args[0];
         $vars = isset($args[1]) ? $args[1] : [];
-        $embed = $this->getContainer()->make(Embed::class, compact('viewPath', 'vars'));
+        $embed = $this->getContainer()->make(EmbedStack::class, compact('viewPath', 'vars'));
         return $embed;
     }
-
-
 }

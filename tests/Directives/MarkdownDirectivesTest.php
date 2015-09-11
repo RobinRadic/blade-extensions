@@ -15,7 +15,7 @@ class MarkdownDirectivesTest extends TestCase
     {
         parent::setUp();
         $this->loadViewTesting();
-        $this->registerBlade();
+        $this->registerServiceProvider();
         $this->renderedContent = '';
     }
 

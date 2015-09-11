@@ -33,6 +33,13 @@ return array(
          */
         'views' => false
     ),
+    'directive_overrides' => array(
+        'doMacro' => array(
+            'search' => '/(?<!\\w)(\\s*)@macro(?:\\s*)\\((?:\\s*)[\'"]([\\w\\d]*)[\'"],(.*)\\)/',
+            'replace' => '$1<?php if(array_key_exists("form", $__env->getContainer()->getBindings())){ echo app("form")->$2($3); } ?>'
+        )
+    ),
+
     /*
      * The replacement code for each directive.
      * Provides the ability to easily adjust helper classes and view execution logic
@@ -57,16 +64,16 @@ EOT
         // ForEachDirective
     ,'openForeach' => <<<'EOT'
 $1<?php
-\Radic\BladeExtensions\Helpers\LoopFactory::newLoop($2);
+app('blade.helpers')->get('loop')->newLoop($2);
 foreach($2 as $3):
-    $loop = \Radic\BladeExtensions\Helpers\LoopFactory::loop();
+    $loop = app('blade.helpers')->get('loop')->loop();
 ?>
 EOT
     ,'closeForeach' => <<<'EOT'
 $1<?php
-\Radic\BladeExtensions\Helpers\LoopFactory::looped();
+app('blade.helpers')->get('loop')->looped();
 endforeach;
-\Radic\BladeExtensions\Helpers\LoopFactory::endLoop($loop);
+app('blade.helpers')->get('loop')->endLoop($loop);
 ?>$2
 EOT
     ,'addBreak' => <<<'EOT'
@@ -76,7 +83,7 @@ $1<?php
 EOT
     ,'addContinue' => <<<'EOT'
 $1<?php
-\Radic\BladeExtensions\Helpers\LoopFactory::looped();
+app('blade.helpers')->get('loop')->looped();
 continue;
 ?>$2
 EOT

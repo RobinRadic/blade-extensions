@@ -24,16 +24,16 @@ class LoopFactory
      *
      * @var array $stack
      */
-    protected static $stack = array();
+    protected $stack = array();
 
     /**
      * Creates a new loop with the given array and adds it to the stack
      *
      * @param array $items The array that will be iterated
      */
-    public static function newLoop($items)
+    public function newLoop($items)
     {
-        static::addLoopStack(new Loop($items));
+        $this->addLoopStack(new Loop($this, $items));
     }
 
     /**
@@ -41,14 +41,15 @@ class LoopFactory
      *
      * @param Loop $stackItem
      */
-    protected static function addLoopStack(Loop $stackItem)
+    protected function addLoopStack(Loop $stackItem)
     {
         // Check stack for parent loop to register it with this loop
-        if (count(static::$stack) > 0) {
-            $stackItem->setParentLoop(last(static::$stack));
+        if ( count($this->stack) > 0 )
+        {
+            $stackItem->setParentLoop(last($this->stack));
         }
 
-        array_push(static::$stack, $stackItem);
+        array_push($this->stack, $stackItem);
     }
 
     /**
@@ -56,17 +57,17 @@ class LoopFactory
      *
      * @return array
      */
-    public static function getStack()
+    public function getStack()
     {
-        return static::$stack;
+        return $this->stack;
     }
 
     /**
      * Resets the stack
      */
-    public static function reset()
+    public function reset()
     {
-        static::$stack = array();
+        $this->stack = array();
     }
 
     /**
@@ -74,9 +75,9 @@ class LoopFactory
      *
      * @return Loop $current The current loop data
      */
-    public static function loop()
+    public function loop()
     {
-        $current = end(static::$stack);
+        $current = end($this->stack);
         $current->before();
 
         return $current;
@@ -85,10 +86,11 @@ class LoopFactory
     /**
      * To be called before the end of the loop
      */
-    public static function looped()
+    public function looped()
     {
-        if (! empty(static::$stack)) {
-            end(static::$stack)->after();
+        if ( ! empty($this->stack) )
+        {
+            end($this->stack)->after();
         }
     }
 
@@ -97,15 +99,18 @@ class LoopFactory
      *
      * @param $loop
      */
-    public static function endLoop(&$loop)
+    public function endLoop(&$loop)
     {
-        array_pop(static::$stack);
-        if (count(static::$stack) > 0) {
-        // This loop was inside another loop. We persist the loop variable and assign back the parent loop
-            $loop = end(static::$stack);
-        } else {
+        array_pop($this->stack);
+        if ( count($this->stack) > 0 )
+        {
+            // This loop was inside another loop. We persist the loop variable and assign back the parent loop
+            $loop = end($this->stack);
+        }
+        else
+        {
             // This loop was not inside another loop. We remove the var
-            //echo "l:(" . count(static::$stack) . ") ";
+            //echo "l:(" . count($this->stack) . ") ";
             $loop = null;
         }
     }

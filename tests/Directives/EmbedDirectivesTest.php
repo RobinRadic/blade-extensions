@@ -16,7 +16,14 @@ class EmbedDirectivesTest extends TestCase
     {
         parent::setUp();
         $this->loadViewTesting();
-        $this->registerHtml();
-        $this->registerBlade();
+        $this->registerHtmlServiceProvider();
+        $this->registerServiceProvider();
     }
+
+    public function testEmbeds()
+    {
+        $this->assertTrue(true);
+    }
+
+
 }

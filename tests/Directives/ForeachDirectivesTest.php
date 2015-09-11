@@ -17,8 +17,8 @@ class ForeachDirectivesTest extends TestCase
     {
         parent::setUp();
         $this->loadViewTesting();
-        $this->registerHtml();
-        $this->registerBlade();
+        $this->registerHtmlServiceProvider();
+        $this->registerServiceProvider();
     }
 
 
@@ -32,7 +32,7 @@ class ForeachDirectivesTest extends TestCase
                 'dataClass' => static::getData(),
                 'array'     => static::getData()->getRecords(),
                 'getArray'  => function () {
-                
+
                     return static::getData()->getValues()[ 'names' ];
                 }
             ]

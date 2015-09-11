@@ -16,7 +16,7 @@ class ConfigTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->registerBlade();
+        $this->registerServiceProvider();
     }
 
     public function getConfig()

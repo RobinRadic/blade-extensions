@@ -16,8 +16,18 @@ class MinifyDirectivesTest extends TestCase
     {
         parent::setUp();
         $this->loadViewTesting();
-        $this->registerHtml();
-        $this->registerBlade();
+        $this->registerHtmlServiceProvider();
+        $this->registerServiceProvider();
+    }
+
+    /**
+     * getViews
+     *
+     * @return \Illuminate\View\Factory
+     */
+    protected function getViews()
+    {
+        return $this->app->make('view');
     }
 
 

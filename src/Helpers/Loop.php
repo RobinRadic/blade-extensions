@@ -40,6 +40,8 @@ class Loop
      */
     protected $parentLoop;
 
+    protected $loopFactory;
+
     /**
      * Sets the parent loop
      *
@@ -59,7 +61,7 @@ class Loop
      */
     public function getLoopStack()
     {
-        return LoopFactory::getStack();
+        return $this->loopFactory->getStack();
     }
 
     /**
@@ -67,7 +69,7 @@ class Loop
      */
     public function resetLoopStack()
     {
-        LoopFactory::reset();
+        $this->loopFactory->reset();
     }
 
     /**
@@ -75,8 +77,9 @@ class Loop
      *
      * @param array $items The array that's being iterated
      */
-    public function __construct($items)
+    public function __construct(LoopFactory $loopFactory, $items)
     {
+        $this->loopFactory = $loopFactory;
         $this->setItems($items);
     }
 
