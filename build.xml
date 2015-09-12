@@ -20,6 +20,17 @@
         <property name="pre-commit.done" value="true"/>
     </target>
 
+    <target name="docgen" description="generate docgen docs for github pages and push it">
+
+        <exec executable="docgen" dir="${project.basedir}" logoutput="true">
+            <arg value="generate"/>
+        </exec>
+
+        <exec executable="commit" dir="${project.basedir}/gh-pages" logoutput="true">
+            <arg value="phingdocgen"/>
+        </exec>
+    </target>
+
     <target name="lint" description="Perform syntax check of sourcecode files">
         <apply executable="php" failonerror="true">
             <arg value="-l"/>
