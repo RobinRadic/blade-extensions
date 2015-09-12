@@ -288,7 +288,7 @@
     </parse_markers>
     <source>eJzVVm1v2zYQ/q5fcQGMSjJsqRmwL3GbpOvWIcC6DkGwL1HhMtLZJiJTGkklDdr89x6pN0pWt2XoMIwfEll39zz3ytOLs3JXevF87sEcXmWZAiZAaaZ5CptKpJoXAj4wrVm6+wB6xzTwDaQszzFbwD3Pc+CC9EXKmUYyzgA/YlqZZ5K1EASr4CZnGZJYo8gU8cWeYHtUJUsRLlnG0+QHo/GTUVDGKLmSjGu18rxKIVzkebXngmiSN0UlMmaAk1dlmfPUPpPefxOIoTynMG7ZFsE5k0FZ5TuU5oer/F10HD23QlbpXSFhgFTccFHjWRUKmeAGZG8vruCX5vUSdlqXJ3EsjUW053rZWESF3FqEtCgfJN/utOPB8+PjJf35fjHBJ25heFoGoxnVPCKPbWqW6EZrK61NJaFPRYbSFtf75HkGzRbOHCqeACYle4BiA3ukVFAtbb3UrqjyDG5M6tO8ypCeH6AuaWPcYpzfMVmjNG9i+7+sbigPMCMv09ucK736G+y/UpPCy1PIuETqgTu8xJLscY9CP422Q1AN76HgDc+JDNbrHy8u12uIwI+jKO7lEY2rP7IuqJskzzpUJ5qLf9jSw6hKJtkenEmDGStLuNohpJWUlAdgvXAq9PEg1kULxpChtfnktT1GkdQ5TZzh/53jffK62JeUKqnq8Wp/2tJSIA27Oc0be15aluXpnt1i4FtBlDamfrjqbdJCbPh2wqYWDHVzplSLL/C+CXY18KBuN6PBlUId1FbL004UwhkcvIST1pXl6ZasapfX/XhFnerApb5fDgh7kcvoGJwM4t1QapQfWvpL/KMivQko07Uuf9eRhwF3Ipe+1//LgDtVfwHX8D5set6cTSGRugoCh59ae1aPsRnhThA6TWYOrYLgqPW0j+u6M34fjk3MIVc1FxWuBpLHA+gGuGW/Br+kCUAp/K8AT/swsDONOQn4dGdkf6E92aGh7cipofBrjj1OldDpSFND0VzC/fuxl12Zwe90fLpAq3TDpaKADUS4OkgH5WNtr+xg5gzjs2f0OdC+N5YLZ4wXoGWFlKfPn+Go2RLUoyRRTZ8vWnee1DbDeOpVelrfyUF3dQazO5YTO5hvojHdwknQwg7yogEa+3HglERdSdGNZAPYsLm4g2YbCYYFH3kwCtf5XfcCJWC8v35GTbsfybltldMewI+lRGU/nahVgMEWBUraLHYLdPslmt5gdDNLLrYwa/U6eRN8LZ9aYF36U2pQjW+ZTncogw5pvLkaQD8Ozl4cJfdhkKh5eG76sTMxy928ToJonoRh7K/aLPxPkvCuRPGtExEmf5KI15aWAqYmo8/TOtx97cG/Hu1vhvNbhusE+uh9AWdz+OQ=</source>
   </file>
-  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="c9361112f58dc6923748f9e7e5ab742b" package="Default">
+  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="d38222be742adeb14c50ef776e4e2d76" package="Default">
     <docblock line="0">
       <description>A laravel service provider to register the class into the the IoC container</description>
       <long-description></long-description>
@@ -379,10 +379,10 @@
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="62" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="59" package="Radic\BladeExtensions">
         <name>register</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::register()</full_name>
-        <docblock line="62">
+        <docblock line="59">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
@@ -394,9 +394,9 @@
       <error line="43" code="PPC:ERR-50007">No summary for property $bindings</error>
       <error line="47" code="PPC:ERR-50007">No summary for property $singletons</error>
     </parse_markers>
-    <source>eJy1Vk1v2zAMvftXcNgAp0WTrAN2Sdeun8MKrNjQ7jYPgWIzthBbMiQ5XVD0v4+SbCd1HKw5zEBiWyIfKfKR9KfPZVYG48PDAA7hAnKm2BJz0KiWPEYolVzyBBUYCQpTro19zhDinGkNXNC6fbW/W3kFsRSGcYGK4MaBYAXqkhHOPUt4HF3mLMGbPwaF5lLokyCoNMIVm8+RC2YwiS5xiYqlGD14B37U9k+c5M2fGEtDqv61FzS65gpjw5eoowuteSoKFGa9+ErVa5xV6d5aN8UMk4SL/TW/SIUszvbWu2OxkvtrccHnq9ep3aOgBKDSfufBKDpfs0gp/C/csYjnxJwFcQHqq9c9J0icsS+N4IfR8ei922CVyaSCFkHOuPA4bjsnN4VuDdzd/oRv9dIQMmPKyXisrPSo4GZYS4+kSp12LMuV4mlmaqvvj4+H9PfxqMeOWMD6apCt1Mjji3w8swcb4ubJXBH5aHWO3SkPcGqJhs568BQE1iLlCJ7OuchQcXMt42cLbDcoR4Y4gAm8o/DPefqF56jhFH5B6Byarh0K4fdJC+fu0EGtF7egE64Icjq9vr2fTmuMje2GKN5u1NsPmofOAScTH57fO1E3DzPKMC/JTnjULGjH5rBPn5JjK9npB03qOmqnZ9BTFLVTTqkHWJNojoYi2gfduGixv/rnyN/vsZSaG6lWfQZ2p7iaEXNhXonYtk6YSWkGB27rqTVutc+XTEF0m+dV4aJPPakSCbNK0UVZEoh7hnesLBtwe7n3UyiZokY7mXj8k3abz2HAlGKr6QJXRCfqA3oQzqUqKA1Wd3iWormsoz04ODjY8MuV5csWN5kwY6hVDqzuhh3Pvuc9o9E0pv8ZkbWNOldOxtcbifkYFGyBg9AvhpuCfUNsVww6U2uX2Naw2SXYM8+6oq3sW/juZjPLoWBqkchHQS29KKmhqCNAkVJr18BEAkkL9oIkdUQcHQZb3WfUgI5QsFmOSbhFFAvyxk+XhmevxVR16Ybb9LOXyZR8BIGP60+QQfjTjjIHXymq6/bQDVY95xJJxxbSgHMp3IjumrWbxBmetXyJ+idy0/zs9Pc2+7vii+LozZP7DNiVjxeBDO8o7Rln+q7Kc471F0R09fCwnYfu18W/KvY5+AsmFWDV</source>
+    <source>eJy1Vt9P2zAQfs9fcdOQAoi2MGkvZWX81pCGNgFvTVW5ybWxSO3IdloQ6v++s52kXUgl+kCkNon9fd/5fOe7/PiZp3nQOzwM4BAuIGOKLTADjWrBY4RcyQVPUIGRoHDGtbHPKUKcMa2BCxq3r/Z3J68glsIwLlCRXC8QbI46Z6TzwBIeR5cZS/DmxaDQXAp9GgSFRrhi0ylywQwm0SUuULEZRo9+AX9L+6cOefMSY26I6l9bRaNrrjA2fIE6utCaz8QchVkPfpB6jZNitjPrZj7BJOFid+atVMjidGfePYuV3J3FBZ++foz2gIICgEr7mUejyL9qkEL4KbljFc8pc54pF6C8WpfngJQz9qUCfuuedI/dBCtMKhXUCnLChddx0xktU+jawP3dE/wuhzqQGpP3ez1l0d05N50S3ZVq5tixzF8Vn6WmtHp8ctKhv+9HLXbEM6yvStmiul5fZL2JdayDm565Q+R3q+F243iAoyUaGuPBWxBYixQjeDvnIkXFzbWMV1bYTlCMDOUAJrBH2z/ls1ueoYYBDCF0CxqvFxTC6LSWc3doqJaD76QTrkhyPL6+exiPS42N6SpRvN2otR5UDw0H+32/PaOtqpvOdFPMcrITHlUD2mVz2Man4NiT7PhBFboGbXAGLYeiXJQjtQhrgmZoaEfbpKslWu1f/jny9wfMpeZGqtc2A9tDXEwoc2FaiNiWTphIafYP3NRbbdyyzxdMQXSXZcXc7T7VpEIkzJKiizwnEfcMeyzPK3F7ufcB5ExRoe33vf6pm17tuLaqTHzm+tY2yp1zGJ/9BGNKsddxQj7smZTrzhmxh6GfDkfD96ditKnDp7Bfag1DfGHzPMPxguOScDAYDMCoAg82HHPGvSELo5JcJqwn2SwI68rg8rRirdZW2/pcv8+MoY6yb90/WNMajW0b7F0/2gZsaXnboI1etRXWaE5NXA38Cn/c1wDLYM7UcyKXgprIPKcSpo4AxYyaiQYmEkhqsfZIVfQuCjbJMKGgNmJk4V9856LgUwLpFrYqCwDRm3x7mVTJJQhcrj9k9sMn2xCdUKGoOtSOVFplt0wkuSKkAWc83Ngunwv/5RPtU+eszvOova9XJdR+Q3ib7bX14F3KrYJV8A+DTEg1</source>
   </file>
-  <file path="Providers/MarkdownServiceProvider.php" generated-path="Providers.MarkdownServiceProvider.html" hash="0ed9f04bfde755729e55c9018c972009" package="Default">
+  <file path="Providers/MarkdownServiceProvider.php" generated-path="Providers.MarkdownServiceProvider.html" hash="666faa5a09a335d00b0cd4ac5617b966" package="Default">
     <docblock line="0">
       <description>Class MarkdownServiceProvider</description>
       <long-description></long-description>
@@ -450,7 +450,7 @@
         </docblock>
       </method>
     </class>
-    <source>eJytVltP2zAUfs+v8ESlJqhpYdJe2rVjAzYhDQkB2guZJjdxE6uJHdlOGUL977Od2Lm0lFLmh9Y5PtfvXOzPX/Ikd0bHxw44Bucp5BxcQ7aM6CO5Q2yFQ3TD6ApHiEmGkUNghngOQwRuYYTD4FsKI3T5VyDCMSU8MMx84jgFR+Ach5RgGFiW4Mcim5RHlCxwXO6v0rTIMIECBXdFnlMmgo71Db5fGD0GlyTGBPHgnGY5ThErv0ve7Q4aTh6YMA1ll9QFZigUeIVqsZq0S9A4qOlG9HUvjdhNkneF9s2V4jmTmVrCGIFqbTWmGXkxb/LaNOrDldxITqPl4/B0eKIPYCESyoBVT+eYlEb0cSo9Itxav766Bz8rkg8SIfLxaMQU9zDDwq+4h5TFWjqk+RPDcSIqqyenp778+TRo2pGKyv97FCaEpjTGiFfGyRLUy5hTosPSKElHcwWFj5pY6DIPd4ELNH/EQRf0Z0dZkvkBz2eYJIhhEdFwrRSqg7yYyxjBoiCybiScc0qF6+mjUlKtI3BBAaECMBRjLqQ1kSCAdPIljdNUZQPgBYjQQtIiIKEIdStZHfLQLbtrPI6RcPs6zD91mMOsimy4kl3E+x74MJ0CwQrkNVxRiyFRMDKxtLXj2L0K9GwFGQgabfmdFiSCKr7ga57LePUe9GCeGxzU0t9T0BMJ5v5Mfkxe0avb/TsMBWVPoKfcbqnThKlW+9BXH/3fDY1HNpUVkm1BfyZRKvvrtkLY9fyZyYDbz6L+oM6b6wHVua4y1sSrBVwvrMaK9cpibk5aLtZgAyJDaQ8012rzGqlo7KswYBTZvq68Vr9eCwo5U0D2LjjkjXEIItZoF5FdQGxMQNfqeRsWQ+m1wqN0vg2JnojvBEX32H8pFK2pVSXvh3HL/VMX1QAcimnpaoWsQaCSWztvG4cWyu5IrIeEP5PTO3L7L13tRDA5Ieo7+laOacQkhgOw5zxkRsJrRt9wgGMSp0jo+A3uzZTvzHWVkKa+DC7RAQF18rSvq3VV7e2zLQ1je2vdtSQW0gJvUoyEPthg53Kmy4fHDRSJYW9lS9WecbzduZ0i777o3A3fB5Vzg5bVl8DcfOqNx1AIGCZujfOB1Z6Xjwa+Ue1VPA/N8tp+d5Rm184/RxecxQ==</source>
+    <source>eJylVltv2jAUfs+v8FSkhIpAO2kvMFi3tpsqrVLVVnsh1WQSk1gkdmQ7dFXFf5/t2LlB6YU8gGOfy3e+c3G+fsuT3BkdHzvgGJynkHNwDdkqoo/kDrE1DtENo2scISYFRg6BGeI5DBG4hREOgx8pjNDlP4EIx5TwwArzieMUHIFzHFKCYVCJBL+W2aQ8omSJ43J9laZFhgkUKLgr8pwyEXS8b8n9wegxuCQxJogH5zTLcYpY+V7K7gZoJXlgw7Q7+7QuMEOhwGtUq9Vb+xQtQL1vVV9HadVukryr9NZcKZkzmakVjBEwz05nWpAXi6ZslUZ9uJYLKWmtfB6eDk/0ASxEQhmozNMFJqUTfZxKRIRX3q+v7sFvs+WDRIh8PBoxJT3MsPCN9JCyWGuHNH9iOE6E8XpyeurLny+Dph9pqPy/R2FCaEpjjLhxTlagfqw7pTosnZJ0tFBU+KjJhS7zcB+5QMtHHHRJf3aUJ5kf8HyGSYIYFhENN8qgOsiLhYwRLAsi60bSuaBUeH19VGqq5whcUECoAAzFmAvpTSQIIJ18ucdpqrIB8BJEaCn3IiCpCHUrVTbkoVd213gcI+G5Osy/dZjDzEQ2XMsu4m4ffJpOgWAF6jegqIchUTAyqfY2jlOtVaBna8hA0GjLn7QgEVTxBd/zXMar16AH89zyoB79PgU9kWDuz+TL5BW7ut1/wlBQ9gR6CnbLnN6YarNzV724Dw2LR1UqDZNtRX8mWSr769Yw7PX9mc2A52aRO6jz5vWB6lxPOVN8tQjrhWacVGgqru1JC1pNMiAyhPYg8ypr/UYKGmsDH0ZR1c8GrfrttyiQswRkB9Egb4r3MFE56zKxj4CtiedVdt7HwVCiVTyUoNtU6Al4IBm6pw4qDG2hVRWH07fjnqmLaAA+ymUJ1TBqIzd6G+d9Y6+isDv66mHgz+SUjjz3pSucCCYnQX0X38pxjJjkcNAwMnfLseg+zPcMQGZVH5o0NJBwTOIUCU2ETUAz5zuTbTLS0xYyuEIfiKWToreCqwvqVZRVNVifO0utpbGUlnlzx2rogy1xLse1/Ka4gSKx4q2LSZWbBdxu0k5ddz/WvC3sAwNu0PL6EonbX3HjMRQCholX8/vBAs/L7wG+VeAmnnmzkHZfD6XbjfMfeN+ZAw==</source>
   </file>
   <file path="Facades/Markdown.php" generated-path="Facades.Markdown.html" hash="1f9838306f33a6c90b378bedad9d59ed" package="Default">
     <docblock line="0">
@@ -518,7 +518,7 @@
     </class>
     <source>eJxtkU1rwzAMhu/+FbptC0vSDnZZB2sHKxTWy9pjL46jJaapbWx5H5T+99lOCumoDhZIr99Hlp9fTGtYmWUMMti2CGtu97X+VrBcCF6HaskUP6AzXCB88FqK3WvHa3z7IVROauV2Sx6U6GaMeYew6jp/kIoT7jbeGG3pLBhy0F3l8Z4XG/NA2/MGYRRX2UnsfPVfPxBT+wtt1I69HoppMUlN7qnVFi5AupKqxyVJJ0WgXcyyXm3hfSjn0BKZp7K08UZxkJQPNwptm+QgtPm1smlpNMFkOs3D8Xh/haf2cBlnQlQWPUd1ZRV3keN4Gem/RMedg7SpDVmpGkia2g1rYUcWTdMnxMjgOJeqRSup1uI0FMuUja/Ca8ARp5A+vRIUd9kg9V4LIdA5bW/vkrx3jmGRvFVwk4YsXJrjZpbaJ3Zif+O3uC8=</source>
   </file>
-  <file path="directives.php" generated-path="directives.html" hash="238047dfc178149381a96592f97b1847" package="Default">
+  <file path="directives.php" generated-path="directives.html" hash="f886690c36b7e8b6cdfd02cdb1da9a9a" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -527,7 +527,7 @@
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
     </parse_markers>
-    <source>eJzVVktv2zgQvvNXKIYAkmlsN+5NVuxsNmkL7BZdLJJT5BqMxMRCbEog5TzQ9L93hpSiNFJ2IwE51AeLrxnO982L4Txf5YRoWWy18s4J8eA3Hnt/GJNeqY1UxXGqZVykN9LYPWpkQb3ydzADkWpCc1EUUitabdExm4c70S1nkdnlhyDI5gEOI1YO8OM/4D99iAYPnLPR7pzX8z177gGXecTHdK++TMt8LWKJFlK8LAxDevL1lBJ/P0RMXuT7E+/A8z9MvfmMwJaVXTgVdKtqHK9CYWFYHFYUDbNQHJYKTI2mAQcXaqmOYNydCIk/h1N57FhebK+eOyvBxX4wrWgbzPNvjC/e8d0uIFb7s+OTo7NP3tez03/OToNwDCskzLWchXGWyJlV47CyeC2MWcq71BSG0b9S0Me9uYeDIEi2m5wBDV7g3Qi9rKYcWQnHVlc4Rr0Nl19oKa7zLC3N68JFLeoWXoc73BkOvVrUGw5nFiFJL9nlVoGfMvUI887yvbTHKeffrf5HhE93GedT8oO0R8HJ5kImSaoakSBx40XgbaCtBA7R+RjI4HAfwmDG5juHEA1SJXxuD/ERRP17zlFIJXZpbDadAlzkOaMXa5HI0Uquc6kN5cPZFQR9aTnMTCF0gc6GoSyORSGYv1wm8HVJ0UVXvNUajGFO15+ZKnBWmrUEuz6QCEeku2qggL2YpR8zcGG8eu6dS7dMu6dpKfk0UUdlLTLCuMrZsdqQ/0C5zrIcJ0re/g1D9MaUVDZAwRUGKi4P7GU+HoYS/Ap1+AXSSEulBjprdjqSU8t2ydsONOBXortJfdX0NYJw3PGHCxa4P2mvWP2qt6sUPUDjKSv8gk0xpEqqtrJHqFaib+6L6qImhCoNv4hYZ41mmW1wuXrddO2XTrqlY55HdLBg53A2ipJFOd/rlZnQOYTW4n55Le+r1jGAuNsM9jyohVLdWFKwnolUSc0cSUepwp5goHWUnUXGq8wmppOGY/6EQeZCZ2l7Lj0hpiMtvxMpv/DhDB/4E9BSdWtk6Htbhar56V6h3EUdcgJ3f7R4qg5ufZ1kt+p5fG/K9e51tJKEzg8u5D0S2AVc9K9I0jg6wjw+uYOWa4BUE312GR1VhgdBLrSRVTumLWXI8lbB6cN5Cej/kQz8/UjB9ZGyTR3igTQIT1V6ed+g2672CQonycq31whf2m/BNt6SSh0EUDeVP3l8sjSIfgTSg+gayptCiNcZBEzz2UUWU/ITTHUJVw==</source>
+    <source>eJy1Vt9v2zYQftdfoRgCSGa2Fbsvg6PK3eZsK7ahA5ZgD6ZryBIdC5UpgZTqDEn+9x0p0cospbWE1Q8meeLd8fvuB+nNs11mWYLlheD20rJs+Lmu/YOU8T3fM54vYsHCPP7MpP6GJMuRXf3e+vayUtjleSZnrivYPXuYXE3GYbp3hVssvt+8n7gTy6igLMhzJjgyBpCL594FPRBM5SV5B+ZhpGpBncer4eR5SdGAytUlHl/OiVkM4Tte0r/p4eMKxJTA2nH3aFg7EixLgpApDEg58jwP3Xy4RZYz8RRqmzrO1H5rO2+ubWe9joI8WCJnilaVbO5bsF3bW5VmUcFr9Ar7V1FpWBqXVsXzmV5Ris1Uj86TGtATpYMnQjTQF4Jai7idAJY+FUxyCsfEecE2xf1piCMl7AdTq7bBXH7EZPUduewCYjfxFzc/3v1if7i7/fPudua5ILG8TDDfC9OI+dqMxqpn8RaHSSDlmj3EMpcY/RaDVULsx6M/JZnNomKfYcWKlj/bLJGsofw+SYp9zIOc0b+KLEtFTjVb9Nd8nyzAAhNguzZNz1Bod/3ifJ8DsT7Zov8hep6rMXuuwt9IzY1gwacsjSsau8SsVi0F58XHuxiN7FrVHo38MhJA5LbgkE8pP3L5oPNirbcfSTtiffkVE8D9bLVn681+w6Io5o2MZerDq8DbQGsNNVVJqgoOElMtHUhZH88v3kHmMh6Rud5IxlChV4QoRR5pkSu7dZsgyzDaJEHExjuWQC5IREb+PRRodXpYyTwQOTbl2kUzLIQA11gZYfkCehnUfdnUStFPKc/VhupcazjYG4uqmdXdG3CAX20pP6cQx3B3GqJtKUbde0ql+bKrjKvGKQOp2mXn1mh9AWWSpplacHb4HaZlJZozwI0RSLgeyEw7c9RmuC/OMKdGIM1quVaAzpqdjuTUul2KtwMNamQq3Fbt6vocRdhe8qcEGrgzbW9b/a6asl30AK12aeVXzhRCqcS8YD1S1ah+81gYR00Ipgz/CEKRnhbhXgnN860jNq3bcrWrJ9kK3mL0QGm0Muv5bPjUqzRtFu5SXVCD/5AxAPzOFEPptT7N9OkitkXnQzNPTqOqAClouJoYYIca1lAj6gioHUtJ58CZDoa2uS8Vusc2dFBLdei6d4jSV/ectJ812a8lmPgUpQfezLFS3r2XGU24fiG/SJ8DfyF5dCUdDweCLBCSmQsRtTQCzZwB04f1Cs7XcQycCeXgnvKK8IHVoDvm8fafBtla2ictSk1cPYHG6mH+f3OtPMTqlTzyoW9xZ3qs3AbNRxg9aK6BfEMAYZJCsjQfPdbq2voX0dgc+A==</source>
   </file>
   <file path="Compilers/MarkdownCompiler.php" generated-path="Compilers.MarkdownCompiler.html" hash="24b19c0f3331227c659f929e81a90789" package="Default">
     <docblock line="0">
@@ -801,38 +801,73 @@
     </parse_markers>
     <source>eJydVU1P4zAQvedXzEo9pBVtAe0Jtiz7gbRIcIHetqvKdaaNRWpH9gSBVvz3tZ2Pukko1frQWvGbmffejJMvX/M0j6ajUQQjuGeSbdAApQh3SuUgpCEmORp7Oo0k26LJGUd4YIngi+8ZS/DmhVAaoaRZ/MIsR20uo6gwCLdZVmyFZISLH0qSZpyM3zEhUe92Fn5MeQe4tsWfLASq1UvDA02xCrEVM3/0bDcWV+c4n5xNTv0BKyhVGprkaiVkWcIfZ4LbCk3t+9s53FWPxpAS5RfTqXboyVbQuEJPlN74aK7yVy02KZXR8fnp2dnY/nw+CQvZTOX/HHkqVaY2Ak1VXT7BbtX1XOikrCqz6co5McbQCt84tjLef+AZMwYeyVqDOvobuVS5VoScMIEBD3rijnxf3BrB3PbEuDhQ605zPKRGXj8zDUxr9goDH1EdTNvVynSzEhsPuzWvhUxRC/qp+H6OYmXthXUhOblOLpeWuFVYcIqbsQrUDH1UqdatAaXCjK+ac8shlO4gb1GHzbckMcBK7aT8kPbIa1GzCE1xh4APvCXc2tJ2T4JfXHCN9q7ELnS5QVoyvTHxcHjZRHmflnlh0rhS4NOcBOkC9O6hxzkWu0ONVGgZYBrVLdElqXaHq/CteMFkT34zaLs2N1ZU+gZOl5X9+09Pxx98YtMxt13ZW3HQeOugH/OO97X0wMH3xD+gQeqS6S+oHbjb6aBMOOr9BecKVgicZZkzTmhD7paJBD2HtbIO8hQyO4GTPat4oTVK8ieHemXHvELOW1GQMGIH9VXorsI6zQxQJnuTWTc4tL1CH+XACp1kr9Cmdi8etw1E9jN1NNosxRriTxU3YW62Odk2DAOAW81NrKWOr3yuyz1UdQ1V3tZaA95CbW1yTfH+seSqsIX3EsNsNoPT9wyzcw67F9kzy4r3buvi2A/yR/eqAX5wt7qv1Bb3R8vdj+9h/jnTbHs8/eBd3rag/vAdEmhCgf/9Dem1pPbhLfoHLvC4NA==</source>
   </file>
-  <file path="Helpers/Markdown.php" generated-path="Helpers.Markdown.html" hash="416eaad498e28a659c530ae78b526c23" package="Default">
+  <file path="Helpers/Markdown.php" generated-path="Helpers.Markdown.html" hash="a23306329e794c6346beea8ee1ef1707" package="Default">
     <docblock line="0">
       <description>Markdown transformer Helpers</description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
     <namespace-alias name="Str">\Caffeinated\Beverage\Str</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="21" package="Radic\BladeExtensions\Helpers">
+    <namespace-alias name="Container">\Illuminate\Contracts\Container\Container</namespace-alias>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="22" package="Radic\BladeExtensions\Helpers">
       <extends/>
       <name>Markdown</name>
       <full_name>\Radic\BladeExtensions\Helpers\Markdown</full_name>
-      <docblock line="21">
+      <docblock line="22">
         <description>Markdown transformer Helpers</description>
         <long-description></long-description>
-        <tag name="package" line="21" description="Radic\BladeExtensions"/>
-        <tag name="subpackage" line="21" description="Helpers"/>
-        <tag name="version" line="21" description="2.1.0"/>
-        <tag name="author" line="21" description="Robin Radic"/>
-        <tag name="license" line="21" description="MIT License - http://radic.mit-license.org"/>
-        <tag name="copyright" line="21" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="21" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
+        <tag name="package" line="22" description="Radic\BladeExtensions"/>
+        <tag name="subpackage" line="22" description="Helpers"/>
+        <tag name="version" line="22" description="2.1.0"/>
+        <tag name="author" line="22" description="Robin Radic"/>
+        <tag name="license" line="22" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="22" description="2011-2015, Robin Radic"/>
+        <tag name="link" line="22" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="28" package="Radic\BladeExtensions\Helpers">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="24" package="Radic\BladeExtensions\Helpers">
+        <name>$container</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Markdown::container</full_name>
+        <default></default>
+        <docblock line="24">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="26" package="Radic\BladeExtensions\Helpers">
+        <name>$renderer</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Markdown::renderer</full_name>
+        <default></default>
+        <docblock line="26">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="33" package="Radic\BladeExtensions\Helpers">
+        <name>__construct</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Markdown::__construct()</full_name>
+        <docblock line="33">
+          <description>Markdown constructor.</description>
+          <long-description></long-description>
+          <tag name="param" line="33" description="" type="\Illuminate\Contracts\Container\Container" variable="$container">
+            <type>\Illuminate\Contracts\Container\Container</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$container</name>
+          <default></default>
+          <type>\Illuminate\Contracts\Container\Container</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="46" package="Radic\BladeExtensions\Helpers">
         <name>transform</name>
         <full_name>\Radic\BladeExtensions\Helpers\Markdown::transform()</full_name>
-        <docblock line="28">
+        <docblock line="46">
           <description>Removes indentation</description>
           <long-description></long-description>
-          <tag name="param" line="28" description="&lt;p&gt;The markdown text&lt;/p&gt;" type="string" variable="$text">
+          <tag name="param" line="46" description="&lt;p&gt;The markdown text&lt;/p&gt;" type="string" variable="$text">
             <type>string</type>
           </tag>
-          <tag name="return" line="28" description="" type="mixed">
+          <tag name="return" line="46" description="" type="mixed">
             <type>mixed</type>
           </tag>
         </docblock>
@@ -842,16 +877,16 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="53" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="72" package="Radic\BladeExtensions\Helpers">
         <name>parse</name>
         <full_name>\Radic\BladeExtensions\Helpers\Markdown::parse()</full_name>
-        <docblock line="53">
+        <docblock line="72">
           <description>Parses markdown text into html</description>
           <long-description></long-description>
-          <tag name="param" line="53" description="&lt;p&gt;the markdown text&lt;/p&gt;" type="string" variable="$text">
+          <tag name="param" line="72" description="&lt;p&gt;the markdown text&lt;/p&gt;" type="string" variable="$text">
             <type>string</type>
           </tag>
-          <tag name="return" line="53" description="$newText html" type="string">
+          <tag name="return" line="72" description="$newText html" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -862,7 +897,11 @@
         </argument>
       </method>
     </class>
-    <source>eJyNVFtv2jAUfs+vOEJIuRQSmLYXKFvVadImtdLU9q1hk0kOYJE4kW160cR/37GTQCC0mx8I8vkuJz6fc/mlXJdOFAQOBHDL5CYtngVoyYRaFjJHCd8xK1EqqkeOYDmqkiUIdyzlSXydsRS/vWgUihdCxTV26jhbhfCVLZfIBdOYxtf4hJKtML7Xksr/Z2ggV2S3ISKcrrMdWIbaLs6SDsJwRd0YQkf1QzgORxbBtnpdyA4A7ooFF5W7xWU8IfNuf7c/HuCmrg1hrXU5iSJpaGHO9bCmhYVcWZmkKF8lX631aUOj8XhIP58GZ5zFptsf7L0MPKwcRRYtzEkNsX1UdqZJxpTaT8L54xgJOx+zArjDvHhCBVykKDTTxG1KNBvJclBacrGCviZxeFgj5Pux0s4eLFFvpYCcv2Bab0b2WcpCY0IpISXST2C5FYnxOcTCs+K+hVcdmtVfcqn0DRcIM8CXMitS9Hqx6A2qZgYw9qfn0RTDyUQX9ybMyjuUHkfzAXxssUqJq98508nacyPvMVbzwA+DyB209Nr/K8VbQ0BFOnshvgSPK4XaewP8OJ77fuvtbM/2tlUASW33etOjOp0NeH1OldEU6HlphpGheM/DAC8uTp26biHZxerEcPdue270y4XwVAdcLwz8KHePpfoCnx9MZOyaVSctscyI6x1JDMDtj916qO0zNauOVaN28NgdcA1G7wF1sZXzn0wqivlRdin0uqD7lGfvRV7/K/INunnhlmB9A7YL+h504l+alt6IvnWe1RSK8slNacW+cZ0BK0vPH37O2QY9t+nYpR2JdLllh3r2aHfOzvkLc1fDbg==</source>
+    <parse_markers>
+      <error line="24" code="PPC:ERR-50007">No summary for property $container</error>
+      <error line="26" code="PPC:ERR-50007">No summary for property $renderer</error>
+    </parse_markers>
+    <source>eJyNVO9v2jAQ/Z6/4oSQEigkMG1fSttVrSatUitNbb81HTLhAIvEiWyn7TTxv++cHyYktKs/gJV799753dln37NN5gTDoQNDuGNyu0xfBWjJhFqlMkEJPzHOUCqKB45gCaqMRQj3bMmj8CpmS/zxplEongoVVtiZ4+QK4ZqtVsgF07gMr/AFJVtj+KDlrIjexHGeFNHwOhWkGGlV7BgXKPc7IvtceQZyScVtSQba62i9RYbKF0eT9sRwSbWbhA7rF3/qTwoEy/UmlR0A3KcLLkr1AhfziMS79d3dPMJtFRvDRuvsNAikSfMTrsdVmp/KdUETpdkfydcb3S5oMp2O6efb6Iiy2HbrA6tl4H6pKOJgYZwaY9OqYgKimCllO+H8dQxFJlONEbUZ+lGjba2QRLFEaSNFU81qNJaylZZ5pFPpV8EaQ52VLIHws2PTKKWiCMqC8gWZCatcRNq0dD63ot6x5EGRVZ7TrL7ecDW+sHE4Pzi0hZVG7dd5J3N8kbAtei59WPG1OxhfrFF7buH8fO+8n1Tu+LWB7mDWLqcOfaBTVlSl7jo9uMckfUEFnIgo0XhzvAPkFRdrUqES4XGDkNhrSV8sWKLOpYCEv+HysAF2ImwP7H32CtaO5Ssulb6ls9Dp8C2L0yV6vVD0RmUVI5g2HWmi6bU5PdXpg3mzlLcPPcEEnkfwtZGXSVzPE6ajjecG3lOonocDfxi4owZjc19y3pkENLZaIr4CjytFvXwH/ARTeB4MGics6i4e1hJipqrXmx3EyR/w+pwikxnQ/5npRIziYxUDPTlpa3X1fBIMVUty92GBbvDbBb/NA67nDwdB4h5S9QW+PpqJqS5D4bbELKZc74BiBG5/6latbfpqVjVVNdteY7fH1RhtAd1p/8WkomE/GF0afZ3Sc5jEnxh8/b/Br9H1uRu8xx+izJT0zgXQtXP2drevTGP+rdPn7deh3nVyjtq6c3bOP8PxWNs=</source>
   </file>
   <file path="Helpers/Loop.php" generated-path="Helpers.Loop.html" hash="0b8eac5e6f48a74c9e1f57e7a14c9a5f" package="Default">
     <docblock line="0">
@@ -1233,7 +1272,7 @@
     </parse_markers>
     <source>eJyNUk1P4zAUvPtXvANSk6pJWsSpfIoV0q4EEgJupQfXeSRWEzuyX9ldIf47/grNYQ/rQ2y/mTdjj3NxPbQDq+ZzBnN44Io3aIFahHutB5DKElcCrUMrpniPduAC4YnXUrzedrzGuz+Eykqt7OtP7AY09pz9l54n3Di1vaNAGv/UDUR72E25ySpA727heKPGabkqlwHgB2q1gW9xvZMqWgS4k8I5fHs//HqB+1QqoCUa1lVlPLvsJRWJXWrThG6hh79GNi3F7ux0uVoV7nO2mBo5pTi/oGiV7nQj0SZ3tYfjGP18axldVVftfBIFTqMILyE6bi3c9Tusn8nFggYCqbaQ9uyDMa8bXsKPOQiDnDDtxuKNQToYFbVSsQrzYDShIKzh7aAE+YSjQnbCTWPhEjawzQP1g43XOHmX+PuRU+vgQNsst+cTlBvfKK1FijKb1TaHaxjXsIbNtAH9sbwWtdIWVw3SD62IS4Umy4urnu8xO8awXodgFiB07/4WymbjcWYLmHnzWZ4f1dPVo0ksf7JP9gVHZeaM</source>
   </file>
-  <file path="Helpers/Minifier.php" generated-path="Helpers.Minifier.html" hash="a16536488b4f5268b9b21b0949f65120" package="Default">
+  <file path="Helpers/Minifier.php" generated-path="Helpers.Minifier.html" hash="a50fb3ea4f15ad12d92dfe32e52dc941" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -1251,7 +1290,7 @@
         <tag name="copyright" line="17" description="Copyright (c) 2015, Caffeinated"/>
         <tag name="license" line="17" description="MIT License" link="https://tldrlegal.com/license/mit-license"/>
       </docblock>
-      <property static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="22" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="22" package="Radic\BladeExtensions">
         <name>$type</name>
         <full_name>\Radic\BladeExtensions\Helpers\Minifier::type</full_name>
         <default></default>
@@ -1261,7 +1300,7 @@
           <tag name="var" line="22" description="" type="" variable=""/>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="29" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="29" package="Radic\BladeExtensions">
         <name>open</name>
         <full_name>\Radic\BladeExtensions\Helpers\Minifier::open()</full_name>
         <docblock line="29">
@@ -1275,7 +1314,7 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="38" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="38" package="Radic\BladeExtensions">
         <name>close</name>
         <full_name>\Radic\BladeExtensions\Helpers\Minifier::close()</full_name>
         <docblock line="38">
@@ -1283,7 +1322,7 @@
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="52" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="52" package="Radic\BladeExtensions">
         <name>minify</name>
         <full_name>\Radic\BladeExtensions\Helpers\Minifier::minify()</full_name>
         <docblock line="52">
@@ -1306,17 +1345,17 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="77" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="79" package="Radic\BladeExtensions">
         <name>shouldMinify</name>
         <full_name>\Radic\BladeExtensions\Helpers\Minifier::shouldMinify()</full_name>
-        <docblock line="77">
+        <docblock line="79">
           <description></description>
           <long-description></long-description>
-          <tag name="author" line="77" description="https://github.com/yocmen/html-minify"/>
-          <tag name="param" line="77" description="&lt;p&gt;the contents of the view file&lt;/p&gt;" type="string" variable="$value">
+          <tag name="author" line="79" description="https://github.com/yocmen/html-minify"/>
+          <tag name="param" line="79" description="&lt;p&gt;the contents of the view file&lt;/p&gt;" type="string" variable="$value">
             <type>string</type>
           </tag>
-          <tag name="return" line="77" description="" type="boolean">
+          <tag name="return" line="79" description="" type="boolean">
             <type>boolean</type>
           </tag>
         </docblock>
@@ -1326,17 +1365,17 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="97" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="99" package="Radic\BladeExtensions">
         <name>compileMinify</name>
         <full_name>\Radic\BladeExtensions\Helpers\Minifier::compileMinify()</full_name>
-        <docblock line="97">
+        <docblock line="99">
           <description>Compress the HTML output before saving it</description>
           <long-description></long-description>
-          <tag name="author" line="97" description="https://github.com/yocmen/html-minify"/>
-          <tag name="param" line="97" description="&lt;p&gt;the contents of the view file&lt;/p&gt;" type="string" variable="$value">
+          <tag name="author" line="99" description="https://github.com/yocmen/html-minify"/>
+          <tag name="param" line="99" description="&lt;p&gt;the contents of the view file&lt;/p&gt;" type="string" variable="$value">
             <type>string</type>
           </tag>
-          <tag name="return" line="97" description="" type="string">
+          <tag name="return" line="99" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -1348,12 +1387,12 @@
       </method>
     </class>
     <parse_markers>
-      <error line="77" code="PPC:ERR-50008">No summary for method shouldMinify()</error>
+      <error line="79" code="PPC:ERR-50008">No summary for method shouldMinify()</error>
       <error line="22" code="PPC:ERR-50007">No summary for property $type</error>
     </parse_markers>
-    <source>eJzNVltP4zgUfu+vOIOQkrIt2RlpX6CUnWXRwoiu0MJb00Gu4zYeHCeynUIF/e977FymScNtn9aq1MQ+33fuxxmdZnHWCw4OenAA10QZSBdgYgZnZLFgXBLDIri+uIaM0HuyZPoQBa3s5PIWrjhlUjMgMgKaZmvFl7EBLhepSojhqYR5LiOBDA/cxEjLdcWDUk7N1eXZ+d8357DggiFt0JMkYRqFGPxDIk7DPwSJ2PmjQUVIqMMLJjKm9HGvMvrWsuLPsk245AvOVGXk75W2cnVSOkGSmzhVlVzD+z/ZCm4ZSZzcTzcLufrVp3348uvn3wbbWAcRZZTKFRuT6aMgMCJSgi2JOKRpEpRCQcLNsAJshdiFhgqide1j76ln6VwU7EJNK6LK58D9Zyo1jFoftMF8UNg364xh6FrANGOyfK65MqJIUgCanPkc7asIF7mkLtGWwnfSfSdWGGdXIXl05A7hBIziia+NMqlIH5gqQf3jGpDO7xCjjF/ubXbspSLV77LKCfpti/ZpGllLUNGSmTsqGJH+lgGMxmltdmLDvfYbXgwKii1I20mZC/GS9QXj2/Gu96yuek8xkyuJChWXy9ezXYeh9KFhezsm9kyj5VMvNonwBuBRre3fD+3NypKxiy/A/8TlHVGK/KR06AHmNsdUbtHW1DdGITlPMoHKfctbobaiaJeJVfoAkj1AeClXRPDoq1rmCZPm/JGyzPrj77U6uO4JnEK5iECmpvQZ1mludyM0Eh8hJismPQM6Y9QiIiDglIC15RD+4nh+BNMnZ9tmdghfhS3TqN5DRzazvS2jN83YlBVwcgJFINvRqPNXFAz2foajb1JmqFVWG2BCsxatzcsLrHbM+i52E2Jw3BI9wULkLCz4w7Obm1JHfzhmj4zmhvlv6fvxn9V9e0Nbd4PUpV7O5GpgLlFbPnfTcp1SrIjABnjYaKeqZ4r2gH3Mbc7c1UBTieVidHW/rTjaXdw6Ta2lb/M0Fe9sLx3bqqtS6FS228uGNFNseYf3Io19L9D3PEPLA9sGW4hqPT9DQ3xk0c+GPeJgZKT/bpimimdm+j08PR3PDsbT76MwKPbGs/eSOJETf+859Pr+4UHfn8Ls6ctgU7y47S6qF2pmQbDC2hXXLWqnyW61NIsFb+AErdXF/X9xO7mCNDdZbmDO8DOEgSYrWwnc/K+q60PjuzUjXiywaqZ01ePOUFYsE/YrCyd+48AuLJxPwyFWzXSGOT7t49NsNhyOA+3ByRg8b9AFCe2nZOC1T8BBRvYQOoGh9Kfhzay/C7VA2P/cjVJdqirUC4o+DjGvQbr9gV8+jhmHetSNspjxyGtgZsdd7eKatkyrv6PD3dd392yt/Sr3/V1LCilXMq/KFVXV2N65RrqbukDutvWm9y8wXV1X</source>
+    <source>eJzNVttu4zYQffdXzAbBSk7tqLtAXzaO020abFLERdDkzdIatERb3EikQFKOjcT/3iF1ieRL4n0pShiwRM6ZOZw5Q2pwkcVZxzs56cAJ3BGpQcxAxxQuyWxGGSeaRnB3fQcZCR/JnKpTNDS2o5sHuGUh5YoC4RGEIltJNo81MD4TMiWaCQ7TnEcJenhiOka3TFV+0MqGub25vPr7/gpmLKHo1utwklKFRhT+IREL/T8SEtGrpcZA6FD51zTJqFRnnYr0g/GKP+NtxDibMSorkr9X0cqx06U1JLmOhazsWrv/ky7ggZLU2r1us7CrX92wC59//fRbr4m1kKTMUjlirTP1xfN0EsmEzklyGorUK428lOl+BWik2KYmTIhS9R47zx3jzmbBDIy0ILJ89ux/JoWmodnDsV5lFHO2gRAZ5eVz7SQjkqQFoO0snyIxmOU8tKU1WNeade16QceMY1Po/tAswTloyVJXaalFIp6oLCHds9pcTCdKo/Lccm69RTNMhHqbjLVwt4iEIjIUMMKc6kmYUMLdRmQaxqJim5q0rtwG916Bb9i3N8bzJNnHuPD2fmrrOROpnpNU55IDJo3x+Z6K1luviTcobxUE1xRSHjuxThOnB06olPn7oZyglIUZbAbuB8YnREry6tKie1jIHOvWcFu7vtcSnbM0SzC4a/xWqEbyzNCxFE/A6RP4N3xBEhZ9lfM8pVxfLUOamf24RxvtWQsej5g8iYALXe4ZViI3sxGSxEeIyYJyR4PKaGgQERCwQcBwOYVvDNe/wPjZclsHp/A1MZqM6jncyDo4apBet3NzXJT+/ByKRG5moyxcqRPs6wyPtVFZoA0xrYEmim54NWWBjx/BtvqELpnSynVGRKNHokaoOEb9wqF/eX/vbNWjZGDOW9fmeS+2JNTtD+mShrmm7nvkfvw33P46hNqexBtcs3qNGr52Z91n5aFfnchzJJZP7XG8EiGq0jNF7rd6uWrYojfhGPWVU3v3hIKjZLWqLtAFwy0W11o7asl1KkTyXm+r2Ei+EpCNtdnbpkaZpPMJ3rhh7DqeemQZUvZMDzYQ1Xh5gZb5wKBfNF3iEUxJ92CYCiXL9Pi7f3ExDE6G4+8D3yvmhsGhTqzJuXv04jtd9/Sk644heP7cWxcvdnqXqz26mhHUxWE6MUfZtkzaKsG7PUW2qviyuH4Y3YLIdZZrmFL8wKGgyMJIgOn/lawOuzQ2jqa9yipPsl063LoJJM0S892G10xrwQwUzId+H9UyDrC2F118CoJ+f+jhkXI+BMfp7YL45uPUczZXwEIGZhF2An3ujv37oLsNNUA4/rQbJXeFqlB7Av08RL8F2b0f+OXnMUNfDXajDGY4cFqY4GxXm9hmLcvqbsWwHwmTR7pSblX77jaTwspK5k27QlWt6UMPfYvcbud1518LXHLM</source>
   </file>
-  <file path="Helpers/EmbedStack.php" generated-path="Helpers.EmbedStack.html" hash="3f018a8b4eaaa61d099f79ba3cf5f090" package="Default">
+  <file path="Helpers/EmbedStack.php" generated-path="Helpers.EmbedStack.html" hash="da01137fbfaae1f1039c9264fa88d1bc" package="Default">
     <docblock line="0">
       <description>Manages the Loop instances</description>
       <long-description></long-description>
@@ -1518,19 +1557,19 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="58" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="59" package="Radic\BladeExtensions\Helpers">
         <name>start</name>
         <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::start()</full_name>
-        <docblock line="58">
+        <docblock line="59">
           <description>start</description>
           <long-description></long-description>
           <tag name="inherited_from" description="\Radic\BladeExtensions\Contracts\Stack::start()" refers="\Radic\BladeExtensions\Contracts\Stack::start()" link="/classes/Radic.BladeExtensions.Contracts.Stack.html#method_start"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="63" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="64" package="Radic\BladeExtensions\Helpers">
         <name>setContent</name>
         <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::setContent()</full_name>
-        <docblock line="63">
+        <docblock line="64">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -1540,55 +1579,55 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="69" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="70" package="Radic\BladeExtensions\Helpers">
         <name>end</name>
         <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::end()</full_name>
-        <docblock line="69">
+        <docblock line="70">
           <description>end</description>
           <long-description></long-description>
           <tag name="inherited_from" description="\Radic\BladeExtensions\Contracts\Stack::end()" refers="\Radic\BladeExtensions\Contracts\Stack::end()" link="/classes/Radic.BladeExtensions.Contracts.Stack.html#method_end"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="93" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="94" package="Radic\BladeExtensions\Helpers">
         <name>getAbsoluteViewPath</name>
         <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::getAbsoluteViewPath()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>getAbsoluteViewPath</description>
           <long-description></long-description>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="104" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="105" package="Radic\BladeExtensions\Helpers">
         <name>getViewFileContent</name>
         <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::getViewFileContent()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>getViewFileContent</description>
           <long-description></long-description>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
-          <tag name="throws" line="104" description="" type="\Illuminate\Contracts\Filesystem\FileNotFoundException">
+          <tag name="throws" line="105" description="" type="\Illuminate\Contracts\Filesystem\FileNotFoundException">
             <type>\Illuminate\Contracts\Filesystem\FileNotFoundException</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="114" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="115" package="Radic\BladeExtensions\Helpers">
         <name>getBladeCompiledViewFileContent</name>
         <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::getBladeCompiledViewFileContent()</full_name>
-        <docblock line="114">
+        <docblock line="115">
           <description>getBladeCompiledViewFileContent</description>
           <long-description></long-description>
-          <tag name="return" line="114" description="" type="string">
+          <tag name="return" line="115" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="120" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="121" package="Radic\BladeExtensions\Helpers">
         <name>write</name>
         <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::write()</full_name>
-        <docblock line="120">
+        <docblock line="121">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -1603,10 +1642,10 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="136" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="137" package="Radic\BladeExtensions\Helpers">
         <name>remove</name>
         <full_name>\Radic\BladeExtensions\Helpers\EmbedStack::remove()</full_name>
-        <docblock line="136">
+        <docblock line="137">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -1851,15 +1890,15 @@
       <error line="43" code="PPC:ERR-50008">No summary for method __construct()</error>
       <error line="53" code="PPC:ERR-50015">Argument $_data is missing from the Docblock of setData</error>
       <error line="53" code="PPC:ERR-50008">No summary for method setData()</error>
-      <error line="58" code="PPC:ERR-50008">No summary for method start()</error>
-      <error line="63" code="PPC:ERR-50015">Argument $content is missing from the Docblock of setContent</error>
-      <error line="63" code="PPC:ERR-50008">No summary for method setContent()</error>
-      <error line="69" code="PPC:ERR-50008">No summary for method end()</error>
-      <error line="120" code="PPC:ERR-50015">Argument $content is missing from the Docblock of write</error>
-      <error line="120" code="PPC:ERR-50015">Argument $name is missing from the Docblock of write</error>
-      <error line="120" code="PPC:ERR-50008">No summary for method write()</error>
-      <error line="136" code="PPC:ERR-50015">Argument $name is missing from the Docblock of remove</error>
-      <error line="136" code="PPC:ERR-50008">No summary for method remove()</error>
+      <error line="59" code="PPC:ERR-50008">No summary for method start()</error>
+      <error line="64" code="PPC:ERR-50015">Argument $content is missing from the Docblock of setContent</error>
+      <error line="64" code="PPC:ERR-50008">No summary for method setContent()</error>
+      <error line="70" code="PPC:ERR-50008">No summary for method end()</error>
+      <error line="121" code="PPC:ERR-50015">Argument $content is missing from the Docblock of write</error>
+      <error line="121" code="PPC:ERR-50015">Argument $name is missing from the Docblock of write</error>
+      <error line="121" code="PPC:ERR-50008">No summary for method write()</error>
+      <error line="137" code="PPC:ERR-50015">Argument $name is missing from the Docblock of remove</error>
+      <error line="137" code="PPC:ERR-50008">No summary for method remove()</error>
       <error line="31" code="PPC:ERR-50007">No summary for property $files</error>
       <error line="33" code="PPC:ERR-50007">No summary for property $bladeCompiler</error>
       <error line="35" code="PPC:ERR-50007">No summary for property $viewPath</error>
@@ -1867,18 +1906,18 @@
       <error line="39" code="PPC:ERR-50007">No summary for property $content</error>
       <error line="41" code="PPC:ERR-50007">No summary for property $_data</error>
     </parse_markers>
-    <source>eJylVttu2zgQfddXcIEAkQJfmqJPzrZN6ybYAm1RbIO81IVAS2ObG4nUklQuKPLvHVKUREm24O7qwRY5wzMzZy7Un2+LXRHMz84CckY+U063oIjeAfkkREEYV5ryBBRK5wGnOaiCJkD+pilLVu8zmsLVowaumOBq9RdkBUh1EQSlArKkmw0wTjWkq/dwDxKhV1+p3l0cFn/TspJ+zLIyt9LVUnAtaaLV6pploJ6Uhtx7HdG/ZfCwusZXIZ8Gala4FHmBSFJVsdTLSnl/kC38N02TuzHVG0mZ0YNEm7VdIjnHkG0ULpHqO1Qh7tlrxCqqcu3rujxYERJr9GqMl7Pz2QsroKXeCUkacLFmvDJhxRlL0EJj+/PHG/LJbU3JTutiMZ9Loz3LmZ467ZmQW3s6EcWTZNudrk6HL1+cn0/x59XEN4RI1f8NJDsuMrFloJx1fkfap7Znjs4qqzybrw0TU/CpsGWaZFQpcpWvIbUpIiwvMsiBa0XsRvAzMKgmcf3cmP1CCo3bkJKTjSmz4fa6Wyx98T2WVlXoAwmVe+ASLCn0biiIU6ppvV2ukWWyKbn1mMQxHlNalokOXY1Xlt1iQtoecYFMSKfKe3FMWscnlafkNflOfkTWfEWZeU70jqnpGwX6trUW+qaji76yNd+k83VDbE+t449R6xHdU6/dbVBb4vuaJhrffpUIs3gO9vOL8X1A9sMqCQdIsDKD5zLlAPfiaSp12MeRoEvJK7jx46CXVZmEdb0c8MlJjVdNYf22OeDpwNcTD3lPvoxl+4ZDnPFt2HXHrwmTpmUfawvar87UFhe+1FF7ABlTyIK5jbBQC8x31MI8SKahoYjMOtY8DBwbZoqHfiJ9H+MmtZ5CRw78vhYfhDVl5qGKdezKoN1jPMnKFF22gQwqV0Iu7qGK1peK0nCHgMhbnGRAuQ+K81RYHTc8Dube/tsLyTxnBNHerZXISg23rpmcqNa4dDjKZtntznuTq6mjPXijPWDrwJ8rkd25ZjwFaRYbfAt7/R91SrkbTa+MjgmGXOqdFA+KrI75Cvki9LUoeXr1mEBhYj6CkkFtjzJiZ6WlIWw5GrI6xsJYZ/3f/I537Whkx8yPfXRF46O7OwNwRpjmwW7hZZbVDnl9lhcfmLltFBYcfkLFphHD0/7XxanfsxsS/tFLDzziVFKhg4siL2ivnZ1yTu8AtcDdne5Ma+C5Y4qp2LjuhsAA2UWHtC0WKiu3bPM06BAchKdxfIp/JWf/sjTULIcwmhD8gIC9hu08QlhzfLH4RzBe++kIPXDLT98Upa6m2aS5MqLhHPpO/AlOfoxeR50pOLj2fj+BlU3yn8JLIQPdndfPwXPwC01MBW0=</source>
+    <source>eJylVttu2zgQffdXcIEAkQJfmqJPzrZN6ybYAm1RbIO81IVAS2OLG4nUklQuKPLvHVKURF1suLt6sEXO8MzMmQv159siLSaLs7MJOSOfKac7UESnQD4JURDGlaY8BoXSxYTTHFRBYyB/04TF6/cZTeDqUQNXTHC1/guyAqS6mExKBWRFt1tgnGpI1u/hHiRCr79SnV7sF3/TspJ+zLIyt9L1SnAtaazV+pploJ6Uhtx7PaB/y+BhfY2vQj4N1KxwJfICkaSqYqmXlfJ4kC38N03ju0OqN5IyowexNmu7RHKOIdsoXCLVd6hC3DNqxCqqcuPrujxYERJr9GqMl/Pz+QsroKVOhSQNuNgwXpmw4ozFaKGx/fnjDfnktmYk1bpYLhbSaM9zpmdOey7kzp6ORfEk2S7V1eng5Yvz8xn+vJr6hhCp+r+BOOUiEzsGylnnd6R9anvm6LyyyrPFxjAxA58KW6ZxRpUiV/kGEpsiwvIigxy4VsRuTH5ODKpJXD83Zr+QQuM2JORka8psuL3pFktffI+lVRX6QELlCFyMJYXeDQVRQjWtt8sNsky2JbcekyjCY0rLMtaBq/HKsltMSdsjLpAp6VR5L45p6/i08pS8Jt/Jj9Carygzz4lOmZq9UaBvW2uBbzq86Ctb8006XzfE9tQ6/hi1HtE99drdBrUlvq9povHtV4kwi+fJOL8Y3wdkP6iSsIcEKzN4LlO1WIIuJa+0GjOjVjSVOuijH38c9KoqnqCuoj2eOqnxtSm33zYHPBn4euIhj2TRWLZvONoZ3wVdd/xKMclb9bF2oP2aTWzJ4UsdtQeQMYUsmDsKy7fAKghbmAfJNDQUkXnHmoeBw8TM9sBPr+9j1CTcU+jIgd/X4r2wpvg8VLGJXBm0e4zHWZmgyzaQQT1LyMU9VNH6UlEa7hAQeYviDCj3QXHKCqvjRsre3Nt/e02Z54wg2ruNElmp4da1mBPVGpcOR9ksu91Fb541dTSCd7AHbB340ya0O9eMJyDNYotvQW8qhJ1S7kbTK6NjgiGXOpXiQZH1Md8mX4S+FiVPrh5jKEzMR1AyqO2DjNgJamkIWo6GrB5i4VBn/d/8Hu7ag5EdMz/G6Ap7A33oV3cM4Jgw/YMNw8ssq33yWi0vPjBzDSmsOfy2ikwvBqf9z45Tv223JPijlyF4xMGkAgcXhl7cXkc75ZzeAWqBu1TdmdbAc8cUU5Fx3c2BAbKLDplbLlVW7tj2adAkOAtPo+gU/0rO/mVJoFkOQTgl+GUBo4btSEJYc3y5/EcwXvvpCN1z/c/eFKWuBtq0uTXC4Sj6TvwhTn50b6RhUjuzcHD5/X4OK7PkP0WYQAZ6OLXHhuzz5BfMTxPF</source>
   </file>
-  <file path="Helpers/HelperRepository.php" generated-path="Helpers.HelperRepository.html" hash="084f56bf1b9cab58bccfa606b52b9be5" package="Default">
+  <file path="Helpers/HelperRepository.php" generated-path="Helpers.HelperRepository.html" hash="05155e6d59958ba57acf9166dfd5aa40" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
     <namespace-alias name="Container">\Illuminate\Contracts\Container\Container</namespace-alias>
-    <namespace-alias name="Collection">\Illuminate\Support\Collection</namespace-alias>
+    <namespace-alias name="Macroable">\Illuminate\Support\Traits\Macroable</namespace-alias>
     <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="20" package="Radic\BladeExtensions">
-      <extends>\Illuminate\Support\Collection</extends>
+      <extends/>
       <name>HelperRepository</name>
       <full_name>\Radic\BladeExtensions\Helpers\HelperRepository</full_name>
       <docblock line="20">
@@ -1889,22 +1928,31 @@
         <tag name="copyright" line="20" description="Copyright (c) 2015, Caffeinated"/>
         <tag name="license" line="20" description="MIT License" link="https://tldrlegal.com/license/mit-license"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="22" package="Radic\BladeExtensions">
-        <name>$container</name>
-        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::container</full_name>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="24" package="Radic\BladeExtensions">
+        <name>$helpers</name>
+        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::helpers</full_name>
         <default></default>
-        <docblock line="22">
+        <docblock line="24">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="26" package="Radic\BladeExtensions">
-        <name>__construct</name>
-        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::__construct()</full_name>
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="26" package="Radic\BladeExtensions">
+        <name>$container</name>
+        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::container</full_name>
+        <default></default>
         <docblock line="26">
           <description></description>
           <long-description></long-description>
-          <tag name="inheritDoc" line="26" description=""/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="31" package="Radic\BladeExtensions">
+        <name>__construct</name>
+        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::__construct()</full_name>
+        <docblock line="31">
+          <description></description>
+          <long-description></long-description>
+          <tag name="inheritDoc" line="31" description=""/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$container</name>
@@ -1912,315 +1960,71 @@
           <type>\Illuminate\Contracts\Container\Container</type>
         </argument>
       </method>
-    </class>
-    <parse_markers>
-      <error line="26" code="PPC:ERR-50015">Argument $container is missing from the Docblock of __construct</error>
-      <error line="26" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="22" code="PPC:ERR-50007">No summary for property $container</error>
-    </parse_markers>
-    <source>eJxtU+9v2jAQ/Z6/4j4gFRA026R9gZVNo0xFYhMqfCtVZZwLserYlu1sq6r+7zs7PwjbrCi62O+9u3u+fPpsCpOk43ECY9gy60Hn4AuEJctzFIp5zGB7twXD+DM7obsmYMB+X+9hIzgqh8BUBlybFytOhQehcm1L5oVWcKxUJknhl/AFyQrX6hAqptmsl6sfuxXkQiLJpoliJToCIdyzTPDDV8kyXP32lIgE3eEOpUHr5klSUea1lFUZqzwstfKWce9ixIRCe47mf6N3lTHaekJIiTzUSoqNDftQJz2hvjrdPRrthNf2pW3/S9tHs/5bbASyyhfatrgLX2/xJ+yRlRF3NrDGdZ9DPoIP795/nPS5kSIb/5tVeG/cLE29zKzEE5PXXJdpA0pL4actoXd50XQumXP/9AoYOskcnE1KXpOQyVjtaYNaGPCzxeEkWhgWlSdUgVb4W82brbQmV0eqA/JKRUl4eiIN523F/bC7sJ7wKLLqxJHPLCo/m/V5D48jur8WMQiTNl10CnBzUecZV9TDROcP3WZYV1JrcwU3C9hQ8I2miuyYzaJNk0sklkfMInQVop2nuUDbYDvoYy8r/R3IeAHDLj1zMAhzH1QGkTjq9dvryFR+GJGTXkPTRcmecdgQR/OO+JbU77fkDxacM+M=</source>
-  </file>
-  <file path="Helpers/Sections.php" generated-path="Helpers.Sections.html" hash="5b506801f020fffbac25c21b38a28618" package="Default">
-    <docblock line="0">
-      <description>Part of the Laradic packages.</description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <namespace-alias name="Factory">\Illuminate\Contracts\View\Factory</namespace-alias>
-    <namespace-alias name="SectionsTrait">\Radic\BladeExtensions\Traits\SectionsTrait</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="19" package="Radic\BladeExtensions\Widgets">
-      <extends/>
-      <name>Sections</name>
-      <full_name>\Radic\BladeExtensions\Helpers\Sections</full_name>
-      <docblock line="19">
-        <description>Class Widget</description>
-        <long-description></long-description>
-        <tag name="package" line="19" description="Radic\BladeExtensions\Widgets"/>
-        <tag name="author" line="19" description="Robin Radic"/>
-        <tag name="license" line="19" description="MIT" link="http://opensource.org/licenses/MIT"/>
-        <tag name="copyright" line="19" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="19" description="http://radic.mit-license.org" link="http://radic.mit-license.org"/>
-      </docblock>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="24" package="Radic\BladeExtensions\Traits">
-        <name>$sections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::sections</full_name>
-        <default>array()</default>
-        <docblock line="24">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="24" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="29" package="Radic\BladeExtensions\Traits">
-        <name>$sectionStack</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::sectionStack</full_name>
-        <default>array()</default>
-        <docblock line="29">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="29" description="" type="array" variable="">
-            <type>array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="34" package="Radic\BladeExtensions\Traits">
-        <name>$viewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::viewFactory</full_name>
-        <default></default>
-        <docblock line="34">
-          <description></description>
-          <long-description></long-description>
-          <tag name="var" line="34" description="" type="\Illuminate\View\Factory" variable="">
-            <type>\Illuminate\View\Factory</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="23" package="Radic\BladeExtensions\Widgets">
-        <name>__construct</name>
-        <full_name>\Radic\BladeExtensions\Helpers\Sections::__construct()</full_name>
-        <docblock line="23">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="48" package="Radic\BladeExtensions">
+        <name>put</name>
+        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::put()</full_name>
+        <docblock line="48">
           <description></description>
           <long-description></long-description>
         </docblock>
         <argument line="0" by_reference="false">
-          <name>$view</name>
+          <name>$key</name>
           <default></default>
-          <type>\Illuminate\Contracts\View\Factory</type>
+          <type/>
         </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="42" package="Radic\BladeExtensions\Traits">
-        <name>setViewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::setViewFactory()</full_name>
-        <docblock line="42">
-          <description>setViewFactory</description>
-          <long-description></long-description>
-          <tag name="param" line="42" description="" type="\Illuminate\Contracts\View\Factory" variable="$factory">
-            <type>\Illuminate\Contracts\View\Factory</type>
-          </tag>
-          <tag name="return" line="42" description="" type="\Radic\BladeExtensions\Helpers\Sections">
-            <type>\Radic\BladeExtensions\Helpers\Sections</type>
-          </tag>
-          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
-        </docblock>
         <argument line="0" by_reference="false">
-          <name>$factory</name>
+          <name>$data</name>
           <default></default>
-          <type>\Illuminate\Contracts\View\Factory</type>
+          <type/>
         </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="54" package="Radic\BladeExtensions\Traits">
-        <name>getViewFactory</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::getViewFactory()</full_name>
-        <docblock line="54">
-          <description>Get the value of viewFactory</description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="53" package="Radic\BladeExtensions">
+        <name>has</name>
+        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::has()</full_name>
+        <docblock line="53">
+          <description></description>
           <long-description></long-description>
-          <tag name="return" line="54" description="" type="\Illuminate\View\Factory">
-            <type>\Illuminate\View\Factory</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="66" package="Radic\BladeExtensions\Traits">
-        <name>startSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::startSection()</full_name>
-        <docblock line="66">
-          <description>Start injecting content into a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="66" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="66" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="66" description="" type="void">
-            <type>void</type>
-          </tag>
         </docblock>
         <argument line="0" by_reference="false">
-          <name>$section</name>
+          <name>$key</name>
           <default></default>
-          <type>string</type>
+          <type/>
         </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default>''</default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="84" package="Radic\BladeExtensions\Traits">
-        <name>inject</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::inject()</full_name>
-        <docblock line="84">
-          <description>Inject inline content into a section.</description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="58" package="Radic\BladeExtensions">
+        <name>get</name>
+        <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::get()</full_name>
+        <docblock line="58">
+          <description></description>
           <long-description></long-description>
-          <tag name="param" line="84" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="84" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="84" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
         </docblock>
         <argument line="0" by_reference="false">
-          <name>$section</name>
+          <name>$key</name>
           <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="96" package="Radic\BladeExtensions\Traits">
-        <name>yieldSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::yieldSection()</full_name>
-        <docblock line="96">
-          <description>Stop injecting content into a section and return its contents.</description>
-          <long-description></long-description>
-          <tag name="return" line="96" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="107" package="Radic\BladeExtensions\Traits">
-        <name>stopSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::stopSection()</full_name>
-        <docblock line="107">
-          <description>Stop injecting content into a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="107" description="" type="boolean" variable="$overwrite">
-            <type>boolean</type>
-          </tag>
-          <tag name="return" line="107" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$overwrite</name>
-          <default>false</default>
-          <type>boolean</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="125" package="Radic\BladeExtensions\Traits">
-        <name>appendSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::appendSection()</full_name>
-        <docblock line="125">
-          <description>Stop injecting content into a section and append it.</description>
-          <long-description></long-description>
-          <tag name="return" line="125" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions\Helpers" line="145" package="Radic\BladeExtensions\Traits">
-        <name>extendSection</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::extendSection()</full_name>
-        <docblock line="145">
-          <description>Append content to a given section.</description>
-          <long-description></long-description>
-          <tag name="param" line="145" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="145" description="" type="string" variable="$content">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="145" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$content</name>
-          <default></default>
-          <type>string</type>
-        </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="163" package="Radic\BladeExtensions\Traits">
-        <name>yieldContent</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::yieldContent()</full_name>
-        <docblock line="163">
-          <description>Get the string contents of a section.</description>
-          <long-description></long-description>
-          <tag name="param" line="163" description="" type="string" variable="$section">
-            <type>string</type>
-          </tag>
-          <tag name="param" line="163" description="" type="string" variable="$default">
-            <type>string</type>
-          </tag>
-          <tag name="return" line="163" description="" type="string">
-            <type>string</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$section</name>
-          <default></default>
-          <type>string</type>
+          <type/>
         </argument>
         <argument line="0" by_reference="false">
           <name>$default</name>
-          <default>''</default>
-          <type>string</type>
+          <default>null</default>
+          <type/>
         </argument>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="185" package="Radic\BladeExtensions\Traits">
-        <name>flushSections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::flushSections()</full_name>
-        <docblock line="185">
-          <description>Flush all of the section contents.</description>
-          <long-description></long-description>
-          <tag name="return" line="185" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="199" package="Radic\BladeExtensions\Traits">
-        <name>flushSectionsIfDoneRendering</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::flushSectionsIfDoneRendering()</full_name>
-        <docblock line="199">
-          <description>Flush all of the section contents if done rendering.</description>
-          <long-description></long-description>
-          <tag name="return" line="199" description="" type="\Radic\BladeExtensions\Traits\SectionsTrait">
-            <type>\Radic\BladeExtensions\Traits\SectionsTrait</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="213" package="Radic\BladeExtensions\Traits">
-        <name>getSections</name>
-        <full_name>\Radic\BladeExtensions\Traits\SectionsTrait::getSections()</full_name>
-        <docblock line="213">
-          <description>Get the entire array of sections.</description>
-          <long-description></long-description>
-          <tag name="return" line="213" description="" type="array">
-            <type>array</type>
-          </tag>
-        </docblock>
-        <inherited_from>\Radic\BladeExtensions\Traits\SectionsTrait</inherited_from>
       </method>
     </class>
     <parse_markers>
-      <error line="23" code="PPC:ERR-50015">Argument $view is missing from the Docblock of __construct</error>
-      <error line="23" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="31" code="PPC:ERR-50015">Argument $container is missing from the Docblock of __construct</error>
+      <error line="31" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="48" code="PPC:ERR-50015">Argument $key is missing from the Docblock of put</error>
+      <error line="48" code="PPC:ERR-50015">Argument $data is missing from the Docblock of put</error>
+      <error line="48" code="PPC:ERR-50008">No summary for method put()</error>
+      <error line="53" code="PPC:ERR-50015">Argument $key is missing from the Docblock of has</error>
+      <error line="53" code="PPC:ERR-50008">No summary for method has()</error>
+      <error line="58" code="PPC:ERR-50015">Argument $key is missing from the Docblock of get</error>
+      <error line="58" code="PPC:ERR-50015">Argument $default is missing from the Docblock of get</error>
+      <error line="58" code="PPC:ERR-50008">No summary for method get()</error>
+      <error line="24" code="PPC:ERR-50007">No summary for property $helpers</error>
+      <error line="26" code="PPC:ERR-50007">No summary for property $container</error>
     </parse_markers>
-    <source>eJxtkEFLxDAQhe/5FXPYw1ps6wperKi4KC4oiC56KSzZdLYN2yYhmaqL7H83SetFOofSmfneI/OubkxjWJ4kDBJ44ZZA74AahCdueSUFGC72vEaXeSBninfo/AjhNWzLu5ZXeP9NqJzUypWP2Bq0rmCsdwirtu07qThhudSKLBfkyneJX+WD/9X2UERs2mptufT4GwoKfWy97/jUZcudgw9Z1Ui+D6Pb8akQatpz4F2keU+NtjDQeivVoIm7VgovGZyeV+s4E9ocrKwb8rPzs8Ui9Z+L0wmp2sNYDZG5zPMYZNZJSkffTNs6xiniFX8nsh8WVCGS/1eHuem3Xg+7XsUdbDbCE2R7QfMxT5h9+nRPIj6YhZpRI1167ZBC9iM6H9AiUkd2ZL+tO6aC</source>
+    <source>eJx9U11P2zAUfc+v8EOlfgjINmkv7YBp0AkkmBDtG0Xo1rlprDp2ZDtj1cR/37XrpKFrsaLIH+eee+659rfLqqiSdDRK2Ig9gHFM58wVyK4gz1EocJixh5sHVgFfwwrtGQE99v52zu4ER2WRgcoY19XGiFXhmFC5NiU4oRVb1iqTxPAqXEG0wjY8hApp7m6vpr9mU5YLiUSbJgpKtARC9giZ4IsfEjKc/nGUiAjt4gZlhcZOkqSmzLdS1mVQubjSyhngzoYZCIVmN5vso2d1VWnjFnMDgkLugRsNS4nEG82Ye7X0eZXbpI9YaSucNpvGhO9NNXEclByAULtCmwb3zt1r/M3mCGXA7Wzc4trlgA/Zl0+fv550Y0OIjF2Io3CusuM0dTIzElcgz7gu0whKS+FOm4BOC4P1XIK1/9Wa/E08rfev65Lfq4x2yH0NvaJty94B37UgHAV3/SDlQhVohLvWPG6l2+h6SRJZXiseLtHLC5FYZ2ruBm1HO8zDELWV6UfPX7TTi/acnb+TsQeLymnjnD2x5ygzAJojOmg3/ehLrat+mJ5fsDta/KSLR16Nx8HDk/doLJeY9SN66hczR/cGzWF4CWad6VfV9/D7uDgCFUrkAs0WGhcR2iK7JdHLROAFG7S1gWU9/+Y8Qy8EDjtWdnyqajcIyJOOm6cXJaxxEAOHO3Pfku3/YEMD1Ro3xJSBgyP9iwqfmIeyZ99Fj558xFyADcz7lAZdbRQ9Z4uU+iD/8EPiFe4kYw61dKRH1VIeydTkaPSwy2NljVvGRsBb8g8LlKxW</source>
   </file>
   <file path="Helpers/LoopFactory.php" generated-path="Helpers.LoopFactory.html" hash="8b656965572c2a45a004b0a5f867bd3a" package="Default">
     <docblock line="0">
@@ -2459,7 +2263,7 @@
     </class>
     <source>eJztU0tLw0AQvudXzMGDljRpBS9W8FlBsBcRTwGZJmO7dLNZ9lEV8b+7u0lqWqtQvHhwDnnszPd9s/M4OZVzGaW9XgQ9uGKKcsOWpI+hRLUoqmcRA4mi/XFBaSSwJC0xJ7jDguXZBceCxi+GhGaV0NknyyiKrCa44dyWTKCh7LISRmFudHZdWVGgcYjsXErO8vA92gQ8MHp2qFIyTkrXWu0voIb2uwZuT+heITO6c1yQCmcuvx1u7uPO3L0XOCPo2FbREKztdDP+UyhELN2lXHiX7jAZJoPgRGvmlYI1rWrKRK0YQlzdnOBaOpObe7htjvswN0Yep6nyiKRkpt8gkkrNAkNeyVfFZnPTyWAwHPbd4yjeoicWsG6tgo9Mah3B06kvR5+69UijnKPWMGlK2inFW+SZfAe3Nsk7Q6O89aBogZNVc4Kj9bsmKSxhJ9tbIrf0KwaJxpASv+JQJLnbrJKE2eDJdtgi2EMpf8D/uFQhj9C+FYMiY5WAkr1Q0Rym4S3t1GnCkxV50P3Smf26rvGqOvHaHWPYzDpebXSTxEEQqgfEW5OLVDR7bJj2vyOvxQ9GAfz+/RyNu3sefP+j9GdGqdOcPzVN79EHHv8WBw==</source>
   </file>
-  <file path="Directives/MacroDirectives.php" generated-path="Directives.MacroDirectives.html" hash="d32be302d14b1729649bf2b9582ee207" package="Default">
+  <file path="Directives/MacroDirectives.php" generated-path="Directives.MacroDirectives.html" hash="0d8442ea7bb9f3f9445e9ba416f1bb3a" package="Default">
     <docblock line="0">
       <description>Directives: macro, endmacro, domacro</description>
       <long-description></long-description>
@@ -2574,10 +2378,10 @@
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="68" package="Radic\BladeExtensions\Directives">
-        <name>directiveDomacro</name>
-        <full_name>\Radic\BladeExtensions\Directives\MacroDirectives::directiveDomacro()</full_name>
+        <name>directiveMacrodef</name>
+        <full_name>\Radic\BladeExtensions\Directives\MacroDirectives::directiveMacrodef()</full_name>
         <docblock line="68">
-          <description>directiveDomacro</description>
+          <description>directiveMacrodef</description>
           <long-description></long-description>
           <tag name="param" line="68" description="" type="" variable="$value"/>
           <tag name="param" line="68" description="" type="" variable="$pattern"/>
@@ -2619,7 +2423,7 @@
         </argument>
       </method>
     </class>
-    <source>eJztVM1r2zAUv/uveIce2uDYzWCXZrBuaweF5VLKToahyK+JqCwJfWQdo//7pGc7TV03UHrJoDrYsvR+H3rvyZ8+m7XJyskkgwlcCIvciw26M2gYtzoHVHU3qzVNYlyZKdagM4wjXLNa8OqrZDVe3ntUTmjlqkeieZYFh3AlZWiEYh6rb1p5y7h31XcdVM18RFRfjJGC03w+BPwU+DuiGiMkWtdq9Z/AHPTzFjhu6MYy4d3Oco2W1qK/1x0+hZ7Ho9+xFcJgjGoTwIXlGOZRk6I28XwRMqT9UMyKUwpgwa+1He7DtV4K1apTWExlFH9mb3F1Az+6rSmsvTdnZWkTqmiEn3aoQtsVsXBt/lixWvuBm9PZbBofH/MRXXX3zBxslVJ00eopWS5Tmqa4myfqLS6Zc7BI6d5Jz98sMaUCj9aQdqmQaUyg7pGLtmy02m/G8lnWjBjdM442TAZ8E4Nh3qNVb+KwaGS8dg0qP+CpXnHF4IgZswe/98aRDyrelsGiD1ZBI+6x7hZLepuwjJpwGxQn3adlOW6Tmm9Tkz85YA5Dy/n2rncOTkil7Y00OiPG4upXx3T8EnkrfjIn8MPLHXTZ/QTem+jQmqivzP/RRxf6vY0Oso26whxUFz1k/wB5bLDl</source>
+    <source>eJztVE1r3DAQvftXzCGHZPHa2UIv2UKTtikEupcQejIUrTzZFZEloY9tSsl/rzS2NxvHWQi5bCE62LI0b97TzJM/fTZrk5WTSQYT+CYsci826M6gYdzqHFDV3azWNIlxZaZYg84wjnDNasGrL5LVeHnvUTmhlaseE82zLDiEKylDIxTzWH3VylvGvau+66Bq5iOiujBGCk7z+RDwU+DviGqMkGhdy9V/AnPQz1vguKAby4R3O8s1WlqL+l53+BR6Ho9+x1YIgzHKTQAXlmOYR06K2sTzRcgw7YdiVpxSAAt+re1wH671UqiWncJiKSP5M3mLqxv40W1NYe29OStLm1BFI/y0QxXarigL1+aPFau1H6g5nc2m8fExH+FVd8/EwZYpRRctn5LlMpVpirt1Im9xyZyDRSr3Tnn+ZilTavBoD2mXGpnGBOoeuWjbRqv9ZmyfZc2I0D3jaMNkwDdlMMx7tOpNOSwaGa9dg8oP8lSvuGJwxIzZg99740gHNW+bwaIPVkEj7rHuFkt6m7CMnHAbFCfep205bouab0uTPzlgDkPJ+faudwpOiKX1RhqdEGNx9avLdPxS8pb8ZE7gh5cddNn9BN5NdGgm6jvzf/iILF/j7buPDs1HfWcOykcP2T8UFrGd</source>
   </file>
   <file path="Directives/AssignmentDirectives.php" generated-path="Directives.AssignmentDirectives.html" hash="a9fc173a10b191094550629a14d72262" package="Default">
     <docblock line="0">
@@ -2855,7 +2659,7 @@
     </class>
     <source>eJztUztPwzAQ3vMrbmCAKk0oEgtF4lkkJFgQYoqE3OTaWnUcyz4XKsR/x3HSUEIoQl064CF2fP4evjufnqmZCuJeL4AeXHONKfEFmhMwSCFY6SYXiQPJcjSKpQgPLONpcilYhqNXQml4IU3yCR0GgTUIt0LYnEtGmFwVkjRLySQ3hZUZI4dILpQSPPXrYRvwxPHFoXLFBWpTaa1+gRlYrStgt6FHzTiZte0Mtd9z/n67Lpy7m87ZFKE1OqU8wNhxF+ZTwp9auOs4SJv2KBpEh/4AszQrdDsOD8WYy0rdH3OZc+Lf7N3fPsJdHerDjEidxLEuUVHOqV+jokJPPUtaqKXm0xm13BwOBn33OQ47dOX8mzlolMrTUaUnRTwu09TH9TzFQSqYMXDPJZ8s15LzFpQ8ZTU7C1YGfdHK0YNsBax46u1V1BVPs7zD5oaxt2DC4lYMihGhlltxaFTCvbEcJbV4kj+8J9hjSm3Ab3xe3ocvXcOgkayWkPNXzOrN2M/Kjp0mTKxMvW6rLvtVVsMmN+GXG4bQ9hw2L7u2cOBlquYoR+1EaZw+10z7P5FX4gdDD37/uYdGMsv/22gn26gpzU510nvwAWhVC/w=</source>
   </file>
-  <file path="Directives/EmbeddingDirectives.php" generated-path="Directives.EmbeddingDirectives.html" hash="594a0fba2f3d481b16cf23fa11b54d80" package="Default">
+  <file path="Directives/EmbeddingDirectives.php" generated-path="Directives.EmbeddingDirectives.html" hash="8aa96e267f5a7daa77b5234f6850f112" package="Default">
     <docblock line="0">
       <description>Directives: partial, endpartial, block, endblock, render</description>
       <long-description></long-description>
@@ -2925,7 +2729,7 @@
         </argument>
       </method>
     </class>
-    <source>eJylU02PmzAQvfMr5rBSICKwqbSXTat+ptJKrSpVUS+ligx4wYoxrm32Q1X+ewdDiKHZVVfxAcx43nszb/Drt7KUXjyfezCHT0zRzLA7qq9BEmUY4SFQkQ/7lNfZzob6ncItVYiNPUEqqiXJKHwnOcuSD5zkdP1gqNCsFjo5kq88r9EUbjhvKiaIocnHWhhFMqOTz3UjcmIQkbyXkrPM7ldTwA9G7xFVScap0p3W4ROIhsO+A54uaKMIM9oJYyc2hvWdb0gLf4d27EhBwVkna7HJukmn+Ud9m3GHvWK6S/cqWkaX9pA0pqwVjLTqlIlO0aagnSg4KufrzQa+9OEFlMbI6zhWLSKqmFn0iKhWhWXIavmoWFEap4LL5XKBj6vwhJ7YwXgdFNrMqNMRPE5bOxbU9cP+UxknWsO6SmmeM1E4dvzxWrZ2uCfn1x7aGbZrDvkBaKn66OEQp6RIBS9aF3eEN/QsBkmMoUqcxaGo5HjjKirMhCd5we2CCyLlM/hnL5utw85vYFDUNEpAxR4Gr2P7lk2KmnDbiMzqjsfid6aGgzXhqMEQpiWHwzXvKwisSvdrTP2BN6CN2vYRf5Yk62+b7SyEWf92k4PVf3GMGCCCRrDfLPdntG0HD24J1zT4h9rl1shJlCKPvquJKhjv/DiG70vsFXypaLGtiMnKLeHcd9xCGD7rxgSB48J5XWCgyq/8ljt4sqORVFe8rfKg8dRELetqWungybaiqkA0hrq+fi5/Oel772hl/8+1hF3C3tt7fwEj0QIH</source>
+    <source>eJylU9uK2zAQffdXDDQQJzj2prAvm5ZeU1hoKZTQl7oE2dbaIrKsSnJ2lyX/3rF8ie1mU5bowZZHM+ecOWO9eScz6QTzuQNz+MwUjQ3bU30DkijDCPeAiqTbR7yIdzbU7BRuqcLawBEkp1qSmMIPkrA4/MhJQtcPhgrNCqHDI/jKcUpN4ZbzMmeCGBp+KoRRJDY6/FKUIiEGK8IPUnIW2/1qXPCT0XusyiXjVOmaq/0EoqHd14WnBW0UYUb3wtiJjaG+yw2pyt+jHTuSUuitk1pssi6jcf6R32bssVdM78O99pf+lT0kpckKBQOuImKiZrQpaCcSDuR8u93A1ya8gMwYeRMEqqrwc2YWTYVfqNQixIV8VCzNTE/B1XK5wMe1d4JP7GC4WoYq0695BA+iyo4F7fth/6mYE61hnUc0SZhIe3Y8ORVaNdyT86sO7QyrNYekLbRQTbQ9xCkpksOL1mRPeEkvQpDEGKrERRiKSo43LqfCjHDCF9wumBApz9SfvWxWh51fh6CoKZWAnD10Xgf2LcsIOeGuFLHlHY7FrU31Omu8QYMejCV73TVvFMwsS/1rjP2Bt6CN2jYRdxqG6++b7dSDafPuJ89WHcarcyADCPChFOwPS9wprfrBgzvCNZ39g90XqBGTKEUe3R7pBFkwXhtyDN9n2Cy4UtF0mxMTZ1vCuduzC8vwWZRmNuvZ8D8rzneBgTy5divs2bMdDahq8VZly/HcSC3qaqy082SbU5ViNYbqvn4tf/fSD87RyuanqwDrhINzcP4C5BoCKg==</source>
   </file>
   <file path="Directives/ForeachDirectives.php" generated-path="Directives.ForeachDirectives.html" hash="a2f01d6ec5f7356e892b963c78e5aeb3" package="Default">
     <docblock line="0">
@@ -3910,7 +3714,6 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <package name="Providers" full_name="Radic\BladeExtensions\Providers"/>
       <package name="Renderers" full_name="Radic\BladeExtensions\Renderers"/>
       <package name="Traits" full_name="Radic\BladeExtensions\Traits"/>
-      <package name="Widgets" full_name="Radic\BladeExtensions\Widgets"/>
     </package>
   </package>
   <package name="global" full_name="global"/>

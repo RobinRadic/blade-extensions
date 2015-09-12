@@ -69,5 +69,4 @@ class MacroDirectives
     {
         return preg_replace($pattern, $replacement, $value);
     }
-
 }

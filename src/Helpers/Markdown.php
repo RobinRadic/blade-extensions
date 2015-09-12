@@ -49,11 +49,9 @@ class Markdown
         $firstLine = Str::toSpaces($firstLine[ 0 ], 4);
         preg_match('/([\s]*).*/', $firstLine, $firstLineSpacesMatches);
 
-        if ( isset($firstLineSpacesMatches[ 1 ]) )
-        {
+        if (isset($firstLineSpacesMatches[ 1 ])) {
             $spaceMatcher = "";
-            for ( $i = 0; $i < strlen($firstLineSpacesMatches[ 1 ]); $i++ )
-            {
+            for ($i = 0; $i < strlen($firstLineSpacesMatches[ 1 ]); $i++) {
                 $spaceMatcher .= "\s";
             }
             $spaceMatcher = '/^' . $spaceMatcher . '(.*)/m';

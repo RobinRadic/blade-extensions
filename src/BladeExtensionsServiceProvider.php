@@ -63,7 +63,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
         $config = array_dot($this->app['config']['blade_extensions']);
 
-        if($config['example_views'] === true){
+        if ($config['example_views'] === true) {
             $this->viewDirs = [ 'views' => 'blade-ext' ];
         }
 

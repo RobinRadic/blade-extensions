@@ -40,8 +40,7 @@ class HelperRepository
             'minifier' => Minifier::class
         ];
 
-        foreach ( $helpers as $name => $class )
-        {
+        foreach ($helpers as $name => $class) {
             $this->put($name, $container->make($class));
         }
     }

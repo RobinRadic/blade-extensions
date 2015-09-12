@@ -49,6 +49,4 @@ class MarkdownCompilerTest extends TestCase
 
         return new MarkdownCompiler($markdown, $files, $cachePath);
     }
-
-
 }
