@@ -1,0 +1,16 @@
+{
+  "name": "eventemitter2",
+  "version": "0.4.14",
+  "description": "A Node.js event emitter implementation with namespaces, wildcards, TTL and browser support.",
+  "main": "lib/eventemitter2.js",
+  "homepage": "https://github.com/hij1nx/EventEmitter2",
+  "_release": "0.4.14",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.4.14",
+    "commit": "250dd1f843b18f720795bd39795206abccd12a7d"
+  },
+  "_source": "git://github.com/hij1nx/EventEmitter2.git",
+  "_target": "~0.4.14",
+  "_originalSource": "eventemitter2"
+}

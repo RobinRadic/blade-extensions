@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.12"
+  - "iojs"
+
+# Use faster Docker architecture on Travis.
+sudo: false
+
+script:        npm test
+after_success: npm run coveralls
+
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/dd893be75c6b9908987d
+    on_success: change
+    on_failure: always
+    on_start:   never

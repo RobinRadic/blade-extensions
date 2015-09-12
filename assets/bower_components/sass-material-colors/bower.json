@@ -1,0 +1,42 @@
+{
+  "name": "sass-material-colors",
+  "description": "Google's Material Design colors for Sass/Scss",
+  "version": "0.0.5",
+  "homepage": "https://github.com/minusfive/sass-material-colors",
+  "repository": "https://github.com/minusfive/sass-material-colors.git",
+  "authors": [
+    "minusfive <mail@minusfive.com>"
+  ],
+  "main": "sass/_sass-material-colors.scss",
+  "keywords": [
+    "sass",
+    "scss",
+    "material",
+    "design",
+    "colors",
+    "palette",
+    "function",
+    "placeholders",
+    "extensions",
+    "classes"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "bin",
+    "pkg",
+    "sass-material-colors.gemspec",
+    "CONTRIBUTING.md",
+    "features",
+    "LICENSE.txt",
+    "lib",
+    "Gemfile",
+    "Gemfile.lock",
+    "package.json",
+    "Rakefile"
+  ],
+  "license": "MIT"
+}

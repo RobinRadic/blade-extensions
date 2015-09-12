@@ -1,0 +1,32 @@
+{
+  "name": "svg.js",
+  "version": "2.0.5",
+  "homepage": "http://svgjs.com/",
+  "authors": [
+    "Wout Fierens <wout@impinc.co.uk>"
+  ],
+  "description": "A lightweight library for manipulating and animating SVG",
+  "main": "dist/svg.js",
+  "keywords": [
+    "svg",
+    "vector",
+    "graphics"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "spec/",
+    "src/",
+    "gulpfile.js"
+  ],
+  "_release": "2.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.5",
+    "commit": "d24424f8ea259027bd6275478d3cc05391b269bc"
+  },
+  "_source": "git://github.com/wout/svg.js.git",
+  "_target": "~2.0.5",
+  "_originalSource": "svg.js",
+  "_direct": true
+}

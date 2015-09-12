@@ -1,0 +1,33 @@
+{
+  "name": "typescript-deferred",
+  "version": "0.1.5",
+  "homepage": "https://github.com/DirtyHairy/typescript-deferred",
+  "authors": [
+    "Christian Speckner <cnspeckn@googlemail.com>"
+  ],
+  "description": "A tiny Promises/A+ promise implementation written in Typescript",
+  "main": "build/typescript_deferred.min.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "promise",
+    "deferred",
+    "typescript",
+    "promises-aplus"
+  ],
+  "license": "MIT",
+  "ignore": [
+      ".git",
+    "**/*.swp",
+    ".tscache",
+    "node_modules",
+    "typings",
+    "tests/*.js",
+    "typescript_deferred.js",
+    "!build/typescript_deferred.js",
+    "typescript_deffered.d.ts"
+  ]
+}

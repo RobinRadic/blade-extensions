@@ -1,0 +1,36 @@
+{
+  "name": "typescript-deferred",
+  "version": "0.1.5",
+  "description": "A tiny Promises/A+ promise implementation written in Typescript",
+  "keywords": ["promise", "deferred", "typescript", "promises-aplus"],
+  "author": {
+    "name": "Christian Speckner",
+    "email": "cnspeckn@googlemail.com",
+    "url": "https://github.com/DirtyHairy/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DirtyHairy/typescript-deferred"
+  },
+  "bugs": {
+    "url": "https://github.com/DirtyHairy/typescript-deferred/issues",
+    "email": "cnspeckn@googlemail.com"
+  },
+  "homepage": "https://github.com/DirtyHairy/typescript-deferred",
+  "license": "MIT",
+  "main": "typescript_deferred.js",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-browserify": "~3.5.0",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-uglify": "~0.8.0",
+    "grunt-mocha-test": "~0.12.7",
+    "grunt-text-replace": "~0.4.0",
+    "grunt-ts": "~3.0.0",
+    "grunt-tsd": "~0.1.0",
+    "grunt-wrap": "~0.3.0",
+    "mocha": "~2.2.1",
+    "promises-aplus-tests": "~2.1.0",
+    "typescript": "~1.4.0"
+  }
+}

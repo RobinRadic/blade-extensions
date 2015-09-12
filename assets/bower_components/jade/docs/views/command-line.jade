@@ -1,0 +1,59 @@
+extends ./layout.jade
+
+block content
+  .container
+    #body
+      :markdown
+        # Command Line
+
+        ## Installation
+
+        via npm:
+
+            $ npm install jade --global
+
+        ## Usage
+
+            $ jade [options] [dir|file ...]
+
+        ### Options
+
+        ```
+        -h, --help             output usage information
+        -V, --version          output the version number
+        -O, --obj <path|str>   JavaScript options object or JSON file containing it
+        -o, --out <dir>        output the compiled html to <dir>
+        -p, --path <path>      filename used to resolve includes
+        -P, --pretty           compile pretty html output
+        -c, --client           compile function for client-side runtime.js
+        -n, --name <str>       the name of the compiled template (requires --client)
+        -D, --no-debug         compile without debugging (smaller functions)
+        -w, --watch            watch files for changes and automatically re-render
+        -E, --extension <ext>  specify the output file extension
+        --name-after-file      name the template after the last section of the file path
+                               (requires --client and overriden by --name)
+        --doctype <str>        specify the doctype on the command line (useful if it
+                               is not specified by the template)
+        ```
+
+        ### Examples
+
+        Translate jade the templates dir:
+
+            $ jade templates
+
+        Create {foo,bar}.html
+
+            $ jade {foo,bar}.jade
+
+        Jade over stdio
+
+            $ jade < my.jade > my.html
+
+        Jade over stdio
+
+            $ echo "h1 Jade!" | jade
+
+        foo, bar dirs rendering to /tmp
+
+            $ jade foo bar --out /tmp
