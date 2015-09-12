@@ -271,25 +271,47 @@
           <ul data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" class="page-sidebar-menu">
             <li><a href="index.html"><i class="fa fa-home"></i><span class="title">Home</span></a>
             </li>
-            <li><a href="installation.html"><i class="fa fa-hourglass-2"></i><span class="title">Installation</span></a>
+            <li class="heading">
+              <h3>Documentation</h3>
             </li>
-            <li><a href="configuration.html"><i class="fa fa-cog"></i><span class="title">Configuration</span></a>
+            <li><a href="javascript:;"><i class="fa fa-coffee"></i><span class="title">Getting started</span><span class="arrow"></span></a>
+              <ul class="sub-menu">
+                <li><a href="installation.html"><span class="title">Installation</span></a>
+                </li>
+                <li><a href="configuration.html"><span class="title">Configuration</span></a>
+                </li>
+                <li><a href="upgrade-guide.html"><span class="title">Upgrade guide</span></a>
+                </li>
+              </ul>
             </li>
             <li><a href="javascript:;"><i class="fa fa-code"></i><span class="title">Directives</span><span class="arrow"></span></a>
               <ul class="sub-menu">
                 <li><a href="directives/assignment.html"><span class="title">@set @unset</span></a>
                 </li>
+                <li><a href="directives/debug.html"><span class="title">@breakpoint @debug</span></a>
+                </li>
+                <li><a href="directives/embedding.html"><span class="title">@embed</span></a>
+                </li>
                 <li><a href="directives/foreach.html"><span class="title">@foreach @break @continue</span></a>
+                </li>
+                <li><a href="directives/macros.html"><span class="title">@macro @macrodef</span></a>
+                </li>
+                <li><a href="directives/markdown.html"><span class="title">@markdown</span></a>
+                </li>
+                <li><a href="directives/minification.html"><span class="title">@minify</span></a>
                 </li>
               </ul>
             </li>
+            <li><a href="blade-string.html"><i class="fa fa-btc"></i><span class="title">BladeString</span></a>
+            </li>
+            <li class="heading">
+              <h3>Miscellaneous</h3>
+            </li>
             <li><a href="changelog.html"><i class="fa fa-pencil"></i><span class="title">Changelog</span></a>
             </li>
-            <li><a href="about.html"><i class="fa fa-bullhorn"></i><span class="title">About</span></a>
+            <li><a href="https://github.com/robinradic/blade-extensions"><i class="fa fa-github"></i><span class="title">Github repository</span></a>
             </li>
-            <li><a href="contributing.html"><i class="fa fa-github"></i><span class="title">Contributing</span></a>
-            </li>
-            <li><a href="https://github.com"><i class="fa fa-github"></i><span class="title">Github</span></a>
+            <li><a href="https://packagist.com/radic/blade-extensions"><i class="fa fa-gift"></i><span class="title">Packagist</span></a>
             </li>
           </ul>
         </div>
@@ -312,10 +334,66 @@
             </li>
           </ul>
           <div class="page-content-seperator"></div>
-          <!-- .content-inner (#content -> .content-inner)-->
-          <div class="page-content-inner">
+          <div class="page-content-inner mt-n">
             <div class="row">
-              <div class="col-md-12"><h4><a name="6-0-0" class="anchor" href="#6-0-0"><span class="header-link"></span></a>6.0.0</h4></div>
+              <div class="col-md-12"><h4><a name="blacklisting-directives" class="anchor" href="#blacklisting-directives"><span class="header-link"></span></a>Blacklisting directives</h4><p>Blacklisting a directive allows you to disable unwanted directives. For a full list of directives, check the <a href="https://github.com/RobinRadic/blade-extensions/blob/master/src/directives.php">directives.php</a> file.</p>
+<pre><code class="lang-php">return array(
+    &#39;blacklist&#39; =&gt; array(&#39;set&#39;, &#39;unset&#39;, &#39;markdown&#39;, &#39;endmarkdown&#39;)
+);
+</code></pre>
+<h4><a name="overriding-directives" class="anchor" href="#overriding-directives"><span class="header-link"></span></a>Overriding directives</h4><p>Blade Extensions allows you to override any directive using the <code>overrides</code> key. For reference you can use the <a href="https://github.com/RobinRadic/blade-extensions/blob/master/src/directives.php">directives.php</a> file. An example:</p>
+<pre><code class="lang-php">return array(
+    &#39;overrides&#39; =&gt; array(
+        &#39;break&#39;      =&gt; array(
+            &#39;pattern&#39;     =&gt; &#39;/(?&lt;!\\w)(\\s*)@break(\\s*)/&#39;,
+            &#39;replacement&#39; =&gt; &#39;$1&lt;?php break; ?&gt;$2&#39;
+        )
+    )
+);
+</code></pre>
+<h4><a name="example-views" class="anchor" href="#example-views"><span class="header-link"></span></a>Example views</h4><p>If enabled, several example views including layout, views and embed partials will be available under the blade-ext::&lt;view&gt; namespace. 
+Use <code>vendor:publish</code> to publish to your own resources folder. Based on bootstrap 3.3</p>
+<pre><code class="lang-php">return array(
+    &#39;example_views&#39; =&gt; true
+);
+</code></pre>
+<pre><code class="lang-sh">php artisan vendor:publish --provider=Radic\BladeExtensions\BladeExtensionsServiceProvider --tag=view
+</code></pre>
+<h4><a name="markdown" class="anchor" href="#markdown"><span class="header-link"></span></a>Markdown</h4><p>The markdown configuration allows you to define a custom markdown renderer or enable the markdown view engine. 
+More information can be found on the Markdown directive documentation page. </p>
+<pre><code class="lang-php">return array(
+    &#39;markdown&#39;  =&gt; array(
+        /*
+        |---------------------------------------------------------------------
+        | Enable markdown directives
+        |---------------------------------------------------------------------
+        |
+        */
+        &#39;enabled&#39;  =&gt; true,
+        /*
+        |---------------------------------------------------------------------
+        | Markdown renderer class
+        |---------------------------------------------------------------------
+        |
+        | Class that renders markdown. Needs to implement Radic\BladeExtensions\Contracts\MarkdownRenderer
+        |
+        */
+        &#39;renderer&#39; =&gt; &#39;Radic\BladeExtensions\Renderers\ParsedownRenderer&#39;,
+        /*
+        |---------------------------------------------------------------------
+        | Enable view compiler
+        |---------------------------------------------------------------------
+        |
+        | Enables markdown view compiler.
+        | This will enable you to use View::make(&#39;my_markdown_file&#39;) on `my_markdown_file.md`.
+        | Or use @include(&#39;my_markdown_file&#39;)
+        |
+        */
+        &#39;views&#39;    =&gt; false
+    )
+);
+</code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -333,7 +411,8 @@
       packadicConfig.requirejs.baseUrl = 'assets/scripts/';
       packadicConfig.app.name = 'Laravel Blade Extensions';
       packadicConfig.paths.assets = 'assets/';
-      packadicConfig.docgen = {"title":"Laravel Blade Extensions","logo":{"text":"Blade Extensions","size":22,"x":0,"y":0},"copyright":"Copyright 2015 &copy; Robin Radic","docs":"docs","dest":"gh-pages","baseUrl":"blade-extensions/","index":"docs/index.md","generators":{"typedoc":{},"sassdoc":{},"jsdoc":{}},"server":{"port":3000,"logHttpRequests":false},"types":{"doc":{"view":"document","title":"Document"}},"menu":[{"name":"Home","type":"index","icon":"fa fa-home"},{"name":"Installation","doc":"installation.md","type":"doc","icon":"fa fa-hourglass-2"},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":"fa fa-cog"},{"name":"Directives","type":"parent","icon":"fa fa-code","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":""},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":""}]},{"name":"Changelog","doc":"changelog.md","type":"doc","icon":"fa fa-pencil"},{"name":"About","doc":"about.md","type":"doc","icon":"fa fa-bullhorn"},{"name":"Contributing","doc":"contributing.md","type":"doc","icon":"fa fa-github"},{"name":"Github","href":"https://github.com","type":"href","icon":"fa fa-github"}],"googleAnalytics":false,"tracking":"<img src=\"http://piwik.example.org/piwik.php?idsite={$IDSITE}amp;rec=1\" style=\"border:0\" alt=\"\" />"};
+      packadicConfig.docgen = {"title":"Laravel Blade Extensions","logo":{"text":"Blade Extensions","size":22,"x":0,"y":0},"copyright":"Copyright 2015 &copy; Robin Radic","docs":"docs","dest":"gh-pages","baseUrl":"blade-extensions/","index":"docs/index.md","generators":{"typedoc":{},"sassdoc":{},"jsdoc":{}},"server":{"port":3000,"logHttpRequests":false},"types":{"doc":{"view":"document","title":"Document"}},"menu":[{"name":"Home","type":"index","icon":"fa fa-home"},{"name":"Documentation","type":"heading"},{"name":"Getting started","type":"parent","icon":"fa fa-coffee","children":[{"name":"Installation","doc":"installation.md","type":"doc","icon":""},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":""},{"name":"Upgrade guide","doc":"upgrade-guide.md","type":"doc","icon":""}]},{"name":"Directives","type":"parent","icon":"fa fa-code","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":""},{"name":"@breakpoint @debug","doc":"directives/debug.md","type":"doc","icon":""},{"name":"@embed","doc":"directives/embedding.md","type":"doc","icon":""},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":""},{"name":"@macro @macrodef","doc":"directives/macros.md","type":"doc","icon":""},{"name":"@markdown","doc":"directives/markdown.md","type":"doc","icon":""},{"name":"@minify","doc":"directives/minification.md","type":"doc","icon":""}]},{"name":"BladeString","doc":"blade-string.md","type":"doc","icon":"fa fa-btc"},{"name":"Miscellaneous","type":"heading"},{"name":"Changelog","doc":"changelog.md","type":"doc","icon":"fa fa-pencil"},{"name":"Github repository","href":"https://github.com/robinradic/blade-extensions","type":"href","icon":"fa fa-github"},{"name":"Packagist","href":"https://packagist.com/radic/blade-extensions","type":"href","icon":"fa fa-gift"}],"googleAnalytics":false,"tracking":"<img src=\"http://piwik.example.org/piwik.php?idsite={$IDSITE}amp;rec=1\" style=\"border:0\" alt=\"\" />"};
+      packadicConfig.docgen.menuTree = [{"name":"Home","type":"index","icon":"fa fa-home","href":"index.html","id":"Home","children":[]},{"name":"Documentation","type":"heading","href":"","id":"Documentation","children":[]},{"name":"Getting started","type":"parent","icon":"fa fa-coffee","href":"javascript:;","id":"Getting started","children":[{"name":"Installation","doc":"installation.md","type":"doc","icon":"","href":"installation.html","id":"Getting started||Installation","parentId":"Getting started","children":[]},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":"","href":"configuration.html","id":"Getting started||Configuration","parentId":"Getting started","children":[]},{"name":"Upgrade guide","doc":"upgrade-guide.md","type":"doc","icon":"","href":"upgrade-guide.html","id":"Getting started||Upgrade guide","parentId":"Getting started","children":[]}]},{"name":"Directives","type":"parent","icon":"fa fa-code","href":"javascript:;","id":"Directives","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":"","href":"directives/assignment.html","id":"Directives||@set @unset","parentId":"Directives","children":[]},{"name":"@breakpoint @debug","doc":"directives/debug.md","type":"doc","icon":"","href":"directives/debug.html","id":"Directives||@breakpoint @debug","parentId":"Directives","children":[]},{"name":"@embed","doc":"directives/embedding.md","type":"doc","icon":"","href":"directives/embedding.html","id":"Directives||@embed","parentId":"Directives","children":[]},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":"","href":"directives/foreach.html","id":"Directives||@foreach @break @continue","parentId":"Directives","children":[]},{"name":"@macro @macrodef","doc":"directives/macros.md","type":"doc","icon":"","href":"directives/macros.html","id":"Directives||@macro @macrodef","parentId":"Directives","children":[]},{"name":"@markdown","doc":"directives/markdown.md","type":"doc","icon":"","href":"directives/markdown.html","id":"Directives||@markdown","parentId":"Directives","children":[]},{"name":"@minify","doc":"directives/minification.md","type":"doc","icon":"","href":"directives/minification.html","id":"Directives||@minify","parentId":"Directives","children":[]}]},{"name":"BladeString","doc":"blade-string.md","type":"doc","icon":"fa fa-btc","href":"blade-string.html","id":"BladeString","children":[]},{"name":"Miscellaneous","type":"heading","href":"","id":"Miscellaneous","children":[]},{"name":"Changelog","doc":"changelog.md","type":"doc","icon":"fa fa-pencil","href":"changelog.html","id":"Changelog","children":[]},{"name":"Github repository","href":"https://github.com/robinradic/blade-extensions","type":"href","icon":"fa fa-github","id":"Github repository","children":[]},{"name":"Packagist","href":"https://packagist.com/radic/blade-extensions","type":"href","icon":"fa fa-gift","id":"Packagist","children":[]}];
     </script>
     <script src="assets/scripts/init.js"></script>
   </body>

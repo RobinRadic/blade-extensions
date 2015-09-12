@@ -324,7 +324,7 @@
           <div class="page-head">
             <!-- .content-title (#content > .content-head > .content-title)-->
             <div class="page-title">
-              <h1>Home<small class="pl">Blade Extensions overview</small>
+              <h1>Upgrade Guide
               </h1>
             </div>
           </div>
@@ -336,57 +336,7 @@
           <div class="page-content-seperator"></div>
           <div class="page-content-inner mt-n">
             <div class="row">
-              <div class="col-md-12"><h4><a name="introduction" class="anchor" href="#introduction"><span class="header-link"></span></a>Introduction</h4><p>Blade Extensions is a <strong>Laravel</strong> package providing additional Blade functionality. 
-It mainly consists out of new blade directives. Highly configurable, easily extendable. </p>
-<p>By altering the configuration you can blacklist unwanted directives, enable/disable features or completely override directives provided by the package.</p>
-<h4><a name="a-few-examples" class="anchor" href="#a-few-examples"><span class="header-link"></span></a>A few examples</h4><pre><code class="lang-php">@foreach($stuff as $key =&gt; $val)
-    $loop-&gt;index;       // int, zero based
-    $loop-&gt;index1;      // int, starts at 1
-    $loop-&gt;revindex;    // int
-    $loop-&gt;revindex1;   // int
-    $loop-&gt;first;       // bool
-    $loop-&gt;last;        // bool
-    $loop-&gt;even;        // bool
-    $loop-&gt;odd;         // bool
-    $loop-&gt;length;      // int
-
-    @foreach($other as $name =&gt; $age)
-        $loop-&gt;parent-&gt;odd;
-        @foreach($friends as $foo =&gt; $bar)
-            $loop-&gt;parent-&gt;index;
-            $loop-&gt;parent-&gt;parentLoop-&gt;index;
-        @endforeach
-    @endforeach  
-
-    @break
-
-    @continue
-@endforeach
-
-@set(&#39;newvar&#39;, &#39;value&#39;)
-{{ $newvar }}
-@unset(&#39;newvar&#39;)
-@unset($newvar)
-
-
-@debug($somearr)
-
-// xdebug_break breakpoints (configurable) to debug compiled views. Sweet? YES!
-@breakpoint
-
-@markdown
-# Some markdown code
-** with some bold text too **
-@endmarkdown
-
-// including markdown files is also possible, the markdown will be converted to html. 
-// Exclude the file extension of the markdown file, similair to blade.php files
-@include(&#39;path/to/markdown/file&#39;)
-
-// Beside @include, View::make(&#39;path/to/markdown/file&#39;)-&gt;render() will also work (though it would be better to use the Markdown facade / markdown ioc binding
-</code></pre>
-<h4><a name="copyright-license" class="anchor" href="#copyright-license"><span class="header-link"></span></a>Copyright/License</h4><p>Copyright 2015 <a href="https://github.com/RobinRadic">Robin Radic</a> - <a href="http://radic.mit-license.org">MIT Licensed</a></p>
-</div>
+              <div class="col-md-12"><h4><a name="5-gt-6-0" class="anchor" href="#5-gt-6-0"><span class="header-link"></span></a>5.* &gt; 6.0</h4><h4><a name="4-gt-5-0" class="anchor" href="#4-gt-5-0"><span class="header-link"></span></a>4.* &gt; 5.0</h4></div>
             </div>
           </div>
         </div>

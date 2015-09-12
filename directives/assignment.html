@@ -271,25 +271,47 @@
           <ul data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" class="page-sidebar-menu">
             <li><a href="../index.html"><i class="fa fa-home"></i><span class="title">Home</span></a>
             </li>
-            <li><a href="../installation.html"><i class="fa fa-hourglass-2"></i><span class="title">Installation</span></a>
+            <li class="heading">
+              <h3>Documentation</h3>
             </li>
-            <li><a href="../configuration.html"><i class="fa fa-cog"></i><span class="title">Configuration</span></a>
+            <li><a href="javascript:;"><i class="fa fa-coffee"></i><span class="title">Getting started</span><span class="arrow"></span></a>
+              <ul class="sub-menu">
+                <li><a href="../installation.html"><span class="title">Installation</span></a>
+                </li>
+                <li><a href="../configuration.html"><span class="title">Configuration</span></a>
+                </li>
+                <li><a href="../upgrade-guide.html"><span class="title">Upgrade guide</span></a>
+                </li>
+              </ul>
             </li>
             <li><a href="javascript:;"><i class="fa fa-code"></i><span class="title">Directives</span><span class="arrow"></span></a>
               <ul class="sub-menu">
                 <li><a href="../directives/assignment.html"><span class="title">@set @unset</span></a>
                 </li>
+                <li><a href="../directives/debug.html"><span class="title">@breakpoint @debug</span></a>
+                </li>
+                <li><a href="../directives/embedding.html"><span class="title">@embed</span></a>
+                </li>
                 <li><a href="../directives/foreach.html"><span class="title">@foreach @break @continue</span></a>
+                </li>
+                <li><a href="../directives/macros.html"><span class="title">@macro @macrodef</span></a>
+                </li>
+                <li><a href="../directives/markdown.html"><span class="title">@markdown</span></a>
+                </li>
+                <li><a href="../directives/minification.html"><span class="title">@minify</span></a>
                 </li>
               </ul>
             </li>
+            <li><a href="../blade-string.html"><i class="fa fa-btc"></i><span class="title">BladeString</span></a>
+            </li>
+            <li class="heading">
+              <h3>Miscellaneous</h3>
+            </li>
             <li><a href="../changelog.html"><i class="fa fa-pencil"></i><span class="title">Changelog</span></a>
             </li>
-            <li><a href="../about.html"><i class="fa fa-bullhorn"></i><span class="title">About</span></a>
+            <li><a href="https://github.com/robinradic/blade-extensions"><i class="fa fa-github"></i><span class="title">Github repository</span></a>
             </li>
-            <li><a href="../contributing.html"><i class="fa fa-github"></i><span class="title">Contributing</span></a>
-            </li>
-            <li><a href="https://github.com"><i class="fa fa-github"></i><span class="title">Github</span></a>
+            <li><a href="https://packagist.com/radic/blade-extensions"><i class="fa fa-gift"></i><span class="title">Packagist</span></a>
             </li>
           </ul>
         </div>
@@ -312,10 +334,65 @@
             </li>
           </ul>
           <div class="page-content-seperator"></div>
-          <!-- .content-inner (#content -> .content-inner)-->
-          <div class="page-content-inner">
+          <div class="page-content-inner mt-n">
             <div class="row">
-              <div class="col-md-12"><h4><a name="-set" class="anchor" href="#-set"><span class="header-link"></span></a>@set</h4><h4><a name="-unset" class="anchor" href="#-unset"><span class="header-link"></span></a>@unset</h4></div>
+              <div class="col-md-12"><p>The <code>@set</code> directive allows you to set variable values in your view. It will be added as environment variable as well (<code>$__env</code>, <code>$__data</code>).
+It accepts a wide variaty of input values, including multi-line arrays.</p>
+<pre><code class="lang-php">@set(&#39;main_links&#39;, [ ])
+{{ empty($testArray) }} // &gt; true
+
+@set(&#39;main_links&#39;, [
+    &#39;Home&#39; =&gt; url(),
+    &#39;Overview&#39; =&gt; url(),
+    &#39;Choose&#39; =&gt; [
+        &#39;Action&#39; =&gt; &#39;#&#39;,
+        &#39;Another action&#39; =&gt; &#39;#&#39;,
+        &#39;Something else here&#39; =&gt; &#39;#&#39;
+    ]
+])
+{{ print_r($testArray) }} // &gt; array data
+
+@set  (  &#39;set_spaces&#39;, &#39;yes&#39; )
+{{ $set_spaces }} // &gt; yes
+
+@set  (  &quot;set_quotes&quot;, &quot;yes&quot; )
+{{ $set_quotes }} // &gt; yes
+
+@set(&#39;noSpace&#39;,&#39;ok&#39;)
+{{ $noSpace }} // &gt; ok
+
+@set(&#39;mams&#39;, &#39;mamsVal&#39;)  
+{{ $mams }} // &gt; mamsVal
+
+@set($mams, &#39;oelala&#39;)
+{{ $mams }} // &gt; oelala
+
+@set($mams, &#39;pops&#39;)
+{{ $mams }} // &gt; pops
+
+@set(&#39;mams&#39;, &#39;childs&#39;)
+{{ $mams }} // &gt; childs
+
+@set($testArray, $main_links)
+{{ print_r($testArray) }} // &gt; array data
+
+@set(&#39;myArr&#39;, [&#39;my&#39; =&gt; &#39;arr&#39;])
+{{ print_r($myArr) }} // &gt; array data
+
+@set(&#39;myArr2&#39;, array(&#39;my&#39; =&gt; &#39;arr&#39;))
+{{ print_r($myArr2) }} // &gt; array data
+</code></pre>
+<pre><code class="lang-php">@set(&#39;mams&#39;, &#39;childs&#39;)
+{{ $mams }} // &gt; childs
+@unset($mams)
+{{ $mams }} // &gt; throws Error/Warning
+
+@set(&#39;mams&#39;, &#39;childs&#39;)
+{{ $mams }} // &gt; childs
+@unset(&#39;mams&#39;)
+{{ $mams }} // &gt; throws Error/Warning
+</code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -333,7 +410,8 @@
       packadicConfig.requirejs.baseUrl = '../assets/scripts/';
       packadicConfig.app.name = 'Laravel Blade Extensions';
       packadicConfig.paths.assets = '../assets/';
-      packadicConfig.docgen = {"title":"Laravel Blade Extensions","logo":{"text":"Blade Extensions","size":22,"x":0,"y":0},"copyright":"Copyright 2015 &copy; Robin Radic","docs":"docs","dest":"gh-pages","baseUrl":"blade-extensions/","index":"docs/index.md","generators":{"typedoc":{},"sassdoc":{},"jsdoc":{}},"server":{"port":3000,"logHttpRequests":false},"types":{"doc":{"view":"document","title":"Document"}},"menu":[{"name":"Home","type":"index","icon":"fa fa-home"},{"name":"Installation","doc":"installation.md","type":"doc","icon":"fa fa-hourglass-2"},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":"fa fa-cog"},{"name":"Directives","type":"parent","icon":"fa fa-code","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":""},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":""}]},{"name":"Changelog","doc":"changelog.md","type":"doc","icon":"fa fa-pencil"},{"name":"About","doc":"about.md","type":"doc","icon":"fa fa-bullhorn"},{"name":"Contributing","doc":"contributing.md","type":"doc","icon":"fa fa-github"},{"name":"Github","href":"https://github.com","type":"href","icon":"fa fa-github"}],"googleAnalytics":false,"tracking":"<img src=\"http://piwik.example.org/piwik.php?idsite={$IDSITE}amp;rec=1\" style=\"border:0\" alt=\"\" />"};
+      packadicConfig.docgen = {"title":"Laravel Blade Extensions","logo":{"text":"Blade Extensions","size":22,"x":0,"y":0},"copyright":"Copyright 2015 &copy; Robin Radic","docs":"docs","dest":"gh-pages","baseUrl":"blade-extensions/","index":"docs/index.md","generators":{"typedoc":{},"sassdoc":{},"jsdoc":{}},"server":{"port":3000,"logHttpRequests":false},"types":{"doc":{"view":"document","title":"Document"}},"menu":[{"name":"Home","type":"index","icon":"fa fa-home"},{"name":"Documentation","type":"heading"},{"name":"Getting started","type":"parent","icon":"fa fa-coffee","children":[{"name":"Installation","doc":"installation.md","type":"doc","icon":""},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":""},{"name":"Upgrade guide","doc":"upgrade-guide.md","type":"doc","icon":""}]},{"name":"Directives","type":"parent","icon":"fa fa-code","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":""},{"name":"@breakpoint @debug","doc":"directives/debug.md","type":"doc","icon":""},{"name":"@embed","doc":"directives/embedding.md","type":"doc","icon":""},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":""},{"name":"@macro @macrodef","doc":"directives/macros.md","type":"doc","icon":""},{"name":"@markdown","doc":"directives/markdown.md","type":"doc","icon":""},{"name":"@minify","doc":"directives/minification.md","type":"doc","icon":""}]},{"name":"BladeString","doc":"blade-string.md","type":"doc","icon":"fa fa-btc"},{"name":"Miscellaneous","type":"heading"},{"name":"Changelog","doc":"changelog.md","type":"doc","icon":"fa fa-pencil"},{"name":"Github repository","href":"https://github.com/robinradic/blade-extensions","type":"href","icon":"fa fa-github"},{"name":"Packagist","href":"https://packagist.com/radic/blade-extensions","type":"href","icon":"fa fa-gift"}],"googleAnalytics":false,"tracking":"<img src=\"http://piwik.example.org/piwik.php?idsite={$IDSITE}amp;rec=1\" style=\"border:0\" alt=\"\" />"};
+      packadicConfig.docgen.menuTree = [{"name":"Home","type":"index","icon":"fa fa-home","href":"index.html","id":"Home","children":[]},{"name":"Documentation","type":"heading","href":"","id":"Documentation","children":[]},{"name":"Getting started","type":"parent","icon":"fa fa-coffee","href":"javascript:;","id":"Getting started","children":[{"name":"Installation","doc":"installation.md","type":"doc","icon":"","href":"installation.html","id":"Getting started||Installation","parentId":"Getting started","children":[]},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":"","href":"configuration.html","id":"Getting started||Configuration","parentId":"Getting started","children":[]},{"name":"Upgrade guide","doc":"upgrade-guide.md","type":"doc","icon":"","href":"upgrade-guide.html","id":"Getting started||Upgrade guide","parentId":"Getting started","children":[]}]},{"name":"Directives","type":"parent","icon":"fa fa-code","href":"javascript:;","id":"Directives","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":"","href":"directives/assignment.html","id":"Directives||@set @unset","parentId":"Directives","children":[]},{"name":"@breakpoint @debug","doc":"directives/debug.md","type":"doc","icon":"","href":"directives/debug.html","id":"Directives||@breakpoint @debug","parentId":"Directives","children":[]},{"name":"@embed","doc":"directives/embedding.md","type":"doc","icon":"","href":"directives/embedding.html","id":"Directives||@embed","parentId":"Directives","children":[]},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":"","href":"directives/foreach.html","id":"Directives||@foreach @break @continue","parentId":"Directives","children":[]},{"name":"@macro @macrodef","doc":"directives/macros.md","type":"doc","icon":"","href":"directives/macros.html","id":"Directives||@macro @macrodef","parentId":"Directives","children":[]},{"name":"@markdown","doc":"directives/markdown.md","type":"doc","icon":"","href":"directives/markdown.html","id":"Directives||@markdown","parentId":"Directives","children":[]},{"name":"@minify","doc":"directives/minification.md","type":"doc","icon":"","href":"directives/minification.html","id":"Directives||@minify","parentId":"Directives","children":[]}]},{"name":"BladeString","doc":"blade-string.md","type":"doc","icon":"fa fa-btc","href":"blade-string.html","id":"BladeString","children":[]},{"name":"Miscellaneous","type":"heading","href":"","id":"Miscellaneous","children":[]},{"name":"Changelog","doc":"changelog.md","type":"doc","icon":"fa fa-pencil","href":"changelog.html","id":"Changelog","children":[]},{"name":"Github repository","href":"https://github.com/robinradic/blade-extensions","type":"href","icon":"fa fa-github","id":"Github repository","children":[]},{"name":"Packagist","href":"https://packagist.com/radic/blade-extensions","type":"href","icon":"fa fa-gift","id":"Packagist","children":[]}];
     </script>
     <script src="../assets/scripts/init.js"></script>
   </body>

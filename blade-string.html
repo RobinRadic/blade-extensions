@@ -324,7 +324,7 @@
           <div class="page-head">
             <!-- .content-title (#content > .content-head > .content-title)-->
             <div class="page-title">
-              <h1>Home<small class="pl">Blade Extensions overview</small>
+              <h1>BladeString
               </h1>
             </div>
           </div>
@@ -336,56 +336,22 @@
           <div class="page-content-seperator"></div>
           <div class="page-content-inner mt-n">
             <div class="row">
-              <div class="col-md-12"><h4><a name="introduction" class="anchor" href="#introduction"><span class="header-link"></span></a>Introduction</h4><p>Blade Extensions is a <strong>Laravel</strong> package providing additional Blade functionality. 
-It mainly consists out of new blade directives. Highly configurable, easily extendable. </p>
-<p>By altering the configuration you can blacklist unwanted directives, enable/disable features or completely override directives provided by the package.</p>
-<h4><a name="a-few-examples" class="anchor" href="#a-few-examples"><span class="header-link"></span></a>A few examples</h4><pre><code class="lang-php">@foreach($stuff as $key =&gt; $val)
-    $loop-&gt;index;       // int, zero based
-    $loop-&gt;index1;      // int, starts at 1
-    $loop-&gt;revindex;    // int
-    $loop-&gt;revindex1;   // int
-    $loop-&gt;first;       // bool
-    $loop-&gt;last;        // bool
-    $loop-&gt;even;        // bool
-    $loop-&gt;odd;         // bool
-    $loop-&gt;length;      // int
-
-    @foreach($other as $name =&gt; $age)
-        $loop-&gt;parent-&gt;odd;
-        @foreach($friends as $foo =&gt; $bar)
-            $loop-&gt;parent-&gt;index;
-            $loop-&gt;parent-&gt;parentLoop-&gt;index;
-        @endforeach
-    @endforeach  
-
-    @break
-
-    @continue
-@endforeach
-
-@set(&#39;newvar&#39;, &#39;value&#39;)
-{{ $newvar }}
-@unset(&#39;newvar&#39;)
-@unset($newvar)
-
-
-@debug($somearr)
-
-// xdebug_break breakpoints (configurable) to debug compiled views. Sweet? YES!
-@breakpoint
-
-@markdown
-# Some markdown code
-** with some bold text too **
-@endmarkdown
-
-// including markdown files is also possible, the markdown will be converted to html. 
-// Exclude the file extension of the markdown file, similair to blade.php files
-@include(&#39;path/to/markdown/file&#39;)
-
-// Beside @include, View::make(&#39;path/to/markdown/file&#39;)-&gt;render() will also work (though it would be better to use the Markdown facade / markdown ioc binding
+              <div class="col-md-12"><h4><a name="usage" class="anchor" href="#usage"><span class="header-link"></span></a>Usage</h4><p>The <code>BladeStringRenderer</code> allows you to render blade template strings with variables. To get an instance of the renderer, you can:</p>
+<ul>
+<li>Use the binding <code>app(&#39;blade.string&#39;)-&gt;render($str, $vars = []);</code></li>
+<li>Use the Facade <code>BladeString::render($str, $vars = []);</code></li>
+<li>Inject <code>__construct(BladeStringRenderer $bladeString)</code></li>
+</ul>
+<pre><code class="lang-php">$rendered = BladeString::render(&#39;{{ $var1 }} @if($var2 === true) {{ $var1 }} @endif&#39;, [ &#39;var1&#39; =&gt; &#39;Yes Man&#39;, &#39;var2&#39; =&gt; true ]);`
+echo $rendered;
 </code></pre>
-<h4><a name="copyright-license" class="anchor" href="#copyright-license"><span class="header-link"></span></a>Copyright/License</h4><p>Copyright 2015 <a href="https://github.com/RobinRadic">Robin Radic</a> - <a href="http://radic.mit-license.org">MIT Licensed</a></p>
+<h4><a name="facade" class="anchor" href="#facade"><span class="header-link"></span></a>Facade</h4><p>To use the <code>BladeString</code> facade, add it to the <code>facades</code> array in your <code>config/app.php</code> file.</p>
+<pre><code class="lang-php">return [
+    &#39;facades&#39; =&gt; [
+        &#39;BladeString&#39; =&gt; Radic\BladeExtensions\Facades\BladeString::class    
+    ]
+];
+</code></pre>
 </div>
             </div>
           </div>
