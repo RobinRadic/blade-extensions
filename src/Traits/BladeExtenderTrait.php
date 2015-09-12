@@ -34,7 +34,7 @@ trait BladeExtenderTrait
      */
     public $directives;
 
-    public $directivesFile = __DIR__ . '/../directives.php';
+    public $directivesFile;
 
     public $overrides;
 
@@ -49,6 +49,11 @@ trait BladeExtenderTrait
         $blade      = $app->make('blade.compiler');
         $config     = $app->make('config');
         $class      = new static;
+
+        if(!isset($class->directivesFile)){
+            $class->directivesFile = __DIR__ . '/../directives.php';
+        }
+
         $blacklist  = isset($class->blacklist) ? $class->blacklist : $config->get('blade_extensions.blacklist');
         $directives = isset($class->directives) ? $class->directives : $app->make('files')->getRequire($class->directivesFile);
         $overrides  = isset($class->overrides) ? $class->overrides : $config->get('blade_extensions.overrides', [ ]);
@@ -72,7 +77,7 @@ trait BladeExtenderTrait
             }
 
             $blade->extend(function ($value) use ($class, $method, $directive, $app, $blade) {
-            
+
                 return $class->$method($value, $directive[ 'pattern' ], $directive[ 'replacement' ], $app, $blade);
             });
         }
