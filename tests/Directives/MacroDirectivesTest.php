@@ -21,7 +21,7 @@ class MacroDirectivesTest extends TestCase
 
     public function testMacros()
     {
-        $this->registerHtmlServiceProvider();
+
         $this->registerServiceProvider();
         $this->assertEquals('my age is3', $this->view()->make('macro')->render());
         $this->assertEquals('my age is 6', $this->view()->make('macro2')->render());

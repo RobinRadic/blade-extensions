@@ -66,14 +66,6 @@ abstract class TestCase extends AbstractTestCase
         $this->cleanViews();
     }
 
-    /**
-     * Registers the HtmlServiceProvider required for the macro directives
-     */
-    protected function registerHtmlServiceProvider()
-    {
-        $this->app->register(new HtmlServiceProvider($this->app));
-    }
-
     protected function registerBladeMarkdownServiceProvider()
     {
         $this->app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider'); //new MarkdownServiceProvider($this->app));

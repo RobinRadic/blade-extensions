@@ -17,7 +17,6 @@ class MarkdownCompilerTest extends TestCase
         parent::setUp();
 
         parent::loadViewTesting();
-        parent::registerHtmlServiceProvider();
         $this->app->config->set('blade_extensions.markdown.views', true);
         $this->app->config->set('blade_extensions.markdown.enabled', true);
         $this->app->config->set('blade_extensions.markdown.renderer', 'Radic\\BladeExtensions\\Renderers\\ParsedownRenderer');

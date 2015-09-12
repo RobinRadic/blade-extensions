@@ -16,7 +16,7 @@ class DebugDirectivesTest extends TestCase
     {
         parent::setUp();
         $this->loadViewTesting();
-        $this->registerHtmlServiceProvider();
+
     }
 
     public function testDebugVardump()

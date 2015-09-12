@@ -19,7 +19,7 @@ class AssignmentDirectivesTest extends TestCase
     {
         parent::setUp();
         $this->loadViewTesting();
-        $this->registerHtmlServiceProvider();
+
         $this->registerServiceProvider();
     }
 
