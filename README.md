@@ -16,7 +16,7 @@
 |:-----------:|:----:|:---:|:----:|
 | Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v5.0](tree/master) |
   
-**Laravel** package providing additional Blade functionality. [**Thoroughly**](http://docs.radic.nl/blade-extensions/) documented and **100%** code coverage.
+**Laravel** package providing additional Blade functionality. [**Thoroughly**](http://robin.radic.nl/blade-extensions/) documented and **100%** code coverage.
 
 
 - **@set @unset** Setting and unsetting of values

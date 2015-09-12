@@ -1,0 +1,52 @@
+{
+    "title": "Laravel Blade Extensions",
+    "logo": {
+        "text": "Blade Extensions",
+        "size": 22,
+        "x": 0,
+        "y": 0
+    },
+    "copyright": "Copyright 2015 &copy; Robin Radic",
+    "docs": "docs",
+    "dest": "gh-pages",
+    "baseUrl": "blade-extensions/",
+    "index": "docs/index.md",
+    "menu": [
+        { "name": "Home", "type": "index",  "icon": "fa fa-home" },
+
+        { "name": "Documentation", "type": "heading" },
+        {
+            "name": "Getting started",
+            "type": "parent",
+            "icon": "fa fa-coffee",
+            "children": [
+                {"name": "Installation", "doc": "installation.md", "type": "doc", "icon": ""},
+                {"name": "Configuration", "doc": "configuration.md", "type": "doc", "icon": ""},
+                {"name": "Upgrade guide", "doc": "upgrade-guide.md", "type": "doc", "icon": ""}
+            ]
+        },
+        {
+            "name": "Directives",
+            "type": "parent",
+            "icon": "fa fa-code",
+            "children": [
+                { "name": "@set @unset", "doc": "directives/assignment.md", "type": "doc", "icon": "" },
+                { "name": "@breakpoint @debug", "doc": "directives/debug.md", "type": "doc", "icon": "" },
+                { "name": "@embed", "doc": "directives/embedding.md", "type": "doc", "icon": "" },
+                { "name": "@foreach @break @continue", "doc": "directives/foreach.md", "type": "doc", "icon": "" },
+                { "name": "@macro @macrodef", "doc": "directives/macros.md", "type": "doc", "icon": "" },
+                { "name": "@markdown", "doc": "directives/markdown.md", "type": "doc", "icon": "" },
+                { "name": "@minify", "doc": "directives/minification.md", "type": "doc", "icon": "" }
+            ]
+        },
+        { "name": "BladeString", "doc": "blade-string.md", "type": "doc", "icon": "fa fa-btc" },
+
+        { "name": "Miscellaneous", "type": "heading" },
+        { "name": "Changelog", "doc": "changelog.md", "type": "doc", "icon": "fa fa-pencil" },
+        { "name": "Github repository", "href": "https://github.com/robinradic/blade-extensions", "type": "href", "icon": "fa fa-github" },
+        { "name": "Packagist", "href": "https://packagist.com/radic/blade-extensions", "type": "href", "icon": "fa fa-gift" }
+
+    ],
+    "googleAnalytics": false,
+    "tracking": "<img src=\"http://piwik.example.org/piwik.php?idsite={$IDSITE}amp;rec=1\" style=\"border:0\" alt=\"\" />"
+}

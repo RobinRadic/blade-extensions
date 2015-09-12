@@ -1,34 +1,21 @@
-<!---
+---
 title: Debug
-author: Robin Radic
--->
+subtitle: '@breakpoint @debug'
+---
 
-#### Dump the value
-Dumps the value, uses var_dump. If installed, uses Kint::dump. 
-```php
-@debug(app())
-```
-
-If you would like to change the dump output to use your own logic, open up `config/blade_extensions.php` and edit the directive output.
+#### @breakpoint
+The `@breakpoint` directive is a convienient way to place debugger breakpoints inside your views. 
+By default it uses `xdebug_break`, but can easily be changed using the config file:
 ```php
 return array(
-    // ...
-    'directives' => array(
-        // ...
-        ,'addDebug' => <<<'EOT'
-<h1>DEBUG OUTPUT:</h1>
-<pre><code>
-    <?php (class_exists('Kint') ? Kint::dump($1) : var_dump($1)) ?>
-</code></pre>
-EOT
-        , // ...
+    'overrides' => array(
+        'breakpoint' => array(
+            // Default replacement, change if other debugger is used.
+            'replacement' => '<?php if(function_exists('xdebug_break')){ var_dump(xdebug_break()); } ?>'
+        )
     )
-)
+);
 ```
 
-
-#### Breakpoints
-If you wish to insert a breakpoint (xdebug) in a view, you can do so by using 
-```php
-@breakpoint
-```
+#### @debug
+The `@debug($var)` directive will dump the `$var` using the either `raveren/kint`, Symfony's `VarDumper` or the regular `var_dump` method. 
