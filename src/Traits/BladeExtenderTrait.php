@@ -45,12 +45,13 @@ trait BladeExtenderTrait
      */
     public static function attach(Application $app)
     {
+
         /** @var \Illuminate\View\Compilers\BladeCompiler $blade */
         $blade      = $app->make('blade.compiler');
         $config     = $app->make('config');
         $class      = new static;
 
-        if(!isset($class->directivesFile)){
+        if (!isset($class->directivesFile)) {
             $class->directivesFile = __DIR__ . '/../directives.php';
         }
 

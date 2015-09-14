@@ -277,16 +277,147 @@
     </parse_markers>
     <source>eJzFV1FP2zAQfs+v8ANSU0TaMWkvYzA2NiakTZoA8UIRchu39UjjyHG6IdT/vrNjJ3Fit6WgLQ+Q2neffd93d3Y+fMzmWTDc3w/QPvqJuUBsisScoO+Y45hOUIYnD3hG8gEYDIMUL0gOQwRdytnR5wTH5OsfQdKcsjQfXXNMRX4UBEVO0EWSFAuaYkFGZywVHE9EPrqh5PfoHF4ZfwQ7vbLyQ1dkIiSM+gXDcuZUbwDJZ92iyhgXYs44Ko3ZmKali5pL6AQ8SqAfF9dqbMKyR05ncwFjb98cHkbw592BwzV9QPqZC5G9Hw4VO4MFFZHGHTA+UxwJRyxPQSB9VbTyAcwl5ghzjh/1yFD9zzgT4ElitJdrBHSMbu+Odge4EsDgOpBRQ6imPD7cJdjUCrYQcyJu6nk9Wi2XQVYtrAXdmYH2phYAOuVEFDxFe2JOc3tjxRgUQNMiVdG2NhC2AfvK6SkwcirA6KQRE1BljHV48mmuf6RGV53YvxGhameJk4LIQlr6mdB423HfCnFmh9gOqblVKzLfviFDoPBp+ksmTDpDE9CEpHJEMISRzqOBW0yUCy6dTLr5pjVom4Alo/F6PeXmdDWFZpGDCg/U6vXaDNApCmuDY2XSmDYmbHyv0MN+e7aRGc0qur2TyaFHjiyPVfVrhUgCbcYG1GBEdq3YH02/Bl15xLpQMoE20JTIP5Wq1Z7XaFamkis+d/Vt0Lj/zDq8EizbmM4Ip7FBg+PDWOUd7rRNSc7asB8pSSpx11elMj0rlwwrFlhWefdfFJwvAcaMJWiPLQn/zakgO8TY3GQNBGUxxZD1HX0TnMsSVefUfcay0FFVTXlV5Vaw7bK0nfNbBS9rEioZmuL9JCEYuGsU0fa1KKEOWkBWOXaUlB4vT0GcZbANSMEXJF6J4cu8nUSgORykoZvwTrv06DLYTZhnyPs8UT6VVBsxlBQzuiTpf+ub1aWqknLjCeE46jxa6TeHXPXZCVu/5yRL4Eof9mQ8MNyrVzvoalKhOmXwmsuDU4PueKvSLJs+Le9Xr3XgxWSKi6Qj3LYtv+rjtVoa0Xk7MWZnlQrGfLsa9OvaBfb5usXr+NvpUedHL4rK9yiasyQmPIpk1tj+jmO7iWdt3QloW1SrW8OeBO45tlP5ec/W86TI5wgnifkKNo160+Vg+6vRVC5hzLut2tbLNO2wSaWjeTvttqmtjQHLPIwZXDSBV1AFyuGVKbiYfgH4S4PeYURdCDpfMtFJbHt5TqQW2w123AyVLLm5Mn0IaKGclIRL2oxYPmIc3+jd7zlvRtjXRrOW0XMV/AWh0hye</source>
   </file>
-  <file path="Traits/BladeExtenderTrait.php" generated-path="Traits.BladeExtenderTrait.html" hash="276262aba1b508c58bef472f891a2e3e" package="Default">
+  <file path="Traits/BladeExtenderTrait.php" generated-path="Traits.BladeExtenderTrait.html" hash="43d1a24fda201782252deac7ac46af1f" package="Default">
     <docblock line="0">
-      <description></description>
+      <description>Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends</description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
+    <namespace-alias name="Application">\Illuminate\Foundation\Application</namespace-alias>
+    <trait namespace="Radic\BladeExtensions\Traits" line="20" package="Radic\BladeExtensions">
+      <name>BladeExtenderTrait</name>
+      <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait</full_name>
+      <docblock line="20">
+        <description>Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends</description>
+        <long-description></long-description>
+        <tag name="package" line="20" description="Radic\BladeExtensions"/>
+        <tag name="version" line="20" description="2.1.0"/>
+        <tag name="author" line="20" description="Robin Radic"/>
+        <tag name="license" line="20" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="20" description="2011-2015, Robin Radic"/>
+        <tag name="link" line="20" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
+      </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="28" package="Radic\BladeExtensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default></default>
+        <docblock line="28">
+          <description>An array of methods that should be excluded by attach</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="35" package="Radic\BladeExtensions">
+        <name>$directives</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
+        <default></default>
+        <docblock line="35">
+          <description>An array of methodName =&gt; directiveReplacement</description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="37" package="Radic\BladeExtensions">
+        <name>$directivesFile</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directivesFile</full_name>
+        <default></default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="39" package="Radic\BladeExtensions">
+        <name>$overrides</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::overrides</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Traits" line="46" package="Radic\BladeExtensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="46">
+          <description>Instanciate and execute all functions as blade extends</description>
+          <long-description></long-description>
+          <tag name="param" line="46" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
+            <type>\Illuminate\Foundation\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="93" package="Radic\BladeExtensions">
+        <name>createMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
+        <docblock line="93">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="93" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="104" package="Radic\BladeExtensions">
+        <name>createOpenMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
+        <docblock line="104">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="104" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="104" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="115" package="Radic\BladeExtensions">
+        <name>createPlainMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
+        <docblock line="115">
+          <description>Create a plain Blade matcher.</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="115" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </trait>
     <parse_markers>
-      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="37" code="PPC:ERR-50007">No summary for property $directivesFile</error>
+      <error line="39" code="PPC:ERR-50007">No summary for property $overrides</error>
     </parse_markers>
-    <source>eJzVVm1v2zYQ/q5fcQGMSjJsqRmwL3GbpOvWIcC6DkGwL1HhMtLZJiJTGkklDdr89x6pN0pWt2XoMIwfEll39zz3ytOLs3JXevF87sEcXmWZAiZAaaZ5CptKpJoXAj4wrVm6+wB6xzTwDaQszzFbwD3Pc+CC9EXKmUYyzgA/YlqZZ5K1EASr4CZnGZJYo8gU8cWeYHtUJUsRLlnG0+QHo/GTUVDGKLmSjGu18rxKIVzkebXngmiSN0UlMmaAk1dlmfPUPpPefxOIoTynMG7ZFsE5k0FZ5TuU5oer/F10HD23QlbpXSFhgFTccFHjWRUKmeAGZG8vruCX5vUSdlqXJ3EsjUW053rZWESF3FqEtCgfJN/utOPB8+PjJf35fjHBJ25heFoGoxnVPCKPbWqW6EZrK61NJaFPRYbSFtf75HkGzRbOHCqeACYle4BiA3ukVFAtbb3UrqjyDG5M6tO8ypCeH6AuaWPcYpzfMVmjNG9i+7+sbigPMCMv09ucK736G+y/UpPCy1PIuETqgTu8xJLscY9CP422Q1AN76HgDc+JDNbrHy8u12uIwI+jKO7lEY2rP7IuqJskzzpUJ5qLf9jSw6hKJtkenEmDGStLuNohpJWUlAdgvXAq9PEg1kULxpChtfnktT1GkdQ5TZzh/53jffK62JeUKqnq8Wp/2tJSIA27Oc0be15aluXpnt1i4FtBlDamfrjqbdJCbPh2wqYWDHVzplSLL/C+CXY18KBuN6PBlUId1FbL004UwhkcvIST1pXl6ZasapfX/XhFnerApb5fDgh7kcvoGJwM4t1QapQfWvpL/KMivQko07Uuf9eRhwF3Ipe+1//LgDtVfwHX8D5set6cTSGRugoCh59ae1aPsRnhThA6TWYOrYLgqPW0j+u6M34fjk3MIVc1FxWuBpLHA+gGuGW/Br+kCUAp/K8AT/swsDONOQn4dGdkf6E92aGh7cipofBrjj1OldDpSFND0VzC/fuxl12Zwe90fLpAq3TDpaKADUS4OkgH5WNtr+xg5gzjs2f0OdC+N5YLZ4wXoGWFlKfPn+Go2RLUoyRRTZ8vWnee1DbDeOpVelrfyUF3dQazO5YTO5hvojHdwknQwg7yogEa+3HglERdSdGNZAPYsLm4g2YbCYYFH3kwCtf5XfcCJWC8v35GTbsfybltldMewI+lRGU/nahVgMEWBUraLHYLdPslmt5gdDNLLrYwa/U6eRN8LZ9aYF36U2pQjW+ZTncogw5pvLkaQD8Ozl4cJfdhkKh5eG76sTMxy928ToJonoRh7K/aLPxPkvCuRPGtExEmf5KI15aWAqYmo8/TOtx97cG/Hu1vhvNbhusE+uh9AWdz+OQ=</source>
+    <source>eJzVVt9v2zYQftdfcQGMSgpsuRmwl7hN0nXrEGDdhiDYS1S4jHS2iciURlJJg9b/+44UJVGysy1Dh2F6SGTe3ffdT55enVebKpgfHwdwDG/yXAEToDTTPINVLTLNSwEfmdYs23wEvWEa+AoyVhSYT+GBFwVwQfoi40wjGeeAnzCrzTvJWgiCVXBbsBxJrFHkivjmgWBbVBXLEK5YzrP0O6Pxg1FQxii9loxrtQiCWiFcFkW95YJo0ndlLXJmgNM3VVXwzL6T3n8TiKG8oDDu2BrBew4GZZXvUZofvvI3yUny0gpZrTelhAFSectFg2dVKGSCG5C9v7yGn9zxDDZaV6fzuTQWyZbrmbNISrm2CFlZPUq+3mjPg5cnJzP68+30AJ+4g+HTMhjNpOERxdymZoZ+tLbS2lQS+lTkKG1xg89BYNBs4cxDxRPApGSPUK5gi5QKqqWtl9qUdZHDrUl9VtQ50vsjNCV1xi3GxT2TDYo7mdv/VX1LeYAJeZndFVzpxd9g/5maFF6fQc4lUg/c4xVWZI9bFPp5tB2Ccrz7gne8wJGwpGaRPO+MPGcv/2HHDp2umGRb8AYJJqyq4HqDkNVSUpjAeuGhyMZz1tQkGkPG1uZz0LYQRdKkLPVm+zeOD+nbcltRJqRqpqf9aStHgTh287gT+7y2LLOzLbvDKLSCJHOmYbzobbJSrPj6gE0jGOoWTKkWX+CDC9YVwzx0j0RHXCnUUaM9OxsWNI69oHvQsRrhL5ffX14tl5BAOE+SeS9P6JoOe692wSABTTMbB4dudKIYzmHvEE7bTMzO1mTVZGzZD2/SqQ4y0nu1R9iLfEbP4HSQ7hVFrcLY0l/h7zXpPZVCj78biP2AO5FP3+v/ZcCdajiFG/gQe1VelRKpqSHy+GmyJs0lYS6ITjAut22Q1tM+rpvO+MNeh5iHXNVc1LgYSHZ70A64Zb+BsKIBRCnCJ4AP+zCwM3NxEPD5zsj+uny2Q0PbkVND4VOO7Q6V0OtIU0Phrvj+fG9i2zJD2OmENKZ1tuJSUcAGIl7spYPysbQLIZp4w/jiBX1stOfGcuqN8RS0rM2d8eULHLkdRD1KEuX6fNq686y2GcbTLOqzZiVE3c0dTe5ZQexgvrjGdFMvQVM7yFMHZPzYc0SirqXoxtCBOAYfa9BgI8GwyCPWUYixf0G6oMcr80fU9DWB5Ny6Lmj14KdKorIfY9QewGCNAiUtM7t4upWWHF6atAwkF2uYtHqd3AXfyA/tzC7lGTWlxvdMZxuUUYc0XpYOMJxH56+O0oc4StVxfGF6sDMxa8Mcp1FynMbx3C2M3f8mCb9UKL52IuL0TxLx1tJSwNRk9MHbhLttPPjXo/3VcH7NcL1Ad8EfV14RAA==</source>
   </file>
   <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="d38222be742adeb14c50ef776e4e2d76" package="Default">
     <docblock line="0">
@@ -2170,6 +2301,48 @@
         <tag name="copyright" line="22" description="2011-2015, Robin Radic"/>
         <tag name="link" line="22" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="28" package="Radic\BladeExtensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default></default>
+        <docblock line="28">
+          <description>An array of methods that should be excluded by attach</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions">
+        <name>$directives</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
+        <default></default>
+        <docblock line="35">
+          <description>An array of methodName =&gt; directiveReplacement</description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions">
+        <name>$directivesFile</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directivesFile</full_name>
+        <default></default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="39" package="Radic\BladeExtensions">
+        <name>$overrides</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::overrides</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="36" package="Radic\BladeExtensions\Directives">
         <name>directiveMarkdown</name>
         <full_name>\Radic\BladeExtensions\Directives\MarkdownDirectives::directiveMarkdown()</full_name>
@@ -2260,6 +2433,83 @@
           <type>\Illuminate\View\Compilers\BladeCompiler</type>
         </argument>
       </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="46" package="Radic\BladeExtensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="46">
+          <description>Instanciate and execute all functions as blade extends</description>
+          <long-description></long-description>
+          <tag name="param" line="46" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
+            <type>\Illuminate\Foundation\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+        <name>createMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
+        <docblock line="93">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="93" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+        <name>createOpenMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
+        <docblock line="104">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="104" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="104" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+        <name>createPlainMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
+        <docblock line="115">
+          <description>Create a plain Blade matcher.</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="115" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
     </class>
     <source>eJztU0tLw0AQvudXzMGDljRpBS9W8FlBsBcRTwGZJmO7dLNZ9lEV8b+7u0lqWqtQvHhwDnnszPd9s/M4OZVzGaW9XgQ9uGKKcsOWpI+hRLUoqmcRA4mi/XFBaSSwJC0xJ7jDguXZBceCxi+GhGaV0NknyyiKrCa44dyWTKCh7LISRmFudHZdWVGgcYjsXErO8vA92gQ8MHp2qFIyTkrXWu0voIb2uwZuT+heITO6c1yQCmcuvx1u7uPO3L0XOCPo2FbREKztdDP+UyhELN2lXHiX7jAZJoPgRGvmlYI1rWrKRK0YQlzdnOBaOpObe7htjvswN0Yep6nyiKRkpt8gkkrNAkNeyVfFZnPTyWAwHPbd4yjeoicWsG6tgo9Mah3B06kvR5+69UijnKPWMGlK2inFW+SZfAe3Nsk7Q6O89aBogZNVc4Kj9bsmKSxhJ9tbIrf0KwaJxpASv+JQJLnbrJKE2eDJdtgi2EMpf8D/uFQhj9C+FYMiY5WAkr1Q0Rym4S3t1GnCkxV50P3Smf26rvGqOvHaHWPYzDpebXSTxEEQqgfEW5OLVDR7bJj2vyOvxQ9GAfz+/RyNu3sefP+j9GdGqdOcPzVN79EHHv8WBw==</source>
   </file>
@@ -2287,6 +2537,48 @@
         <tag name="copyright" line="23" description="2011-2015, Robin Radic"/>
         <tag name="link" line="23" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="28" package="Radic\BladeExtensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default></default>
+        <docblock line="28">
+          <description>An array of methods that should be excluded by attach</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions">
+        <name>$directives</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
+        <default></default>
+        <docblock line="35">
+          <description>An array of methodName =&gt; directiveReplacement</description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions">
+        <name>$directivesFile</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directivesFile</full_name>
+        <default></default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="39" package="Radic\BladeExtensions">
+        <name>$overrides</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::overrides</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="38" package="Radic\BladeExtensions\Directives">
         <name>directiveMacro</name>
         <full_name>\Radic\BladeExtensions\Directives\MacroDirectives::directiveMacro()</full_name>
@@ -2422,6 +2714,83 @@
           <type>\Illuminate\View\Compilers\BladeCompiler</type>
         </argument>
       </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="46" package="Radic\BladeExtensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="46">
+          <description>Instanciate and execute all functions as blade extends</description>
+          <long-description></long-description>
+          <tag name="param" line="46" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
+            <type>\Illuminate\Foundation\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+        <name>createMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
+        <docblock line="93">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="93" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+        <name>createOpenMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
+        <docblock line="104">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="104" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="104" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+        <name>createPlainMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
+        <docblock line="115">
+          <description>Create a plain Blade matcher.</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="115" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
     </class>
     <source>eJztVE1r3DAQvftXzCGHZPHa2UIv2UKTtikEupcQejIUrTzZFZEloY9tSsl/rzS2NxvHWQi5bCE62LI0b97TzJM/fTZrk5WTSQYT+CYsci826M6gYdzqHFDV3azWNIlxZaZYg84wjnDNasGrL5LVeHnvUTmhlaseE82zLDiEKylDIxTzWH3VylvGvau+66Bq5iOiujBGCk7z+RDwU+DviGqMkGhdy9V/AnPQz1vguKAby4R3O8s1WlqL+l53+BR6Ho9+x1YIgzHKTQAXlmOYR06K2sTzRcgw7YdiVpxSAAt+re1wH671UqiWncJiKSP5M3mLqxv40W1NYe29OStLm1BFI/y0QxXarigL1+aPFau1H6g5nc2m8fExH+FVd8/EwZYpRRctn5LlMpVpirt1Im9xyZyDRSr3Tnn+ZilTavBoD2mXGpnGBOoeuWjbRqv9ZmyfZc2I0D3jaMNkwDdlMMx7tOpNOSwaGa9dg8oP8lSvuGJwxIzZg99740gHNW+bwaIPVkEj7rHuFkt6m7CMnHAbFCfep205bouab0uTPzlgDkPJ+faudwpOiKX1RhqdEGNx9avLdPxS8pb8ZE7gh5cddNn9BN5NdGgm6jvzf/iILF/j7buPDs1HfWcOykcP2T8UFrGd</source>
   </file>
@@ -2449,6 +2818,48 @@
         <tag name="copyright" line="21" description="2011-2015, Robin Radic"/>
         <tag name="link" line="21" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="28" package="Radic\BladeExtensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default></default>
+        <docblock line="28">
+          <description>An array of methods that should be excluded by attach</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions">
+        <name>$directives</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
+        <default></default>
+        <docblock line="35">
+          <description>An array of methodName =&gt; directiveReplacement</description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions">
+        <name>$directivesFile</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directivesFile</full_name>
+        <default></default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="39" package="Radic\BladeExtensions">
+        <name>$overrides</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::overrides</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="36" package="Radic\BladeExtensions\Directives">
         <name>directiveSet</name>
         <full_name>\Radic\BladeExtensions\Directives\AssignmentDirectives::directiveSet()</full_name>
@@ -2539,6 +2950,83 @@
           <type>\Illuminate\View\Compilers\BladeCompiler</type>
         </argument>
       </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="46" package="Radic\BladeExtensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="46">
+          <description>Instanciate and execute all functions as blade extends</description>
+          <long-description></long-description>
+          <tag name="param" line="46" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
+            <type>\Illuminate\Foundation\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+        <name>createMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
+        <docblock line="93">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="93" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+        <name>createOpenMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
+        <docblock line="104">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="104" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="104" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+        <name>createPlainMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
+        <docblock line="115">
+          <description>Create a plain Blade matcher.</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="115" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
     </class>
     <source>eJztU0tP3DAQvvtXzIEDrLIJi8SFrdTSFiQkeuF1ioS8yTRr4TiWH1sQ4r9jT5JlCWGriguH+pDHjL+HZzxfvuqlZtlkwmACP4XBwokV2iOw6BLwKrxCJmOK12g1LxAueCmK/LvkJZ7cO1RWNMrmL9A5Y94inEnpa6G4w/xHo5zhhbP5aeNVyV1A5MdaS1HQ93wIuBH4J6BqLSQa22r1v8At9N8tcNzQleHC2Y1wiYZiwd/fjgvfwknveIUwWKNSBLB+MYZ5kaBdq3CcABnSHqSzdJ82cO+WjRnm4aJZCNWq07ZQuSD+xt6vsys471JTWDqnj7LMRFRaCzftUGljKmIpGv1gRLV0Azf7s9k0PA6TEV1198YcrJXi7rTVUzJbxDJNcbNOGSsktxaOrRWVqlG5jQI9MhbJYktHuxaT1Lm4JlD2yMvYM4r1qdA+w+sRo1vWzopLjx9i0Nw5NOpDHAa1DFMWSzPgyf9homCHa70Fv3XAyAc1b81g0HmjoBb3WHbBjN7aL4Im/PaqIN3Npuy2JU3WhUleHS+BoeFkPdid/h5pPLK+Op0NbbC67Zh23yNvxffmBH56//ZctzNP0f/359PcH2rLp7pBT+wZYdkICw==</source>
   </file>
@@ -2566,6 +3054,48 @@
         <tag name="copyright" line="21" description="2011-2015, Robin Radic"/>
         <tag name="link" line="21" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="28" package="Radic\BladeExtensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default></default>
+        <docblock line="28">
+          <description>An array of methods that should be excluded by attach</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions">
+        <name>$directives</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
+        <default></default>
+        <docblock line="35">
+          <description>An array of methodName =&gt; directiveReplacement</description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions">
+        <name>$directivesFile</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directivesFile</full_name>
+        <default></default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="39" package="Radic\BladeExtensions">
+        <name>$overrides</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::overrides</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions\Directives">
         <name>directiveMinify</name>
         <full_name>\Radic\BladeExtensions\Directives\MinifyDirectives::directiveMinify()</full_name>
@@ -2656,6 +3186,83 @@
           <type>\Illuminate\View\Compilers\BladeCompiler</type>
         </argument>
       </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="46" package="Radic\BladeExtensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="46">
+          <description>Instanciate and execute all functions as blade extends</description>
+          <long-description></long-description>
+          <tag name="param" line="46" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
+            <type>\Illuminate\Foundation\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+        <name>createMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
+        <docblock line="93">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="93" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+        <name>createOpenMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
+        <docblock line="104">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="104" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="104" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+        <name>createPlainMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
+        <docblock line="115">
+          <description>Create a plain Blade matcher.</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="115" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
     </class>
     <source>eJztUztPwzAQ3vMrbmCAKk0oEgtF4lkkJFgQYoqE3OTaWnUcyz4XKsR/x3HSUEIoQl064CF2fP4evjufnqmZCuJeL4AeXHONKfEFmhMwSCFY6SYXiQPJcjSKpQgPLONpcilYhqNXQml4IU3yCR0GgTUIt0LYnEtGmFwVkjRLySQ3hZUZI4dILpQSPPXrYRvwxPHFoXLFBWpTaa1+gRlYrStgt6FHzTiZte0Mtd9z/n67Lpy7m87ZFKE1OqU8wNhxF+ZTwp9auOs4SJv2KBpEh/4AszQrdDsOD8WYy0rdH3OZc+Lf7N3fPsJdHerDjEidxLEuUVHOqV+jokJPPUtaqKXm0xm13BwOBn33OQ47dOX8mzlolMrTUaUnRTwu09TH9TzFQSqYMXDPJZ8s15LzFpQ8ZTU7C1YGfdHK0YNsBax46u1V1BVPs7zD5oaxt2DC4lYMihGhlltxaFTCvbEcJbV4kj+8J9hjSm3Ab3xe3ocvXcOgkayWkPNXzOrN2M/Kjp0mTKxMvW6rLvtVVsMmN+GXG4bQ9hw2L7u2cOBlquYoR+1EaZw+10z7P5FX4gdDD37/uYdGMsv/22gn26gpzU510nvwAWhVC/w=</source>
   </file>
@@ -2683,6 +3290,48 @@
         <tag name="copyright" line="23" description="2011-2015, Robin Radic"/>
         <tag name="link" line="23" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="28" package="Radic\BladeExtensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default></default>
+        <docblock line="28">
+          <description>An array of methods that should be excluded by attach</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions">
+        <name>$directives</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
+        <default></default>
+        <docblock line="35">
+          <description>An array of methodName =&gt; directiveReplacement</description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions">
+        <name>$directivesFile</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directivesFile</full_name>
+        <default></default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="39" package="Radic\BladeExtensions">
+        <name>$overrides</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::overrides</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions\Directives">
         <name>directiveEmbed</name>
         <full_name>\Radic\BladeExtensions\Directives\EmbeddingDirectives::directiveEmbed()</full_name>
@@ -2728,6 +3377,83 @@
           <type>\Illuminate\View\Compilers\BladeCompiler</type>
         </argument>
       </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="46" package="Radic\BladeExtensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="46">
+          <description>Instanciate and execute all functions as blade extends</description>
+          <long-description></long-description>
+          <tag name="param" line="46" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
+            <type>\Illuminate\Foundation\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+        <name>createMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
+        <docblock line="93">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="93" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+        <name>createOpenMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
+        <docblock line="104">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="104" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="104" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+        <name>createPlainMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
+        <docblock line="115">
+          <description>Create a plain Blade matcher.</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="115" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
     </class>
     <source>eJylU9uK2zAQffdXDDQQJzj2prAvm5ZeU1hoKZTQl7oE2dbaIrKsSnJ2lyX/3rF8ie1mU5bowZZHM+ecOWO9eScz6QTzuQNz+MwUjQ3bU30DkijDCPeAiqTbR7yIdzbU7BRuqcLawBEkp1qSmMIPkrA4/MhJQtcPhgrNCqHDI/jKcUpN4ZbzMmeCGBp+KoRRJDY6/FKUIiEGK8IPUnIW2/1qXPCT0XusyiXjVOmaq/0EoqHd14WnBW0UYUb3wtiJjaG+yw2pyt+jHTuSUuitk1pssi6jcf6R32bssVdM78O99pf+lT0kpckKBQOuImKiZrQpaCcSDuR8u93A1ya8gMwYeRMEqqrwc2YWTYVfqNQixIV8VCzNTE/B1XK5wMe1d4JP7GC4WoYq0695BA+iyo4F7fth/6mYE61hnUc0SZhIe3Y8ORVaNdyT86sO7QyrNYekLbRQTbQ9xCkpksOL1mRPeEkvQpDEGKrERRiKSo43LqfCjHDCF9wumBApz9SfvWxWh51fh6CoKZWAnD10Xgf2LcsIOeGuFLHlHY7FrU31Omu8QYMejCV73TVvFMwsS/1rjP2Bt6CN2jYRdxqG6++b7dSDafPuJ89WHcarcyADCPChFOwPS9wprfrBgzvCNZ39g90XqBGTKEUe3R7pBFkwXhtyDN9n2Cy4UtF0mxMTZ1vCuduzC8vwWZRmNuvZ8D8rzneBgTy5divs2bMdDahq8VZly/HcSC3qaqy082SbU5ViNYbqvn4tf/fSD87RyuanqwDrhINzcP4C5BoCKg==</source>
   </file>
@@ -2755,6 +3481,48 @@
         <tag name="copyright" line="23" description="2011-2015, Robin Radic"/>
         <tag name="link" line="23" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="28" package="Radic\BladeExtensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default></default>
+        <docblock line="28">
+          <description>An array of methods that should be excluded by attach</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions">
+        <name>$directives</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
+        <default></default>
+        <docblock line="35">
+          <description>An array of methodName =&gt; directiveReplacement</description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions">
+        <name>$directivesFile</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directivesFile</full_name>
+        <default></default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="39" package="Radic\BladeExtensions">
+        <name>$overrides</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::overrides</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions\Directives">
         <name>directiveForeach</name>
         <full_name>\Radic\BladeExtensions\Directives\ForeachDirectives::directiveForeach()</full_name>
@@ -2935,6 +3703,83 @@
           <type>\Illuminate\View\Compilers\BladeCompiler</type>
         </argument>
       </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="46" package="Radic\BladeExtensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="46">
+          <description>Instanciate and execute all functions as blade extends</description>
+          <long-description></long-description>
+          <tag name="param" line="46" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
+            <type>\Illuminate\Foundation\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+        <name>createMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
+        <docblock line="93">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="93" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+        <name>createOpenMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
+        <docblock line="104">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="104" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="104" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+        <name>createPlainMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
+        <docblock line="115">
+          <description>Create a plain Blade matcher.</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="115" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
     </class>
     <source>eJztVk1r4zAQvftXzKGHNjh2s9BLs9DvQmH3UkpPhiLL01hEloU+sl2W/vdK8kcckxa6vaQQHWJFmvfeeOYNyc8zWcoonUwimMA1U0gNW6E+hedaIaFlDCiKfp+75zIGWgvDhEWHSSNBKtSSUIR7UjCaXXJS4M2LQaFZLXS2Jp1HkdUId5zbigliMLtyRIpQo7Pb2oqCGIfILqTkjIb9fAx4ZPjHoSrJOCrdaHVfgWjo9g1we0IPijCjB8cFqnDm8vv/QnjYuSvDkiwQBmtrDiFY23wcv9YNESv3ji58SPcjmSXH4ZJYU9YKNrTqnIlGMYS4MjrBjXR+3z3Ar/Z4CqUx8jRNlUckFTPTFpHUahEYaC3/KrYozSCD49ls6j5O4i16Ygmbq1PwkUmjI3ia+3JMcViP4CXKidZw21R5UIx/kefyLd3aNX8ZOufXBIoO2BK1592165IiFXxqHawI923+AoMkxqASX+JQKLmbtAqFGfFkn5gqOCBSfoD/cMhCHqF/PYNCY5WAir1g0R6m4Slt7jTh2QoadMeNOWzKGvfFiTdeMYZx0nE/4G0OR0GnsYdfbSpS4eKpZTp8j7wRP5oH8Ov7Lrrp535vpF0z0ro338NLl/53Y2+jXbNRaMv3cNBV/5cjXOxNtDMm6jqzUz56jd4A8A5VuQ==</source>
   </file>
@@ -2962,6 +3807,48 @@
         <tag name="copyright" line="21" description="2011-2015, Robin Radic"/>
         <tag name="link" line="21" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="28" package="Radic\BladeExtensions">
+        <name>$blacklist</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::blacklist</full_name>
+        <default></default>
+        <docblock line="28">
+          <description>An array of methods that should be excluded by attach</description>
+          <long-description></long-description>
+          <tag name="var" line="28" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions">
+        <name>$directives</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directives</full_name>
+        <default></default>
+        <docblock line="35">
+          <description>An array of methodName =&gt; directiveReplacement</description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="37" package="Radic\BladeExtensions">
+        <name>$directivesFile</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::directivesFile</full_name>
+        <default></default>
+        <docblock line="37">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="39" package="Radic\BladeExtensions">
+        <name>$overrides</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::overrides</full_name>
+        <default></default>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="35" package="Radic\BladeExtensions\Directives">
         <name>directiveBreakpoint</name>
         <full_name>\Radic\BladeExtensions\Directives\DebugDirectives::directiveBreakpoint()</full_name>
@@ -3051,6 +3938,83 @@
           <default></default>
           <type>\Illuminate\View\Compilers\BladeCompiler</type>
         </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Radic\BladeExtensions\Directives" line="46" package="Radic\BladeExtensions">
+        <name>attach</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::attach()</full_name>
+        <docblock line="46">
+          <description>Instanciate and execute all functions as blade extends</description>
+          <long-description></long-description>
+          <tag name="param" line="46" description="&lt;p&gt;The current application&lt;/p&gt;" type="\Illuminate\Foundation\Application" variable="$app">
+            <type>\Illuminate\Foundation\Application</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$app</name>
+          <default></default>
+          <type>\Illuminate\Foundation\Application</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+        <name>createMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
+        <docblock line="93">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="93" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="93" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+        <name>createOpenMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
+        <docblock line="104">
+          <description>Get the regular expression for a generic Blade function.</description>
+          <long-description></long-description>
+          <tag name="param" line="104" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="104" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+        <name>createPlainMatcher</name>
+        <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
+        <docblock line="115">
+          <description>Create a plain Blade matcher.</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="" type="string" variable="$function">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="115" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$function</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
     </class>
     <source>eJztVE1r20AQvetXzCGHxMhSXOglLqRN3UKgvYTQk6CMpKm9eLVa9sNNKfnv3Q9JccMqtOSSQ/ZgS7vz5r2ZN6t3l3Ins3KxyGABG6aoMexA+gJqRbiXPRMmh5Zqu3UBZSawIy2xIbjBljXVFceWPt0ZEpr1QlcPGdZZZjXBNee2YwINVR97YRQ2RlefeytaNA5RfZCSsyY8rx8DvjH66VCdZJyUjlzjK6CG8TkC04JuFTKjj7ZbUmHP6fvHquG9K3iPW4LESrIGkLb1HO6BMUQeXHUOlkr/plgV5yEIrdn1KhUDN33NRFQSQl1DnZCk3K/Xt/BlOF7Czhh5UZbKI4uOmeWALHoVC296+Uux7c4klJ2vVkv38zZP8It9UihMjB5RRF7By9q3b0nH/SuzhqPWsPEmHPXrd+bTeL+TlvrDYKtfC2hH4NXk63A0RjhvFXYzamfWyQG5pWdlkGgMKfGsHIokdzexo6moMU/1H7cOTlDKJ/BPXsKgI7g3ZVBkrBLQsTtqh80y/EtbO074YUUTeBPenMbO5lN/8r+qzOGx7nz6BgwyzgJVHBK/BjVS0fb7kOl0LnkkP1sH8P38LG3idyHsvo7RixmjYMuLmqD77A/xnhQ7</source>
