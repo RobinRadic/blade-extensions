@@ -43,7 +43,7 @@
 
         { "name": "Miscellaneous", "type": "heading" },
         { "name": "Coverage", "path": "coverage/index.html", "type": "path", "icon": "fa fa-balance-scale" },
-        { "name": "Changelog & Upgrade guide", "doc": "changelog.md", "type": "doc", "icon": "fa fa-pencil" },
+        { "name": "Changelog & Upgrade guide", "doc": "changelog-upgrade-guide.md", "type": "doc", "icon": "fa fa-pencil" },
 
         { "name": "Github repository", "href": "https://github.com/robinradic/blade-extensions", "type": "href", "icon": "fa fa-github" },
         { "name": "Packagist", "href": "https://packagist.com/radic/blade-extensions", "type": "href", "icon": "fa fa-gift" }
