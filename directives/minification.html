@@ -280,8 +280,6 @@
                 </li>
                 <li><a href="../configuration.html"><span class="title">Configuration</span></a>
                 </li>
-                <li><a href="../upgrade-guide.html"><span class="title">Upgrade guide</span></a>
-                </li>
               </ul>
             </li>
             <li><a href="javascript:;"><i class="fa fa-code"></i><span class="title">Directives</span><span class="arrow"></span></a>
@@ -307,7 +305,9 @@
             <li class="heading">
               <h3>Miscellaneous</h3>
             </li>
-            <li><a href="../changelog.html"><i class="fa fa-pencil"></i><span class="title">Changelog</span></a>
+            <li><a href="../coverage/index.html"><i class="fa fa-balance-scale"></i><span class="title">Coverage</span></a>
+            </li>
+            <li><a href="../changelog.html"><i class="fa fa-pencil"></i><span class="title">Changelog &amp; Upgrade guide</span></a>
             </li>
             <li><a href="https://github.com/robinradic/blade-extensions"><i class="fa fa-github"></i><span class="title">Github repository</span></a>
             </li>
@@ -336,7 +336,57 @@
           <div class="page-content-seperator"></div>
           <div class="page-content-inner mt-n">
             <div class="row">
-              <div class="col-md-12"></div>
+              <div class="col-md-12"><h4><a name="basic" class="anchor" href="#basic"><span class="header-link"></span></a>Basic</h4><p>By default only <code>html</code> minification is available. If you also want to enable <code>css</code> and <code>js</code> minification, 
+install the <code>&quot;matthiasmullie/minify&quot;: &quot;~1.3&quot;</code> package as explained in the <a href="../installation.html">installation</a> documentation. </p>
+<p>The <code>@minify</code> directive requires 1 parameter which is <code>html</code>, <code>css</code> or <code>js</code>.</p>
+<pre><code class="lang-html">@minify(&#39;html&#39;)
+&lt;body&gt;
+
+@yield(&#39;start&#39;)
+&lt;div class=&quot;container&quot;&gt;
+    @yield(&#39;content&#39;)
+&lt;/div&gt;
+@yield(&#39;end&#39;)
+
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+@stack(&#39;scripts&#39;)
+
+&lt;/body&gt;
+@endminify
+</code></pre>
+<h4><a name="usage-examples" class="anchor" href="#usage-examples"><span class="header-link"></span></a>Usage examples</h4><p>Should make it clear.</p>
+<h6><a name="javascript" class="anchor" href="#javascript"><span class="header-link"></span></a>Javascript</h6><pre><code class="lang-php">&lt;script&gt;
+    @minify(&#39;js&#39;)
+    var exampleJavascript = {
+        this: &#39;that&#39;,
+        foo: &#39;bar&#39;,
+        doit: function(){
+            console.log(&#39;yesss&#39;);
+        }
+    };
+    @endminify
+&lt;/script&gt;
+</code></pre>
+<h6><a name="css" class="anchor" href="#css"><span class="header-link"></span></a>CSS</h6><pre><code class="lang-php">&lt;style type=&quot;text/css&quot;&gt;
+    @minify(&#39;css&#39;)      
+    a.bg-primary:hover,
+    a.bg-primary:focus {
+      background-color: #286090;
+    }
+
+    .bg-success {
+      background-color: #dff0d8;
+    }
+
+    a.bg-success:hover,
+    a.bg-success:focus {
+      background-color: #c1e2b3;
+    }
+    @endminify
+&lt;/style&gt;
+</code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -354,8 +404,8 @@
       packadicConfig.requirejs.baseUrl = '../assets/scripts/';
       packadicConfig.app.name = 'Laravel Blade Extensions';
       packadicConfig.paths.assets = '../assets/';
-      packadicConfig.docgen = {"title":"Laravel Blade Extensions","logo":{"text":"Blade Extensions","size":22,"x":0,"y":0},"copyright":"Copyright 2015 &copy; Robin Radic","docs":"docs","dest":"gh-pages","baseUrl":"blade-extensions/","index":"docs/index.md","generators":{"typedoc":{},"sassdoc":{},"jsdoc":{}},"server":{"port":3000,"logHttpRequests":false},"types":{"doc":{"view":"document","title":"Document"}},"menu":[{"name":"Home","type":"index","icon":"fa fa-home"},{"name":"Documentation","type":"heading"},{"name":"Getting started","type":"parent","icon":"fa fa-coffee","children":[{"name":"Installation","doc":"installation.md","type":"doc","icon":""},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":""},{"name":"Upgrade guide","doc":"upgrade-guide.md","type":"doc","icon":""}]},{"name":"Directives","type":"parent","icon":"fa fa-code","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":""},{"name":"@breakpoint @debug","doc":"directives/debug.md","type":"doc","icon":""},{"name":"@embed","doc":"directives/embedding.md","type":"doc","icon":""},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":""},{"name":"@macro @macrodef","doc":"directives/macros.md","type":"doc","icon":""},{"name":"@markdown","doc":"directives/markdown.md","type":"doc","icon":""},{"name":"@minify","doc":"directives/minification.md","type":"doc","icon":""}]},{"name":"BladeString","doc":"blade-string.md","type":"doc","icon":"fa fa-btc"},{"name":"Miscellaneous","type":"heading"},{"name":"Changelog","doc":"changelog.md","type":"doc","icon":"fa fa-pencil"},{"name":"Github repository","href":"https://github.com/robinradic/blade-extensions","type":"href","icon":"fa fa-github"},{"name":"Packagist","href":"https://packagist.com/radic/blade-extensions","type":"href","icon":"fa fa-gift"}],"googleAnalytics":false,"tracking":"<img src=\"http://piwik.example.org/piwik.php?idsite={$IDSITE}amp;rec=1\" style=\"border:0\" alt=\"\" />"};
-      packadicConfig.docgen.menuTree = [{"name":"Home","type":"index","icon":"fa fa-home","href":"index.html","id":"Home","children":[]},{"name":"Documentation","type":"heading","href":"","id":"Documentation","children":[]},{"name":"Getting started","type":"parent","icon":"fa fa-coffee","href":"javascript:;","id":"Getting started","children":[{"name":"Installation","doc":"installation.md","type":"doc","icon":"","href":"installation.html","id":"Getting started||Installation","parentId":"Getting started","children":[]},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":"","href":"configuration.html","id":"Getting started||Configuration","parentId":"Getting started","children":[]},{"name":"Upgrade guide","doc":"upgrade-guide.md","type":"doc","icon":"","href":"upgrade-guide.html","id":"Getting started||Upgrade guide","parentId":"Getting started","children":[]}]},{"name":"Directives","type":"parent","icon":"fa fa-code","href":"javascript:;","id":"Directives","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":"","href":"directives/assignment.html","id":"Directives||@set @unset","parentId":"Directives","children":[]},{"name":"@breakpoint @debug","doc":"directives/debug.md","type":"doc","icon":"","href":"directives/debug.html","id":"Directives||@breakpoint @debug","parentId":"Directives","children":[]},{"name":"@embed","doc":"directives/embedding.md","type":"doc","icon":"","href":"directives/embedding.html","id":"Directives||@embed","parentId":"Directives","children":[]},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":"","href":"directives/foreach.html","id":"Directives||@foreach @break @continue","parentId":"Directives","children":[]},{"name":"@macro @macrodef","doc":"directives/macros.md","type":"doc","icon":"","href":"directives/macros.html","id":"Directives||@macro @macrodef","parentId":"Directives","children":[]},{"name":"@markdown","doc":"directives/markdown.md","type":"doc","icon":"","href":"directives/markdown.html","id":"Directives||@markdown","parentId":"Directives","children":[]},{"name":"@minify","doc":"directives/minification.md","type":"doc","icon":"","href":"directives/minification.html","id":"Directives||@minify","parentId":"Directives","children":[]}]},{"name":"BladeString","doc":"blade-string.md","type":"doc","icon":"fa fa-btc","href":"blade-string.html","id":"BladeString","children":[]},{"name":"Miscellaneous","type":"heading","href":"","id":"Miscellaneous","children":[]},{"name":"Changelog","doc":"changelog.md","type":"doc","icon":"fa fa-pencil","href":"changelog.html","id":"Changelog","children":[]},{"name":"Github repository","href":"https://github.com/robinradic/blade-extensions","type":"href","icon":"fa fa-github","id":"Github repository","children":[]},{"name":"Packagist","href":"https://packagist.com/radic/blade-extensions","type":"href","icon":"fa fa-gift","id":"Packagist","children":[]}];
+      packadicConfig.docgen = {"title":"Laravel Blade Extensions","logo":{"text":"Blade Extensions","size":22,"x":0,"y":0},"copyright":"Copyright 2015 &copy; Robin Radic","docs":"docs","dest":"gh-pages","baseUrl":"blade-extensions/","index":"docs/index.md","generators":{"typedoc":{},"sassdoc":{},"jsdoc":{}},"server":{"port":3000,"logHttpRequests":false},"types":{"doc":{"view":"document","title":"Document"}},"menu":[{"name":"Home","type":"index","icon":"fa fa-home"},{"name":"Documentation","type":"heading"},{"name":"Getting started","type":"parent","icon":"fa fa-coffee","children":[{"name":"Installation","doc":"installation.md","type":"doc","icon":""},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":""}]},{"name":"Directives","type":"parent","icon":"fa fa-code","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":""},{"name":"@breakpoint @debug","doc":"directives/debug.md","type":"doc","icon":""},{"name":"@embed","doc":"directives/embedding.md","type":"doc","icon":""},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":""},{"name":"@macro @macrodef","doc":"directives/macros.md","type":"doc","icon":""},{"name":"@markdown","doc":"directives/markdown.md","type":"doc","icon":""},{"name":"@minify","doc":"directives/minification.md","type":"doc","icon":""}]},{"name":"BladeString","doc":"blade-string.md","type":"doc","icon":"fa fa-btc"},{"name":"Miscellaneous","type":"heading"},{"name":"Coverage","path":"coverage/index.html","type":"path","icon":"fa fa-balance-scale"},{"name":"Changelog & Upgrade guide","doc":"changelog.md","type":"doc","icon":"fa fa-pencil"},{"name":"Github repository","href":"https://github.com/robinradic/blade-extensions","type":"href","icon":"fa fa-github"},{"name":"Packagist","href":"https://packagist.com/radic/blade-extensions","type":"href","icon":"fa fa-gift"}],"googleAnalytics":false,"tracking":"<img src=\"http://piwik.example.org/piwik.php?idsite={$IDSITE}amp;rec=1\" style=\"border:0\" alt=\"\" />"};
+      packadicConfig.docgen.menuTree = [{"name":"Home","type":"index","icon":"fa fa-home","href":"index.html","id":"Home","children":[]},{"name":"Documentation","type":"heading","href":"","id":"Documentation","children":[]},{"name":"Getting started","type":"parent","icon":"fa fa-coffee","href":"javascript:;","id":"Getting started","children":[{"name":"Installation","doc":"installation.md","type":"doc","icon":"","href":"installation.html","id":"Getting started||Installation","parentId":"Getting started","children":[]},{"name":"Configuration","doc":"configuration.md","type":"doc","icon":"","href":"configuration.html","id":"Getting started||Configuration","parentId":"Getting started","children":[]}]},{"name":"Directives","type":"parent","icon":"fa fa-code","href":"javascript:;","id":"Directives","children":[{"name":"@set @unset","doc":"directives/assignment.md","type":"doc","icon":"","href":"directives/assignment.html","id":"Directives||@set @unset","parentId":"Directives","children":[]},{"name":"@breakpoint @debug","doc":"directives/debug.md","type":"doc","icon":"","href":"directives/debug.html","id":"Directives||@breakpoint @debug","parentId":"Directives","children":[]},{"name":"@embed","doc":"directives/embedding.md","type":"doc","icon":"","href":"directives/embedding.html","id":"Directives||@embed","parentId":"Directives","children":[]},{"name":"@foreach @break @continue","doc":"directives/foreach.md","type":"doc","icon":"","href":"directives/foreach.html","id":"Directives||@foreach @break @continue","parentId":"Directives","children":[]},{"name":"@macro @macrodef","doc":"directives/macros.md","type":"doc","icon":"","href":"directives/macros.html","id":"Directives||@macro @macrodef","parentId":"Directives","children":[]},{"name":"@markdown","doc":"directives/markdown.md","type":"doc","icon":"","href":"directives/markdown.html","id":"Directives||@markdown","parentId":"Directives","children":[]},{"name":"@minify","doc":"directives/minification.md","type":"doc","icon":"","href":"directives/minification.html","id":"Directives||@minify","parentId":"Directives","children":[]}]},{"name":"BladeString","doc":"blade-string.md","type":"doc","icon":"fa fa-btc","href":"blade-string.html","id":"BladeString","children":[]},{"name":"Miscellaneous","type":"heading","href":"","id":"Miscellaneous","children":[]},{"name":"Coverage","path":"coverage/index.html","type":"path","icon":"fa fa-balance-scale","href":"coverage/index.html","id":"Coverage","children":[]},{"name":"Changelog & Upgrade guide","doc":"changelog.md","type":"doc","icon":"fa fa-pencil","href":"changelog.html","id":"Changelog & Upgrade guide","children":[]},{"name":"Github repository","href":"https://github.com/robinradic/blade-extensions","type":"href","icon":"fa fa-github","id":"Github repository","children":[]},{"name":"Packagist","href":"https://packagist.com/radic/blade-extensions","type":"href","icon":"fa fa-gift","id":"Packagist","children":[]}];
     </script>
     <script src="../assets/scripts/init.js"></script>
   </body>
