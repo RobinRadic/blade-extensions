@@ -1,6 +1,5 @@
 <?php namespace Radic\Tests\BladeExtensions\Renderers;
 
-
 use Mockery as m;
 use Radic\BladeExtensions\Renderers\BladeStringRenderer;
 use Radic\Tests\BladeExtensions\TestCase;
@@ -45,7 +44,7 @@ class BladeStringRendererRendererTest extends TestCase
         );
     }
 
-    public function  testGettersSetters()
+    public function testGettersSetters()
     {
         $bs = $this->bs;
         $bs->setFiles($this->fs);
@@ -54,8 +53,4 @@ class BladeStringRendererRendererTest extends TestCase
         $this->assertInstanceOf('Illuminate\\Contracts\\Filesystem\\Filesystem', $bs->getFiles());
         $this->assertEquals(__DIR__, $bs->getTmpFilePath());
     }
-
-
-
-
 }

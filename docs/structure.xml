@@ -419,7 +419,7 @@
     </parse_markers>
     <source>eJzVVm1v2zYQ/u5fcQGMSjJsuRmwL3HrpOvWIUC7DUGwL1HhMtLZJiJTGkklDVb/9x0pSqJkZ1uGDsP0IZF5L88998LTq/NyW47mk8kIJvAmyxQwAUozzVNYVyLVvBDwiWnN0u0n0Fumga8hZXmO2RQeeJ4DF6QvUs40knEG+BnTyryTrHFBbhXc5ixDEmsUmSK8+UiwHaqSpQhXLONp8p3R+MEoKGOUXEvGtVqMRpVCuMzzascFwSTvikpkzDhO3pRlzlP7Tnr/DREDeUE07tgGwXuOkrLK9yjND1/5m/g0fmmFrNLbQkLPU3HLRe3PqhBlctcD+3B5De/d8Qy2Wpdn87k0FvGO65mziAu5sR7SonyUfLPVXgQvT09n9Ofb6RE8cQf9p0EwmnGNI/K5Tc0Mfba20tpUErpUZChtcUe/j0bGmy2ceah4ApiU7BGKNeyQUkG1tPVS26LKM7g1qU/zKkN6f4S6pM648XFxz2TtxZ3M7f+yuqU8wJiiTO9yrvTib6D/RE0Kr5eQcYnUA/d4hSXZ4w6Ffh5s60E53EPBO57jQFhQs0ietUZesJf/sGP7QZdMsh14gwRjVpZwvUVIKymJJrBOeIzZcM7qmoRDl5G1cRV3VOqcJd5w/8rxIXlb7EpKhVT1+DQ/bemIiYM3jzuxz2sLM1vu2B2GgRXEqTMNokVnkxZizTdHbGpBXzdnSjX+BT44touOBl0k4QlXCnVYa8+W/YpGEbH2h+e4Gvlfrb6/vFqtIIZgHsfzTh7TPR10Ue1HvQTU3WwC7IfRiiI4h4NDOGsyMVtuyKrO2Kqb3rhV7WWki+oAsBP5iJ7BWS/da2KtgsjCX+FvFek9lUIPv52IQ8KtyIfv9P+ScKsaTOEGPkZeldeFROpqCD18Gq1xfUuYG6IVDMttG6SJtON10xp/POgQ81ComosKFz3J/sC1c9yg30BQ0gSiFMETjo/H0LMzc3HU4fODkd19+eyA+raDoPrCpwLbHyuh15GmhsLd8d35wcQ2ZYag1QloTKt0zaUiwsZFtDhIB+VjZTdCOPaG8cUL+tpozo3l1BvjKWhZmTvjyxc4cUuIepQkyvX5tAnnWW3T51Nv6mW9E8L26g7H9ywndDCfXEO4qZegqR3kqXMU+dd680jUlRTtGDonDsH31WuwgaBf5AHqgGLkX5CO9HBn/oiaPieQgttUOa0e/FxKVPZrjNoDGGxQoKRtZhdPu9Pi41uTloHkYgPjRq+VO/K1/NjSbFOeUlNq/MB0ukUZtp6abTnIZjAPz1+dJA9RmKhJdGF6sDUxa8McJ2E8SaJo7hbG/n+ThJ9LFF87EVHyJ4l4a2GJMDUZffHWdHd1BP86218M5tek6xHdj/4AFA0RCg==</source>
   </file>
-  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="d38222be742adeb14c50ef776e4e2d76" package="Default">
+  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="222ad7d3497e7196e601aa7f19cbd906" package="Default">
     <docblock line="0">
       <description>A laravel service provider to register the class into the the IoC container</description>
       <long-description></long-description>
@@ -427,161 +427,172 @@
     </docblock>
     <namespace-alias name="ServiceProvider">\Caffeinated\Beverage\ServiceProvider</namespace-alias>
     <namespace-alias name="Exception">\Exception</namespace-alias>
+    <namespace-alias name="Application">\Illuminate\Contracts\Foundation\Application</namespace-alias>
+    <namespace-alias name="CompilerEngine">\Illuminate\View\Engines\CompilerEngine</namespace-alias>
+    <namespace-alias name="MarkdownCompiler">\Radic\BladeExtensions\Compilers\MarkdownCompiler</namespace-alias>
     <namespace-alias name="AssignmentDirectives">\Radic\BladeExtensions\Directives\AssignmentDirectives</namespace-alias>
     <namespace-alias name="DebugDirectives">\Radic\BladeExtensions\Directives\DebugDirectives</namespace-alias>
     <namespace-alias name="EmbeddingDirectives">\Radic\BladeExtensions\Directives\EmbeddingDirectives</namespace-alias>
     <namespace-alias name="ForeachDirectives">\Radic\BladeExtensions\Directives\ForeachDirectives</namespace-alias>
     <namespace-alias name="MacroDirectives">\Radic\BladeExtensions\Directives\MacroDirectives</namespace-alias>
+    <namespace-alias name="MarkdownDirectives">\Radic\BladeExtensions\Directives\MarkdownDirectives</namespace-alias>
     <namespace-alias name="MinifyDirectives">\Radic\BladeExtensions\Directives\MinifyDirectives</namespace-alias>
+    <namespace-alias name="BladeMarkdownEngine">\Radic\BladeExtensions\Engines\BladeMarkdownEngine</namespace-alias>
+    <namespace-alias name="PhpMarkdownEngine">\Radic\BladeExtensions\Engines\PhpMarkdownEngine</namespace-alias>
     <namespace-alias name="BladeStringRenderer">\Radic\BladeExtensions\Renderers\BladeStringRenderer</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="28" package="Radic\BladeExtensions">
+    <namespace-alias name="Environment">\TheSeer\phpDox\Environment</namespace-alias>
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="35" package="Radic\BladeExtensions">
       <extends>\Caffeinated\Beverage\ServiceProvider</extends>
       <name>BladeExtensionsServiceProvider</name>
       <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider</full_name>
-      <docblock line="28">
+      <docblock line="35">
         <description>A laravel service provider to register the class into the the IoC container</description>
         <long-description></long-description>
-        <tag name="package" line="28" description="Radic\BladeExtensions"/>
-        <tag name="version" line="28" description="2.1.0"/>
-        <tag name="author" line="28" description="Robin Radic"/>
-        <tag name="license" line="28" description="MIT License - http://radic.mit-license.org"/>
-        <tag name="copyright" line="28" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="28" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
+        <tag name="package" line="35" description="Radic\BladeExtensions"/>
+        <tag name="version" line="35" description="2.1.0"/>
+        <tag name="author" line="35" description="Robin Radic"/>
+        <tag name="license" line="35" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="35" description="2011-2015, Robin Radic"/>
+        <tag name="link" line="35" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="32" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="39" package="Radic\BladeExtensions">
         <name>$configFiles</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::configFiles</full_name>
         <default>array('blade_extensions')</default>
-        <docblock line="32">
+        <docblock line="39">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="37" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="44" package="Radic\BladeExtensions">
         <name>$dir</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::dir</full_name>
         <default>__DIR__</default>
-        <docblock line="37">
+        <docblock line="44">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="39" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="46" package="Radic\BladeExtensions">
         <name>$providers</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::providers</full_name>
         <default>array(\Caffeinated\Beverage\BeverageServiceProvider::class)</default>
-        <docblock line="39">
+        <docblock line="46">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="41" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="48" package="Radic\BladeExtensions">
         <name>$provides</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::provides</full_name>
         <default>array('blade.helpers', 'blade.string')</default>
-        <docblock line="41">
+        <docblock line="48">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="43" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="50" package="Radic\BladeExtensions">
         <name>$bindings</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::bindings</full_name>
         <default>array('blade.string' =&gt; \Radic\BladeExtensions\Renderers\BladeStringRenderer::class)</default>
-        <docblock line="43">
+        <docblock line="50">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="47" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="54" package="Radic\BladeExtensions">
         <name>$singletons</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::singletons</full_name>
         <default>array('blade.helpers' =&gt; \Radic\BladeExtensions\Helpers\HelperRepository::class)</default>
-        <docblock line="47">
+        <docblock line="54">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="52" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="59" package="Radic\BladeExtensions">
         <name>boot</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::boot()</full_name>
-        <docblock line="52">
-          <description>{@inheritDoc}</description>
-          <long-description></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="59" package="Radic\BladeExtensions">
-        <name>register</name>
-        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::register()</full_name>
         <docblock line="59">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="94" package="Radic\BladeExtensions">
+        <name>register</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::register()</full_name>
+        <docblock line="94">
+          <description>{@inheritDoc}</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="138" package="Radic\BladeExtensions">
+        <name>provides</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::provides()</full_name>
+        <docblock line="138">
+          <description></description>
+          <long-description></long-description>
+          <tag name="inheritDoc" line="138" description=""/>
+        </docblock>
+      </method>
     </class>
     <parse_markers>
-      <error line="39" code="PPC:ERR-50007">No summary for property $providers</error>
-      <error line="41" code="PPC:ERR-50007">No summary for property $provides</error>
-      <error line="43" code="PPC:ERR-50007">No summary for property $bindings</error>
-      <error line="47" code="PPC:ERR-50007">No summary for property $singletons</error>
+      <error line="138" code="PPC:ERR-50008">No summary for method provides()</error>
+      <error line="46" code="PPC:ERR-50007">No summary for property $providers</error>
+      <error line="48" code="PPC:ERR-50007">No summary for property $provides</error>
+      <error line="50" code="PPC:ERR-50007">No summary for property $bindings</error>
+      <error line="54" code="PPC:ERR-50007">No summary for property $singletons</error>
     </parse_markers>
-    <source>eJy1Vt9P2zAQfs9fcdOQAoi2MGkvZWX81pCGNgFvTVW5ybWxSO3IdloQ6v++s52kXUgl+kCkNon9fd/5fOe7/PiZp3nQOzwM4BAuIGOKLTADjWrBY4RcyQVPUIGRoHDGtbHPKUKcMa2BCxq3r/Z3J68glsIwLlCRXC8QbI46Z6TzwBIeR5cZS/DmxaDQXAp9GgSFRrhi0ylywQwm0SUuULEZRo9+AX9L+6cOefMSY26I6l9bRaNrrjA2fIE6utCaz8QchVkPfpB6jZNitjPrZj7BJOFid+atVMjidGfePYuV3J3FBZ++foz2gIICgEr7mUejyL9qkEL4KbljFc8pc54pF6C8WpfngJQz9qUCfuuedI/dBCtMKhXUCnLChddx0xktU+jawP3dE/wuhzqQGpP3ez1l0d05N50S3ZVq5tixzF8Vn6WmtHp8ctKhv+9HLXbEM6yvStmiul5fZL2JdayDm565Q+R3q+F243iAoyUaGuPBWxBYixQjeDvnIkXFzbWMV1bYTlCMDOUAJrBH2z/ls1ueoYYBDCF0CxqvFxTC6LSWc3doqJaD76QTrkhyPL6+exiPS42N6SpRvN2otR5UDw0H+32/PaOtqpvOdFPMcrITHlUD2mVz2Man4NiT7PhBFboGbXAGLYeiXJQjtQhrgmZoaEfbpKslWu1f/jny9wfMpeZGqtc2A9tDXEwoc2FaiNiWTphIafYP3NRbbdyyzxdMQXSXZcXc7T7VpEIkzJKiizwnEfcMeyzPK3F7ufcB5ExRoe33vf6pm17tuLaqTHzm+tY2yp1zGJ/9BGNKsddxQj7smZTrzhmxh6GfDkfD96ditKnDp7Bfag1DfGHzPMPxguOScDAYDMCoAg82HHPGvSELo5JcJqwn2SwI68rg8rRirdZW2/pcv8+MoY6yb90/WNMajW0b7F0/2gZsaXnboI1etRXWaE5NXA38Cn/c1wDLYM7UcyKXgprIPKcSpo4AxYyaiQYmEkhqsfZIVfQuCjbJMKGgNmJk4V9856LgUwLpFrYqCwDRm3x7mVTJJQhcrj9k9sMn2xCdUKGoOtSOVFplt0wkuSKkAWc83Ngunwv/5RPtU+eszvOova9XJdR+Q3ib7bX14F3KrYJV8A+DTEg1</source>
+    <source>eJy1WG1P4zgQ/t5f4dMhpaC27J50X8qVg+VFh3ToEKD7QlDlJtPGIrUj2y0gxH+/sR2naeLuttVtJCCx53lmxva8mD/+LLKic3x01CFH5JzkVNIl5ESBXLIESCHFkqUgiRZEwowpbd4zIElOlSKM47j5ND834oIkgmvKOEikO+5wOgdVUOS5pylL4m85TeHqTQNXTHB10uksFJALOp0C41RDGn+DJUg6g/jBGXBX6j+xkldvCRQaoe7zJs8XcwuML1CvpIlW8bVY8JQaofi8KHKW0CDgXwav8RWfoa0K0fOC5SDdt5MNWlxJqviWypdUvHI/8j3UJZOQaLZEVedKsRmfA9erwS2hlzBZzHZGXc0nkKaM7468FhJoku2Mu6WJFHug3HruDmScTd+3g/kNt+Ne44933cPusmJ70D1wPLjmqNiZBy1xE/ygAz5m8AAgYwzBS/GGapZMCns4MDR+SkwaxjOMyBeMMVI+QfOtIMai+fCCvw2+Dr7YCbrQmZCkYhATxh2PncaoQ5pKwe3NI/m7HOqTTOtieHwsjfRgznS/lB4IObPoRBTvks0yXWr98vVrH3/93gvo4S9k9XhmIzVw/Dw/nhjH+lD3zCYnt1oNtxtph1hYqkhjvPPR6RiNuEfk44zxDCTTlyL5NMRmAvdI43mElBzg8k/Z7BpzhCIj8kQia9B4ZVBEnk8qOvuXNFjLwRZ1yiRSjseXN/fjcclRm/YHxemNg3nWvzQcHA7d8jxvZK07M8ggL1BP1PMDyp72KITHzTHpyOI7fusasNEpCQRNaZQFBYgViuagcUVD1N5Ew/2Xe4/d33sohGJayPeQgs1bvJjgySXTBU9MhSETIXT30E59VMoN+mxJJYlrtSdcosgBLQpPbh77PSIFlZgQhkPHX1pl593JQhEqJX0fpzh/oDOm+qeIfIrcdPT81D5xz8jjadiUdEuqp2heprcBcDrJIUXJmjdW6xIrp30bWQv7p3P6At3IDEc12tJCVxwbspUWP98CeokNwJa89bBtlNv6upa2L/3TGWiXzu9BiRzjoXvYP/WZFZWmeK6rbe4eEpO6u5VvzQVa+zCPBL2QnHBctvVGo8ax7s5n0z1nJ03TKlOVZpnfxqs93MKis8Ezv8q7eNYqjTWavZwboH3GQWfmnj7a/d/gpZ3rkb28DfQPAcL9/HZntvTeO1DDumrwuWN2qtbkJ2aolY7/L0uF0xS80XmRw9gsIcqR0WhEtFxAK1k5RUYMG8SyZDmQqQNR1RvYSrVa4eo11K4Ph1RrbIy7xv3axjT6801irbZ6k2Cgc98k2mi5N4o1WuWmXCX4K/nH3rNoTqpM7HNVj4BrhwnlKUkrsn0LihH/xfWuuPl4gFQALcsWAOFNvHl0JsWrjczqitiNHk1LbIkWEvuDyhHPVfbLqUBXuNDEKm9Wls9m3rHVxfQw3WjTFdFfRX2C8P0LBvR3PTsJaKqamlrxq2ezZniGVqdMXPXCuLPpgWS2nbWr6rur2VUi9UZs2QxY7NT227VnHWung0CFjSD2w3dUZ3XgKlHZouP6He9bGmKqlYvm/wq6Ldd6pcW9NQN+tOjtO/OmyG8WDX/NqJWO9UtGo3z4pr9VPg7qBWAl1UzcWyX8wRbdZ1EVkjnIGVbdomdyei02AiePPB8Gs7sPjOKkXJ7Pzn80d+ib</source>
   </file>
-  <file path="Providers/MarkdownServiceProvider.php" generated-path="Providers.MarkdownServiceProvider.html" hash="666faa5a09a335d00b0cd4ac5617b966" package="Default">
+  <file path="Providers/MarkdownServiceProvider.php" generated-path="Providers.MarkdownServiceProvider.html" hash="22cf0c92a4ed75c51cd4ca9e33fba802" package="Default">
     <docblock line="0">
       <description>Class MarkdownServiceProvider</description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
     <namespace-alias name="Gfm">\Ciconia\Extension\Gfm</namespace-alias>
-    <namespace-alias name="Config">\Config</namespace-alias>
     <namespace-alias name="ServiceProvider">\Illuminate\Support\ServiceProvider</namespace-alias>
-    <namespace-alias name="CompilerEngine">\Illuminate\View\Engines\CompilerEngine</namespace-alias>
-    <namespace-alias name="MarkdownCompiler">\Radic\BladeExtensions\Compilers\MarkdownCompiler</namespace-alias>
-    <namespace-alias name="MarkdownDirectives">\Radic\BladeExtensions\Directives\MarkdownDirectives</namespace-alias>
-    <namespace-alias name="BladeMarkdownEngine">\Radic\BladeExtensions\Engines\BladeMarkdownEngine</namespace-alias>
-    <namespace-alias name="PhpMarkdownEngine">\Radic\BladeExtensions\Engines\PhpMarkdownEngine</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Providers" line="28" package="Radic\BladeExtensions\Providers">
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Providers" line="22" package="Radic\BladeExtensions\Providers">
       <extends>\Illuminate\Support\ServiceProvider</extends>
       <name>MarkdownServiceProvider</name>
       <full_name>\Radic\BladeExtensions\Providers\MarkdownServiceProvider</full_name>
-      <docblock line="28">
+      <docblock line="22">
         <description>Class MarkdownServiceProvider</description>
         <long-description></long-description>
-        <tag name="package" line="28" description="Radic\BladeExtensions"/>
-        <tag name="subpackage" line="28" description="Providers"/>
-        <tag name="version" line="28" description="2.1.0"/>
-        <tag name="author" line="28" description="Robin Radic"/>
-        <tag name="license" line="28" description="MIT License - http://radic.mit-license.org"/>
-        <tag name="copyright" line="28" description="2011-2015, Robin Radic - Radic Technologies"/>
-        <tag name="link" line="28" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
+        <tag name="package" line="22" description="Radic\BladeExtensions"/>
+        <tag name="subpackage" line="22" description="Providers"/>
+        <tag name="version" line="22" description="2.1.0"/>
+        <tag name="author" line="22" description="Robin Radic"/>
+        <tag name="license" line="22" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="22" description="2011-2015, Robin Radic - Radic Technologies"/>
+        <tag name="link" line="22" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="31" package="Radic\BladeExtensions\Providers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="25" package="Radic\BladeExtensions\Providers">
         <name>boot</name>
         <full_name>\Radic\BladeExtensions\Providers\MarkdownServiceProvider::boot()</full_name>
-        <docblock line="31">
+        <docblock line="25">
           <description>{@inheritdoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="75" package="Radic\BladeExtensions\Providers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="30" package="Radic\BladeExtensions\Providers">
         <name>register</name>
         <full_name>\Radic\BladeExtensions\Providers\MarkdownServiceProvider::register()</full_name>
-        <docblock line="75">
+        <docblock line="30">
           <description>{@inheritdoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="96" package="Radic\BladeExtensions\Providers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="35" package="Radic\BladeExtensions\Providers">
         <name>provides</name>
         <full_name>\Radic\BladeExtensions\Providers\MarkdownServiceProvider::provides()</full_name>
-        <docblock line="96">
+        <docblock line="35">
           <description>{@inheritdoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
     </class>
-    <source>eJylVltv2jAUfs+v8FSkhIpAO2kvMFi3tpsqrVLVVnsh1WQSk1gkdmQ7dFXFf5/t2LlB6YU8gGOfy3e+c3G+fsuT3BkdHzvgGJynkHNwDdkqoo/kDrE1DtENo2scISYFRg6BGeI5DBG4hREOgx8pjNDlP4EIx5TwwArzieMUHIFzHFKCYVCJBL+W2aQ8omSJ43J9laZFhgkUKLgr8pwyEXS8b8n9wegxuCQxJogH5zTLcYpY+V7K7gZoJXlgw7Q7+7QuMEOhwGtUq9Vb+xQtQL1vVV9HadVukryr9NZcKZkzmakVjBEwz05nWpAXi6ZslUZ9uJYLKWmtfB6eDk/0ASxEQhmozNMFJqUTfZxKRIRX3q+v7sFvs+WDRIh8PBoxJT3MsPCN9JCyWGuHNH9iOE6E8XpyeurLny+Dph9pqPy/R2FCaEpjjLhxTlagfqw7pTosnZJ0tFBU+KjJhS7zcB+5QMtHHHRJf3aUJ5kf8HyGSYIYFhENN8qgOsiLhYwRLAsi60bSuaBUeH19VGqq5whcUECoAAzFmAvpTSQIIJ18ucdpqrIB8BJEaCn3IiCpCHUrVTbkoVd213gcI+G5Osy/dZjDzEQ2XMsu4m4ffJpOgWAF6jegqIchUTAyqfY2jlOtVaBna8hA0GjLn7QgEVTxBd/zXMar16AH89zyoB79PgU9kWDuz+TL5BW7ut1/wlBQ9gR6CnbLnN6YarNzV724Dw2LR1UqDZNtRX8mWSr769Yw7PX9mc2A52aRO6jz5vWB6lxPOVN8tQjrhWacVGgqru1JC1pNMiAyhPYg8ypr/UYKGmsDH0ZR1c8GrfrttyiQswRkB9Egb4r3MFE56zKxj4CtiedVdt7HwVCiVTyUoNtU6Al4IBm6pw4qDG2hVRWH07fjnqmLaAA+ymUJ1TBqIzd6G+d9Y6+isDv66mHgz+SUjjz3pSucCCYnQX0X38pxjJjkcNAwMnfLseg+zPcMQGZVH5o0NJBwTOIUCU2ETUAz5zuTbTLS0xYyuEIfiKWToreCqwvqVZRVNVifO0utpbGUlnlzx2rogy1xLse1/Ka4gSKx4q2LSZWbBdxu0k5ddz/WvC3sAwNu0PL6EonbX3HjMRQCholX8/vBAs/L7wG+VeAmnnmzkHZfD6XbjfMfeN+ZAw==</source>
+    <source>eJylUUFLwzAYvedX5KjDtpvgxQkOh8jAgbgde0nTb21Ymi8k6VTG/rtJ2tUxRBRzaELf+957ebm717Um2WhE6IjOJbOWLpnZlvimVmB2gsOLwZ0owXhCRhRrwGrGgb6yUvD8QbISHt8dKCtQ2fxItlNCWgt0LjgqwfKBkj9tmmmEFlK2jVDMQb5qtUbj8jNHr/HLYIEz87G2rALar28DRqJti1PukDmCO3/wzKPKdTpJxxFgravR0EEeC6E6kwhLn0jZwX25WNPn/ldCa+f0bZaZwE4b4ZKenaKp4jRH/WFEVbvedTyZJP5zc3Xq44W6fQ28ViixEmB7c7WlX+toF0bTzlTJrAhVJHDaRXxT/lO5NPJLS89L35Pg5N+H7mdC1WCEK5EfgmAAdFv4O9JNq7gLdRaI7uIyQt3kgfxNwEAlrAPzLxHdpbdnIgfyCX0X8Ss=</source>
   </file>
   <file path="Facades/Markdown.php" generated-path="Facades.Markdown.html" hash="1f9838306f33a6c90b378bedad9d59ed" package="Default">
     <docblock line="0">

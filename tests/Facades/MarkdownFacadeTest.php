@@ -30,7 +30,6 @@ class MarkdownFacadeTest extends TestCase
     {
         //$this->app->register()
         $this->registerServiceProvider();
-        $this->registerBladeMarkdownServiceProvider();
     }
 
 

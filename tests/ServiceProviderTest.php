@@ -26,6 +26,5 @@ class ServiceProviderTest extends TestCase
     public function testServiceProviderRegister()
     {
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\BladeExtensionsServiceProvider');
-        $this->runServiceProviderRegisterTest('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
     }
 }

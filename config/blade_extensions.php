@@ -31,7 +31,7 @@ return array(
         |---------------------------------------------------------------------
         |
         */
-        'enabled'  => true,
+        'enabled'  => env('BLADE_EXTENSIONS_MARKDOWN_ENABLED', false),
         /*
         |---------------------------------------------------------------------
         | Markdown renderer class
@@ -51,7 +51,7 @@ return array(
         | Or use @include('my_markdown_file')
         |
         */
-        'views'    => false
+        'views'    => env('BLADE_EXTENSIONS_MARKDOWN_VIEWS', false)
     ),
     /*
     |---------------------------------------------------------------------

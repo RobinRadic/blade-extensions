@@ -21,8 +21,7 @@
             "icon": "fa fa-coffee",
             "children": [
                 {"name": "Installation", "doc": "installation.md", "type": "doc", "icon": ""},
-                {"name": "Configuration", "doc": "configuration.md", "type": "doc", "icon": ""},
-                {"name": "Upgrade guide", "doc": "upgrade-guide.md", "type": "doc", "icon": ""}
+                {"name": "Configuration", "doc": "configuration.md", "type": "doc", "icon": ""}
             ]
         },
         {
@@ -41,8 +40,11 @@
         },
         { "name": "BladeString", "doc": "blade-string.md", "type": "doc", "icon": "fa fa-btc" },
 
+
         { "name": "Miscellaneous", "type": "heading" },
-        { "name": "Changelog", "doc": "changelog.md", "type": "doc", "icon": "fa fa-pencil" },
+        { "name": "Coverage", "path": "coverage/index.html", "type": "path", "icon": "fa fa-balance-scale" },
+        { "name": "Changelog & Upgrade guide", "doc": "changelog.md", "type": "doc", "icon": "fa fa-pencil" },
+
         { "name": "Github repository", "href": "https://github.com/robinradic/blade-extensions", "type": "href", "icon": "fa fa-github" },
         { "name": "Packagist", "href": "https://packagist.com/radic/blade-extensions", "type": "href", "icon": "fa fa-gift" }
 

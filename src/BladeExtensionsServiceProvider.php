@@ -19,7 +19,7 @@ use Radic\BladeExtensions\Directives\MinifyDirectives;
 use Radic\BladeExtensions\Engines\BladeMarkdownEngine;
 use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
 use Radic\BladeExtensions\Renderers\BladeStringRenderer;
-use TheSeer\phpDox\Environment;
+
 
 /**
  * A laravel service provider to register the class into the the IoC container
@@ -62,30 +62,28 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $app = parent::boot();
 
         $config = array_dot($this->app['config']['blade_extensions']);
-        if ($config['markdown.enabled'])
-        {
-
+        if ($config['markdown.enabled']) {
             $view     = $app->make('view');
             $compiler = $app->make('markdown.compiler');
             $markdown = $app->make('markdown');
             $blade    = $app->make('blade.compiler');
 
-            $view->getEngineResolver()->register('md', function () use ($compiler)
-            {
+            $view->getEngineResolver()->register('md', function () use ($compiler) {
+
                 return new CompilerEngine($compiler);
             });
             $view->addExtension('md', 'md');
 
 
-            $view->getEngineResolver()->register('phpmd', function () use ($markdown)
-            {
+            $view->getEngineResolver()->register('phpmd', function () use ($markdown) {
+
                 return new PhpMarkdownEngine($markdown);
             });
             $view->addExtension('md.php', 'phpmd');
 
 
-            $view->getEngineResolver()->register('blademd', function () use ($blade, $markdown)
-            {
+            $view->getEngineResolver()->register('blademd', function () use ($blade, $markdown) {
+
                 return new BladeMarkdownEngine($blade, $markdown);
             });
             $view->addExtension('md.blade.php', 'blademd');
@@ -141,13 +139,10 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $p = parent::provides();
 
-        if($this->app['config']['blade_extensions.markdown.enabled'])
-        {
+        if ($this->app['config']['blade_extensions.markdown.enabled']) {
             $p = array_merge($p, [ 'markdown', 'markdown.compiler' ]);
         }
 
         return $p;
     }
-
-
 }
