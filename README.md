@@ -28,6 +28,11 @@
 ## 6.0 Released
 [**Rewritten and fully updated documentation.**](http://robin.radic.nl/blade-extensions)
 Major improvements - Added and updated tests. 
+[**Upgrade guide & Changelog**](http://robin.radic.nl/blade-extensions/changelog-upgrade-guide.html)
+[**Go to documentation website.**](http://robin.radic.nl/blade-extensions)
+[**Go to git markdown docs.**](blob/master/docs/index.md)
+[**Test coverage.**](http://robin.radic.nl/blade-extensions/coverage)
+
 
   
 ###### Composer
@@ -39,9 +44,6 @@ Major improvements - Added and updated tests.
 ```php
 Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 ```
-
-[**Go to documentation website.**](http://robin.radic.nl/blade-extensions)
-[**Go to git markdown docs.**](blob/master/docs/index.md)
 
 ### Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 
