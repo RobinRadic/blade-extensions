@@ -419,7 +419,7 @@
     </parse_markers>
     <source>eJzVVm1v2zYQ/u5fcQGMSjJsuRmwL3HrpOvWIUC7DUGwL1HhMtLZJiJTGkklDVb/9x0pSqJkZ1uGDsP0IZF5L88998LTq/NyW47mk8kIJvAmyxQwAUozzVNYVyLVvBDwiWnN0u0n0Fumga8hZXmO2RQeeJ4DF6QvUs40knEG+BnTyryTrHFBbhXc5ixDEmsUmSK8+UiwHaqSpQhXLONp8p3R+MEoKGOUXEvGtVqMRpVCuMzzascFwSTvikpkzDhO3pRlzlP7Tnr/DREDeUE07tgGwXuOkrLK9yjND1/5m/g0fmmFrNLbQkLPU3HLRe3PqhBlctcD+3B5De/d8Qy2Wpdn87k0FvGO65mziAu5sR7SonyUfLPVXgQvT09n9Ofb6RE8cQf9p0EwmnGNI/K5Tc0Mfba20tpUErpUZChtcUe/j0bGmy2ceah4ApiU7BGKNeyQUkG1tPVS26LKM7g1qU/zKkN6f4S6pM648XFxz2TtxZ3M7f+yuqU8wJiiTO9yrvTib6D/RE0Kr5eQcYnUA/d4hSXZ4w6Ffh5s60E53EPBO57jQFhQs0ietUZesJf/sGP7QZdMsh14gwRjVpZwvUVIKymJJrBOeIzZcM7qmoRDl5G1cRV3VOqcJd5w/8rxIXlb7EpKhVT1+DQ/bemIiYM3jzuxz2sLM1vu2B2GgRXEqTMNokVnkxZizTdHbGpBXzdnSjX+BT44touOBl0k4QlXCnVYa8+W/YpGEbH2h+e4Gvlfrb6/vFqtIIZgHsfzTh7TPR10Ue1HvQTU3WwC7IfRiiI4h4NDOGsyMVtuyKrO2Kqb3rhV7WWki+oAsBP5iJ7BWS/da2KtgsjCX+FvFek9lUIPv52IQ8KtyIfv9P+ScKsaTOEGPkZeldeFROpqCD18Gq1xfUuYG6IVDMttG6SJtON10xp/POgQ81ComosKFz3J/sC1c9yg30BQ0gSiFMETjo/H0LMzc3HU4fODkd19+eyA+raDoPrCpwLbHyuh15GmhsLd8d35wcQ2ZYag1QloTKt0zaUiwsZFtDhIB+VjZTdCOPaG8cUL+tpozo3l1BvjKWhZmTvjyxc4cUuIepQkyvX5tAnnWW3T51Nv6mW9E8L26g7H9ywndDCfXEO4qZegqR3kqXMU+dd680jUlRTtGDonDsH31WuwgaBf5AHqgGLkX5CO9HBn/oiaPieQgttUOa0e/FxKVPZrjNoDGGxQoKRtZhdPu9Pi41uTloHkYgPjRq+VO/K1/NjSbFOeUlNq/MB0ukUZtp6abTnIZjAPz1+dJA9RmKhJdGF6sDUxa8McJ2E8SaJo7hbG/n+ThJ9LFF87EVHyJ4l4a2GJMDUZffHWdHd1BP86218M5tek6xHdj/4AFA0RCg==</source>
   </file>
-  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="222ad7d3497e7196e601aa7f19cbd906" package="Default">
+  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="f6d6cff460cd9a97ae8ce0e09dce2c14" package="Default">
     <docblock line="0">
       <description>A laravel service provider to register the class into the the IoC container</description>
       <long-description></long-description>
@@ -440,159 +440,108 @@
     <namespace-alias name="BladeMarkdownEngine">\Radic\BladeExtensions\Engines\BladeMarkdownEngine</namespace-alias>
     <namespace-alias name="PhpMarkdownEngine">\Radic\BladeExtensions\Engines\PhpMarkdownEngine</namespace-alias>
     <namespace-alias name="BladeStringRenderer">\Radic\BladeExtensions\Renderers\BladeStringRenderer</namespace-alias>
-    <namespace-alias name="Environment">\TheSeer\phpDox\Environment</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="35" package="Radic\BladeExtensions">
+    <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="34" package="Radic\BladeExtensions">
       <extends>\Caffeinated\Beverage\ServiceProvider</extends>
       <name>BladeExtensionsServiceProvider</name>
       <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider</full_name>
-      <docblock line="35">
+      <docblock line="34">
         <description>A laravel service provider to register the class into the the IoC container</description>
         <long-description></long-description>
-        <tag name="package" line="35" description="Radic\BladeExtensions"/>
-        <tag name="version" line="35" description="2.1.0"/>
-        <tag name="author" line="35" description="Robin Radic"/>
-        <tag name="license" line="35" description="MIT License - http://radic.mit-license.org"/>
-        <tag name="copyright" line="35" description="2011-2015, Robin Radic"/>
-        <tag name="link" line="35" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
+        <tag name="package" line="34" description="Radic\BladeExtensions"/>
+        <tag name="version" line="34" description="2.1.0"/>
+        <tag name="author" line="34" description="Robin Radic"/>
+        <tag name="license" line="34" description="MIT License - http://radic.mit-license.org"/>
+        <tag name="copyright" line="34" description="2011-2015, Robin Radic"/>
+        <tag name="link" line="34" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="39" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="38" package="Radic\BladeExtensions">
         <name>$configFiles</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::configFiles</full_name>
         <default>array('blade_extensions')</default>
-        <docblock line="39">
+        <docblock line="38">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="44" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="43" package="Radic\BladeExtensions">
         <name>$dir</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::dir</full_name>
         <default>__DIR__</default>
-        <docblock line="44">
+        <docblock line="43">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="46" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="45" package="Radic\BladeExtensions">
         <name>$providers</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::providers</full_name>
         <default>array(\Caffeinated\Beverage\BeverageServiceProvider::class)</default>
-        <docblock line="46">
+        <docblock line="45">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="48" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="47" package="Radic\BladeExtensions">
         <name>$provides</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::provides</full_name>
         <default>array('blade.helpers', 'blade.string')</default>
-        <docblock line="48">
+        <docblock line="47">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="50" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="49" package="Radic\BladeExtensions">
         <name>$bindings</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::bindings</full_name>
         <default>array('blade.string' =&gt; \Radic\BladeExtensions\Renderers\BladeStringRenderer::class)</default>
-        <docblock line="50">
+        <docblock line="49">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="54" package="Radic\BladeExtensions">
+      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="53" package="Radic\BladeExtensions">
         <name>$singletons</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::singletons</full_name>
         <default>array('blade.helpers' =&gt; \Radic\BladeExtensions\Helpers\HelperRepository::class)</default>
-        <docblock line="54">
+        <docblock line="53">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="59" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="58" package="Radic\BladeExtensions">
         <name>boot</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::boot()</full_name>
-        <docblock line="59">
+        <docblock line="58">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="94" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="93" package="Radic\BladeExtensions">
         <name>register</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::register()</full_name>
-        <docblock line="94">
+        <docblock line="93">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="138" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="137" package="Radic\BladeExtensions">
         <name>provides</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::provides()</full_name>
-        <docblock line="138">
+        <docblock line="137">
           <description></description>
           <long-description></long-description>
-          <tag name="inheritDoc" line="138" description=""/>
+          <tag name="inheritDoc" line="137" description=""/>
         </docblock>
       </method>
     </class>
     <parse_markers>
-      <error line="138" code="PPC:ERR-50008">No summary for method provides()</error>
-      <error line="46" code="PPC:ERR-50007">No summary for property $providers</error>
-      <error line="48" code="PPC:ERR-50007">No summary for property $provides</error>
-      <error line="50" code="PPC:ERR-50007">No summary for property $bindings</error>
-      <error line="54" code="PPC:ERR-50007">No summary for property $singletons</error>
+      <error line="137" code="PPC:ERR-50008">No summary for method provides()</error>
+      <error line="45" code="PPC:ERR-50007">No summary for property $providers</error>
+      <error line="47" code="PPC:ERR-50007">No summary for property $provides</error>
+      <error line="49" code="PPC:ERR-50007">No summary for property $bindings</error>
+      <error line="53" code="PPC:ERR-50007">No summary for property $singletons</error>
     </parse_markers>
-    <source>eJy1WG1P4zgQ/t5f4dMhpaC27J50X8qVg+VFh3ToEKD7QlDlJtPGIrUj2y0gxH+/sR2naeLuttVtJCCx53lmxva8mD/+LLKic3x01CFH5JzkVNIl5ESBXLIESCHFkqUgiRZEwowpbd4zIElOlSKM47j5ND834oIkgmvKOEikO+5wOgdVUOS5pylL4m85TeHqTQNXTHB10uksFJALOp0C41RDGn+DJUg6g/jBGXBX6j+xkldvCRQaoe7zJs8XcwuML1CvpIlW8bVY8JQaofi8KHKW0CDgXwav8RWfoa0K0fOC5SDdt5MNWlxJqviWypdUvHI/8j3UJZOQaLZEVedKsRmfA9erwS2hlzBZzHZGXc0nkKaM7468FhJoku2Mu6WJFHug3HruDmScTd+3g/kNt+Ne44933cPusmJ70D1wPLjmqNiZBy1xE/ygAz5m8AAgYwzBS/GGapZMCns4MDR+SkwaxjOMyBeMMVI+QfOtIMai+fCCvw2+Dr7YCbrQmZCkYhATxh2PncaoQ5pKwe3NI/m7HOqTTOtieHwsjfRgznS/lB4IObPoRBTvks0yXWr98vVrH3/93gvo4S9k9XhmIzVw/Dw/nhjH+lD3zCYnt1oNtxtph1hYqkhjvPPR6RiNuEfk44zxDCTTlyL5NMRmAvdI43mElBzg8k/Z7BpzhCIj8kQia9B4ZVBEnk8qOvuXNFjLwRZ1yiRSjseXN/fjcclRm/YHxemNg3nWvzQcHA7d8jxvZK07M8ggL1BP1PMDyp72KITHzTHpyOI7fusasNEpCQRNaZQFBYgViuagcUVD1N5Ew/2Xe4/d33sohGJayPeQgs1bvJjgySXTBU9MhSETIXT30E59VMoN+mxJJYlrtSdcosgBLQpPbh77PSIFlZgQhkPHX1pl593JQhEqJX0fpzh/oDOm+qeIfIrcdPT81D5xz8jjadiUdEuqp2heprcBcDrJIUXJmjdW6xIrp30bWQv7p3P6At3IDEc12tJCVxwbspUWP98CeokNwJa89bBtlNv6upa2L/3TGWiXzu9BiRzjoXvYP/WZFZWmeK6rbe4eEpO6u5VvzQVa+zCPBL2QnHBctvVGo8ax7s5n0z1nJ03TKlOVZpnfxqs93MKis8Ezv8q7eNYqjTWavZwboH3GQWfmnj7a/d/gpZ3rkb28DfQPAcL9/HZntvTeO1DDumrwuWN2qtbkJ2aolY7/L0uF0xS80XmRw9gsIcqR0WhEtFxAK1k5RUYMG8SyZDmQqQNR1RvYSrVa4eo11K4Ph1RrbIy7xv3axjT6801irbZ6k2Cgc98k2mi5N4o1WuWmXCX4K/nH3rNoTqpM7HNVj4BrhwnlKUkrsn0LihH/xfWuuPl4gFQALcsWAOFNvHl0JsWrjczqitiNHk1LbIkWEvuDyhHPVfbLqUBXuNDEKm9Wls9m3rHVxfQw3WjTFdFfRX2C8P0LBvR3PTsJaKqamlrxq2ezZniGVqdMXPXCuLPpgWS2nbWr6rur2VUi9UZs2QxY7NT227VnHWung0CFjSD2w3dUZ3XgKlHZouP6He9bGmKqlYvm/wq6Ldd6pcW9NQN+tOjtO/OmyG8WDX/NqJWO9UtGo3z4pr9VPg7qBWAl1UzcWyX8wRbdZ1EVkjnIGVbdomdyei02AiePPB8Gs7sPjOKkXJ7Pzn80d+ib</source>
-  </file>
-  <file path="Providers/MarkdownServiceProvider.php" generated-path="Providers.MarkdownServiceProvider.html" hash="22cf0c92a4ed75c51cd4ca9e33fba802" package="Default">
-    <docblock line="0">
-      <description>Class MarkdownServiceProvider</description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <namespace-alias name="Gfm">\Ciconia\Extension\Gfm</namespace-alias>
-    <namespace-alias name="ServiceProvider">\Illuminate\Support\ServiceProvider</namespace-alias>
-    <class final="false" abstract="false" namespace="Radic\BladeExtensions\Providers" line="22" package="Radic\BladeExtensions\Providers">
-      <extends>\Illuminate\Support\ServiceProvider</extends>
-      <name>MarkdownServiceProvider</name>
-      <full_name>\Radic\BladeExtensions\Providers\MarkdownServiceProvider</full_name>
-      <docblock line="22">
-        <description>Class MarkdownServiceProvider</description>
-        <long-description></long-description>
-        <tag name="package" line="22" description="Radic\BladeExtensions"/>
-        <tag name="subpackage" line="22" description="Providers"/>
-        <tag name="version" line="22" description="2.1.0"/>
-        <tag name="author" line="22" description="Robin Radic"/>
-        <tag name="license" line="22" description="MIT License - http://radic.mit-license.org"/>
-        <tag name="copyright" line="22" description="2011-2015, Robin Radic - Radic Technologies"/>
-        <tag name="link" line="22" description="http://robin.radic.nl/blade-extensions" link="http://robin.radic.nl/blade-extensions"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="25" package="Radic\BladeExtensions\Providers">
-        <name>boot</name>
-        <full_name>\Radic\BladeExtensions\Providers\MarkdownServiceProvider::boot()</full_name>
-        <docblock line="25">
-          <description>{@inheritdoc}</description>
-          <long-description></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="30" package="Radic\BladeExtensions\Providers">
-        <name>register</name>
-        <full_name>\Radic\BladeExtensions\Providers\MarkdownServiceProvider::register()</full_name>
-        <docblock line="30">
-          <description>{@inheritdoc}</description>
-          <long-description></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Providers" line="35" package="Radic\BladeExtensions\Providers">
-        <name>provides</name>
-        <full_name>\Radic\BladeExtensions\Providers\MarkdownServiceProvider::provides()</full_name>
-        <docblock line="35">
-          <description>{@inheritdoc}</description>
-          <long-description></long-description>
-        </docblock>
-      </method>
-    </class>
-    <source>eJylUUFLwzAYvedX5KjDtpvgxQkOh8jAgbgde0nTb21Ymi8k6VTG/rtJ2tUxRBRzaELf+957ebm717Um2WhE6IjOJbOWLpnZlvimVmB2gsOLwZ0owXhCRhRrwGrGgb6yUvD8QbISHt8dKCtQ2fxItlNCWgt0LjgqwfKBkj9tmmmEFlK2jVDMQb5qtUbj8jNHr/HLYIEz87G2rALar28DRqJti1PukDmCO3/wzKPKdTpJxxFgravR0EEeC6E6kwhLn0jZwX25WNPn/ldCa+f0bZaZwE4b4ZKenaKp4jRH/WFEVbvedTyZJP5zc3Xq44W6fQ28ViixEmB7c7WlX+toF0bTzlTJrAhVJHDaRXxT/lO5NPJLS89L35Pg5N+H7mdC1WCEK5EfgmAAdFv4O9JNq7gLdRaI7uIyQt3kgfxNwEAlrAPzLxHdpbdnIgfyCX0X8Ss=</source>
+    <source>eJy1V21P4zgQ/t5fMadDSkFtWU66L+XKwfKiQzp0iF3dF4oqN3Ebi9SObLeAEP/9xnacpomztNVtJGhiz/PMi+2Z8R9/5mneOT466sARXEBGJFnRDBSVKxZTyKVYsYRK0AIknTOlzXtKIc6IUsA4jptP83crLiEWXBPGqUS64w4nC6pygjwPJGHx+GtGEnr9qilXTHB12uksFYVLMptRxommyfgrXVFJ5nT8zRlwX+g/tZLXrzHNNULd522WLRcWOL5EvZLEWo1vxJInxAiNL/I8YzEJAv5l9GV8zedoq0L0ImcZle7byQYtLiXV+I7I50S8cD/yI9QVkzTWbIWqLpRic76gXK8Ht4Re0elyvjPqejGlScL47sgbISmJ051xdySWYg+Ui+fuQMbZ7G07mF9wO+41fr7qHnaf5tuDHijHjWu2ip35piUugh/Erf9TzpxhPMcT94xnCIonaJ4VxLNmPrzgb4OTwRc7QZY6FRJKBjFl3PHYaTxVSFMquLv9Dn8XQ31Itc6Hx8fSSA8WTPcL6YGQc4uORf4m2TzVhdYvJyd9/Pd7L6CHP8P68cxGauD4eXY8NY71adUzm3xctGpu19IKWFiioDbeee90jEZcI3g/ZzylkukrEX8YYjOBa6Rxv9EEDjD8Mza/wRygYASPEFmDJmuDIng6LensL9RYi8EGdcIkUk4mV7cPk0nBUZn2G8XpHQfzqH+pOTgcuvA8tbJWnRmkNMtRT9TzA8ru5iiEx8Ux6cbiO37parDRGQQORWGUBQWIFYpmVGNEQ9TeRMP9l3sfu98HmgvFtJBvIQXtS7yc4s6F2ZLHpoLAVAjdPbRT76Vygz5fEQnjSm0JlyA4IHnuyc1jv0eQE4nVYDh0/IVVdt7tLBQhUpK3SYLzBzplqn+GyMfITUdPj80d94Q8nobNoFtQPUaLIn0NKCfTjCYoWfHGal1hZbRvI2th/2xBnmk3MsNRhbaw0BW/mmypxc83gF6iBdiQtx42jXJLX9XS9KV/NqfapesHqkSG56F72D/zmRWVJrivy2XuHoLJ6d3SNxOgDVbzSKqXkgPHUG02DxXcpgsfdZecbSRJyuxUmGL+G0/2cAV7uRZvfGQ/86ZR4irQvRwaoE3GKWfann7ZdW7xzM71YGsPA7U/QLKfr24/Fh57oytYl+k/dsw8ZRx+YvZZ6/j/MlA4BdFXssgzOjEhRDkYjUag5ZI2EpFTZMSwuSvKkQOZHB+Vdd9WoXWEy9dQqz0cEq2xqe0a9ysLU+ut28QaLXGbYKDrbhOttcutYrU2ty5XCv4K/9g7EsmgzLI+J/WAulYWCE8gKcn2LRZG/BfXl+Li4wZSAbQsyjvC63jz6FSKF3syy+tdN/pu2l1LtJRY+0tHPFfRCycCXeFCg1Verxof9VxjK4fpT7pR2/XOXyN9gvC9CR7oH3p2GtBUNiyVwlbNYPXjGYpOkbiqRW9n0wPJbDtr15V1V7PLROqN2LLQW+zM9tKVZxNrp4NAhU0e9rr3RKdV4DpR2ULjehnvWxJiqpSL+j2/23CtV1jc2zDgs6A377ttJ79eNPwVolI6Ni8QtfLhG/pG+TioFoC1VD1xb5XwB1t0lnlZSBZUzrHq5j2T0ytnI7Dz4OkwmN39wchPi/B8dP4DDlrX+Q==</source>
   </file>
   <file path="Facades/Markdown.php" generated-path="Facades.Markdown.html" hash="1f9838306f33a6c90b378bedad9d59ed" package="Default">
     <docblock line="0">
@@ -4686,7 +4635,6 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <package name="Engines" full_name="Radic\BladeExtensions\Engines"/>
       <package name="Facades" full_name="Radic\BladeExtensions\Facades"/>
       <package name="Helpers" full_name="Radic\BladeExtensions\Helpers"/>
-      <package name="Providers" full_name="Radic\BladeExtensions\Providers"/>
       <package name="Renderers" full_name="Radic\BladeExtensions\Renderers"/>
       <package name="Traits" full_name="Radic\BladeExtensions\Traits"/>
     </package>
@@ -4700,7 +4648,6 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <namespace name="Engines" full_name="Radic\BladeExtensions\Engines"/>
       <namespace name="Facades" full_name="Radic\BladeExtensions\Facades"/>
       <namespace name="Helpers" full_name="Radic\BladeExtensions\Helpers"/>
-      <namespace name="Providers" full_name="Radic\BladeExtensions\Providers"/>
       <namespace name="Renderers" full_name="Radic\BladeExtensions\Renderers"/>
       <namespace name="Traits" full_name="Radic\BladeExtensions\Traits"/>
     </namespace>

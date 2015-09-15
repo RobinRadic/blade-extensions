@@ -20,7 +20,6 @@ use Radic\BladeExtensions\Engines\BladeMarkdownEngine;
 use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
 use Radic\BladeExtensions\Renderers\BladeStringRenderer;
 
-
 /**
  * A laravel service provider to register the class into the the IoC container
  *

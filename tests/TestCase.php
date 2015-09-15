@@ -65,5 +65,4 @@ abstract class TestCase extends AbstractTestCase
         $this->addViewTesting(true, __DIR__ . '/views');
         $this->cleanViews();
     }
-
 }
