@@ -68,6 +68,7 @@ abstract class TestCase extends AbstractTestCase
 
     protected function registerBladeMarkdownServiceProvider()
     {
+        $this->app->make('config')->set('blade_extensions.markdown.views', true);
         $this->app->register('Radic\BladeExtensions\Providers\MarkdownServiceProvider'); //new MarkdownServiceProvider($this->app));
     }
 }

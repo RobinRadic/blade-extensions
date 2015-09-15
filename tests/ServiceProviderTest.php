@@ -13,17 +13,18 @@ class ServiceProviderTest extends TestCase
 {
     use ServiceProviderTester;
 
-    /** @inheritDoc */
-    public function setUp()
+    /**
+     * @inheritDoc
+     */
+    protected function start()
     {
-        parent::setUp();
+        $this->loadViewTesting();
+        $this->registerServiceProvider();
     }
 
 
     public function testServiceProviderRegister()
     {
-        $this->registerServiceProvider();
-        $this->registerBladeMarkdownServiceProvider();
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\BladeExtensionsServiceProvider');
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\Providers\MarkdownServiceProvider');
     }

@@ -1,5 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
+use Caffeinated\Beverage\Path;
 use Mockery as m;
 use Radic\Tests\BladeExtensions\TestCase;
 
@@ -15,13 +16,16 @@ class EmbedDirectivesTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->loadViewTesting();
-
-        $this->registerServiceProvider();
     }
 
     public function testEmbeds()
     {
+        $view = $this->app->make('view');
+        $config = $this->app->make('config');
+        $config->set('blade_extensions.example_views', true);
+        $this->loadViewTesting();
+        $this->registerServiceProvider();
+        //$view->make('tests.bootstrap')->render();
         $this->assertTrue(true);
     }
 }

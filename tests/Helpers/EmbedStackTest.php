@@ -6,7 +6,6 @@ use Mockery as m;
 use Radic\BladeExtensions\Helpers\EmbedStack;
 use Radic\Tests\BladeExtensions\TestCase;
 
-
 class EmbedStackTest extends TestCase
 {
 
@@ -85,6 +84,4 @@ EOT;
             $vars = [ 'var1' => 'val1', 'var2', 'val2' ]
         );
     }
-
-
 }

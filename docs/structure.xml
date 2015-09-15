@@ -277,7 +277,7 @@
     </parse_markers>
     <source>eJzFV1FP2zAQfs+v8ANSU0TaMWkvYzA2NiakTZoA8UIRchu39UjjyHG6IdT/vrNjJ3Fit6WgLQ+Q2neffd93d3Y+fMzmWTDc3w/QPvqJuUBsisScoO+Y45hOUIYnD3hG8gEYDIMUL0gOQwRdytnR5wTH5OsfQdKcsjQfXXNMRX4UBEVO0EWSFAuaYkFGZywVHE9EPrqh5PfoHF4ZfwQ7vbLyQ1dkIiSM+gXDcuZUbwDJZ92iyhgXYs44Ko3ZmKali5pL6AQ8SqAfF9dqbMKyR05ncwFjb98cHkbw592BwzV9QPqZC5G9Hw4VO4MFFZHGHTA+UxwJRyxPQSB9VbTyAcwl5ghzjh/1yFD9zzgT4ElitJdrBHSMbu+Odge4EsDgOpBRQ6imPD7cJdjUCrYQcyJu6nk9Wi2XQVYtrAXdmYH2phYAOuVEFDxFe2JOc3tjxRgUQNMiVdG2NhC2AfvK6SkwcirA6KQRE1BljHV48mmuf6RGV53YvxGhameJk4LIQlr6mdB423HfCnFmh9gOqblVKzLfviFDoPBp+ksmTDpDE9CEpHJEMISRzqOBW0yUCy6dTLr5pjVom4Alo/F6PeXmdDWFZpGDCg/U6vXaDNApCmuDY2XSmDYmbHyv0MN+e7aRGc0qur2TyaFHjiyPVfVrhUgCbcYG1GBEdq3YH02/Bl15xLpQMoE20JTIP5Wq1Z7XaFamkis+d/Vt0Lj/zDq8EizbmM4Ip7FBg+PDWOUd7rRNSc7asB8pSSpx11elMj0rlwwrFlhWefdfFJwvAcaMJWiPLQn/zakgO8TY3GQNBGUxxZD1HX0TnMsSVefUfcay0FFVTXlV5Vaw7bK0nfNbBS9rEioZmuL9JCEYuGsU0fa1KKEOWkBWOXaUlB4vT0GcZbANSMEXJF6J4cu8nUSgORykoZvwTrv06DLYTZhnyPs8UT6VVBsxlBQzuiTpf+ub1aWqknLjCeE46jxa6TeHXPXZCVu/5yRL4Eof9mQ8MNyrVzvoalKhOmXwmsuDU4PueKvSLJs+Le9Xr3XgxWSKi6Qj3LYtv+rjtVoa0Xk7MWZnlQrGfLsa9OvaBfb5usXr+NvpUedHL4rK9yiasyQmPIpk1tj+jmO7iWdt3QloW1SrW8OeBO45tlP5ec/W86TI5wgnifkKNo160+Vg+6vRVC5hzLut2tbLNO2wSaWjeTvttqmtjQHLPIwZXDSBV1AFyuGVKbiYfgH4S4PeYURdCDpfMtFJbHt5TqQW2w123AyVLLm5Mn0IaKGclIRL2oxYPmIc3+jd7zlvRtjXRrOW0XMV/AWh0hye</source>
   </file>
-  <file path="Traits/BladeExtenderTrait.php" generated-path="Traits.BladeExtenderTrait.html" hash="43d1a24fda201782252deac7ac46af1f" package="Default">
+  <file path="Traits/BladeExtenderTrait.php" generated-path="Traits.BladeExtenderTrait.html" hash="90c4ca6e9347bdbe7f7f54ea16abf49f" package="Default">
     <docblock line="0">
       <description>Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends</description>
       <long-description></long-description>
@@ -355,16 +355,16 @@
           <type>\Illuminate\Foundation\Application</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="94" package="Radic\BladeExtensions">
         <name>createMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$function">
+          <tag name="param" line="94" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -374,16 +374,16 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="104" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="105" package="Radic\BladeExtensions">
         <name>createOpenMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="104" description="" type="string" variable="$function">
+          <tag name="param" line="105" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -393,16 +393,16 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="115" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Traits" line="116" package="Radic\BladeExtensions">
         <name>createPlainMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="115">
+        <docblock line="116">
           <description>Create a plain Blade matcher.</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="string" variable="$function">
+          <tag name="param" line="116" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="115" description="" type="string">
+          <tag name="return" line="116" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -417,7 +417,7 @@
       <error line="37" code="PPC:ERR-50007">No summary for property $directivesFile</error>
       <error line="39" code="PPC:ERR-50007">No summary for property $overrides</error>
     </parse_markers>
-    <source>eJzVVt9v2zYQftdfcQGMSgpsuRmwl7hN0nXrEGDdhiDYS1S4jHS2iciURlJJg9b/+44UJVGysy1Dh2F6SGTe3ffdT55enVebKpgfHwdwDG/yXAEToDTTPINVLTLNSwEfmdYs23wEvWEa+AoyVhSYT+GBFwVwQfoi40wjGeeAnzCrzTvJWgiCVXBbsBxJrFHkivjmgWBbVBXLEK5YzrP0O6Pxg1FQxii9loxrtQiCWiFcFkW95YJo0ndlLXJmgNM3VVXwzL6T3n8TiKG8oDDu2BrBew4GZZXvUZofvvI3yUny0gpZrTelhAFSectFg2dVKGSCG5C9v7yGn9zxDDZaV6fzuTQWyZbrmbNISrm2CFlZPUq+3mjPg5cnJzP68+30AJ+4g+HTMhjNpOERxdymZoZ+tLbS2lQS+lTkKG1xg89BYNBs4cxDxRPApGSPUK5gi5QKqqWtl9qUdZHDrUl9VtQ50vsjNCV1xi3GxT2TDYo7mdv/VX1LeYAJeZndFVzpxd9g/5maFF6fQc4lUg/c4xVWZI9bFPp5tB2Ccrz7gne8wJGwpGaRPO+MPGcv/2HHDp2umGRb8AYJJqyq4HqDkNVSUpjAeuGhyMZz1tQkGkPG1uZz0LYQRdKkLPVm+zeOD+nbcltRJqRqpqf9aStHgTh287gT+7y2LLOzLbvDKLSCJHOmYbzobbJSrPj6gE0jGOoWTKkWX+CDC9YVwzx0j0RHXCnUUaM9OxsWNI69oHvQsRrhL5ffX14tl5BAOE+SeS9P6JoOe692wSABTTMbB4dudKIYzmHvEE7bTMzO1mTVZGzZD2/SqQ4y0nu1R9iLfEbP4HSQ7hVFrcLY0l/h7zXpPZVCj78biP2AO5FP3+v/ZcCdajiFG/gQe1VelRKpqSHy+GmyJs0lYS6ITjAut22Q1tM+rpvO+MNeh5iHXNVc1LgYSHZ70A64Zb+BsKIBRCnCJ4AP+zCwM3NxEPD5zsj+uny2Q0PbkVND4VOO7Q6V0OtIU0Phrvj+fG9i2zJD2OmENKZ1tuJSUcAGIl7spYPysbQLIZp4w/jiBX1stOfGcuqN8RS0rM2d8eULHLkdRD1KEuX6fNq686y2GcbTLOqzZiVE3c0dTe5ZQexgvrjGdFMvQVM7yFMHZPzYc0SirqXoxtCBOAYfa9BgI8GwyCPWUYixf0G6oMcr80fU9DWB5Ny6Lmj14KdKorIfY9QewGCNAiUtM7t4upWWHF6atAwkF2uYtHqd3AXfyA/tzC7lGTWlxvdMZxuUUYc0XpYOMJxH56+O0oc4StVxfGF6sDMxa8Mcp1FynMbx3C2M3f8mCb9UKL52IuL0TxLx1tJSwNRk9MHbhLttPPjXo/3VcH7NcL1Ad8EfV14RAA==</source>
+    <source>eJzVVm1v2zYQ/u5fcQGMSjJsuRmwL3HrpOvWIUC7DUGwL1HhMtLZJiJTGkklDVb/9x0pSqJkZ1uGDsP0IZF5L88998LTq/NyW47mk8kIJvAmyxQwAUozzVNYVyLVvBDwiWnN0u0n0Fumga8hZXmO2RQeeJ4DF6QvUs40knEG+BnTyryTrHFBbhXc5ixDEmsUmSK8+UiwHaqSpQhXLONp8p3R+MEoKGOUXEvGtVqMRpVCuMzzascFwSTvikpkzDhO3pRlzlP7Tnr/DREDeUE07tgGwXuOkrLK9yjND1/5m/g0fmmFrNLbQkLPU3HLRe3PqhBlctcD+3B5De/d8Qy2Wpdn87k0FvGO65mziAu5sR7SonyUfLPVXgQvT09n9Ofb6RE8cQf9p0EwmnGNI/K5Tc0Mfba20tpUErpUZChtcUe/j0bGmy2ceah4ApiU7BGKNeyQUkG1tPVS26LKM7g1qU/zKkN6f4S6pM648XFxz2TtxZ3M7f+yuqU8wJiiTO9yrvTib6D/RE0Kr5eQcYnUA/d4hSXZ4w6Ffh5s60E53EPBO57jQFhQs0ietUZesJf/sGP7QZdMsh14gwRjVpZwvUVIKymJJrBOeIzZcM7qmoRDl5G1cRV3VOqcJd5w/8rxIXlb7EpKhVT1+DQ/bemIiYM3jzuxz2sLM1vu2B2GgRXEqTMNokVnkxZizTdHbGpBXzdnSjX+BT44touOBl0k4QlXCnVYa8+W/YpGEbH2h+e4Gvlfrb6/vFqtIIZgHsfzTh7TPR10Ue1HvQTU3WwC7IfRiiI4h4NDOGsyMVtuyKrO2Kqb3rhV7WWki+oAsBP5iJ7BWS/da2KtgsjCX+FvFek9lUIPv52IQ8KtyIfv9P+ScKsaTOEGPkZeldeFROpqCD18Gq1xfUuYG6IVDMttG6SJtON10xp/POgQ81ComosKFz3J/sC1c9yg30BQ0gSiFMETjo/H0LMzc3HU4fODkd19+eyA+raDoPrCpwLbHyuh15GmhsLd8d35wcQ2ZYag1QloTKt0zaUiwsZFtDhIB+VjZTdCOPaG8cUL+tpozo3l1BvjKWhZmTvjyxc4cUuIepQkyvX5tAnnWW3T51Nv6mW9E8L26g7H9ywndDCfXEO4qZegqR3kqXMU+dd680jUlRTtGDonDsH31WuwgaBf5AHqgGLkX5CO9HBn/oiaPieQgttUOa0e/FxKVPZrjNoDGGxQoKRtZhdPu9Pi41uTloHkYgPjRq+VO/K1/NjSbFOeUlNq/MB0ukUZtp6abTnIZjAPz1+dJA9RmKhJdGF6sDUxa8McJ2E8SaJo7hbG/n+ThJ9LFF87EVHyJ4l4a2GJMDUZffHWdHd1BP86218M5tek6xHdj/4AFA0RCg==</source>
   </file>
   <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="d38222be742adeb14c50ef776e4e2d76" package="Default">
     <docblock line="0">
@@ -2450,16 +2450,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="94" package="Radic\BladeExtensions">
         <name>createMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$function">
+          <tag name="param" line="94" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -2470,16 +2470,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="105" package="Radic\BladeExtensions">
         <name>createOpenMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="104" description="" type="string" variable="$function">
+          <tag name="param" line="105" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -2490,16 +2490,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="116" package="Radic\BladeExtensions">
         <name>createPlainMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="115">
+        <docblock line="116">
           <description>Create a plain Blade matcher.</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="string" variable="$function">
+          <tag name="param" line="116" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="115" description="" type="string">
+          <tag name="return" line="116" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -2731,16 +2731,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="94" package="Radic\BladeExtensions">
         <name>createMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$function">
+          <tag name="param" line="94" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -2751,16 +2751,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="105" package="Radic\BladeExtensions">
         <name>createOpenMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="104" description="" type="string" variable="$function">
+          <tag name="param" line="105" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -2771,16 +2771,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="116" package="Radic\BladeExtensions">
         <name>createPlainMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="115">
+        <docblock line="116">
           <description>Create a plain Blade matcher.</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="string" variable="$function">
+          <tag name="param" line="116" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="115" description="" type="string">
+          <tag name="return" line="116" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -2967,16 +2967,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="94" package="Radic\BladeExtensions">
         <name>createMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$function">
+          <tag name="param" line="94" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -2987,16 +2987,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="105" package="Radic\BladeExtensions">
         <name>createOpenMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="104" description="" type="string" variable="$function">
+          <tag name="param" line="105" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3007,16 +3007,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="116" package="Radic\BladeExtensions">
         <name>createPlainMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="115">
+        <docblock line="116">
           <description>Create a plain Blade matcher.</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="string" variable="$function">
+          <tag name="param" line="116" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="115" description="" type="string">
+          <tag name="return" line="116" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3203,16 +3203,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="94" package="Radic\BladeExtensions">
         <name>createMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$function">
+          <tag name="param" line="94" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3223,16 +3223,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="105" package="Radic\BladeExtensions">
         <name>createOpenMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="104" description="" type="string" variable="$function">
+          <tag name="param" line="105" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3243,16 +3243,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="116" package="Radic\BladeExtensions">
         <name>createPlainMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="115">
+        <docblock line="116">
           <description>Create a plain Blade matcher.</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="string" variable="$function">
+          <tag name="param" line="116" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="115" description="" type="string">
+          <tag name="return" line="116" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3394,16 +3394,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="94" package="Radic\BladeExtensions">
         <name>createMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$function">
+          <tag name="param" line="94" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3414,16 +3414,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="105" package="Radic\BladeExtensions">
         <name>createOpenMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="104" description="" type="string" variable="$function">
+          <tag name="param" line="105" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3434,16 +3434,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="116" package="Radic\BladeExtensions">
         <name>createPlainMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="115">
+        <docblock line="116">
           <description>Create a plain Blade matcher.</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="string" variable="$function">
+          <tag name="param" line="116" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="115" description="" type="string">
+          <tag name="return" line="116" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3720,16 +3720,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="94" package="Radic\BladeExtensions">
         <name>createMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$function">
+          <tag name="param" line="94" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3740,16 +3740,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="105" package="Radic\BladeExtensions">
         <name>createOpenMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="104" description="" type="string" variable="$function">
+          <tag name="param" line="105" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3760,16 +3760,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="116" package="Radic\BladeExtensions">
         <name>createPlainMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="115">
+        <docblock line="116">
           <description>Create a plain Blade matcher.</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="string" variable="$function">
+          <tag name="param" line="116" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="115" description="" type="string">
+          <tag name="return" line="116" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3956,16 +3956,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="94" package="Radic\BladeExtensions">
         <name>createMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createMatcher()</full_name>
-        <docblock line="93">
+        <docblock line="94">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="93" description="" type="string" variable="$function">
+          <tag name="param" line="94" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="93" description="" type="string">
+          <tag name="return" line="94" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3976,16 +3976,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="104" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="105" package="Radic\BladeExtensions">
         <name>createOpenMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createOpenMatcher()</full_name>
-        <docblock line="104">
+        <docblock line="105">
           <description>Get the regular expression for a generic Blade function.</description>
           <long-description></long-description>
-          <tag name="param" line="104" description="" type="string" variable="$function">
+          <tag name="param" line="105" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="104" description="" type="string">
+          <tag name="return" line="105" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -3996,16 +3996,16 @@
         </argument>
         <inherited_from>\Radic\BladeExtensions\Traits\BladeExtenderTrait</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="115" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Directives" line="116" package="Radic\BladeExtensions">
         <name>createPlainMatcher</name>
         <full_name>\Radic\BladeExtensions\Traits\BladeExtenderTrait::createPlainMatcher()</full_name>
-        <docblock line="115">
+        <docblock line="116">
           <description>Create a plain Blade matcher.</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="string" variable="$function">
+          <tag name="param" line="116" description="" type="string" variable="$function">
             <type>string</type>
           </tag>
-          <tag name="return" line="115" description="" type="string">
+          <tag name="return" line="116" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>

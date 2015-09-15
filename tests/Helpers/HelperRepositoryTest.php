@@ -46,8 +46,7 @@ class HelperRepositoryTest extends TestCase
     protected function _createHelperRepository()
     {
 
-        foreach ( $this->helperClasses as $name => $class )
-        {
+        foreach ($this->helperClasses as $name => $class) {
             $this->helperMocks[ $name ] = m::mock($class);
             $this->container
                 ->shouldReceive('make')
@@ -58,9 +57,10 @@ class HelperRepositoryTest extends TestCase
         return new HelperRepository($this->container);
     }
 
-    public function testGetHelperClassInstances() {
+    public function testGetHelperClassInstances()
+    {
         $repository  = $this->_createHelperRepository();
-        foreach($this->helperMocks as $name => $m){
+        foreach ($this->helperMocks as $name => $m) {
             $helper = $repository->get($name, false);
             $this->assertNotFalse($helper);
             $this->assertInstanceOf($this->helperClasses[$name], $helper);
@@ -69,5 +69,4 @@ class HelperRepositoryTest extends TestCase
         $repository->put('test', 'testClass');
         $this->assertEquals('testClass', $repository->get('test'));
     }
-
 }

@@ -6,7 +6,6 @@ use Mockery as m;
 use Radic\BladeExtensions\Helpers\EmbedStacker;
 use Radic\Tests\BladeExtensions\TestCase;
 
-
 class EmbedStackerTest extends TestCase
 {
 
