@@ -18,7 +18,10 @@
       <directory suffix=".php">src</directory>
     </whitelist>
   </filter>
-
+    <env name="APP_ENV" value="testing"/>
+    <env name="CACHE_DRIVER" value="array"/>
+    <env name="SESSION_DRIVER" value="array"/>
+    <env name="QUEUE_DRIVER" value="sync"/>
 
     <env name="BLADE_EXTENSIONS_EXAMPLE_VIEWS" value="true"/>
     <env name="BLADE_EXTENSIONS_MARKDOWN_VIEWS" value="true"/>
