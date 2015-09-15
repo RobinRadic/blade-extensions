@@ -18,5 +18,10 @@
       <directory suffix=".php">src</directory>
     </whitelist>
   </filter>
+
+
+    <env name="BLADE_EXTENSIONS_EXAMPLE_VIEWS" value="true"/>
+    <env name="BLADE_EXTENSIONS_MARKDOWN_VIEWS" value="true"/>
+    <env name="BLADE_EXTENSIONS_MARKDOWN_ENABLED" value="true"/>
 </phpunit>
 

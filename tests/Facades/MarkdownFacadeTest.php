@@ -7,7 +7,6 @@
 namespace Radic\Tests\BladeExtensions\Facades;
 
 use Caffeinated\Dev\Testing\Traits\FacadeTester;
-use Radic\BladeExtensions\Facades\BladeString;
 use Radic\BladeExtensions\Facades\Markdown;
 use Radic\Tests\BladeExtensions\TestCase;
 
