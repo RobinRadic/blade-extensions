@@ -32,21 +32,11 @@ class HelperRepository
     {
         $this->container = $container;
         $this->helpers   = [ ];
-
-        $helpers = [
-            'loop'     => LoopFactory::class,
-            'embed'    => EmbedStacker::class,
-            'markdown' => Markdown::class,
-            'minifier' => Minifier::class
-        ];
-
-        foreach ($helpers as $name => $class) {
-            $this->put($name, $container->make($class));
-        }
     }
 
     public function put($key, $data)
     {
+
         $this->helpers[ $key ] = $data;
     }
 

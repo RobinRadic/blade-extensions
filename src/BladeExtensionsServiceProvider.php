@@ -50,9 +50,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         'blade.string' => BladeStringRenderer::class
     ];
 
-    protected $singletons = [
-        'blade.helpers' => Helpers\HelperRepository::class
-    ];
 
     /** {@inheritDoc} */
     public function boot()
@@ -101,6 +98,8 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             $this->viewDirs = [ 'views' => 'blade-ext' ];
         }
 
+        $this->registerHelpers();
+
         AssignmentDirectives::attach($app);
         DebugDirectives::attach($app);
         ForeachDirectives::attach($app);
@@ -143,5 +142,29 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         }
 
         return $p;
+    }
+
+    protected function registerHelpers()
+    {
+
+        $this->app->singleton('blade.helpers', function(Application $app){
+            $helpers = new Helpers\HelperRepository($app);
+
+            $helperClasses = [
+                'loop'     => Helpers\LoopFactory::class,
+                'embed'    => Helpers\EmbedStacker::class,
+                'minifier' => Helpers\Minifier::class
+            ];
+
+            if($app['config']['blade_extensions.markdown.enabled']){
+                $helperClasses['markdown'] = Helpers\Markdown::class;
+            }
+
+            foreach($helperClasses as $name => $class){
+                $helpers->put($name, $app->make($class));
+            }
+
+            return $helpers;
+        });
     }
 }

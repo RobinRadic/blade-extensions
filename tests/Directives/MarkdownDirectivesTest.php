@@ -22,6 +22,7 @@ class MarkdownDirectivesTest extends TestCase
     protected function assertContent($needle)
     {
         $this->assertTrue(str_contains($this->renderedContent, $needle));
+
     }
 
     public function testMarkdown()
