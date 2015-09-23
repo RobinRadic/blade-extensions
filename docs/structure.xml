@@ -419,7 +419,7 @@
     </parse_markers>
     <source>eJzVVm1v2zYQ/u5fcQGMSjJsuRmwL3HrpOvWIUC7DUGwL1HhMtLZJiJTGkklDVb/9x0pSqJkZ1uGDsP0IZF5L88998LTq/NyW47mk8kIJvAmyxQwAUozzVNYVyLVvBDwiWnN0u0n0Fumga8hZXmO2RQeeJ4DF6QvUs40knEG+BnTyryTrHFBbhXc5ixDEmsUmSK8+UiwHaqSpQhXLONp8p3R+MEoKGOUXEvGtVqMRpVCuMzzascFwSTvikpkzDhO3pRlzlP7Tnr/DREDeUE07tgGwXuOkrLK9yjND1/5m/g0fmmFrNLbQkLPU3HLRe3PqhBlctcD+3B5De/d8Qy2Wpdn87k0FvGO65mziAu5sR7SonyUfLPVXgQvT09n9Ofb6RE8cQf9p0EwmnGNI/K5Tc0Mfba20tpUErpUZChtcUe/j0bGmy2ceah4ApiU7BGKNeyQUkG1tPVS26LKM7g1qU/zKkN6f4S6pM648XFxz2TtxZ3M7f+yuqU8wJiiTO9yrvTib6D/RE0Kr5eQcYnUA/d4hSXZ4w6Ffh5s60E53EPBO57jQFhQs0ietUZesJf/sGP7QZdMsh14gwRjVpZwvUVIKymJJrBOeIzZcM7qmoRDl5G1cRV3VOqcJd5w/8rxIXlb7EpKhVT1+DQ/bemIiYM3jzuxz2sLM1vu2B2GgRXEqTMNokVnkxZizTdHbGpBXzdnSjX+BT44touOBl0k4QlXCnVYa8+W/YpGEbH2h+e4Gvlfrb6/vFqtIIZgHsfzTh7TPR10Ue1HvQTU3WwC7IfRiiI4h4NDOGsyMVtuyKrO2Kqb3rhV7WWki+oAsBP5iJ7BWS/da2KtgsjCX+FvFek9lUIPv52IQ8KtyIfv9P+ScKsaTOEGPkZeldeFROpqCD18Gq1xfUuYG6IVDMttG6SJtON10xp/POgQ81ComosKFz3J/sC1c9yg30BQ0gSiFMETjo/H0LMzc3HU4fODkd19+eyA+raDoPrCpwLbHyuh15GmhsLd8d35wcQ2ZYag1QloTKt0zaUiwsZFtDhIB+VjZTdCOPaG8cUL+tpozo3l1BvjKWhZmTvjyxc4cUuIepQkyvX5tAnnWW3T51Nv6mW9E8L26g7H9ywndDCfXEO4qZegqR3kqXMU+dd680jUlRTtGDonDsH31WuwgaBf5AHqgGLkX5CO9HBn/oiaPieQgttUOa0e/FxKVPZrjNoDGGxQoKRtZhdPu9Pi41uTloHkYgPjRq+VO/K1/NjSbFOeUlNq/MB0ukUZtp6abTnIZjAPz1+dJA9RmKhJdGF6sDUxa8McJ2E8SaJo7hbG/n+ThJ9LFF87EVHyJ4l4a2GJMDUZffHWdHd1BP86218M5tek6xHdj/4AFA0RCg==</source>
   </file>
-  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="f6d6cff460cd9a97ae8ce0e09dce2c14" package="Default">
+  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="2d073ac7dab385eb8a9dba6018adca61" package="Default">
     <docblock line="0">
       <description>A laravel service provider to register the class into the the IoC container</description>
       <long-description></long-description>
@@ -499,49 +499,48 @@
           <long-description></long-description>
         </docblock>
       </property>
-      <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="53" package="Radic\BladeExtensions">
-        <name>$singletons</name>
-        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::singletons</full_name>
-        <default>array('blade.helpers' =&gt; \Radic\BladeExtensions\Helpers\HelperRepository::class)</default>
-        <docblock line="53">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="58" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="55" package="Radic\BladeExtensions">
         <name>boot</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::boot()</full_name>
-        <docblock line="58">
+        <docblock line="55">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="93" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="90" package="Radic\BladeExtensions">
         <name>register</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::register()</full_name>
-        <docblock line="93">
+        <docblock line="90">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="137" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="136" package="Radic\BladeExtensions">
         <name>provides</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::provides()</full_name>
-        <docblock line="137">
+        <docblock line="136">
           <description></description>
           <long-description></long-description>
-          <tag name="inheritDoc" line="137" description=""/>
+          <tag name="inheritDoc" line="136" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions" line="147" package="Radic\BladeExtensions">
+        <name>registerHelpers</name>
+        <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::registerHelpers()</full_name>
+        <docblock line="147">
+          <description></description>
+          <long-description></long-description>
         </docblock>
       </method>
     </class>
     <parse_markers>
-      <error line="137" code="PPC:ERR-50008">No summary for method provides()</error>
+      <error line="136" code="PPC:ERR-50008">No summary for method provides()</error>
+      <error line="147" code="PPC:ERR-50008">No summary for method registerHelpers()</error>
       <error line="45" code="PPC:ERR-50007">No summary for property $providers</error>
       <error line="47" code="PPC:ERR-50007">No summary for property $provides</error>
       <error line="49" code="PPC:ERR-50007">No summary for property $bindings</error>
-      <error line="53" code="PPC:ERR-50007">No summary for property $singletons</error>
     </parse_markers>
-    <source>eJy1V21P4zgQ/t5fMadDSkFtWU66L+XKwfKiQzp0iF3dF4oqN3Ebi9SObLeAEP/9xnacpomztNVtJGhiz/PMi+2Z8R9/5mneOT466sARXEBGJFnRDBSVKxZTyKVYsYRK0AIknTOlzXtKIc6IUsA4jptP83crLiEWXBPGqUS64w4nC6pygjwPJGHx+GtGEnr9qilXTHB12uksFYVLMptRxommyfgrXVFJ5nT8zRlwX+g/tZLXrzHNNULd522WLRcWOL5EvZLEWo1vxJInxAiNL/I8YzEJAv5l9GV8zedoq0L0ImcZle7byQYtLiXV+I7I50S8cD/yI9QVkzTWbIWqLpRic76gXK8Ht4Re0elyvjPqejGlScL47sgbISmJ051xdySWYg+Ui+fuQMbZ7G07mF9wO+41fr7qHnaf5tuDHijHjWu2ip35piUugh/Erf9TzpxhPMcT94xnCIonaJ4VxLNmPrzgb4OTwRc7QZY6FRJKBjFl3PHYaTxVSFMquLv9Dn8XQ31Itc6Hx8fSSA8WTPcL6YGQc4uORf4m2TzVhdYvJyd9/Pd7L6CHP8P68cxGauD4eXY8NY71adUzm3xctGpu19IKWFiioDbeee90jEZcI3g/ZzylkukrEX8YYjOBa6Rxv9EEDjD8Mza/wRygYASPEFmDJmuDIng6LensL9RYi8EGdcIkUk4mV7cPk0nBUZn2G8XpHQfzqH+pOTgcuvA8tbJWnRmkNMtRT9TzA8ru5iiEx8Ux6cbiO37parDRGQQORWGUBQWIFYpmVGNEQ9TeRMP9l3sfu98HmgvFtJBvIQXtS7yc4s6F2ZLHpoLAVAjdPbRT76Vygz5fEQnjSm0JlyA4IHnuyc1jv0eQE4nVYDh0/IVVdt7tLBQhUpK3SYLzBzplqn+GyMfITUdPj80d94Q8nobNoFtQPUaLIn0NKCfTjCYoWfHGal1hZbRvI2th/2xBnmk3MsNRhbaw0BW/mmypxc83gF6iBdiQtx42jXJLX9XS9KV/NqfapesHqkSG56F72D/zmRWVJrivy2XuHoLJ6d3SNxOgDVbzSKqXkgPHUG02DxXcpgsfdZecbSRJyuxUmGL+G0/2cAV7uRZvfGQ/86ZR4irQvRwaoE3GKWfann7ZdW7xzM71YGsPA7U/QLKfr24/Fh57oytYl+k/dsw8ZRx+YvZZ6/j/MlA4BdFXssgzOjEhRDkYjUag5ZI2EpFTZMSwuSvKkQOZHB+Vdd9WoXWEy9dQqz0cEq2xqe0a9ysLU+ut28QaLXGbYKDrbhOttcutYrU2ty5XCv4K/9g7EsmgzLI+J/WAulYWCE8gKcn2LRZG/BfXl+Li4wZSAbQsyjvC63jz6FSKF3syy+tdN/pu2l1LtJRY+0tHPFfRCycCXeFCg1Verxof9VxjK4fpT7pR2/XOXyN9gvC9CR7oH3p2GtBUNiyVwlbNYPXjGYpOkbiqRW9n0wPJbDtr15V1V7PLROqN2LLQW+zM9tKVZxNrp4NAhU0e9rr3RKdV4DpR2ULjehnvWxJiqpSL+j2/23CtV1jc2zDgs6A377ttJ79eNPwVolI6Ni8QtfLhG/pG+TioFoC1VD1xb5XwB1t0lnlZSBZUzrHq5j2T0ytnI7Dz4OkwmN39wchPi/B8dP4DDlrX+Q==</source>
+    <source>eJy1WG1PKjkU/s6v6GZJBgzgvZvsF1xcvb5kTa5Zozf7RQwpM4VpHNpJW1Bj/O97+jaUzqDg7p1EYNrznJf29Dyn/vFnmZetw4ODFjpAp6jAAq9IgSQRK5oSVAq+ohkRSHEkyJxKpX/nBKUFlhJRBuP6Vf9d8TOUcqYwZUSAusMWwwsiSwx6bnFG0/G3Amfk4lkRJiln8qjVWkqCzvBsRijDimTjb2RFBJ6T8Z114MbZPzKSF88pKRVA7etVUSwXBjg+A7sCp0qOL/mSZVgLjU/LsqApbgT8Q8nT+ILNwVcJ6EVJCyLsu5Vt9LiSlONrLB4z/sT8yHuocypIqugKTJ1KSedsQZhaD+4IPSfT5Xxv1MViSrKMsv2Rl1wQnOZ7465xKvgnUHY99wdSRmcvu8H8hptxb/HjXfewm7zcHXRLGCSuThUzc6cEbIIfhNT/KWdOazyBE/cIZwi5p9E9IwhnTb94wd8GXwdfzAReqpwLVGngU8qsHjMNpwrUVAaur36g726oj3KlyuHhodDSgwVVfSc94GJu0CkvXwSd58pZ/fL1ax8+fu812GGPaP14zVpqYPWz4nCqA+uTMDJTfOxqRWFHZQUZWCZRNN56bbW0Rdgj9HpCWU4EVec8fdOK9QTskYJ8Ixlqw/LP6PwSaoBEI3SPEuPQZO1Qgh6OKnXmG0Va3WBNdUYFqJxMzq9uJxOnI5j2iWLtjhvrqP8RBTgc2uV52Ko1DGaQk6IEO0nPD0iTzUkTHjZHlxuDb/mti2CjY9RwKJxTBqQVf7AFyylkFpotWaorPJpyrjpdM/Va2dXokxUWaBzU/maKQG1cll65fsz7CJVYQLUeDq1+F6+ZtzsPIlgI/DLJYL6tcir7x4C8T+x08nBfz4gH0OPV0BnqOFX3ycKVlwFheFqQDCSDaIzVFTCX+TUyHvaPF/iRdBI9nARqnYeWnCLZyoqfrwG9xBZgTd5EWHfK7npopR5L/3hOlC2nt0TyAvK10+0f+8oHRjPIu2qbO12ka26nik0v0IZW/QiiloIhBku1Se4BbjOEtzgk6xvOsqp6OFf0Z9en536hQK+1JRq/sh9FU6OgAPqpgAbgkw7KuvbJuMw+b4nMzPXQzhE2cHODks/FavPRReydDrC2Er/tWXmqdfiJ1Wdt4/+rQM0liDzjRVmQiV5CkEOj0QgpsSS1QmQNaTFovhxdWJCu70nFy4Yl1ivcihT4yP6yHLMRYFO3PBxipaAv7egVCvYuao+3idW62m2CDY3zNtGo490qFnWqsVwl+Cv621xzcIGqQuzLVg8R240izDKUVco+yyda/BfbWkJ+wE7IBrRwDA3wGK8flQv+ZA5vdUPrJD90x2oULQX0BVUgXpdrZzMOoTCukDEeE8tbXI4MuegWo5Nsu6H5m6CvIb69gDP/bmRHDZYk7H9BlCkfnvvCIhef4KbVcbUt5MW9XW+od7t5uybffd2uaq13YsdewGBnph0Onk2smW4ESsV1u3qDVR4C17XMcJFtd3xsWZOmgFHiq3qnFlrPedzbcOCjRa9fWbed/JhX/C0gYJfNO0DEML4nrzFMO+SItVRc23fihMEOzWdZcc2CiDkQc9nTZT84Gw2Zhx66jQTgD0Z5FC7P+ipRI9iKItwqxFQSH4L48rL7AWg7EISrM8gZHtvvW1JySSFPXmqVO8Ce6fJGNq9B/kkKzsvE/ASq9Nq/w+AlnH9Q7K5CvTqSaFpKIqThqjvIvMfqFtUAXWj+oXpDAui1GwwvX/55iCIzufTfs6i+SOuCrBuOtW9u0PlWo4bwdWZ5HRzcXH4sUVv/H1LH3DZq3nEHcqhcQg+lAb2wYjlknZ3CV5/PTleQ812f4W+tfwH6m5Ky</source>
   </file>
   <file path="Facades/Markdown.php" generated-path="Facades.Markdown.html" hash="1f9838306f33a6c90b378bedad9d59ed" package="Default">
     <docblock line="0">
@@ -1999,7 +1998,7 @@
     </parse_markers>
     <source>eJylVttu2zgQffdXcIEAkQJfmqJPzrZN6ybYAm1RbIO81IVAS2OLG4nUklQuKPLvHVKURF1suLt6sEXO8MzMmQv159siLSaLs7MJOSOfKac7UESnQD4JURDGlaY8BoXSxYTTHFRBYyB/04TF6/cZTeDqUQNXTHC1/guyAqS6mExKBWRFt1tgnGpI1u/hHiRCr79SnV7sF3/TspJ+zLIyt9L1SnAtaazV+pploJ6Uhtx7PaB/y+BhfY2vQj4N1KxwJfICkaSqYqmXlfJ4kC38N03ju0OqN5IyowexNmu7RHKOIdsoXCLVd6hC3DNqxCqqcuPrujxYERJr9GqMl/Pz+QsroKVOhSQNuNgwXpmw4ozFaKGx/fnjDfnktmYk1bpYLhbSaM9zpmdOey7kzp6ORfEk2S7V1eng5Yvz8xn+vJr6hhCp+r+BOOUiEzsGylnnd6R9anvm6LyyyrPFxjAxA58KW6ZxRpUiV/kGEpsiwvIigxy4VsRuTH5ODKpJXD83Zr+QQuM2JORka8psuL3pFktffI+lVRX6QELlCFyMJYXeDQVRQjWtt8sNsky2JbcekyjCY0rLMtaBq/HKsltMSdsjLpAp6VR5L45p6/i08pS8Jt/Jj9Carygzz4lOmZq9UaBvW2uBbzq86Ctb8006XzfE9tQ6/hi1HtE99drdBrUlvq9povHtV4kwi+fJOL8Y3wdkP6iSsIcEKzN4LlO1WIIuJa+0GjOjVjSVOuijH38c9KoqnqCuoj2eOqnxtSm33zYHPBn4euIhj2TRWLZvONoZ3wVdd/xKMclb9bF2oP2aTWzJ4UsdtQeQMYUsmDsKy7fAKghbmAfJNDQUkXnHmoeBw8TM9sBPr+9j1CTcU+jIgd/X4r2wpvg8VLGJXBm0e4zHWZmgyzaQQT1LyMU9VNH6UlEa7hAQeYviDCj3QXHKCqvjRsre3Nt/e02Z54wg2ruNElmp4da1mBPVGpcOR9ksu91Fb541dTSCd7AHbB340ya0O9eMJyDNYotvQW8qhJ1S7kbTK6NjgiGXOpXiQZH1Md8mX4S+FiVPrh5jKEzMR1AyqO2DjNgJamkIWo6GrB5i4VBn/d/8Hu7ag5EdMz/G6Ap7A33oV3cM4Jgw/YMNw8ssq33yWi0vPjBzDSmsOfy2ikwvBqf9z45Tv223JPijlyF4xMGkAgcXhl7cXkc75ZzeAWqBu1TdmdbAc8cUU5Fx3c2BAbKLDplbLlVW7tj2adAkOAtPo+gU/0rO/mVJoFkOQTgl+GUBo4btSEJYc3y5/EcwXvvpCN1z/c/eFKWuBtq0uTXC4Sj6TvwhTn50b6RhUjuzcHD5/X4OK7PkP0WYQAZ6OLXHhuzz5BfMTxPF</source>
   </file>
-  <file path="Helpers/HelperRepository.php" generated-path="Helpers.HelperRepository.html" hash="05155e6d59958ba57acf9166dfd5aa40" package="Default">
+  <file path="Helpers/HelperRepository.php" generated-path="Helpers.HelperRepository.html" hash="43d13a6879a9d44782439032b84a64b4" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -2051,10 +2050,10 @@
           <type>\Illuminate\Contracts\Container\Container</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="48" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="37" package="Radic\BladeExtensions">
         <name>put</name>
         <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::put()</full_name>
-        <docblock line="48">
+        <docblock line="37">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -2069,10 +2068,10 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="53" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="43" package="Radic\BladeExtensions">
         <name>has</name>
         <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::has()</full_name>
-        <docblock line="53">
+        <docblock line="43">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -2082,10 +2081,10 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="58" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="48" package="Radic\BladeExtensions">
         <name>get</name>
         <full_name>\Radic\BladeExtensions\Helpers\HelperRepository::get()</full_name>
-        <docblock line="58">
+        <docblock line="48">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -2104,18 +2103,18 @@
     <parse_markers>
       <error line="31" code="PPC:ERR-50015">Argument $container is missing from the Docblock of __construct</error>
       <error line="31" code="PPC:ERR-50008">No summary for method __construct()</error>
-      <error line="48" code="PPC:ERR-50015">Argument $key is missing from the Docblock of put</error>
-      <error line="48" code="PPC:ERR-50015">Argument $data is missing from the Docblock of put</error>
-      <error line="48" code="PPC:ERR-50008">No summary for method put()</error>
-      <error line="53" code="PPC:ERR-50015">Argument $key is missing from the Docblock of has</error>
-      <error line="53" code="PPC:ERR-50008">No summary for method has()</error>
-      <error line="58" code="PPC:ERR-50015">Argument $key is missing from the Docblock of get</error>
-      <error line="58" code="PPC:ERR-50015">Argument $default is missing from the Docblock of get</error>
-      <error line="58" code="PPC:ERR-50008">No summary for method get()</error>
+      <error line="37" code="PPC:ERR-50015">Argument $key is missing from the Docblock of put</error>
+      <error line="37" code="PPC:ERR-50015">Argument $data is missing from the Docblock of put</error>
+      <error line="37" code="PPC:ERR-50008">No summary for method put()</error>
+      <error line="43" code="PPC:ERR-50015">Argument $key is missing from the Docblock of has</error>
+      <error line="43" code="PPC:ERR-50008">No summary for method has()</error>
+      <error line="48" code="PPC:ERR-50015">Argument $key is missing from the Docblock of get</error>
+      <error line="48" code="PPC:ERR-50015">Argument $default is missing from the Docblock of get</error>
+      <error line="48" code="PPC:ERR-50008">No summary for method get()</error>
       <error line="24" code="PPC:ERR-50007">No summary for property $helpers</error>
       <error line="26" code="PPC:ERR-50007">No summary for property $container</error>
     </parse_markers>
-    <source>eJx9U11P2zAUfc+v8EOlfgjINmkv7YBp0AkkmBDtG0Xo1rlprDp2ZDtj1cR/37XrpKFrsaLIH+eee+659rfLqqiSdDRK2Ig9gHFM58wVyK4gz1EocJixh5sHVgFfwwrtGQE99v52zu4ER2WRgcoY19XGiFXhmFC5NiU4oRVb1iqTxPAqXEG0wjY8hApp7m6vpr9mU5YLiUSbJgpKtARC9giZ4IsfEjKc/nGUiAjt4gZlhcZOkqSmzLdS1mVQubjSyhngzoYZCIVmN5vso2d1VWnjFnMDgkLugRsNS4nEG82Ye7X0eZXbpI9YaSucNpvGhO9NNXEclByAULtCmwb3zt1r/M3mCGXA7Wzc4trlgA/Zl0+fv550Y0OIjF2Io3CusuM0dTIzElcgz7gu0whKS+FOm4BOC4P1XIK1/9Wa/E08rfev65Lfq4x2yH0NvaJty94B37UgHAV3/SDlQhVohLvWPG6l2+h6SRJZXiseLtHLC5FYZ2ruBm1HO8zDELWV6UfPX7TTi/acnb+TsQeLymnjnD2x5ygzAJojOmg3/ehLrat+mJ5fsDta/KSLR16Nx8HDk/doLJeY9SN66hczR/cGzWF4CWad6VfV9/D7uDgCFUrkAs0WGhcR2iK7JdHLROAFG7S1gWU9/+Y8Qy8EDjtWdnyqajcIyJOOm6cXJaxxEAOHO3Pfku3/YEMD1Ro3xJSBgyP9iwqfmIeyZ99Fj558xFyADcz7lAZdbRQ9Z4uU+iD/8EPiFe4kYw61dKRH1VIeydTkaPSwy2NljVvGRsBb8g8LlKxW</source>
+    <source>eJx9UsFu2zAMvfsreMghCdp6G7BLu67D0gAN0A5Bm1tTFIxMx0JlyZCobcHQf6+k2EmaJSV8kMXH9x5JfbtqqibLh8MMhjBFy2BK4IpghGVJUiNTAdObKTQoXnBJ7iwAI/ZuMoNbKUg7AtQFCNOsrFxWDFKXxtbI0mhYeF2owPBHchVopet4AirJ3E5G418PYyilokCbZxprcgFEcI+FFPOfCgsa/+UgFAjd/IZUQ9ZdZJkPyhOlfJ1czkdGs0XBLp1QarLb08U++sE3jbE8n1mUoeQOhTW4UBR422HMotvwRZdr0XtqjJNs7Kobwo+umzYOWk5A9FwZ2+HeTfeafsOMsE647RjXuM1vXwzgy6fPX092a1OJarfQRsXcuPM8Z1VYRUtUZ8LUeQvKa8mnXcHOCtPohULn/us1+5dF2ji/3SnFu8YaJhF76FWbtewlxHYFKZWmGyM4l7oiK/naiPYqX1f7RbAIpdciPaLn50Di2HrB/c1Gd5gHqWptM0YvPrTT75s8XL6zsQdrnYeLS3iEp3X+NTvopPHc773Q6gR6BTJ2wkcoHyFi4SnqR/iH1BW6RL3fjCX2VoeH6ChoH+QffEi8pK1nKtErDn60V+qIUqfR+YGrY22dbxg7A6/ZG7vjVj4=</source>
   </file>
   <file path="Helpers/LoopFactory.php" generated-path="Helpers.LoopFactory.html" hash="8b656965572c2a45a004b0a5f867bd3a" package="Default">
     <docblock line="0">

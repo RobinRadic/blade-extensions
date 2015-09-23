@@ -147,7 +147,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected function registerHelpers()
     {
 
-        $this->app->singleton('blade.helpers', function(Application $app){
+        $this->app->singleton('blade.helpers', function (Application $app) {
             $helpers = new Helpers\HelperRepository($app);
 
             $helperClasses = [
@@ -156,11 +156,11 @@ class BladeExtensionsServiceProvider extends ServiceProvider
                 'minifier' => Helpers\Minifier::class
             ];
 
-            if($app['config']['blade_extensions.markdown.enabled']){
+            if ($app['config']['blade_extensions.markdown.enabled']) {
                 $helperClasses['markdown'] = Helpers\Markdown::class;
             }
 
-            foreach($helperClasses as $name => $class){
+            foreach ($helperClasses as $name => $class) {
                 $helpers->put($name, $app->make($class));
             }
 
