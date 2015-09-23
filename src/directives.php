@@ -105,7 +105,7 @@ $1<?php echo app("blade.helpers")->$2($3); ?>
 EOT
     ],
     'macrodef'     => [
-        'pattern'     => '/(?<!\w)(\s*)@macrodef(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"],(.*)\)/',
+        'pattern'     => '/(?<!\w)(\s*)@macrodef(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"](?:,|)(.*)\)/',
         'replacement' => <<<'EOT'
 $1<?php app("blade.helpers")->macro("$2", function($3){ ?>
 EOT
