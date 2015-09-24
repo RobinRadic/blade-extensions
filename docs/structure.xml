@@ -1482,7 +1482,7 @@
     </parse_markers>
     <source>eJzNVttu4zYQffdXzAbBSk7tqLtAXzaO020abFLERdDkzdIatERb3EikQFKOjcT/3iF1ieRL4n0pShiwRM6ZOZw5Q2pwkcVZxzs56cAJ3BGpQcxAxxQuyWxGGSeaRnB3fQcZCR/JnKpTNDS2o5sHuGUh5YoC4RGEIltJNo81MD4TMiWaCQ7TnEcJenhiOka3TFV+0MqGub25vPr7/gpmLKHo1utwklKFRhT+IREL/T8SEtGrpcZA6FD51zTJqFRnnYr0g/GKP+NtxDibMSorkr9X0cqx06U1JLmOhazsWrv/ky7ggZLU2r1us7CrX92wC59//fRbr4m1kKTMUjlirTP1xfN0EsmEzklyGorUK428lOl+BWik2KYmTIhS9R47zx3jzmbBDIy0ILJ89ux/JoWmodnDsV5lFHO2gRAZ5eVz7SQjkqQFoO0snyIxmOU8tKU1WNeade16QceMY1Po/tAswTloyVJXaalFIp6oLCHds9pcTCdKo/Lccm69RTNMhHqbjLVwt4iEIjIUMMKc6kmYUMLdRmQaxqJim5q0rtwG916Bb9i3N8bzJNnHuPD2fmrrOROpnpNU55IDJo3x+Z6K1luviTcobxUE1xRSHjuxThOnB06olPn7oZyglIUZbAbuB8YnREry6tKie1jIHOvWcFu7vtcSnbM0SzC4a/xWqEbyzNCxFE/A6RP4N3xBEhZ9lfM8pVxfLUOamf24RxvtWQsej5g8iYALXe4ZViI3sxGSxEeIyYJyR4PKaGgQERCwQcBwOYVvDNe/wPjZclsHp/A1MZqM6jncyDo4apBet3NzXJT+/ByKRG5moyxcqRPs6wyPtVFZoA0xrYEmim54NWWBjx/BtvqELpnSynVGRKNHokaoOEb9wqF/eX/vbNWjZGDOW9fmeS+2JNTtD+mShrmm7nvkfvw33P46hNqexBtcs3qNGr52Z91n5aFfnchzJJZP7XG8EiGq0jNF7rd6uWrYojfhGPWVU3v3hIKjZLWqLtAFwy0W11o7asl1KkTyXm+r2Ei+EpCNtdnbpkaZpPMJ3rhh7DqeemQZUvZMDzYQ1Xh5gZb5wKBfNF3iEUxJ92CYCiXL9Pi7f3ExDE6G4+8D3yvmhsGhTqzJuXv04jtd9/Sk644heP7cWxcvdnqXqz26mhHUxWE6MUfZtkzaKsG7PUW2qviyuH4Y3YLIdZZrmFL8wKGgyMJIgOn/lawOuzQ2jqa9yipPsl063LoJJM0S892G10xrwQwUzId+H9UyDrC2F118CoJ+f+jhkXI+BMfp7YL45uPUczZXwEIGZhF2An3ujv37oLsNNUA4/rQbJXeFqlB7Av08RL8F2b0f+OXnMUNfDXajDGY4cFqY4GxXm9hmLcvqbsWwHwmTR7pSblX77jaTwspK5k27QlWt6UMPfYvcbud1518LXHLM</source>
   </file>
-  <file path="Helpers/EmbedStack.php" generated-path="Helpers.EmbedStack.html" hash="da01137fbfaae1f1039c9264fa88d1bc" package="Default">
+  <file path="Helpers/EmbedStack.php" generated-path="Helpers.EmbedStack.html" hash="bd03012baf0074f84907e8fe5f6631be" package="Default">
     <docblock line="0">
       <description>Manages the Loop instances</description>
       <long-description></long-description>
@@ -1490,7 +1490,7 @@
     </docblock>
     <namespace-alias name="Path">\Caffeinated\Beverage\Path</namespace-alias>
     <namespace-alias name="Str">\Caffeinated\Beverage\Str</namespace-alias>
-    <namespace-alias name="Filesystem">\Illuminate\Contracts\Filesystem\Filesystem</namespace-alias>
+    <namespace-alias name="Filesystem">\Caffeinated\Beverage\Filesystem</namespace-alias>
     <namespace-alias name="Factory">\Illuminate\Contracts\View\Factory</namespace-alias>
     <namespace-alias name="BladeCompiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
     <namespace-alias name="Stack">\Radic\BladeExtensions\Contracts\Stack</namespace-alias>
@@ -1616,7 +1616,7 @@
         <argument line="0" by_reference="false">
           <name>$files</name>
           <default></default>
-          <type>\Illuminate\Contracts\Filesystem\Filesystem</type>
+          <type>\Caffeinated\Beverage\Filesystem</type>
         </argument>
         <argument line="0" by_reference="false">
           <name>$bladeCompiler</name>
@@ -1996,7 +1996,7 @@
       <error line="39" code="PPC:ERR-50007">No summary for property $content</error>
       <error line="41" code="PPC:ERR-50007">No summary for property $_data</error>
     </parse_markers>
-    <source>eJylVttu2zgQffdXcIEAkQJfmqJPzrZN6ybYAm1RbIO81IVAS2OLG4nUklQuKPLvHVKURF1suLt6sEXO8MzMmQv159siLSaLs7MJOSOfKac7UESnQD4JURDGlaY8BoXSxYTTHFRBYyB/04TF6/cZTeDqUQNXTHC1/guyAqS6mExKBWRFt1tgnGpI1u/hHiRCr79SnV7sF3/TspJ+zLIyt9L1SnAtaazV+pploJ6Uhtx7PaB/y+BhfY2vQj4N1KxwJfICkaSqYqmXlfJ4kC38N03ju0OqN5IyowexNmu7RHKOIdsoXCLVd6hC3DNqxCqqcuPrujxYERJr9GqMl/Pz+QsroKVOhSQNuNgwXpmw4ozFaKGx/fnjDfnktmYk1bpYLhbSaM9zpmdOey7kzp6ORfEk2S7V1eng5Yvz8xn+vJr6hhCp+r+BOOUiEzsGylnnd6R9anvm6LyyyrPFxjAxA58KW6ZxRpUiV/kGEpsiwvIigxy4VsRuTH5ODKpJXD83Zr+QQuM2JORka8psuL3pFktffI+lVRX6QELlCFyMJYXeDQVRQjWtt8sNsky2JbcekyjCY0rLMtaBq/HKsltMSdsjLpAp6VR5L45p6/i08pS8Jt/Jj9Carygzz4lOmZq9UaBvW2uBbzq86Ctb8006XzfE9tQ6/hi1HtE99drdBrUlvq9povHtV4kwi+fJOL8Y3wdkP6iSsIcEKzN4LlO1WIIuJa+0GjOjVjSVOuijH38c9KoqnqCuoj2eOqnxtSm33zYHPBn4euIhj2TRWLZvONoZ3wVdd/xKMclb9bF2oP2aTWzJ4UsdtQeQMYUsmDsKy7fAKghbmAfJNDQUkXnHmoeBw8TM9sBPr+9j1CTcU+jIgd/X4r2wpvg8VLGJXBm0e4zHWZmgyzaQQT1LyMU9VNH6UlEa7hAQeYviDCj3QXHKCqvjRsre3Nt/e02Z54wg2ruNElmp4da1mBPVGpcOR9ksu91Fb541dTSCd7AHbB340ya0O9eMJyDNYotvQW8qhJ1S7kbTK6NjgiGXOpXiQZH1Md8mX4S+FiVPrh5jKEzMR1AyqO2DjNgJamkIWo6GrB5i4VBn/d/8Hu7ag5EdMz/G6Ap7A33oV3cM4Jgw/YMNw8ssq33yWi0vPjBzDSmsOfy2ikwvBqf9z45Tv223JPijlyF4xMGkAgcXhl7cXkc75ZzeAWqBu1TdmdbAc8cUU5Fx3c2BAbKLDplbLlVW7tj2adAkOAtPo+gU/0rO/mVJoFkOQTgl+GUBo4btSEJYc3y5/EcwXvvpCN1z/c/eFKWuBtq0uTXC4Sj6TvwhTn50b6RhUjuzcHD5/X4OK7PkP0WYQAZ6OLXHhuzz5BfMTxPF</source>
+    <source>eJylVttu2zgQffdXcIEAkQJfmqJPzrZN6ybYAm1RbIO81IVAS2OLG4nUklQuKPLvHVKURF1suLt6sEXO8MzMmQv159siLSaLs7MJOSOfKac7UESnQD4JURDGlaY8BoXSxYTTHFRBYyB/04TF6/cZTeDqUQNXTHC1/guyAqS6mExKBWRFt1tgnGpI1u/hHiRCr79SnV7sF3/T8oD0mmWgnpSGvFL6mGVlbpXWK8G1pLFW61sGD+trfBXyaaBmhSuRF4gkVRVAvayUxyNr4b9pGt8dUr2RlBk9iLVZ2yUycgzDRuES+b1DFeKeUSNWUZUbX9eRb0XIl9GrMV7Oz+cvrICWOhWSNOBiw3hlwoozFqOFxvbnjzfkk9uakVTrYrlYSKM9z5meOe25kDt7OhbFk2S7VFeng5cvzs9n+PNq6htCpOr/BuKUi0zsGChnnd+R9qntmaPzyirPFhvDxAx8KmxtxhlVilzlG0hsigjLiwxy4FoRuzH5OTGoJnH93Jj9QgqN25CQk60ps+H2plssffE9llZV3QMJlSNwMZYUejcURAnVtN4uN8gy2ZbcekyiCI8pLctYB67GK8tuMSVtj7hApqRT5b04pq3j08pT8pp8Jz9Ca76izDwnOmVq9kaBvm2tBb7p8KKvbM036XzdENtT6/hj1HpE99RrdxvUlvi+ponGt18lwiyeJ+P8YnwfkP2gSsIeEqzM4LlM1WIJupS80mrMjFrRVOqgj378cdCrqniCuor2eOqkxtem3H7bHPBk4OuJhzySRWPZvuE8Z3wXdN3xK8Ukb9XH2oH2azaxJYcvddQeQMYUsmAuJizfAqsgbGEeJNPQUETmHWseBg4TM9sDP72+j1GTcE+hIwd+X4v3wpri81DFJnJl0O4xHmdlgi7bQAb1LCEX91BF60tFabhDQOQtijOg3AfFKSusjhspe3Nv/+01ZZ4zgmjvNkpkpYZb12JOVGtcOhxls+x2F7151tTRCN7BHrB14E+b0O5cM56ANIstvgW9qRB2SrkbTa+MjgmGXOpUigdF1qPfGu2wta9fhL4WJU+uHmMoTMxHUDKo7YOM2AlqaQhajoasHmLhUGf93/we7tqDkR0zP8boCnsDfehXdwzgmDD9gw3DyyyrffJaLS8+MHMNKaw5/LaKTC8Gp/3PjlO/bbck+KOXIXjEwaQCBxeGXtxeRzvlnN4BaoG7VN2Z1sBzxxRTkXHdzYEBsosOmVsuVVbu2PZp0CQ4C0+j6BT/Ss7+ZUmgWQ5BOCX4ZQGjhu1IQlhzfLn8RzBe++kI3XP9z94Upa4G2rS5NcLhKPpO/CFOfnRvpGFSO7NwcPn9fg4rs+Q/RZhABno4tceG7PPkFw9iDuo=</source>
   </file>
   <file path="Helpers/HelperRepository.php" generated-path="Helpers.HelperRepository.html" hash="43d13a6879a9d44782439032b84a64b4" package="Default">
     <docblock line="0">
