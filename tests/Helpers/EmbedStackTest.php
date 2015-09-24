@@ -78,8 +78,8 @@ EOT;
     {
         $this->stack = new EmbedStack(
             $this->vf = m::mock('Illuminate\Contracts\View\Factory'),
-            $this->fs = m::mock('Illuminate\\Contracts\\Filesystem\\Filesystem'),
-            $this->bc = m::mock('Illuminate\\View\\Compilers\\BladeCompiler'),
+            $this->fs = m::mock('Caffeinated\Beverage\Filesystem'),
+            $this->bc = m::mock('Illuminate\View\Compilers\BladeCompiler'),
             $viewPath = 'embed',
             $vars = [ 'var1' => 'val1', 'var2', 'val2' ]
         );

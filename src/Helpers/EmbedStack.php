@@ -6,7 +6,7 @@ namespace Radic\BladeExtensions\Helpers;
 
 use Caffeinated\Beverage\Path;
 use Caffeinated\Beverage\Str;
-use Illuminate\Contracts\Filesystem\Filesystem;
+use Caffeinated\Beverage\Filesystem;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Compilers\BladeCompiler;
 use Radic\BladeExtensions\Contracts\Stack;
