@@ -26,18 +26,18 @@
 
 
 ## 6.0 Released
-[**Rewritten and fully updated documentation.**](http://robin.radic.nl/blade-extensions)
-Major improvements - Added and updated tests. 
-[**Upgrade guide & Changelog**](http://robin.radic.nl/blade-extensions/changelog-upgrade-guide.html)
-[**Go to documentation website.**](http://robin.radic.nl/blade-extensions)
-[**Go to git markdown docs.**](blob/master/docs/index.md)
-[**Test coverage.**](http://robin.radic.nl/blade-extensions/coverage)
+- [**Rewritten and fully updated documentation.**](http://robin.radic.nl/blade-extensions)   
+- Major improvements - Added and updated tests.     
+- [**Upgrade guide & Changelog**](http://robin.radic.nl/blade-extensions/changelog-upgrade-guide.html)   
+- [**Go to documentation website.**](http://robin.radic.nl/blade-extensions)  
+- [**Go to git markdown docs.**](blob/master/docs/index.md)  
+- [**Test coverage.**](http://robin.radic.nl/blade-extensions/coverage)  
 
 
   
 ###### Composer
 ```JSON
-"radic/blade-extensions": "~5.0"
+"radic/blade-extensions": "~6.0"
 ```
 
 ###### Laravel
