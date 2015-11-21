@@ -20,18 +20,18 @@ EOT
     'debug'      => [
         'pattern'     => '/(?<!\\w)(\\s*)@debug(?:\\s*)\\((?:\\s*)([^()]+)*\\)/',
         'replacement' => <<<'EOT'
-$1<h1>DEBUG OUTPUT:</h1>
-<pre><code>
+$1<small>DEBUG OUTPUT:</small>
     <?php
     if(class_exists('Kint')) {
         Kint::dump($2);
     } elseif(class_exists('Illuminate\Support\Debug\HtmlDumper')){
         \Illuminate\Support\Debug\HtmlDumper::dump($2);
     } else {
+        echo '<pre><code>';
         var_dump($2);
+        echo '</code></pre>';
     }
     ?>
-</code></pre>
 EOT
     ],
     'breakpoint' => [

@@ -24,7 +24,7 @@ use Radic\BladeExtensions\Traits\SectionsTrait;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class EmbedStack implements Stack
+class EmbedStack implements Stack, Factory
 {
     use SectionsTrait;
 
@@ -140,5 +140,92 @@ class EmbedStack implements Stack
         $path   = Path::join($tmpDir, $name);
         $this->files->delete($path);
         return $this;
+    }
+
+
+    /**
+     * Determine if a given view exists.
+     *
+     * @param  string $view
+     * @return bool
+     */
+    public function exists($view)
+    {
+        return call_user_func_array([$this->viewFactory, 'exists'], func_get_args());
+    }
+
+    /**
+     * Get the evaluated view contents for the given path.
+     *
+     * @param  string $path
+     * @param  array  $data
+     * @param  array  $mergeData
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function file($path, $data = [ ], $mergeData = [ ])
+    {
+        return call_user_func_array([$this->viewFactory, 'file'], func_get_args());
+    }
+
+    /**
+     * Get the evaluated view contents for the given view.
+     *
+     * @param  string $view
+     * @param  array  $data
+     * @param  array  $mergeData
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function make($view, $data = [ ], $mergeData = [ ])
+    {
+        return call_user_func_array([$this->viewFactory, 'make'], func_get_args());
+    }
+
+    /**
+     * Add a piece of shared data to the environment.
+     *
+     * @param  array|string $key
+     * @param  mixed        $value
+     * @return mixed
+     */
+    public function share($key, $value = null)
+    {
+        return call_user_func_array([$this->viewFactory, 'share'], func_get_args());
+    }
+
+    /**
+     * Register a view composer event.
+     *
+     * @param  array|string    $views
+     * @param  \Closure|string $callback
+     * @param  int|null        $priority
+     * @return array
+     */
+    public function composer($views, $callback, $priority = null)
+    {
+        return call_user_func_array([$this->viewFactory, 'composer'], func_get_args());
+    }
+
+    /**
+     * Register a view creator event.
+     *
+     * @param  array|string    $views
+     * @param  \Closure|string $callback
+     * @return array
+     */
+    public function creator($views, $callback)
+    {
+        return call_user_func_array([$this->viewFactory, 'creator'], func_get_args());
+    }
+
+    /**
+     * Add a new namespace to the loader.
+     *
+     * @param  string       $namespace
+     * @param  string|array $hints
+     * @return void
+     */
+    public function addNamespace($namespace, $hints)
+    {
+        return call_user_func_array([$this->viewFactory, 'addNamespace'], func_get_args());
     }
 }
