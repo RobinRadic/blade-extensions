@@ -20,7 +20,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.5.9",
-        "caffeinated/beverage": "~3.0"
+        "caffeinated/beverage": "~3.0.2"
     },
     "suggest": {
         "raveren/kint": "Improved @debug output (1.0.*)",

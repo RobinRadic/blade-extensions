@@ -28,16 +28,34 @@ class EmbedStack implements Stack, Factory
 {
     use SectionsTrait;
 
+    /**
+     * @var \Caffeinated\Beverage\Filesystem
+     */
     protected $files;
 
+    /**
+     * @var \Illuminate\View\Compilers\BladeCompiler
+     */
     protected $bladeCompiler;
 
+    /**
+     * @var
+     */
     protected $viewPath;
 
+    /**
+     * @var array
+     */
     protected $vars;
 
+    /**
+     * @var
+     */
     protected $content;
 
+    /**
+     * @var
+     */
     protected $_data;
 
     public function __construct(Factory $viewFactory, Filesystem $files, BladeCompiler $bladeCompiler, $viewPath, $vars = [ ])
