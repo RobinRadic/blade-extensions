@@ -8,7 +8,7 @@
 namespace Radic\BladeExtensions\Renderers;
 
 use Illuminate\View\Compilers\BladeCompiler;
-use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Filesystem\Filesystem;
 
 /**
  * This is the BladeStringRenderer.
