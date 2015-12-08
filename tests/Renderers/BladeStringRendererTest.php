@@ -40,7 +40,7 @@ class BladeStringRendererRendererTest extends TestCase
     {
         $this->bs = new BladeStringRenderer(
             $this->bc = m::mock('Illuminate\\View\\Compilers\\BladeCompiler'),
-            $this->fs = m::mock('Illuminate\\Contracts\\Filesystem\\Filesystem')
+            $this->fs = m::mock('Illuminate\\Filesystem\\Filesystem')
         );
     }
 
