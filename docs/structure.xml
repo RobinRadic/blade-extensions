@@ -425,7 +425,7 @@
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="ServiceProvider">\Caffeinated\Beverage\ServiceProvider</namespace-alias>
+    <namespace-alias name="ServiceProvider">\Sebwite\Support\ServiceProvider</namespace-alias>
     <namespace-alias name="Exception">\Exception</namespace-alias>
     <namespace-alias name="Application">\Illuminate\Contracts\Foundation\Application</namespace-alias>
     <namespace-alias name="CompilerEngine">\Illuminate\View\Engines\CompilerEngine</namespace-alias>
@@ -441,7 +441,7 @@
     <namespace-alias name="PhpMarkdownEngine">\Radic\BladeExtensions\Engines\PhpMarkdownEngine</namespace-alias>
     <namespace-alias name="BladeStringRenderer">\Radic\BladeExtensions\Renderers\BladeStringRenderer</namespace-alias>
     <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="34" package="Radic\BladeExtensions">
-      <extends>\Caffeinated\Beverage\ServiceProvider</extends>
+      <extends>\Sebwite\Support\ServiceProvider</extends>
       <name>BladeExtensionsServiceProvider</name>
       <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider</full_name>
       <docblock line="34">
@@ -475,7 +475,7 @@
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="45" package="Radic\BladeExtensions">
         <name>$providers</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::providers</full_name>
-        <default>array(\Caffeinated\Beverage\BeverageServiceProvider::class)</default>
+        <default>array(\Sebwite\Support\BeverageServiceProvider::class)</default>
         <docblock line="45">
           <description></description>
           <long-description></long-description>
@@ -897,7 +897,7 @@
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="Str">\Caffeinated\Beverage\Str</namespace-alias>
+    <namespace-alias name="Str">\Sebwite\Support\Str</namespace-alias>
     <namespace-alias name="Container">\Illuminate\Contracts\Container\Container</namespace-alias>
     <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="22" package="Radic\BladeExtensions\Helpers">
       <extends/>
@@ -1488,9 +1488,9 @@
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="Path">\Caffeinated\Beverage\Path</namespace-alias>
-    <namespace-alias name="Str">\Caffeinated\Beverage\Str</namespace-alias>
-    <namespace-alias name="Filesystem">\Caffeinated\Beverage\Filesystem</namespace-alias>
+    <namespace-alias name="Path">\Sebwite\Support\Path</namespace-alias>
+    <namespace-alias name="Str">\Sebwite\Support\Str</namespace-alias>
+    <namespace-alias name="Filesystem">\Sebwite\Support\Filesystem</namespace-alias>
     <namespace-alias name="Factory">\Illuminate\Contracts\View\Factory</namespace-alias>
     <namespace-alias name="BladeCompiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
     <namespace-alias name="Stack">\Radic\BladeExtensions\Contracts\Stack</namespace-alias>
@@ -1617,7 +1617,7 @@
         <argument line="0" by_reference="false">
           <name>$files</name>
           <default></default>
-          <type>\Caffeinated\Beverage\Filesystem</type>
+          <type>\Sebwite\Support\Filesystem</type>
         </argument>
         <argument line="0" by_reference="false">
           <name>$bladeCompiler</name>
@@ -4565,8 +4565,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="38">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="38" description="" type="\Caffeinated\Beverage\Filesystem" variable="">
-            <type>\Caffeinated\Beverage\Filesystem</type>
+          <tag name="var" line="38" description="" type="\Sebwite\Support\Filesystem" variable="">
+            <type>\Sebwite\Support\Filesystem</type>
           </tag>
         </docblock>
       </property>
@@ -4655,8 +4655,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="104">
           <description>get files value</description>
           <long-description></long-description>
-          <tag name="return" line="104" description="" type="\Caffeinated\Beverage\Filesystem">
-            <type>\Caffeinated\Beverage\Filesystem</type>
+          <tag name="return" line="104" description="" type="\Sebwite\Support\Filesystem">
+            <type>\Sebwite\Support\Filesystem</type>
           </tag>
         </docblock>
       </method>
@@ -4666,8 +4666,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="115">
           <description>Set the files value</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="\Caffeinated\Beverage\Filesystem" variable="$files">
-            <type>\Caffeinated\Beverage\Filesystem</type>
+          <tag name="param" line="115" description="" type="\Sebwite\Support\Filesystem" variable="$files">
+            <type>\Sebwite\Support\Filesystem</type>
           </tag>
           <tag name="return" line="115" description="" type="\Radic\BladeExtensions\Renderers\BladeStringRenderer">
             <type>\Radic\BladeExtensions\Renderers\BladeStringRenderer</type>
@@ -4676,7 +4676,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <argument line="0" by_reference="false">
           <name>$files</name>
           <default></default>
-          <type>\Caffeinated\Beverage\Filesystem</type>
+          <type>\Sebwite\Support\Filesystem</type>
         </argument>
       </method>
     </class>

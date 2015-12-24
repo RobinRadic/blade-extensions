@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions;
 
-use Caffeinated\Beverage\ServiceProvider;
+use Sebwite\Support\ServiceProvider;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\View\Engines\CompilerEngine;
@@ -41,8 +41,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      * {@inheritDoc}
      */
     protected $dir = __DIR__;
-
-    protected $providers = [ \Caffeinated\Beverage\BeverageServiceProvider::class ];
 
     protected $provides = [ 'blade.helpers', 'blade.string' ];
 

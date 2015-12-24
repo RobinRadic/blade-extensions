@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions\Helpers;
 
-use Caffeinated\Beverage\Str;
+use Sebwite\Support\Str;
 use Illuminate\Contracts\Container\Container;
 
 /**
