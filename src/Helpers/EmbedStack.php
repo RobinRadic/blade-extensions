@@ -4,9 +4,9 @@
  */
 namespace Radic\BladeExtensions\Helpers;
 
-use Caffeinated\Beverage\Path;
-use Caffeinated\Beverage\Str;
-use Caffeinated\Beverage\Filesystem;
+use Sebwite\Support\Path;
+use Sebwite\Support\Str;
+use Sebwite\Support\Filesystem;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Compilers\BladeCompiler;
 use Radic\BladeExtensions\Contracts\Stack;

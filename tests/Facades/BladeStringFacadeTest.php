@@ -6,7 +6,7 @@
  */
 namespace Radic\Tests\BladeExtensions\Facades;
 
-use Caffeinated\Dev\Testing\Traits\FacadeTester;
+use Sebwite\Testbench\Traits\FacadeTester;
 use Radic\BladeExtensions\Facades\BladeString;
 use Radic\Tests\BladeExtensions\TestCase;
 

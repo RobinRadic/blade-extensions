@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
-use Caffeinated\Dev\Testing\Traits\ServiceProviderTester;
+use Sebwite\Testbench\Traits\ServiceProviderTester;
 
 /**
  * Class ViewTest

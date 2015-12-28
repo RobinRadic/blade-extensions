@@ -419,13 +419,13 @@
     </parse_markers>
     <source>eJzVVm1v2zYQ/u5fcQGMSjJsuRmwL3HrpOvWIUC7DUGwL1HhMtLZJiJTGkklDVb/9x0pSqJkZ1uGDsP0IZF5L88998LTq/NyW47mk8kIJvAmyxQwAUozzVNYVyLVvBDwiWnN0u0n0Fumga8hZXmO2RQeeJ4DF6QvUs40knEG+BnTyryTrHFBbhXc5ixDEmsUmSK8+UiwHaqSpQhXLONp8p3R+MEoKGOUXEvGtVqMRpVCuMzzascFwSTvikpkzDhO3pRlzlP7Tnr/DREDeUE07tgGwXuOkrLK9yjND1/5m/g0fmmFrNLbQkLPU3HLRe3PqhBlctcD+3B5De/d8Qy2Wpdn87k0FvGO65mziAu5sR7SonyUfLPVXgQvT09n9Ofb6RE8cQf9p0EwmnGNI/K5Tc0Mfba20tpUErpUZChtcUe/j0bGmy2ceah4ApiU7BGKNeyQUkG1tPVS26LKM7g1qU/zKkN6f4S6pM648XFxz2TtxZ3M7f+yuqU8wJiiTO9yrvTib6D/RE0Kr5eQcYnUA/d4hSXZ4w6Ffh5s60E53EPBO57jQFhQs0ietUZesJf/sGP7QZdMsh14gwRjVpZwvUVIKymJJrBOeIzZcM7qmoRDl5G1cRV3VOqcJd5w/8rxIXlb7EpKhVT1+DQ/bemIiYM3jzuxz2sLM1vu2B2GgRXEqTMNokVnkxZizTdHbGpBXzdnSjX+BT44touOBl0k4QlXCnVYa8+W/YpGEbH2h+e4Gvlfrb6/vFqtIIZgHsfzTh7TPR10Ue1HvQTU3WwC7IfRiiI4h4NDOGsyMVtuyKrO2Kqb3rhV7WWki+oAsBP5iJ7BWS/da2KtgsjCX+FvFek9lUIPv52IQ8KtyIfv9P+ScKsaTOEGPkZeldeFROpqCD18Gq1xfUuYG6IVDMttG6SJtON10xp/POgQ81ComosKFz3J/sC1c9yg30BQ0gSiFMETjo/H0LMzc3HU4fODkd19+eyA+raDoPrCpwLbHyuh15GmhsLd8d35wcQ2ZYag1QloTKt0zaUiwsZFtDhIB+VjZTdCOPaG8cUL+tpozo3l1BvjKWhZmTvjyxc4cUuIepQkyvX5tAnnWW3T51Nv6mW9E8L26g7H9ywndDCfXEO4qZegqR3kqXMU+dd680jUlRTtGDonDsH31WuwgaBf5AHqgGLkX5CO9HBn/oiaPieQgttUOa0e/FxKVPZrjNoDGGxQoKRtZhdPu9Pi41uTloHkYgPjRq+VO/K1/NjSbFOeUlNq/MB0ukUZtp6abTnIZjAPz1+dJA9RmKhJdGF6sDUxa8McJ2E8SaJo7hbG/n+ThJ9LFF87EVHyJ4l4a2GJMDUZffHWdHd1BP86218M5tek6xHdj/4AFA0RCg==</source>
   </file>
-  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="2d073ac7dab385eb8a9dba6018adca61" package="Default">
+  <file path="BladeExtensionsServiceProvider.php" generated-path="BladeExtensionsServiceProvider.html" hash="83c2577e71489011566accf32c000efe" package="Default">
     <docblock line="0">
       <description>A laravel service provider to register the class into the the IoC container</description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="ServiceProvider">\Caffeinated\Beverage\ServiceProvider</namespace-alias>
+    <namespace-alias name="ServiceProvider">\Sebwite\Support\ServiceProvider</namespace-alias>
     <namespace-alias name="Exception">\Exception</namespace-alias>
     <namespace-alias name="Application">\Illuminate\Contracts\Foundation\Application</namespace-alias>
     <namespace-alias name="CompilerEngine">\Illuminate\View\Engines\CompilerEngine</namespace-alias>
@@ -441,7 +441,7 @@
     <namespace-alias name="PhpMarkdownEngine">\Radic\BladeExtensions\Engines\PhpMarkdownEngine</namespace-alias>
     <namespace-alias name="BladeStringRenderer">\Radic\BladeExtensions\Renderers\BladeStringRenderer</namespace-alias>
     <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="34" package="Radic\BladeExtensions">
-      <extends>\Caffeinated\Beverage\ServiceProvider</extends>
+      <extends>\Sebwite\Support\ServiceProvider</extends>
       <name>BladeExtensionsServiceProvider</name>
       <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider</full_name>
       <docblock line="34">
@@ -475,7 +475,7 @@
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="45" package="Radic\BladeExtensions">
         <name>$providers</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::providers</full_name>
-        <default>array(\Caffeinated\Beverage\BeverageServiceProvider::class)</default>
+        <default>array(\Sebwite\Support\SupportServiceProvider::class)</default>
         <docblock line="45">
           <description></description>
           <long-description></long-description>
@@ -507,40 +507,40 @@
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="90" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="93" package="Radic\BladeExtensions">
         <name>register</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::register()</full_name>
-        <docblock line="90">
+        <docblock line="93">
           <description>{@inheritDoc}</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="136" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions" line="142" package="Radic\BladeExtensions">
         <name>provides</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::provides()</full_name>
-        <docblock line="136">
+        <docblock line="142">
           <description></description>
           <long-description></long-description>
-          <tag name="inheritDoc" line="136" description=""/>
+          <tag name="inheritDoc" line="142" description=""/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions" line="147" package="Radic\BladeExtensions">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Radic\BladeExtensions" line="153" package="Radic\BladeExtensions">
         <name>registerHelpers</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::registerHelpers()</full_name>
-        <docblock line="147">
+        <docblock line="153">
           <description></description>
           <long-description></long-description>
         </docblock>
       </method>
     </class>
     <parse_markers>
-      <error line="136" code="PPC:ERR-50008">No summary for method provides()</error>
-      <error line="147" code="PPC:ERR-50008">No summary for method registerHelpers()</error>
+      <error line="142" code="PPC:ERR-50008">No summary for method provides()</error>
+      <error line="153" code="PPC:ERR-50008">No summary for method registerHelpers()</error>
       <error line="45" code="PPC:ERR-50007">No summary for property $providers</error>
       <error line="47" code="PPC:ERR-50007">No summary for property $provides</error>
       <error line="49" code="PPC:ERR-50007">No summary for property $bindings</error>
     </parse_markers>
-    <source>eJy1WG1PKjkU/s6v6GZJBgzgvZvsF1xcvb5kTa5Zozf7RQwpM4VpHNpJW1Bj/O97+jaUzqDg7p1EYNrznJf29Dyn/vFnmZetw4ODFjpAp6jAAq9IgSQRK5oSVAq+ohkRSHEkyJxKpX/nBKUFlhJRBuP6Vf9d8TOUcqYwZUSAusMWwwsiSwx6bnFG0/G3Amfk4lkRJiln8qjVWkqCzvBsRijDimTjb2RFBJ6T8Z114MbZPzKSF88pKRVA7etVUSwXBjg+A7sCp0qOL/mSZVgLjU/LsqApbgT8Q8nT+ILNwVcJ6EVJCyLsu5Vt9LiSlONrLB4z/sT8yHuocypIqugKTJ1KSedsQZhaD+4IPSfT5Xxv1MViSrKMsv2Rl1wQnOZ7465xKvgnUHY99wdSRmcvu8H8hptxb/HjXfewm7zcHXRLGCSuThUzc6cEbIIfhNT/KWdOazyBE/cIZwi5p9E9IwhnTb94wd8GXwdfzAReqpwLVGngU8qsHjMNpwrUVAaur36g726oj3KlyuHhodDSgwVVfSc94GJu0CkvXwSd58pZ/fL1ax8+fu812GGPaP14zVpqYPWz4nCqA+uTMDJTfOxqRWFHZQUZWCZRNN56bbW0Rdgj9HpCWU4EVec8fdOK9QTskYJ8Ixlqw/LP6PwSaoBEI3SPEuPQZO1Qgh6OKnXmG0Va3WBNdUYFqJxMzq9uJxOnI5j2iWLtjhvrqP8RBTgc2uV52Ko1DGaQk6IEO0nPD0iTzUkTHjZHlxuDb/mti2CjY9RwKJxTBqQVf7AFyylkFpotWaorPJpyrjpdM/Va2dXokxUWaBzU/maKQG1cll65fsz7CJVYQLUeDq1+F6+ZtzsPIlgI/DLJYL6tcir7x4C8T+x08nBfz4gH0OPV0BnqOFX3ycKVlwFheFqQDCSDaIzVFTCX+TUyHvaPF/iRdBI9nARqnYeWnCLZyoqfrwG9xBZgTd5EWHfK7npopR5L/3hOlC2nt0TyAvK10+0f+8oHRjPIu2qbO12ka26nik0v0IZW/QiiloIhBku1Se4BbjOEtzgk6xvOsqp6OFf0Z9en536hQK+1JRq/sh9FU6OgAPqpgAbgkw7KuvbJuMw+b4nMzPXQzhE2cHODks/FavPRReydDrC2Er/tWXmqdfiJ1Wdt4/+rQM0liDzjRVmQiV5CkEOj0QgpsSS1QmQNaTFovhxdWJCu70nFy4Yl1ivcihT4yP6yHLMRYFO3PBxipaAv7egVCvYuao+3idW62m2CDY3zNtGo490qFnWqsVwl+Cv621xzcIGqQuzLVg8R240izDKUVco+yyda/BfbWkJ+wE7IBrRwDA3wGK8flQv+ZA5vdUPrJD90x2oULQX0BVUgXpdrZzMOoTCukDEeE8tbXI4MuegWo5Nsu6H5m6CvIb69gDP/bmRHDZYk7H9BlCkfnvvCIhef4KbVcbUt5MW9XW+od7t5uybffd2uaq13YsdewGBnph0Onk2smW4ESsV1u3qDVR4C17XMcJFtd3xsWZOmgFHiq3qnFlrPedzbcOCjRa9fWbed/JhX/C0gYJfNO0DEML4nrzFMO+SItVRc23fihMEOzWdZcc2CiDkQc9nTZT84Gw2Zhx66jQTgD0Z5FC7P+ipRI9iKItwqxFQSH4L48rL7AWg7EISrM8gZHtvvW1JySSFPXmqVO8Ce6fJGNq9B/kkKzsvE/ASq9Nq/w+AlnH9Q7K5CvTqSaFpKIqThqjvIvMfqFtUAXWj+oXpDAui1GwwvX/55iCIzufTfs6i+SOuCrBuOtW9u0PlWo4bwdWZ5HRzcXH4sUVv/H1LH3DZq3nEHcqhcQg+lAb2wYjlknZ3CV5/PTleQ812f4W+tfwH6m5Ky</source>
+    <source>eJy1WFtPIzcUfs+vcNVIE1ASdlfqS2golIuKtKgIVn1pUOTMmIzFxLY8ngBC/Pce3yaOZ7Ik6e5IJBn7fOdiH5/vmN//ELnoHB0edtAhOkMFlnhJClQSuaQpQULyJc2IRIojSea0VPp3TlBa4LJElMG4ftV/1/wcpZwpTBmRoO6ow/CClAKDnjuc0XTyZ4EzcvmiCCspZ+Vxp1OVBN2T2TNVZHJfCcGlmtxb27fO9LERunxJiVCAsq/XRVEtKMMAOweTEqeqnFzximVYC03OhChoilsB/1DyPLlkc3CzBPRC0IJI+25lW52tJcvJDZZPGX9mfuR7qAsqSaroEkydlSWdswVhajW4JfSCzKr5zqjLxYxkGWW7I6+4JDjNd8bd4FTyPVB2PXcHUkYfX7eD+Q03497ix7vuYbe52B50Rxgkrk4VM3OvJGyCH4Ss/ynHTWs8hcP2hOcEuafVPSO4BO/gxQt+GX4efjITuFI5l6jWwGeUWT1mGk4VqKkN3Fx/Q1/d0ADlSonR0ZHU0sMFVQMnPeRybtApF6+SznPlrH76/HkAH7/1W+ywJ7R6vGYtNbT6WXE004ENSBiZqTt2taKwo7KCDCwrUTTeeet0tEXYI/R2SllOJFUXPH3XivUE7JGCfCMZ6sLyP9L5FdSAEo3RvygxDk1XDiXo4bhWZ75RpNUNNlRnVILK6fTi+m46dTqCaZ8o1u6kUULtdxTaaGQX5mGjvjCMYU4KARaSvh8oTR4nbXjYFl1oDL7jNy2CjU9Qy3FwThmQVvzB4lczyCn0WLFU13Y041z1DszUW21Xo0+XWKJJUPXbyQF1sRBeuX7M+xgJLKFOj0ZWv4vXzNs9BxEsJX6dZjDfVTktByeAhLWz87BI7ekAurwq+oh6Th3ILlx1GRKGZwXJtGwQk7G9BOYyv8bGz8HJAj+RXqKHk0Cx89OSUyRbm/HzDaCX2ABsyJsgm07ZvQ+tNGMZnMyJsuX0jpS8gKLUOxic+MoHRjPIvnqzewdI19xeHVu8QOsm9COJqiRDDNZtnekDJevxvMfxWUdxltWlxPmlPw98xu4WF/RcG0Lzy7xTaA1yCvTsFd0QHNQRWj/3DNJkwIYwzVwf7RduC4W3aNwvcJu2LnwfQYC1Bft9xzJVL8pPLFUrGz+2XG2oV+QFL0RBpnodtSQaj8dIyYo0qpY1p+WgU3MM41BACUlN4oZYVuvciRT4+P6ytLQWZltrPRphpaCJ7el1CnYw6qU3iTVa4E2CLV32JtGoPd4oFrW1sVwt+Cv629yJcIHqqu3LWh8R27oizDKU1cr2px8N+MV2opAksBdlG146XtcKYg36Ubnkz+YY11e6XvJNt7hGVSWhnaiD8cpc/5txCIdxhYz5mIne4ypl2Eh3Jr1k05XOXx19NfFdCZz+D2I7brFVQhYURJlS4ukyrH7xaW5UvXixXNELeXXnSFoK4Xaur8j7f8VQV2Tv0ZaNhcE+mt46eNaxZroVWCou4SJ0i1UeAsOKZwjMdk8+1KzRpwS7oHM2vvr3GtH1ndP9NR8+2oTmFXhTcYgJyN8qAhpav1NEVOQ7/QYVdUMyWUnFBLAteQy3aWhFTUwLIufA4qKPggNnmqxGNq4dvoAn/GERx+ESrS4pDTaumcStRMw48cGIr0XbHYr1iB0a4tbp5DyY2O87InhJIWleG5U+wJ7rUkjWb1r+SQrORWJ+ArV67V9h8AqKAyh2t61+E0k0jSUR0nDbPaThU31Ra4EuNF9RvTMB9MYNhvc7/zxEkZnE+jEp1VyoMJ90m7Ly0I06DxtkEr4+2m4A3FzfBFyirv4vp468a9R8xyFIKVFB/6UB/bCOOWSTz8JXn95OV3AEDnzCv3f+A5sVm94=</source>
   </file>
   <file path="Facades/Markdown.php" generated-path="Facades.Markdown.html" hash="1f9838306f33a6c90b378bedad9d59ed" package="Default">
     <docblock line="0">
@@ -608,7 +608,7 @@
     </class>
     <source>eJxtkU1rwzAMhu/+FbptC0vSDnZZB2sHKxTWy9pjL46jJaapbWx5H5T+99lOCumoDhZIr99Hlp9fTGtYmWUMMti2CGtu97X+VrBcCF6HaskUP6AzXCB88FqK3WvHa3z7IVROauV2Sx6U6GaMeYew6jp/kIoT7jbeGG3pLBhy0F3l8Z4XG/NA2/MGYRRX2UnsfPVfPxBT+wtt1I69HoppMUlN7qnVFi5AupKqxyVJJ0WgXcyyXm3hfSjn0BKZp7K08UZxkJQPNwptm+QgtPm1smlpNMFkOs3D8Xh/haf2cBlnQlQWPUd1ZRV3keN4Gem/RMedg7SpDVmpGkia2g1rYUcWTdMnxMjgOJeqRSup1uI0FMuUja/Ca8ARp5A+vRIUd9kg9V4LIdA5bW/vkrx3jmGRvFVwk4YsXJrjZpbaJ3Zif+O3uC8=</source>
   </file>
-  <file path="directives.php" generated-path="directives.html" hash="ec4baa5c1fd97834d1fbf7555ffae354" package="Default">
+  <file path="directives.php" generated-path="directives.html" hash="e0083b6a5afdbe1303dd0f1f17ff7d4d" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -617,7 +617,7 @@
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
     </parse_markers>
-    <source>eJy1VlFv2zYQftevUAwBJDPbit2XwVHtbnO6FevQAUuwB9M1ZImOhcqUIEp1hsT/vXeUaLmx0lrG6geLPPLj8ft4d6Q3SdepZWUiLzJpzyzLhp/r2r8oFd3LjZD5NMpEkEefhdJjRImc2NXv9dieVYB1nqdq5LqZuBcPg6tBP0g2buYW05+X7wbuwDIQkvp5LjJJzALEpRPvgm8Z5eqSvYHl4cuxw53Hq+5gN+Okw9X8kvYvJ8x0ujBOZ/xfvv04BzNn0HfcDenWjjKRxn4gkANBR57nkZsPt8RyBh6ytrnjDO3XtvPq2nYWi9DP/RlxhmRe2SZjC6br9eblsqSQNXvk/l1WmpbmpaF0MtI9zqlp6q/zhB/yxHnniTFN9MBQo5jbimDpE2my53TMOU/Fsrh/fsQhGs+jqaFNNGcfKZv/xC7bkFAbP47H05tf7363P9zd/n13O/Lc0qgX0Cx1K1rRIPaVWoiHSOWKkj8jWI8x+3HvCS2jUVhsUop6aPvOFrESR+B3cVxsIunngv9TpGmS5VzrxP/IN/EUVhAZrF0vzU8ANLs+2J8I1olNvDQTYy9IQjEm1/uxz362+Bp+gHD1bM9FZIXZ6f+GAF5mwv+UJlEldpuTraGl4bRT9C56PbuG2r3euDw1EH1VSIi6RO51f9DRs9DT9wLvuR+OUgY67KzmmL7ZLEUYRvIorgUOvEi8ibRGYBNDGdMSwhe7DgT2mE4u3kB8CxmyiZ7I+pDHV4whUIbaBOHaKmX9NKVkGfuh6K9FDHGjCOuN7yGNq91DT+V+llOT1G2QQZFl4JriIiKfQsWD6lCWvtL0WyJznFDtawEbe2VxbFntvYEG9MXC8zaBcwzWz49oVZpJ+8pTIQ9rT78qr8pXWFRbF1DrGyzjJEmxI8X2PTTLzDR7gHvFV3CJsJF25uBkuFVOWA6/IJrVkLsgZ61OS3FqbJvkbSEDfgUet1W7uj4FCNNL/dCgiTvD5rJ13oVUloszSOMsDX5hTwGkSiQLcUaoGugPPwvj6JiCScO//CBLnifhBo3mkdeSm8Y2PADw4TaHFxvfch7OTX8y6j6dlZrl5YdidL4SowP8nSGF1Gt8wOndhWJFTqdmHqYGioSQGq0ahti2kVZLVs2ESk07zrDTtc2liRQfmyhCQtXn175MlL7aB6a904q/FGXZpzDZyuNAK+3tC5pBwh0MQcbO2fA3Ikin035zYEj9TAlzK5KGaqCVM2TOUb2i830eHWfAJbjnshK8Yx3JHclo9d+R2Np6TliUSFq9g/r4hv+/tUYPET6re2MoXtIZ7tP3SOY9jTNkron8QAJBnECwHL98rPm19QWfZyfO</source>
+    <source>eJy1Vt+P2jgQfs9fkUWRbK+ALPTlBCn0dLTqqj3dQ0+6B8yhkBiINiRR7JStdvnfO+MkhC7ZNolUHog99ueZb37ZzjzZJ4aRCpWlkbk0DBN+tm3+KWWwiw4iUosgFZ4Kvgqp14gUisD37cxcFnv3SiVyYtup2InH0d1o6MUHO7WzxR+b+5E90jANTVylRBoRPYMDiE3nzg0/MsrlLXsHJ8OX44RbT3f90WnJSY/L1S0d3s5ZOenDOl3y//jx/xWIOYO5ZR9Iv1KUiiR0PYHmE1TkOA55/8+/xLBGDhI2uWWNzbem9WZqWuu17yp3SawxWRWy+cyA7fq8VX4sySJNHGn/kpBmpClpFJ1P9IxzWg7113rGD3nmvPfMmOZ4IahQzG7FLdeJDNlLJmV0F2KT7S4Cm1P0UUoKPY2IlpHTSB03YMFZQ4NxVZusR8GWeqEr5Vo8BlJJSj4FAGDMfDofhZLJxM8OiTWeaunJFKEUV9D7MMwOQeQqwb9kSRKnimvK/KM6hAvAixROrg7mDQC5YopevVB9YZ3w9rFJnCQVM8eLfTEj0/PaVzdd/wi/QNh6t2MjssCc9H9NGm5S4T4kMbqmYYyqZKywuaBZlJybwcCsoOZgMMuDBl7fZhFkUBydHf+oM2Gtt589fCZ/uUoZOOJk1Ofn+8NG+H4Q7V42H4ELrVK0oq+xOMQ6xGKDysKpBVU5o/Obd1BxIvLZXG9kQ6jOO8YQGPlaZMt2TcZNEko2oeuL4V6EkEKSsMFsB8VZ8ICZVG6qaFmqbZBelqagmuIhQi2ghUHN570sF/0VRwo3FHatwbA3BseR0V4b+IC+2k4+xBBRb/8yWNtcTLoEq8Bets5h0TalK7FZtm6Mxk94hnGc4CQSx88wzMu0tKEBDiafXam+KNd7oPn8XomDpMx0JVwpbKLttHA/3DENTsQveNyo6QEQi8q1bYvgjG3TA1p4EL8Cc8WoVE2bAGF77noUaOLWuL79daz/vO10YI27NPgVozwotCDKBOlgVIn97dEoFV1zKKv4b9dL45c1fEBhR4drbM3jBx9yK3jB8SPn/qqczyf95051nV+j6IzeD87oAX9rTKH4ah902jpfbJtHrXztlEjkg8xoMSh5HWtZtSRVzyd3ac8a9/pmefkiw6c6hlBRVfja94lcV/u8NE/a4a8lWfrgx8foOs9yeRdbSyzc4ZBlrIvJP0khXU9n80CQuKkU5a1KavqB9l1Jp4vfCzq/5tGzRjwC9TwqXN4zrhweRMH225W7tZR0K2uNpcVLCt77jR/8jb2NGgJ8ow9m0L8ieO2X+X3l6DORDo6uiPxGAl4YQ7pcv52M1dT4DjiELVM=</source>
   </file>
   <file path="Compilers/MarkdownCompiler.php" generated-path="Compilers.MarkdownCompiler.html" hash="24b19c0f3331227c659f929e81a90789" package="Default">
     <docblock line="0">
@@ -891,13 +891,13 @@
     </parse_markers>
     <source>eJydVU1P4zAQvedXzEo9pBVtAe0Jtiz7gbRIcIHetqvKdaaNRWpH9gSBVvz3tZ2Pukko1frQWvGbmffejJMvX/M0j6ajUQQjuGeSbdAApQh3SuUgpCEmORp7Oo0k26LJGUd4YIngi+8ZS/DmhVAaoaRZ/MIsR20uo6gwCLdZVmyFZISLH0qSZpyM3zEhUe92Fn5MeQe4tsWfLASq1UvDA02xCrEVM3/0bDcWV+c4n5xNTv0BKyhVGprkaiVkWcIfZ4LbCk3t+9s53FWPxpAS5RfTqXboyVbQuEJPlN74aK7yVy02KZXR8fnp2dnY/nw+CQvZTOX/HHkqVaY2Ak1VXT7BbtX1XOikrCqz6co5McbQCt84tjLef+AZMwYeyVqDOvobuVS5VoScMIEBD3rijnxf3BrB3PbEuDhQ605zPKRGXj8zDUxr9goDH1EdTNvVynSzEhsPuzWvhUxRC/qp+H6OYmXthXUhOblOLpeWuFVYcIqbsQrUDH1UqdatAaXCjK+ac8shlO4gb1GHzbckMcBK7aT8kPbIa1GzCE1xh4APvCXc2tJ2T4JfXHCN9q7ELnS5QVoyvTHxcHjZRHmflnlh0rhS4NOcBOkC9O6hxzkWu0ONVGgZYBrVLdElqXaHq/CteMFkT34zaLs2N1ZU+gZOl5X9+09Pxx98YtMxt13ZW3HQeOugH/OO97X0wMH3xD+gQeqS6S+oHbjb6aBMOOr9BecKVgicZZkzTmhD7paJBD2HtbIO8hQyO4GTPat4oTVK8ieHemXHvELOW1GQMGIH9VXorsI6zQxQJnuTWTc4tL1CH+XACp1kr9Cmdi8etw1E9jN1NNosxRriTxU3YW62Odk2DAOAW81NrKWOr3yuyz1UdQ1V3tZaA95CbW1yTfH+seSqsIX3EsNsNoPT9wyzcw67F9kzy4r3buvi2A/yR/eqAX5wt7qv1Bb3R8vdj+9h/jnTbHs8/eBd3rag/vAdEmhCgf/9Dem1pPbhLfoHLvC4NA==</source>
   </file>
-  <file path="Helpers/Markdown.php" generated-path="Helpers.Markdown.html" hash="a23306329e794c6346beea8ee1ef1707" package="Default">
+  <file path="Helpers/Markdown.php" generated-path="Helpers.Markdown.html" hash="aa46e7d6da31c100c01df3d7d2cf04ea" package="Default">
     <docblock line="0">
       <description>Markdown transformer Helpers</description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="Str">\Caffeinated\Beverage\Str</namespace-alias>
+    <namespace-alias name="Str">\Sebwite\Support\Str</namespace-alias>
     <namespace-alias name="Container">\Illuminate\Contracts\Container\Container</namespace-alias>
     <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="22" package="Radic\BladeExtensions\Helpers">
       <extends/>
@@ -991,9 +991,9 @@
       <error line="24" code="PPC:ERR-50007">No summary for property $container</error>
       <error line="26" code="PPC:ERR-50007">No summary for property $renderer</error>
     </parse_markers>
-    <source>eJyNVO9v2jAQ/Z6/4oSQEigkMG1fSttVrSatUitNbb81HTLhAIvEiWyn7TTxv++cHyYktKs/gJV799753dln37NN5gTDoQNDuGNyu0xfBWjJhFqlMkEJPzHOUCqKB45gCaqMRQj3bMmj8CpmS/zxplEongoVVtiZ4+QK4ZqtVsgF07gMr/AFJVtj+KDlrIjexHGeFNHwOhWkGGlV7BgXKPc7IvtceQZyScVtSQba62i9RYbKF0eT9sRwSbWbhA7rF3/qTwoEy/UmlR0A3KcLLkr1AhfziMS79d3dPMJtFRvDRuvsNAikSfMTrsdVmp/KdUETpdkfydcb3S5oMp2O6efb6Iiy2HbrA6tl4H6pKOJgYZwaY9OqYgKimCllO+H8dQxFJlONEbUZ+lGjba2QRLFEaSNFU81qNJaylZZ5pFPpV8EaQ52VLIHws2PTKKWiCMqC8gWZCatcRNq0dD63ot6x5EGRVZ7TrL7ecDW+sHE4Pzi0hZVG7dd5J3N8kbAtei59WPG1OxhfrFF7buH8fO+8n1Tu+LWB7mDWLqcOfaBTVlSl7jo9uMckfUEFnIgo0XhzvAPkFRdrUqES4XGDkNhrSV8sWKLOpYCEv+HysAF2ImwP7H32CtaO5Ssulb6ls9Dp8C2L0yV6vVD0RmUVI5g2HWmi6bU5PdXpg3mzlLcPPcEEnkfwtZGXSVzPE6ajjecG3lOonocDfxi4owZjc19y3pkENLZaIr4CjytFvXwH/ARTeB4MGics6i4e1hJipqrXmx3EyR/w+pwikxnQ/5npRIziYxUDPTlpa3X1fBIMVUty92GBbvDbBb/NA67nDwdB4h5S9QW+PpqJqS5D4bbELKZc74BiBG5/6latbfpqVjVVNdteY7fH1RhtAd1p/8WkomE/GF0afZ3Sc5jEnxh8/b/Br9H1uRu8xx+izJT0zgXQtXP2drevTGP+rdPn7deh3nVyjtq6c3bOP8PxWNs=</source>
+    <source>eJyNVO9v2jAQ/Z6/4oSQEigkMG1fSttVmyatUitNpd+aDplwgEXiRLbTdpr433fODxMS2tUfwMq9e+/87uyLr9k2c4Lh0IEh3DG5W6UvArRkQq1TmaCEnxhnKBXFA0ewBFXGIoR7tuJR+C1mK/zxqlEongoVVtiZ4+QKYY7LF64xnOdZlkodzrWcFYGbOM4TLhjFvqeCxCKtih3jAuVhRzwfq8xArqmuHdsgtNfJUosMlS9PJh2I4fqZNpTQYf3kT/1JgWC53qayA4D7dMlFqV7gYh6ReLe+u5sHuK1iY9hqnZ0HgTRpfsL1uErzU7kpaKI0+yP5ZqvbBU2m0zH9fBmdUBa7bn1gtQzcLxVFHCyNU2NsWlU0P4qZUrYTzl/HUGQy1RhpXEE/arStFZIoVihtpGiqWY3GUrbSMo90Kv0qWGOos5IlEH50bBqlVBRBWVC+JDNhnYtIm5YuFlbUO5U8KLLKc5rV11uuxlc2DpdHh7aw0qjDuuxkjq8StkPPpQ9rvnEH46sNas8tnF8cnPeTyh2/NtAdzNrl1KF3dMqKqtR9pwf3mKTPqIATESUab053gLziYkMqVCI8bBESey3piwVL1LkUkPBXXB03wE6E7YG9z17B2rF8zaXSt3QWOh2+ZnG6Qq8Xit6orGIE06YjTTS9NufnOp2b50p5h9AjTOBpBJ8beZnEzSJhOtp6buA9huppOPCHgTtqMDb3JeedSUBjqyXia/C4UtTLN8CPMIWnwaBxwqLu4k0tIWaqer3ZUZz8Aa/PKTKZAf1fmE7EKN5XMdCzs7ZWV88nwVC1JPfvFugGv13w2zzgev5wECTuMVVf4MuDmZjqMhRuS8xiyvWOKEbg9qdu1dqmr2ZVU1WzHTT2B1yN0RbQnfZfTCoa9qPRpdHXKT2HSfyBwdf/G/waXZ+7wXv6IcpMSW9cAF07Z293+8o05t86fdl+HepdJ+ekrXtn7/wDsBZXQA==</source>
   </file>
-  <file path="Helpers/Loop.php" generated-path="Helpers.Loop.html" hash="0b8eac5e6f48a74c9e1f57e7a14c9a5f" package="Default">
+  <file path="Helpers/Loop.php" generated-path="Helpers.Loop.html" hash="a461e71a00e3800eab00d3e4c5154511" package="Default">
     <docblock line="0">
       <description>Represents the $loop variable in the foreach directive. Handles all data.</description>
       <long-description></long-description>
@@ -1131,14 +1131,22 @@
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="117" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="111" package="Radic\BladeExtensions\Helpers">
+        <name>getItems</name>
+        <full_name>\Radic\BladeExtensions\Helpers\Loop::getItems()</full_name>
+        <docblock line="111">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="122" package="Radic\BladeExtensions\Helpers">
         <name>__get</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::__get()</full_name>
-        <docblock line="117">
+        <docblock line="122">
           <description>Magic method to access the loop data properties</description>
           <long-description></long-description>
-          <tag name="param" line="117" description="" type="" variable="$key"/>
-          <tag name="return" line="117" description="" type="mixed">
+          <tag name="param" line="122" description="" type="" variable="$key"/>
+          <tag name="return" line="122" description="" type="mixed">
             <type>mixed</type>
           </tag>
         </docblock>
@@ -1148,18 +1156,18 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="125" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="130" package="Radic\BladeExtensions\Helpers">
         <name>before</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::before()</full_name>
-        <docblock line="125">
+        <docblock line="130">
           <description>To be called first in a loop before anything else</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="149" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="154" package="Radic\BladeExtensions\Helpers">
         <name>after</name>
         <full_name>\Radic\BladeExtensions\Helpers\Loop::after()</full_name>
-        <docblock line="149">
+        <docblock line="154">
           <description>To be called last in a loop after everything else</description>
           <long-description></long-description>
         </docblock>
@@ -1168,9 +1176,10 @@
     <parse_markers>
       <error line="80" code="PPC:ERR-50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $loopFactory in __construct()</error>
       <error line="80" code="PPC:ERR-50015">Argument $items is missing from the Docblock of __construct</error>
+      <error line="111" code="PPC:ERR-50008">No summary for method getItems()</error>
       <error line="43" code="PPC:ERR-50007">No summary for property $loopFactory</error>
     </parse_markers>
-    <source>eJy1Vktv2zgQvutXzCELO2lsxwV62azToMAuGiAFijS31ihoaWwRkUmBpIwYgf97hyPaekSKvQXqQ+xwvpn55kn+8zFP82hycRHBBTxgbtCichZcinCWaZ3DRhgpFhmCVHy61AZFnEIiDcZObnAMn4VKMrQgsgwS4cSYjE0iJdZocxEjPIhExj8+ZSLBf58dKiu1sj8+Y5ajsdfRn3Dv7d2S8yexQgifThoMtMWijg3MWLShH4Tb23g/no6vWCAKl2oDB+N6QQzZBYszGZOHg+8vd49wH45GkDqX/z2ZGI8er6UbBfRYmxVrxzrfGrlKXfB6NZ2O6M+Hy7ofMlR+P2KcKp3plUQbnKsnqD57d151XDpV2WThEzHCeia4bnEmrIV7Sn70EkVen+vjPxfwSCUQxogtFUM4kBYWKNUKpEMjHCYBt4ffUvlKfDiZ8HdutKPqYQJnpLi2MIPv8+tOZ76gvuhc/LgwhvojtIZX/d/+vL1uT7lg2970JcglCLXtss6J6TFemvCI4KIm83b/E7HTZvva/zcMTV8j0XZOIrFm93VHe/HLrVQpGukSHdtdk2CxoP6CZaFoYKiVLbqvB/1h2+A567xE++Y5c6m0o5sKwKezZrAtsE/y90EJGMy7wLtXKXhAVxhVZmFZ0Chzja2juQS95OP7KoXt5BjW7ip9K/gVMotv3u6wHWuwEqKoVWx0Q3pBpz8Au6/iKdS76fkF+AbBLmas0k/rThER5SRNZ0mO57u7ucrJDjPZHPVBz6R3h/HzZ0wbxZkidsNa6I0puAyOjsfoG6gxPi0oxX/nLQ2Dwb5UHKYshKVhrZUkk384G21+rYBp1wyl9UXk7XR+XpNVXVlFvWvHv9+hpfl6erQTWfhnBrEulGvmqGaEFy2hOMhhg8BAqgSfpwM2cwPTyw7pAIL0qiU1uNmrk7Sk1AMZQAWhy63tZymNdQc/1FzYAlBjB7kHLEVm2widJAN4E4EbVJWNLieoVi7d56Ike0D0tt4XsaKOWCO9GRLfeCKO0daWBWefbgt6dzi+xVmt1ZBnT7g9HIVdtZbPR2dx5VuLdN9ed7y0PWzeF8Sjpq6HmN5ZdKFxNfyrTJQRLNA/zfytSeZoMpBy+yavUuHVivPT0LhGytaYw1/wHmYzuGqPRwPsCzz3bcy1ve4Hcp391eRLXJst5n2Sh6Ziv4MWk93xSI9GWU7C77CvNE+ndRjPE5jxCP4OsYNiJ68jveiVa60olrSVgQpgTu1F1ui7bRvFefeu57UTllw/oErjaHQEMq0wu2gX/QJIZL/E</source>
+    <source>eJy1Vk1vIjkQvfevqENWkEyAMNJeNks2WmlXEykjrTK5zaCR6S5oK43dst0oKOK/T7na0B/pBnak4RCI/areqy/bf/6Vp3k0ubqK4AqeMDdoUTkLLkW4yLTOYSOMFIsMQSpeXWqDIk4hkQZjJzc4hk9CJRlaEFkGiXBiTM4mkRJrtLmIEZ5EIuNvf2ciwX9eHSortbLfPmGWo7G30a+g9/7uifxFrBDCp1MGA22xqGODMt7a0A/C7X18HE/HN7whCpdqAwfnekEKmYK3MxkTw4H788MzPIalEaTO5X9MJsajx2vpRgE91mbF1rHOt0auUhdYb6bTEf35/brOQ47K72eMU6UzvZJoA7l6geqzp/Om45JUZZOFT8QI65ngusWZsBYeKfnRWxR5e66P/1zBM5VAGCO2VAzhQFpYoFQrkA6NcJgE3B5+T+Ur8WFlwt+50Y6qhwlckOHawgy+zm87yXxBfdG5+HFhDPVHaA1v+r/5vL9uplywb+/6GuQShNp2eefE9DgvXXhEoKjteb//ithps33P/wVD09dEtMlpS6yZvk603367lypFI12iY7trCiwW1F+wLBQNDLWyRfffwX7YdnjJNm/RvnkuXCrt6K4C8OqsGWwL7JP8dVACBvMu8O5dCp7QFUaVWVgWNMpcY+toLkEvefmxSmE7OYatu0rfCn6FrOKL9ztsxxq8hChqFRvdkV2w6Q/A7qt4jvRuef4APCKwSxmb9Mt6UCREOUnTWYrj+e5urnKyw0w2R33QM+ndYXz/HtOJ4kwRu2Et9MYUXAei0zH6BmqMTwtK8T94T8PgsC8VhykLYWlYayXJ5S/ORltfK2A6a4bS+iLy6XR5WdururKKeteOf3+Glu7r6dFOZOGfGcS6UK6Zo5oTPmgJxUEOGwIGUiX4Oh2wmzuYXnfsDiDs3rR2DW725rRbSuqBDKCC0OXW5llKY92Bh5oLWwBq7LDvAUuR2TZCJ8kAjiJwg6ry0UWCauXSfS5KsQdEs/U6zp6yD46fO7Uqvu/hz2JFLtdIj4/Ed7CIY7S1U4fLSNcOPWAcPwfYrNXZFy+4PSwF8rV8PTnUK9+jZHtcP5/+HjbvC+JZ0/hATA82uhm5rP55J8oIFujfeP76JXc0YkhFOqqrNHiXVD9Wjfuo7LE5/AYfYTaDm/acNcC+U+Z+HrhJbvuB3DD+jvO9UhtS1n0WQ9Own6ClZHc60pNRliP1M+ory/NlHeb8DGU8yz8j7GDYqetEL3rjWiuKJR3vQAUw5/YiW/Rd243ifPjQ82wKp2U/oErjaHQCMq0wu2gX/QCuw9SK</source>
   </file>
   <file path="Helpers/EmbedStacker.php" generated-path="Helpers.EmbedStacker.html" hash="0e23da123667a141cca11fabb056b0b8" package="Default">
     <docblock line="0">
@@ -1482,15 +1491,15 @@
     </parse_markers>
     <source>eJzNVttu4zYQffdXzAbBSk7tqLtAXzaO020abFLERdDkzdIatERb3EikQFKOjcT/3iF1ieRL4n0pShiwRM6ZOZw5Q2pwkcVZxzs56cAJ3BGpQcxAxxQuyWxGGSeaRnB3fQcZCR/JnKpTNDS2o5sHuGUh5YoC4RGEIltJNo81MD4TMiWaCQ7TnEcJenhiOka3TFV+0MqGub25vPr7/gpmLKHo1utwklKFRhT+IREL/T8SEtGrpcZA6FD51zTJqFRnnYr0g/GKP+NtxDibMSorkr9X0cqx06U1JLmOhazsWrv/ky7ggZLU2r1us7CrX92wC59//fRbr4m1kKTMUjlirTP1xfN0EsmEzklyGorUK428lOl+BWik2KYmTIhS9R47zx3jzmbBDIy0ILJ89ux/JoWmodnDsV5lFHO2gRAZ5eVz7SQjkqQFoO0snyIxmOU8tKU1WNeade16QceMY1Po/tAswTloyVJXaalFIp6oLCHds9pcTCdKo/Lccm69RTNMhHqbjLVwt4iEIjIUMMKc6kmYUMLdRmQaxqJim5q0rtwG916Bb9i3N8bzJNnHuPD2fmrrOROpnpNU55IDJo3x+Z6K1luviTcobxUE1xRSHjuxThOnB06olPn7oZyglIUZbAbuB8YnREry6tKie1jIHOvWcFu7vtcSnbM0SzC4a/xWqEbyzNCxFE/A6RP4N3xBEhZ9lfM8pVxfLUOamf24RxvtWQsej5g8iYALXe4ZViI3sxGSxEeIyYJyR4PKaGgQERCwQcBwOYVvDNe/wPjZclsHp/A1MZqM6jncyDo4apBet3NzXJT+/ByKRG5moyxcqRPs6wyPtVFZoA0xrYEmim54NWWBjx/BtvqELpnSynVGRKNHokaoOEb9wqF/eX/vbNWjZGDOW9fmeS+2JNTtD+mShrmm7nvkfvw33P46hNqexBtcs3qNGr52Z91n5aFfnchzJJZP7XG8EiGq0jNF7rd6uWrYojfhGPWVU3v3hIKjZLWqLtAFwy0W11o7asl1KkTyXm+r2Ei+EpCNtdnbpkaZpPMJ3rhh7DqeemQZUvZMDzYQ1Xh5gZb5wKBfNF3iEUxJ92CYCiXL9Pi7f3ExDE6G4+8D3yvmhsGhTqzJuXv04jtd9/Sk644heP7cWxcvdnqXqz26mhHUxWE6MUfZtkzaKsG7PUW2qviyuH4Y3YLIdZZrmFL8wKGgyMJIgOn/lawOuzQ2jqa9yipPsl063LoJJM0S892G10xrwQwUzId+H9UyDrC2F118CoJ+f+jhkXI+BMfp7YL45uPUczZXwEIGZhF2An3ujv37oLsNNUA4/rQbJXeFqlB7Av08RL8F2b0f+OXnMUNfDXajDGY4cFqY4GxXm9hmLcvqbsWwHwmTR7pSblX77jaTwspK5k27QlWt6UMPfYvcbud1518LXHLM</source>
   </file>
-  <file path="Helpers/EmbedStack.php" generated-path="Helpers.EmbedStack.html" hash="221d9e440011e4c5a3ea7c2bd089b17e" package="Default">
+  <file path="Helpers/EmbedStack.php" generated-path="Helpers.EmbedStack.html" hash="147d7d5353dc2d47a4bba3699a231023" package="Default">
     <docblock line="0">
       <description>Manages the Loop instances</description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="Path">\Caffeinated\Beverage\Path</namespace-alias>
-    <namespace-alias name="Str">\Caffeinated\Beverage\Str</namespace-alias>
-    <namespace-alias name="Filesystem">\Caffeinated\Beverage\Filesystem</namespace-alias>
+    <namespace-alias name="Path">\Sebwite\Support\Path</namespace-alias>
+    <namespace-alias name="Str">\Sebwite\Support\Str</namespace-alias>
+    <namespace-alias name="Filesystem">\Sebwite\Support\Filesystem</namespace-alias>
     <namespace-alias name="Factory">\Illuminate\Contracts\View\Factory</namespace-alias>
     <namespace-alias name="BladeCompiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
     <namespace-alias name="Stack">\Radic\BladeExtensions\Contracts\Stack</namespace-alias>
@@ -1617,7 +1626,7 @@
         <argument line="0" by_reference="false">
           <name>$files</name>
           <default></default>
-          <type>\Caffeinated\Beverage\Filesystem</type>
+          <type>\Sebwite\Support\Filesystem</type>
         </argument>
         <argument line="0" by_reference="false">
           <name>$bladeCompiler</name>
@@ -2209,7 +2218,7 @@
       <error line="39" code="PPC:ERR-50007">No summary for property $content</error>
       <error line="41" code="PPC:ERR-50007">No summary for property $_data</error>
     </parse_markers>
-    <source>eJzFWNtu20YQfddXbAEDpgxaToI8OU2axI7bAElQJIZfrIBYkSNpa3KX3V0qFpr8e2cvvFOMlEvLB4vkzM7lzJnZpX/9LV/nk7OTkwk5IW8ppytQRK+BvBEiJ4wrTXkMCqVnE04zUDmNgbynCYvnL1OawKt7DVwxwdX8D0hzkOrJZFIoIBd0uQTGqYZk/hI2INH0/E+q1092iz9oOSK9YimordKQOaXXaVpkVml+IbiWNNZqfsPg0/wKb4Xc9tSs8EJkOVqSyiVQPjrl4cxq8x80je/GVK8lZUYPYm2e7SMisg/CRuE54nuHKsRfg06soioWTV0PvhUhXkavtPFo9nD2wApooddCksq4WDDuXFhxymL0UPl++/qavPGvTsla6/z87Ewa7VnG9KnXngm5sqtjkW8lW621Wx08evDw4Sn+eRw2HaEl93sN8ZqLVKwYKO+d35H6Kv2ZpTPnladnC4PEKTShsNyMU6oUeZUtILElIizLU8iAa0Xsi5B4Ukz+mRjzpoLdIpn3uRQaX0NCjpaGb/3XizZruuINcszRvCehcsBcjNzCMPuCKKGalq+LBcJNlgW3EZMowmVKyyLWgc/LefYPmG3VLD6RkLTo3skjrAMPXaTkKbklH6fWvYPMXEd6zdTpMwX6pvYWNF1Pn3SVrfuqrk8rYDtqrXiMWgfojnoZbmW1Br6rabJp+neFMA9fJsP4Yn6XiH7girADBCsz9nylSrEEXUjutCo3g140lTroWt9/OegLR56gZNGOSL3UxFrR7WB3wJNerEcNywNVNJ7tHQ52xldBO5wmU0zxLrq2VqCbnE0s5fCmzLphIGUKUTA7FNI3RxZMazOfJNNQQURmLW8NGzhVzJAPmuVtxhhVBW8otOTAN6V4p1lDvoZVsYg8Dep3jMdpkWDINpEenyVkYgMu26ZUFAY7NIi4RXEKlDeN4rgVVsePlJ21t792vzLXCUFrLxZKpIWGG99iXlRqPPd2lK2yf3vWmWcVjwbsjfaA5UFz2kztmyvGE5DmYYl3QWcqTFtUbmfTodE+yZDnei3FJ0Xmg4eOetja23dCX4mCJ6/uY8hNzntA0uP2KCJ2gloYghqjPqpjKIx11vfWd7xrRzPbZ34MwTXtDPR+XO0xgGPC9A82DC/StIyp0WpZfsnMNqSQc3jIikwvBsfd88dxs22XJPilUyG4x8GkAm9uOm3k3ehor5zRO0At8JuqX1M7+NJyxVRkQvdzoGfZZ4fInZ+rtFix5bbXJDgLj6PoGH8Kzv5mSaBZBsE0JHiygEHHdiShWbP8/PwvwXgZpwd0x/Z/+iwvtBtoYbVrTPuj6JY0hzj52N6R+kVtzcLe5nd4DZ1b8k0ZJpCC7k/tvYbsJa6UOFfAlJaSFdsAJ6ZOxDFo1m3JnEqaEd+SbkfrtutCiLTdrN0d3ZPTLN7RlTFN0wjPyjIyqyIqJd0Gtw0eVQfOY2ft+GNoHdhNiMqVGplCv4O2X0KwoWlhvvVcxp4diizxW8XIHRoG1q/BkNebUyWzMWOtzG69S5aBXMFlU8HnPzzv7XfkTQ35MLyGFhXl/dEBj9Rhw93wIftw7I2rn4e8kR1EwP8beTNIHa1/OvLG1SHIv0gS7O+cQQxELIlaU4no2xi1cDXhGyYFN9+uu0C3AX0uob+DbVchY/dotZxSpsjQxdeqjKJoYwuM+dDb6OyW346aNX0IbO9hhdMFvwtpydQsF+gKGbwvTsR/Zqiu1vwiFaqQUAFqElnQ+K6ryLj+bPKvgM0lE3iq2HaxtX5HsS3jdyxVYe00rM3+MLhLb9+FuASK5v4bwPfH0UXVh/EHgOZMH97cHNGq/1fquzoVeOiQX5minlbV4mG1z252Hq2Rj6oL2Uaw8a6mSfKutB/UrkJv7/txazoYA+/L5F+/eMcj</source>
+    <source>eJzFWFtv2zYUfvev4IAAkQPFaYs9pWvXLmm2Am0xNEVe6sKgpWObi0RqJOXEWPrfd3iRRF3s2r1seoglncNz+c53Dqn88muxKkZnJycjckLeUk6XoIheAXkjREEYV5ryBBRKz0ac5qAKmgB5T1OWTH/LaAqv7jVwxQRX0z8gK0Cqp6NRqYBcw/yOaZhel0UhpJ7+SfXq6aDkWsthwRXLQG2UhtzJX2dZmTNOUeVCcC1potX0hsHd9Apvhdz01KzwQuQFWpLKRVw9OuXhVBrz15omt7tUP0jKjB4k2jzbR4RgH0iNwgsE9BZViL8GnVhFVc5DXY+2Fa3xBvUqG08mjyePrICWeiUkqY2LOePOhRVnLEEPte+3rz+QN/7VKVlpXZyfnUmjPcmZPvXaEyGXdnUiio1ky5V2q6Mnjx4/PsU/P8ehI7Tkfj9AsuIiE0sGynvnt6S5Kn9m6cR55dnZ3CBxCiEUloxJRpUir/I5pLZEhOVFBjlwrYh9ERNPitE/I2PeEaxdJPO+kELja0jJ0cLwrf963mZNV7xGjjly9yRUDphLkFsYZl8wS6mm1etyjnCTRcltxGQ2w2VKyzLRkc/LefYPmG3dLD6RmLTo3skjbgKPXaTkGflIPo2teweZuY70iqnT5wr0TeMtCl2Pn3aVrfu6rs9qYDtqrXiMWgfojnoVbm21Ab6rabIJ/btCmIfPo2F8Mb9LRD9yRdgCgpUZe75SlViCLiV3WrWbQS+aSh11re+/HPSFI09UsWhLpF5qYq3pdrA74Gkv1qPA8kAVjWd7hzOd8WXUDidkiineRdfWEnTI2dRSDm+qrAMDGVOIgtmSkL4FsmDcmLmTuIvUEJFJy1tgA6eKGfJRWN4wxlld8EChJQe+rsRbzRryBVbFfOZp0LxjPMnKFEO2ifT4LCEXa3DZhlJRGuzQIOI2SzKgPDSK41ZYHT9Sttbe/tr9ylwnBK29nCuRlRpufIt5UaXxwttRtsr+7VlnntU8GrC3swcsD8JpM7ZvrhhPQZqHBd5FnakwblG5nU2HRvskQ17olRR3ikwHDx3NsLW374S+EiVPX90nUJic94Ckx+2diNgJamGIGoz6qO5CYVdnfWt9d3ftzsz2mR9DcI07A70fV3sM4Jgw/YMNw8ssq2IKWi0vLpnZhhRyDg9ZM9OL0XH3/HEctu2CRD91KgT3OJhU5M2Nx0HeQUd75ZzeAmqB31T9msbB55YrpmYmdD8HepZ9dojc+bnKyiVbbHpNgrPweDY7xp+Ss79ZGmmWQzSOCZ4sYNCxHUlo1iw/P/9LMF7F6QHdsv2fPi9K7QZaXO8a4/4o+kjCIU4+tXekflFbs7C3+R1eQ+eWfFWGKWSg+1N7ryF7iSslzhUwpaVkydbAiakTcQyadFuyoJLmxLek29G67ToXIms3a3dH9+Q0i7d0ZUKzbIZnZTkzq2ZUSrqJPgY8qg+cx87a8afYOrCbEJVLtWMK/Q7afgnBmmYlNXW1GXt2KLLAbxUjd2gYWL8EQ9FsTrXMxoy1Mrv1NlkOcgmXoYLPf3je2+/ImwbyYXgNLWrK+6MDHqnjwN3wIftw7I2rH4e8kR1EwP8beTNIHa1/OPLG1SHIv0xT7O+CQQJELIhaUYno2xi1cDXhayYFN9+u20C3AT1U0N/CpquQs3u0Wk0pU2To4mtVdqJoY4uM+djb6OyWX4+aNX0IbO9hidMFvwtpxdS8EOgKGbwvTsR/Zqiu1vQiE6qUUANqEpnT5LaryLh+MPnXwBaSCTxVbLrYWr87sa3idyxVceM0bsx+N7grb9+EuASK5v4bwPfH0UXVh/E7gOZMH97cHNFq/jnquzoTeOiQX5iinlb14mG1Bzc7j1bIR9WFbC3Y7q6mafqush81rmJv79txCx3sAu/z6F9ZgcJS</source>
   </file>
   <file path="Helpers/HelperRepository.php" generated-path="Helpers.HelperRepository.html" hash="43d13a6879a9d44782439032b84a64b4" package="Default">
     <docblock line="0">
@@ -2329,7 +2338,7 @@
     </parse_markers>
     <source>eJx9UsFu2zAMvfsreMghCdp6G7BLu67D0gAN0A5Bm1tTFIxMx0JlyZCobcHQf6+k2EmaJSV8kMXH9x5JfbtqqibLh8MMhjBFy2BK4IpghGVJUiNTAdObKTQoXnBJ7iwAI/ZuMoNbKUg7AtQFCNOsrFxWDFKXxtbI0mhYeF2owPBHchVopet4AirJ3E5G418PYyilokCbZxprcgFEcI+FFPOfCgsa/+UgFAjd/IZUQ9ZdZJkPyhOlfJ1czkdGs0XBLp1QarLb08U++sE3jbE8n1mUoeQOhTW4UBR422HMotvwRZdr0XtqjJNs7Kobwo+umzYOWk5A9FwZ2+HeTfeafsOMsE647RjXuM1vXwzgy6fPX092a1OJarfQRsXcuPM8Z1VYRUtUZ8LUeQvKa8mnXcHOCtPohULn/us1+5dF2ji/3SnFu8YaJhF76FWbtewlxHYFKZWmGyM4l7oiK/naiPYqX1f7RbAIpdciPaLn50Di2HrB/c1Gd5gHqWptM0YvPrTT75s8XL6zsQdrnYeLS3iEp3X+NTvopPHc773Q6gR6BTJ2wkcoHyFi4SnqR/iH1BW6RL3fjCX2VoeH6ChoH+QffEi8pK1nKtErDn60V+qIUqfR+YGrY22dbxg7A6/ZG7vjVj4=</source>
   </file>
-  <file path="Helpers/LoopFactory.php" generated-path="Helpers.LoopFactory.html" hash="8b656965572c2a45a004b0a5f867bd3a" package="Default">
+  <file path="Helpers/LoopFactory.php" generated-path="Helpers.LoopFactory.html" hash="690dbe7c58d9194ad734e3bf22af6c81" package="Default">
     <docblock line="0">
       <description>Manages the Loop instances</description>
       <long-description></long-description>
@@ -2405,40 +2414,51 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="67" package="Radic\BladeExtensions\Helpers">
-        <name>reset</name>
-        <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::reset()</full_name>
-        <docblock line="67">
-          <description>Resets the stack</description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="69" package="Radic\BladeExtensions\Helpers">
+        <name>getLastStack</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::getLastStack()</full_name>
+        <docblock line="69">
+          <description>getLastStack method</description>
           <long-description></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="77" package="Radic\BladeExtensions\Helpers">
-        <name>loop</name>
-        <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::loop()</full_name>
-        <docblock line="77">
-          <description>To be called first inside the foreach loop. Returns the current loop</description>
-          <long-description></long-description>
-          <tag name="return" line="77" description="$current The current loop data" type="\Radic\BladeExtensions\Helpers\Loop">
+          <tag name="return" line="69" description="" type="\Radic\BladeExtensions\Helpers\Loop">
             <type>\Radic\BladeExtensions\Helpers\Loop</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="88" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="77" package="Radic\BladeExtensions\Helpers">
+        <name>reset</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::reset()</full_name>
+        <docblock line="77">
+          <description>Resets the stack</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="87" package="Radic\BladeExtensions\Helpers">
+        <name>loop</name>
+        <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::loop()</full_name>
+        <docblock line="87">
+          <description>To be called first inside the foreach loop. Returns the current loop</description>
+          <long-description></long-description>
+          <tag name="return" line="87" description="$current The current loop data" type="\Radic\BladeExtensions\Helpers\Loop">
+            <type>\Radic\BladeExtensions\Helpers\Loop</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="98" package="Radic\BladeExtensions\Helpers">
         <name>looped</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::looped()</full_name>
-        <docblock line="88">
+        <docblock line="98">
           <description>To be called before the end of the loop</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="100" package="Radic\BladeExtensions\Helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Radic\BladeExtensions\Helpers" line="110" package="Radic\BladeExtensions\Helpers">
         <name>endLoop</name>
         <full_name>\Radic\BladeExtensions\Helpers\LoopFactory::endLoop()</full_name>
-        <docblock line="100">
+        <docblock line="110">
           <description>Should be called after the loop has finished</description>
           <long-description></long-description>
-          <tag name="param" line="100" description="" type="" variable="$loop"/>
+          <tag name="param" line="110" description="" type="" variable="$loop"/>
         </docblock>
         <argument line="0" by_reference="true">
           <name>$loop</name>
@@ -2447,7 +2467,7 @@
         </argument>
       </method>
     </class>
-    <source>eJyNVV1P20AQfPev2EaoSiKSAOoTKZQWtWolkCqI1Bek6mxv4hOXO+vuHIoQ/717HzaOnQB+SKLc7M7s7N7685eyKJPZeJzAGK6ZZCs0YAuEK6VK4NJYJjM0dDpLJFujKVmGcMNynt19EyzH7/8sSsOVNHc/UZSozTx5Vz4HuKBs9wSB+OzM64GmStvYSOWPNvSDcHWOk+nx9MgfsMoWSkOTXKVcBgp/LHhGDA339a8FXMW/JlBYW57OZtqhp2tuJxE9VXrlozNVPmq+KmyIHp4cHR9P6OPTYZuIMoXvBWaFVEKtOJrILu/h5an5XOg0sEoxS50TE2xb4TuRCWaMt/QHy6zSj8lTkrg03nj3jGFBppPb2T2oZc99D6mRFxumgWnNHuHAR8SDmf8utbKYWczjIZwF7HA073FeamSWGs5A4gMIR/rAbeEHYMU3KCMNkzmwPDfALVjlj9vEjbCSabaupXGLa+PLCn/YgllKLwSkSIlQE3W+Lb1KqW2wrGRm3YSQKGfEMKQaecxTUrfgwBbcTM5JlwPdOj1DV0YIcYeHUcSISncRzz0DvrqiWLD77cI8LLj6i/Lusb2Rv6WsE9stZjaDywKpW6FnS7oHxInShq6QNo0rbsg114PYJG78aZOEL2GYqUraYfTGJxvBORyNWlzevEYJodD+9lzeORrVTnx0r+Wge3xT/5aVKbbQh+0i99l+g7bS0uz3W3tA4Hh1RFZog79dQ2OGtrT9asiBvpjdhNqBe2xtmvaF2024UO4KZEwINy5cG+vuOs/Ra6DeI8sK39rpllVZpZuR2ONYGLMauOgEQc4se7U8h+pXV+c4A5T59nDMe6jJeYquhmbhtNsRMe9yJqTxlROtW4vuZ6v4/SVg3ivCXY4PgOvSPnbGu3M1eiXSjlnSxRtu3YPd+m8LVYm8VYOPbHRDwQw1XHJTNKuvs2MO3qyP9PmL+tFDu2XGa1mvwH6b3rkkaCEt6gUDDyQ7TiiTiqrRcTr/ILj3Oi2mlxrp7cRZKjC8NYzhKwmpuxcO0Vpq2/vIh746X8+Agt71283qySR5e6VqXKtNGCgS2clDL3wFA3E6HMAUdhk0hcEIBvOdsmUlRH86npP/tETCNQ==</source>
+    <source>eJyNVl1P20AQfPev2EaoShBJAPUJCqVFrVopSBVE6gtSdbY38YnLnXV3hiLEf+/eh41jx4Afkig3uzM7u7fJ5y9lUSbz/f0E9uGKSbZGA7ZAWChVApfGMpmhodN5ItkGTckyhGuW8+z2m2A5fv9nURqupLn9iaJEbU6Td+VzgAvKdkcQiM/OvB5oqrSNjVT+6J4+EK7OcTw7mh36A1bZQmlokquUy0DhjwXPiKHhvvq1hEX8agqFteXJfK4derbhdhrRM6XXPjpT5aPm68KG6PHx4dHRlF4+HbSJKFN4X2JWSCXUmqOJ7PIOXp6az4XOAqsU89Q5McW2Fb4TmWDGeEt/sMwq/Zg8JYlL4413zz4syXRyO7sDteq57yE18uKeaWBas0fY8xHxYO7fS60sZhbzeAhnATuenPY4LzUySw1nIPEBhCN94LbwA7Dm9ygjDZM5sDw3wC1Y5Y/bxI2wkmm2qaVxixvjywpf2IJZSi8EpEiJUBN1vi29SqltsKpkZt2EkChnxDikmnjMU1K3YM8W3EzPSZcD3Tg9Y1dGCHGHB1HEhEp3Ec89A766oliw++3CPCy4+ovyDtjeyN9S1ontFjOfw2WB1K3QsxXdA+JEaUNXSJvGNTfkmutBbBI3/rRJwlcwzlQl7Th645NN4BwOJy0ub16jhFBof3su7xyNaic+utdy0D2+qX/LyhRb6IN2kUO2X6OttDTDfmsPCByvjsgabfC3a2jM0JY2pIZyLKhonwc2SEsoH9CzaNweltOkGpKEMt/2d9gl6kzfpN3M2oF7lG2e9iLYTbhU7mpmTAg3xlwb63YQz9FroJlElhV+5GZbLcwq3YzqK87BXg1cdoIgZ5a9Wp5D9aurc5wNmdpGTc9TdDU0i7A9JhHzLmdCGl850bp17T6Kt2bDATDvFeEu7QfATWkfO9euc2V7JdLuW9FCGG/dz936bwpVibxVg49sdEPBDDVcclNgb/bD7tt7sz7S5xfIRw/tlhnXRb2a+2165/KiRbmsFx88kOw4oUwqqkbH6fyD4P5v0MJ8qZF+NTlLBYZfM2P4WkLq7oVDtJbt9p70oa/O1zOgoP8g283qySR5g1I1btR9GCgS2clDf0QUjMTJeAQz2GXQDEYTGJ3ulC0rIfrT8Zz8B5Yg6tA=</source>
   </file>
   <file path="Directives/MarkdownDirectives.php" generated-path="Directives.MarkdownDirectives.html" hash="36b81226e5b0907d20ba4f16eb72d23f" package="Default">
     <docblock line="0">
@@ -4512,7 +4532,7 @@
     </parse_markers>
     <source>eJy1UE1LxDAQvedXzHG36EYFLyq4uHoQ9KI99jKm0yZsmoZkKor4303TdhERPDkEkpm8j+RdXXvthcOOokdF8IS1UdWNxZru3phcNL2L1a53HFBxvBRCFoWAAkptIqTFmuCZUe03aTpebJPOHluCuX5VzEAcWPdhwcEOm4aMQ6YabukVSsIu41Tv34NpNc+4Q7tSazg7OT0/+s7NFGtUcjq8QTP7eCEl2zpYatFuVN/JGSQ7w8cL4fG+hIfpnISkMI4pNGMy+ZPiQ4x6OYOxCoiMgedmmW0D8RAcVH+kWU2aE0vm3Q8v6SnQDE5xAk/yq3XK/Ycvufr/XJP46PkpvgBLcaPa</source>
   </file>
-  <file path="Renderers/BladeStringRenderer.php" generated-path="Renderers.BladeStringRenderer.html" hash="4d9b6b377ffc11b8a0957663d3c5c3df" package="Default">
+  <file path="Renderers/BladeStringRenderer.php" generated-path="Renderers.BladeStringRenderer.html" hash="4bb5794153499f451d44a77bc1623b1b" package="Default">
     <docblock line="0">
       <description>Part of the Robin Radic's PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package
@@ -4520,7 +4540,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
     <namespace-alias name="BladeCompiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
-    <namespace-alias name="Filesystem">\Illuminate\Contracts\Filesystem\Filesystem</namespace-alias>
+    <namespace-alias name="Filesystem">\Illuminate\Filesystem\Filesystem</namespace-alias>
     <class final="false" abstract="false" namespace="Radic\BladeExtensions\Renderers" line="22" package="Radic\BladeExtensions">
       <extends/>
       <name>BladeStringRenderer</name>
@@ -4565,8 +4585,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="38">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="38" description="" type="\Caffeinated\Beverage\Filesystem" variable="">
-            <type>\Caffeinated\Beverage\Filesystem</type>
+          <tag name="var" line="38" description="" type="\Sebwite\Support\Filesystem" variable="">
+            <type>\Sebwite\Support\Filesystem</type>
           </tag>
         </docblock>
       </property>
@@ -4655,8 +4675,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="104">
           <description>get files value</description>
           <long-description></long-description>
-          <tag name="return" line="104" description="" type="\Caffeinated\Beverage\Filesystem">
-            <type>\Caffeinated\Beverage\Filesystem</type>
+          <tag name="return" line="104" description="" type="\Sebwite\Support\Filesystem">
+            <type>\Sebwite\Support\Filesystem</type>
           </tag>
         </docblock>
       </method>
@@ -4666,8 +4686,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="115">
           <description>Set the files value</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="\Caffeinated\Beverage\Filesystem" variable="$files">
-            <type>\Caffeinated\Beverage\Filesystem</type>
+          <tag name="param" line="115" description="" type="\Sebwite\Support\Filesystem" variable="$files">
+            <type>\Sebwite\Support\Filesystem</type>
           </tag>
           <tag name="return" line="115" description="" type="\Radic\BladeExtensions\Renderers\BladeStringRenderer">
             <type>\Radic\BladeExtensions\Renderers\BladeStringRenderer</type>
@@ -4676,7 +4696,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <argument line="0" by_reference="false">
           <name>$files</name>
           <default></default>
-          <type>\Caffeinated\Beverage\Filesystem</type>
+          <type>\Sebwite\Support\Filesystem</type>
         </argument>
       </method>
     </class>
@@ -4685,7 +4705,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <error line="27" code="PPC:ERR-50007">No summary for property $compiler</error>
       <error line="38" code="PPC:ERR-50007">No summary for property $files</error>
     </parse_markers>
-    <source>eJylVV1r20AQfNev2EJIpeDEbaEvTZOWmJQG0mKS0CeDOUtr+4h0Uu9WTkzJf+/e6cOSLNspFYFI2b3Z2Zm9zecv2TLzhicnHpzAWGiCdA60RLhLZ1LBnYhk+NbA+PsYMhE+igWaM0612T9uHuBWhqgMglARhGm21nKxJJBqnupEkEwVzHIVxRjBk6QlA0tT4VgIrmBr3d6Mrn/eX8NcxgiphpU0kmBJlH0aDrWlcJZIOo2LYmdhmvDhoadEgobRsKA5uYpFhNfPxElc2UzuUEWoUZtzz8uZ5E0c54lUgnDyS+LTZJQmGVfUpjhZfZ53k0epIi1CMpNvHDdrQ5g0Xhm91O/Btsc/ticHeU9aqkXFoxLua6kAlE8ve5coclqyHnXixhMXLgWpwg1DXHhjiHs+vHv/cdCDoR5h81jRDau+YLvymZV6qO0JXR4YemEsjOlrz/vjWQSnhX0YfCU0TF4pe3lo6H5nOiUMiefmKKxt6cKPhR2p1MnNPmSpFnrthqhFwDiWu+ApyayVFmu7QtHASMzn6BqIJle4Qs3eNfzfhWyJmB7MTGiRvFoWe6jWYA/GgSEt6bS55jOeIJjnKnRXdToNefBI5yH5bQ41gQFsQQYOq/DekbWX/PSyOgEXTQs7SQ7AZpRadcINbzjJUGqVn2b86edK/paRTzJBPxgAk8YgKABetiTXbkLLr46GZcHWkFQxobVYwxEPgakjGinXqneoOnIWVf0SetBE427clx/sUM/pcXqZ5eRvazHoaly/FReyKmkFqYHlHHxppkVZRyKA42N4w/eGqj8EDSL2wWc3UmV0Yw8rXL+ns6kh/r/hN+JShXEeYQ/1RpIFveDTCyQ7d7z3yDRBOMQCTsMYhfKbnbQlijBGOlCq9MxW3DUizAKa47YScY7diSlxEvmM0V7rGe1hA+Z3Ta74bHHexe7esrNb7hDDYm4dwdZq67bQt773NWTaDTWhd0xw++72rNmuEPucKfbEPk/+bUlv2+UyDxjVWFK7LdpDtVzaB5i2N/X/OFb09NqF3d3Fe0168f4CN38L/Q==</source>
+    <source>eJylVe9r2zAQ/e6/4gals0vabIN9WddurHSs0I3QlH0KBMW+JKK27EnntmH0f99J/hHbsdPARCB2dHr37r3T5fOXbJ1545MTD05gIjRBugRaI9ylC6ngTkQyfGtg8mMCmQgfxArNGYfa6J8393ArQ1QGQagIwjTbaLlaE0i1THUiSKYKFrmKYozgSdKagaWpcCwEZ7C5bm+urn9Nr2EpY4RUw6M0kmBNlH0aj7WlcJZIOo2LZGdhmvDhsadEgobRsKA5+xaLCK+fiYM4s5ndoYpQozbnnpczyZs4zhOpBOHst8Sn2VWaZJxRm+Jk9XreDf7Ov5qNIUwaj4xZqnZvi+KPrcQBTUlLtaqyV3J9LeuGcvVydoEipzWrUAdunXDbpQzVdsMGt721wa0P795/HPVgqAfYLiu1Ya1XbFK+sAKPtT2hywNjL4yFMX3leX89i+C0sIvBH4WG2YFil4fG7jvTKWFI3C1HYW1GF34ibCOlTm72IUu10BvXOi0CxrEcgqcks1ZarN0MRQFTXHDP4myaZ5yDGtYPgVoOpgcuE1okBytiD9Xl78G4ShVpEZLp78+STptrvuDmgWWuQnc35/OQe450HpLf5lATGMEOZOCwCtsdWXurTy+rE3DRdK8T5ABsRKlVZ7thCwcZYm9XOM/41c+V/CMjn2SCfjACJo1BUAC87EiuXXOWbx0Ny4St/qj2hNZiA0fsv6l3NFKuVW8/deQssvol9KiJxtW4Nz8YUM/pcXqZ5eTvajHqalw/FXexSmkFqYHlEnxp5kVaRyKA42N4w1eGqh+CBhG78Nm1VLm7tYcVrp/TxdwQ/1H4jX2pwjiPsId6I8iCXvDpFZLtOx55ZJogvMUCzsMYhfKblbQlijBGeiVV6ZnNONQizAKa7fYo4hy7HVPiJPIZo73WM9r9Fszvmlzx2eE8xG5q2dkB9xrDom8dwdZU65bQN7n3FWTaBTWhBzq4fXd7JmxXiH3OFHNinycHz+ddp1zkKx415tOwO3tYlvN6mGR7Pv+PT0U5h47p7gTea82L9w/fLQMf</source>
   </file>
   <file path="Renderers/CiconiaRenderer.php" generated-path="Renderers.CiconiaRenderer.html" hash="2dde08bc287b094f493756079c1bba63" package="Default">
     <docblock line="0">

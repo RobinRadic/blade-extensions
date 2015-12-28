@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
-use Caffeinated\Beverage\Filesystem;
-use Caffeinated\Beverage\Path;
+use Sebwite\Support\Filesystem;
+use Sebwite\Support\Path;
 
 /**
  * Data generator

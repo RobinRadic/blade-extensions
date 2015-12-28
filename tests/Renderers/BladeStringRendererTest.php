@@ -50,7 +50,7 @@ class BladeStringRendererRendererTest extends TestCase
         $bs->setFiles($this->fs);
         $bs->setTmpFilePath(__DIR__);
 
-        $this->assertInstanceOf('Illuminate\\Contracts\\Filesystem\\Filesystem', $bs->getFiles());
+        $this->assertInstanceOf('Illuminate\\Filesystem\\Filesystem', $bs->getFiles());
         $this->assertEquals(__DIR__, $bs->getTmpFilePath());
     }
 }

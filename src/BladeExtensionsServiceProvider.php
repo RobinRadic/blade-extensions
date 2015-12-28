@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions;
 
-use Caffeinated\Beverage\ServiceProvider;
+use Sebwite\Support\ServiceProvider;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\View\Engines\CompilerEngine;
@@ -42,7 +42,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     protected $dir = __DIR__;
 
-    protected $providers = [ \Caffeinated\Beverage\BeverageServiceProvider::class ];
+    protected $providers = [ \Sebwite\Support\SupportServiceProvider::class ];
 
     protected $provides = [ 'blade.helpers', 'blade.string' ];
 
@@ -57,14 +57,15 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         /** @var \Illuminate\Foundation\Application $app */
         $app = parent::boot();
 
-        $config = array_dot($this->app['config']['blade_extensions']);
-        if ($config['markdown.enabled']) {
+        $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
+        if ($config[ 'markdown.enabled' ]) {
             $view     = $app->make('view');
             $compiler = $app->make('markdown.compiler');
             $markdown = $app->make('markdown');
             $blade    = $app->make('blade.compiler');
 
             $view->getEngineResolver()->register('md', function () use ($compiler) {
+            
 
                 return new CompilerEngine($compiler);
             });
@@ -72,6 +73,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
 
             $view->getEngineResolver()->register('phpmd', function () use ($markdown) {
+            
 
                 return new PhpMarkdownEngine($markdown);
             });
@@ -79,6 +81,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
 
             $view->getEngineResolver()->register('blademd', function () use ($blade, $markdown) {
+            
 
                 return new BladeMarkdownEngine($blade, $markdown);
             });
@@ -92,9 +95,9 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         /** @var \Illuminate\Foundation\Application $app */
         $app = parent::register();
 
-        $config = array_dot($this->app['config']['blade_extensions']);
+        $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
 
-        if ($config['example_views'] === true) {
+        if ($config[ 'example_views' ] === true) {
             $this->viewDirs = [ 'views' => 'blade-ext' ];
         }
 
@@ -108,21 +111,24 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         MinifyDirectives::attach($app);
 
         # Optional markdown compiler, engines and directives
-        if ($config['markdown.enabled']) {
-            if (! class_exists($config['markdown.renderer'])) {
+        if ($config[ 'markdown.enabled' ]) {
+            if (! class_exists($config[ 'markdown.renderer' ])) {
                 throw new Exception('The configured markdown renderer class does not exist');
             }
 
 
-            $app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $config['markdown.renderer']);
+            $app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $config[ 'markdown.renderer' ]);
             $app->singleton('markdown', function (Application $app) {
+            
                 return $app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
             });
 
             $app->singleton('markdown.compiler', function (Application $app) {
+            
                 $markdownRenderer = $app->make('markdown');
                 $files            = $app->make('files');
-                $storagePath      = $app['config']->get('view.compiled');
+                $storagePath      = $app[ 'config' ]->get('view.compiled');
+
                 return new MarkdownCompiler($markdownRenderer, $files, $storagePath);
             });
 
@@ -137,7 +143,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $p = parent::provides();
 
-        if ($this->app['config']['blade_extensions.markdown.enabled']) {
+        if ($this->app[ 'config' ][ 'blade_extensions.markdown.enabled' ]) {
             $p = array_merge($p, [ 'markdown', 'markdown.compiler' ]);
         }
 
@@ -148,6 +154,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
 
         $this->app->singleton('blade.helpers', function (Application $app) {
+        
             $helpers = new Helpers\HelperRepository($app);
 
             $helperClasses = [
@@ -156,8 +163,8 @@ class BladeExtensionsServiceProvider extends ServiceProvider
                 'minifier' => Helpers\Minifier::class
             ];
 
-            if ($app['config']['blade_extensions.markdown.enabled']) {
-                $helperClasses['markdown'] = Helpers\Markdown::class;
+            if ($app[ 'config' ][ 'blade_extensions.markdown.enabled' ]) {
+                $helperClasses[ 'markdown' ] = Helpers\Markdown::class;
             }
 
             foreach ($helperClasses as $name => $class) {

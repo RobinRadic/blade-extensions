@@ -1,6 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Caffeinated\Beverage\Path;
+use Sebwite\Support\Path;
 use Mockery as m;
 use Radic\Tests\BladeExtensions\TestCase;
 

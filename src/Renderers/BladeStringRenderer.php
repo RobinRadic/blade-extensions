@@ -33,7 +33,7 @@ class BladeStringRenderer
     protected $tmpFilePath;
 
     /**
-     * @var \Caffeinated\Beverage\Filesystem
+     * @var \Sebwite\Support\Filesystem
      */
     protected $files;
 
@@ -99,7 +99,7 @@ class BladeStringRenderer
     /**
      * get files value
      *
-     * @return \Caffeinated\Beverage\Filesystem
+     * @return \Sebwite\Support\Filesystem
      */
     public function getFiles()
     {
@@ -109,7 +109,7 @@ class BladeStringRenderer
     /**
      * Set the files value
      *
-     * @param \Caffeinated\Beverage\Filesystem $files
+     * @param \Sebwite\Support\Filesystem $files
      * @return BladeStringRenderer
      */
     public function setFiles(Filesystem $files)

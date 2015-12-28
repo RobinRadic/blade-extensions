@@ -62,6 +62,16 @@ class LoopFactory
     }
 
     /**
+     * getLastStack method
+     *
+     * @return Loop
+     */
+    public function getLastStack()
+    {
+        return end($this->stack);
+    }
+
+    /**
      * Resets the stack
      */
     public function reset()
