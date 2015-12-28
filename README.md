@@ -10,7 +10,7 @@
 
 | **Laravel** | ~4.2 | 5.0 | 5.1 |
 |:-----------:|:----:|:---:|:----:|
-| Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v6.0](tree/master) |
+| Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v6.1](tree/master) |
   
 **Laravel** package providing additional Blade functionality. [**Thoroughly**](http://robin.radic.nl/blade-extensions/) documented and **100%** code coverage.
 
@@ -25,7 +25,7 @@
 - **BladeString** Render blade strings using the facade `BladeString::render('my val: {{ $val }}', array('val' => 'foo'))`
 
 
-## 6.0 Released
+## 6.1 Released
 - [**Rewritten and fully updated documentation.**](http://robin.radic.nl/blade-extensions)   
 - Major improvements - Added and updated tests.     
 - [**Upgrade guide & Changelog**](http://robin.radic.nl/blade-extensions/changelog-upgrade-guide.html)   
@@ -37,7 +37,7 @@
   
 ###### Composer
 ```JSON
-"radic/blade-extensions": "~6.0"
+"radic/blade-extensions": "~6.1"
 ```
 
 ###### Laravel
