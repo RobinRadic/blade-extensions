@@ -1,8 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
-use Caffeinated\Dev\Testing\AbstractTestCase;
-use Caffeinated\Dev\Testing\Traits\ViewTester;
-use Collective\Html\HtmlServiceProvider;
+use Sebwite\Testbench\Traits\ViewTester;
 
 /**
  * Class ViewTest
@@ -10,7 +8,7 @@ use Collective\Html\HtmlServiceProvider;
  * @author     Robin Radic
  * @inheritDoc
  */
-abstract class TestCase extends AbstractTestCase
+abstract class TestCase extends \Sebwite\Testbench\TestCase
 {
     use ViewTester;
 
@@ -28,9 +26,10 @@ abstract class TestCase extends AbstractTestCase
      */
     public static function getData()
     {
-        if (!isset(static::$data)) {
+        if (! isset(static::$data)) {
             static::$data = new DataGenerator();
         }
+
         return static::$data;
     }
 

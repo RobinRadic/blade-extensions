@@ -16,11 +16,9 @@
             "role": "Package Author/Developer"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=5.5.9",
-        "sebwite/support": "1.0.*"
+        "sebwite/support": "~1.0"
     },
     "suggest": {
         "raveren/kint": "Improved @debug output (1.0.*)",
@@ -28,6 +26,8 @@
         "matthiasmullie/minify": "Enables the use of @minify directives (~1.3)"
     },
     "require-dev": {
+        "sebwite/testbench": "~1.0.2",
+        "mockery/mockery": "0.9.*",
         "erusev/parsedown": "~1.5",
         "kzykhys/ciconia": "~1.0.0",
         "matthiasmullie/minify": "~1.3"

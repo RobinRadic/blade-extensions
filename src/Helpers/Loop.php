@@ -108,6 +108,11 @@ class Loop
         );
     }
 
+    public function getItems()
+    {
+        return $this->items;
+    }
+
     /**
      * Magic method to access the loop data properties
      *
