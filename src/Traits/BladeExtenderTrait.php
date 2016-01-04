@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions\Traits;
 
-use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 
 /**
  * Adds an static function `attach` that if called, will instanciate and execute all functions as blade extends
