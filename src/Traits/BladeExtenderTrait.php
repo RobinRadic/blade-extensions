@@ -47,9 +47,9 @@ trait BladeExtenderTrait
     {
 
         /** @var \Illuminate\View\Compilers\BladeCompiler $blade */
-        $blade      = $app->make('blade.compiler');
-        $config     = $app->make('config');
-        $class      = new static;
+        $blade  = $app->make('view')->getEngineResolver()->resolve('blade')->getCompiler();
+        $config = $app->make('config');
+        $class  = new static;
 
         if (!isset($class->directivesFile)) {
             $class->directivesFile = __DIR__ . '/../directives.php';
