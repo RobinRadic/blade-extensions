@@ -16,6 +16,7 @@ use Radic\BladeExtensions\Directives\ForeachDirectives;
 use Radic\BladeExtensions\Directives\MacroDirectives;
 use Radic\BladeExtensions\Directives\MarkdownDirectives;
 use Radic\BladeExtensions\Directives\MinifyDirectives;
+use Radic\BladeExtensions\Directives\IfSectionDirectives;
 use Radic\BladeExtensions\Engines\BladeMarkdownEngine;
 use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
 use Radic\BladeExtensions\Renderers\BladeStringRenderer;
@@ -109,6 +110,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         EmbeddingDirectives::attach($app);
         MacroDirectives::attach($app);
         MinifyDirectives::attach($app);
+        IfSectionDirectives::attach($app);
 
         # Optional markdown compiler, engines and directives
         if ($config[ 'markdown.enabled' ]) {
