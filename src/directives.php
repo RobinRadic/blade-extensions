@@ -145,5 +145,28 @@ $1<?php echo app("blade.helpers")->get('minifier')->close(); ?>
 EOT
     ],
 
+    // IfSectionDirectives
+    'ifsection'      => [
+        'pattern'     => '/(?<!\\w)(\\s*)@ifsection(\\s*\\(.*\\))/',
+        'replacement' => <<<'EOT'
+$1<?php if( $__env->hasSection$2 ) : ?>$3
+EOT
+
+    ],
+    'elseifsection'      => [
+        'pattern'     => '/(?<!\\w)(\\s*)@elseifsection(\\s*)/',
+        'replacement' => <<<'EOT'
+
+$1<?php else: ?>$2
+EOT
+
+    ],
+
+    'endifsection'   => [
+        'pattern'     => '/(?<!\\w)(\\s*)@endifsection(\\s*)/',
+        'replacement' => <<<'EOT'
+$1<?php endif; ?>$2
+EOT
+    ],
 
 ];
