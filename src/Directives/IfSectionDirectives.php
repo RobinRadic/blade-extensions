@@ -38,21 +38,21 @@ class IfSectionDirectives
     {
         return preg_replace($pattern, $replacement, $value);
     }
-//
-//    /**
-//     * directiveElseifsection
-//     *
-//     * @param                                              $value
-//     * @param                                              $pattern
-//     * @param                                              $replacement
-//     * @param \Illuminate\Contracts\Foundation\Application $app
-//     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
-//     * @return mixed
-//     */
-//    public function directiveElseifsection($value, $pattern, $replacement, Application $app, Compiler $blade)
-//    {
-//        return preg_replace($pattern, $replacement, $value);
-//    }
+
+    /**
+     * directiveElseifsection
+     *
+     * @param                                              $value
+     * @param                                              $pattern
+     * @param                                              $replacement
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
+     * @return mixed
+     */
+    public function directiveElseifsection($value, $pattern, $replacement, Application $app, Compiler $blade)
+    {
+        return preg_replace($pattern, $replacement, $value);
+    }
 //
     /**
      * directiveEndifsection
