@@ -214,4 +214,15 @@ trait SectionsTrait
     {
         return $this->sections;
     }
+
+    /**
+     * Check if section exists.
+     *
+     * @param  string  $name
+     * @return bool
+     */
+    public function hasSection($name)
+    {
+        return array_key_exists($name, $this->sections);
+    }
 }
