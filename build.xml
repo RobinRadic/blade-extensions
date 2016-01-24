@@ -1,5 +1,5 @@
 <project name="blade-extensions" default="pre-commit">
-    <property name="vendordir" value="${project.basedir}/../../../vendor"/>
+    <property name="vendordir" value="${phing.dir}/../../../vendor"/>
     <property name="toolsdir" value="/usr/local/bin"/>
     <property name="gitremote.url" value="https://github.com"/>
     <property name="gitremote.owner" value="robinradic"/>

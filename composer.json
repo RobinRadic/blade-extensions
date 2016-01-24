@@ -42,5 +42,10 @@
         "psr-4": {
             "Radic\\Tests\\BladeExtensions\\": "tests/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.2.x-dev"
+        }
     }
 }
