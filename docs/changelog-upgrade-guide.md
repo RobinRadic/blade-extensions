@@ -2,6 +2,10 @@
 title: Upgrade Guide & Changelog
 ---
 
+#### 6.1 > 6.2
+- Fixes the `blade.compiler` error by resolving the `BladeCompiler` differently
+- Adds the `hasSection` to the `SectionsTrait` and `EmbedStack` to match the default `ViewFactory` 
+
 #### 5.* > 6.0
 -  Configuration file overhaul providing more customisation.
 - `vendor:publish` the config file again to include the recent changed.
