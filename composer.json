@@ -29,7 +29,6 @@
         "sebwite/testbench": "~1.0.2",
         "mockery/mockery": "0.9.*",
         "erusev/parsedown": "~1.5",
-        "kzykhys/ciconia": "~1.0.0",
         "matthiasmullie/minify": "~1.3"
     },
 
