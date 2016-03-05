@@ -4,7 +4,6 @@
  */
 namespace Radic\BladeExtensions;
 
-use Sebwite\Support\ServiceProvider;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\View\Engines\CompilerEngine;
@@ -19,6 +18,7 @@ use Radic\BladeExtensions\Directives\MinifyDirectives;
 use Radic\BladeExtensions\Engines\BladeMarkdownEngine;
 use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
 use Radic\BladeExtensions\Renderers\BladeStringRenderer;
+use Sebwite\Support\ServiceProvider;
 
 /**
  * A laravel service provider to register the class into the the IoC container
@@ -31,7 +31,7 @@ use Radic\BladeExtensions\Renderers\BladeStringRenderer;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class BladeExtensionsServiceProvider extends ServiceProvider
+class BladeExtensionsServiceProvider extends Providers\BladeServiceProvider
 {
 
     /** {@inheritDoc} */
@@ -47,7 +47,10 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected $provides = [ 'blade.helpers', 'blade.string' ];
 
     protected $bindings = [
-        'blade.string' => BladeStringRenderer::class
+        'blade.string' => BladeStringRenderer::class,
+        'blade.directives' => [
+            'assignment' => Directives\AssignmentDirectives::class
+        ]
     ];
 
 
@@ -58,35 +61,39 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $app = parent::boot();
 
         $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
-        if ($config[ 'markdown.enabled' ]) {
+        if ( $config[ 'markdown.enabled' ] ) {
             $view     = $app->make('view');
             $compiler = $app->make('markdown.compiler');
             $markdown = $app->make('markdown');
             $blade    = $app->make('blade.compiler');
 
             $view->getEngineResolver()->register('md', function () use ($compiler) {
-            
-
                 return new CompilerEngine($compiler);
             });
             $view->addExtension('md', 'md');
 
-
             $view->getEngineResolver()->register('phpmd', function () use ($markdown) {
-            
-
                 return new PhpMarkdownEngine($markdown);
             });
             $view->addExtension('md.php', 'phpmd');
 
 
             $view->getEngineResolver()->register('blademd', function () use ($blade, $markdown) {
-            
-
                 return new BladeMarkdownEngine($blade, $markdown);
             });
             $view->addExtension('md.blade.php', 'blademd');
         }
+    }
+
+    protected function booting(Application $app)
+    {
+        AssignmentDirectives::attach($app);
+        DebugDirectives::attach($app);
+        ForeachDirectives::attach($app);
+        EmbeddingDirectives::attach($app);
+        MacroDirectives::attach($app);
+        MinifyDirectives::attach($app);
+
     }
 
     /** {@inheritDoc} */
@@ -95,44 +102,16 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         /** @var \Illuminate\Foundation\Application $app */
         $app = parent::register();
 
-        $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
-
-        if ($config[ 'example_views' ] === true) {
+        if ( $this->config('example_views', false) ) {
             $this->viewDirs = [ 'views' => 'blade-ext' ];
         }
 
-        $this->registerHelpers();
+        if($this->config('markdown.enabled', false)){
+            $app->register(Providers\BladeMarkdownServiceProvider::class);
+        }
 
-        AssignmentDirectives::attach($app);
-        DebugDirectives::attach($app);
-        ForeachDirectives::attach($app);
-        EmbeddingDirectives::attach($app);
-        MacroDirectives::attach($app);
-        MinifyDirectives::attach($app);
-
-        # Optional markdown compiler, engines and directives
-        if ($config[ 'markdown.enabled' ]) {
-            if (! class_exists($config[ 'markdown.renderer' ])) {
-                throw new Exception('The configured markdown renderer class does not exist');
-            }
-
-
-            $app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $config[ 'markdown.renderer' ]);
-            $app->singleton('markdown', function (Application $app) {
-            
-                return $app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
-            });
-
-            $app->singleton('markdown.compiler', function (Application $app) {
-            
-                $markdownRenderer = $app->make('markdown');
-                $files            = $app->make('files');
-                $storagePath      = $app[ 'config' ]->get('view.compiled');
-
-                return new MarkdownCompiler($markdownRenderer, $files, $storagePath);
-            });
-
-            MarkdownDirectives::attach($app);
+        if ( $this->config('example', false) ) {
+            $app->register(Providers\BladePreviewServiceProvider::class);
         }
     }
 
@@ -143,7 +122,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $p = parent::provides();
 
-        if ($this->app[ 'config' ][ 'blade_extensions.markdown.enabled' ]) {
+        if ( $this->app[ 'config' ][ 'blade_extensions.markdown.enabled' ] ) {
             $p = array_merge($p, [ 'markdown', 'markdown.compiler' ]);
         }
 
@@ -154,20 +133,20 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
 
         $this->app->singleton('blade.helpers', function (Application $app) {
-        
+
             $helpers = new Helpers\HelperRepository($app);
 
             $helperClasses = [
                 'loop'     => Helpers\LoopFactory::class,
                 'embed'    => Helpers\EmbedStacker::class,
-                'minifier' => Helpers\Minifier::class
+                'minifier' => Helpers\Minifier::class,
             ];
 
-            if ($app[ 'config' ][ 'blade_extensions.markdown.enabled' ]) {
+            if ( $app[ 'config' ][ 'blade_extensions.markdown.enabled' ] ) {
                 $helperClasses[ 'markdown' ] = Helpers\Markdown::class;
             }
 
-            foreach ($helperClasses as $name => $class) {
+            foreach ( $helperClasses as $name => $class ) {
                 $helpers->put($name, $app->make($class));
             }
 

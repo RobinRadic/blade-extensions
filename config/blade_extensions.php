@@ -77,6 +77,8 @@ return array(
     | will be available under the blade-ext::<view> namespace. Use vendor:publish --tag=view
     | to publish to your own resources folder. Based on bootstrap 3.3
     */
-    'example_views' => env('BLADE_EXTENSIONS_EXAMPLE_VIEWS', false)
+    'example_views' => env('BLADE_EXTENSIONS_EXAMPLE_VIEWS', false),
+
+    'example' => env('BLADE_EXTENSIONS_EXAMPLE', false)
 
 );
