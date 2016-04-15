@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "sebwite/support": "1.0.*"
+        "sebwite/support": "2.0.*"
     },
     "suggest": {
         "raveren/kint": "Improved @debug output (1.0.*)",

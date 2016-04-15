@@ -6,7 +6,7 @@ namespace Radic\BladeExtensions\Helpers;
 
 use Sebwite\Support\Path;
 use Sebwite\Support\Str;
-use Sebwite\Support\Filesystem;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Compilers\BladeCompiler;
 use Radic\BladeExtensions\Contracts\Stack;

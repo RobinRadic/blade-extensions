@@ -42,7 +42,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     protected $dir = __DIR__;
 
-    protected $providers = [ \Sebwite\Support\SupportServiceProvider::class ];
+
 
     protected $provides = [ 'blade.helpers', 'blade.string' ];
 
@@ -65,7 +65,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             $blade    = $app->make('blade.compiler');
 
             $view->getEngineResolver()->register('md', function () use ($compiler) {
-            
+
 
                 return new CompilerEngine($compiler);
             });
@@ -73,7 +73,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
 
             $view->getEngineResolver()->register('phpmd', function () use ($markdown) {
-            
+
 
                 return new PhpMarkdownEngine($markdown);
             });
@@ -81,7 +81,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
 
             $view->getEngineResolver()->register('blademd', function () use ($blade, $markdown) {
-            
+
 
                 return new BladeMarkdownEngine($blade, $markdown);
             });
@@ -119,12 +119,12 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
             $app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $config[ 'markdown.renderer' ]);
             $app->singleton('markdown', function (Application $app) {
-            
+
                 return $app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
             });
 
             $app->singleton('markdown.compiler', function (Application $app) {
-            
+
                 $markdownRenderer = $app->make('markdown');
                 $files            = $app->make('files');
                 $storagePath      = $app[ 'config' ]->get('view.compiled');
@@ -154,7 +154,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
 
         $this->app->singleton('blade.helpers', function (Application $app) {
-        
+
             $helpers = new Helpers\HelperRepository($app);
 
             $helperClasses = [
