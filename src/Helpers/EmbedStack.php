@@ -6,7 +6,7 @@ namespace Radic\BladeExtensions\Helpers;
 
 use Sebwite\Support\Path;
 use Sebwite\Support\Str;
-use Sebwite\Support\Filesystem;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Compilers\BladeCompiler;
 use Radic\BladeExtensions\Contracts\Stack;
@@ -126,9 +126,9 @@ class EmbedStack implements Stack, Factory
             $this->files->makeDirectory($tmpDir);
         }
         if (is_null($name)) {
-            $name = Str::slugify($this->viewPath) . '__' . uniqid(time(), true);
+            $name = str_slug($this->viewPath) . '__' . uniqid(time(), true);
         }
-        $path = Path::join($tmpDir, $name);
+        $path = path_join($tmpDir, $name);
         $this->files->put($path, $content);
 
         return [ $name, $path ];
@@ -137,7 +137,7 @@ class EmbedStack implements Stack, Factory
     protected function remove($name)
     {
         $tmpDir = storage_path('blade-extensions');
-        $path   = Path::join($tmpDir, $name);
+        $path   = path_join($tmpDir, $name);
         $this->files->delete($path);
         return $this;
     }
