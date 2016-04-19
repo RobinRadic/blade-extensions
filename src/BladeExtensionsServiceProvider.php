@@ -62,10 +62,8 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
         if($this->app[ 'config' ]->get('blade_extensions.example_views', false) === true) {
             $viewPath = __DIR__ . '/../resources/views';
-            $this->loadViewsFrom($viewPath, 'blade-ext');///vendor/blade-ext
-            $viewPublishPath = $this->app['config']->get('view.paths.0', resource_path('views'));
-            $viewPublishPath .= '/vendor/blade-ext';
-            $this->publishes([ $viewPath => $viewPublishPath], 'views');
+            $this->loadViewsFrom($viewPath, 'blade-ext');
+            $this->publishes([ $viewPath => resource_path('views/vendor/blade-ext') ], 'views');
         }
 
         $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
