@@ -29,7 +29,8 @@
         "matthiasmullie/minify": "Enables the use of @minify directives (~1.3)"
     },
     "require-dev": {
-        "sebwite/testbench": "~1.0.2",
+        "sebwite/testing": "1.0.*",
+        "orchestra/testing": "~3.2",
         "mockery/mockery": "0.9.*",
         "erusev/parsedown": "~1.5",
         "kzykhys/ciconia": "~1.0.0",

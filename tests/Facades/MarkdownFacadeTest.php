@@ -6,7 +6,7 @@
  */
 namespace Radic\Tests\BladeExtensions\Facades;
 
-use Sebwite\Testbench\Traits\FacadeTester;
+use Sebwite\Testing\Laravel\Traits\FacadeTester;
 use Radic\BladeExtensions\Facades\Markdown;
 use Radic\Tests\BladeExtensions\TestCase;
 
