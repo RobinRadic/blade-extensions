@@ -1,6 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
-use Sebwite\Support\Filesystem;
+use Illuminate\Filesystem\Filesystem;
 use Sebwite\Support\Path;
 
 /**
