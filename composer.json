@@ -21,7 +21,9 @@
         "sebwite/support": "~1.0|2.0.*",
         "illuminate/filesystem": "~5.0",
         "illuminate/support": "~5.0",
-        "illuminate/view": "~5.0"
+        "illuminate/view": "~5.0",
+        "danielstjules/stringy": "~1.8|~2.0",
+        "anahkiasen/underscore-php": "2.0.*"
     },
     "suggest": {
         "raveren/kint": "Improved @debug output (1.0.*)",
