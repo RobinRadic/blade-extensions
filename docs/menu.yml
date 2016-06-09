@@ -23,3 +23,25 @@ menu:
   - name: Directives
     icon: fa fa-code
     children:
+      - name: Assignment
+        document: directives/assignment
+        
+      - name: Debug
+        document: directives/debug
+        
+      - name: Embedding
+        document: directives/embedding
+        
+      - name: Foreach
+        document: directives/foreach
+        
+      - name: Macros
+        document: directives/macros
+        
+      - name: Markdown
+        document: directives/markdown
+        
+      - name: Minification
+        document: directives/minification
+        
+      
