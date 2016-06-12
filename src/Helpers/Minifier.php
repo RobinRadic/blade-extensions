@@ -62,7 +62,7 @@ class Minifier
             return $this->compileMinify($code);
         } elseif ($type === 'css' && class_exists('MatthiasMullie\Minify\CSS')) {
             return with(new \MatthiasMullie\Minify\CSS($code))->execute();
-        } elseif ($type === 'js' && class_exists('MatthiasMullie\Minify\CSS')) {
+        } elseif ($type === 'js' && class_exists('MatthiasMullie\Minify\JS')) {
             return with(new \MatthiasMullie\Minify\JS($code))->execute();
         } else {
             return $code;
