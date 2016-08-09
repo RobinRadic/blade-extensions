@@ -15,6 +15,19 @@ namespace Radic\BladeExtensions\Helpers;
  * @copyright      2011-2015, Robin Radic - Radic Technologies
  * @link           http://robin.radic.nl/blade-extensions
  *
+ *
+ * @property int $index1
+ * @property int $index
+ * @property int $revindex1
+ * @property int $revindex
+ * @property bool $first
+ * @property bool $last
+ * @property bool $odd
+ * @property bool $even
+ * @property int $total
+ * @property Loop $parentLoop
+ *
+ *
  */
 class Loop
 {

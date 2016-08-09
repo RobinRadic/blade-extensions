@@ -1,0 +1,37 @@
+@startuml
+
+abstract class Helpers.Stacker {
+    Container $container
+    start()
+    create()
+    getStack()
+    reset()
+    current()
+    end()
+    isEmpty()
+    getContainer()
+    setContainer(Container $container)
+}
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+    DAYS
+    HOURS
+    MINUTES
+}
+
+@enduml
