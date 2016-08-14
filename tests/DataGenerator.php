@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Illuminate\Filesystem\Filesystem;
-use Sebwite\Support\Path;
+use Laradic\Support\Path;
 
 /**
  * Data generator

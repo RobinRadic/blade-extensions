@@ -58,6 +58,7 @@ class DirectiveRegistry
                 $this->directives[ $name ] = $handler;
             }
         }
+
         return $this;
     }
 

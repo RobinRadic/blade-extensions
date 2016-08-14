@@ -13,6 +13,10 @@ use Illuminate\Support\ServiceProvider;
 
 class Provider extends ServiceProvider
 {
+    public function boot()
+    {
+        $this->app[ 'blade-extensions' ]->hookToCompiler();
+    }
 
     /**
      * Register the service provider.
@@ -34,12 +38,6 @@ class Provider extends ServiceProvider
             $directives = new DirectiveRegistry($app);
             $directives->set($app[ 'config' ]->get('blade-extensions.directives', [ ]));
             return $directives;
-        });
-
-        $this->app->booting(function ($app) {
-            /** @var Factory $be */
-            $be = $app[ 'blade-extensions' ];
-            $m  = $be->getMode();
         });
     }
 }

@@ -6,7 +6,7 @@
  */
 namespace Radic\Tests\BladeExtensions\Facades;
 
-use Sebwite\Testing\Laravel\Traits\FacadeTester;
+use Laradic\Testing\Laravel\Traits\FacadeTester;
 use Radic\BladeExtensions\Facades\BladeString;
 use Radic\Tests\BladeExtensions\TestCase;
 

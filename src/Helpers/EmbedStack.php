@@ -4,8 +4,8 @@
  */
 namespace Radic\BladeExtensions\Helpers;
 
-use Sebwite\Support\Path;
-use Sebwite\Support\Str;
+use Laradic\Support\Path;
+use Laradic\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Compilers\BladeCompiler;

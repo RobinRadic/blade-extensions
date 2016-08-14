@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
-use Sebwite\Testing\Laravel\Traits\ServiceProviderTester;
+use Laradic\Testing\Laravel\Traits\ServiceProviderTester;
 
 /**
  * Class ViewTest

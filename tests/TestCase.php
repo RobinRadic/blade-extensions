@@ -1,6 +1,6 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
-use Sebwite\Testing\Laravel\Traits\ViewTester;
+use Laradic\Testing\Laravel\Traits\ViewTester;
 
 /**
  * Class ViewTest
@@ -8,7 +8,7 @@ use Sebwite\Testing\Laravel\Traits\ViewTester;
  * @author     Robin Radic
  * @inheritDoc
  */
-abstract class TestCase extends \Sebwite\Testing\Laravel\AbstractTestCase
+abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
 {
     use ViewTester;
 

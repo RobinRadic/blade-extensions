@@ -4,7 +4,7 @@
  */
 namespace Radic\BladeExtensions\Helpers;
 
-use Sebwite\Support\Str;
+use Laradic\Support\Str;
 use Illuminate\Contracts\Container\Container;
 
 /**

@@ -2,7 +2,7 @@
 namespace Radic\BladeExtensions\Providers;
 
 use Illuminate\Contracts\Foundation\Application;
-use Sebwite\Support\ServiceProvider;
+use Laradic\Support\ServiceProvider;
 
 abstract class BladeServiceProvider extends ServiceProvider
 {

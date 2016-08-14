@@ -5,9 +5,7 @@
  * Date: 8/7/16
  * Time: 1:39 AM
  */
-
 namespace Radic\BladeExtensions\Seven;
-
 
 use Illuminate\Contracts\Foundation\Application;
 
@@ -33,7 +31,15 @@ class Factory
      */
     protected $customModeHandler;
 
+    /**
+     * @var \Illuminate\View\Compilers\Compiler
+     */
     protected $blade;
+
+    /**
+     * @var bool
+     */
+    protected $hooked = false;
 
     /**
      * Factory constructor.
@@ -45,12 +51,14 @@ class Factory
     {
         $this->app        = $app;
         $this->directives = $directives;
-        $this->initModeHandler();
     }
 
-
-    protected function initModeHandler()
+    public function hookToCompiler()
     {
+        if ( true === $this->hooked ) {
+            return;
+        }
+        $this->hooked = true;
         $this->app->booted(function ($app) {
             if ( $this->mode === self::MODE_DISABLED ) {
                 return;
@@ -70,19 +78,12 @@ class Factory
      */
     protected function handleAutoMode()
     {
-        foreach ( $this->directives->directives() as $name ) {
-            $this->getBladeCompiler()->extend(function ($value) use ($name) {
-                return $this->directives->call($name, [ $value ]);
-            });
-        }
-    }
-
-    /**
-     * @return \Illuminate\View\Compilers\BladeCompiler
-     */
-    protected function getBladeCompiler()
-    {
-        return $this->blade ?: $this->blade = $this->app->make('view')->getEngineResolver()->resolve('blade')->getCompiler();
+        $this->getBladeCompiler()->extend(function ($value) {
+            foreach ( $this->directives->directives() as $name ) {
+                $value = $this->directives->call($name, [ $value ]);
+            }
+            return $value;
+        });
     }
 
     /**
@@ -94,6 +95,14 @@ class Factory
             throw new \RuntimeException('[Custom Mode Handler Not Set]');
         }
         $this->app->call($this->customModeHandler, [ ], 'handle');
+    }
+
+    /**
+     * @return \Illuminate\View\Compilers\BladeCompiler
+     */
+    protected function getBladeCompiler()
+    {
+        return $this->blade ?: $this->blade = $this->app->make('view')->getEngineResolver()->resolve('blade')->getCompiler();
     }
 
     public function addDirectives(array $directives)
