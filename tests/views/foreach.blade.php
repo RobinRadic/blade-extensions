@@ -148,3 +148,15 @@
 @endforeach
 
 @assertNull($loop, 'End of loop stack should be null but is not null')
+
+
+@foreach([
+    'this' => 'is',
+    'multi' => 'line'
+] as $key => $val)
+    @if($loop->first)
+        @assertEquals($val, 'is')
+    @elseif($loop->last)
+        @assertEquals($val, 'line')
+    @endif
+@endforeach

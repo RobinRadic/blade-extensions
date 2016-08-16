@@ -60,7 +60,7 @@ EOT
 
     // ForeachDirectives
     'foreach'     => [
-        'pattern'     => '/(?<!\\w)(\\s*)@foreach(?:\\s*)\\((.*)(?:\\sas)(.*)\\)/',
+        'pattern'     => '/(?<!\w)(\s*)@foreach(?:\s*)\(((?:.|\n)*?)(?:\sas)((?:.|\n)*?)\)/',
         'replacement' => <<<'EOT'
 $1<?php
 app('blade.helpers')->get('loop')->newLoop($2);
