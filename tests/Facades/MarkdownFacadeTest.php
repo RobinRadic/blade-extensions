@@ -28,6 +28,9 @@ class MarkdownFacadeTest extends TestCase
     protected function start()
     {
         //$this->app->register()
+        $this->app->config->set('blade_extensions.markdown.views', true);
+        $this->app->config->set('blade_extensions.markdown.enabled', true);
+        $this->app->config->set('blade_extensions.markdown.renderer', 'Radic\\BladeExtensions\\Renderers\\ParsedownRenderer');
         $this->registerServiceProvider();
     }
 

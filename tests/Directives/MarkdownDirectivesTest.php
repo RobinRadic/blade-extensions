@@ -14,6 +14,9 @@ class MarkdownDirectivesTest extends TestCase
     public function setUp()
     {
         parent::setUp();
+        $this->app->config->set('blade_extensions.markdown.views', true);
+        $this->app->config->set('blade_extensions.markdown.enabled', true);
+        $this->app->config->set('blade_extensions.markdown.renderer', 'Radic\\BladeExtensions\\Renderers\\ParsedownRenderer');
         $this->loadViewTesting();
         $this->registerServiceProvider();
         $this->renderedContent = '';
