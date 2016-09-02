@@ -32,7 +32,7 @@
     },
     "require-dev": {
         "sebwite/testing": "1.0.*",
-        "orchestra/testing": "~3.2",
+        "orchestra/testbench": "~3.3",
         "mockery/mockery": "0.9.*",
         "erusev/parsedown": "~1.5",
         "matthiasmullie/minify": "~1.3"
