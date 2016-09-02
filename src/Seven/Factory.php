@@ -41,6 +41,7 @@ class Factory
      */
     protected $hooked = false;
 
+
     /**
      * Factory constructor.
      *

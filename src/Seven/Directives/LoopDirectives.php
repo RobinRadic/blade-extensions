@@ -4,9 +4,6 @@
  */
 namespace Radic\BladeExtensions\Seven\Directives;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\View\Compilers\BladeCompiler as Compiler;
-
 /**
  * Directives: foreach, endforeach, break, continue
  *
@@ -22,67 +19,67 @@ use Illuminate\View\Compilers\BladeCompiler as Compiler;
 class LoopDirectives
 {
 
-    /**
-     * directiveForeach
-     *
-     * @param                                              $value
-     * @param                                              $pattern
-     * @param                                              $replacement
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
-     *
-     * @return mixed
-     */
-    public function foreachDirective($value, $pattern, $replacement, Application $app, Compiler $blade)
+    public static $foreach = [
+        'pattern'     => '/(?<!\\w)(\\s*)@foreach(?:\\s*)\\((.*)(?:\\sas)(.*)\\)/',
+        'replacement' => <<<'EOT'
+$1<?php
+app('blade.helpers')->get('loop')->newLoop($2);
+foreach(app('blade.helpers')->get('loop')->getLastStack()->getItems() as $3):
+    $loop = app('blade.helpers')->get('loop')->loop();
+?>
+EOT,
+    ];
+
+    public static $endforeach = [
+        'pattern'     => '/(?<!\\w)(\\s*)@endforeach(\\s*)/',
+        'replacement' => <<<'EOT'
+$1<?php
+app('blade.helpers')->get('loop')->looped();
+endforeach;
+app('blade.helpers')->get('loop')->endLoop($loop);
+?>$2
+EOT,
+    ];
+
+    public static $break = [
+        'pattern'     => '/(?<!\\w)(\\s*)@break(\\s*)/',
+        'replacement' => <<<'EOT'
+$1<?php
+    break;
+?>$2
+EOT,
+    ];
+
+    public static $continue = [
+        'pattern'     => '/(?<!\\w)(\\s*)@continue(\\s*)/',
+        'replacement' => <<<'EOT'
+$1<?php
+app('blade.helpers')->get('loop')->looped();
+continue;
+?>$2
+EOT,
+    ];
+
+    public function handleForeach($value)
     {
-        return preg_replace($pattern, $replacement, $value);
+        return preg_replace(static::$foreach[ 'pattern' ], static::$foreach[ 'replacement' ], $value);
     }
 
-    /**
-     * directiveEndforeach
-     *
-     * @param                                              $value
-     * @param                                              $pattern
-     * @param                                              $replacement
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
-     *
-     * @return mixed
-     */
-    public function endforeachDirective($value, $pattern, $replacement, Application $app, Compiler $blade)
+
+    public function handleEndforeach($value)
     {
-        return preg_replace($pattern, $replacement, $value);
+        return preg_replace(static::$endforeach[ 'pattern' ], static::$endforeach[ 'replacement' ], $value);
     }
 
-    /**
-     * directiveBreak
-     *
-     * @param                                              $value
-     * @param                                              $pattern
-     * @param                                              $replacement
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
-     *
-     * @return mixed
-     */
-    public function breakDirective($value, $pattern, $replacement, Application $app, Compiler $blade)
+    public function handleBreak($value)
     {
-        return preg_replace($pattern, $replacement, $value);
+        return preg_replace(static::$break[ 'pattern' ], static::$break[ 'replacement' ], $value);
     }
 
-    /**
-     * directiveContinue
-     *
-     * @param                                              $value
-     * @param                                              $pattern
-     * @param                                              $replacement
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @param \Illuminate\View\Compilers\BladeCompiler     $blade
-     *
-     * @return mixed
-     */
-    public function continueDirective($value, $pattern, $replacement, Application $app, Compiler $blade)
+    public function handleContinue($value)
     {
-        return preg_replace($pattern, $replacement, $value);
+        return preg_replace(static::$continue[ 'pattern' ], static::$continue[ 'replacement' ], $value);
     }
+
+
 }
