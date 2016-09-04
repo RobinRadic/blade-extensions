@@ -8,7 +8,14 @@
 namespace Radic\BladeExtensions\Seven\Helpers\Markdown;
 
 
-interface MarkdownParser
+interface MarkdownParserInterface
 {
-
+    /**
+     * Parses Markdown into HTML
+     *
+     * @param string $text The Markdown text
+     *
+     * @return string
+     */
+    public function parse($text);
 }

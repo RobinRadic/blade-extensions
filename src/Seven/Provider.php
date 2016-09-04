@@ -35,10 +35,10 @@ class Provider extends ServiceProvider
             $factory->getDirectives()->set($config[ 'directives' ]);
 
             $helpers = $factory->getHelpers();
-            $helpers->put('loop', $app->build(Helpers\LoopHelper::class));
-            $helpers->put('embed', $app->build(Helpers\EmbedHelper::class));
-            $helpers->put('minifier', $app->build(Helpers\MinifierHelper::class));
-            $helpers->put('markdown', $app->build(Helpers\MarkdownHelper::class));
+            $helpers->put('loop', $app->build(Helpers\Loop\LoopHelper::class));
+            $helpers->put('embed', $app->build(Helpers\Embed\EmbedHelper::class));
+            $helpers->put('minifier', $app->build(Helpers\Minifier\MinifierHelper::class));
+            $helpers->put('markdown', $app->build(Helpers\Markdown\MarkdownHelper::class));
 
             return $factory;
         });

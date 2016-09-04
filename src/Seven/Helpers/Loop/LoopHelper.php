@@ -2,7 +2,9 @@
 /**
  * Manages the Loop instances
  */
-namespace Radic\BladeExtensions\Seven\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers\Loop;
+
+use Radic\BladeExtensions\Seven\Helpers\Loop;
 
 /**
  * Manages the Loop instances

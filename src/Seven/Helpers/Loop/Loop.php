@@ -4,8 +4,6 @@
  */
 namespace Radic\BladeExtensions\Seven\Helpers\Loop;
 
-use Radic\BladeExtensions\Seven\Helpers\LoopHelper;
-
 /**
  * Represents the $loop variable in the foreach directive. Handles all data.
  *

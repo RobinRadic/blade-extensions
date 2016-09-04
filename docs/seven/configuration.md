@@ -32,3 +32,7 @@ This is used internally to bind the directives defined in `blade-extensions.dire
 ```
 
 
+```php
+$be = app('blade-extensions');
+$be->getDirectives()->set('asset', 'App\Directives\AssetDirective');
+```

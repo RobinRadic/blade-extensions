@@ -12,7 +12,8 @@ return [
         'unset' => 'Radic\\BladeExtensions\\Seven\\Directives\\UnsetDirective',
 
         'breakpoint' => 'Radic\\BladeExtensions\\Seven\\Directives\\BreakpointDirective',
-        'debug'      => 'Radic\\BladeExtensions\\Seven\\Directives\\DebugDirective',
+//        'debug'      => 'Radic\\BladeExtensions\\Seven\\Directives\\DebugDirective',
+//        'dump'      => 'Radic\\BladeExtensions\\Seven\\Directives\\DumpDirective',
 
         'foreach'    => 'Radic\\BladeExtensions\\Seven\\Directives\\ForeachDirective',
         'endforeach' => 'Radic\\BladeExtensions\\Seven\\Directives\\EndforeachDirective',
@@ -30,6 +31,9 @@ return [
         'endminify' => 'Radic\\BladeExtensions\\Seven\\Directives\\EndminifyDirective',
 
         'embed' => 'Radic\\BladeExtensions\\Seven\\Directives\\EmbedDirective',
+
+//        'spaceless' => 'Radic\\BladeExtensions\\Seven\\Directives\\SpacelessDirective',
+//        'endspaceless' => 'Radic\\BladeExtensions\\Seven\\Directives\\EndspacelessDirective',
     ],
     'version_overrides'   => [
         '5.0' => [

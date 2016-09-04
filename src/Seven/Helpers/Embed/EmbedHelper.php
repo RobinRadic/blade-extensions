@@ -2,7 +2,10 @@
 /**
  * Manages the Loop instances
  */
-namespace Radic\BladeExtensions\Seven\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers\Embed;
+
+use Radic\BladeExtensions\Seven\Helpers\Embed;
+use Radic\BladeExtensions\Seven\Helpers\Stacker;
 
 /**
  * Manages the Loop instances
