@@ -32,7 +32,7 @@ class Factory
     protected $customModeHandler;
 
     /**
-     * @var \Illuminate\View\Compilers\Compiler
+     * @var \Illuminate\View\Compilers\Compiler|\Illuminate\View\Compilers\BladeCompiler
      */
     protected $blade;
 
@@ -79,8 +79,8 @@ class Factory
      */
     protected function handleAutoMode()
     {
-        $this->getBladeCompiler()->extend(function ($value) {
-            foreach ( $this->directives->directives() as $name ) {
+        $this->getCompiler()->extend(function ($value) {
+            foreach ( $this->directives->getNames() as $name ) {
                 $value = $this->directives->call($name, [ $value ]);
             }
             return $value;
@@ -101,14 +101,9 @@ class Factory
     /**
      * @return \Illuminate\View\Compilers\BladeCompiler
      */
-    protected function getBladeCompiler()
+    public function getCompiler()
     {
         return $this->blade ?: $this->blade = $this->app->make('view')->getEngineResolver()->resolve('blade')->getCompiler();
-    }
-
-    public function addDirectives(array $directives)
-    {
-        $this->directives->set($directives, null, true);
     }
 
     /**

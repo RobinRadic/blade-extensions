@@ -31,13 +31,12 @@ class Provider extends ServiceProvider
             $config  = $app[ 'config' ][ 'blade-extensions' ];
             $factory = new Factory($app, $app[ 'blade-extensions.directives' ]);
             $factory->setMode($config[ 'mode' ]);
+            $factory->getDirectives()->set($config[ 'directives' ]);
             return $factory;
         });
 
-        $this->app->singleton('blade-extensions.directives', function ($app) {
-            $directives = new DirectiveRegistry($app);
-            $directives->set($app[ 'config' ]->get('blade-extensions.directives', [ ]));
-            return $directives;
+        $this->app->bind('blade-extensions.directives', function ($app) {
+            return new DirectiveRegistry($app);
         });
     }
 }

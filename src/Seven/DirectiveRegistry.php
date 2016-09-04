@@ -62,7 +62,7 @@ class DirectiveRegistry
         return $this;
     }
 
-    public function directives()
+    public function getNames()
     {
         return array_keys($this->directives);
     }
@@ -81,6 +81,7 @@ class DirectiveRegistry
                 $class                   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
                 $method                  = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
                 $instance                = $this->app->make($class);
+                $instance->setName($name);
                 $this->resolved[ $name ] = function ($value) use ($name, $instance, $method, $params) {
                     return call_user_func_array([ $instance, $method ], $params);
                 };
