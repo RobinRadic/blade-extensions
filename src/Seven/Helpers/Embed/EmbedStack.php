@@ -2,7 +2,7 @@
 /**
  * Manages the Loop instances
  */
-namespace Radic\BladeExtensions\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers\Embed;
 
 use Laradic\Support\Path;
 use Laradic\Support\Str;
@@ -69,12 +69,12 @@ class EmbedStack implements Stack, Factory
 
     public function end()
     {
-        $content = $this->bladeCompiler->compileString($this->content);
+        $content     = $this->bladeCompiler->compileString($this->content);
         $viewContent = $this->getBladeCompiledViewFileContent();
         list($name, $path) = $this->write($content . $viewContent);
         extract($this->_data);
         $__data = $this->_data;
-        $__env = $this;
+        $__env  = $this;
         extract($this->vars);
         ob_start();
         include($path);
@@ -122,10 +122,10 @@ class EmbedStack implements Stack, Factory
     {
 
         $tmpDir = storage_path('blade-extensions');
-        if (! $this->files->exists($tmpDir)) {
+        if ( !$this->files->exists($tmpDir) ) {
             $this->files->makeDirectory($tmpDir);
         }
-        if (is_null($name)) {
+        if ( is_null($name) ) {
             $name = str_slug($this->viewPath) . '__' . uniqid(time(), true);
         }
         $path = path_join($tmpDir, $name);
@@ -147,11 +147,12 @@ class EmbedStack implements Stack, Factory
      * Determine if a given view exists.
      *
      * @param  string $view
+     *
      * @return bool
      */
     public function exists($view)
     {
-        return call_user_func_array([$this->viewFactory, 'exists'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'exists' ], func_get_args());
     }
 
     /**
@@ -160,11 +161,12 @@ class EmbedStack implements Stack, Factory
      * @param  string $path
      * @param  array  $data
      * @param  array  $mergeData
+     *
      * @return \Illuminate\Contracts\View\View
      */
     public function file($path, $data = [ ], $mergeData = [ ])
     {
-        return call_user_func_array([$this->viewFactory, 'file'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'file' ], func_get_args());
     }
 
     /**
@@ -173,11 +175,12 @@ class EmbedStack implements Stack, Factory
      * @param  string $view
      * @param  array  $data
      * @param  array  $mergeData
+     *
      * @return \Illuminate\Contracts\View\View
      */
     public function make($view, $data = [ ], $mergeData = [ ])
     {
-        return call_user_func_array([$this->viewFactory, 'make'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'make' ], func_get_args());
     }
 
     /**
@@ -185,11 +188,12 @@ class EmbedStack implements Stack, Factory
      *
      * @param  array|string $key
      * @param  mixed        $value
+     *
      * @return mixed
      */
     public function share($key, $value = null)
     {
-        return call_user_func_array([$this->viewFactory, 'share'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'share' ], func_get_args());
     }
 
     /**
@@ -198,11 +202,12 @@ class EmbedStack implements Stack, Factory
      * @param  array|string    $views
      * @param  \Closure|string $callback
      * @param  int|null        $priority
+     *
      * @return array
      */
     public function composer($views, $callback, $priority = null)
     {
-        return call_user_func_array([$this->viewFactory, 'composer'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'composer' ], func_get_args());
     }
 
     /**
@@ -210,11 +215,12 @@ class EmbedStack implements Stack, Factory
      *
      * @param  array|string    $views
      * @param  \Closure|string $callback
+     *
      * @return array
      */
     public function creator($views, $callback)
     {
-        return call_user_func_array([$this->viewFactory, 'creator'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'creator' ], func_get_args());
     }
 
     /**
@@ -222,10 +228,11 @@ class EmbedStack implements Stack, Factory
      *
      * @param  string       $namespace
      * @param  string|array $hints
+     *
      * @return void
      */
     public function addNamespace($namespace, $hints)
     {
-        return call_user_func_array([$this->viewFactory, 'addNamespace'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'addNamespace' ], func_get_args());
     }
 }

@@ -1,7 +1,7 @@
 <?php
 namespace Radic\BladeExtensions\Providers;
 
-use Sebwite\Support\ServiceProvider;
+use Laradic\Support\ServiceProvider;
 
 class BladePreviewServiceProvider extends ServiceProvider
 {

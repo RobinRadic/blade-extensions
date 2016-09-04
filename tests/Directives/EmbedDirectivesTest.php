@@ -1,6 +1,5 @@
 <?php namespace Radic\Tests\BladeExtensions\Directives;
 
-use Sebwite\Support\Path;
 use Mockery as m;
 use Radic\Tests\BladeExtensions\TestCase;
 
@@ -20,7 +19,7 @@ class EmbedDirectivesTest extends TestCase
 
     public function testEmbeds()
     {
-        $view = $this->app->make('view');
+        $view   = $this->app->make('view');
         $config = $this->app->make('config');
         $config->set('blade_extensions.example_views', true);
         $this->loadViewTesting();

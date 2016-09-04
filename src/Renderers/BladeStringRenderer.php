@@ -33,7 +33,7 @@ class BladeStringRenderer
     protected $tmpFilePath;
 
     /**
-     * @var \Sebwite\Support\Filesystem
+     * @var \Laradic\Support\Filesystem
      */
     protected $files;
 
@@ -99,7 +99,7 @@ class BladeStringRenderer
     /**
      * get files value
      *
-     * @return \Sebwite\Support\Filesystem
+     * @return \Laradic\Support\Filesystem
      */
     public function getFiles()
     {
@@ -109,8 +109,9 @@ class BladeStringRenderer
     /**
      * Set the files value
      *
-     * @param \Sebwite\Support\Filesystem $files
-     * @return BladeStringRenderer
+     * @param \Laradic\Support\Filesystem $files
+     *
+*@return BladeStringRenderer
      */
     public function setFiles(Filesystem $files)
     {

@@ -2,10 +2,10 @@
 /**
  * Markdown transformer Helpers
  */
-namespace Radic\BladeExtensions\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers\Markdown;
 
-use Laradic\Support\Str;
 use Illuminate\Contracts\Container\Container;
+use Laradic\Support\Str;
 
 /**
  * Markdown transformer Helpers
@@ -19,28 +19,29 @@ use Illuminate\Contracts\Container\Container;
  * @link                    http://robin.radic.nl/blade-extensions
  *
  */
-class Markdown
+class MarkdownHelper
 {
-    protected $container;
+    protected $app;
 
     protected $renderer;
 
     /**
      * Markdown constructor.
      *
-     * @param \Illuminate\Contracts\Container\Container $container
+     * @param \Illuminate\Contracts\Container\Container $app
      */
-    public function __construct(Container $container)
+    public function __construct(Container $app)
     {
-        $this->container = $container;
-        $class           = $this->container->make('config')->get('blade_extensions.markdown.renderer');
-        $this->renderer  = $this->container->make($class);
+        $this->app = $app;
+        $class     = $app[ 'config' ]->get('blade-extensions.markdown.renderer');
+        #$this->renderer  = $this->container->make($class);
     }
 
     /**
      * Removes indentation
      *
      * @param string $text The markdown text
+     *
      * @return mixed
      */
     protected function transform($text)
@@ -49,9 +50,9 @@ class Markdown
         $firstLine = Str::toSpaces($firstLine[ 0 ], 4);
         preg_match('/([\s]*).*/', $firstLine, $firstLineSpacesMatches);
 
-        if (isset($firstLineSpacesMatches[ 1 ])) {
+        if ( isset($firstLineSpacesMatches[ 1 ]) ) {
             $spaceMatcher = "";
-            for ($i = 0; $i < strlen($firstLineSpacesMatches[ 1 ]); $i++) {
+            for ( $i = 0; $i < strlen($firstLineSpacesMatches[ 1 ]); $i++ ) {
                 $spaceMatcher .= "\s";
             }
             $spaceMatcher = '/^' . $spaceMatcher . '(.*)/m';
@@ -67,12 +68,13 @@ class Markdown
      * Parses markdown text into html
      *
      * @param string $text the markdown text
+     *
      * @return string $newText html
      */
     public function parse($text)
     {
-        $text     = $this->transform($text);
-        $newText  = $this->renderer->render($text);
+        $text    = $this->transform($text);
+        $newText = $this->renderer->render($text);
         return $newText;
     }
 }

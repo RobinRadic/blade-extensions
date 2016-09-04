@@ -1,7 +1,7 @@
 <?php namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
-use Sebwite\Testbench\Traits\ServiceProviderTester;
+use Laradic\Testing\Laravel\Traits\ServiceProviderTester;
 
 /**
  * Class ViewTest
@@ -27,4 +27,5 @@ class ServiceProviderTest extends TestCase
     {
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\BladeExtensionsServiceProvider');
     }
+
 }

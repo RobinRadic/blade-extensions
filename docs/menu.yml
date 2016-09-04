@@ -1,0 +1,54 @@
+menu:
+  - name: Gettings started
+    icon: fa fa-eye
+    children:
+      - name: Overview
+        document: index
+
+      - name: Changelog &amp; Upgrade
+        document: changelog-upgrade-guide
+
+      - name: Installation
+        document: installation
+
+
+      - name: Configuration
+        document: configuration
+
+      - name: Blade String
+        document: blade-string
+
+      - name: API Documentation
+        document: phpdoc
+
+  - name: Directives
+    icon: fa fa-code
+    children:
+      - name: Assignment
+        document: directives/assignment
+
+      - name: Debug
+        document: directives/debug
+
+      - name: Embedding
+        document: directives/embedding
+
+      - name: Foreach
+        document: directives/foreach
+
+      - name: Macros
+        document: directives/macros
+
+      - name: Markdown
+        document: directives/markdown
+
+      - name: Minification
+        document: directives/minification
+
+  - name: Seven
+    icon: fa fa-bitbucket
+    children:
+      - name: Getting started
+        document: seven/getting-started
+
+      - name: Configuration

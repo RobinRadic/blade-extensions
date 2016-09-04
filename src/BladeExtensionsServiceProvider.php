@@ -6,6 +6,7 @@ namespace Radic\BladeExtensions;
 
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
 use Radic\BladeExtensions\Compilers\MarkdownCompiler;
 use Radic\BladeExtensions\Directives\AssignmentDirectives;
@@ -18,7 +19,7 @@ use Radic\BladeExtensions\Directives\MinifyDirectives;
 use Radic\BladeExtensions\Engines\BladeMarkdownEngine;
 use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
 use Radic\BladeExtensions\Renderers\BladeStringRenderer;
-use Sebwite\Support\ServiceProvider;
+
 
 /**
  * A laravel service provider to register the class into the the IoC container
@@ -31,46 +32,52 @@ use Sebwite\Support\ServiceProvider;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class BladeExtensionsServiceProvider extends Providers\BladeServiceProvider
+class BladeExtensionsServiceProvider extends ServiceProvider
 {
 
-    /** {@inheritDoc} */
-    protected $configFiles = [ 'blade_extensions' ];
 
     /**
-     * {@inheritDoc}
+     * Get the services provided by the provider.
+     *
+     * @return array
      */
-    protected $dir = __DIR__;
+    public function provides()
+    {
+        $provides = [ 'blade.helpers', 'blade.string' ];
 
-    protected $providers = [ \Sebwite\Support\SupportServiceProvider::class ];
+        if ( $this->app[ 'config' ][ 'blade_extensions.markdown.enabled' ] ) {
+            $provides = array_merge($provides, [ 'markdown', 'markdown.compiler' ]);
+        }
 
-    protected $provides = [ 'blade.helpers', 'blade.string' ];
-
-    protected $bindings = [
-        'blade.string' => BladeStringRenderer::class,
-        'blade.directives' => [
-            'assignment' => Directives\AssignmentDirectives::class
-        ]
-    ];
+        return $provides;
+    }
 
 
     /** {@inheritDoc} */
     public function boot()
     {
-        /** @var \Illuminate\Foundation\Application $app */
-        $app = parent::boot();
+        $configPath  = __DIR__ . '/../config/blade_extensions.php';
+        $publishPath = function_exists('config_path') ? config_path('blade_extensions.php') : base_path('config/blade_extensions.php');
+        $this->publishes([ $configPath => $publishPath ], 'config');
+
+        if($this->app[ 'config' ]->get('blade_extensions.example_views', false) === true) {
+            $viewPath = __DIR__ . '/../resources/views';
+            $this->loadViewsFrom($viewPath, 'blade-ext');
+            $this->publishes([ $viewPath => resource_path('views/vendor/blade-ext') ], 'views');
+        }
 
         $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
         if ( $config[ 'markdown.enabled' ] ) {
-            $view     = $app->make('view');
-            $compiler = $app->make('markdown.compiler');
-            $markdown = $app->make('markdown');
-            $blade    = $app->make('blade.compiler');
+            $view     = $this->app->make('view');
+            $compiler = $this->app->make('markdown.compiler');
+            $markdown = $this->app->make('markdown');
+            $blade    = $this->app->make('blade.compiler');
 
             $view->getEngineResolver()->register('md', function () use ($compiler) {
                 return new CompilerEngine($compiler);
             });
             $view->addExtension('md', 'md');
+
 
             $view->getEngineResolver()->register('phpmd', function () use ($markdown) {
                 return new PhpMarkdownEngine($markdown);
@@ -85,49 +92,55 @@ class BladeExtensionsServiceProvider extends Providers\BladeServiceProvider
         }
     }
 
-    protected function booting(Application $app)
-    {
-        AssignmentDirectives::attach($app);
-        DebugDirectives::attach($app);
-        ForeachDirectives::attach($app);
-        EmbeddingDirectives::attach($app);
-        MacroDirectives::attach($app);
-        MinifyDirectives::attach($app);
-
-    }
-
     /** {@inheritDoc} */
     public function register()
     {
-        /** @var \Illuminate\Foundation\Application $app */
-        $app = parent::register();
+        $configPath = __DIR__ . '/../config/blade_extensions.php';
+        $this->mergeConfigFrom($configPath, 'blade_extensions');
 
-        if ( $this->config('example_views', false) ) {
+        $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
+
+        if ( $config[ 'example_views' ] === true ) {
             $this->viewDirs = [ 'views' => 'blade-ext' ];
         }
 
-        if($this->config('markdown.enabled', false)){
-            $app->register(Providers\BladeMarkdownServiceProvider::class);
-        }
+        $this->registerHelpers();
 
-        if ( $this->config('example', false) ) {
-            $app->register(Providers\BladePreviewServiceProvider::class);
+        $this->app->bind('blade.string', BladeStringRenderer::class);
+
+        AssignmentDirectives::attach($this->app);
+        DebugDirectives::attach($this->app);
+        ForeachDirectives::attach($this->app);
+        EmbeddingDirectives::attach($this->app);
+        MacroDirectives::attach($this->app);
+        MinifyDirectives::attach($this->app);
+
+        # Optional markdown compiler, engines and directives
+        if ( $config[ 'markdown.enabled' ] ) {
+            if ( !class_exists($config[ 'markdown.renderer' ]) ) {
+                throw new Exception('The configured markdown renderer class does not exist');
+            }
+
+
+            $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $config[ 'markdown.renderer' ]);
+            $this->app->singleton('markdown', function (Application $app) {
+
+                return $app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
+            });
+
+            $this->app->singleton('markdown.compiler', function (Application $app) {
+
+                $markdownRenderer = $app->make('markdown');
+                $files            = $app->make('files');
+                $storagePath      = $app[ 'config' ]->get('view.compiled');
+
+                return new MarkdownCompiler($markdownRenderer, $files, $storagePath);
+            });
+
+            MarkdownDirectives::attach($this->app);
         }
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function provides()
-    {
-        $p = parent::provides();
-
-        if ( $this->app[ 'config' ][ 'blade_extensions.markdown.enabled' ] ) {
-            $p = array_merge($p, [ 'markdown', 'markdown.compiler' ]);
-        }
-
-        return $p;
-    }
 
     protected function registerHelpers()
     {
