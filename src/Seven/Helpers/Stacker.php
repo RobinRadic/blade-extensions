@@ -2,7 +2,7 @@
 /**
  * Manages the Loop instances
  */
-namespace Radic\BladeExtensions\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers;
 
 use Illuminate\Contracts\Container\Container;
 

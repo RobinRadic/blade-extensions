@@ -2,7 +2,9 @@
 /**
  * Represents the $loop variable in the foreach directive. Handles all data.
  */
-namespace Radic\BladeExtensions\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers\Loop;
+
+use Radic\BladeExtensions\Seven\Helpers\LoopHelper;
 
 /**
  * Represents the $loop variable in the foreach directive. Handles all data.
@@ -90,7 +92,7 @@ class Loop
      *
      * @param array $items The array that's being iterated
      */
-    public function __construct(LoopFactory $loopFactory, $items)
+    public function __construct(LoopHelper $loopFactory, $items)
     {
         $this->loopFactory = $loopFactory;
         $this->setItems($items);

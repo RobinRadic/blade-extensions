@@ -2,7 +2,7 @@
 /**
  * Markdown transformer Helpers
  */
-namespace Radic\BladeExtensions\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers;
 
 use Laradic\Support\Str;
 use Illuminate\Contracts\Container\Container;
@@ -19,7 +19,7 @@ use Illuminate\Contracts\Container\Container;
  * @link                    http://robin.radic.nl/blade-extensions
  *
  */
-class Markdown
+class MarkdownHelper
 {
     protected $container;
 
@@ -33,8 +33,8 @@ class Markdown
     public function __construct(Container $container)
     {
         $this->container = $container;
-        $class           = $this->container->make('config')->get('blade_extensions.markdown.renderer');
-        $this->renderer  = $this->container->make($class);
+        #$class           = $this->container->make('config')->get('blade_extensions.markdown.renderer');
+        #$this->renderer  = $this->container->make($class);
     }
 
     /**

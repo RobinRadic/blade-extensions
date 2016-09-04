@@ -41,6 +41,13 @@ class Factory
      */
     protected $hooked = false;
 
+    /**
+     * helpers method
+     *
+     * @var HelperRepository
+     */
+    protected $helpers;
+
 
     /**
      * Factory constructor.
@@ -48,10 +55,19 @@ class Factory
      * @param \Illuminate\Contracts\Foundation\Application   $app
      * @param \Radic\BladeExtensions\Seven\DirectiveRegistry $directives
      */
-    public function __construct(Application $app, DirectiveRegistry $directives)
+    public function __construct(Application $app, DirectiveRegistry $directives, HelperRepository $helpers)
     {
         $this->app        = $app;
         $this->directives = $directives;
+        $this->helpers    = $helpers;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isHooked()
+    {
+        return $this->hooked;
     }
 
     public function hookToCompiler()
@@ -95,7 +111,7 @@ class Factory
         if ( null === $this->customModeHandler ) {
             throw new \RuntimeException('[Custom Mode Handler Not Set]');
         }
-        $this->app->call($this->customModeHandler, [ ], 'handle');
+        $this->app->call($this->customModeHandler, [], 'handle');
     }
 
     /**
@@ -112,6 +128,14 @@ class Factory
     public function getDirectives()
     {
         return $this->directives;
+    }
+
+    /**
+     * @return \Radic\BladeExtensions\Seven\HelperRepository
+     */
+    public function getHelpers()
+    {
+        return $this->helpers;
     }
 
     /**

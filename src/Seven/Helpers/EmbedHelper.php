@@ -2,7 +2,7 @@
 /**
  * Manages the Loop instances
  */
-namespace Radic\BladeExtensions\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers;
 
 /**
  * Manages the Loop instances
@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Helpers;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class EmbedStacker extends Stacker
+class EmbedHelper extends Stacker
 {
 
     /**
@@ -28,7 +28,7 @@ class EmbedStacker extends Stacker
     {
         $viewPath = $args[ 0 ];
         $vars     = isset($args[ 1 ]) ? $args[ 1 ] : [ ];
-        $embed    = $this->getContainer()->make(EmbedStack::class, compact('viewPath', 'vars'));
+        $embed    = $this->getContainer()->make(Embed\EmbedStack::class, compact('viewPath', 'vars'));
         return $embed;
     }
 }

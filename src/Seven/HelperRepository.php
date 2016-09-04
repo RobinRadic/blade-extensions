@@ -23,15 +23,15 @@ class HelperRepository
 
     protected $helpers;
 
-    protected $container;
+    protected $app;
 
     /**
      * @inheritDoc
      */
-    public function __construct(Container $container)
+    public function __construct(Container $app)
     {
-        $this->container = $container;
-        $this->helpers   = [ ];
+        $this->app     = $app;
+        $this->helpers = [];
     }
 
     public function put($key, $data)

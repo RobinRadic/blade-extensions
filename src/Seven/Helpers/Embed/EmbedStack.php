@@ -2,7 +2,7 @@
 /**
  * Manages the Loop instances
  */
-namespace Radic\BladeExtensions\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers\Embed;
 
 use Laradic\Support\Path;
 use Laradic\Support\Str;

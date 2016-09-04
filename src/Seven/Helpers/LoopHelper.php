@@ -2,7 +2,7 @@
 /**
  * Manages the Loop instances
  */
-namespace Radic\BladeExtensions\Helpers;
+namespace Radic\BladeExtensions\Seven\Helpers;
 
 /**
  * Manages the Loop instances
@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Helpers;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class LoopFactory
+class LoopHelper
 {
 
     /**
@@ -33,7 +33,7 @@ class LoopFactory
      */
     public function newLoop($items)
     {
-        $this->addLoopStack(new Loop($this, $items));
+        $this->addLoopStack(new Loop\Loop($this, $items));
     }
 
     /**
@@ -41,7 +41,7 @@ class LoopFactory
      *
      * @param Loop $stackItem
      */
-    protected function addLoopStack(Loop $stackItem)
+    protected function addLoopStack(Loop\Loop $stackItem)
     {
         // Check stack for parent loop to register it with this loop
         if ( count($this->stack) > 0 ) {
