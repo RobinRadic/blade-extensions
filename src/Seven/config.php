@@ -36,14 +36,21 @@ return [
 //        'endspaceless' => 'Radic\\BladeExtensions\\Seven\\Directives\\EndspacelessDirective',
     ],
     'version_overrides'   => [
-        '5.0' => [
+        '5_0' => [
             'breakpoint' => 'Radic\\BladeExtensions\\Seven\\Directives\\Breakpoint50Directive'
         ],
-        '5.1' => [
+        '5_1' => [
             'breakpoint' => null // 'disabled' the directive
         ],
-        '5.2' => [],
-        '5.3' => []
+        '5_2' => [],
+        '5_3' => [
+
+            // 5.3 implemented a $loop
+            'foreach'    => null,
+            'endforeach' => null,
+            'break'      => null,
+            'continue'   => null,
+        ]
     ],
     'disabled_directives' => [
         'debug',
@@ -55,3 +62,5 @@ return [
         ],
     ],
 ];
+
+

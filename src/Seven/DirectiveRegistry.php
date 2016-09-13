@@ -14,19 +14,51 @@ use Illuminate\Contracts\Foundation\Application;
 
 class DirectiveRegistry
 {
-    protected $directives = [ ];
+    protected $directives = [];
+
+    protected $overrides = [];
 
     protected $app;
+
+    protected $factory;
 
     /**
      * DirectiveRegistry constructor.
      *
-     * @param $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Radic\BladeExtensions\Seven\Factory         $factory
      */
-    public function __construct(Application $app)
+    public function __construct(Application $app, Factory $factory)
     {
-        $this->app = $app;
+        $this->app     = $app;
+        $this->factory = $factory;
     }
+
+    /**
+     * Set the versionOverrides value
+     *
+     * @param array $versionOverrides
+     *
+     * @return DirectiveRegistry
+     */
+    public function setVersionOverrides($versionOverrides)
+    {
+        // if used outside of laravel framework (ie with illuminate/views) we ignore the version overrides completely.
+        if(false === class_exists('Illuminate\Foundation\Application', false)){
+            return;
+        }
+        list($laravelMajor, $laravelMinor) = explode('.', \Illuminate\Foundation\Application::VERSION);
+        foreach($versionOverrides as $version => $overrides){
+            list($major, $minor) = explode('_', $version);
+            if($minor !== $laravelMinor || $major !== $laravelMajor){
+                continue;
+            }
+            $this->overrides = $overrides;
+        }
+        return $this;
+    }
+
+
 
 
     public function has($name)
@@ -67,9 +99,9 @@ class DirectiveRegistry
         return array_keys($this->directives);
     }
 
-    protected $resolved = [ ];
+    protected $resolved = [];
 
-    public function call($name, $params = [ ])
+    public function call($name, $params = [])
     {
         if ( false === array_key_exists($name, $this->resolved) ) {
             $handler = $this->get($name);
@@ -78,9 +110,9 @@ class DirectiveRegistry
                     return call_user_func_array($handler, $params);
                 };
             } else {
-                $class                   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
-                $method                  = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
-                $instance                = $this->app->make($class);
+                $class    = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
+                $method   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
+                $instance = $this->app->make($class);
                 $instance->setName($name);
                 $this->resolved[ $name ] = function ($value) use ($name, $instance, $method, $params) {
                     return call_user_func_array([ $instance, $method ], $params);

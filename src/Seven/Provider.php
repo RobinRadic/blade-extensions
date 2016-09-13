@@ -29,7 +29,7 @@ class Provider extends ServiceProvider
 
         $this->app->singleton('blade-extensions', function ($app) {
             $config  = $app[ 'config' ][ 'blade-extensions' ];
-            $factory = new Factory($app, $app[ 'blade-extensions.directives' ], $app[ 'blade-extensions.helpers' ]);
+            $factory = new Factory($app);
             $factory->setMode($config[ 'mode' ]);
 
             $factory->getDirectives()->set($config[ 'directives' ]);

@@ -11,25 +11,10 @@ use Illuminate\Contracts\Foundation\Application;
 
 class Factory
 {
-    const MODE_AUTO = 'auto';
-    const MODE_CUSTOM = 'custom';
-    const MODE_DISABLED = 'disabled';
 
-    /** @var DirectiveRegistry */
-    protected $directives;
-
-    /**
-     * @var string
-     */
-    protected $mode = self::MODE_AUTO;
 
     /** @var Application */
     protected $app;
-
-    /**
-     * @var string|\Closure
-     */
-    protected $customModeHandler;
 
     /**
      * @var \Illuminate\View\Compilers\Compiler|\Illuminate\View\Compilers\BladeCompiler
@@ -41,12 +26,35 @@ class Factory
      */
     protected $hooked = false;
 
+    protected $hook;
+
     /**
      * helpers method
      *
-     * @var HelperRepository
+     * @var \Illuminate\Support\Collection
      */
     protected $helpers;
+
+    /**
+     * directives method
+     *
+     * @var \Illuminate\Support\Collection
+     */
+    protected $directives;
+
+    /**
+     * directiveOverrides method
+     *
+     * @var array
+     */
+    protected $directiveOverrides = [];
+
+    /**
+     * laravelVersion
+     *
+     * @var string
+     */
+    protected $laravelVersion = \Illuminate\Foundation\Application::VERSION;
 
 
     /**
@@ -55,11 +63,19 @@ class Factory
      * @param \Illuminate\Contracts\Foundation\Application   $app
      * @param \Radic\BladeExtensions\Seven\DirectiveRegistry $directives
      */
-    public function __construct(Application $app, DirectiveRegistry $directives, HelperRepository $helpers)
+    public function __construct(Application $app)
     {
         $this->app        = $app;
-        $this->directives = $directives;
-        $this->helpers    = $helpers;
+        $this->directives = collect(); //new DirectiveRegistry($app, $this);
+        $this->helpers    = collect();
+    }
+
+    /**
+     * @return string
+     */
+    public function setHook($hook)
+    {
+        $this->hook = $hook;
     }
 
     /**
@@ -77,41 +93,19 @@ class Factory
         }
         $this->hooked = true;
         $this->app->booted(function ($app) {
-            if ( $this->mode === self::MODE_DISABLED ) {
-                return;
-            }
-            if ( $this->mode === self::MODE_AUTO ) {
-                $this->handleAutoMode();
-            } elseif ( $this->mode === self::MODE_CUSTOM ) {
-                $this->handleCustomMode();
-            } else {
-                throw new \RuntimeException('BladeExtensions Factory $mode not valid');
-            }
-        });
-    }
 
-    /**
-     * @param Application $app
-     */
-    protected function handleAutoMode()
-    {
-        $this->getCompiler()->extend(function ($value) {
-            foreach ( $this->directives->getNames() as $name ) {
-                $value = $this->directives->call($name, [ $value ]);
+            // call custom hook function
+            if ( $this->hook ) {
+                return $this->app->call($this->hook, [ $this ], 'handle');
             }
-            return $value;
-        });
-    }
 
-    /**
-     * @param Application $app
-     */
-    protected function handleCustomMode()
-    {
-        if ( null === $this->customModeHandler ) {
-            throw new \RuntimeException('[Custom Mode Handler Not Set]');
-        }
-        $this->app->call($this->customModeHandler, [], 'handle');
+            $this->getCompiler()->extend(function ($value) {
+                foreach ( $this->directives->keys()->toArray() as $name ) {
+                    $value = $this->getResolvedDirective($name, [ $value ]);
+                }
+                return $value;
+            });
+        });
     }
 
     /**
@@ -123,15 +117,9 @@ class Factory
     }
 
     /**
-     * @return \Radic\BladeExtensions\Seven\DirectiveRegistry
-     */
-    public function getDirectives()
-    {
-        return $this->directives;
-    }
-
-    /**
-     * @return \Radic\BladeExtensions\Seven\HelperRepository
+     * getHelpers method
+     *
+     * @return \Illuminate\Support\Collection
      */
     public function getHelpers()
     {
@@ -139,24 +127,68 @@ class Factory
     }
 
     /**
-     * @return string
+     * getDirectives method
+     *
+     * @return \Illuminate\Support\Collection
      */
-    public function getMode()
+    public function getDirectives()
     {
-        return $this->mode;
+        return $this->directives;
     }
 
     /**
-     * @param string $mode
+     * setVersionOverrides method
+     *
+     * @param array $versionOverrides
+     *
+     * @return static|void|null
      */
-    public function setMode($mode)
+    public function setVersionOverrides($versionOverrides)
     {
-        $this->mode = $mode;
+        // if used outside of laravel framework (ie with illuminate/views) we ignore the version overrides completely.
+        if ( false === class_exists('Illuminate\Foundation\Application', false) ) {
+            return;
+        }
+        list($laravelMajor, $laravelMinor) = explode('.', \Illuminate\Foundation\Application::VERSION);
+        foreach ( $versionOverrides as $version => $overrides ) {
+            list($major, $minor) = explode('_', $version);
+            if ( $minor !== $laravelMinor || $major !== $laravelMajor ) {
+                continue;
+            }
+            $this->directiveOverrides = $overrides;
+        }
+        return $this;
     }
 
-    public function setCustomModeHandler($handler)
+
+    protected $resolvedDirectives = [];
+
+    public function getResolvedDirective($name, $params = [])
     {
-        $this->customModeHandler = $handler;
+        if ( false === array_key_exists($name, $this->resolvedDirectives) ) {
+            $handler = array_key_exists($name, $this->directiveOverrides) ? $this->directiveOverrides[ $name ] : $this->directives->get($name);
+
+            if ( $handler instanceof \Closure ) {
+                $this->resolvedDirectives[ $name ] = function ($value) use ($name, $handler, $params) {
+                    return call_user_func_array($handler, $params);
+                };
+            } else {
+                $class    = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
+                $method   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
+                $instance = $this->app->make($class);
+                $instance->setName($name);
+                $this->resolvedDirectives[ $name ] = function ($value) use ($name, $instance, $method, $params) {
+                    return call_user_func_array([ $instance, $method ], $params);
+                };
+            }
+        }
+
+        return call_user_func_array($this->resolvedDirectives[ $name ], $params);
+    }
+
+    protected function isCallableWithAtSign($callback)
+    {
+        return is_string($callback) && strpos($callback, '@') !== false;
     }
 
 

@@ -134,6 +134,14 @@ class Loop
      */
     public function __get($key)
     {
+        $deprecated = [
+            'index1' => 'iteration',
+            'revindex' => 'remaining',
+            'revindex1' => 'remaining',
+        ];
+        if(array_key_exists($key, $deprecated)){
+            error_log("The \$loop variable '{$key}' is deprecated. Please use '{$deprecated[$key]}' instead", E_NOTICE);
+        }
         return $this->data[$key];
     }
 
