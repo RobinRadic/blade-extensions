@@ -7,28 +7,6 @@ use Radic\BladeExtensions\Contracts\Stack;
 use Radic\BladeExtensions\Helpers\Stacker;
 use Radic\Tests\BladeExtensions\TestCase;
 
-class FixtureStack implements Stack
-{
-
-    /**
-     * start
-     *
-     * @return \Radic\BladeExtensions\Contracts\Stack
-     */
-    public function start()
-    {
-    }
-
-    /**
-     * end
-     *
-     * @return \Radic\BladeExtensions\Contracts\Stack
-     */
-    public function end()
-    {
-    }
-}
-
 class FixtureStacker extends Stacker
 {
 

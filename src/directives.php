@@ -8,12 +8,14 @@ return [
         'replacement' => <<<'EOT'
 $1<?php \$$2 = $3; $__data['$2'] = $3; ?>
 EOT
+        ,
     ],
     'unset' => [
         'pattern'     => '/(?<!\\w)(\\s*)@unset(?:\\s*)\\((?:\\s*)(?:\\$|(?:\'|\\"|))(.*?)(?:\'|\\"|)(?:\\s*)\\)/',
         'replacement' => <<<'EOT'
 $1<?php unset(\$$2); ?>
 EOT
+        ,
     ],
 
     // DebugDirectives
@@ -33,6 +35,7 @@ EOT
     }
     ?>
 EOT
+        ,
     ],
     'breakpoint'  => [
         'pattern'     => '/(?<!\\w)(\\s*)@breakpoint(\\s*)/',
@@ -43,6 +46,7 @@ if(function_exists('xdebug_break')){
 }
 ?>
 EOT
+        ,
     ],
 
     // EmbeddingDirectives
@@ -56,6 +60,7 @@ $3
 ); ?>
 $1<?php app('blade.helpers')->get('embed')->end(); ?>
 EOT
+        ,
     ],
 
     // ForeachDirectives
@@ -68,6 +73,7 @@ foreach(app('blade.helpers')->get('loop')->getLastStack()->getItems() as $3):
     $loop = app('blade.helpers')->get('loop')->loop();
 ?>
 EOT
+        ,
     ],
     'endforeach'  => [
         'pattern'     => '/(?<!\\w)(\\s*)@endforeach(\\s*)/',
@@ -78,6 +84,7 @@ endforeach;
 app('blade.helpers')->get('loop')->endLoop($loop);
 ?>$2
 EOT
+        ,
     ],
     'break'       => [
         'pattern'     => '/(?<!\\w)(\\s*)@break(\\s*)/',
@@ -86,6 +93,7 @@ $1<?php
     break;
 ?>$2
 EOT
+        ,
     ],
     'continue'    => [
         'pattern'     => '/(?<!\\w)(\\s*)@continue(\\s*)/',
@@ -95,6 +103,7 @@ app('blade.helpers')->get('loop')->looped();
 continue;
 ?>$2
 EOT
+        ,
     ],
 
     // MacroDirectives
@@ -103,18 +112,21 @@ EOT
         'replacement' => <<<'EOT'
 $1<?php echo app("blade.helpers")->$2($3); ?>
 EOT
+        ,
     ],
     'macrodef'    => [
         'pattern'     => '/(?<!\w)(\s*)@macrodef(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"](?:,|)(.*)\)/',
         'replacement' => <<<'EOT'
 $1<?php app("blade.helpers")->macro("$2", function($3){ ?>
 EOT
+        ,
     ],
     'endmacro'    => [
         'pattern'     => '/(?<!\\w)(\\s*)@endmacro(\\s*)/',
         'replacement' => <<<'EOT'
 $1<?php }); ?>$2
 EOT
+        ,
     ],
 
     // MarkdownDirectives
@@ -123,10 +135,11 @@ EOT
         'replacement' => <<<'EOT'
 $1<?php echo app("blade.helpers")->get('markdown')->parse(<<<'EOT'$2
 EOT
+        ,
     ],
     'endmarkdown' => [
         'pattern'     => '/(?<!\\w)(\\s*)@endmarkdown(\\s*)/',
-        'replacement' => "$1\nEOT\n); ?>$2"
+        'replacement' => "$1\nEOT\n); ?>$2",
 
     ],
 
@@ -136,6 +149,7 @@ EOT
         'replacement' => <<<'EOT'
 $1<?php echo app("blade.helpers")->get('minifier')->open$2; ?>
 EOT
+        ,
 
     ],
     'endminify'   => [
@@ -143,6 +157,7 @@ EOT
         'replacement' => <<<'EOT'
 $1<?php echo app("blade.helpers")->get('minifier')->close(); ?>
 EOT
+        ,
     ],
 
 

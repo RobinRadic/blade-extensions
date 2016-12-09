@@ -34,14 +34,6 @@ abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory
-     */
-    public function view()
-    {
-        return $this->app[ 'view' ];
-    }
-
-    /**
      * Get the service provider class.
      *
      * @return string
@@ -56,12 +48,4 @@ abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
         return realpath(__DIR__ . '/..');
     }
 
-    /**
-     * Adds assertion directives to blade and removes cached views
-     */
-    protected function loadViewTesting()
-    {
-        $this->addViewTesting(true, __DIR__ . '/views');
-        $this->cleanViews();
-    }
 }

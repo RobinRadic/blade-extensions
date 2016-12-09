@@ -27,7 +27,7 @@ abstract class Stacker
      *
      * @var array $stack
      */
-    protected $stack = array();
+    protected $stack = [ ];
 
     /**
      * @inheritDoc
@@ -54,7 +54,7 @@ abstract class Stacker
      *
      * @return mixed
      */
-    abstract protected function create($args = []);
+    abstract protected function create($args = [ ]);
 
     /**
      * Returns the stack
@@ -71,7 +71,7 @@ abstract class Stacker
      */
     public function reset()
     {
-        $this->stack = array();
+        $this->stack = [ ];
     }
 
     /**
@@ -91,7 +91,7 @@ abstract class Stacker
      */
     public function end()
     {
-        if (!$this->isEmpty()) {
+        if ( !$this->isEmpty() ) {
             static::current()->end();
             array_pop($this->stack);
         }
@@ -116,6 +116,7 @@ abstract class Stacker
      * Set the container value
      *
      * @param \Illuminate\Contracts\Container\Container $container
+     *
      * @return Stacker
      */
     public function setContainer($container)
