@@ -3,10 +3,8 @@ namespace Radic\BladeExtensions\Directives;
 
 class DebugDirective extends Directive
 {
-    protected $pattern = '/(?<!\w)(\s*)@NAME(\s*\(.*\))/';
-
     protected $replace = <<<'EOT'
-    <?php
+    $1<?php
     if(class_exists('Kint')) {
         Kint::dump$2;
     } elseif(class_exists('Illuminate\Support\Debug\HtmlDumper')){
@@ -16,7 +14,7 @@ class DebugDirective extends Directive
         var_dump($2);
         echo '</code></pre>';
     }
-    ?>
+    ?>$2
 EOT;
 
 

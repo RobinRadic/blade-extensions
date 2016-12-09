@@ -25,11 +25,11 @@ class SetDirectiveTest extends DirectivesTestCase
      */
     public function testView()
     {
-        $this->view()->make('directives.set', [
+        $this->render('directives.set', [
             'dataString'        => 'hello',
             'dataArray'         => static::getData()->getValues()[ 'names' ],
             'dataClassInstance' => static::getData(),
             'dataClassName'     => 'DataGenerator'
-        ])->render();
+        ]);
     }
 }

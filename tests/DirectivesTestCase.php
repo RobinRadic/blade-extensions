@@ -16,12 +16,9 @@ abstract class DirectivesTestCase extends TestCase
         $this->cleanViews();
     }
 
-    /**
-     * @return \Illuminate\Contracts\View\Factory
-     */
-    public function view()
+    public function render($view, $data = [])
     {
-        return $this->app[ 'view' ];
+        return $this->app[ 'view' ]->make($view, $data)->render();
     }
 
 

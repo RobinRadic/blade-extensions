@@ -25,11 +25,11 @@ class UnsetDirectiveTest extends DirectivesTestCase
      */
     public function testView()
     {
-        $this->view()->make('directives.unset', [
+        $this->render('directives.unset', [
             'dataString'        => 'hello',
             'dataArray'         => static::getData()->getValues()[ 'names' ],
             'dataClassInstance' => static::getData(),
             'dataClassName'     => 'DataGenerator'
-        ])->render();
+        ]);
     }
 }

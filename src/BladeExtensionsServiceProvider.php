@@ -27,11 +27,11 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/blade-extensions.php', 'blade-extensions');
 
-        $this->app->bind('blade-extensions.directives', function ($app) {
+        $this->app->singleton('blade-extensions.directives', function ($app) {
             return new DirectiveRegistry($app);
         });
-        $this->app->bind('blade-extensions.helpers', function ($app) {
-            return new HelperRepository($app);
+        $this->app->singleton('blade-extensions.helpers', function ($app) {
+            return new HelperRepository();
         });
         $this->app->singleton('blade-extensions', function ($app) {
             $config  = $app[ 'config' ][ 'blade-extensions' ];

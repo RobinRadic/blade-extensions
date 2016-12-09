@@ -14,6 +14,7 @@ This is used internally to bind the directives defined in `blade-extensions.dire
 
 
 ### directives
+Using the configuration 
 ```php
 [                                                                                                                                                                                                                                            
     'directives' => [
@@ -30,7 +31,7 @@ This is used internally to bind the directives defined in `blade-extensions.dire
     ]
 ];
 ```
-
+Or progmatically
 
 ```php
 $be = app('blade-extensions');

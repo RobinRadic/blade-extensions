@@ -20,7 +20,6 @@ class DirectiveRegistry
 
     protected $app;
 
-    protected $factory;
 
     /**
      * DirectiveRegistry constructor.
@@ -28,10 +27,9 @@ class DirectiveRegistry
      * @param \Illuminate\Contracts\Foundation\Application $app
      * @param \Radic\BladeExtensions\Seven\Factory         $factory
      */
-    public function __construct(Application $app, Factory $factory)
+    public function __construct(Application $app)
     {
         $this->app     = $app;
-        $this->factory = $factory;
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 namespace Radic\BladeExtensions\Directives;
 
-class SpacelessDirective
+class SpacelessDirective extends Directive
 {
-
+    protected $replace = '$1$2';
 }

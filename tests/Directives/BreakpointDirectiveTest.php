@@ -19,13 +19,11 @@ class BreakpointDirectiveTest extends DirectivesTestCase
      */
     public function testView()
     {
-        $this->assertEquals($this->view()->make('directives.breakpoint')->render(), '');
+        $this->assertEquals($this->render('directives.breakpoint'), '');
     }
 
     public function testReplace()
     {
-        $class = $this->getDirective();
-        $class->setName('breakpoint');
-        $this->assertEquals($class->handle('@breakpoint'), $class->getReplace());
+        $this->assertEquals($this->getDirective()->setName('breakpoint')->handle('@breakpoint'), '<?php if(function_exists("xdebug_break")){ xdebug_break(); } ?>');
     }
 }

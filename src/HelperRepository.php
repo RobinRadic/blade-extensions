@@ -23,16 +23,9 @@ class HelperRepository
 
     protected $helpers;
 
-    protected $app;
-
-    protected $factory;
-
-
-    public function __construct(Container $app, Factory $factory)
+    public function __construct()
     {
-        $this->app     = $app;
         $this->helpers = [];
-        $this->factory = $factory;
     }
 
     public function put($key, $data)

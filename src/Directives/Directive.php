@@ -3,7 +3,7 @@ namespace Radic\BladeExtensions\Directives;
 
 abstract class Directive
 {
-    protected $pattern;
+    protected $pattern = '/(?<!\\w)(\\s*)@NAME(\\s*)/';
 
     protected $replace;
 

@@ -3,8 +3,6 @@ namespace Radic\BladeExtensions\Directives;
 
 class EndforeachDirective extends Directive
 {
-    protected $pattern = '/(?<!\\w)(\\s*)@NAME(\\s*)/';
-
     protected $replace = <<<'EOT'
 $1<?php
 app('blade.helpers')->get('loop')->looped();
