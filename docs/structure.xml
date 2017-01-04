@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--~
+  ~ Copyright (c) 2016. Robin Radic.
+  ~
+  ~ The license can be found in the package and online at https://radic.mit-license.org.
+  ~
+  ~ @copyright Copyright 2016 (c) Robin Radic
+  ~ @license https://radic.mit-license.org The MIT License
+  -->
+
 <project title="API Documentation" version="v2.8.5">
   <partials/>
   <file path="Traits/SectionsTrait.php" generated-path="Traits.SectionsTrait.html" hash="3cb3f9cda541ff188214d499cf3fb789" package="Default">

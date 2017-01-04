@@ -1,11 +1,11 @@
 <?php
 /**
- * Part of Radic - Blade Extensions
+ * Copyright (c) 2016. Robin Radic.
  *
- * @author         Robin Radic
- * @license        MIT License - http://radic.mit-license.org
- * @copyright  (c) 2011-2015, Robin Radic - Radic Technologies
- * @link           http://radic.nl
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright Copyright 2016 (c) Robin Radic
+ * @license https://radic.mit-license.org The MIT License
  */
 
 return array(

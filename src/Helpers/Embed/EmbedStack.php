@@ -1,5 +1,14 @@
 <?php
 /**
+ * Copyright (c) 2016. Robin Radic.
+ *
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright Copyright 2016 (c) Robin Radic
+ * @license https://radic.mit-license.org The MIT License
+ */
+
+/**
  * Manages the Loop instances
  */
 namespace Radic\BladeExtensions\Helpers\Embed;
@@ -9,7 +18,6 @@ use Laradic\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Compilers\BladeCompiler;
-use Radic\BladeExtensions\Contracts\Stack;
 use Radic\BladeExtensions\Traits\SectionsTrait;
 
 /**
@@ -24,7 +32,7 @@ use Radic\BladeExtensions\Traits\SectionsTrait;
  * @link           http://robin.radic.nl/blade-extensions
  *
  */
-class EmbedStack implements Stack, Factory
+class EmbedStack implements Factory
 {
     use SectionsTrait;
 

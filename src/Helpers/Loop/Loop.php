@@ -1,5 +1,14 @@
 <?php
 /**
+ * Copyright (c) 2016. Robin Radic.
+ *
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright Copyright 2016 (c) Robin Radic
+ * @license   https://radic.mit-license.org The MIT License
+ */
+
+/**
  * Represents the $loop variable in the foreach directive. Handles all data.
  */
 namespace Radic\BladeExtensions\Helpers\Loop;
@@ -37,7 +46,7 @@ class Loop
      *
      * @var array
      */
-    protected $items = [ ];
+    protected $items = [];
 
     /**
      * The data for the current $loop item
@@ -136,6 +145,16 @@ class Loop
     public function __get($key)
     {
         return $this->data[ $key ];
+    }
+
+    public function __set($key, $val)
+    {
+        // do not allow setting the data
+    }
+
+    public function __isset($key)
+    {
+        return isset($this->data[ $key ]);
     }
 
     /**

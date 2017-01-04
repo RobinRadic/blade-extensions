@@ -1,4 +1,13 @@
 <?php
+/**
+ * Copyright (c) 2016. Robin Radic.
+ *
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright Copyright 2016 (c) Robin Radic
+ * @license https://radic.mit-license.org The MIT License
+ */
+
 return [
     'mode'                => 'auto',
     'directives'          => [
@@ -26,6 +35,9 @@ return [
 
         'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
 
+        'closure' => function(){
+
+        }
 //        'spaceless' => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
 //        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
     ],
@@ -40,8 +52,9 @@ return [
         '5.3' => []
     ],
     'disabled_directives' => [
-        'debug',
+        'debug', // globally disable the directive
     ],
+    // @todo This should not be needed anymore..
     'overrides'           => [
         'debug' => [
             'pattern'     => '',

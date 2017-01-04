@@ -1,4 +1,14 @@
-<?php namespace Radic\Tests\BladeExtensions;
+<?php
+/**
+ * Copyright (c) 2016. Robin Radic.
+ *
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright Copyright 2016 (c) Robin Radic
+ * @license https://radic.mit-license.org The MIT License
+ */
+
+namespace Radic\Tests\BladeExtensions;
 
 use Laradic\Testing\Laravel\Traits\ViewTester;
 
@@ -46,6 +56,11 @@ abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
     protected function getPackageRootPath()
     {
         return realpath(__DIR__ . '/..');
+    }
+
+    public function testTest()
+    {
+        $this->assertTrue(true);
     }
 
 }

@@ -1,4 +1,14 @@
-<?php namespace Radic\Tests\BladeExtensions;
+<?php
+/**
+ * Copyright (c) 2016. Robin Radic.
+ *
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright Copyright 2016 (c) Robin Radic
+ * @license https://radic.mit-license.org The MIT License
+ */
+
+namespace Radic\Tests\BladeExtensions;
 
 use Mockery as m;
 use Laradic\Testing\Laravel\Traits\ServiceProviderTester;
@@ -9,7 +19,7 @@ use Laradic\Testing\Laravel\Traits\ServiceProviderTester;
  * @author     Robin Radic
  * @group blade-extensions
  */
-class ServiceProviderTest extends TestCase
+class BladeExtensionsServiceProviderTest extends TestCase
 {
     use ServiceProviderTester;
 
@@ -18,7 +28,6 @@ class ServiceProviderTest extends TestCase
      */
     protected function start()
     {
-        $this->loadViewTesting();
         $this->registerServiceProvider();
     }
 
@@ -28,4 +37,8 @@ class ServiceProviderTest extends TestCase
         $this->runServiceProviderRegisterTest('Radic\BladeExtensions\BladeExtensionsServiceProvider');
     }
 
+    protected function getPackageRootPath()
+    {
+        return __DIR__ . DIRECTORY_SEPARATOR . '..';
+    }
 }
