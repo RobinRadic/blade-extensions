@@ -12,6 +12,7 @@ php:
 branches:
   only:
     - master
+    - develop
 
 env:
     - LARAVEL_VERSION="5.1.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
