@@ -12,5 +12,5 @@ namespace Radic\BladeExtensions\Directives;
 
 class SpacelessDirective extends Directive
 {
-    protected $replace = '$1$2';
+    protected $replace = '<?php ob_start() ?>';
 }

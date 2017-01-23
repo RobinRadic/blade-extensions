@@ -2,15 +2,11 @@
 title: Home
 subtitle: Blade Extensions overview
 ---
-#### Introduction
-Blade Extensions is a **Laravel** package providing additional Blade functionality. 
-It mainly consists out of new blade directives. Highly configurable, easily extendable. 
+## Introduction
+Blade Extensions is a **Laravel** package providing additional Blade functionality.  
+It mainly consists out of Blade directives.
 
-
-By altering the configuration you can blacklist unwanted directives, enable/disable features or completely override directives provided by the package.
-
-
-#### A few examples
+### Quick Example: A few directives
 ```php
 @foreach($stuff as $key => $val)
     $loop->index;       // int, zero based
@@ -30,35 +26,85 @@ By altering the configuration you can blacklist unwanted directives, enable/disa
             $loop->parent->parentLoop->index;
         @endforeach
     @endforeach  
-    
     @break
-
     @continue
 @endforeach
 
+// Assignment
 @set('newvar', 'value')
 {{ $newvar }}
 @unset('newvar')
 @unset($newvar)
 
-
+// var_dump or HTMLDumper or....
 @debug($somearr)
 
 // xdebug_break breakpoints (configurable) to debug compiled views. Sweet? YES!
 @breakpoint
 
+// Parse some markdown code
 @markdown
-# Some markdown code
 ** with some bold text too **
-@endmarkdown
+@endmarkdown 
 
-// including markdown files is also possible, the markdown will be converted to html. 
-// Exclude the file extension of the markdown file, similair to blade.php files
-@include('path/to/markdown/file')
-
-// Beside @include, View::make('path/to/markdown/file')->render() will also work (though it would be better to use the Markdown facade / markdown ioc binding 
+// Minify this very big script
+<script>
+@minify('js')
+window.blade = { foo: 'bar', date: new Date() }
+@endminify
+</script>
 ```
 
+### Quick Example: Configuration
+The configuration has come a long way. Lets have this example speak for itself!
+```php
+
+return [
+    'directives'        => [
+        'set'        => 'Radic\\BladeExtensions\\Directives\\SetDirective',
+        'unset'      => 'Radic\\BladeExtensions\\Directives\\UnsetDirective',
+        'breakpoint' => 'App\\Directives\\MyBreakpointDirective',
+        'foreach'    => 'Radic\\BladeExtensions\\Directives\\ForeachDirective',
+        'endforeach' => 'Radic\\BladeExtensions\\Directives\\EndforeachDirective',
+        'break'      => 'Radic\\BladeExtensions\\Directives\\BreakDirective',
+        // ....
+        
+        // prefered, will call the 'handle' function. 
+        'directiveName' => 'Full\\Qualified\\Class\\Path',
+        
+        // alternatively you can let it call some other function
+        'directiveName2' => 'Full\\Qualified\\Class\\Path@fire',
+        
+        // Also possible, but shouldn't really 
+        'directiveName3' => function($value){}
+        
+        // Blade Extensions will feature a lot of optional directives, you'd have to enable them
+        // manually by uncommenting 
+        //'spaceless' => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
+        //'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
+    ],
+    'version_overrides' => [
+        // 5.0 behaves a bit differently, so we react to it. (imginary issue provided as example)
+        '5.0' => [
+            'foreach'    => 'Radic\\BladeExtensions\\Directives\\Laravel50\\ForeachDirective',
+        ],
+        '5.1' => [
+        ],
+        // 5.2 introduced @break and @continue
+        '5.2' => [
+            'break'    => null,
+            'continue' => null,
+        ],
+        // 5.3 introduced the loop variable for the @foreach directive.
+        '5.3' => [
+            'foreach'    => null,
+            'endforeach' => null,
+            'break'      => null,
+            'continue'   => null,
+        ],
+    ],
+];
+```
 
 #### Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org)
