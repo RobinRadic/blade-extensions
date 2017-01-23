@@ -5,18 +5,18 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright Copyright 2016 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @license   https://radic.mit-license.org The MIT License
  */
 
 return [
-    'mode'                => 'auto',
-    'directives'          => [
+    'mode'              => 'auto',
+    'directives'        => [
         'set'   => 'Radic\\BladeExtensions\\Directives\\SetDirective',
         'unset' => 'Radic\\BladeExtensions\\Directives\\UnsetDirective',
 
         'breakpoint' => 'Radic\\BladeExtensions\\Directives\\BreakpointDirective',
-//        'debug'      => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
-//        'dump'      => 'Radic\\BladeExtensions\\Directives\\DumpDirective',
+        'debug'      => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
+        'dump'       => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
 
         'foreach'    => 'Radic\\BladeExtensions\\Directives\\ForeachDirective',
         'endforeach' => 'Radic\\BladeExtensions\\Directives\\EndforeachDirective',
@@ -35,32 +35,27 @@ return [
 
         'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
 
-        'closure' => function(){
-
+        'closure' => function () {
         }
 //        'spaceless' => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
 //        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
     ],
-    'version_overrides'   => [
+    'version_overrides' => [
         '5.0' => [
-            'breakpoint' => 'Radic\\BladeExtensions\\Directives\\Breakpoint50Directive'
         ],
         '5.1' => [
-            'breakpoint' => null // 'disabled' the directive
         ],
-        '5.2' => [],
-        '5.3' => []
-    ],
-    'disabled_directives' => [
-        'debug', // globally disable the directive
-    ],
-
-
-    // @todo This should not be needed anymore..
-    'overrides'           => [
-        'debug' => [
-            'pattern'     => '',
-            'replacement' => '',
+        // 5.2 introduced @break and @continue
+        '5.2' => [
+            'break'    => null,
+            'continue' => null,
+        ],
+        // 5.3 introduced the loop variable for the @foreach directive.
+        '5.3' => [
+            'foreach'    => null,
+            'endforeach' => null,
+            'break'      => null,
+            'continue'   => null,
         ],
     ],
 ];
