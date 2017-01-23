@@ -15,18 +15,24 @@ branches:
     - develop
 
 env:
-    - LARAVEL_VERSION="5.1.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
-    - LARAVEL_VERSION="5.2.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
-    - LARAVEL_VERSION="5.3.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
+#  - LARAVEL_VERSION="5.0.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
+#  - LARAVEL_VERSION="5.1.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
+  - LARAVEL_VERSION="5.2.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
+  - LARAVEL_VERSION="5.3.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
+#  - LARAVEL_VERSION="5.4.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
+
+install:
+  - composer require laravel/framework:${LARAVEL_VERSION}
 
 before_script:
-    - composer self-update
-    - composer install --prefer-source --no-interaction
+  - composer self-update
+  - composer install --prefer-source --no-interaction
 
-script: phpunit -c phpunit.xml --coverage-clover=coverage.clover
+script:
+  - phpunit -c phpunit.xml --coverage-clover=coverage.clover
 
 after_script:
-    - wget https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 
