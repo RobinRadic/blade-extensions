@@ -23,7 +23,7 @@ env:
 
 install:
   - composer require laravel/framework:${LARAVEL_VERSION}
-  - composer require orchestra/testbench:${LARAVEL_VERSION}
+  - composer require orchestra/testbench:${TESTBENCH_VERSION}
 
 before_script:
   - composer self-update
