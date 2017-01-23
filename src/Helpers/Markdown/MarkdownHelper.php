@@ -51,7 +51,7 @@ class MarkdownHelper
      *
      * @param string $text The markdown text
      *
-     * @return mixed
+     * @return string
      */
     protected function transform($text)
     {
