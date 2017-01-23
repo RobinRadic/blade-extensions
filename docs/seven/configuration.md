@@ -35,5 +35,5 @@ Or progmatically
 
 ```php
 $be = app('blade-extensions');
-$be->getDirectives()->set('asset', 'App\Directives\AssetDirective');
+$be->getDirectives()->register('asset', 'App\Directives\AssetDirective');
 ```

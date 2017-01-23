@@ -10,7 +10,7 @@
 
 namespace Radic\Tests\BladeExtensions;
 
-class BladeExtensionsFactoryTest extends TestCase
+class HookerTest extends TestCase
 {
 
 }

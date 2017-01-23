@@ -27,7 +27,7 @@ class ContinueDirectiveTest extends DirectivesTestCase
     {
         $this->assertEquals(
             $this->getDirective()->setName('continue')->handle('@continue'),
-            '<?php app("blade.helpers")->get("loop")->looped(); continue; ?>'
+            '<?php app("blade-extensions.helpers")->get("loop")->looped(); continue; ?>'
         );
     }
 }

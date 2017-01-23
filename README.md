@@ -8,39 +8,26 @@
 [![License](http://img.shields.io/badge/license-MIT-ff69b4.svg?style=flat-square)](http://radic.mit-license.org)
 
 
-| **Laravel** | ~4.2 | 5.0 | ~5.1 |
-|:-----------:|:----:|:---:|:----:|
-| Blade extensions | [v2.2](tree/v2.2) | [v3.0](tree/v3.0) | [v6.2](tree/master) |
+|   **Laravel**    |       ~4.2        |         5.*         |
+|:----------------:|:------------------|:-------------------:|
+| Blade extensions | [v2.2](tree/v2.2) | [v7.*](tree/master) |
   
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 
-**Laravel** package providing additional Blade functionality. [**Thoroughly**](http://robin.radic.nl/blade-extensions/) documented and **100%** code coverage.
+A **Laravel** package providing additional Blade functionality. [**Thoroughly**](http://robin.radic.nl/blade-extensions/) documented and **100%** code coverage.
 
-
-- **@set @unset** Setting and unsetting of values
-- **@foreach @break @continue** Loop data and extras (similair to twig `$loop`)
-- **@embed** Think of embed as combining the behaviour of include and extends. (similair to twig `embed`)
-- **@debug @breakpoint** Dump values and set breakpoints in views
-- **@macro** Defining and running macros
-- **@markdown** (optional) Render github flavoured markdown with your preffered renderer by using the directives or view engine/compilers. (optional, requires [erusev/parsedown](https://github.com/erusev/parsedown) or [kzykhys/ciconia](https://github.com/kzykhys/Ciconia))
-- **@minify** (optional) Minify inline code. Supports CSS, JS and HTML.
-- **BladeString** Render blade strings using the facade `BladeString::render('my val: {{ $val }}', array('val' => 'foo'))`
-
-
-## 6.2 Released
-- [**Rewritten and fully updated documentation.**](http://robin.radic.nl/blade-extensions)   
-- Major improvements - Added and updated tests.     
-- [**Upgrade guide & Changelog**](http://robin.radic.nl/blade-extensions/changelog-upgrade-guide.html)   
-- [**Go to documentation website.**](http://robin.radic.nl/blade-extensions)  
-- [**Go to git markdown docs.**](blob/master/docs/index.md)  
-- [**Test coverage.**](http://robin.radic.nl/blade-extensions/coverage)  
+## Version 7.0
+- [**Go to documentation website.**](http://robin.radic.nl/blade-extensions)
+- [**Go to git markdown docs.**](blob/master/docs/index.md)
+- [**Upgrade guide & Changelog**](http://robin.radic.nl/blade-extensions/changelog-upgrade-guide.html)
+- [**Test coverage.**](http://robin.radic.nl/blade-extensions/coverage)
 
 
   
 ###### Composer
 ```JSON
-"radic/blade-extensions": "~6.2"
+"radic/blade-extensions": "~7.0"
 ```
 
 ###### Laravel

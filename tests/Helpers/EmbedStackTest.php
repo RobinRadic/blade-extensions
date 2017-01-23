@@ -11,7 +11,7 @@
 namespace Radic\Tests\BladeExtensions\Helpers;
 
 use Mockery as m;
-use Radic\BladeExtensions\Helpers\EmbedStack;
+use Radic\BladeExtensions\Helpers\Embed\EmbedStack;
 use Radic\Tests\BladeExtensions\TestCase;
 
 class EmbedStackTest extends TestCase

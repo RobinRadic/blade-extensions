@@ -1,23 +1,29 @@
 <?php
 /**
- * Copyright (c) 2016. Robin Radic.
+ * Copyright (c) 2017. Robin Radic.
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2016 (c) Robin Radic
+ * @copyright Copyright 2017 (c) Robin Radic
  * @license https://radic.mit-license.org The MIT License
  */
 
-namespace Radic\Tests\BladeExtensions\Helpers;
+namespace Radic\Tests\BladeExtensions;
 
-use Mockery as m;
+use Laradic\Testing\Native\AbstractTestCase;
 use Radic\BladeExtensions\HelperRepository;
-use Radic\BladeExtensions\Helpers\Markdown;
-use Radic\BladeExtensions\Helpers\Minifier;
-use Radic\Tests\BladeExtensions\TestCase;
+use Radic\BladeExtensions\Helpers\Embed\EmbedHelper;
+use Radic\BladeExtensions\Helpers\Loop\LoopHelper;
+use Radic\BladeExtensions\Helpers\Markdown\MarkdownHelper;
+use Radic\BladeExtensions\Helpers\Minifier\MinifierHelper;
 
-class HelperRepositoryTest extends TestCase
+class HelperRepositoryTest extends AbstractTestCase
 {
+    public function test_can_create_instance()
+    {
+        $this->assertInstanceOf(HelperRepository::class, new HelperRepository());
+    }
+
 
     /**
      * @var \Mockery\MockInterface
@@ -31,16 +37,18 @@ class HelperRepositoryTest extends TestCase
 
     protected $helperClasses;
 
-    protected function start()
+    protected function setUp()
     {
-        $this->container   = m::mock('Illuminate\Contracts\Container\Container');
+        parent::setUp();
+
+        $this->container   = \Mockery::mock('Illuminate\Contracts\Container\Container');
         $this->helperMocks = [ ];
 
         $this->helperClasses = [
-            'loop'     => LoopFactory::class,
-            'embed'    => EmbedStacker::class,
-            'markdown' => Markdown::class,
-            'minifier' => Minifier::class
+            'loop'     => LoopHelper::class,
+            'embed'    => EmbedHelper::class,
+            'markdown' => MarkdownHelper::class,
+            'minifier' => MinifierHelper::class
         ];
     }
 
@@ -54,7 +62,7 @@ class HelperRepositoryTest extends TestCase
         $h = new HelperRepository($this->container);
 
         foreach ($this->helperClasses as $name => $class) {
-            $this->helperMocks[ $name ] = m::mock($class);
+            $this->helperMocks[ $name ] = \Mockery::mock($class);
             $h->put($name, $this->helperMocks[ $name ]);
         }
 

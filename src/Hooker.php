@@ -19,7 +19,7 @@ namespace Radic\BladeExtensions;
 use Illuminate\Contracts\Foundation\Application;
 use Radic\BladeExtensions\Contracts\BladeExtensionsFactory as BladeExtensionsFactoryContract;
 
-class BladeExtensionsFactory implements BladeExtensionsFactoryContract
+class Hooker implements BladeExtensionsFactoryContract
 {
     const MODE_AUTO = 'auto';
     const MODE_CUSTOM = 'custom';

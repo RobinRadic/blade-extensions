@@ -8,37 +8,103 @@
  * @license https://radic.mit-license.org The MIT License
  */
 
-/**
- * Created by IntelliJ IDEA.
- * User: radic
- * Date: 8/7/16
- * Time: 5:24 AM
- */
-
 namespace Radic\BladeExtensions;
 
 
 use Closure;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 
+/**
+ * The DirectiveRegistry contains all BladeExtension's directives to be used when compiling views, including the version overrides.
+ *
+ * @package        Radic\BladeExtensions
+ * @author         Robin Radic
+ * @copyright      Copyright (c) 2017, Robin Radic. All rights reserved
+ */
 class DirectiveRegistry
 {
+    /**
+     * The registered directives
+     *
+     * @var array
+     */
     protected $directives = [];
 
+    /**
+     * The override directives
+     *
+     * @var array
+     */
     protected $overrides = [];
 
-    protected $app;
+    /**
+     * @var array|\Radic\BladeExtensions\Directives\Directive[]
+     */
+    protected $resolved = [];
+
+    protected $container;
 
 
     /**
      * DirectiveRegistry constructor.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @param \Radic\BladeExtensions\Seven\Factory         $factory
+     * @param \Illuminate\Contracts\Container\Container $container
      */
-    public function __construct(Application $app)
+    public function __construct(Container $container)
     {
-        $this->app     = $app;
+        $this->container = $container;
+    }
+
+    /**
+     * Register a directive (or array of directives)
+     *
+     * @param      string|array         $name
+     * @param      null|string|\Closure $handler
+     * @param bool                      $override
+     *
+     * @return static
+     * @throws \InvalidArgumentException
+     */
+    public function register($name, $handler = null, $override = false)
+    {
+        if ( $handler === null ) {
+            foreach ( (array)$name as $directiveName => $directiveHandler ) {
+                $this->register($directiveName, $directiveHandler);
+            }
+        } else {
+            if ( (true === $override && true === $this->has($name)) || false === $this->has($name) ) {
+                $this->directives[ $name ] = $handler;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Gets list of all registered directives their name
+     *
+     * @return array
+     */
+    public function getNames()
+    {
+        return array_keys($this->directives);
+    }
+
+    /**
+     * Get a registered directive by name
+     *
+     * @param $name
+     *
+     * @return mixed
+     */
+    public function get($name)
+    {
+        return $this->directives[ $name ];
+    }
+
+    public function has($name)
+    {
+        return array_key_exists($name, $this->directives);
     }
 
     /**
@@ -65,49 +131,14 @@ class DirectiveRegistry
         return $this;
     }
 
-
-
-
-    public function has($name)
-    {
-        return array_key_exists($name, $this->directives);
-    }
-
-    public function get($name)
-    {
-        return $this->directives[ $name ];
-    }
-
     /**
-     * @param      string|array         $name
-     * @param      null|string|\Closure $handler
-     * @param bool                      $override
+     * Call a directive. This will execute the directive using the given parameters
      *
-     * @return static
-     * @throws \InvalidArgumentException
+     * @param       $name
+     * @param array $params
+     *
+     * @return mixed
      */
-    public function set($name, $handler = null, $override = false)
-    {
-        if ( $handler === null ) {
-            foreach ( (array)$name as $directiveName => $directiveHandler ) {
-                $this->set($directiveName, $directiveHandler);
-            }
-        } else {
-            if ( (true === $override && true === $this->has($name)) || false === $this->has($name) ) {
-                $this->directives[ $name ] = $handler;
-            }
-        }
-
-        return $this;
-    }
-
-    public function getNames()
-    {
-        return array_keys($this->directives);
-    }
-
-    protected $resolved = [];
-
     public function call($name, $params = [])
     {
         if ( false === array_key_exists($name, $this->resolved) ) {
@@ -119,7 +150,7 @@ class DirectiveRegistry
             } else {
                 $class    = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
                 $method   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
-                $instance = $this->app->make($class);
+                $instance = $this->container->make($class);
                 $instance->setName($name);
                 $this->resolved[ $name ] = function ($value) use ($name, $instance, $method, $params) {
                     return call_user_func_array([ $instance, $method ], $params);

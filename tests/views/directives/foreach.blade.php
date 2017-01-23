@@ -1,3 +1,5 @@
+@breakpoint
+
 {{-- Test spaces --}}
 @foreach  (   $array as $key => $val   )
     @assertTrue($loop->first, 'foreach spaces test')
@@ -142,7 +144,9 @@
     @assertTrue(is_array($loop->getLoopStack()))
 
     @if($loop->last)
-        <?php $loop->resetLoopStack(); ?>
+        @php
+        $loop->resetLoopStack();
+        @endphp
     @endif
 
 @endforeach

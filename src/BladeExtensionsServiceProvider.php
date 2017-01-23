@@ -24,9 +24,12 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $this->publishes([
+            __DIR__ . '/../config/blade-extensions.php' => config_path('blade-extensions.php')
+        ], 'config');
+
         $this->app[ 'blade-extensions' ]->hookToCompiler();
     }
-
     /**
      * Register the service provider.
      *
@@ -35,6 +38,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/blade-extensions.php', 'blade-extensions');
+
 
         $this->app->singleton('blade-extensions.directives', function ($app) {
             return new DirectiveRegistry($app);
@@ -46,10 +50,10 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             $config  = $app[ 'config' ][ 'blade-extensions' ];
 
 
-            $factory = new BladeExtensionsFactory($app, $app[ 'blade-extensions.directives' ], $app[ 'blade-extensions.helpers' ]);
+            $factory = new Hooker($app, $app[ 'blade-extensions.directives' ], $app[ 'blade-extensions.helpers' ]);
             $factory->setMode($config[ 'mode' ]);
 
-            $factory->getDirectives()->set($config[ 'directives' ]);
+            $factory->getDirectives()->register($config[ 'directives' ]);
 
             $helpers = $factory->getHelpers();
             $helpers->put('loop', $app->build(Helpers\Loop\LoopHelper::class));

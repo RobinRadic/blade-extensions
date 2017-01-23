@@ -15,7 +15,7 @@
  * Time: 11:33 AM
  */
 
-namespace Radic\BladeExtensions;
+namespace Radic\BladeExtensions\Helpers;
 
 
 trait BladeMatchers

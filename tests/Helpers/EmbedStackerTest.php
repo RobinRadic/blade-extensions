@@ -11,7 +11,7 @@
 namespace Radic\Tests\BladeExtensions\Helpers;
 
 use Mockery as m;
-use Radic\BladeExtensions\Helpers\EmbedStacker;
+use Radic\BladeExtensions\Helpers\Embed\EmbedHelper;
 use Radic\Tests\BladeExtensions\TestCase;
 
 class EmbedStackerTest extends TestCase
@@ -36,7 +36,7 @@ class EmbedStackerTest extends TestCase
     protected function start()
     {
         $this->container = m::mock('Illuminate\Contracts\Container\Container');
-        $this->stacker   = new EmbedStacker($this->container);
+        $this->stacker   = new EmbedHelper($this->container);
         $this->container->shouldReceive('make')->andReturn($this->stack = m::mock('Radic\\BladeExtensions\\Helpers\\EmbedStack'));
         $this->stack->shouldReceive('start')->andReturnSelf()->getMock()->shouldReceive('end')->andReturnSelf();
     }

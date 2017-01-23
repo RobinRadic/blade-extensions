@@ -18,7 +18,7 @@ use Laradic\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Compilers\BladeCompiler;
-use Radic\BladeExtensions\Traits\SectionsTrait;
+use Radic\BladeExtensions\Helpers\UsesSections;
 
 /**
  * Manages the Loop instances
@@ -34,7 +34,7 @@ use Radic\BladeExtensions\Traits\SectionsTrait;
  */
 class EmbedStack implements Factory
 {
-    use SectionsTrait;
+    use UsesSections;
 
     protected $files;
 

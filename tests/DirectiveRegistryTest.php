@@ -10,29 +10,29 @@
 
 namespace Radic\Tests\BladeExtensions;
 
+use Mockery;
 use Radic\BladeExtensions\DirectiveRegistry;
 
 class DirectiveRegistryTest extends TestCase
 {
-    protected $app;
+    protected $container;
 
     protected function createInstance()
     {
-        $this->app = \Mockery::mock('Illuminate\Foundation\Application');
-        return new DirectiveRegistry($this->app);
+        return new DirectiveRegistry($this->container = Mockery::mock('Illuminate\Contracts\Container\Container'));
     }
 
     public function test_set_accepts_array()
     {
         $dir = $this->createInstance();
-        $dir->set('set', function(){
+        $dir->register('set', function(){
             $args = func_get_args();
         });
-        $dir->set('unset', function(){
+        $dir->register('unset', function(){
             $args = func_get_args();
         });
 
-        $dir->set([
+        $dir->register([
             'set' => function(){
                 $args = func_get_args();
 

@@ -54,6 +54,8 @@ return [
     'disabled_directives' => [
         'debug', // globally disable the directive
     ],
+
+
     // @todo This should not be needed anymore..
     'overrides'           => [
         'debug' => [
