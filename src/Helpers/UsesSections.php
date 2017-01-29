@@ -85,7 +85,7 @@ trait UsesSections
      *
      * @param  string $section
      * @param  string $content
-     * @return SectionsTrait
+     * @return UsesSections
      */
     public function inject($section, $content)
     {
@@ -146,7 +146,7 @@ trait UsesSections
      *
      * @param  string $section
      * @param  string $content
-     * @return SectionsTrait
+     * @return UsesSections
      */
     protected function extendSection($section, $content)
     {
@@ -186,7 +186,7 @@ trait UsesSections
     /**
      * Flush all of the section contents.
      *
-     * @return SectionsTrait
+     * @return UsesSections
      */
     public function flushSections()
     {
@@ -200,7 +200,7 @@ trait UsesSections
     /**
      * Flush all of the section contents if done rendering.
      *
-     * @return SectionsTrait
+     * @return UsesSections|null
      */
     public function flushSectionsIfDoneRendering()
     {

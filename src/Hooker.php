@@ -101,7 +101,6 @@ class Hooker implements BladeExtensionsFactoryContract
     }
 
     /**
-     * @param Application $app
      */
     protected function handleAutoMode()
     {
@@ -114,7 +113,6 @@ class Hooker implements BladeExtensionsFactoryContract
     }
 
     /**
-     * @param Application $app
      */
     protected function handleCustomMode()
     {
