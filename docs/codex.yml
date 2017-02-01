@@ -1,25 +1,32 @@
 menu:
-  - name: Gettings started
+  - name: Prologue
     icon: fa fa-eye
     children:
-      - name: Overview
-        document: index
+      - name: Release Notes
+        document: prologue/release-notes
 
-      - name: Changelog &amp; Upgrade
-        document: changelog-upgrade-guide
+      - name: Upgrade Guide
+        document: prologue/changelog-upgrade-guide
 
-      - name: Installation
-        document: installation
-
-
-      - name: Configuration
-        document: configuration
-
-      - name: Blade String
-        document: blade-string
+      - name: Contribution Guide
+        document: prologue/contribution-guide
 
       - name: API Documentation
         document: phpdoc
+
+  - name: Getting Started
+    icon: fa fa-eye
+    children:
+
+      - name: Installation
+        document: getting-started/installation
+
+      - name: Configuration
+        document: getting-started/configuration
+
+      - name: Directory Structure
+        document: getting-started/directory-structure
+
 
   - name: Directives
     icon: fa fa-code
@@ -44,11 +51,3 @@ menu:
 
       - name: Minification
         document: directives/minification
-
-  - name: Seven
-    icon: fa fa-bitbucket
-    children:
-      - name: Getting started
-        document: seven/getting-started
-
-      - name: Configuration

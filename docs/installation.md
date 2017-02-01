@@ -2,15 +2,18 @@
 title: Installation
 ---
 
-#### 1. Composer
+Installation
+============
+
+## 1. Composer
 Add the `radic/blade-extensions` package to your composer.json dependencies.
 ```json
 "require": {
-    "radic/blade-extensions": "~6.0"
+    "radic/blade-extensions": "~7.0"
 }
 ```
 
-#### 2. Laravel
+## 2. Laravel
 Register the `BladeExtensionsServiceProvider` in your application, preferably in your `config/app.php` file.
 ```php
 'providers' => [
@@ -18,17 +21,17 @@ Register the `BladeExtensionsServiceProvider` in your application, preferably in
 ]
 ```
 
-#### 3. Optional: Publish config
+## 3. Optional: Publish config
 ```sh
 php artisan vendor:publish --provider=Radic\BladeExtensions\BladeExtensionsServiceProvider
 ```
 
-#### 4. Optional: Extra features
+## 4. Optional: Extra features
 Some features are not enabled by default as they might depend on other packages. 
 For enabling the desired optional features, follow the installation instructions below.
 
 
-###### Minify CSS/JS
+### Minify CSS/JS
 By default, only `@minify('html')` works. To enable javascript and css minification, add the `matthiasmullie/minify` package to your composer dependencies.
 Blade Extensions automaticly detects the package and enables `@minify('js')` and `@minify('css')` directives. For more information, check out the directive's documentation page.
 ```json
@@ -37,7 +40,7 @@ Blade Extensions automaticly detects the package and enables `@minify('js')` and
 }
 ```
 
-###### Markdown
+### Markdown
 To enable the `@markdown` directive or to enable the Markdown view engine (`@include('path.to.md.file')` / `View::make('path.to.md.file')`), 
 add your preferred Markdown parser to your composer dependencies. By default `erusev/parsedown` is enabled as renderer. 
 Check the markdown directive documentation page on how to implement custom a markdown parser.
@@ -47,7 +50,7 @@ Check the markdown directive documentation page on how to implement custom a mar
 }
 ```
 
-###### Debug output
+### Debug output
 The `@debug($var)` directive will either use Symfony's `VarDumper` or the regular `var_dump` method. 
 By installing the `raveren/kint` package. The debug output will be greatly improved. For more information, check out [this page](https://github.com/raveren/kint).
 ```json

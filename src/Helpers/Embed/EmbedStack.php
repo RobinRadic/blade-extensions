@@ -241,4 +241,17 @@ class EmbedStack implements Factory
     {
         return call_user_func_array([ $this->viewFactory, 'addNamespace' ], func_get_args());
     }
+
+    /**
+     * Replace the namespace hints for the given namespace.
+     *
+     * @param  string       $namespace
+     * @param  string|array $hints
+     *
+     * @return $this
+     */
+    public function replaceNamespace($namespace, $hints)
+    {
+        return call_user_func_array([ $this->viewFactory, 'replaceNamespace' ], func_get_args());
+    }
 }

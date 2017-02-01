@@ -35,10 +35,10 @@
 	@break
 @endforeach
 
-@foreach($dataClass->array as $key => $val)
-	@assertTrue($loop->first)
-	@break
-@endforeach
+{{--@foreach($dataClass->array as $key => $val)--}}
+{{--@assertTrue($loop->first)--}}
+{{--@break--}}
+{{--@endforeach--}}
 
 @foreach($dataClass::getValues() as $key => $val)
 	@assertTrue($loop->first)

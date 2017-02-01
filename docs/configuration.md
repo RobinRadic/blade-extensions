@@ -1,6 +1,8 @@
 ---
 title: Configuration
 ---
+# Configuration
+
 #### Blacklisting directives
 Blacklisting a directive allows you to disable unwanted directives. For a full list of directives, check the [directives.php](https://github.com/RobinRadic/blade-extensions/blob/master/src/directives.php) file.
 ```php
