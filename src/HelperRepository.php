@@ -10,11 +10,9 @@
 
 namespace Radic\BladeExtensions;
 
-
 /**
  * This is the HelperRepository.
  *
- * @package        Radic\BladeExtensions
  * @author         Caffeinated Dev Team
  * @copyright      Copyright (c) 2015, Caffeinated
  * @license        https://tldrlegal.com/license/mit-license MIT License
@@ -30,17 +28,16 @@ class HelperRepository
 
     public function put($key, $data)
     {
-
-        $this->helpers[ $key ] = $data;
+        $this->helpers[$key] = $data;
     }
 
     public function has($key)
     {
-        return isset($this->helpers[ $key ]);
+        return isset($this->helpers[$key]);
     }
 
     public function get($key, $default = null)
     {
-        return $this->has($key) ? $this->helpers[ $key ] : $default;
+        return $this->has($key) ? $this->helpers[$key] : $default;
     }
 }

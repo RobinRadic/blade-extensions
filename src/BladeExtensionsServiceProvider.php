@@ -12,11 +12,10 @@
  * Created by IntelliJ IDEA.
  * User: radic
  * Date: 8/7/16
- * Time: 1:40 AM
+ * Time: 1:40 AM.
  */
 
 namespace Radic\BladeExtensions;
-
 
 use Illuminate\Support\ServiceProvider;
 
@@ -25,10 +24,10 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/blade-extensions.php' => config_path('blade-extensions.php'),
+            __DIR__.'/../config/blade-extensions.php' => config_path('blade-extensions.php'),
         ], 'config');
 
-        $this->app[ 'blade-extensions.directives' ]->hookToCompiler();
+        $this->app['blade-extensions.directives']->hookToCompiler();
     }
 
     /**
@@ -38,8 +37,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/blade-extensions.php', 'blade-extensions');
-
+        $this->mergeConfigFrom(__DIR__.'/../config/blade-extensions.php', 'blade-extensions');
 
         $this->registerDirectiveRegistry();
 
@@ -53,7 +51,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected function registerBladeExtensions()
     {
         $this->app->singleton('blade-extensions', function ($app) {
-            return new BladeExtensions($app[ 'blade-extensions.directives' ], $app[ 'blade-extensions.helpers' ]);
+            return new BladeExtensions($app['blade-extensions.directives'], $app['blade-extensions.helpers']);
         });
     }
 
@@ -61,8 +59,9 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $this->app->singleton('blade-extensions.directives', function ($app) {
             $directives = new DirectiveRegistry($app);
-            $directives->register($app[ 'config' ][ 'blade-extensions.directives' ]);
-            $directives->setMode($app[ 'config' ][ 'blade-extensions.mode' ]);
+            $directives->register($app['config']['blade-extensions.directives']);
+            $directives->setMode($app['config']['blade-extensions.mode']);
+
             return $directives;
         });
     }
@@ -75,6 +74,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             $helpers->put('embed', $app->build(Helpers\Embed\EmbedHelper::class));
             $helpers->put('minifier', $app->build(Helpers\Minifier\MinifierHelper::class));
             $helpers->put('markdown', $app->build(Helpers\Markdown\MarkdownHelper::class));
+
             return $helpers;
         });
     }
@@ -82,13 +82,13 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected function registerAliases()
     {
         $aliases = [
-            'blade-extensions'            => [ BladeExtensions::class, Contracts\BladeExtensions::class ],
-            'blade-extensions.directives' => [ DirectiveRegistry::class, Contracts\DirectiveRegistry::class ],
-            'blade-extensions.helpers'    => [ HelperRepository::class, Contracts\HelperRepository::class ],
+            'blade-extensions'            => [BladeExtensions::class, Contracts\BladeExtensions::class],
+            'blade-extensions.directives' => [DirectiveRegistry::class, Contracts\DirectiveRegistry::class],
+            'blade-extensions.helpers'    => [HelperRepository::class, Contracts\HelperRepository::class],
         ];
 
-        foreach ( $aliases as $key => $aliases ) {
-            foreach ( $aliases as $alias ) {
+        foreach ($aliases as $key => $aliases) {
+            foreach ($aliases as $alias) {
                 $this->app->alias($key, $alias);
             }
         }
