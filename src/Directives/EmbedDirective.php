@@ -22,5 +22,4 @@ $3
 ); ?>
 $1<?php app('blade-extensions.helpers')->get('embed')->end(); ?>
 EOT;
-
 }

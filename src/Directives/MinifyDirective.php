@@ -17,6 +17,4 @@ class MinifyDirective extends Directive
     protected $replace = <<<'EOT'
 $1<?php echo app("blade-extensions.helpers")->get('minifier')->open$2; ?>
 EOT;
-
-
 }

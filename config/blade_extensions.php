@@ -8,7 +8,7 @@
  * @license https://radic.mit-license.org The MIT License
  */
 
-return array(
+return [
     /*
     |---------------------------------------------------------------------
     | Blacklisting of directives
@@ -17,14 +17,14 @@ return array(
     | These directives will be excluded.
     |
     */
-    'blacklist' => array(),
+    'blacklist' => [],
     /*
     |---------------------------------------------------------------------
     | Markdown options
     |---------------------------------------------------------------------
     |
     */
-    'markdown'  => array(
+    'markdown'  => [
         /*
         |---------------------------------------------------------------------
         | Enable markdown directives
@@ -51,8 +51,8 @@ return array(
         | Or use @include('my_markdown_file')
         |
         */
-        'views'    => env('BLADE_EXTENSIONS_MARKDOWN_VIEWS', false)
-    ),
+        'views'    => env('BLADE_EXTENSIONS_MARKDOWN_VIEWS', false),
+    ],
     /*
     |---------------------------------------------------------------------
     | Directives overrides
@@ -61,13 +61,13 @@ return array(
     | You can override any blade-extensions directive.
     | For reference see the directives.php file in the blade-extensions/src views
     */
-    'overrides' => array(/*
+    'overrides' => [/*
         'macro' => array(
             'pattern' => '/(?<!\\w)(\\s*)@macro(?:\\s*)\\((?:\\s*)[\'"]([\\w\\d]*)[\'"],(.*)\\)/',
             'replacement' => '$1<?php if(array_key_exists("form", $__env->getContainer()->getBindings())){ echo app("form")->$2($3); } ?>'
         )
         */
-    ),
+    ],
     /*
     |---------------------------------------------------------------------
     | Enable example views
@@ -79,6 +79,6 @@ return array(
     */
     'example_views' => env('BLADE_EXTENSIONS_EXAMPLE_VIEWS', false),
 
-    'example' => env('BLADE_EXTENSIONS_EXAMPLE', false)
+    'example' => env('BLADE_EXTENSIONS_EXAMPLE', false),
 
-);
+];

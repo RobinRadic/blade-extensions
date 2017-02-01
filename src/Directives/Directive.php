@@ -37,7 +37,7 @@ abstract class Directive
     }
 
     /**
-     * Set the pattern value
+     * Set the pattern value.
      *
      * @param string $pattern
      *
@@ -46,6 +46,7 @@ abstract class Directive
     public function setPattern($pattern)
     {
         $this->pattern = $pattern;
+
         return $this;
     }
 
@@ -58,7 +59,7 @@ abstract class Directive
     }
 
     /**
-     * Set the replace value
+     * Set the replace value.
      *
      * @param string $replace
      *
@@ -67,6 +68,7 @@ abstract class Directive
     public function setReplace($replace)
     {
         $this->replace = $replace;
+
         return $this;
     }
 
@@ -79,7 +81,7 @@ abstract class Directive
     }
 
     /**
-     * Set the name value
+     * Set the name value.
      *
      * @param string $name
      *
@@ -88,8 +90,7 @@ abstract class Directive
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
-
-
 }

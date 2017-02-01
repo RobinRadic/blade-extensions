@@ -12,8 +12,9 @@
  * Created by IntelliJ IDEA.
  * User: radic
  * Date: 8/7/16
- * Time: 1:39 AM
+ * Time: 1:39 AM.
  */
+
 namespace Radic\BladeExtensions;
 
 use Illuminate\Contracts\Foundation\Application;
@@ -52,12 +53,11 @@ class Hooker implements BladeExtensionsFactoryContract
     protected $hooked = false;
 
     /**
-     * helpers method
+     * helpers method.
      *
      * @var HelperRepository
      */
     protected $helpers;
-
 
     /**
      * Factory constructor.
@@ -67,13 +67,13 @@ class Hooker implements BladeExtensionsFactoryContract
      */
     public function __construct(Application $app, DirectiveRegistry $directives, HelperRepository $helpers)
     {
-        $this->app        = $app;
+        $this->app = $app;
         $this->directives = $directives;
-        $this->helpers    = $helpers;
+        $this->helpers = $helpers;
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isHooked()
     {
@@ -82,17 +82,17 @@ class Hooker implements BladeExtensionsFactoryContract
 
     public function hookToCompiler()
     {
-        if ( true === $this->hooked ) {
+        if (true === $this->hooked) {
             return;
         }
         $this->hooked = true;
         $this->app->booted(function ($app) {
-            if ( $this->mode === self::MODE_DISABLED ) {
+            if ($this->mode === self::MODE_DISABLED) {
                 return;
             }
-            if ( $this->mode === self::MODE_AUTO ) {
+            if ($this->mode === self::MODE_AUTO) {
                 $this->handleAutoMode();
-            } elseif ( $this->mode === self::MODE_CUSTOM ) {
+            } elseif ($this->mode === self::MODE_CUSTOM) {
                 $this->handleCustomMode();
             } else {
                 throw new \RuntimeException('BladeExtensions Factory $mode not valid');
@@ -106,9 +106,10 @@ class Hooker implements BladeExtensionsFactoryContract
     protected function handleAutoMode()
     {
         $this->getCompiler()->extend(function ($value) {
-            foreach ( $this->directives->getNames() as $name ) {
-                $value = $this->directives->call($name, [ $value ]);
+            foreach ($this->directives->getNames() as $name) {
+                $value = $this->directives->call($name, [$value]);
             }
+
             return $value;
         });
     }
@@ -118,7 +119,7 @@ class Hooker implements BladeExtensionsFactoryContract
      */
     protected function handleCustomMode()
     {
-        if ( null === $this->customModeHandler ) {
+        if (null === $this->customModeHandler) {
             throw new \RuntimeException('[Custom Mode Handler Not Set]');
         }
         $this->app->call($this->customModeHandler, [], 'handle');
@@ -168,6 +169,4 @@ class Hooker implements BladeExtensionsFactoryContract
     {
         $this->customModeHandler = $handler;
     }
-
-
 }

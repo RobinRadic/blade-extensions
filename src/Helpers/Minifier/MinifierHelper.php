@@ -7,12 +7,12 @@
  * @copyright Copyright 2016 (c) Robin Radic
  * @license https://radic.mit-license.org The MIT License
  */
+
 namespace Radic\BladeExtensions\Helpers\Minifier;
 
 /**
  * This is the Minifier.
  *
- * @package        Radic\BladeExtensions
  * @author         Caffeinated Dev Team
  * @copyright      Copyright (c) 2015, Caffeinated
  * @license        https://tldrlegal.com/license/mit-license MIT License
@@ -25,7 +25,7 @@ class MinifierHelper
     protected $type;
 
     /**
-     * open
+     * open.
      *
      * @param $type
      */
@@ -36,7 +36,7 @@ class MinifierHelper
     }
 
     /**
-     * close
+     * close.
      */
     public function close()
     {
@@ -46,7 +46,7 @@ class MinifierHelper
     }
 
     /**
-     * minify
+     * minify.
      *
      * @param $type
      * @param $code
@@ -55,18 +55,18 @@ class MinifierHelper
      */
     protected function minify($type, $code)
     {
-        $types = [ 'html', 'css', 'js' ];
+        $types = ['html', 'css', 'js'];
 
-        if ( !in_array($type, $types, true) ) {
+        if (! in_array($type, $types, true)) {
             $typeStr = implode(', ', $types);
             throw new \InvalidArgumentException("BladeExtensions Minifier could not minify your code, you haven't specified a valid type. Given: [{$type}]. Allowed: [{$typeStr}]");
         }
 
-        if ( $type === 'html' ) {
+        if ($type === 'html') {
             return $this->compileMinify($code);
-        } elseif ( $type === 'css' && class_exists('MatthiasMullie\Minify\CSS') ) {
+        } elseif ($type === 'css' && class_exists('MatthiasMullie\Minify\CSS')) {
             return with(new \MatthiasMullie\Minify\CSS($code))->execute();
-        } elseif ( $type === 'js' && class_exists('MatthiasMullie\Minify\JS') ) {
+        } elseif ($type === 'js' && class_exists('MatthiasMullie\Minify\JS')) {
             return with(new \MatthiasMullie\Minify\JS($code))->execute();
         } else {
             return $code;
@@ -74,7 +74,6 @@ class MinifierHelper
     }
 
     /**
-     *
      * @author https://github.com/yocmen/html-minify
      *
      * @param string $value the contents of the view file
@@ -83,7 +82,7 @@ class MinifierHelper
      */
     protected function shouldMinify($value)
     {
-        if ( preg_match('/skipmin/', $value)
+        if (preg_match('/skipmin/', $value)
             || preg_match('/<(pre|textarea)/', $value)
             || preg_match('/<script[^\??>]*>[^<\/script>]/', $value)
             || preg_match('/value=("|\')(.*)([ ]{2,})(.*)("|\')/', $value)
@@ -95,7 +94,7 @@ class MinifierHelper
     }
 
     /**
-     * Compress the HTML output before saving it
+     * Compress the HTML output before saving it.
      *
      * @author https://github.com/yocmen/html-minify
      *
@@ -105,7 +104,7 @@ class MinifierHelper
      */
     protected function compileMinify($value)
     {
-        if ( $this->shouldMinify($value) ) {
+        if ($this->shouldMinify($value)) {
             $replace = [
                 '/<!--[^\[](.*?)[^\]]-->/s' => '',
                 '/<\?php/'                  => '<?php ',
@@ -114,8 +113,9 @@ class MinifierHelper
                 '/\n/'                      => '',
                 '/\t/'                      => ' ',
                 '/ +/'                      => ' ',
-                '/>\s</'                    => '><'
+                '/>\s</'                    => '><',
             ];
+
             return preg_replace(
                 array_keys($replace),
                 array_values($replace),

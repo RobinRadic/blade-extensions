@@ -11,13 +11,12 @@
 /**
  * Represents the $loop variable in the foreach directive. Handles all data.
  */
+
 namespace Radic\BladeExtensions\Helpers\Loop;
 
 /**
  * Represents the $loop variable in the foreach directive. Handles all data.
  *
- * @package        Radic\BladeExtensions
- * @subpackage     Helpers
  * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
@@ -35,28 +34,25 @@ namespace Radic\BladeExtensions\Helpers\Loop;
  * @property bool $even
  * @property int  $total
  * @property Loop $parentLoop
- *
- *
  */
 class Loop
 {
-
     /**
-     * The array that is being iterated
+     * The array that is being iterated.
      *
      * @var array
      */
     protected $items = [];
 
     /**
-     * The data for the current $loop item
+     * The data for the current $loop item.
      *
      * @var array
      */
     protected $data;
 
     /**
-     * The parent loop, if any
+     * The parent loop, if any.
      *
      * @var Loop
      */
@@ -65,19 +61,19 @@ class Loop
     protected $loopFactory;
 
     /**
-     * Sets the parent loop
+     * Sets the parent loop.
      *
      * @param Loop $parentLoop
-     * {@inheritdocs}
+     * {@inheritdoc}
      */
     public function setParentLoop(Loop $parentLoop)
     {
-        $this->parentLoop       = $parentLoop;
-        $this->data[ 'parent' ] = $parentLoop;
+        $this->parentLoop = $parentLoop;
+        $this->data['parent'] = $parentLoop;
     }
 
     /**
-     * Returns the full loop stack of the LoopFactory
+     * Returns the full loop stack of the LoopFactory.
      *
      * @return array
      */
@@ -87,7 +83,7 @@ class Loop
     }
 
     /**
-     * Resets the loop stack of the LoopFactory
+     * Resets the loop stack of the LoopFactory.
      */
     public function resetLoopStack()
     {
@@ -95,7 +91,7 @@ class Loop
     }
 
     /**
-     * Instantiates the class
+     * Instantiates the class.
      *
      * @param array $items The array that's being iterated
      */
@@ -106,18 +102,18 @@ class Loop
     }
 
     /**
-     * Sets the array to monitor
+     * Sets the array to monitor.
      *
      * @param array $items The array that's being iterated
      */
     public function setItems($items)
     {
-        if ( isset($data) ) {
+        if (isset($data)) {
             return;
         }
         $this->items = $items;
-        $total       = count($items);
-        $this->data  = [
+        $total = count($items);
+        $this->data = [
             'index1'    => 1,
             'index'     => 0,
             'revindex1' => $total,
@@ -136,7 +132,7 @@ class Loop
     }
 
     /**
-     * Magic method to access the loop data properties
+     * Magic method to access the loop data properties.
      *
      * @param $key
      *
@@ -144,7 +140,7 @@ class Loop
      */
     public function __get($key)
     {
-        return $this->data[ $key ];
+        return $this->data[$key];
     }
 
     public function __set($key, $val)
@@ -154,41 +150,41 @@ class Loop
 
     public function __isset($key)
     {
-        return isset($this->data[ $key ]);
+        return isset($this->data[$key]);
     }
 
     /**
-     * To be called first in a loop before anything else
+     * To be called first in a loop before anything else.
      */
     public function before()
     {
-        if ( $this->data[ 'index' ] % 2 == 0 ) {
-            $this->data[ 'odd' ]  = false;
-            $this->data[ 'even' ] = true;
+        if ($this->data['index'] % 2 == 0) {
+            $this->data['odd'] = false;
+            $this->data['even'] = true;
         } else {
-            $this->data[ 'odd' ]  = true;
-            $this->data[ 'even' ] = false;
+            $this->data['odd'] = true;
+            $this->data['even'] = false;
         }
-        if ( $this->data[ 'index' ] == 0 ) {
-            $this->data[ 'first' ] = true;
+        if ($this->data['index'] == 0) {
+            $this->data['first'] = true;
         } else {
-            $this->data[ 'first' ] = false;
+            $this->data['first'] = false;
         }
-        if ( $this->data[ 'revindex' ] == 0 ) {
-            $this->data[ 'last' ] = true;
+        if ($this->data['revindex'] == 0) {
+            $this->data['last'] = true;
         } else {
-            $this->data[ 'last' ] = false;
+            $this->data['last'] = false;
         }
     }
 
     /**
-     * To be called last in a loop after everything else
+     * To be called last in a loop after everything else.
      */
     public function after()
     {
-        $this->data[ 'index' ]++;
-        $this->data[ 'index1' ]++;
-        $this->data[ 'revindex' ]--;
-        $this->data[ 'revindex1' ]--;
+        $this->data['index']++;
+        $this->data['index1']++;
+        $this->data['revindex']--;
+        $this->data['revindex1']--;
     }
 }

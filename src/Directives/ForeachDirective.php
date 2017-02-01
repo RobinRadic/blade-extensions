@@ -21,6 +21,4 @@ foreach(app('blade-extensions.helpers')->get('loop')->getLastStack()->getItems()
     $loop = app('blade-extensions.helpers')->get('loop')->loop();
 ?>
 EOT;
-
-
 }

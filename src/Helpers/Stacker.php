@@ -9,64 +9,62 @@
  */
 
 /**
- * Manages the Loop instances
+ * Manages the Loop instances.
  */
+
 namespace Radic\BladeExtensions\Helpers;
 
 use Illuminate\Contracts\Container\Container;
 
 /**
- * Manages the Loop instances
+ * Manages the Loop instances.
  *
- * @package        Radic\BladeExtensions
- * @subpackage     Helpers
  * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright      (2011-2014, Robin Radic - Radic Technologies
  * @link           http://robin.radic.nl/blade-extensions
- *
  */
 abstract class Stacker
 {
     protected $container;
 
     /**
-     * The stack of Loop instances
+     * The stack of Loop instances.
      *
-     * @var array $stack
+     * @var array
      */
-    protected $stack = [ ];
+    protected $stack = [];
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function __construct(Container $container)
     {
         $this->container = $container;
     }
 
-
     /**
-     * Adds a Loop to the stack
+     * Adds a Loop to the stack.
      */
     public function start()
     {
         $stackItem = static::create(func_get_args());
         array_push($this->stack, $stackItem);
         $stackItem->start();
+
         return $stackItem;
     }
 
     /**
-     * create
+     * create.
      *
      * @return mixed
      */
-    abstract protected function create($args = [ ]);
+    abstract protected function create($args = []);
 
     /**
-     * Returns the stack
+     * Returns the stack.
      *
      * @return array
      */
@@ -76,15 +74,15 @@ abstract class Stacker
     }
 
     /**
-     * Resets the stack
+     * Resets the stack.
      */
     public function reset()
     {
-        $this->stack = [ ];
+        $this->stack = [];
     }
 
     /**
-     * To be called first inside the foreach loop. Returns the current loop
+     * To be called first inside the foreach loop. Returns the current loop.
      *
      * @return mixed $current The current loop data
      */
@@ -96,11 +94,11 @@ abstract class Stacker
     }
 
     /**
-     * To be called before the end of the loop
+     * To be called before the end of the loop.
      */
     public function end()
     {
-        if ( !$this->isEmpty() ) {
+        if (! $this->isEmpty()) {
             static::current()->end();
             array_pop($this->stack);
         }
@@ -112,7 +110,7 @@ abstract class Stacker
     }
 
     /**
-     * get container value
+     * get container value.
      *
      * @return \Illuminate\Contracts\Container\Container
      */
@@ -122,7 +120,7 @@ abstract class Stacker
     }
 
     /**
-     * Set the container value
+     * Set the container value.
      *
      * @param \Illuminate\Contracts\Container\Container $container
      *

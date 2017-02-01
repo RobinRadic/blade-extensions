@@ -12,11 +12,10 @@
  * Created by IntelliJ IDEA.
  * User: radic
  * Date: 8/7/16
- * Time: 1:40 AM
+ * Time: 1:40 AM.
  */
 
 namespace Radic\BladeExtensions;
-
 
 use Illuminate\Support\ServiceProvider;
 
@@ -25,11 +24,12 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/blade-extensions.php' => config_path('blade-extensions.php')
+            __DIR__.'/../config/blade-extensions.php' => config_path('blade-extensions.php'),
         ], 'config');
 
-        $this->app[ 'blade-extensions' ]->hookToCompiler();
+        $this->app['blade-extensions']->hookToCompiler();
     }
+
     /**
      * Register the service provider.
      *
@@ -37,8 +37,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/blade-extensions.php', 'blade-extensions');
-
+        $this->mergeConfigFrom(__DIR__.'/../config/blade-extensions.php', 'blade-extensions');
 
         $this->app->singleton('blade-extensions.directives', function ($app) {
             return new DirectiveRegistry($app);
@@ -47,13 +46,12 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             return new HelperRepository();
         });
         $this->app->singleton('blade-extensions', function ($app) {
-            $config  = $app[ 'config' ][ 'blade-extensions' ];
+            $config = $app['config']['blade-extensions'];
 
+            $factory = new Hooker($app, $app['blade-extensions.directives'], $app['blade-extensions.helpers']);
+            $factory->setMode($config['mode']);
 
-            $factory = new Hooker($app, $app[ 'blade-extensions.directives' ], $app[ 'blade-extensions.helpers' ]);
-            $factory->setMode($config[ 'mode' ]);
-
-            $factory->getDirectives()->register($config[ 'directives' ]);
+            $factory->getDirectives()->register($config['directives']);
 
             $helpers = $factory->getHelpers();
             $helpers->put('loop', $app->build(Helpers\Loop\LoopHelper::class));
@@ -63,6 +61,5 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
             return $factory;
         });
-
     }
 }

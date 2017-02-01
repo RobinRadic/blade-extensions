@@ -17,6 +17,4 @@ class MarkdownDirective extends Directive
     protected $replace = <<<'EOT'
 $1<?php echo app("blade-extensions.helpers")->get('markdown')->parse(<<<'EOT'$2
 EOT;
-
-
 }

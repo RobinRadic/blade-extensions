@@ -9,36 +9,33 @@
  */
 
 /**
- * Manages the Loop instances
+ * Manages the Loop instances.
  */
+
 namespace Radic\BladeExtensions\Helpers\Loop;
 
 use Radic\BladeExtensions\Helpers\Loop;
 
 /**
- * Manages the Loop instances
+ * Manages the Loop instances.
  *
- * @package        Radic\BladeExtensions
- * @subpackage     Helpers
  * @version        2.1.0
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright      (2011-2014, Robin Radic - Radic Technologies
  * @link           http://robin.radic.nl/blade-extensions
- *
  */
 class LoopHelper
 {
-
     /**
-     * The stack of Loop instances
+     * The stack of Loop instances.
      *
-     * @var array $stack
+     * @var array
      */
-    protected $stack = [ ];
+    protected $stack = [];
 
     /**
-     * Creates a new loop with the given array and adds it to the stack
+     * Creates a new loop with the given array and adds it to the stack.
      *
      * @param array $items The array that will be iterated
      */
@@ -48,14 +45,14 @@ class LoopHelper
     }
 
     /**
-     * Adds a Loop to the stack
+     * Adds a Loop to the stack.
      *
      * @param Loop $stackItem
      */
     protected function addLoopStack(Loop\Loop $stackItem)
     {
         // Check stack for parent loop to register it with this loop
-        if ( count($this->stack) > 0 ) {
+        if (count($this->stack) > 0) {
             $stackItem->setParentLoop(last($this->stack));
         }
 
@@ -63,7 +60,7 @@ class LoopHelper
     }
 
     /**
-     * Returns the stack
+     * Returns the stack.
      *
      * @return array
      */
@@ -73,7 +70,7 @@ class LoopHelper
     }
 
     /**
-     * getLastStack method
+     * getLastStack method.
      *
      * @return Loop
      */
@@ -83,15 +80,15 @@ class LoopHelper
     }
 
     /**
-     * Resets the stack
+     * Resets the stack.
      */
     public function reset()
     {
-        $this->stack = [ ];
+        $this->stack = [];
     }
 
     /**
-     * To be called first inside the foreach loop. Returns the current loop
+     * To be called first inside the foreach loop. Returns the current loop.
      *
      * @return Loop $current The current loop data
      */
@@ -104,24 +101,24 @@ class LoopHelper
     }
 
     /**
-     * To be called before the end of the loop
+     * To be called before the end of the loop.
      */
     public function looped()
     {
-        if ( !empty($this->stack) ) {
+        if (! empty($this->stack)) {
             end($this->stack)->after();
         }
     }
 
     /**
-     * Should be called after the loop has finished
+     * Should be called after the loop has finished.
      *
      * @param $loop
      */
     public function endLoop(&$loop)
     {
         array_pop($this->stack);
-        if ( count($this->stack) > 0 ) {
+        if (count($this->stack) > 0) {
             // This loop was inside another loop. We persist the loop variable and assign back the parent loop
             $loop = end($this->stack);
         } else {

@@ -15,5 +15,4 @@ class EndminifyDirective extends Directive
     protected $replace = <<<'EOT'
 $1<?php echo app("blade-extensions.helpers")->get('minifier')->close(); ?>
 EOT;
-
 }

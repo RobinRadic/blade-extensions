@@ -36,7 +36,7 @@ return [
         'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
 
         'closure' => function () {
-        }
+        },
 //        'spaceless' => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
 //        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
     ],

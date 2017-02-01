@@ -10,8 +10,6 @@
 
 namespace Radic\BladeExtensions\Contracts;
 
-
 interface BladeExtensionsFactory
 {
-
 }

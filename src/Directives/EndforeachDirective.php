@@ -19,5 +19,4 @@ endforeach;
 app('blade-extensions.helpers')->get('loop')->endLoop($loop);
 ?>$2
 EOT;
-
 }

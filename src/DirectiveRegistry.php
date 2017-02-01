@@ -10,28 +10,26 @@
 
 namespace Radic\BladeExtensions;
 
-
 use Closure;
 use Illuminate\Contracts\Container\Container;
 
 /**
  * The DirectiveRegistry contains all BladeExtension's directives to be used when compiling views, including the version overrides.
  *
- * @package        Radic\BladeExtensions
  * @author         Robin Radic
  * @copyright      Copyright (c) 2017, Robin Radic. All rights reserved
  */
 class DirectiveRegistry
 {
     /**
-     * The registered directives
+     * The registered directives.
      *
      * @var array
      */
     protected $directives = [];
 
     /**
-     * The override directives
+     * The override directives.
      *
      * @var array
      */
@@ -44,7 +42,6 @@ class DirectiveRegistry
 
     protected $container;
 
-
     /**
      * DirectiveRegistry constructor.
      *
@@ -56,7 +53,7 @@ class DirectiveRegistry
     }
 
     /**
-     * Register a directive (or array of directives)
+     * Register a directive (or array of directives).
      *
      * @param      string|array         $name
      * @param      null|string|\Closure $handler
@@ -67,13 +64,13 @@ class DirectiveRegistry
      */
     public function register($name, $handler = null, $override = false)
     {
-        if ( $handler === null ) {
-            foreach ( (array)$name as $directiveName => $directiveHandler ) {
+        if ($handler === null) {
+            foreach ((array) $name as $directiveName => $directiveHandler) {
                 $this->register($directiveName, $directiveHandler);
             }
         } else {
-            if ( (true === $override && true === $this->has($name)) || false === $this->has($name) ) {
-                $this->directives[ $name ] = $handler;
+            if ((true === $override && true === $this->has($name)) || false === $this->has($name)) {
+                $this->directives[$name] = $handler;
             }
         }
 
@@ -81,7 +78,7 @@ class DirectiveRegistry
     }
 
     /**
-     * Gets list of all registered directives their name
+     * Gets list of all registered directives their name.
      *
      * @return array
      */
@@ -91,7 +88,7 @@ class DirectiveRegistry
     }
 
     /**
-     * Get a registered directive by name
+     * Get a registered directive by name.
      *
      * @param $name
      *
@@ -99,7 +96,7 @@ class DirectiveRegistry
      */
     public function get($name)
     {
-        return $this->directives[ $name ];
+        return $this->directives[$name];
     }
 
     public function has($name)
@@ -108,7 +105,7 @@ class DirectiveRegistry
     }
 
     /**
-     * Set the versionOverrides value
+     * Set the versionOverrides value.
      *
      * @param array $versionOverrides
      *
@@ -117,22 +114,23 @@ class DirectiveRegistry
     public function setVersionOverrides($versionOverrides)
     {
         // if used outside of laravel framework (ie with illuminate/views) we ignore the version overrides completely.
-        if(false === class_exists('Illuminate\Foundation\Application', false)){
+        if (false === class_exists('Illuminate\Foundation\Application', false)) {
             return;
         }
         list($laravelMajor, $laravelMinor) = explode('.', \Illuminate\Foundation\Application::VERSION);
-        foreach($versionOverrides as $version => $overrides){
+        foreach ($versionOverrides as $version => $overrides) {
             list($major, $minor) = explode('_', $version);
-            if($minor !== $laravelMinor || $major !== $laravelMajor){
+            if ($minor !== $laravelMinor || $major !== $laravelMajor) {
                 continue;
             }
             $this->overrides = $overrides;
         }
+
         return $this;
     }
 
     /**
-     * Call a directive. This will execute the directive using the given parameters
+     * Call a directive. This will execute the directive using the given parameters.
      *
      * @param       $name
      * @param array $params
@@ -141,30 +139,28 @@ class DirectiveRegistry
      */
     public function call($name, $params = [])
     {
-        if ( false === array_key_exists($name, $this->resolved) ) {
+        if (false === array_key_exists($name, $this->resolved)) {
             $handler = $this->get($name);
-            if ( $handler instanceof Closure ) {
-                $this->resolved[ $name ] = function ($value) use ($name, $handler, $params) {
+            if ($handler instanceof Closure) {
+                $this->resolved[$name] = function ($value) use ($name, $handler, $params) {
                     return call_user_func_array($handler, $params);
                 };
             } else {
-                $class    = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
-                $method   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
+                $class = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[0] : $handler;
+                $method = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[1] : 'handle';
                 $instance = $this->container->make($class);
                 $instance->setName($name);
-                $this->resolved[ $name ] = function ($value) use ($name, $instance, $method, $params) {
-                    return call_user_func_array([ $instance, $method ], $params);
+                $this->resolved[$name] = function ($value) use ($name, $instance, $method, $params) {
+                    return call_user_func_array([$instance, $method], $params);
                 };
             }
         }
 
-        return call_user_func_array($this->resolved[ $name ], $params);
+        return call_user_func_array($this->resolved[$name], $params);
     }
 
     protected function isCallableWithAtSign($callback)
     {
         return is_string($callback) && strpos($callback, '@') !== false;
     }
-
-
 }
