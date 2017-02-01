@@ -1,11 +1,11 @@
 <?php
 /**
- * Copyright (c) 2016. Robin Radic.
+ * Copyright (c) 2017. Robin Radic.
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2016 (c) Robin Radic
- * @license   https://radic.mit-license.org The MIT License
+ * @copyright Copyright 2017 (c) Robin Radic
+ * @license https://radic.mit-license.org The MIT License
  */
 
 return [
@@ -33,9 +33,13 @@ return [
         'minify'    => 'Radic\\BladeExtensions\\Directives\\MinifyDirective',
         'endminify' => 'Radic\\BladeExtensions\\Directives\\EndminifyDirective',
 
+        'spaceless'    => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
+        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
+
         'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
 
-        'closure' => function () {
+        'closure' => function ($value) {
+            return $value;
         }
 //        'spaceless' => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
 //        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',

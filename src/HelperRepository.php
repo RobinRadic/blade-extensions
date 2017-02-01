@@ -1,16 +1,15 @@
 <?php
 /**
- * Copyright (c) 2016. Robin Radic.
+ * Copyright (c) 2017. Robin Radic.
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2016 (c) Robin Radic
+ * @copyright Copyright 2017 (c) Robin Radic
  * @license https://radic.mit-license.org The MIT License
  */
+
 namespace Radic\BladeExtensions;
 
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Support\Traits\Macroable;
 
 /**
  * This is the HelperRepository.
@@ -22,8 +21,6 @@ use Illuminate\Support\Traits\Macroable;
  */
 class HelperRepository
 {
-    use Macroable;
-
     protected $helpers;
 
     public function __construct()

@@ -1,10 +1,10 @@
 <?php
 /**
- * Copyright (c) 2016. Robin Radic.
+ * Copyright (c) 2017. Robin Radic.
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2016 (c) Robin Radic
+ * @copyright Copyright 2017 (c) Robin Radic
  * @license https://radic.mit-license.org The MIT License
  */
 
@@ -25,11 +25,12 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/blade-extensions.php' => config_path('blade-extensions.php')
+            __DIR__ . '/../config/blade-extensions.php' => config_path('blade-extensions.php'),
         ], 'config');
 
-        $this->app[ 'blade-extensions' ]->hookToCompiler();
+        $this->app[ 'blade-extensions.directives' ]->hookToCompiler();
     }
+
     /**
      * Register the service provider.
      *
@@ -40,29 +41,56 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/blade-extensions.php', 'blade-extensions');
 
 
-        $this->app->singleton('blade-extensions.directives', function ($app) {
-            return new DirectiveRegistry($app);
-        });
-        $this->app->singleton('blade-extensions.helpers', function ($app) {
-            return new HelperRepository();
-        });
+        $this->registerDirectiveRegistry();
+
+        $this->registerHelperRepository();
+
+        $this->registerBladeExtensions();
+
+        $this->registerAliases();
+    }
+
+    protected function registerBladeExtensions()
+    {
         $this->app->singleton('blade-extensions', function ($app) {
-            $config  = $app[ 'config' ][ 'blade-extensions' ];
+            return new BladeExtensions($app[ 'blade-extensions.directives' ], $app[ 'blade-extensions.helpers' ]);
+        });
+    }
 
+    protected function registerDirectiveRegistry()
+    {
+        $this->app->singleton('blade-extensions.directives', function ($app) {
+            $directives = new DirectiveRegistry($app);
+            $directives->register($app[ 'config' ][ 'blade-extensions.directives' ]);
+            $directives->setMode($app[ 'config' ][ 'blade-extensions.mode' ]);
+            return $directives;
+        });
+    }
 
-            $factory = new Hooker($app, $app[ 'blade-extensions.directives' ], $app[ 'blade-extensions.helpers' ]);
-            $factory->setMode($config[ 'mode' ]);
-
-            $factory->getDirectives()->register($config[ 'directives' ]);
-
-            $helpers = $factory->getHelpers();
+    protected function registerHelperRepository()
+    {
+        $this->app->singleton('blade-extensions.helpers', function ($app) {
+            $helpers = new HelperRepository();
             $helpers->put('loop', $app->build(Helpers\Loop\LoopHelper::class));
             $helpers->put('embed', $app->build(Helpers\Embed\EmbedHelper::class));
             $helpers->put('minifier', $app->build(Helpers\Minifier\MinifierHelper::class));
             $helpers->put('markdown', $app->build(Helpers\Markdown\MarkdownHelper::class));
-
-            return $factory;
+            return $helpers;
         });
+    }
 
+    protected function registerAliases()
+    {
+        $aliases = [
+            'blade-extensions'            => [ BladeExtensions::class, Contracts\BladeExtensions::class ],
+            'blade-extensions.directives' => [ DirectiveRegistry::class, Contracts\DirectiveRegistry::class ],
+            'blade-extensions.helpers'    => [ HelperRepository::class, Contracts\HelperRepository::class ],
+        ];
+
+        foreach ( $aliases as $key => $aliases ) {
+            foreach ( $aliases as $alias ) {
+                $this->app->alias($key, $alias);
+            }
+        }
     }
 }

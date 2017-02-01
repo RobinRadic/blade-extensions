@@ -23,8 +23,22 @@ A **Laravel** package providing additional Blade functionality. [**Thoroughly**]
 - [**Upgrade guide & Changelog**](http://robin.radic.nl/blade-extensions/changelog-upgrade-guide.html)
 - [**Test coverage.**](http://robin.radic.nl/blade-extensions/coverage)
 
+Blade Extensions version 7 comes with a lot of improvements compared to the previous version.
+This version is compatible with all Laravel 5.* versions.
 
-  
+We have seen Laravel 5 implementing a lot of what Blade Extensions has to offer, namely:
+- $loop inside @foreach (5.2)
+- component system, like @embeds. (5.4)
+
+## Contribute (directives)
+If you have written any fancy directives, contribute them!
+
+## Development
+- The `ServiceProvider` adds the directives configuration into the `DirectiveRegistry`
+- The `Hooker` adds all directives from the `DirectiveRegistry` to the `BladeCompiler`
+- Directives sometimes use 'helpers', contained in the `HelperRepository`
+
+
 ###### Composer
 ```JSON
 "radic/blade-extensions": "~7.0"

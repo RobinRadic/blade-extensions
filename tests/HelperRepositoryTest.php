@@ -41,7 +41,6 @@ class HelperRepositoryTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->container   = \Mockery::mock('Illuminate\Contracts\Container\Container');
         $this->helperMocks = [ ];
 
         $this->helperClasses = [
@@ -52,14 +51,9 @@ class HelperRepositoryTest extends AbstractTestCase
         ];
     }
 
-    /**
-     * _createHelperRepository
-     *
-     * @return \Radic\BladeExtensions\Helpers\HelperRepository
-     */
     protected function _createHelperRepository()
     {
-        $h = new HelperRepository($this->container);
+        $h = new HelperRepository();
 
         foreach ($this->helperClasses as $name => $class) {
             $this->helperMocks[ $name ] = \Mockery::mock($class);

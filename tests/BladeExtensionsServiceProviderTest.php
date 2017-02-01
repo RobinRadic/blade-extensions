@@ -1,17 +1,17 @@
 <?php
 /**
- * Copyright (c) 2016. Robin Radic.
+ * Copyright (c) 2017. Robin Radic.
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2016 (c) Robin Radic
+ * @copyright Copyright 2017 (c) Robin Radic
  * @license https://radic.mit-license.org The MIT License
  */
 
 namespace Radic\Tests\BladeExtensions;
 
-use Mockery as m;
 use Laradic\Testing\Laravel\Traits\ServiceProviderTester;
+use Mockery as m;
 
 /**
  * Class ViewTest

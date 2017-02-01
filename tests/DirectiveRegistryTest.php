@@ -1,10 +1,10 @@
 <?php
 /**
- * Copyright (c) 2016. Robin Radic.
+ * Copyright (c) 2017. Robin Radic.
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2016 (c) Robin Radic
+ * @copyright Copyright 2017 (c) Robin Radic
  * @license https://radic.mit-license.org The MIT License
  */
 
@@ -19,7 +19,7 @@ class DirectiveRegistryTest extends TestCase
 
     protected function createInstance()
     {
-        return new DirectiveRegistry($this->container = Mockery::mock('Illuminate\Contracts\Container\Container'));
+        return new DirectiveRegistry($this->container = Mockery::mock('Illuminate\Contracts\Foundation\Application'));
     }
 
     public function test_set_accepts_array()
@@ -39,5 +39,15 @@ class DirectiveRegistryTest extends TestCase
                 return $args;
             }
         ]);
+
+        $dir->call('unset', [ 'sdf' ]);
+    }
+
+    public function test_handles_closures()
+    {
+        $output = $this->createInstance()->register('test', function ($value) {
+            return $value . $value;
+        })->call('test', [ 'foo' ]);
+        $this->assertEquals('foofoo', $output);
     }
 }

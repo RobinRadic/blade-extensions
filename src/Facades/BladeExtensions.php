@@ -8,19 +8,23 @@
  * @license https://radic.mit-license.org The MIT License
  */
 
-namespace Radic\Tests\BladeExtensions\Directives;
+namespace Radic\BladeExtensions\Facades;
 
-use Radic\Tests\BladeExtensions\DirectivesTestCase;
+use Illuminate\Support\Facades\Facade;
 
-class EmbedDirectiveTest extends DirectivesTestCase
+class BladeExtensions extends Facade
 {
+
     /**
-     * getDirectiveClass method
+     * Get the registered name of the component.
+     *
      * @return string
+     *
+     * @throws \RuntimeException
      */
-    protected function getDirectiveClass()
+    protected static function getFacadeAccessor()
     {
-        return 'Radic\BladeExtensions\Directives\EmbedDirective';
+        return 'blade-extensions';
     }
 
 }

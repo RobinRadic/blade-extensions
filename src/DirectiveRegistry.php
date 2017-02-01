@@ -1,10 +1,10 @@
 <?php
 /**
- * Copyright (c) 2016. Robin Radic.
+ * Copyright (c) 2017. Robin Radic.
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2016 (c) Robin Radic
+ * @copyright Copyright 2017 (c) Robin Radic
  * @license https://radic.mit-license.org The MIT License
  */
 
@@ -12,7 +12,7 @@ namespace Radic\BladeExtensions;
 
 
 use Closure;
-use Illuminate\Contracts\Container\Container;
+use Illuminate\Contracts\Foundation\Application;
 
 /**
  * The DirectiveRegistry contains all BladeExtension's directives to be used when compiling views, including the version overrides.
@@ -42,17 +42,65 @@ class DirectiveRegistry
      */
     protected $resolved = [];
 
-    protected $container;
+    /** @var \Illuminate\Contracts\Foundation\Application */
+    protected $app;
+
+    /** @var bool */
+    protected $hooked = false;
+
+    /**
+     * @var string|\Closure
+     */
+    protected $customModeHandler;
+
+    /** @var string */
+    protected $mode = 'auto';
+
+    /**
+     * @var \Illuminate\View\Compilers\Compiler|\Illuminate\View\Compilers\BladeCompiler
+     */
+    protected $compiler;
 
 
     /**
      * DirectiveRegistry constructor.
      *
-     * @param \Illuminate\Contracts\Container\Container $container
+     * @param \Illuminate\Contracts\Container\Container $app
      */
-    public function __construct(Container $container)
+    public function __construct(Application $app)
     {
-        $this->container = $container;
+        $this->app = $app;
+    }
+
+    /**
+     * hookToCompiler method
+     */
+    public function hookToCompiler()
+    {
+        if ( true === $this->hooked ) {
+            return;
+        }
+        $this->hooked = true;
+        if ( $this->mode === 'auto' ) {
+            foreach ( $this->getNames() as $name ) {
+                $this->getCompiler()->extend(function ($value) use ($name) {
+                    return $this->call($name, [ $value ]);
+                });
+            }
+        } elseif ( $this->mode === 'custom' ) {
+            if ( null === $this->customModeHandler ) {
+                throw new \RuntimeException('[Custom Mode Handler Not Set]');
+            }
+            $this->app->call($this->customModeHandler, [], 'handle');
+        }
+    }
+
+    /**
+     * @return \Illuminate\View\Compilers\BladeCompiler
+     */
+    public function getCompiler()
+    {
+        return $this->compiler ?: $this->compiler = $this->app->make('view')->getEngineResolver()->resolve('blade')->getCompiler();
     }
 
     /**
@@ -62,8 +110,7 @@ class DirectiveRegistry
      * @param      null|string|\Closure $handler
      * @param bool                      $override
      *
-     * @return static
-     * @throws \InvalidArgumentException
+     * @return \Radic\BladeExtensions\DirectiveRegistry
      */
     public function register($name, $handler = null, $override = false)
     {
@@ -102,6 +149,13 @@ class DirectiveRegistry
         return $this->directives[ $name ];
     }
 
+    /**
+     * has method
+     *
+     * @param $name
+     *
+     * @return bool
+     */
     public function has($name)
     {
         return array_key_exists($name, $this->directives);
@@ -117,13 +171,13 @@ class DirectiveRegistry
     public function setVersionOverrides($versionOverrides)
     {
         // if used outside of laravel framework (ie with illuminate/views) we ignore the version overrides completely.
-        if(false === class_exists('Illuminate\Foundation\Application', false)){
+        if ( false === class_exists('Illuminate\Foundation\Application', false) ) {
             return;
         }
         list($laravelMajor, $laravelMinor) = explode('.', \Illuminate\Foundation\Application::VERSION);
-        foreach($versionOverrides as $version => $overrides){
+        foreach ( $versionOverrides as $version => $overrides ) {
             list($major, $minor) = explode('_', $version);
-            if($minor !== $laravelMinor || $major !== $laravelMajor){
+            if ( $minor !== $laravelMinor || $major !== $laravelMajor ) {
                 continue;
             }
             $this->overrides = $overrides;
@@ -150,7 +204,7 @@ class DirectiveRegistry
             } else {
                 $class    = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
                 $method   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
-                $instance = $this->container->make($class);
+                $instance = $this->app->make($class);
                 $instance->setName($name);
                 $this->resolved[ $name ] = function ($value) use ($name, $instance, $method, $params) {
                     return call_user_func_array([ $instance, $method ], $params);
@@ -161,9 +215,39 @@ class DirectiveRegistry
         return call_user_func_array($this->resolved[ $name ], $params);
     }
 
+    /**
+     * isCallableWithAtSign method
+     *
+     * @param $callback
+     *
+     * @return bool
+     */
     protected function isCallableWithAtSign($callback)
     {
         return is_string($callback) && strpos($callback, '@') !== false;
+    }
+
+    /**
+     * setMode method
+     *
+     * @param $mode
+     */
+    public function setMode($mode)
+    {
+        $this->mode = $mode;
+    }
+
+    /**
+     * Set the customModeHandler value
+     *
+     * @param \Closure|string $customModeHandler
+     *
+     * @return DirectiveRegistry
+     */
+    public function setCustomModeHandler($customModeHandler)
+    {
+        $this->customModeHandler = $customModeHandler;
+        return $this;
     }
 
 
