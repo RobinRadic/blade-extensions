@@ -40,7 +40,7 @@ return [
 
         'closure' => function ($value) {
             return $value;
-        }
+        },
 //        'spaceless' => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
 //        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
     ],

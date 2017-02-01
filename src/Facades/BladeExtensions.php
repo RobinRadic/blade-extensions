@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Facade;
 
 class BladeExtensions extends Facade
 {
-
     /**
      * Get the registered name of the component.
      *
@@ -26,5 +25,4 @@ class BladeExtensions extends Facade
     {
         return 'blade-extensions';
     }
-
 }

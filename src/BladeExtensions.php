@@ -15,8 +15,7 @@ use Illuminate\View\Compilers\BladeCompiler;
 
 class BladeExtensions
 {
-
-    /**@var \Illuminate\View\Compilers\BladeCompiler */
+    /** @var \Illuminate\View\Compilers\BladeCompiler */
     protected $compiler;
 
     /** @var \Radic\BladeExtensions\DirectiveRegistry */
@@ -51,10 +50,10 @@ class BladeExtensions
     public function __construct(DirectiveRegistry $directives, HelperRepository $helpers)
     {
         $this->directives = $directives;
-        $this->helpers    = $helpers;
-        $this->fs         = new Filesystem;
-        $this->cachePath  = storage_path('blade-extensions');
-        if ( $this->fs->exists($this->cachePath) === false ) {
+        $this->helpers = $helpers;
+        $this->fs = new Filesystem;
+        $this->cachePath = storage_path('blade-extensions');
+        if ($this->fs->exists($this->cachePath) === false) {
             $this->fs->makeDirectory($this->cachePath);
         }
         $this->compiler = new BladeCompiler($this->fs, $this->cachePath);
@@ -62,11 +61,10 @@ class BladeExtensions
 
     public function compileString($string, array $vars = [])
     {
-
-        $__filePath = $this->cachePath . DIRECTORY_SEPARATOR . uniqid('compileString', true) . '.php';
-        $string     = $this->compiler->compileString($string);
+        $__filePath = $this->cachePath.DIRECTORY_SEPARATOR.uniqid('compileString', true).'.php';
+        $string = $this->compiler->compileString($string);
         $this->fs->put($__filePath, $string);
-        if ( is_array($vars) && !empty($vars) ) {
+        if (is_array($vars) && ! empty($vars)) {
             extract($vars, EXTR_OVERWRITE);
         }
         ob_start();
@@ -78,7 +76,7 @@ class BladeExtensions
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isHooked()
     {
@@ -113,5 +111,4 @@ class BladeExtensions
     {
         $this->customModeHandler = $handler;
     }
-
 }
