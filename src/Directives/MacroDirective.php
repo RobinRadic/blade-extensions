@@ -15,5 +15,4 @@ class MacroDirective extends Directive
     protected $pattern = '/(?<!\\w)(\\s*)@NAME(?:\\s*)\\((?:\\s*)[\'"]([\\w\\d]*)[\'"](?:,|)(.*)\\)/';
 
     protected $replace = '$1<?php echo app("blade-extensions.helpers")->$2($3); ?>';
-
 }

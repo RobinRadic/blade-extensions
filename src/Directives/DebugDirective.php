@@ -25,6 +25,4 @@ class DebugDirective extends Directive
     }
     ?>$2
 EOT;
-
-
 }

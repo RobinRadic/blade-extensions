@@ -13,9 +13,8 @@ namespace Radic\BladeExtensions\Helpers;
 use Illuminate\Contracts\View\Factory;
 
 /**
- * Trait SectionsTrait
+ * Trait SectionsTrait.
  *
- * @package     Radic\BladeExtensions
  * @author      Robin Radic
  * @license     MIT
  * @copyright   2011-2015, Robin Radic
@@ -23,7 +22,6 @@ use Illuminate\Contracts\View\Factory;
  */
 trait UsesSections
 {
-
     /**
      * @var array
      */
@@ -40,7 +38,7 @@ trait UsesSections
     protected $viewFactory;
 
     /**
-     * setViewFactory
+     * setViewFactory.
      *
      * @param \Illuminate\Contracts\View\Factory $factory
      * @return $this
@@ -53,7 +51,7 @@ trait UsesSections
     }
 
     /**
-     * Get the value of viewFactory
+     * Get the value of viewFactory.
      *
      * @return \Illuminate\View\Factory
      */
@@ -190,9 +188,9 @@ trait UsesSections
      */
     public function flushSections()
     {
-        $this->sections = array();
+        $this->sections = [];
 
-        $this->sectionStack = array();
+        $this->sectionStack = [];
 
         return $this;
     }

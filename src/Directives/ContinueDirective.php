@@ -12,6 +12,5 @@ namespace Radic\BladeExtensions\Directives;
 
 class ContinueDirective extends Directive
 {
-
     protected $replace = '$1<?php app("blade-extensions.helpers")->get("loop")->looped(); continue; ?>$2';
 }

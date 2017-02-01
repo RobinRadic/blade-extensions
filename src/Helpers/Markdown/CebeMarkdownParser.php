@@ -14,12 +14,11 @@ use cebe\markdown\GithubMarkdown;
 
 class CebeMarkdownParser implements MarkdownParserInterface
 {
-
     protected $markdown;
 
     public function __construct(GithubMarkdown $markdown)
     {
-        $this->markdown  = $markdown;
+        $this->markdown = $markdown;
         $markdown->html5 = true;
     }
 

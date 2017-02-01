@@ -12,15 +12,13 @@
  * Created by IntelliJ IDEA.
  * User: radic
  * Date: 8/7/16
- * Time: 11:33 AM
+ * Time: 11:33 AM.
  */
 
 namespace Radic\BladeExtensions\Helpers;
 
-
 trait BladeMatchers
 {
-
     /**
      * Get the regular expression for a generic Blade function.
      *
@@ -30,7 +28,7 @@ trait BladeMatchers
      */
     public function createMatcher($function)
     {
-        return '/(?<!\w)(\s*)@' . $function . '(\s*\(.*\))/';
+        return '/(?<!\w)(\s*)@'.$function.'(\s*\(.*\))/';
     }
 
     /**
@@ -42,7 +40,7 @@ trait BladeMatchers
      */
     public function createOpenMatcher($function)
     {
-        return '/(?<!\w)(\s*)@' . $function . '(\s*\(.*)\)/';
+        return '/(?<!\w)(\s*)@'.$function.'(\s*\(.*)\)/';
     }
 
     /**
@@ -54,6 +52,6 @@ trait BladeMatchers
      */
     public function createPlainMatcher($function)
     {
-        return '/(?<!\w)(\s*)@' . $function . '(\s*)/';
+        return '/(?<!\w)(\s*)@'.$function.'(\s*)/';
     }
 }

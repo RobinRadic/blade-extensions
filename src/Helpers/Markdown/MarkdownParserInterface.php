@@ -10,11 +10,10 @@
 
 namespace Radic\BladeExtensions\Helpers\Markdown;
 
-
 interface MarkdownParserInterface
 {
     /**
-     * Parses Markdown into HTML
+     * Parses Markdown into HTML.
      *
      * @param string $text The Markdown text
      *
