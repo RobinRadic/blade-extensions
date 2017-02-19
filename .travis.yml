@@ -27,14 +27,17 @@ install:
   - composer require phpunit/phpunit:${PHPUNIT_VERSION}
 
 before_script:
+  - php -v
+  - if [[ "$(php -v | cut -c 5 -z)" == "7" && "$PHPUNIT_VERSION" == "~4.0" ]]; then exit 1; fi
   - composer self-update
   - composer install --prefer-source --no-interaction
 
 script:
-  - phpunit -c phpunit.xml --coverage-clover=coverage.clover
+    - phpunit -c phpunit.xml
+    #- phpunit -c phpunit.xml --coverage-clover=coverage.clover
 
-after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+#after_script:
+#  - wget https://scrutinizer-ci.com/ocular.phar
+#  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 
