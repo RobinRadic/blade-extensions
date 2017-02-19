@@ -27,7 +27,7 @@ install:
   - composer require phpunit/phpunit:${PHPUNIT_VERSION}
 
 before_script:
-  - if [[ $TRAVIS_PHP_VERSION == 7.0 && "$PHPUNIT_VERSION" == "~4.0" ]] ; then exit 1; fi
+  - if [[ $TRAVIS_PHP_VERSION == 7.0 && "${PHPUNIT_VERSION}" == "~4.0" ]] ; then exit 1; fi
   - composer self-update
   - composer install --prefer-source --no-interaction
 
