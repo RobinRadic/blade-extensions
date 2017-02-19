@@ -3,16 +3,12 @@ language: php
 sudo: false
 
 php:
-#    - 5.5
-    - 5.6
-    - 7.0
-#    - 7.1
-#    - hhvm
+  - 5.6
+  - 7.0
 
-branches:
-  only:
-    - master
-    - develop
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 env:
   - LARAVEL_VERSION="5.0.*" TESTBENCH_VERSION="3.0.*" PHPUNIT_VERSION="~4.0" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
@@ -22,23 +18,19 @@ env:
   - LARAVEL_VERSION="5.4.*" TESTBENCH_VERSION="3.4.*" PHPUNIT_VERSION="~5.0" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
 
 before_install:
+  - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
   - if [[ $TRAVIS_PHP_VERSION == 7.0 && "${PHPUNIT_VERSION}" == "~4.0" ]] ; then exit 0;fi
+  - travis_retry composer self-update
 
 install:
+  - composer install --prefer-source --no-interaction
   - composer require laravel/framework:${LARAVEL_VERSION}
   - composer require orchestra/testbench:${TESTBENCH_VERSION}
   - composer require phpunit/phpunit:${PHPUNIT_VERSION}
 
-before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction
+script: vendor/bin/phpunit
 
-script:
-    - phpunit -c phpunit.xml
-    #- phpunit -c phpunit.xml --coverage-clover=coverage.clover
-
-#after_script:
-#  - wget https://scrutinizer-ci.com/ocular.phar
-#  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-
-
+after_success:
+  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
+  - chmod a+x /tmp/travis-automerge
+  - BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
