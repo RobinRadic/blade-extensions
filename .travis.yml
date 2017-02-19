@@ -28,7 +28,8 @@ install:
 
 before_script:
   - php -v
-  - echo $(phpenv version | cut -b1)
+  - phpenv version | cut -b1
+  - exit 0;
   - if [[ "$(phpenv version | cut -b1)" == "7" && "$PHPUNIT_VERSION" == "~4.0" ]]; then exit 1; fi
   - composer self-update
   - composer install --prefer-source --no-interaction
