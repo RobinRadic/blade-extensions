@@ -50,46 +50,49 @@ class BladeExtensions
     public function __construct(DirectiveRegistry $directives, HelperRepository $helpers)
     {
         $this->directives = $directives;
-        $this->helpers    = $helpers;
-        $this->fs         = new Filesystem;
-        $this->cachePath  = storage_path('blade-extensions');
+        $this->helpers = $helpers;
+        $this->fs = new Filesystem;
+        $this->cachePath = storage_path('blade-extensions');
     }
 
     /**
-     * getCompiler method
+     * getCompiler method.
      * @return \Illuminate\View\Compilers\BladeCompiler
      */
     protected function getCompiler()
     {
-        if ( !isset($this->compiler) ) {
-            if ( $this->fs->exists($this->cachePath) === false ) {
+        if (! isset($this->compiler)) {
+            if ($this->fs->exists($this->cachePath) === false) {
                 $this->fs->makeDirectory($this->cachePath);
             }
             $this->compiler = new BladeCompiler($this->fs, $this->cachePath);
         }
+
         return $this->compiler;
     }
 
     public function compileString($string, array $vars = [], $tmpfile = false)
     {
-        $fileName = uniqid('compileString', true) . '.php';
-        $filePath = $this->cachePath . DIRECTORY_SEPARATOR . $fileName;
-        $string   = $this->getCompiler()->compileString($string);
+        $fileName = uniqid('compileString', true).'.php';
+        $filePath = $this->cachePath.DIRECTORY_SEPARATOR.$fileName;
+        $string = $this->getCompiler()->compileString($string);
         $this->fs->put($filePath, $string);
         $compiledString = $this->getCompiledContent($filePath, $vars);
         $this->fs->delete($filePath);
+
         return $compiledString;
     }
 
     protected function getCompiledContent($filePath, array $vars = [])
     {
-        if ( is_array($vars) && !empty($vars) ) {
+        if (is_array($vars) && ! empty($vars)) {
             extract($vars, EXTR_OVERWRITE);
         }
         ob_start();
         include $filePath;
         $var = ob_get_contents();
         ob_end_clean();
+
         return $var;
     }
 
