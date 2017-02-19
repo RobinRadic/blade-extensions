@@ -59,19 +59,33 @@ class BladeExtensions
         $this->compiler = new BladeCompiler($this->fs, $this->cachePath);
     }
 
-    public function compileString($string, array $vars = [])
+    public function compileString($string, array $vars = [], $tmpfile = false)
     {
-        $__filePath = $this->cachePath.DIRECTORY_SEPARATOR.uniqid('compileString', true).'.php';
+        $fileName = uniqid('compileString', true).'.php';
+        $filePath = $this->cachePath.DIRECTORY_SEPARATOR.$fileName;
         $string = $this->compiler->compileString($string);
-        $this->fs->put($__filePath, $string);
+//        $filePath = tempnam($this->cachePath, $fileName);
+//        if($tmpfile){
+//            \Laradic\Filesystem\Filesystem::create()->tempnam()
+//            $file = \Laradic\Filesystem\Filesystem::create()->createTemp()->createFile($fileName);
+//            $filePath = $file->getPathname();
+//            $
+//        }
+        $this->fs->put($filePath, $string);
+        $compiledString = $this->getCompiledContent($filePath, $vars);
+        $this->fs->delete($filePath);
+        return $compiledString;
+    }
+
+    protected function getCompiledContent($filePath, array $vars = [])
+    {
         if (is_array($vars) && ! empty($vars)) {
             extract($vars, EXTR_OVERWRITE);
         }
         ob_start();
-        include $__filePath;
+        include $filePath;
         $var = ob_get_contents();
         ob_end_clean();
-//        $this->fs->delete($__filePath);
         return $var;
     }
 
