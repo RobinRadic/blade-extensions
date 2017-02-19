@@ -27,13 +27,11 @@ install:
   - composer require phpunit/phpunit:${PHPUNIT_VERSION}
 
 before_script:
-  - php -v
-  - phpenv version | cut -b1
-  - exit 0;
   - composer self-update
   - composer install --prefer-source --no-interaction
 
 script:
+    - if [[ $TRAVIS_PHP_VERSION == 7.0 && "$PHPUNIT_VERSION" == "~4.0" ]] ; then exit 1; fi
     - phpunit -c phpunit.xml
     #- phpunit -c phpunit.xml --coverage-clover=coverage.clover
 
