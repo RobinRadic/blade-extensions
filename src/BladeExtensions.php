@@ -68,6 +68,7 @@ class BladeExtensions
             $this->compiler = new BladeCompiler($this->fs, $this->cachePath);
         }
         return $this->compiler;
+
     }
 
     public function compileString($string, array $vars = [], $tmpfile = false)
