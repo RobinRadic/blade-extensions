@@ -69,7 +69,6 @@ class BladeExtensions
         }
 
         return $this->compiler;
-
     }
 
     public function compileString($string, array $vars = [], $tmpfile = false)
