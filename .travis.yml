@@ -19,10 +19,12 @@ before_install:
   - travis_retry composer self-update
 
 install:
-  - composer install --prefer-source --no-interaction
   - composer require laravel/framework:${LARAVEL_VERSION}
   - composer require orchestra/testbench:${TESTBENCH_VERSION}
   - composer require phpunit/phpunit:${PHPUNIT_VERSION}
+
+before_script:
+  - composer install --prefer-source --no-interaction
 
 script: vendor/bin/phpunit
 
