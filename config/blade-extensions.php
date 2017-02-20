@@ -48,11 +48,11 @@ return [
         // 5.3 introduced the loop variable for the @foreach directive. we can disable these.
         // NOTE: If you have used blade-extensions's @foreach before blade-extensions:7.0.0, you probably
         // want to remove this
-        '>=5.3' => [
-            'break'    => null,
-            'continue' => null,
-            'foreach'    => null,
-            'endforeach' => null,
-        ]
+//        '>=5.3' => [
+//            'break'    => null,
+//            'continue' => null,
+//            'foreach'    => null,
+//            'endforeach' => null,
+//        ]
     ],
 ];
