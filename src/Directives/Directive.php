@@ -10,6 +10,10 @@
 
 namespace Radic\BladeExtensions\Directives;
 
+//use Composer\Semver\Semver;
+
+use Composer\Semver\Semver;
+
 abstract class Directive
 {
     protected $pattern = '/(?<!\\w)(\\s*)@NAME(\\s*)/';
@@ -18,10 +22,24 @@ abstract class Directive
 
     protected $name;
 
+    public static $compatibility = '5.*';
+
+    public static function isCompatibleWithVersion($version)
+    {
+        return Semver::satisfies($version, static::$compatibility);
+    }
+
+    public static function isCompatible()
+    {
+        return static::isCompatibleWithVersion(\Illuminate\Foundation\Application::VERSION);
+    }
+
     public function handle($value)
     {
         return preg_replace($this->getProcessedPattern(), $this->replace, $value);
     }
+
+
 
     protected function getProcessedPattern()
     {

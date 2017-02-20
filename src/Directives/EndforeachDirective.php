@@ -12,6 +12,8 @@ namespace Radic\BladeExtensions\Directives;
 
 class EndforeachDirective extends Directive
 {
+    public static $compatibility = '5.0.*|5.1.*|5.2.*';
+
     protected $replace = <<<'EOT'
 $1<?php
 app('blade-extensions.helpers')->get('loop')->looped();

@@ -27,12 +27,8 @@ use Radic\BladeExtensions\Helpers\Loop;
  */
 class LoopHelper
 {
-    /**
-     * The stack of Loop instances.
-     *
-     * @var array
-     */
     protected $stack = [];
+
 
     /**
      * Creates a new loop with the given array and adds it to the stack.
@@ -42,6 +38,20 @@ class LoopHelper
     public function newLoop($items)
     {
         $this->addLoopStack(new Loop\Loop($this, $items));
+    }
+
+
+    /**
+     * Set the namingConvention value
+     *
+     * @param int $namingConvention
+     *
+     * @return LoopHelper
+     */
+    public function setNamingConvention($namingConvention)
+    {
+        $this->namingConvention = $namingConvention;
+        return $this;
     }
 
     /**

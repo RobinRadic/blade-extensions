@@ -8,7 +8,7 @@
  * @license https://radic.mit-license.org The MIT License
  */
 
-namespace Radic\Tests\BladeExtensions\Helpers;
+namespace Radic\Tests\BladeExtensions\Helpers\Embed;
 
 use Mockery as m;
 use Radic\BladeExtensions\Helpers\Embed\EmbedHelper;

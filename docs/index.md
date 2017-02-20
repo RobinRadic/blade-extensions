@@ -1,13 +1,14 @@
 ---
-title: Home
-subtitle: Blade Extensions overview
+title: Overview
+subtitle: Blade Extensions 
 ---
-## Introduction
-Blade Extensions is a **Laravel** package providing additional Blade functionality.  
-It mainly consists out of Blade directives.
+# Overview
 
-### Quick Example: A few directives
-```php
+## Introduction
+Blade Extensions is a **Laravel** package providing additional Blade functionality and directives.
+
+### Quick example of all directives
+```blade
 @foreach($stuff as $key => $val)
     $loop->index;       // int, zero based
     $loop->index1;      // int, starts at 1
@@ -18,6 +19,12 @@ It mainly consists out of Blade directives.
     $loop->even;        // bool
     $loop->odd;         // bool
     $loop->length;      // int
+    $loop->depth;       // int
+    
+    // aliases (to match/support laravel 5.4 changes)
+    $loop->count;       // $loop->length
+    $loop->remaining;   // $loop->revindex1
+    $loop->iteration;   // $loop->index1
 
     @foreach($other as $name => $age)
         $loop->parent->odd;
@@ -30,11 +37,15 @@ It mainly consists out of Blade directives.
     @continue
 @endforeach
 
+
+
 // Assignment
 @set('newvar', 'value')
 {{ $newvar }}
 @unset('newvar')
 @unset($newvar)
+
+
 
 // var_dump or HTMLDumper or....
 @debug($somearr)
@@ -42,21 +53,38 @@ It mainly consists out of Blade directives.
 // xdebug_break breakpoints (configurable) to debug compiled views. Sweet? YES!
 @breakpoint
 
+
 // Parse some markdown code
 @markdown
 ** with some bold text too **
 @endmarkdown 
 
-// Minify this very big script
+
+
+// Minification of inline code
+@minify('html')
+<html>
+    <body>HTML To Minify</body>
+</html>
+@endminify
+
 <script>
 @minify('js')
 window.blade = { foo: 'bar', date: new Date() }
 @endminify
 </script>
+
+<style>
+@minify('css')
+body {
+    color: blue;
+}
+@endminify
+</style>
 ```
 
 ### Quick Example: Configuration
-The configuration has come a long way. Lets have this example speak for itself!
+Lets have this example speak for itself. 
 ```php
 
 return [
@@ -83,6 +111,8 @@ return [
         //'spaceless' => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
         //'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
     ],
+    
+    // For most people, Version Overrides aren't interesting.
     'version_overrides' => [
         // 5.0 behaves a bit differently, so we react to it. (imginary issue provided as example)
         '5.0' => [

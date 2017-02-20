@@ -13,4 +13,6 @@ namespace Radic\BladeExtensions\Directives;
 class BreakDirective extends Directive
 {
     protected $replace = '$1<?php break; ?>$2';
+
+    public static $compatibility = '~5.0|~5.1';
 }

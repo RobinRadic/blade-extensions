@@ -5,18 +5,17 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright Copyright 2017 (c) Robin Radic
- * @license   https://radic.mit-license.org The MIT License
+ * @license https://radic.mit-license.org The MIT License
  */
 
 return [
-    'mode'              => 'auto',
     'directives'        => [
         'set'   => 'Radic\\BladeExtensions\\Directives\\SetDirective',
         'unset' => 'Radic\\BladeExtensions\\Directives\\UnsetDirective',
 
         'breakpoint' => 'Radic\\BladeExtensions\\Directives\\BreakpointDirective',
         'debug'      => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
-        'dump'       => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
+//        'dump'       => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
 
         'foreach'    => 'Radic\\BladeExtensions\\Directives\\ForeachDirective',
         'endforeach' => 'Radic\\BladeExtensions\\Directives\\EndforeachDirective',
@@ -33,35 +32,27 @@ return [
         'minify'    => 'Radic\\BladeExtensions\\Directives\\MinifyDirective',
         'endminify' => 'Radic\\BladeExtensions\\Directives\\EndminifyDirective',
 
-        'spaceless'    => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
-        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
-
         'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
+
+//        'spaceless'    => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
+//        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
 
 //        'closure' => function ($value) {
 //            return $value;
 //        },
     ],
     'version_overrides' => [
-        '5.0' => [],
-        '5.1' => [],
+
         // 5.2 introduced @break and @continue
-        '5.2' => [
+        // but blade-extensions's @foreach relies on them so we don't yet disable them
+        // 5.3 introduced the loop variable for the @foreach directive. we can disable these.
+        // NOTE: If you have used blade-extensions's @foreach before blade-extensions:7.0.0, you probably
+        // want to remove this
+        '>=5.3' => [
             'break'    => null,
             'continue' => null,
-        ],
-        // 5.3 introduced the loop variable for the @foreach directive.
-        '5.3' => [
             'foreach'    => null,
             'endforeach' => null,
-            'break'      => null,
-            'continue'   => null,
-        ],
-        '5.4' => [
-            'foreach'    => null,
-            'endforeach' => null,
-            'break'      => null,
-            'continue'   => null,
-        ],
+        ]
     ],
 ];

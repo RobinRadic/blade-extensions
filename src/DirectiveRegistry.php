@@ -11,7 +11,9 @@
 namespace Radic\BladeExtensions;
 
 use Closure;
+use Composer\Semver\Semver;
 use Illuminate\Contracts\Foundation\Application;
+use Radic\BladeExtensions\Directives\Directive;
 
 /**
  * The DirectiveRegistry contains all BladeExtension's directives to be used when compiling views, including the version overrides.
@@ -47,12 +49,9 @@ class DirectiveRegistry
     protected $hooked = false;
 
     /**
-     * @var string|\Closure
+     * @var null|string|\Closure
      */
-    protected $customModeHandler;
-
-    /** @var string */
-    protected $mode = 'auto';
+    protected $hooker;
 
     /**
      * @var \Illuminate\View\Compilers\Compiler|\Illuminate\View\Compilers\BladeCompiler
@@ -69,26 +68,34 @@ class DirectiveRegistry
         $this->app = $app;
     }
 
+    public function isHooked()
+    {
+        return $this->hooked;
+    }
+
+    public function setHooker($hooker)
+    {
+        $this->hooker = $hooker;
+    }
+
     /**
      * hookToCompiler method.
      */
     public function hookToCompiler()
     {
-        if (true === $this->hooked) {
+        if ( true === $this->hooked ) {
             return;
         }
         $this->hooked = true;
-        if ($this->mode === 'auto') {
-            foreach ($this->getNames() as $name) {
+
+        if ( is_null($this->hooker) ) {
+            foreach ( $this->getNames() as $name ) {
                 $this->getCompiler()->extend(function ($value) use ($name) {
-                    return $this->call($name, [$value]);
+                    return $this->call($name, [ $value ]);
                 });
             }
-        } elseif ($this->mode === 'custom') {
-            if (null === $this->customModeHandler) {
-                throw new \RuntimeException('[Custom Mode Handler Not Set]');
-            }
-            $this->app->call($this->customModeHandler, [], 'handle');
+        } else {
+            $this->app->call($this->hooker, [], 'handle');
         }
     }
 
@@ -109,18 +116,17 @@ class DirectiveRegistry
      *
      * @return \Radic\BladeExtensions\DirectiveRegistry
      */
-    public function register($name, $handler = null, $override = false)
+    public function register($name, $handler = null)
     {
-        if ($handler === null) {
-            foreach ((array) $name as $directiveName => $directiveHandler) {
+        if ( $handler === null ) {
+            foreach ( (array)$name as $directiveName => $directiveHandler ) {
                 $this->register($directiveName, $directiveHandler);
             }
+        } elseif ( $handler instanceof Directive && false === $handler::isCompatible() ) {
+            return;
         } else {
-            if ((true === $override && true === $this->has($name)) || false === $this->has($name)) {
-                $this->directives[$name] = $handler;
-            }
+            $this->directives[ $name ] = $handler;
         }
-
         return $this;
     }
 
@@ -143,7 +149,7 @@ class DirectiveRegistry
      */
     public function get($name)
     {
-        return $this->directives[$name];
+        return $this->directives[ $name ];
     }
 
     /**
@@ -159,31 +165,6 @@ class DirectiveRegistry
     }
 
     /**
-     * Set the versionOverrides value.
-     *
-     * @param array $versionOverrides
-     *
-     * @return DirectiveRegistry
-     */
-    public function setVersionOverrides($versionOverrides)
-    {
-        // if used outside of laravel framework (ie with illuminate/views) we ignore the version overrides completely.
-        if (false === class_exists('Illuminate\Foundation\Application', false)) {
-            return;
-        }
-        list($laravelMajor, $laravelMinor) = explode('.', \Illuminate\Foundation\Application::VERSION);
-        foreach ($versionOverrides as $version => $overrides) {
-            list($major, $minor) = explode('_', $version);
-            if ($minor !== $laravelMinor || $major !== $laravelMajor) {
-                continue;
-            }
-            $this->overrides = $overrides;
-        }
-
-        return $this;
-    }
-
-    /**
      * Call a directive. This will execute the directive using the given parameters.
      *
      * @param       $name
@@ -193,24 +174,24 @@ class DirectiveRegistry
      */
     public function call($name, $params = [])
     {
-        if (false === array_key_exists($name, $this->resolved)) {
+        if ( false === array_key_exists($name, $this->resolved) ) {
             $handler = $this->get($name);
-            if ($handler instanceof Closure) {
-                $this->resolved[$name] = function ($value) use ($name, $handler, $params) {
+            if ( $handler instanceof Closure ) {
+                $this->resolved[ $name ] = function ($value) use ($name, $handler, $params) {
                     return call_user_func_array($handler, $params);
                 };
             } else {
-                $class = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[0] : $handler;
-                $method = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[1] : 'handle';
+                $class    = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
+                $method   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
                 $instance = $this->app->make($class);
                 $instance->setName($name);
-                $this->resolved[$name] = function ($value) use ($name, $instance, $method, $params) {
-                    return call_user_func_array([$instance, $method], $params);
+                $this->resolved[ $name ] = function ($value) use ($name, $instance, $method, $params) {
+                    return call_user_func_array([ $instance, $method ], $params);
                 };
             }
         }
 
-        return call_user_func_array($this->resolved[$name], $params);
+        return call_user_func_array($this->resolved[ $name ], $params);
     }
 
     /**
@@ -225,27 +206,28 @@ class DirectiveRegistry
         return is_string($callback) && strpos($callback, '@') !== false;
     }
 
-    /**
-     * setMode method.
-     *
-     * @param $mode
-     */
-    public function setMode($mode)
-    {
-        $this->mode = $mode;
-    }
 
     /**
-     * Set the customModeHandler value.
+     * Set the versionOverrides value.
      *
-     * @param \Closure|string $customModeHandler
+     * @param array[] $versionOverrides
      *
      * @return DirectiveRegistry
      */
-    public function setCustomModeHandler($customModeHandler)
+    public function setVersionOverrides($versionOverrides)
     {
-        $this->customModeHandler = $customModeHandler;
+        // if used outside of laravel framework (ie with illuminate/views) we ignore the version overrides completely.
+        if ( false === class_exists('Illuminate\Foundation\Application', false) ) {
+            return;
+        }
+        foreach ( $versionOverrides as $version => $overrides ) {
+            if ( false === Semver::satisfies(\Illuminate\Foundation\Application::VERSION, $version) ) {
+                continue;
+            }
+            $this->directives = array_filter(array_replace($this->directives, $overrides));
+        }
 
         return $this;
     }
+
 }

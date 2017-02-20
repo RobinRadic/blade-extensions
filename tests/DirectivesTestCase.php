@@ -69,5 +69,9 @@ abstract class DirectivesTestCase extends TestCase
     }
 
 
+    public function testCompatibility()
+    {
+        $class = $this->getDirectiveClass();
+    }
 
 }

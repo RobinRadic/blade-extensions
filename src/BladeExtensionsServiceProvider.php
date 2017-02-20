@@ -60,7 +60,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $this->app->singleton('blade-extensions.directives', function ($app) {
             $directives = new DirectiveRegistry($app);
             $directives->register($app['config']['blade-extensions.directives']);
-            $directives->setMode($app['config']['blade-extensions.mode']);
+            $directives->setVersionOverrides($app['config']['blade-extensions.version_overrides']);
 
             return $directives;
         });
