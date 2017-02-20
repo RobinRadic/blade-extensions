@@ -39,8 +39,6 @@ abstract class Directive
         return preg_replace($this->getProcessedPattern(), $this->replace, $value);
     }
 
-
-
     protected function getProcessedPattern()
     {
         return str_replace('NAME', $this->name, $this->pattern);

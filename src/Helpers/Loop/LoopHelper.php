@@ -29,7 +29,6 @@ class LoopHelper
 {
     protected $stack = [];
 
-
     /**
      * Creates a new loop with the given array and adds it to the stack.
      *
@@ -40,9 +39,8 @@ class LoopHelper
         $this->addLoopStack(new Loop\Loop($this, $items));
     }
 
-
     /**
-     * Set the namingConvention value
+     * Set the namingConvention value.
      *
      * @param int $namingConvention
      *
@@ -51,6 +49,7 @@ class LoopHelper
     public function setNamingConvention($namingConvention)
     {
         $this->namingConvention = $namingConvention;
+
         return $this;
     }
 

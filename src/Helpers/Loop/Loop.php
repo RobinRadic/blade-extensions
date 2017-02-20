@@ -14,8 +14,6 @@
 
 namespace Radic\BladeExtensions\Helpers\Loop;
 
-use Laradic\Testing\Native\Traits\PHPUnitTrait;
-
 /**
  * Represents the $loop variable in the foreach directive. Handles all data.
  *
@@ -79,8 +77,8 @@ class Loop
      */
     public function setParentLoop(Loop $parentLoop)
     {
-        $this->parentLoop       = $parentLoop;
-        $this->data[ 'parent' ] = $parentLoop;
+        $this->parentLoop = $parentLoop;
+        $this->data['parent'] = $parentLoop;
     }
 
     /**
@@ -120,12 +118,12 @@ class Loop
      */
     public function setItems($items)
     {
-        if ( isset($data) ) {
+        if (isset($data)) {
             return;
         }
         $this->items = $items;
-        $total       = count($items);
-        $this->data  = [
+        $total = count($items);
+        $this->data = [
             'index1'    => 1,
             'index'     => 0,
             'revindex1' => $total,
@@ -156,12 +154,13 @@ class Loop
             'iteration' => 'index1',
             'remaining' => 'revindex1',
             'parentLoop'    => 'parent',
-            'count'=>'length'
+            'count'=>'length',
         ];
-        if ( array_key_exists($key, $aliases) ) {
-            return $this->data[ $aliases[ $key ] ];
+        if (array_key_exists($key, $aliases)) {
+            return $this->data[$aliases[$key]];
         }
-        return $this->data[ $key ];
+
+        return $this->data[$key];
     }
 
     public function __set($key, $val)
@@ -171,7 +170,7 @@ class Loop
 
     public function __isset($key)
     {
-        return isset($this->data[ $key ]);
+        return isset($this->data[$key]);
     }
 
     /**
@@ -179,22 +178,22 @@ class Loop
      */
     public function before()
     {
-        if ( $this->data[ 'index' ] % 2 == 0 ) {
-            $this->data[ 'odd' ]  = false;
-            $this->data[ 'even' ] = true;
+        if ($this->data['index'] % 2 == 0) {
+            $this->data['odd'] = false;
+            $this->data['even'] = true;
         } else {
-            $this->data[ 'odd' ]  = true;
-            $this->data[ 'even' ] = false;
+            $this->data['odd'] = true;
+            $this->data['even'] = false;
         }
-        if ( $this->data[ 'index' ] == 0 ) {
-            $this->data[ 'first' ] = true;
+        if ($this->data['index'] == 0) {
+            $this->data['first'] = true;
         } else {
-            $this->data[ 'first' ] = false;
+            $this->data['first'] = false;
         }
-        if ( $this->data[ 'revindex' ] == 0 ) {
-            $this->data[ 'last' ] = true;
+        if ($this->data['revindex'] == 0) {
+            $this->data['last'] = true;
         } else {
-            $this->data[ 'last' ] = false;
+            $this->data['last'] = false;
         }
     }
 
@@ -203,9 +202,9 @@ class Loop
      */
     public function after()
     {
-        $this->data[ 'index' ]++;
-        $this->data[ 'index1' ]++;
-        $this->data[ 'revindex' ]--;
-        $this->data[ 'revindex1' ]--;
+        $this->data['index']++;
+        $this->data['index1']++;
+        $this->data['revindex']--;
+        $this->data['revindex1']--;
     }
 }

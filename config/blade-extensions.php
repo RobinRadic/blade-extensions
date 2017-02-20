@@ -53,6 +53,6 @@ return [
             'continue' => null,
             'foreach'    => null,
             'endforeach' => null,
-        ]
+        ],
     ],
 ];
