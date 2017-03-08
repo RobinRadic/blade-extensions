@@ -15,15 +15,25 @@ HEY!
 @endmarkdown
 ```
 
-#### Using the views
-If you have the config option `markdown.views` enabled, you can import markdown files using the `@include` directive.
 
-You can load `.md`, `.md.blade.php` and `.md.php` files directly into your views. 
-By using the `blade` or `php` extension, you can also use those languages.
 
-```php
-// Some fancy markdown document is located at markdown/file/path.md
-View::make('markdown/file/path')->render();
+### Minify CSS/JS
+By default, only `@minify('html')` works. To enable javascript and css minification, add the `matthiasmullie/minify` package to your composer dependencies.
+Blade Extensions automaticly detects the package and enables `@minify('js')` and `@minify('css')` directives. For more information, check out the directive's documentation page.
+```json
+"require": {
+    "matthiasmullie/minify": "~1.3"
+}
 ```
 
-Will work just as well.
+### Markdown
+Add your preferred Markdown parser to your composer dependencies. By default `erusev/parsedown` is enabled as renderer. 
+Check the markdown directive documentation page on how to implement custom a markdown parser.
+```json
+"require": {
+    "erusev/parsedown": "~1.5"
+}
+```
+
+### Debug output
+The `@dump($var)` directive will either use Symfony's `VarDumper` or the regular `var_dump` method. 

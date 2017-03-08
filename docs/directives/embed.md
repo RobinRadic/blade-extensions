@@ -8,7 +8,7 @@ Embedded view files have their own `sections` and `stacks` making it possible to
  
 Environment/global variables can be used inside embedded views and can be overridden as well.
 
-For more example's, enable `example_views` as described on the configuration page.
+<!-- For more example's, enable `example_views` as described on the configuration page. -->
  
 #### Example usage
 **components/panel.blade.php**

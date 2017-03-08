@@ -4,8 +4,9 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions;
@@ -13,16 +14,16 @@ namespace Radic\Tests\BladeExtensions;
 use Laradic\Testing\Laravel\Traits\ViewTester;
 
 /**
- * Class ViewTest
+ * Class ViewTest.
  *
  * @author     Robin Radic
- * @inheritDoc
+ * {@inheritdoc}
  */
 abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
 {
     use ViewTester;
 
-    /** @inheritDoc */
+    /** {@inheritdoc} */
     public function setUp()
     {
         parent::setUp();
@@ -55,12 +56,11 @@ abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
 
     protected function getPackageRootPath()
     {
-        return realpath(__DIR__ . '/..');
+        return realpath(__DIR__.'/..');
     }
 
     public function testTest()
     {
         $this->assertTrue(true);
     }
-
 }

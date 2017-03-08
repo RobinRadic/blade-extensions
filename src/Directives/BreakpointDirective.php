@@ -4,13 +4,33 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license   https://radic.mit-license.org MIT License
+ * @version   7.0.0
  */
 
 namespace Radic\BladeExtensions\Directives;
 
+/**
+ * This is the class BreakpointDirective.
+ *
+ * @blade-directive @breakpoint
+ * @package Radic\BladeExtensions\Directives
+ * @author  Robin Radic
+ */
 class BreakpointDirective extends Directive
 {
-    protected $replace = '$1<?php if(function_exists("xdebug_break")){ xdebug_break(); } ?>$2';
+    public static $functionName = 'xdebug_break';
+
+    protected $replace = '$1<?php if(function_exists("FUNCTION_NAME")){ FUNCTION_NAME(); } ?>$2';
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see BreakpointDirective::$functionName The function name to use to invoke a breakpoint
+     */
+    public function getReplace()
+    {
+        return preg_replace('/FUNCTION_NAME/', static::$functionName, parent::getReplace());
+    }
 }

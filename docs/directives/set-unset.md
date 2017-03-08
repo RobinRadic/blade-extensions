@@ -1,12 +1,13 @@
 ---
-title: Assignments
-subtitle: '@set @unset'
+title: @set @unset
+subtitle: Directives
 ---
+
 The `@set` directive allows you to set variable values in your view. It will be added as environment variable as well (`$__env`, `$__data`).
-It accepts a wide variaty of input values, including multi-line arrays.
+It accepts a wide variety of input values, including multi-line arrays.
  
  
-```php
+```blade
 @set('main_links', [ ])
 {{ empty($testArray) }} // > true
 

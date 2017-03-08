@@ -4,8 +4,9 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions\Directives;
@@ -15,12 +16,11 @@ use Radic\Tests\BladeExtensions\DirectivesTestCase;
 class EmbedDirectiveTest extends DirectivesTestCase
 {
     /**
-     * getDirectiveClass method
+     * getDirectiveClass method.
      * @return string
      */
     protected function getDirectiveClass()
     {
         return 'Radic\BladeExtensions\Directives\EmbedDirective';
     }
-
 }

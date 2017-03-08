@@ -4,26 +4,25 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions\Helpers;
 
 use Mockery as m;
-use Radic\BladeExtensions\Contracts\Stack;
 use Radic\BladeExtensions\Helpers\Stacker;
 use Radic\Tests\BladeExtensions\TestCase;
 
 class FixtureStacker extends Stacker
 {
-
     /**
-     * create
+     * create.
      *
      * @return mixed
      */
-    protected function create($args = [ ])
+    protected function create($args = [])
     {
         $stack = m::mock('Radic\\Tests\\BladeExtensions\\Helpers\FixtureStack', $args);
         $stack->shouldReceive('start')->andReturnSelf()
@@ -35,7 +34,6 @@ class FixtureStacker extends Stacker
 
 class StackerTest extends TestCase
 {
-
     /**
      * @var \Mockery\MockInterface
      */
@@ -49,7 +47,7 @@ class StackerTest extends TestCase
     protected function start()
     {
         $this->container = m::mock('Illuminate\Contracts\Container\Container');
-        $this->stacker   = new FixtureStacker($this->container);
+        $this->stacker = new FixtureStacker($this->container);
     }
 
     public function testGetSetContainer()
@@ -76,7 +74,7 @@ class StackerTest extends TestCase
 
     public function testGetCurrentOrEmptyStack()
     {
-        $stackItem   = $this->stacker->start();
+        $stackItem = $this->stacker->start();
         $currentItem = $this->stacker->current();
         $this->assertEquals($stackItem, $currentItem);
         $this->assertFalse($this->stacker->isEmpty());

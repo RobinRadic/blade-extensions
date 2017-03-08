@@ -9,29 +9,31 @@
 
 A _Laravel_ package providing additional Blade functionality. 
 
-**Compatible with all Laravel 5.* versions.**
+**Tested successfully on all Laravel 5.x versions.**
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 
-**Version 7.0**
-- [**Documentation**](http://robin.radic.nl/blade-extensions) (or alternatively read it [**here**](docs/index.md) on github)
-- [**Upgrade guide & Changelog**](http://robin.radic.nl/blade-extensions/changelog-upgrade-guide.html)
+### Version 7.0 BETA
+<!-- [**Documentation**](http://robin.radic.nl/blade-extensions) (or alternatively read it [**here**](docs/index.md) on github) -->
+- [**Documentation**](docs/index.md)
+- [**Changelog & Upgrade guide**](docs/prologue/changelog-upgrade-guide.md)
 
-### Features
+#### Features
 - Compatible with [all Laravel 5 versions](https://travis-ci.org/RobinRadic/blade-extensions)
 - **20+** Configurable, extendable, replaceable, testable directives.
 - Compile Blade strings **with** variables `BladeExtensions::compileString($string, array $vars = [])`
+- Progamatically push content to a stack inside blade view(s) `BladeExtensions::pushToStack($stack, $views, $content)`
 
 #### Directives
 All directives can be disabled, extended or replaced.
-- [@set / @unset](docs/directives/index.md) Setting and unsetting of values
-- [@breakpoint / @debug / @dump](docs/directives/index.md) Dump values and set breakpoints in views
-- [@foreach / @break / @continue](docs/directives/index.md) Loop data and extras (similair to twig `$loop`)
-- [@embed](docs/directives/index.md) Think of embed as combining the behaviour of include and extends. (similair to twig `embed`)
-- [@minify / @endminify](docs/directives/index.md)  Minify inline code. Supports CSS, JS and HTML.
-- [@macro / @endmacro/ @macrodef](docs/directives/index.md) Defining and running macros
-- [@markdown/ @endmarkdown](docs/directives/index.md)
-- [@spaceless / @endspaceless](docs/directives/index.md)
+- [@set / @unset](docs/directives/set-unset.md) Setting and unsetting of values
+- [@breakpoint / @debug / @dump](docs/directives/breakpoint-debug-dump.md) Dump values and set breakpoints in views
+- [@foreach / @break / @continue](docs/directives/foreach-break-continue.md) Loop data and extras (similair to twig `$loop`)
+- [@embed](docs/directives/embed.md) Think of embed as combining the behaviour of include and extends. (similair to twig `embed`)
+- [@minify / @endminify](docs/directives/minify.md)  Minify inline code. Supports CSS, JS and HTML.
+- [@macro / @endmacro/ @macrodef](docs/directives/macro.md) Defining and running macros
+- [@markdown/ @endmarkdown](docs/directives/markdown.md)
+- [@spaceless / @endspaceless](docs/directives/spaceless.md)
 - and more...
 `
 
@@ -53,7 +55,15 @@ php artisan publish --tag=config --provider="Radic\BladeExtensions\BladeExtensio
 ```
 
 ### Contribute 
-...
+
+- Fork 
+- Make your changes. If you add functionality, also add test code and if needed some documentation.
+- Create a pull request. 
+- The package follows the FIG standards PSR-1, PSR-2, and PSR-4. 
+
+#### Directives
+Share your directives! If you contribute a directive, add them to the config file while have it commented out to make it optional. 
+This way, it should be fine to add all sorts of directives.
 
 ### Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 

@@ -4,24 +4,45 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
-
 namespace Radic\BladeExtensions\Helpers\Markdown;
 
 use cebe\markdown\GithubMarkdown;
 
+/**
+ * This is the class CebeMarkdownParser.
+ *
+ * @package Radic\BladeExtensions\Helpers\Markdown
+ * @author  Robin Radic
+ */
 class CebeMarkdownParser implements MarkdownParserInterface
 {
     protected $markdown;
 
+    /**
+     * CebeMarkdownParser constructor.
+     *
+     * @param \cebe\markdown\GithubMarkdown $markdown
+     */
     public function __construct(GithubMarkdown $markdown)
     {
         $this->markdown = $markdown;
         $markdown->html5 = true;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    /**
+     * parse method
+     *
+     * @param string $text
+     *
+     * @return string
+     */
     public function parse($text)
     {
         return $this->markdown->parse($text);

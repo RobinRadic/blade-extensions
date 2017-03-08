@@ -4,8 +4,9 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 /**
@@ -19,6 +20,12 @@ namespace Radic\BladeExtensions;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * This is the class BladeExtensionsServiceProvider.
+ *
+ * @package Radic\BladeExtensions
+ * @author  Robin Radic
+ */
 class BladeExtensionsServiceProvider extends ServiceProvider
 {
     public function boot()
@@ -26,8 +33,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/blade-extensions.php' => config_path('blade-extensions.php'),
         ], 'config');
-
-        $this->app['blade-extensions.directives']->hookToCompiler();
     }
 
     /**
@@ -46,6 +51,10 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $this->registerBladeExtensions();
 
         $this->registerAliases();
+
+        $this->app->booted(function ($app) {
+            $app['blade-extensions.directives']->hookToCompiler();
+        });
     }
 
     protected function registerBladeExtensions()

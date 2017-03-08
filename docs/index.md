@@ -4,10 +4,34 @@ subtitle: Blade Extensions
 ---
 # Overview
 
-## Introduction
-Blade Extensions is a **Laravel** package providing additional Blade functionality and directives.
+## Documentation Pages
 
-### Quick example of all directives
+- Prologue
+  - [Changelog & Upgrade Guide](prologue/changelog-upgrade-guide.md)
+  - [Contribution guidelines](prologue/changelog-upgrade-guide.md)
+- Getting Started
+  - [Installation](getting-started/installation.md)
+  - [Configuration](getting-started/configuration.md)
+  - [Develop / API](getting-started/develop-api.md)
+- Features
+  - [Compile String](features/compile-string.md) Compiles Blade strings **with** variables
+  - [Push To Stack](features/push-to-stack.md) Programatically push content to a stack inside blade views. 
+- Directives  
+  - [@set / @unset](directives/set-unset.md) Setting and unsetting of values
+  - [@breakpoint / @debug / @dump](directives/breakpoint-debug-dump.md) Dump values and set breakpoints in views
+  - [@foreach / @break / @continue](directives/foreach-break-continue.md) Loop data and extras (similair to twig `$loop`)
+  - [@embed](directives/embed.md) Think of embed as combining the behaviour of include and extends. (similair to twig `embed`)
+  - [@minify / @endminify](directives/minify.md)  Minify inline code. Supports CSS, JS and HTML.
+  - [@macro / @endmacro/ @macrodef](directives/macro.md) Defining and running macros
+  - [@markdown/ @endmarkdown](directives/markdown.md) Render markdown content
+  - [@spaceless / @endspaceless](directives/spaceless.md) Render the content without spaces 
+- Develop
+  - [Overview](develop/overview.md) Explains how `BladeExtensions` is structured and executed. 
+  - [Directives](develop/directives.md) Explains how to add, extend and test directives.
+  
+   
+
+## Quick example of all directives
 ```blade
 @foreach($stuff as $key => $val)
     $loop->index;       // int, zero based
@@ -83,7 +107,7 @@ body {
 </style>
 ```
 
-### Quick Example: Configuration
+## Quick Example: Configuration
 Lets have this example speak for itself. 
 ```php
 
@@ -136,5 +160,5 @@ return [
 ];
 ```
 
-#### Copyright/License
+## Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org)

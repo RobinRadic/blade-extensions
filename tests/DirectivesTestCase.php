@@ -4,13 +4,15 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions;
 
 use Laradic\Testing\Laravel\Traits\ViewTester;
+use Radic\BladeExtensions\Directives\Directive;
 
 abstract class DirectivesTestCase extends TestCase
 {
@@ -21,7 +23,7 @@ abstract class DirectivesTestCase extends TestCase
         parent::setUp();
 
         $this->registerServiceProvider();
-        $this->addViewTesting(true, __DIR__ . '/views');
+        $this->addViewTesting(true, __DIR__.'/views');
         $this->cleanViews();
     }
 
@@ -30,23 +32,20 @@ abstract class DirectivesTestCase extends TestCase
         return $this->app[ 'view' ]->make($view, $data)->render();
     }
 
-
     /**
-     * getDirectiveClass method
+     * getDirectiveClass method.
      * @return string
      */
     abstract protected function getDirectiveClass();
 
-
     /**
-     * getDirective method
+     * getDirective method.
      * @return \Radic\BladeExtensions\Directives\Directive|mixed
      */
     public function getDirective()
     {
         return $this->app->make($this->getDirectiveClass());
     }
-
 
     public function testPatternIsValidRegex()
     {
@@ -68,10 +67,10 @@ abstract class DirectivesTestCase extends TestCase
         $this->assertEquals($class->getReplace(), 'a');
     }
 
-
     public function testCompatibility()
     {
+        /** @var Directive $class */
         $class = $this->getDirectiveClass();
+        $this->assertFalse($class::isCompatibleWithVersion('4.0'));
     }
-
 }

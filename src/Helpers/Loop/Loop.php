@@ -4,14 +4,10 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
-
-/**
- * Represents the $loop variable in the foreach directive. Handles all data.
- */
-
 namespace Radic\BladeExtensions\Helpers\Loop;
 
 /**
@@ -136,6 +132,11 @@ class Loop
         ];
     }
 
+    /**
+     * getItems method
+     *
+     * @return array
+     */
     public function getItems()
     {
         return $this->items;
@@ -154,7 +155,7 @@ class Loop
             'iteration' => 'index1',
             'remaining' => 'revindex1',
             'parentLoop'    => 'parent',
-            'count'=>'length',
+            'count' => 'length',
         ];
         if (array_key_exists($key, $aliases)) {
             return $this->data[$aliases[$key]];
@@ -163,11 +164,26 @@ class Loop
         return $this->data[$key];
     }
 
+    /**
+     * __set method
+     *
+     * @param $key
+     * @param $val
+     *
+     * @return void
+     */
     public function __set($key, $val)
     {
         // do not allow setting the data
     }
 
+    /**
+     * __isset method
+     *
+     * @param $key
+     *
+     * @return bool
+     */
     public function __isset($key)
     {
         return isset($this->data[$key]);

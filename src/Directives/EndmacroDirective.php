@@ -4,12 +4,19 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
-
 namespace Radic\BladeExtensions\Directives;
 
+
+/**
+ * This is the class EndmacroDirective.
+ *
+ * @package Radic\BladeExtensions\Directives
+ * @author  Robin Radic
+ */
 class EndmacroDirective extends Directive
 {
     protected $pattern = '/(?<!\w)(\s*)@NAME\s*\(\s*\${0,1}[\'"\s]*(.*?)[\'"\s]*,\s*([\W\w^]*?)\)\s*$/m';

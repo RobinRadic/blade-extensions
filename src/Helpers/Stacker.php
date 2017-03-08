@@ -4,14 +4,10 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
-
-/**
- * Manages the Loop instances.
- */
-
 namespace Radic\BladeExtensions\Helpers;
 
 use Illuminate\Contracts\Container\Container;
@@ -59,6 +55,8 @@ abstract class Stacker
     /**
      * create.
      *
+     * @param array $args
+     *
      * @return mixed
      */
     abstract protected function create($args = []);
@@ -104,6 +102,11 @@ abstract class Stacker
         }
     }
 
+    /**
+     * isEmpty method
+     *
+     * @return bool
+     */
     public function isEmpty()
     {
         return count($this->stack) === 0;

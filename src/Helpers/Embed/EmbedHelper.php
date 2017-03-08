@@ -4,14 +4,10 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
-
-/**
- * Manages the Loop instances.
- */
-
 namespace Radic\BladeExtensions\Helpers\Embed;
 
 use Radic\BladeExtensions\Helpers\Embed;
@@ -31,7 +27,9 @@ class EmbedHelper extends Stacker
     /**
      * create.
      *
-     * @return Embed
+     * @param array $args
+     *
+     * @return \Radic\BladeExtensions\Helpers\Embed\EmbedStack
      */
     protected function create($args = [])
     {

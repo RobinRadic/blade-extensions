@@ -4,17 +4,17 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions;
 
 use Laradic\Testing\Laravel\Traits\ServiceProviderTester;
-use Mockery as m;
 
 /**
- * Class ViewTest
+ * Class ViewTest.
  *
  * @author     Robin Radic
  * @group blade-extensions
@@ -24,13 +24,12 @@ class BladeExtensionsServiceProviderTest extends TestCase
     use ServiceProviderTester;
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected function start()
     {
         $this->registerServiceProvider();
     }
-
 
     public function testServiceProviderRegister()
     {
@@ -39,6 +38,6 @@ class BladeExtensionsServiceProviderTest extends TestCase
 
     protected function getPackageRootPath()
     {
-        return __DIR__ . DIRECTORY_SEPARATOR . '..';
+        return __DIR__.DIRECTORY_SEPARATOR.'..';
     }
 }

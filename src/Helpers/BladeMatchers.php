@@ -4,19 +4,18 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
-
-/**
- * Created by IntelliJ IDEA.
- * User: radic
- * Date: 8/7/16
- * Time: 11:33 AM.
- */
-
 namespace Radic\BladeExtensions\Helpers;
 
+/**
+ * This is the class BladeMatchers.
+ *
+ * @package Radic\BladeExtensions\Helpers
+ * @author  Robin Radic
+ */
 trait BladeMatchers
 {
     /**
@@ -26,7 +25,7 @@ trait BladeMatchers
      *
      * @return string
      */
-    public function createMatcher($function)
+    public function createMatcher($function = 'NAME')
     {
         return '/(?<!\w)(\s*)@'.$function.'(\s*\(.*\))/';
     }
@@ -38,7 +37,7 @@ trait BladeMatchers
      *
      * @return string
      */
-    public function createOpenMatcher($function)
+    public function createOpenMatcher($function = 'NAME')
     {
         return '/(?<!\w)(\s*)@'.$function.'(\s*\(.*)\)/';
     }
@@ -50,7 +49,7 @@ trait BladeMatchers
      *
      * @return string
      */
-    public function createPlainMatcher($function)
+    public function createPlainMatcher($function = 'NAME')
     {
         return '/(?<!\w)(\s*)@'.$function.'(\s*)/';
     }

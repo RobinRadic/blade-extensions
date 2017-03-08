@@ -4,8 +4,9 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions;
@@ -24,7 +25,6 @@ class HelperRepositoryTest extends AbstractTestCase
         $this->assertInstanceOf(HelperRepository::class, new HelperRepository());
     }
 
-
     /**
      * @var \Mockery\MockInterface
      */
@@ -41,13 +41,13 @@ class HelperRepositoryTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->helperMocks = [ ];
+        $this->helperMocks = [];
 
         $this->helperClasses = [
             'loop'     => LoopHelper::class,
             'embed'    => EmbedHelper::class,
             'markdown' => MarkdownHelper::class,
-            'minifier' => MinifierHelper::class
+            'minifier' => MinifierHelper::class,
         ];
     }
 
@@ -65,8 +65,7 @@ class HelperRepositoryTest extends AbstractTestCase
 
     public function testGetHelperClassInstances()
     {
-
-        $repository  = $this->_createHelperRepository();
+        $repository = $this->_createHelperRepository();
         foreach ($this->helperMocks as $name => $m) {
             $helper = $repository->get($name, false);
             $this->assertNotFalse($helper);

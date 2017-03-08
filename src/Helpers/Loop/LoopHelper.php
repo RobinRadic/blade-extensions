@@ -4,14 +4,10 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
-
-/**
- * Manages the Loop instances.
- */
-
 namespace Radic\BladeExtensions\Helpers\Loop;
 
 use Radic\BladeExtensions\Helpers\Loop;
@@ -56,7 +52,7 @@ class LoopHelper
     /**
      * Adds a Loop to the stack.
      *
-     * @param Loop $stackItem
+     * @param \Radic\BladeExtensions\Helpers\Loop|\Radic\BladeExtensions\Helpers\Loop\Loop $stackItem
      */
     protected function addLoopStack(Loop\Loop $stackItem)
     {

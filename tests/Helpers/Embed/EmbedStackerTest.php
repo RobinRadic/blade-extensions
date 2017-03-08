@@ -4,8 +4,9 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions\Helpers\Embed;
@@ -16,7 +17,6 @@ use Radic\Tests\BladeExtensions\TestCase;
 
 class EmbedStackerTest extends TestCase
 {
-
     /**
      * @var \Mockery\MockInterface
      */
@@ -32,11 +32,10 @@ class EmbedStackerTest extends TestCase
      */
     protected $stack;
 
-
     protected function start()
     {
         $this->container = m::mock('Illuminate\Contracts\Container\Container');
-        $this->stacker   = new EmbedHelper($this->container);
+        $this->stacker = new EmbedHelper($this->container);
         $this->container->shouldReceive('make')->andReturn($this->stack = m::mock('Radic\\BladeExtensions\\Helpers\\EmbedStack'));
         $this->stack->shouldReceive('start')->andReturnSelf()->getMock()->shouldReceive('end')->andReturnSelf();
     }
@@ -66,7 +65,7 @@ class EmbedStackerTest extends TestCase
 
     public function testGetCurrentOrEmptyStack()
     {
-        $stackItem   = $this->stacker->start('viewpath', ['arg1', 'arg2']);
+        $stackItem = $this->stacker->start('viewpath', ['arg1', 'arg2']);
         $currentItem = $this->stacker->current();
         $this->assertEquals($stackItem, $currentItem);
         $this->assertFalse($this->stacker->isEmpty());

@@ -4,8 +4,9 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\BladeExtensions;
@@ -14,7 +15,10 @@ use Closure;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Compilers\BladeCompiler;
 
-class BladeExtensions
+/**
+ * @inheritDoc
+ */
+class BladeExtensions implements Contracts\BladeExtensions
 {
     /** @var \Illuminate\View\Compilers\BladeCompiler */
     protected $compiler;
@@ -34,12 +38,10 @@ class BladeExtensions
     /**
      * BladeExtensions constructor.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @param \Radic\BladeExtensions\DirectiveRegistry     $directives
-     * @param \Radic\BladeExtensions\HelperRepository      $helpers
-     * @param \Illuminate\View\Compilers\BladeCompiler     $compiler
+     * @param \Radic\BladeExtensions\Contracts\DirectiveRegistry|\Radic\BladeExtensions\DirectiveRegistry $directives
+     * @param \Radic\BladeExtensions\Contracts\HelperRepository|\Radic\BladeExtensions\HelperRepository   $helpers
      */
-    public function __construct(DirectiveRegistry $directives, HelperRepository $helpers)
+    public function __construct(Contracts\DirectiveRegistry $directives, Contracts\HelperRepository $helpers)
     {
         $this->directives = $directives;
         $this->helpers = $helpers;
@@ -64,12 +66,7 @@ class BladeExtensions
     }
 
     /**
-     * Compile blade syntax to string.
-     *
-     * @param string $string String with blade syntax to compile
-     * @param array  $vars   Optional variables
-     *
-     * @return string
+     * @inheritDoc
      */
     public function compileString($string, array $vars = [])
     {
@@ -86,6 +83,14 @@ class BladeExtensions
         return $compiledString;
     }
 
+    /**
+     * getCompiledContent method
+     *
+     * @param       $filePath
+     * @param array $vars
+     *
+     * @return string
+     */
     protected function getCompiledContent($filePath, array $vars = [])
     {
         if (is_array($vars) && ! empty($vars)) {
@@ -100,13 +105,7 @@ class BladeExtensions
     }
 
     /**
-     * pushToStack method.
-     *
-     * @param string          $stackName   The name of the stack
-     * @param string|string[] $targetViews The view which contains the stack
-     * @param string|Closure  $content     the content to push
-     *
-     * @return $this
+     * @inheritDoc
      */
     public function pushToStack($stackName, $targetViews, $content)
     {
@@ -121,14 +120,6 @@ class BladeExtensions
         }
 
         return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isHooked()
-    {
-        return $this->hooked;
     }
 
     /**

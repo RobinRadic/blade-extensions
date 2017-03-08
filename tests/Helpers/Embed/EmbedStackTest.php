@@ -4,8 +4,9 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions\Helpers\Embed;
@@ -16,7 +17,6 @@ use Radic\Tests\BladeExtensions\TestCase;
 
 class EmbedStackTest extends TestCase
 {
-
     /**
      * @var \Mockery\MockInterface
      */
@@ -40,15 +40,15 @@ class EmbedStackTest extends TestCase
     public function testMakeStack()
     {
         /**
-         * @var \Radic\BladeExtensions\Helpers\EmbedStack $stack
+         * @var \Radic\BladeExtensions\Helpers\EmbedStack
          */
         $stack = $this->stack->start();
         $this->assertEquals($stack, $this->stack);
 
         // little trick to set the include($path) to the file we want in stack::end
-        $stack->setData([ 'path' => __DIR__ . '/embed_stack_include.php', 'sf' => 'mmo' ]);
+        $stack->setData(['path' => __DIR__.'/embed_stack_include.php', 'sf' => 'mmo']);
 
-        $content         = <<<EOT
+        $content = <<<EOT
 @section("one", "oneval")
 @section("two", "twoval")
 EOT;
@@ -57,7 +57,7 @@ EOT;
 <?php $__env->startSection("two", "twoval"); ?>
 EOT;
 
-        $viewContent         = <<<'EOT'
+        $viewContent = <<<'EOT'
 1:@yield('one')
 2:@yield('two')
 EOT;
@@ -68,7 +68,7 @@ EOT;
         $stack->setContent($content);
         $this->bc->shouldReceive('compileString')->with(m::mustBe($content))->andReturn($contentCompiled);
         $this->vf->shouldReceive('getFinder')->andReturn($finder = m::mock('Illuminate\\View\\ViewFinderInterface'));
-        $absoluteViewPath = realpath(__DIR__ . '/../views/embed.blade.php');
+        $absoluteViewPath = realpath(__DIR__.'/../views/embed.blade.php');
         $finder->shouldReceive('find')->andReturn($absoluteViewPath);
         $this->fs->shouldReceive('get')->with(m::mustBe($absoluteViewPath))->andReturn($viewContent);
         $this->bc->shouldReceive('compileString')->with(m::mustBe($viewContent))->andReturn($viewContentCompiled);
@@ -89,7 +89,7 @@ EOT;
             $this->fs = m::mock('Illuminate\Filesystem\Filesystem'),
             $this->bc = m::mock('Illuminate\View\Compilers\BladeCompiler'),
             $viewPath = 'embed',
-            $vars = [ 'var1' => 'val1', 'var2', 'val2' ]
+            $vars = ['var1' => 'val1', 'var2', 'val2']
         );
     }
 }

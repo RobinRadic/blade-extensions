@@ -4,14 +4,10 @@
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright Copyright 2017 (c) Robin Radic
- * @license https://radic.mit-license.org The MIT License
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
  */
-
-/**
- * Manages the Loop instances.
- */
-
 namespace Radic\BladeExtensions\Helpers\Embed;
 
 use Illuminate\Filesystem\Filesystem;
@@ -44,6 +40,15 @@ class EmbedStack implements Factory
 
     protected $_data;
 
+    /**
+     * EmbedStack constructor.
+     *
+     * @param \Illuminate\Contracts\View\Factory       $viewFactory
+     * @param \Illuminate\Filesystem\Filesystem        $files
+     * @param \Illuminate\View\Compilers\BladeCompiler $bladeCompiler
+     * @param                                          $viewPath
+     * @param array                                    $vars
+     */
     public function __construct(Factory $viewFactory, Filesystem $files, BladeCompiler $bladeCompiler, $viewPath, $vars = [])
     {
         $this->setViewFactory($viewFactory);
@@ -53,6 +58,13 @@ class EmbedStack implements Factory
         $this->vars = $vars;
     }
 
+    /**
+     * setData method
+     *
+     * @param $_data
+     *
+     * @return $this
+     */
     public function setData($_data)
     {
         $this->_data = $_data;
@@ -60,11 +72,23 @@ class EmbedStack implements Factory
         return $this;
     }
 
+    /**
+     * start method
+     *
+     * @return $this
+     */
     public function start()
     {
         return $this;
     }
 
+    /**
+     * setContent method
+     *
+     * @param $content
+     *
+     * @return $this
+     */
     public function setContent($content)
     {
         $this->content = $content;
@@ -72,6 +96,11 @@ class EmbedStack implements Factory
         return $this;
     }
 
+    /**
+     * end method
+     *
+     * @return $this
+     */
     public function end()
     {
         $content = $this->bladeCompiler->compileString($this->content);
@@ -121,6 +150,14 @@ class EmbedStack implements Factory
         return $this->bladeCompiler->compileString($this->getViewFileContent());
     }
 
+    /**
+     * write method
+     *
+     * @param      $content
+     * @param null $name
+     *
+     * @return array
+     */
     protected function write($content, $name = null)
     {
         $tmpDir = storage_path('blade-extensions');
@@ -136,6 +173,13 @@ class EmbedStack implements Factory
         return [$name, $path];
     }
 
+    /**
+     * remove method
+     *
+     * @param $name
+     *
+     * @return $this
+     */
     protected function remove($name)
     {
         $tmpDir = storage_path('blade-extensions');

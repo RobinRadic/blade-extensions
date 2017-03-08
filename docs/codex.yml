@@ -31,23 +31,23 @@ menu:
   - name: Directives
     icon: fa fa-code
     children:
-      - name: Assignment
-        document: directives/assignment
+      - name: @set @unset
+        document: directives/set-unset
 
-      - name: Debug
-        document: directives/debug
+      - name: @breakpoint @debug @dump
+        document: directives/breakpoint-debug-dump
 
-      - name: Embedding
-        document: directives/embedding
+      - name: @foreach @break @continue
+        document: directives/foreach-break-continue
 
-      - name: Foreach
-        document: directives/foreach
+      - name: @embed
+        document: directives/embed
 
-      - name: Macros
-        document: directives/macros
+      - name: @macro
+        document: directives/macro
 
-      - name: Markdown
+      - name: @markdown
         document: directives/markdown
 
-      - name: Minification
-        document: directives/minification
+      - name: @minify
+        document: directives/minify
