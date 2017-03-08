@@ -2,29 +2,43 @@ language: php
 
 sudo: false
 
+cache:
+  directories:
+    - $HOME/.php-cs-fixer
+
+
+###############
+# Build Matrix              https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix
+###############
 php:
   - 5.6
   - 7.0
   - 7.1
 
-cache:
-  directories:
-    - $HOME/.php-cs-fixer
 
 env:
-  - LARAVEL_VERSION="5.0.*" TESTBENCH_VERSION="3.0.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
-  - LARAVEL_VERSION="5.1.*" TESTBENCH_VERSION="3.1.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
-  - LARAVEL_VERSION="5.2.*" TESTBENCH_VERSION="3.2.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
-  - LARAVEL_VERSION="5.3.*" TESTBENCH_VERSION="3.3.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
-  - LARAVEL_VERSION="5.4.*" TESTBENCH_VERSION="3.4.*" BLADE_EXTENSIONS_MARKDOWN_ENABLED=true BLADE_EXTENSIONS_MARKDOWN_VIEWS=true BLADE_EXTENSIONS_EXAMPLE_VIEWS=true
+  # laravel/testbench minor versions. see 'install'
+  - MINOR_VERSION="0"
+  - MINOR_VERSION="1"
+  - MINOR_VERSION="2"
+  - MINOR_VERSION="3"
+  - MINOR_VERSION="4"
+
+
+
+
+###############
+# Lifecycle                   https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
+###############
+
 
 before_install:
   - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
   - travis_retry composer self-update
 
 install:
-  - composer require laravel/framework:${LARAVEL_VERSION}
-  - composer require orchestra/testbench:${TESTBENCH_VERSION}
+  - composer require laravel/framework:5.${MINOR_VERSION}.*
+  - composer require orchestra/testbench:3.${MINOR_VERSION}.*
   - composer require phpunit/phpunit:~5.0
 
 before_script:
@@ -37,4 +51,37 @@ script:
 after_success:
   - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
   - chmod a+x /tmp/travis-automerge
-  - BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
+  - BRANCHES_TO_MERGE_REGEX='^develop|feature\/.*/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
+
+
+before_deploy:
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://$TAGPERM@github.com/RobinRadic/blade-extensions --tags
+  - ls -R
+
+
+
+
+#OPTIONAL Install apt addons
+#OPTIONAL Install cache components
+#before_install
+#install
+#before_script
+#script
+#OPTIONAL before_cache (for cleaning up cache)
+#after_success or after_failure
+#OPTIONAL before_deploy
+#OPTIONAL deploy
+#OPTIONAL after_deploy
+#after_script
+
+###Breaking the Build #
+#
+#If any of the commands in the first four stages of the build lifecycle return a non-zero exit code, the build is broken:
+#
+#If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately.
+#If script returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
+#The exit code of after_success, after_failure, after_script and subsequent stages do not affect the build result. However, if one of these stages times out, the build is marked as a failure.
