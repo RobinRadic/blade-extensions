@@ -6,15 +6,14 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
-namespace Radic\BladeExtensions\Directives;
 
+namespace Radic\BladeExtensions\Directives;
 
 /**
  * This is the class SpacelessDirective.
  *
- * @package Radic\BladeExtensions\Directives
  * @author  Robin Radic
  */
 class SpacelessDirective extends Directive

@@ -5,15 +5,15 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license   https://radic.mit-license.org MIT License
- * @version   7.0.0
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\BladeExtensions\Directives;
 
 /**
  * This is the class DumpDirective.
  *
- * @package Radic\BladeExtensions\Directives
  * @author  Robin Radic
  */
 class DumpDirective extends Directive

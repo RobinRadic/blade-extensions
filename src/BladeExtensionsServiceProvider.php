@@ -6,7 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 /**
@@ -23,7 +23,6 @@ use Illuminate\Support\ServiceProvider;
 /**
  * This is the class BladeExtensionsServiceProvider.
  *
- * @package Radic\BladeExtensions
  * @author  Robin Radic
  */
 class BladeExtensionsServiceProvider extends ServiceProvider

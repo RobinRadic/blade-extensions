@@ -6,7 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions;
@@ -16,7 +16,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Compilers\BladeCompiler;
 
 /**
- * @inheritDoc
+ * {@inheritdoc}
  */
 class BladeExtensions implements Contracts\BladeExtensions
 {
@@ -66,7 +66,7 @@ class BladeExtensions implements Contracts\BladeExtensions
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function compileString($string, array $vars = [])
     {
@@ -84,7 +84,7 @@ class BladeExtensions implements Contracts\BladeExtensions
     }
 
     /**
-     * getCompiledContent method
+     * getCompiledContent method.
      *
      * @param       $filePath
      * @param array $vars
@@ -105,7 +105,7 @@ class BladeExtensions implements Contracts\BladeExtensions
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function pushToStack($stackName, $targetViews, $content)
     {

@@ -8,26 +8,18 @@ GIT_HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_DIRECTORY="$GIT_HOOKS_DIR/../.."
 
 cd $PROJECT_DIRECTORY;
-PHP_CS_FIXER="vendor/bin/php-cs-fixer"
-
-HAS_PHP_CS_FIXER=false
-
-if [ -x "$PHP_CS_FIXER" ]; then
-    HAS_PHP_CS_FIXER=true
+PHING="vendor/bin/phing"
+HAS_PHING=false
+if [ -x "$PHING" ]; then
+    HAS_PHING=true
 fi
-
-if $HAS_PHP_CS_FIXER; then
-    git status --porcelain | grep -e '^[AM]\(.*\).php$' | cut -c 3- | while read line; do
-        ${PHP_CS_FIXER} fix --config=.php_cs --verbose ${line};
-        git add "$line";
-    done
+if $HAS_PHING; then
+    echo "Have phing"
 else
-    echo ""
-    echo "Please install php-cs-fixer, e.g.:"
-    echo ""
-    echo "  composer require --dev friendsofphp/php-cs-fixer:2.0.0-RC"
-    echo ""
+    composer install
 fi
+
+$PHING -f build.xml pre-commit
 
 cd $CURRENT_DIRECTORY;
 echo "pre commit hook finish"

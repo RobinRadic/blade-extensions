@@ -6,8 +6,9 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\BladeExtensions\Helpers\Embed;
 
 use Illuminate\Filesystem\Filesystem;
@@ -59,7 +60,7 @@ class EmbedStack implements Factory
     }
 
     /**
-     * setData method
+     * setData method.
      *
      * @param $_data
      *
@@ -73,7 +74,7 @@ class EmbedStack implements Factory
     }
 
     /**
-     * start method
+     * start method.
      *
      * @return $this
      */
@@ -83,7 +84,7 @@ class EmbedStack implements Factory
     }
 
     /**
-     * setContent method
+     * setContent method.
      *
      * @param $content
      *
@@ -97,7 +98,7 @@ class EmbedStack implements Factory
     }
 
     /**
-     * end method
+     * end method.
      *
      * @return $this
      */
@@ -151,7 +152,7 @@ class EmbedStack implements Factory
     }
 
     /**
-     * write method
+     * write method.
      *
      * @param      $content
      * @param null $name
@@ -174,7 +175,7 @@ class EmbedStack implements Factory
     }
 
     /**
-     * remove method
+     * remove method.
      *
      * @param $name
      *

@@ -6,7 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Exceptions;
@@ -14,7 +14,7 @@ namespace Radic\BladeExtensions\Exceptions;
 use Exception;
 
 /**
- * {@inheritDoc}
+ * {@inheritdoc}
  */
 class InvalidDirectiveClassException extends Exception
 {

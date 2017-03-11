@@ -6,15 +6,14 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Contracts;
 
 /**
- * Provides 'features' methods that are usefull when working with Blade templates
+ * Provides 'features' methods that are usefull when working with Blade templates.
  *
- * @package Radic\BladeExtensions\Contracts
  * @author  Robin Radic
  */
 interface BladeExtensions

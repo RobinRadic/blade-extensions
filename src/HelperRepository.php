@@ -5,13 +5,14 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license   https://radic.mit-license.org MIT License
- * @version   7.0.0
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\BladeExtensions;
 
 /**
- * @inheritDoc
+ * {@inheritdoc}
  */
 class HelperRepository implements Contracts\HelperRepository
 {
@@ -29,7 +30,7 @@ class HelperRepository implements Contracts\HelperRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function put($key, $instance)
     {
@@ -37,7 +38,7 @@ class HelperRepository implements Contracts\HelperRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function has($key)
     {
@@ -45,7 +46,7 @@ class HelperRepository implements Contracts\HelperRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function get($key, $default = null)
     {

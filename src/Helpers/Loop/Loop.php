@@ -6,8 +6,9 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\BladeExtensions\Helpers\Loop;
 
 /**
@@ -133,7 +134,7 @@ class Loop
     }
 
     /**
-     * getItems method
+     * getItems method.
      *
      * @return array
      */
@@ -165,7 +166,7 @@ class Loop
     }
 
     /**
-     * __set method
+     * __set method.
      *
      * @param $key
      * @param $val
@@ -178,7 +179,7 @@ class Loop
     }
 
     /**
-     * __isset method
+     * __isset method.
      *
      * @param $key
      *

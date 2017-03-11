@@ -6,8 +6,9 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\BladeExtensions\Directives;
 
 use Composer\Semver\Semver;
@@ -15,7 +16,6 @@ use Composer\Semver\Semver;
 /**
  * This is the class Directive.
  *
- * @package Radic\BladeExtensions\Directives
  * @author  Robin Radic
  */
 abstract class Directive
@@ -32,9 +32,8 @@ abstract class Directive
     /** @var string. composer/ */
     public static $compatibility = '5.*';
 
-
     /**
-     * isCompatibleWithVersion method
+     * isCompatibleWithVersion method.
      *
      * @param $version
      *
@@ -46,7 +45,7 @@ abstract class Directive
     }
 
     /**
-     * isCompatible method
+     * isCompatible method.
      *
      * @return bool
      */
@@ -56,7 +55,7 @@ abstract class Directive
     }
 
     /**
-     * handle method
+     * handle method.
      *
      * @param $value
      *
@@ -68,7 +67,7 @@ abstract class Directive
     }
 
     /**
-     * getProcessedPattern method
+     * getProcessedPattern method.
      *
      * @return mixed
      */

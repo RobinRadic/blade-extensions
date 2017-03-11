@@ -6,14 +6,14 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\BladeExtensions\Helpers;
 
 /**
  * This is the class BladeMatchers.
  *
- * @package Radic\BladeExtensions\Helpers
  * @author  Robin Radic
  */
 trait BladeMatchers

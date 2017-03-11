@@ -13,7 +13,7 @@ A _Laravel_ package providing additional Blade functionality.
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 
-### Version 7.0 BETA
+### Version 7.0
 <!-- [**Documentation**](http://robin.radic.nl/blade-extensions) (or alternatively read it [**here**](docs/index.md) on github) -->
 - [**Documentation**](docs/index.md)
 - [**Changelog & Upgrade guide**](docs/prologue/changelog-upgrade-guide.md)
@@ -55,15 +55,7 @@ php artisan publish --tag=config --provider="Radic\BladeExtensions\BladeExtensio
 ```
 
 ### Contribute 
-
-- Fork 
-- Make your changes. If you add functionality, also add test code and if needed some documentation.
-- Create a pull request. 
-- The package follows the FIG standards PSR-1, PSR-2, and PSR-4. 
-
-#### Directives
-Share your directives! If you contribute a directive, add them to the config file while have it commented out to make it optional. 
-This way, it should be fine to add all sorts of directives.
+[Read the contribution guide](docs/prologue/contribution-guide.md)
 
 ### Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 

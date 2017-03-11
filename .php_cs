@@ -6,7 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 use Symfony\CS\Finder;
 use Symfony\CS\Config;
@@ -88,3 +88,6 @@ $config->finder(Finder::create()->in(__DIR__))
 
 $cacheDir = getenv('TRAVIS') ? getenv('HOME') . '/.php-cs-fixer' : __DIR__;
 $config->setUsingCache($cacheDir . '/.php_cs.cache');
+
+
+return $config;

@@ -6,7 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions;
@@ -18,7 +18,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Radic\BladeExtensions\Exceptions\InvalidDirectiveClassException;
 
 /**
- * @inheritDoc
+ * {@inheritdoc}
  */
 class DirectiveRegistry implements Contracts\DirectiveRegistry
 {
@@ -63,7 +63,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function isHooked()
     {
@@ -71,7 +71,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function setHooker($hooker)
     {
@@ -81,7 +81,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function hookToCompiler()
     {
@@ -102,7 +102,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getCompiler()
     {
@@ -110,7 +110,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function register($name, $handler = null)
     {
@@ -128,7 +128,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getNames()
     {
@@ -136,7 +136,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function get($name)
     {
@@ -144,7 +144,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function has($name)
     {
@@ -152,7 +152,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function call($name, $params = [])
     {
@@ -192,7 +192,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function setVersionOverrides($versionOverrides)
     {

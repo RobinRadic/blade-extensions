@@ -42,25 +42,16 @@ install:
   - composer require phpunit/phpunit:~5.0
 
 before_script:
+  - scripts/bootstrap.sh
   - composer install --prefer-source --no-interaction
 
 script:
-  - vendor/bin/phpunit
-  - vendor/bin/php-cs-fixer
+  - vendor/bin/phing -f build.xml travis -Dtravis=true
 
 after_success:
   - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
   - chmod a+x /tmp/travis-automerge
   - BRANCHES_TO_MERGE_REGEX='^develop|feature\/.*/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
-
-
-before_deploy:
-  - git config --global user.email "builds@travis-ci.com"
-  - git config --global user.name "Travis CI"
-  - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://$TAGPERM@github.com/RobinRadic/blade-extensions --tags
-  - ls -R
 
 
 

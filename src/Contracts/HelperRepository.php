@@ -14,14 +14,12 @@ namespace Radic\BladeExtensions\Contracts;
 /**
  * Used for storing instances of helper classes.
  *
- * @package Radic\BladeExtensions\Contracts
  * @author  Robin Radic
  */
 interface HelperRepository
 {
-
     /**
-     * Put a helper instance in the repository
+     * Put a helper instance in the repository.
      *
      * @param string $key      The accessor key
      * @param object $instance The class instance
@@ -31,16 +29,16 @@ interface HelperRepository
     public function put($key, $instance);
 
     /**
-     * Check if a instance exists in the repository
+     * Check if a instance exists in the repository.
      *
      * @param string $key The accessor key
      *
-     * @return boolean
+     * @return bool
      */
     public function has($key);
 
     /**
-     * Get a helper instance from the repository
+     * Get a helper instance from the repository.
      *
      * @param     string $key The accessor key
      * @param null $default The

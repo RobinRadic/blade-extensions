@@ -6,7 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Facades;
@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Facade;
 /**
  * This is the class BladeExtensions.
  *
- * @package Radic\BladeExtensions\Facades
  * @author  Robin Radic
  */
 class BladeExtensions extends Facade

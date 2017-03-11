@@ -6,8 +6,9 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\BladeExtensions\Contracts;
 
 use Closure;
@@ -15,7 +16,6 @@ use Closure;
 /**
  * Contains the logic for handling the configured directives and version overrides.
  *
- * @package Radic\BladeExtensions\Contracts
  * @author  Robin Radic
  */
 interface DirectiveRegistry
@@ -53,7 +53,6 @@ interface DirectiveRegistry
      *
      * @return \Radic\BladeExtensions\DirectiveRegistry
      * @internal param bool $override
-     *
      */
     public function register($name, $handler = null);
 

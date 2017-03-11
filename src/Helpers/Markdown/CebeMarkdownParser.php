@@ -6,8 +6,9 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\BladeExtensions\Helpers\Markdown;
 
 use cebe\markdown\GithubMarkdown;
@@ -15,7 +16,6 @@ use cebe\markdown\GithubMarkdown;
 /**
  * This is the class CebeMarkdownParser.
  *
- * @package Radic\BladeExtensions\Helpers\Markdown
  * @author  Robin Radic
  */
 class CebeMarkdownParser implements MarkdownParserInterface
@@ -34,10 +34,10 @@ class CebeMarkdownParser implements MarkdownParserInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     /**
-     * parse method
+     * parse method.
      *
      * @param string $text
      *

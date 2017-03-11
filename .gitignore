@@ -29,3 +29,6 @@ commit.bat
 /psysh.phar
 /app
 /gh-pages
+/.php_cs.cache
+/build
+/scripts/tools
