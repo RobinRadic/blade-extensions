@@ -10,4 +10,4 @@ cd "$mydir/.."
 git clone https://github.com/laradic/php-build-tools build
 cd build
 chmod +x tools-download.sh
-./tools-download.sh
+./tools-download.sh -v
