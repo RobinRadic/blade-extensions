@@ -12,6 +12,7 @@
 namespace Radic\Tests\BladeExtensions;
 
 use Laradic\Testing\Laravel\Traits\ViewTester;
+use PHPUnit\Framework\Assert;
 
 /**
  * Class ViewTest.
@@ -29,7 +30,7 @@ abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
         parent::setUp();
     }
 
-    /** @var array */
+    /** @var DataGenerator */
     public static $data;
 
     /**
@@ -62,5 +63,20 @@ abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
     public function testTest()
     {
         $this->assertTrue(true);
+    }
+
+
+    /**
+     * assertValidRegularExpression method
+     *
+     * @param mixed  $value
+     * @param string $message
+     *
+     * @return void
+     */
+    public function assertValidRegularExpression($value, $message = '')
+    {
+        // http://stackoverflow.com/questions/4440626/how-can-i-validate-regex
+        Assert::assertThat(@preg_match($value, null), Assert::logicalNot(Assert::isFalse()), $message);
     }
 }

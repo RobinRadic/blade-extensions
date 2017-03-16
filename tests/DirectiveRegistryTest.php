@@ -5,8 +5,8 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @license   https://radic.mit-license.org MIT License
+ * @version   7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions;
@@ -23,32 +23,23 @@ class DirectiveRegistryTest extends TestCase
         return new DirectiveRegistry($this->container = Mockery::mock('Illuminate\Contracts\Foundation\Application'));
     }
 
-    public function test_set_accepts_array()
+    public function testRegisterAcceptsArray()
     {
         $dir = $this->createInstance();
-        $dir->register('set', function () {
-            $args = func_get_args();
-        });
-        $dir->register('unset', function () {
-            $args = func_get_args();
-        });
 
         $dir->register([
             'set' => function () {
-                $args = func_get_args();
-
-                return $args;
             },
         ]);
 
-        $dir->call('unset', ['sdf']);
+        $this->assertTrue($dir->has('set'));
     }
 
-    public function test_handles_closures()
+    public function testCallRegisteredClosure()
     {
         $output = $this->createInstance()->register('test', function ($value) {
-            return $value.$value;
-        })->call('test', ['foo']);
+            return $value . $value;
+        })->call('test', [ 'foo' ]);
         $this->assertEquals('foofoo', $output);
     }
 }

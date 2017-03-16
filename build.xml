@@ -7,7 +7,7 @@
   ~ @license https://radic.mit-license.org The MIT License
   -->
 
-<project name="blade-extensions" default="install">
+<project name="blade-extensions" default="run">
 
     <!--run bootstrap.sh to clone the build tools into the project-->
     <exec command="if [ -d '${project.basedir}/build' ]; then echo 'true'; else echo 'false'; fi;" outputProperty="output.IS_DIRECTORY_EXISTS"/>
@@ -26,6 +26,13 @@
 
     <property name="git.owner" value="robinradic" override="true"/>
     <property name="git.repo" value="blade-extensions" override="true"/>
+    <property name="ci" value="false"/>
+    <if>
+        <istrue value="${ci}"/>
+        <then>
+            <import file="${paths.build}/phing/ci.xml" />
+        </then>
+    </if>
 
     <!--Collections -->
     <target name="pre-commit" unless="pre-commit.done" description="Prepare for build">
@@ -37,16 +44,36 @@
         <property name="pre-commit.done" value="true"/>
     </target>
 
-    <target name="travis" unless="travis.done" description="Task for TravisCI">
-        <phingcall target="git.add"/>
-        <phingcall target="git.commit.auto"/>
-        <phingcall target="git.push"/>
-        <property name="travis.done" value="true"/>
+    <target name="run" unless="run.done" description="Default run task">
+
+        <if>
+            <istrue value="${ci}"/>
+            <then>
+                <phingcall target="run.ci"/>
+            </then>
+            <elseif>
+                <istrue value=""/>
+                <then>
+                </then>
+            </elseif>
+            <else>
+
+            </else>
+        </if>
+        <property name="run.done" value="true"/>
+    </target>
+
+    <target name="run.ci">
+        <phingcall target="clean"/>
+        <phingcall target="install"/>
+        <phingcall target="require-testbench"/>
+        <phingcall target="ci.phpunit"/>
     </target>
 
     <!--Preperation-->
     <target name="clean" unless="clean.done" description="Cleanup build artifacts">
         <delete dir="${project.basedir}/vendor"/>
+        <delete dir="${project.basedir}/phpdoc"/>
         <delete file="${project.basedir}/composer.lock"/>
         <property name="clean.done" value="true"/>
     </target>
@@ -56,6 +83,14 @@
             <arg line="install"/>
         </exec>
         <property name="install.done" value="true"/>
+    </target>
+
+    <target name="require-testbench" unless="require-testbench.done" description="Install dependencies using Composer">
+        <exec executable="composer" logoutput="${logoutput}" passthru="${passthru}">
+            <arg line="require"/>
+            <arg line="orchestra/testbench:3.4.*"/>
+        </exec>
+        <property name="require-testbench.done" value="true"/>
     </target>
 
     <!--Tasks-->

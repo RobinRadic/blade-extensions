@@ -32,3 +32,5 @@ commit.bat
 /.php_cs.cache
 /build
 /scripts/tools
+/report
+/.scannerwork

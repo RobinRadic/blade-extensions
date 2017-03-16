@@ -46,12 +46,12 @@ before_script:
   - composer install --prefer-source --no-interaction
 
 script:
-  - vendor/bin/phing -f build.xml travis -Dtravis=true
+  - vendor/bin/phpunit
 
-after_success:
-  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
-  - chmod a+x /tmp/travis-automerge
-  - BRANCHES_TO_MERGE_REGEX='^develop|feature\/.*/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
+#after_success:
+#  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
+#  - chmod a+x /tmp/travis-automerge
+#  - BRANCHES_TO_MERGE_REGEX='^develop|feature\/.*/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
 
 
 
