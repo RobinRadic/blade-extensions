@@ -12,6 +12,7 @@
 namespace Radic\BladeExtensions\Directives;
 
 use Composer\Semver\Semver;
+use Radic\BladeExtensions\Helpers\Util;
 
 /**
  * This is the class Directive.
@@ -33,25 +34,13 @@ abstract class AbstractDirective implements DirectiveInterface
     public static $compatibility = '5.*';
 
     /**
-     * isCompatibleWithVersion method.
-     *
-     * @param $version
-     *
-     * @return bool
-     */
-    public static function isCompatibleWithVersion($version)
-    {
-        return Semver::satisfies($version, static::$compatibility);
-    }
-
-    /**
      * isCompatible method.
      *
      * @return bool
      */
     public static function isCompatible()
     {
-        return static::isCompatibleWithVersion(\Illuminate\Foundation\Application::VERSION);
+        return Util::isCompatibleVersionConstraint(static::$compatibility);
     }
 
     /**

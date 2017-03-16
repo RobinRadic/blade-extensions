@@ -19,15 +19,6 @@ namespace Radic\BladeExtensions\Directives;
 interface DirectiveInterface
 {
     /**
-     * Checks if the directive is compatible with the given Laravel version.
-     *
-     * @param string $version The version to check. Expects a semver valid version string.
-     *
-     * @return bool
-     */
-    public static function isCompatibleWithVersion($version);
-
-    /**
      * Checks if the directive is compatible with the current Laravel version.
      *
      * @return bool

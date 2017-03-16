@@ -16,6 +16,7 @@ use Composer\Semver\Semver;
 use Illuminate\Contracts\Foundation\Application;
 use Radic\BladeExtensions\Directives\DirectiveInterface;
 use Radic\BladeExtensions\Exceptions\InvalidDirectiveClassException;
+use Radic\BladeExtensions\Helpers\Util;
 
 /**
  * {@inheritdoc}
@@ -201,7 +202,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
             return;
         }
         foreach ($versionOverrides as $version => $overrides) {
-            if (false === Semver::satisfies(\Illuminate\Foundation\Application::VERSION, $version)) {
+            if (false === Util::isCompatibleVersionConstraint($version)) {
                 continue;
             }
             $this->directives = array_filter(array_replace($this->directives, $overrides));
