@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class SpacelessDirective extends Directive
+class SpacelessDirective extends AbstractDirective
 {
     protected $replace = '<?php ob_start() ?>';
 }

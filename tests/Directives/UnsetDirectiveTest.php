@@ -11,7 +11,7 @@
 
 namespace Radic\Tests\BladeExtensions\Directives;
 
-use Radic\Tests\BladeExtensions\DirectivesTestCase;
+use Radic\Tests\BladeExtensions\DirectiveTestCase;
 
 /**
  * Class ViewTest.
@@ -19,7 +19,7 @@ use Radic\Tests\BladeExtensions\DirectivesTestCase;
  * @author     Robin Radic
  * @group      blade-extensions
  */
-class UnsetDirectiveTest extends DirectivesTestCase
+class UnsetDirectiveTest extends DirectiveTestCase
 {
     /**
      * getDirectiveClass method.

@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class EndmarkdownDirective extends Directive
+class EndmarkdownDirective extends AbstractDirective
 {
     protected $replace = "$1\nEOT\n); ?>$2";
 }

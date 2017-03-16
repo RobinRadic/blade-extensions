@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class EmbedDirective extends Directive
+class EmbedDirective extends AbstractDirective
 {
     protected $pattern = '/(?<!\\w)(\\s*)@NAME\\s*\\((.*?)\\)\\s*$((?>(?!@(?:end)?NAME).|(?0))*)@endNAME/sm';
 

@@ -42,7 +42,6 @@ install:
   - composer require phpunit/phpunit:~5.0
 
 before_script:
-  - scripts/bootstrap.sh
   - composer install --prefer-source --no-interaction
 
 script:

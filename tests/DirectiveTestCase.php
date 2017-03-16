@@ -12,12 +12,11 @@
 namespace Radic\Tests\BladeExtensions;
 
 use Laradic\Testing\Laravel\Traits\ViewTester;
-use Radic\BladeExtensions\Directives\Directive;
 
 /**
- * {@inheritDoc}
+ * {@inheritdoc}
  */
-abstract class DirectivesTestCase extends TestCase
+abstract class DirectiveTestCase extends TestCase
 {
     use ViewTester;
 
@@ -26,7 +25,7 @@ abstract class DirectivesTestCase extends TestCase
         parent::setUp();
 
         $this->registerServiceProvider();
-        $this->addViewTesting(true, __DIR__ . '/views');
+        $this->addViewTesting(true, __DIR__.'/views');
         $this->cleanViews();
     }
 
@@ -45,7 +44,7 @@ abstract class DirectivesTestCase extends TestCase
     /**
      * getDirective method.
      *
-     * @return \Radic\BladeExtensions\Directives\Directive|mixed
+     * @return \Radic\BladeExtensions\Directives\DirectiveInterface|mixed
      */
     public function getDirective()
     {
@@ -74,7 +73,7 @@ abstract class DirectivesTestCase extends TestCase
 
     public function testCompatibility()
     {
-        /** @var Directive $class */
+        /** @var \Radic\BladeExtensions\Directives\DirectiveInterface $class */
         $class = $this->getDirectiveClass();
         $this->assertFalse($class::isCompatibleWithVersion('4.0'));
     }

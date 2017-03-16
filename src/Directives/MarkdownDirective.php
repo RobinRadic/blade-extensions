@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class MarkdownDirective extends Directive
+class MarkdownDirective extends AbstractDirective
 {
     protected $pattern = '/(?<!\\w)(\\s*)@NAME(?!\\()(\\s*)/';
 

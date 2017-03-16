@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class BreakDirective extends Directive
+class BreakDirective extends AbstractDirective
 {
     protected $replace = '$1<?php break; ?>$2';
 

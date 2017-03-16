@@ -65,9 +65,8 @@ abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
         $this->assertTrue(true);
     }
 
-
     /**
-     * assertValidRegularExpression method
+     * assertValidRegularExpression method.
      *
      * @param mixed  $value
      * @param string $message

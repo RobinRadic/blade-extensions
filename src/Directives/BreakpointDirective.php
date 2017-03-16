@@ -17,7 +17,7 @@ namespace Radic\BladeExtensions\Directives;
  * @blade-directive @breakpoint
  * @author  Robin Radic
  */
-class BreakpointDirective extends Directive
+class BreakpointDirective extends AbstractDirective
 {
     public static $functionName = 'xdebug_break';
 
@@ -26,7 +26,7 @@ class BreakpointDirective extends Directive
     /**
      * {@inheritdoc}
      *
-     * @see BreakpointDirective::$functionName The function name to use to invoke a breakpoint
+     * @see BreakpointAbstractDirective::$functionName The function name to use to invoke a breakpoint
      */
     public function getReplace()
     {

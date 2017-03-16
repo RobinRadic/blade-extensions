@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class DebugDirective extends Directive
+class DebugDirective extends AbstractDirective
 {
     protected $replace = <<<'EOT'
     $1<?php

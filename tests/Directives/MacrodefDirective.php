@@ -11,7 +11,7 @@
 
 namespace Radic\BladeExtensions\Directives;
 
-class MacrodefDirective extends Directive
+class MacrodefAbstractDirective extends AbstractDirective
 {
     protected $pattern = '/(?<!\w)(\s*)@macrodef(?:\s*)\((?:\s*)[\'"]([\w\d]*)[\'"](?:,|)(.*)\)/';
 

@@ -9,7 +9,7 @@
 
 A _Laravel_ package providing additional Blade functionality. 
 
-**Tested successfully on all Laravel 5.x versions.**
+**Tested on all Laravel 5.x versions.**
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 

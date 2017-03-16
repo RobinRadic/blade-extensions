@@ -5,8 +5,8 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license https://radic.mit-license.org MIT License
- * @version 7.0.0 Radic\BladeExtensions
+ * @license   https://radic.mit-license.org MIT License
+ * @version   7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Directives;
@@ -18,18 +18,18 @@ use Composer\Semver\Semver;
  *
  * @author  Robin Radic
  */
-abstract class Directive
+abstract class AbstractDirective implements DirectiveInterface
 {
     /** @var string */
     protected $pattern = '/(?<!\\w)(\\s*)@NAME(\\s*)/';
 
-    /** @var string. The string to use for replacement  */
+    /** @var string The string to use for replacement */
     protected $replace;
 
-    /** @var string. The name to use */
+    /** @var string The name to use */
     protected $name;
 
-    /** @var string. composer/ */
+    /** @var string */
     public static $compatibility = '5.*';
 
     /**
@@ -55,7 +55,17 @@ abstract class Directive
     }
 
     /**
-     * handle method.
+     * getProcessedPattern method.
+     *
+     * @return mixed
+     */
+    protected function getProcessedPattern()
+    {
+        return str_replace('NAME', $this->getName(), $this->getPattern());
+    }
+
+    /**
+     * handle method
      *
      * @param $value
      *
@@ -67,16 +77,8 @@ abstract class Directive
     }
 
     /**
-     * getProcessedPattern method.
+     * getPattern method
      *
-     * @return mixed
-     */
-    protected function getProcessedPattern()
-    {
-        return str_replace('NAME', $this->getName(), $this->getPattern());
-    }
-
-    /**
      * @return string
      */
     public function getPattern()
@@ -85,11 +87,11 @@ abstract class Directive
     }
 
     /**
-     * Set the pattern value.
+     * setPattern method
      *
      * @param string $pattern
      *
-     * @return Directive
+     * @return $this
      */
     public function setPattern($pattern)
     {
@@ -99,6 +101,8 @@ abstract class Directive
     }
 
     /**
+     * getReplace method
+     *
      * @return string
      */
     public function getReplace()
@@ -107,11 +111,11 @@ abstract class Directive
     }
 
     /**
-     * Set the replace value.
+     * setReplace method
      *
      * @param string $replace
      *
-     * @return Directive
+     * @return $this
      */
     public function setReplace($replace)
     {
@@ -121,6 +125,8 @@ abstract class Directive
     }
 
     /**
+     * getName method
+     *
      * @return string
      */
     public function getName()
@@ -129,11 +135,11 @@ abstract class Directive
     }
 
     /**
-     * Set the name value.
+     * setName method
      *
      * @param string $name
      *
-     * @return Directive
+     * @return $this
      */
     public function setName($name)
     {

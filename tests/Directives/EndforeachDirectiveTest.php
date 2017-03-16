@@ -11,9 +11,9 @@
 
 namespace Radic\Tests\BladeExtensions\Directives;
 
-use Radic\Tests\BladeExtensions\DirectivesTestCase;
+use Radic\Tests\BladeExtensions\DirectiveTestCase;
 
-class EndforeachDirectiveTest extends DirectivesTestCase
+class EndforeachDirectiveTest extends DirectiveTestCase
 {
     protected function getDirectiveClass()
     {

@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class ForeachDirective extends Directive
+class ForeachDirective extends AbstractDirective
 {
     public static $compatibility = '5.0.*|5.1.*|5.2.*';
 

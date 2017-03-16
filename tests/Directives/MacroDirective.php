@@ -11,7 +11,7 @@
 
 namespace Radic\BladeExtensions\Directives;
 
-class MacroDirective extends Directive
+class MacroAbstractDirective extends AbstractDirective
 {
     protected $pattern = '/(?<!\\w)(\\s*)@NAME(?:\\s*)\\((?:\\s*)[\'"]([\\w\\d]*)[\'"](?:,|)(.*)\\)/';
 

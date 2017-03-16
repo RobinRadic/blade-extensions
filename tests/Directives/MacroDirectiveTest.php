@@ -11,9 +11,9 @@
 
 namespace Radic\Tests\BladeExtensions\Directives;
 
-use Radic\Tests\BladeExtensions\DirectivesTestCase;
+use Radic\Tests\BladeExtensions\DirectiveTestCase;
 
-class MacroDirectiveTest extends DirectivesTestCase
+class MacroDirectiveTest extends DirectiveTestCase
 {
     protected function getDirectiveClass()
     {

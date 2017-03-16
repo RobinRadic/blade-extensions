@@ -13,8 +13,8 @@ namespace Radic\BladeExtensions;
 
 use Closure;
 use Composer\Semver\Semver;
-use Radic\BladeExtensions\Directives\Directive;
 use Illuminate\Contracts\Foundation\Application;
+use Radic\BladeExtensions\Directives\DirectiveInterface;
 use Radic\BladeExtensions\Exceptions\InvalidDirectiveClassException;
 
 /**
@@ -37,7 +37,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     protected $overrides = [];
 
     /**
-     * @var array|\Radic\BladeExtensions\Directives\Directive[]
+     * @var array|\Radic\BladeExtensions\Directives\AbstractDirective[]
      */
     protected $resolved = [];
 
@@ -118,7 +118,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
             foreach ((array) $name as $directiveName => $directiveHandler) {
                 $this->register($directiveName, $directiveHandler);
             }
-        } elseif ($handler instanceof Directive && false === $handler::isCompatible()) {
+        } elseif ($handler instanceof DirectiveInterface  && false === $handler::isCompatible()) {
             return;
         } else {
             $this->directives[ $name ] = $handler;
@@ -166,7 +166,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
                 $class = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
                 $method = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
                 $instance = $this->app->make($class);
-                if ($instance instanceof Directive === false) {
+                if ($instance instanceof DirectiveInterface === false) {
                     throw InvalidDirectiveClassException::forClass($instance);
                 }
                 $instance->setName($name);

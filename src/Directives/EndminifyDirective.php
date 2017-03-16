@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class EndminifyDirective extends Directive
+class EndminifyDirective extends AbstractDirective
 {
     protected $replace = <<<'EOT'
 $1<?php echo app("blade-extensions.helpers")->get('minifier')->close(); ?>

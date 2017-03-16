@@ -38,8 +38,8 @@ class DirectiveRegistryTest extends TestCase
     public function testCallRegisteredClosure()
     {
         $output = $this->createInstance()->register('test', function ($value) {
-            return $value . $value;
-        })->call('test', [ 'foo' ]);
+            return $value.$value;
+        })->call('test', ['foo']);
         $this->assertEquals('foofoo', $output);
     }
 }

@@ -12,7 +12,7 @@ Debugging directives
 The `@breakpoint` directive is a convienient way to place debugger breakpoints inside your views. 
 By default it uses `xdebug_break` but can be modified before the application is `booted`:
 ```php
-Radic\BladeExtensions\Directives\BreakpointDirective::setFunction('other_breakpoint_function_name');
+Radic\BladeExtensions\Directives\BreakpointAbstractDirective::setFunction('other_breakpoint_function_name');
 ```
 
 

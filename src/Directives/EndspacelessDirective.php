@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class EndspacelessDirective extends Directive
+class EndspacelessDirective extends AbstractDirective
 {
     protected $replace = '<?php echo preg_replace(\'/>\\s+</\', \'><\', ob_get_clean()); ?>';
 }

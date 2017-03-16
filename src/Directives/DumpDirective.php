@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class DumpDirective extends Directive
+class DumpDirective extends AbstractDirective
 {
     protected $replace = <<<'EOT'
     $1<?php

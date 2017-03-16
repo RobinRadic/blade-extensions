@@ -16,7 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  *
  * @author  Robin Radic
  */
-class ContinueDirective extends Directive
+class ContinueDirective extends AbstractDirective
 {
     public static $compatibility = '5.0.*|5.1.*';
 

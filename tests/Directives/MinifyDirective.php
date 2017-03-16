@@ -11,7 +11,7 @@
 
 namespace Radic\BladeExtensions\Directives;
 
-class MinifyDirective extends Directive
+class MinifyAbstractDirective extends AbstractDirective
 {
     protected $pattern = '/(?<!\\w)(\\s*)@minify(\\s*\\(.*\\))/';
 
