@@ -12,16 +12,16 @@ cache:
 ###############
 php:
   - 5.6
-  #- 7.0
-  #- 7.1
+  - 7.0
+  - 7.1
 
 
 env:
   # laravel/testbench minor versions. see 'install'
-#  - MINOR_VERSION="0"
-#  - MINOR_VERSION="1"
-#  - MINOR_VERSION="2"
-#  - MINOR_VERSION="3"
+  - MINOR_VERSION="0"
+  - MINOR_VERSION="1"
+  - MINOR_VERSION="2"
+  - MINOR_VERSION="3"
   - MINOR_VERSION="4"
 
 
