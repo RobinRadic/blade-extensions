@@ -41,7 +41,7 @@ All directives can be disabled, extended or replaced.
 
 #### 1. Composer
 ```JSON
-"radic/blade-extensions": "7.0.0"
+"radic/blade-extensions": "~7.0"
 ```
 
 #### 2. Laravel

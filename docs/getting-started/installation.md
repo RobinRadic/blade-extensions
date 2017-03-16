@@ -10,7 +10,7 @@ Installation
 Add the `radic/blade-extensions` package to your composer.json dependencies.
 ```json
 "require": {
-    "radic/blade-extensions": "7.0.0"
+    "radic/blade-extensions": "~7.0"
 }
 ```
 
