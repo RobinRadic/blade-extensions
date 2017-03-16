@@ -5,8 +5,8 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @license   https://radic.mit-license.org MIT License
+ * @version   7.0.0
  */
 
 namespace Radic\Tests\BladeExtensions\Directives;
@@ -22,6 +22,11 @@ class ForeachDirectiveTest extends DirectiveTestCase
 
     public function testView()
     {
+        if (false === $this->app[ 'blade-extensions.directives' ]->has('foreach')) {
+            $this->assertTrue(true);
+
+            return;
+        }
         $this->render('directives.foreach', [
             'dataClass' => static::getData(),
             'array'     => static::getData()->getRecords(),

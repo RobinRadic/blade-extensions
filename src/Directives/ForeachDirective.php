@@ -18,8 +18,6 @@ namespace Radic\BladeExtensions\Directives;
  */
 class ForeachDirective extends AbstractDirective
 {
-    public static $compatibility = '5.0.*|5.1.*|5.2.*';
-
     protected $pattern = '/(?<!\\w)(\\s*)@NAME(?:\\s*)\\((.*)(?:\\sas)(.*)\\)/';
 
     protected $replace = <<<'EOT'

@@ -39,8 +39,8 @@
         <phingcall target="lint"/>
         <phingcall target="php-cs-fixer"/>
         <phingcall target="phpunit"/>
-        <phingcall target="phpdoc"/>
-        <phingcall target="clean"/>
+        <!--<phingcall target="phpdoc"/>-->
+        <!--<phingcall target="clean"/>-->
         <property name="pre-commit.done" value="true"/>
     </target>
 
@@ -120,8 +120,8 @@
         <exec executable="${paths.bin}/phpunit" logoutput="${logoutput}" passthru="${passthru}">
             <arg value="--configuration"/>
             <arg path="${project.basedir}/phpunit.xml"/>
-            <arg value="--bootstrap"/>
-            <arg path="${paths.vendor}/autoload.php"/>
+            <!--<arg value="&#45;&#45;bootstrap"/>-->
+            <!--<arg path="${paths.vendor}/autoload.php"/>-->
         </exec>
     </target>
 

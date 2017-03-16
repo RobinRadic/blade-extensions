@@ -18,7 +18,5 @@ namespace Radic\BladeExtensions\Directives;
  */
 class ContinueDirective extends AbstractDirective
 {
-    public static $compatibility = '5.0.*|5.1.*';
-
     protected $replace = '$1<?php app("blade-extensions.helpers")->get("loop")->looped(); continue; ?>$2';
 }

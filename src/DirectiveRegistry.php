@@ -118,7 +118,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
             foreach ((array) $name as $directiveName => $directiveHandler) {
                 $this->register($directiveName, $directiveHandler);
             }
-        } elseif ($handler instanceof DirectiveInterface  && false === $handler::isCompatible()) {
+        } elseif ($handler instanceof DirectiveInterface && false === $handler::isCompatible()) {
             return;
         } else {
             $this->directives[ $name ] = $handler;

@@ -34,3 +34,4 @@ commit.bat
 /scripts/tools
 /report
 /.scannerwork
+/phpdoc

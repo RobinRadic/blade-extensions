@@ -65,7 +65,7 @@ abstract class AbstractDirective implements DirectiveInterface
     }
 
     /**
-     * handle method
+     * handle method.
      *
      * @param $value
      *
@@ -77,7 +77,7 @@ abstract class AbstractDirective implements DirectiveInterface
     }
 
     /**
-     * getPattern method
+     * getPattern method.
      *
      * @return string
      */
@@ -87,7 +87,7 @@ abstract class AbstractDirective implements DirectiveInterface
     }
 
     /**
-     * setPattern method
+     * setPattern method.
      *
      * @param string $pattern
      *
@@ -101,7 +101,7 @@ abstract class AbstractDirective implements DirectiveInterface
     }
 
     /**
-     * getReplace method
+     * getReplace method.
      *
      * @return string
      */
@@ -111,7 +111,7 @@ abstract class AbstractDirective implements DirectiveInterface
     }
 
     /**
-     * setReplace method
+     * setReplace method.
      *
      * @param string $replace
      *
@@ -125,7 +125,7 @@ abstract class AbstractDirective implements DirectiveInterface
     }
 
     /**
-     * getName method
+     * getName method.
      *
      * @return string
      */
@@ -135,7 +135,7 @@ abstract class AbstractDirective implements DirectiveInterface
     }
 
     /**
-     * setName method
+     * setName method.
      *
      * @param string $name
      *

@@ -47,13 +47,13 @@ return [
         // 5.2 introduced @break and @continue
         // but blade-extensions's @foreach relies on them so we don't yet disable them
         // 5.3 introduced the loop variable for the @foreach directive. we can disable these.
-        // NOTE: If you have used blade-extensions's @foreach before blade-extensions:7.0.0, you probably
-        // want to remove this
-//        '>=5.3' => [
-//            'break'    => null,
-//            'continue' => null,
-//            'foreach'    => null,
-//            'endforeach' => null,
-//        ]
+        // NOTE: If you have used blade-extensions's @foreach before blade-extensions:7.0.0, you probably want to remove this
+        // TL:DR: upgrading to blade-extension 7.0.0? then remove this
+        '>=5.3' => [
+            'break'    => null,
+            'continue' => null,
+            'foreach'    => null,
+            'endforeach' => null,
+        ],
     ],
 ];

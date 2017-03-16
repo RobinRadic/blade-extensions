@@ -8,18 +8,18 @@ GIT_HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_DIRECTORY="$GIT_HOOKS_DIR/../.."
 
 cd $PROJECT_DIRECTORY;
-PHING="vendor/bin/phing"
+PHING="build/bin/phing"
 HAS_PHING=false
 if [ -x "$PHING" ]; then
     HAS_PHING=true
 fi
 if $HAS_PHING; then
-    echo "Have phing"
+    $PHING -f build.xml pre-commit
 else
-    composer install
+    echo "Phing not found"
+    exit 1
 fi
 
-$PHING -f build.xml pre-commit
 
 cd $CURRENT_DIRECTORY;
 echo "pre commit hook finish"
