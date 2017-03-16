@@ -3,10 +3,10 @@
 
 [![Build Status](https://img.shields.io/travis/RobinRadic/blade-extensions.svg?branch=master&style=flat-square)](https://travis-ci.org/RobinRadic/blade-extensions)
 [![GitHub Version](https://img.shields.io/github/tag/robinradic/blade-extensions.svg?style=flat-square&label=version)](http://badge.fury.io/gh/robinradic%2Fblade-extensions)
-[![Code Coverage](https://img.shields.io/badge/coverage-100%-green.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/coverage)
 [![Total Downloads](https://img.shields.io/packagist/dt/radic/blade-extensions.svg?style=flat-square)](https://packagist.org/packages/radic/blade-extensions)
 [![License](http://img.shields.io/badge/license-MIT-ff69b4.svg?style=flat-square)](http://radic.mit-license.org)
 
+<!-- [![Code Coverage](https://img.shields.io/badge/coverage-100%-green.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/coverage) -->
 A _Laravel_ package providing additional Blade functionality. 
 
 **Tested on all Laravel 5.x versions.**
@@ -41,7 +41,7 @@ All directives can be disabled, extended or replaced.
 
 #### 1. Composer
 ```JSON
-"radic/blade-extensions": "7.0.0-beta"
+"radic/blade-extensions": "7.0.0"
 ```
 
 #### 2. Laravel

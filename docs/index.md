@@ -12,7 +12,6 @@ subtitle: Blade Extensions
 - Getting Started
   - [Installation](getting-started/installation.md)
   - [Configuration](getting-started/configuration.md)
-  - [Develop / API](getting-started/develop-api.md)
 - Features
   - [Compile String](features/compile-string.md) Compiles Blade strings **with** variables
   - [Push To Stack](features/push-to-stack.md) Programatically push content to a stack inside blade views. 

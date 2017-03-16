@@ -4,11 +4,12 @@ title: Upgrade Guide & Changelog
 
 #### 6.2 > 7.0
 - All the directives from 6.2 still work. 
-- Completely revised code. If you have code that interacts with classes in `Radic\BladeExtensions`, it's highly likely it wont be working anymore.
-- New config structure and filename. If you had any adjustments to the configuration, consider them                                                   
+- Completely revised code. If you have code using anything in `Radic\BladeExtensions`, then it's probably not working anymore.
+- New config structure and filename.                                                    
 - [`NEW`] Added `@spaceless` and `@endspaceless`
 - [`CHANGE`] Renamed `@debug` > `@dump`
 - [`NEW`] Added `@debug`. Prints out local view variables in `$__env`. This is similar to [Smarty's `{debug}`](http://www.smarty.net/docs/en/language.function.debug.tpl)
+- todo...
 
 #### 6.1 > 6.2
 - Fixes the `blade.compiler` error by resolving the `BladeCompiler` differently
