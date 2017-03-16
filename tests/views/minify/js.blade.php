@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +36,7 @@
 <!-- Start minification -->
 <script>
     @minify('js')
-    ;(function(window, document) {
+    (function (window, document) {
         /*jshint evil:true */
         /** version */
         var version = '3.7.2';

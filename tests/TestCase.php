@@ -1,18 +1,30 @@
-<?php namespace Radic\Tests\BladeExtensions;
+<?php
+/**
+ * Copyright (c) 2017. Robin Radic.
+ *
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
+ */
 
-use Sebwite\Testing\Laravel\Traits\ViewTester;
+namespace Radic\Tests\BladeExtensions;
+
+use Laradic\Testing\Laravel\Traits\ViewTester;
+use PHPUnit\Framework\Assert;
 
 /**
- * Class ViewTest
+ * Class ViewTest.
  *
  * @author     Robin Radic
- * @inheritDoc
+ * {@inheritdoc}
  */
-abstract class TestCase extends \Sebwite\Testing\Laravel\AbstractTestCase
+abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
 {
     use ViewTester;
 
-    /** @inheritDoc */
+    /** {@inheritdoc} */
     public function setUp()
     {
         parent::setUp();
@@ -21,7 +33,7 @@ abstract class TestCase extends \Sebwite\Testing\Laravel\AbstractTestCase
         $this->app->config->set('blade_extensions.markdown.renderer', 'Radic\\BladeExtensions\\Renderers\\ParsedownRenderer');
     }
 
-    /** @var array */
+    /** @var DataGenerator */
     public static $data;
 
     /**
@@ -37,14 +49,6 @@ abstract class TestCase extends \Sebwite\Testing\Laravel\AbstractTestCase
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory
-     */
-    public function view()
-    {
-        return $this->app[ 'view' ];
-    }
-
-    /**
      * Get the service provider class.
      *
      * @return string
@@ -56,15 +60,25 @@ abstract class TestCase extends \Sebwite\Testing\Laravel\AbstractTestCase
 
     protected function getPackageRootPath()
     {
-        return realpath(__DIR__ . '/..');
+        return realpath(__DIR__.'/..');
+    }
+
+    public function testTest()
+    {
+        $this->assertTrue(true);
     }
 
     /**
-     * Adds assertion directives to blade and removes cached views
+     * assertValidRegularExpression method.
+     *
+     * @param mixed  $value
+     * @param string $message
+     *
+     * @return void
      */
-    protected function loadViewTesting()
+    public function assertValidRegularExpression($value, $message = '')
     {
-        $this->addViewTesting(true, __DIR__ . '/views');
-        $this->cleanViews();
+        // http://stackoverflow.com/questions/4440626/how-can-i-validate-regex
+        Assert::assertThat(@preg_match($value, null), Assert::logicalNot(Assert::isFalse()), $message);
     }
 }

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+echo "pre commit hook start"
+
+CURRENT_DIRECTORY=`pwd`
+GIT_HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+PROJECT_DIRECTORY="$GIT_HOOKS_DIR/../.."
+
+cd $PROJECT_DIRECTORY;
+PHING="build/bin/phing"
+HAS_PHING=false
+if [ -x "$PHING" ]; then
+    HAS_PHING=true
+fi
+if $HAS_PHING; then
+    $PHING -f build.xml pre-commit
+else
+    echo "Phing not found"
+    exit 1
+fi
+
+
+cd $CURRENT_DIRECTORY;
+echo "pre commit hook finish"

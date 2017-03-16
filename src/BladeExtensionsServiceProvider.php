@@ -1,169 +1,104 @@
 <?php
 /**
- * A laravel service provider to register the class into the the IoC container
+ * Copyright (c) 2017. Robin Radic.
+ *
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0 Radic\BladeExtensions
  */
-namespace Radic\BladeExtensions;
-
-use Exception;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\View\Engines\CompilerEngine;
-use Radic\BladeExtensions\Compilers\MarkdownCompiler;
-use Radic\BladeExtensions\Directives\AssignmentDirectives;
-use Radic\BladeExtensions\Directives\DebugDirectives;
-use Radic\BladeExtensions\Directives\EmbeddingDirectives;
-use Radic\BladeExtensions\Directives\ForeachDirectives;
-use Radic\BladeExtensions\Directives\MacroDirectives;
-use Radic\BladeExtensions\Directives\MarkdownDirectives;
-use Radic\BladeExtensions\Directives\MinifyDirectives;
-use Radic\BladeExtensions\Engines\BladeMarkdownEngine;
-use Radic\BladeExtensions\Engines\PhpMarkdownEngine;
-use Radic\BladeExtensions\Renderers\BladeStringRenderer;
-
 
 /**
- * A laravel service provider to register the class into the the IoC container
+ * Created by IntelliJ IDEA.
+ * User: radic
+ * Date: 8/7/16
+ * Time: 1:40 AM.
+ */
+
+namespace Radic\BladeExtensions;
+
+use Illuminate\Support\ServiceProvider;
+
+/**
+ * This is the class BladeExtensionsServiceProvider.
  *
- * @package        Radic\BladeExtensions
- * @version        2.1.0
- * @author         Robin Radic
- * @license        MIT License - http://radic.mit-license.org
- * @copyright      2011-2015, Robin Radic
- * @link           http://robin.radic.nl/blade-extensions
- *
+ * @author  Robin Radic
  */
 class BladeExtensionsServiceProvider extends ServiceProvider
 {
-
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        $provides = [ 'blade.helpers', 'blade.string' ];
-
-        if ( $this->app[ 'config' ][ 'blade_extensions.markdown.enabled' ] ) {
-            $provides = array_merge($provides, [ 'markdown', 'markdown.compiler' ]);
-        }
-
-        return $provides;
-    }
-
-
-    /** {@inheritDoc} */
     public function boot()
     {
-        $configPath  = __DIR__ . '/../config/blade_extensions.php';
-        $publishPath = function_exists('config_path') ? config_path('blade_extensions.php') : base_path('config/blade_extensions.php');
-        $this->publishes([ $configPath => $publishPath ], 'config');
-
-        if($this->app[ 'config' ]->get('blade_extensions.example_views', false) === true) {
-            $viewPath = __DIR__ . '/../resources/views';
-            $this->loadViewsFrom($viewPath, 'blade-ext');
-            $this->publishes([ $viewPath => resource_path('views/vendor/blade-ext') ], 'views');
-        }
-
-        $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
-        if ( $config[ 'markdown.enabled' ] ) {
-            $view     = $this->app->make('view');
-            $compiler = $this->app->make('markdown.compiler');
-            $markdown = $this->app->make('markdown');
-            $blade    = $this->app->make('blade.compiler');
-
-            $view->getEngineResolver()->register('md', function () use ($compiler) {
-                return new CompilerEngine($compiler);
-            });
-            $view->addExtension('md', 'md');
-
-
-            $view->getEngineResolver()->register('phpmd', function () use ($markdown) {
-                return new PhpMarkdownEngine($markdown);
-            });
-            $view->addExtension('md.php', 'phpmd');
-
-
-            $view->getEngineResolver()->register('blademd', function () use ($blade, $markdown) {
-                return new BladeMarkdownEngine($blade, $markdown);
-            });
-            $view->addExtension('md.blade.php', 'blademd');
-        }
+        $this->publishes([
+            __DIR__.'/../config/blade-extensions.php' => config_path('blade-extensions.php'),
+        ], 'config');
     }
 
-    /** {@inheritDoc} */
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
     public function register()
     {
-        $configPath = __DIR__ . '/../config/blade_extensions.php';
-        $this->mergeConfigFrom($configPath, 'blade_extensions');
+        $this->mergeConfigFrom(__DIR__.'/../config/blade-extensions.php', 'blade-extensions');
 
-        $config = array_dot($this->app[ 'config' ][ 'blade_extensions' ]);
+        $this->registerDirectiveRegistry();
 
-        if ( $config[ 'example_views' ] === true ) {
-            $this->viewDirs = [ 'views' => 'blade-ext' ];
-        }
+        $this->registerHelperRepository();
 
-        $this->registerHelpers();
+        $this->registerBladeExtensions();
 
-        $this->app->bind('blade.string', BladeStringRenderer::class);
+        $this->registerAliases();
 
-        AssignmentDirectives::attach($this->app);
-        DebugDirectives::attach($this->app);
-        ForeachDirectives::attach($this->app);
-        EmbeddingDirectives::attach($this->app);
-        MacroDirectives::attach($this->app);
-        MinifyDirectives::attach($this->app);
-
-        # Optional markdown compiler, engines and directives
-        if ( $config[ 'markdown.enabled' ] ) {
-            if ( !class_exists($config[ 'markdown.renderer' ]) ) {
-                throw new Exception('The configured markdown renderer class does not exist');
-            }
-
-
-            $this->app->bind('Radic\BladeExtensions\Contracts\MarkdownRenderer', $config[ 'markdown.renderer' ]);
-            $this->app->singleton('markdown', function (Application $app) {
-
-                return $app->make('Radic\BladeExtensions\Contracts\MarkdownRenderer');
-            });
-
-            $this->app->singleton('markdown.compiler', function (Application $app) {
-
-                $markdownRenderer = $app->make('markdown');
-                $files            = $app->make('files');
-                $storagePath      = $app[ 'config' ]->get('view.compiled');
-
-                return new MarkdownCompiler($markdownRenderer, $files, $storagePath);
-            });
-
-            MarkdownDirectives::attach($this->app);
-        }
+        $this->app->booted(function ($app) {
+            $app['blade-extensions.directives']->hookToCompiler();
+        });
     }
 
-
-    protected function registerHelpers()
+    protected function registerBladeExtensions()
     {
+        $this->app->singleton('blade-extensions', function ($app) {
+            return new BladeExtensions($app['blade-extensions.directives'], $app['blade-extensions.helpers']);
+        });
+    }
 
-        $this->app->singleton('blade.helpers', function (Application $app) {
+    protected function registerDirectiveRegistry()
+    {
+        $this->app->singleton('blade-extensions.directives', function ($app) {
+            $directives = new DirectiveRegistry($app);
+            $directives->register($app['config']['blade-extensions.directives']);
+            $directives->setVersionOverrides($app['config']['blade-extensions.version_overrides']);
 
-            $helpers = new Helpers\HelperRepository($app);
+            return $directives;
+        });
+    }
 
-            $helperClasses = [
-                'loop'     => Helpers\LoopFactory::class,
-                'embed'    => Helpers\EmbedStacker::class,
-                'minifier' => Helpers\Minifier::class,
-            ];
-
-            if ( $app[ 'config' ][ 'blade_extensions.markdown.enabled' ] ) {
-                $helperClasses[ 'markdown' ] = Helpers\Markdown::class;
-            }
-
-            foreach ( $helperClasses as $name => $class ) {
-                $helpers->put($name, $app->make($class));
-            }
+    protected function registerHelperRepository()
+    {
+        $this->app->singleton('blade-extensions.helpers', function ($app) {
+            $helpers = new HelperRepository();
+            $helpers->put('loop', $app->build(Helpers\Loop\LoopHelper::class));
+            $helpers->put('embed', $app->build(Helpers\Embed\EmbedHelper::class));
+            $helpers->put('minifier', $app->build(Helpers\Minifier\MinifierHelper::class));
+            $helpers->put('markdown', $app->build(Helpers\Markdown\MarkdownHelper::class));
 
             return $helpers;
         });
+    }
+
+    protected function registerAliases()
+    {
+        $aliases = [
+            'blade-extensions'            => [BladeExtensions::class, Contracts\BladeExtensions::class],
+            'blade-extensions.directives' => [DirectiveRegistry::class, Contracts\DirectiveRegistry::class],
+            'blade-extensions.helpers'    => [HelperRepository::class, Contracts\HelperRepository::class],
+        ];
+
+        foreach ($aliases as $key => $aliases) {
+            foreach ($aliases as $alias) {
+                $this->app->alias($key, $alias);
+            }
+        }
     }
 }

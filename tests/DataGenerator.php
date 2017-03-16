@@ -1,24 +1,33 @@
-<?php namespace Radic\Tests\BladeExtensions;
+<?php
+/**
+ * Copyright (c) 2017. Robin Radic.
+ *
+ * The license can be found in the package and online at https://radic.mit-license.org.
+ *
+ * @copyright 2017 Robin Radic
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0
+ */
+
+namespace Radic\Tests\BladeExtensions;
 
 use Illuminate\Filesystem\Filesystem;
-use Sebwite\Support\Path;
+use Laradic\Support\Path;
 
 /**
  * Data generator
  * data values:
  * raw:     http://beta.json-generator.com/api/json/get/KKx9VQ_
- * editor:  http://beta.json-generator.com/KKx9VQ_
+ * editor:  http://beta.json-generator.com/KKx9VQ_.
  *
  * data records:
  * raw:     http://beta.json-generator.com/api/json/get/JKgQnt8
  * editor:  http://beta.json-generator.com/JKgQnt8
  *
  * @author     Robin Radic
- * @package    Laradic\Dev
  */
 class DataGenerator
 {
-
     protected static $records;
 
     protected static $values;
@@ -31,8 +40,8 @@ class DataGenerator
     protected static function generateIfRequired()
     {
         $fs = new Filesystem();
-        if (!isset(static::$values) || !isset(static::$records)) {
-            static::$values  = json_decode($fs->get(Path::join(__DIR__, 'data/values.json')), true)[0];
+        if (! isset(static::$values) || ! isset(static::$records)) {
+            static::$values = json_decode($fs->get(Path::join(__DIR__, 'data/values.json')), true)[0];
             static::$records = json_decode($fs->get(Path::join(__DIR__, 'data/records.json')), true);
         }
     }
@@ -44,7 +53,6 @@ class DataGenerator
         return static::$records;
     }
 
-
     public static function getValues()
     {
         static::generateIfRequired();
@@ -53,9 +61,9 @@ class DataGenerator
     }
 
     /**
-     * Get random integer
+     * Get random integer.
      *
-     * @return integer
+     * @return int
      */
     public function getInteger()
     {
@@ -63,9 +71,9 @@ class DataGenerator
     }
 
     /**
-     * Get random big integer
+     * Get random big integer.
      *
-     * @return integer
+     * @return int
      */
     public function getBigint()
     {
@@ -73,9 +81,9 @@ class DataGenerator
     }
 
     /**
-     * Get random small integer
+     * Get random small integer.
      *
-     * @return integer
+     * @return int
      */
     public function getSmallint()
     {
@@ -83,7 +91,7 @@ class DataGenerator
     }
 
     /**
-     * Get random decimal
+     * Get random decimal.
      *
      * @return float
      */
@@ -93,7 +101,7 @@ class DataGenerator
     }
 
     /**
-     * Get random float
+     * Get random float.
      *
      * @return float
      */
@@ -103,9 +111,9 @@ class DataGenerator
     }
 
     /**
-     * Get boolean
+     * Get boolean.
      *
-     * @return boolean
+     * @return bool
      */
     public function getBoolean()
     {
@@ -113,7 +121,7 @@ class DataGenerator
     }
 
     /**
-     * Get random name
+     * Get random name.
      *
      * @return string
      */
@@ -123,25 +131,25 @@ class DataGenerator
     }
 
     /**
-     * Get random title
+     * Get random title.
      *
      * @return string
      */
     public function getTitle()
     {
-        $adjectives = array(
+        $adjectives = [
             'Great',
             'Amazing',
             'Silly',
             'Inspiring',
-            'First'
-        );
+            'First',
+        ];
 
-        return 'My ' . $this->random($adjectives) . ' Title';
+        return 'My '.$this->random($adjectives).' Title';
     }
 
     /**
-     * Get random email
+     * Get random email.
      *
      * @return string
      */
@@ -161,7 +169,7 @@ class DataGenerator
     }
 
     /**
-     * Get telephone number
+     * Get telephone number.
      *
      * @return string
      */
@@ -171,7 +179,7 @@ class DataGenerator
     }
 
     /**
-     * Get random age
+     * Get random age.
      *
      * @return string
      */
@@ -181,7 +189,7 @@ class DataGenerator
     }
 
     /**
-     * Get some random Lorem text
+     * Get some random Lorem text.
      *
      * @return string
      */
@@ -191,67 +199,67 @@ class DataGenerator
     }
 
     /**
-     * Get some random Street name
+     * Get some random Street name.
      *
      * @return string
      */
     public function getStreet()
     {
-        $streets = array('Baker', 'First', 'Main', 'Second', 'Broad');
+        $streets = ['Baker', 'First', 'Main', 'Second', 'Broad'];
 
         return $this->random($streets);
     }
 
     /**
-     * Get some random street extension
+     * Get some random street extension.
      *
      * @return string
      */
     public function getStreetExtension()
     {
-        $extensions = array('Ave', 'St', 'Circle', 'Road');
+        $extensions = ['Ave', 'St', 'Circle', 'Road'];
 
         return $this->random($extensions);
     }
 
     /**
-     * Get some city name
+     * Get some city name.
      *
      * @return string
      */
     public function getCity()
     {
-        $cities = array('Nashville', 'Chattanooga', 'London', 'San Francisco', 'Bucksnort');
+        $cities = ['Nashville', 'Chattanooga', 'London', 'San Francisco', 'Bucksnort'];
 
         return $this->random($cities);
     }
 
     /**
-     * Get some random state
+     * Get some random state.
      *
      * @return string
      */
     public function getState()
     {
-        $states = array('TN', 'WA', 'MA', 'CA');
+        $states = ['TN', 'WA', 'MA', 'CA'];
 
         return $this->random($states);
     }
 
     /**
-     * Get some random zip code
+     * Get some random zip code.
      *
      * @return string
      */
     public function getZip()
     {
-        $zips = array(37121, 42198, 34189, 37115);
+        $zips = [37121, 42198, 34189, 37115];
 
         return $this->random($zips);
     }
 
     /**
-     * Get dummy website address
+     * Get dummy website address.
      *
      * @return string
      */
@@ -261,30 +269,30 @@ class DataGenerator
     }
 
     /**
-     * Get random address
+     * Get random address.
      *
      * @return string
      */
     public function getAddress()
     {
-        $address = $this->getInteger() . ' ' . $this->getStreet() . ' ' . $this->getStreetExtension() . PHP_EOL;
-        $address .= $this->getCity() . ', ' . $this->getState() . ' ' . $this->getZip();
+        $address = $this->getInteger().' '.$this->getStreet().' '.$this->getStreetExtension().PHP_EOL;
+        $address .= $this->getCity().', '.$this->getState().' '.$this->getZip();
 
         return $address;
     }
 
     /**
-     * Get current MySQL-formatted date
+     * Get current MySQL-formatted date.
      *
      * @return string
      */
     public function getDatetime()
     {
-        return $this->random(static::$values['dates']) . date('H:i:s');
+        return $this->random(static::$values['dates']).date('H:i:s');
     }
 
     /**
-     * Get current time
+     * Get current time.
      */
     public function getTime()
     {
@@ -292,7 +300,7 @@ class DataGenerator
     }
 
     /**
-     * Get current MySQL-formatted date
+     * Get current MySQL-formatted date.
      *
      * @return string
      */
@@ -302,7 +310,7 @@ class DataGenerator
     }
 
     /**
-     * Return random item from provided array
+     * Return random item from provided array.
      *
      * @param  array $arr
      * @return string

@@ -1,41 +1,105 @@
-<project name="blade-extensions" default="pre-commit">
-    <property name="vendordir" value="${phing.dir}/../../../vendor"/>
-    <property name="toolsdir" value="/usr/local/bin"/>
-    <property name="gitremote.url" value="https://github.com"/>
-    <property name="gitremote.owner" value="robinradic"/>
-    <property name="gitremote.repo" value="${phing.project.name}"/>
-    <property name="phpdocfile" value="${project.basedir}/docs/structure.xml"/>
+<!--
+  ~ Copyright (c) 2017. Robin Radic.
+  ~
+  ~ The license can be found in the package and online at https://radic.mit-license.org.
+  ~
+  ~ @copyright Copyright 2017 (c) Robin Radic
+  ~ @license https://radic.mit-license.org The MIT License
+  -->
 
+<project name="blade-extensions" default="run">
+
+    <!--run bootstrap.sh to clone the build tools into the project-->
+    <exec command="if [ -d '${project.basedir}/build' ]; then echo 'true'; else echo 'false'; fi;" outputProperty="output.IS_DIRECTORY_EXISTS"/>
+    <if>
+        <equals arg1="${output.IS_DIRECTORY_EXISTS}" arg2="false"/>
+        <then>
+            <exec command="bash ${project.basedir}/scripts/bootstrap.sh" logoutput="true" passthru="true"/>
+        </then>
+    </if>
+
+    <echo message="${project.basedir}"/>
+    <import file="${project.basedir}/build/phing/base.xml"/>
+    <import file="${project.basedir}/build/phing/git.xml"/>
+    <import file="${project.basedir}/build/phing/code-quality.xml"/>
+
+
+    <property name="git.owner" value="robinradic" override="true"/>
+    <property name="git.repo" value="blade-extensions" override="true"/>
+    <property name="ci" value="false"/>
+    <if>
+        <istrue value="${ci}"/>
+        <then>
+            <import file="${paths.build}/phing/ci.xml" />
+        </then>
+    </if>
+
+    <!--Collections -->
+    <target name="pre-commit" unless="pre-commit.done" description="Prepare for build">
+        <phingcall target="lint"/>
+        <phingcall target="php-cs-fixer"/>
+        <phingcall target="phpunit"/>
+        <phingcall target="git.add"/>
+        <!--<phingcall target="phpdoc"/>-->
+        <!--<phingcall target="clean"/>-->
+        <property name="pre-commit.done" value="true"/>
+    </target>
+
+    <target name="run" unless="run.done" description="Default run task">
+
+        <if>
+            <istrue value="${ci}"/>
+            <then>
+                <phingcall target="run.ci"/>
+            </then>
+            <elseif>
+                <istrue value=""/>
+                <then>
+                </then>
+            </elseif>
+            <else>
+
+            </else>
+        </if>
+        <property name="run.done" value="true"/>
+    </target>
+
+    <target name="run.ci">
+        <phingcall target="clean"/>
+        <phingcall target="install"/>
+        <phingcall target="require-testbench"/>
+        <phingcall target="ci.phpunit"/>
+    </target>
+
+    <!--Preperation-->
     <target name="clean" unless="clean.done" description="Cleanup build artifacts">
         <delete dir="${project.basedir}/vendor"/>
+        <delete dir="${project.basedir}/phpdoc"/>
         <delete file="${project.basedir}/composer.lock"/>
         <property name="clean.done" value="true"/>
     </target>
 
-    <target name="pre-commit" unless="pre-commit.done" depends="clean" description="Prepare for build">
-        <phingcall target="lint"/>
-        <phingcall target="phpcs"/>
-        <phingcall target="phpunit"/>
-        <phingcall target="phpdoc"/>
-        <property name="pre-commit.done" value="true"/>
+    <target name="install" unless="install.done" description="Install dependencies using Composer">
+        <exec executable="composer" logoutput="${logoutput}" passthru="${passthru}">
+            <arg line="install"/>
+        </exec>
+        <property name="install.done" value="true"/>
     </target>
 
-    <target name="docgen" description="generate docgen docs for github pages and push it">
-
-        <exec executable="docgen" dir="${project.basedir}" logoutput="true">
-            <arg value="generate"/>
+    <target name="require-testbench" unless="require-testbench.done" description="Install dependencies using Composer">
+        <exec executable="composer" logoutput="${logoutput}" passthru="${passthru}">
+            <arg line="require"/>
+            <arg line="orchestra/testbench:3.4.*"/>
         </exec>
-
-        <exec executable="commit" dir="${project.basedir}/gh-pages" logoutput="true">
-            <arg value="phingdocgen"/>
-        </exec>
+        <property name="require-testbench.done" value="true"/>
     </target>
 
+    <!--Tasks-->
     <target name="lint" description="Perform syntax check of sourcecode files">
         <apply executable="php" failonerror="true">
             <arg value="-l"/>
 
-            <fileset dir="${project.basedir}/src" >
+            <fileset dir="${project.basedir}/src">
                 <include name="**/*.php"/>
             </fileset>
 
@@ -45,44 +109,31 @@
         </apply>
     </target>
 
-    <target name="phpcbf" description="Fixes coding standard violations using PHP_CodeSniffer Fixer">
-        <exec executable="${toolsdir}/phpcbf" logoutput="true">
-            <arg value="--tabWidth=4"/>
-            <arg value="--standard=PSR2"/>
-            <arg value="--extensions=php"/>
-            <arg value="--ignore=autoload.php"/>
-            <arg path="${project.basedir}/src"/>
-            <arg path="${project.basedir}/tests"/>
-        </exec>
-    </target>
-
-    <target name="phpcs" depends="phpcbf" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-        <exec executable="${toolsdir}/phpcs" logoutput="true">
-            <arg value="--standard=PSR2"/>
-            <arg value="--extensions=php"/>
-            <arg value="--ignore=autoload.php"/>
-            <arg path="${project.basedir}/src"/>
-            <arg path="${project.basedir}/tests"/>
+    <target name="php-cs-fixer" description="Fixes coding standard violations using php-cs-fixer">
+        <exec executable="${paths.bin}/php-cs-fixer" logoutput="${logoutput}" passthru="${passthru}">
+            <arg line="fix"/>
+            <arg line="${project.basedir}"/>
+            <arg value="--config-file=${paths.php_cs}"/>
         </exec>
     </target>
 
     <target name="phpunit" description="Run unit tests with PHPUnit">
-        <exec executable="${toolsdir}/phpunit" logoutput="true">
+        <exec executable="${paths.bin}/phpunit" logoutput="${logoutput}" passthru="${passthru}">
             <arg value="--configuration"/>
             <arg path="${project.basedir}/phpunit.xml"/>
-            <arg value="--bootstrap"/>
-            <arg path="${vendordir}/autoload.php"/>
+            <!--<arg value="&#45;&#45;bootstrap"/>-->
+            <!--<arg path="${paths.vendor}/autoload.php"/>-->
         </exec>
     </target>
 
     <target name="phpdoc" description="Generate phpdoc structure xml and move into docs folder">
-        <exec executable="${toolsdir}/phpdoc" dir="${project.basedir}" logoutput="true">
+        <exec executable="${paths.bin}/phpdoc" dir="${project.basedir}" logoutput="${logoutput}" passthru="${passthru}">
             <arg value="run"/>
             <arg line="-t ${project.basedir}/phpdoc"/>
             <arg line="-d ${project.basedir}/src"/>
             <arg line="--template=xml"/>
         </exec>
-        <move file="${project.basedir}/phpdoc/structure.xml" tofile="${phpdocfile}"/>
+        <move file="${project.basedir}/phpdoc/structure.xml" tofile="${paths.phpdoc-xml}"/>
         <delete dir="${project.basedir}/phpdoc"/>
 
     </target>

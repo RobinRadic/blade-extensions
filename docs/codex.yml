@@ -1,0 +1,53 @@
+menu:
+  - name: Prologue
+    icon: fa fa-eye
+    children:
+      - name: Release Notes
+        document: prologue/release-notes
+
+      - name: Upgrade Guide
+        document: prologue/changelog-upgrade-guide
+
+      - name: Contribution Guide
+        document: prologue/contribution-guide
+
+      - name: API Documentation
+        document: phpdoc
+
+  - name: Getting Started
+    icon: fa fa-eye
+    children:
+
+      - name: Installation
+        document: getting-started/installation
+
+      - name: Configuration
+        document: getting-started/configuration
+
+      - name: Directory Structure
+        document: getting-started/directory-structure
+
+
+  - name: Directives
+    icon: fa fa-code
+    children:
+      - name: @set @unset
+        document: directives/set-unset
+
+      - name: @breakpoint @debug @dump
+        document: directives/breakpoint-debug-dump
+
+      - name: @foreach @break @continue
+        document: directives/foreach-break-continue
+
+      - name: @embed
+        document: directives/embed
+
+      - name: @macro
+        document: directives/macro
+
+      - name: @markdown
+        document: directives/markdown
+
+      - name: @minify
+        document: directives/minify

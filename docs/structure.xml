@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017. Robin Radic.
+  ~
+  ~ The license can be found in the package and online at https://radic.mit-license.org.
+  ~
+  ~ @copyright Copyright 2017 (c) Robin Radic
+  ~ @license https://radic.mit-license.org The MIT License
+  -->
+
 <project title="API Documentation" version="v2.8.5">
   <partials/>
   <file path="Traits/SectionsTrait.php" generated-path="Traits.SectionsTrait.html" hash="3cb3f9cda541ff188214d499cf3fb789" package="Default">
@@ -654,8 +663,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="38">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="38" description="" type="\Sebwite\Support\Filesystem" variable="">
-            <type>\Sebwite\Support\Filesystem</type>
+            <tag name="var" line="38" description="" type="\Laradic\Support\Filesystem" variable="">
+                <type>\Laradic\Support\Filesystem</type>
           </tag>
         </docblock>
       </property>
@@ -744,8 +753,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="104">
           <description>get files value</description>
           <long-description></long-description>
-          <tag name="return" line="104" description="" type="\Sebwite\Support\Filesystem">
-            <type>\Sebwite\Support\Filesystem</type>
+            <tag name="return" line="104" description="" type="\Laradic\Support\Filesystem">
+                <type>\Laradic\Support\Filesystem</type>
           </tag>
         </docblock>
       </method>
@@ -755,8 +764,8 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <docblock line="115">
           <description>Set the files value</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="" type="\Sebwite\Support\Filesystem" variable="$files">
-            <type>\Sebwite\Support\Filesystem</type>
+            <tag name="param" line="115" description="" type="\Laradic\Support\Filesystem" variable="$files">
+                <type>\Laradic\Support\Filesystem</type>
           </tag>
           <tag name="return" line="115" description="" type="\Radic\BladeExtensions\Renderers\BladeStringRenderer">
             <type>\Radic\BladeExtensions\Renderers\BladeStringRenderer</type>
@@ -765,7 +774,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <argument line="0" by_reference="false">
           <name>$files</name>
           <default></default>
-          <type>\Sebwite\Support\Filesystem</type>
+            <type>\Laradic\Support\Filesystem</type>
         </argument>
       </method>
     </class>
@@ -1273,7 +1282,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="ServiceProvider">\Sebwite\Support\ServiceProvider</namespace-alias>
+      <namespace-alias name="ServiceProvider">\Laradic\Support\ServiceProvider</namespace-alias>
     <namespace-alias name="Exception">\Exception</namespace-alias>
     <namespace-alias name="Application">\Illuminate\Contracts\Foundation\Application</namespace-alias>
     <namespace-alias name="CompilerEngine">\Illuminate\View\Engines\CompilerEngine</namespace-alias>
@@ -1289,7 +1298,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
     <namespace-alias name="PhpMarkdownEngine">\Radic\BladeExtensions\Engines\PhpMarkdownEngine</namespace-alias>
     <namespace-alias name="BladeStringRenderer">\Radic\BladeExtensions\Renderers\BladeStringRenderer</namespace-alias>
     <class final="false" abstract="false" namespace="Radic\BladeExtensions" line="34" package="Radic\BladeExtensions">
-      <extends>\Sebwite\Support\ServiceProvider</extends>
+        <extends>\Laradic\Support\ServiceProvider</extends>
       <name>BladeExtensionsServiceProvider</name>
       <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider</full_name>
       <docblock line="34">
@@ -1323,7 +1332,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <property static="false" visibility="protected" namespace="Radic\BladeExtensions" line="45" package="Radic\BladeExtensions">
         <name>$providers</name>
         <full_name>\Radic\BladeExtensions\BladeExtensionsServiceProvider::providers</full_name>
-        <default>array(\Sebwite\Support\SupportServiceProvider::class)</default>
+          <default>array(\Laradic\Support\SupportServiceProvider::class)</default>
         <docblock line="45">
           <description></description>
           <long-description></long-description>
@@ -3376,7 +3385,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="Str">\Sebwite\Support\Str</namespace-alias>
+      <namespace-alias name="Str">\Laradic\Support\Str</namespace-alias>
     <namespace-alias name="Container">\Illuminate\Contracts\Container\Container</namespace-alias>
     <class final="false" abstract="false" namespace="Radic\BladeExtensions\Helpers" line="22" package="Radic\BladeExtensions\Helpers">
       <extends/>
@@ -4154,9 +4163,9 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="Path">\Sebwite\Support\Path</namespace-alias>
-    <namespace-alias name="Str">\Sebwite\Support\Str</namespace-alias>
-    <namespace-alias name="Filesystem">\Sebwite\Support\Filesystem</namespace-alias>
+      <namespace-alias name="Path">\Laradic\Support\Path</namespace-alias>
+      <namespace-alias name="Str">\Laradic\Support\Str</namespace-alias>
+      <namespace-alias name="Filesystem">\Laradic\Support\Filesystem</namespace-alias>
     <namespace-alias name="Factory">\Illuminate\Contracts\View\Factory</namespace-alias>
     <namespace-alias name="BladeCompiler">\Illuminate\View\Compilers\BladeCompiler</namespace-alias>
     <namespace-alias name="Stack">\Radic\BladeExtensions\Contracts\Stack</namespace-alias>
@@ -4283,7 +4292,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
         <argument line="0" by_reference="false">
           <name>$files</name>
           <default></default>
-          <type>\Sebwite\Support\Filesystem</type>
+            <type>\Laradic\Support\Filesystem</type>
         </argument>
         <argument line="0" by_reference="false">
           <name>$bladeCompiler</name>
