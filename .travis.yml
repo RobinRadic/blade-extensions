@@ -17,12 +17,15 @@ php:
 
 
 env:
-  # laravel/testbench minor versions. see 'install'
-  - MINOR_VERSION="0"
-  - MINOR_VERSION="1"
-  - MINOR_VERSION="2"
-  - MINOR_VERSION="3"
-  - MINOR_VERSION="4"
+  global:
+    secure: NW/EmJatN5pgd2RiwmZr5lK/+KX0JT+qaTi2i56h3uwNdq5w7iENI5RyJ8Gwz7RsKko3viAOKHmxJO5gYOA4FDR8Jc9l8Ioa6Pvw9Tw5l2Nv+KvIX2UPp4UuxLeJulMuqRnumR4S+dLpPh6xfDf/3aNyxVdZPp4Oui89PEnU/eY=
+  matrix:
+    # orchestra/testbench & laravel/framework minor versions. see 'install'
+    - MINOR_VERSION="0"
+    - MINOR_VERSION="1"
+    - MINOR_VERSION="2"
+    - MINOR_VERSION="3"
+    - MINOR_VERSION="4"
 
 
 
@@ -47,10 +50,10 @@ before_script:
 script:
   - vendor/bin/phpunit
 
-#after_success:
-#  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
-#  - chmod a+x /tmp/travis-automerge
-#  - BRANCHES_TO_MERGE_REGEX='^develop|feature\/.*/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
+after_success:
+  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
+  - chmod a+x /tmp/travis-automerge
+  - BRANCHES_TO_MERGE_REGEX='^develop|f/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
 
 
 
