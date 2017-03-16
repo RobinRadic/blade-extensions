@@ -5,8 +5,8 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license https://radic.mit-license.org MIT License
- * @version 7.0.0 Radic\BladeExtensions
+ * @license   https://radic.mit-license.org MIT License
+ * @version   7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Helpers;
@@ -14,25 +14,24 @@ namespace Radic\BladeExtensions\Helpers;
 use Composer\Semver\Semver;
 
 /**
- * Utility helper class
+ * Utility helper class.
  *
- * @package Radic\BladeExtensions\Helpers
  * @author  Robin Radic
  */
 class Util
 {
     /**
-     * Returns the Laravel application version
+     * Returns the Laravel application version.
      *
      * @return string
      */
     public static function getLaravelVersion()
     {
-        return array_first(preg_split('/\s/', \Illuminate\Foundation\Application::VERSION, 2));
+        return preg_split('/\s/', \Illuminate\Foundation\Application::VERSION)[ 0 ];
     }
 
     /**
-     * Checks if the given version constraint is compatible with the current laravel version
+     * Checks if the given version constraint is compatible with the current laravel version.
      *
      * @param string $version The version constraint
      *

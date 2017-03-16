@@ -39,6 +39,7 @@
         <phingcall target="lint"/>
         <phingcall target="php-cs-fixer"/>
         <phingcall target="phpunit"/>
+        <phingcall target="git.add"/>
         <!--<phingcall target="phpdoc"/>-->
         <!--<phingcall target="clean"/>-->
         <property name="pre-commit.done" value="true"/>

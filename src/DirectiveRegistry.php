@@ -12,7 +12,6 @@
 namespace Radic\BladeExtensions;
 
 use Closure;
-use Composer\Semver\Semver;
 use Illuminate\Contracts\Foundation\Application;
 use Radic\BladeExtensions\Directives\DirectiveInterface;
 use Radic\BladeExtensions\Exceptions\InvalidDirectiveClassException;

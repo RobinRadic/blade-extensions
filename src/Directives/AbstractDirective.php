@@ -11,7 +11,6 @@
 
 namespace Radic\BladeExtensions\Directives;
 
-use Composer\Semver\Semver;
 use Radic\BladeExtensions\Helpers\Util;
 
 /**

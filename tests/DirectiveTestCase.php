@@ -25,7 +25,7 @@ abstract class DirectiveTestCase extends TestCase
         parent::setUp();
 
         $this->registerServiceProvider();
-        $this->addViewTesting(true, __DIR__ . '/views');
+        $this->addViewTesting(true, __DIR__.'/views');
         $this->cleanViews();
     }
 
@@ -73,7 +73,7 @@ abstract class DirectiveTestCase extends TestCase
 
     public function testCompatibility()
     {
-        /** @var \Radic\BladeExtensions\Directives\DirectiveInterface $class */
+        /* @var \Radic\BladeExtensions\Directives\DirectiveInterface $class */
 //        $class = $this->getDirectiveClass();
         // @todo
         $this->assertFalse(false);
