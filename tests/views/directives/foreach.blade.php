@@ -1,7 +1,11 @@
 @breakpoint
+@foreach($array as $key => $val)
+    @assertTrue(isset($loop), '$loop exists in foreach')
+@endforeach
 
 {{-- Test spaces --}}
 @foreach  (   $array as $key => $val   )
+    @assertTrue(isset($loop), '$loop exists in foreach')
     @assertTrue($loop->first, 'foreach spaces test')
     @break
 @endforeach

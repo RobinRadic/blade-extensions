@@ -22,7 +22,8 @@ class ForeachDirectiveTest extends DirectiveTestCase
 
     public function testView()
     {
-        if (false === $this->app[ 'blade-extensions.directives' ]->has('foreach')) {
+        $directives = $this->app[ 'blade-extensions.directives' ];
+        if (false === $directives->has('foreach')) {
             $this->assertTrue(true);
 
             return;

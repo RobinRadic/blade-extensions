@@ -8,16 +8,22 @@ GIT_HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_DIRECTORY="$GIT_HOOKS_DIR/../.."
 
 cd $PROJECT_DIRECTORY;
-PHING="build/bin/phing"
-HAS_PHING=false
-if [ -x "$PHING" ]; then
-    HAS_PHING=true
+PHING="$PROJECT_DIRECTORY/build/bin/phing"
+HAS_PHING=true
+if [ -x "$PROJECT_DIRECTORY/build/bin/phing" ]; then
+    PHING="$PROJECT_DIRECTORY/build/bin/phing"
+elif [ -x "$PROJECT_DIRECTORY/vendor/bin/phing" ]; then
+    PHING="$PROJECT_DIRECTORY/vendor/bin/phing"
+elif [ -x "$(which phing)" ]; then
+    PHING="$(which phing)"
+else
+    HAS_PHING=false
 fi
+
 if $HAS_PHING; then
     $PHING -f build.xml pre-commit
 else
     echo "Phing not found"
-    exit 1
 fi
 
 

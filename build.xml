@@ -26,6 +26,8 @@
 
     <property name="git.owner" value="robinradic" override="true"/>
     <property name="git.repo" value="blade-extensions" override="true"/>
+
+    <property name="minor-version" value="1"/>
     <property name="ci" value="false"/>
     <if>
         <istrue value="${ci}"/>
@@ -38,10 +40,13 @@
     <target name="pre-commit" unless="pre-commit.done" description="Prepare for build">
         <phingcall target="lint"/>
         <phingcall target="php-cs-fixer"/>
-        <phingcall target="phpunit"/>
         <phingcall target="git.add"/>
+        <phingcall target="clean"/>
+        <phingcall target="require-testbench"/>
+        <phingcall target="install"/>
+        <phingcall target="phpunit"/>
+
         <!--<phingcall target="phpdoc"/>-->
-        <!--<phingcall target="clean"/>-->
         <property name="pre-commit.done" value="true"/>
     </target>
 
@@ -87,10 +92,13 @@
     </target>
 
     <target name="require-testbench" unless="require-testbench.done" description="Install dependencies using Composer">
+        <copy file="composer.json" tofile="composer.json.original"/>
         <exec executable="composer" logoutput="${logoutput}" passthru="${passthru}">
             <arg line="require"/>
-            <arg line="orchestra/testbench:3.4.*"/>
+            <arg line="orchestra/testbench:3.${minor-version}.*"/>
         </exec>
+        <move file="composer.json.original" tofile="composer.json" overwrite="true"/>
+        <delete file="composer.json.original" />
         <property name="require-testbench.done" value="true"/>
     </target>
 

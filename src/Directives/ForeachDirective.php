@@ -18,7 +18,7 @@ namespace Radic\BladeExtensions\Directives;
  */
 class ForeachDirective extends AbstractDirective
 {
-    protected $pattern = '/(?<!\\w)(\\s*)@NAME(?:\\s*)\\((.*)(?:\\sas)(.*)\\)/';
+    protected $pattern = '/(?<!\w)(\s*)@foreach(?:\s*)\(([\w\W]*?)(?:\sas)(.*)\)/';
 
     protected $replace = <<<'EOT'
 $1<?php
