@@ -6,7 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 return [
@@ -38,6 +38,9 @@ return [
 //        'spaceless'    => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
 //        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
 
+        'ifSection' => 'Radic\\BladeExtensions\\Directives\\IfSectionDirective',
+        'elseIfSection' => 'Radic\\BladeExtensions\\Directives\\ElseIfSectionDirective',
+        'endIfSection' => 'Radic\\BladeExtensions\\Directives\\EndIfSectionDirective',
 //        'closure' => function ($value) {
 //            return $value;
 //        },

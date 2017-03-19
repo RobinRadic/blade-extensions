@@ -18,6 +18,10 @@ namespace Radic\BladeExtensions\Helpers;
  */
 trait BladeMatchers
 {
+    public static $createMatcher = '/(?<!\w)(\s*)@NAME(\s*\(.*\))/';
+    public static $createOpenMatcher = '/(?<!\w)(\s*)@NAME(\s*\(.*\))/';
+    public static $createPlainMatcher = '/(?<!\w)(\s*)@NAME(\s*)/';
+
     /**
      * Get the regular expression for a generic Blade function.
      *
