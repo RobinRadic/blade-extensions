@@ -42,7 +42,7 @@ script:
   - vendor/bin/phpunit
 
 after_success:
-  - ./scripts/after-success.sh
+  - ./scripts/after_success.sh
 
 
 
