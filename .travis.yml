@@ -50,8 +50,8 @@ before_script:
 
 script:
   - vendor/bin/php-cs-fixer -q fix src --config-file=.php_cs || true
-
 #  - vendor/bin/phpunit
+
 
 after_success:
   - ./scripts/after_success.sh
@@ -59,17 +59,17 @@ after_success:
 #  - chmod a+x /tmp/travis-automerge
 #  - BRANCHES_TO_MERGE_REGEX='^f' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
 
-
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: scripts/after_success.sh
-  on:
-    repo: RobinRadic/blade-extensions
-    tags: false
-    all_branches: true
-    php: 5.6
-    condition: $MINOR_VERSION = "4"
+#
+#deploy:
+#  skip_cleanup: true
+#  provider: script
+#  script: scripts/after_success.sh
+#  on:
+#    repo: RobinRadic/blade-extensions
+#    tags: false
+#    all_branches: true
+#    php: 5.6
+#    condition: $MINOR_VERSION = "4"
 #    branch: develop
 
 #OPTIONAL Install apt addons
