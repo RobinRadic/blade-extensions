@@ -54,7 +54,7 @@ script:
 
 
 after_success:
-  - ./scripts/after-success.sh
+#  - ./scripts/after-success.sh
 #  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
 #  - chmod a+x /tmp/travis-automerge
 #  - BRANCHES_TO_MERGE_REGEX='^f' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
