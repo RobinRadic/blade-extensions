@@ -60,7 +60,13 @@ after_success:
 #  - BRANCHES_TO_MERGE_REGEX='^f' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
 
 
-
+deploy:
+  provider: script
+  script: scripts/after_success.sh
+  on:
+    tags: false
+    # branch: develop
+    all_branches: true
 
 #OPTIONAL Install apt addons
 #OPTIONAL Install cache components
