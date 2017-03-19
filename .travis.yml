@@ -48,7 +48,8 @@ before_script:
 #  - composer install --prefer-source --no-interaction
 
 script:
-  - vendor/bin/php-cs-fixer -q fix src --config-file=.php_cs
+  - vendor/bin/php-cs-fixer -q fix src --config-file=.php_cs >> /dev/null
+  
 #  - vendor/bin/phpunit
 
 after_success:
