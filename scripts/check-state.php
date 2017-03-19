@@ -10,6 +10,17 @@
  * @version   7.0.0 Radic\BladeExtensions
  */
 
+
+/*
+ * reads travis build JSON
+ * checks:                      > returns:
+ * ---------------------------------------
+ * all other jobs passed?       > pass
+ * any job failed?              > fail
+ * any error?                   > error
+ * still working?               > wait
+ */
+
 function ex($msg)
 {
     echo $msg;
@@ -38,9 +49,11 @@ foreach ($content[ 'jobs' ] as $job) {
         $passed++;
     }
 }
-if ($passed < $total) {
+
+// -1 : there will be 1 job doing this script that is started and not finished
+if ($passed < ($total -1)) {
     ex('wait');
-} elseif ($passed === $total) {
+} elseif ($passed === ($total -1)) {
     ex('pass');
 } else {
     ex('error');
