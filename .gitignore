@@ -35,3 +35,4 @@ commit.bat
 /report
 /.scannerwork
 /phpdoc
+.curl-output

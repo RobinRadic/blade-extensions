@@ -9,52 +9,44 @@ cache:
 
 ###############
 # Build Matrix              https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix
-###############
 php:
   - 5.6
-#  - 7.0
-#  - 7.1
-
+  - 7.0
+  # - 7.1
 
 env:
   global:
     secure: NW/EmJatN5pgd2RiwmZr5lK/+KX0JT+qaTi2i56h3uwNdq5w7iENI5RyJ8Gwz7RsKko3viAOKHmxJO5gYOA4FDR8Jc9l8Ioa6Pvw9Tw5l2Nv+KvIX2UPp4UuxLeJulMuqRnumR4S+dLpPh6xfDf/3aNyxVdZPp4Oui89PEnU/eY=
   matrix:
-    # orchestra/testbench & laravel/framework minor versions. see 'install'
-#    - MINOR_VERSION="0"
-#    - MINOR_VERSION="1"
-#    - MINOR_VERSION="2"
-#    - MINOR_VERSION="3"
+    - MINOR_VERSION="0"
+    - MINOR_VERSION="1"
+    - MINOR_VERSION="2"
+    - MINOR_VERSION="3"
     - MINOR_VERSION="4"
-
-
 
 
 ###############
 # Lifecycle                   https://docs.travis-ci.com/user/customizing-the-build/#The-Build-Lifecycle
-###############
-
-
 before_install:
   - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
   - travis_retry composer self-update
-  - rm composer.json
 
 install:
-#  - composer require orchestra/testbench:3.${MINOR_VERSION}.*
-#  - composer require phpunit/phpunit:~5.0
+  - composer require orchestra/testbench:3.${MINOR_VERSION}.*
+  - composer require phpunit/phpunit:~5.0
   - composer require fabpot/php-cs-fixer:~1.9
-
-before_script:
-#  - composer install --prefer-source --no-interaction
+  - composer install --prefer-source --no-interaction
 
 script:
   - vendor/bin/php-cs-fixer -q fix src --config-file=.php_cs || true
-#  - vendor/bin/phpunit
-
+  - vendor/bin/phpunit
 
 after_success:
-#  - ./scripts/after-success.sh
+  - ./scripts/after-success.sh
+
+
+
+
 #  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
 #  - chmod a+x /tmp/travis-automerge
 #  - BRANCHES_TO_MERGE_REGEX='^f' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
