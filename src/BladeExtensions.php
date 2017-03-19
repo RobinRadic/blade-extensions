@@ -44,19 +44,20 @@ class BladeExtensions implements Contracts\BladeExtensions
     public function __construct(Contracts\DirectiveRegistry $directives, Contracts\HelperRepository $helpers)
     {
         $this->directives = $directives;
-        $this->helpers = $helpers;
-        $this->fs = new Filesystem;
-        $this->cachePath = storage_path('blade-extensions');
+        $this->helpers    = $helpers;
+        $this->fs         = new Filesystem;
+        $this->cachePath  = storage_path('blade-extensions');
     }
 
     /**
      * getCompiler method.
+     *
      * @return \Illuminate\View\Compilers\BladeCompiler
      */
     protected function getCompiler()
     {
-        if (! isset($this->compiler)) {
-            if ($this->fs->exists($this->cachePath) === false) {
+        if ( !isset($this->compiler) ) {
+            if ( $this->fs->exists($this->cachePath) === false ) {
                 $this->fs->makeDirectory($this->cachePath);
             }
             $this->compiler = new BladeCompiler($this->fs, $this->cachePath);
@@ -70,12 +71,12 @@ class BladeExtensions implements Contracts\BladeExtensions
      */
     public function compileString($string, array $vars = [])
     {
-        if (empty($vars)) {
+        if ( empty($vars) ) {
             return $this->getCompiler()->compileString($string);
         }
-        $fileName = uniqid('compileString', true).'.php';
-        $filePath = $this->cachePath.DIRECTORY_SEPARATOR.$fileName;
-        $string = $this->getCompiler()->compileString($string);
+        $fileName = uniqid('compileString', true) . '.php';
+        $filePath = $this->cachePath . DIRECTORY_SEPARATOR . $fileName;
+        $string   = $this->getCompiler()->compileString($string);
         $this->fs->put($filePath, $string);
         $compiledString = $this->getCompiledContent($filePath, $vars);
         $this->fs->delete($filePath);
@@ -93,7 +94,7 @@ class BladeExtensions implements Contracts\BladeExtensions
      */
     protected function getCompiledContent($filePath, array $vars = [])
     {
-        if (is_array($vars) && ! empty($vars)) {
+        if ( is_array($vars) && !empty($vars) ) {
             extract($vars, EXTR_OVERWRITE);
         }
         ob_start();
@@ -109,11 +110,11 @@ class BladeExtensions implements Contracts\BladeExtensions
      */
     public function pushToStack($stackName, $targetViews, $content)
     {
-        $targetViews = is_array($targetViews) ? $targetViews : [$targetViews];
+        $targetViews = is_array($targetViews) ? $targetViews : [ $targetViews ];
         foreach ($targetViews as $targetView) {
-            app()->make('events')->listen('composing: '.$targetView, function ($view) use ($stackName, $content) {
+            app()->make('events')->listen('composing: ' . $targetView, function ($view) use ($stackName, $content) {
                 $content = $content instanceof Closure ? $content($view) : $content;
-                if (method_exists($view, 'getFactory') && method_exists($view->getFactory(), 'startPush')) {
+                if ( method_exists($view, 'getFactory') && method_exists($view->getFactory(), 'startPush') ) {
                     $view->getFactory()->startPush($stackName, $content);
                 }
             });
