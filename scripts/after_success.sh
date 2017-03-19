@@ -4,7 +4,7 @@ set -e # Exit with nonzero exit code if anything fails
 # TRAVIS_PULL_REQUEST
 # TRAVIS_BRANCH
 if [ "$TRAVIS_EVENT_TYPE" != 'push' ]; then
-    echo "Skipping after_success.sh"
+    echo "after_success: Skipping"
     exit 0
 fi
 
@@ -14,6 +14,13 @@ git config user.email "robin@radic.nl"
 git config credential.helper "store --file=.git/credentials"
 echo "https://${GITHUB_SECRET_TOKEN}:@github.com" > .git/credentials
 
+echo "after_success: Git configured"
+git status
 git add -A
+echo "after_success: git add -A"
+git status
 git commit -m "TravisCI php-cs-fixer changes for: ${TRAVIS_BUILD_ID}"
+echo "after_success: git commit "
+git status
 git push
+echo "after_success: git push"
