@@ -19,7 +19,7 @@ while [ $DONE -lt 1 ]; do
     -H "Content-Type: application/json" \
     -H "User-Agent: MyClient/1.0.0" \
     -H "Accept: application/vnd.travis-ci.2+json" \
-     https://api.travis-ci.org/builds/212710581
+     "https://api.travis-ci.org/builds/${TRAVIS_BUILD_ID}"
 
     OUTPUT=$(php $mydir/check-state.php)
     if [ "$OUTPUT" == "1" ]; then
