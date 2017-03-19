@@ -69,7 +69,7 @@ deploy:
     tags: false
     all_branches: true
     php: 5.6
-    condition: $MINOR_VERSION = 4
+    condition: "$MINOR_VERSION" == "4"
 #    branch: develop
 
 #OPTIONAL Install apt addons
