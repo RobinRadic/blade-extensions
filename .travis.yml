@@ -34,7 +34,7 @@ before_install:
 install:
   - composer require orchestra/testbench:3.${MINOR_VERSION}.*
   - composer require phpunit/phpunit:~5.0
-  - composer require fabpot/php-cs-fixer:~1.9
+  - composer require friendsofphp/php-cs-fixer:~1.9
   - composer install --prefer-source --no-interaction
 
 script:

@@ -22,14 +22,14 @@ while [ $DONE -lt 1 ]; do
      "https://api.travis-ci.org/builds/${TRAVIS_BUILD_ID}"
 
     OUTPUT=$(php $mydir/check-state.php)
-    if [ "$OUTPUT" == "1" ]; then
+    if [ "$OUTPUT" == "fail" ]; then
         echo "build failed"
         exit 1
-    elif [ "$OUTPUT" == "0" ]; then
+    elif [ "$OUTPUT" == "pass" ]; then
         DONE=1
-    elif [ "$OUTPUT" == "2" ]; then
+    elif [ "$OUTPUT" == "wait" ]; then
         echo "Checking again in 10 sec"
-    elif [ "$OUTPUT" == "3" ]; then
+    elif [ "$OUTPUT" == "error" ]; then
         echo "error with curl output"
         exit 1
     fi

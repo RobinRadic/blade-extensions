@@ -9,16 +9,39 @@
  * @license   https://radic.mit-license.org MIT License
  * @version   7.0.0 Radic\BladeExtensions
  */
+
+function ex($msg)
+{
+    echo $msg;
+    exit(0);
+}
+
 $content = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . '.curl-output');
 if ($content === false) {
-    echo '3';
+    ex('error');
 }
 $content = json_decode($content, true);
-$state   = $content[ 'build' ][ 'state' ];
+
+$state = $content[ 'build' ][ 'state' ];
 if ($state === 'failed' || $state === 'canceled') {
-    echo '1';
-} elseif ($state === 'passed') {
-    echo '0';
+    ex('fail');
+}
+
+$total  = count($content[ 'jobs' ]);
+$passed = 0;
+foreach ($content[ 'jobs' ] as $job) {
+    $state = $job[ 'state' ];
+    if ($state === 'failed' || $state === 'canceled') {
+        ex('fail');
+        exit(0);
+    } elseif ($state === 'passed') {
+        $passed++;
+    }
+}
+if ($passed < $total) {
+    ex('wait');
+} elseif ($passed === $total) {
+    ex('pass');
 } else {
-    echo '2';
+    ex('error');
 }
