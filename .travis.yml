@@ -12,8 +12,8 @@ cache:
 ###############
 php:
   - 5.6
-  - 7.0
-  - 7.1
+#  - 7.0
+#  - 7.1
 
 
 env:
@@ -21,10 +21,10 @@ env:
     secure: NW/EmJatN5pgd2RiwmZr5lK/+KX0JT+qaTi2i56h3uwNdq5w7iENI5RyJ8Gwz7RsKko3viAOKHmxJO5gYOA4FDR8Jc9l8Ioa6Pvw9Tw5l2Nv+KvIX2UPp4UuxLeJulMuqRnumR4S+dLpPh6xfDf/3aNyxVdZPp4Oui89PEnU/eY=
   matrix:
     # orchestra/testbench & laravel/framework minor versions. see 'install'
-    - MINOR_VERSION="0"
-    - MINOR_VERSION="1"
-    - MINOR_VERSION="2"
-    - MINOR_VERSION="3"
+#    - MINOR_VERSION="0"
+#    - MINOR_VERSION="1"
+#    - MINOR_VERSION="2"
+#    - MINOR_VERSION="3"
     - MINOR_VERSION="4"
 
 
@@ -43,17 +43,20 @@ install:
   - composer require laravel/framework:5.${MINOR_VERSION}.*
   - composer require orchestra/testbench:3.${MINOR_VERSION}.*
   - composer require phpunit/phpunit:~5.0
+  - composer require fabpot/php-cs-fixer:~1.9
 
 before_script:
   - composer install --prefer-source --no-interaction
 
 script:
+  - vendor/bin/php-cs-fixer fix src --config-file=.php_cs
   - vendor/bin/phpunit
 
 after_success:
-  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
-  - chmod a+x /tmp/travis-automerge
-  - BRANCHES_TO_MERGE_REGEX='^develop|f/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
+  - ./scripts/after_success.sh
+#  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
+#  - chmod a+x /tmp/travis-automerge
+#  - BRANCHES_TO_MERGE_REGEX='^f' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=robinradic/blade-extensions /tmp/travis-automerge
 
 
 
@@ -78,3 +81,63 @@ after_success:
 #If before_install, install or before_script return a non-zero exit code, the build is errored and stops immediately.
 #If script returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
 #The exit code of after_success, after_failure, after_script and subsequent stages do not affect the build result. However, if one of these stages times out, the build is marked as a failure.
+
+
+### The following default environment variables are available to all builds.
+# https://docs.travis-ci.com/user/environment-variables/
+
+# - CI=true
+# - TRAVIS=true
+# - CONTINUOUS_INTEGRATION=true
+# - DEBIAN_FRONTEND=noninteractive
+# - HAS_JOSH_K_SEAL_OF_APPROVAL=true
+# - USER=travis (do not depend on this value)
+# - HOME=/home/travis (do not depend on this value)
+# - LANG=en_US.UTF-8
+# - LC_ALL=en_US.UTF-8
+# - RAILS_ENV=test
+# - RACK_ENV=test
+# - MERB_ENV=test
+# - JRUBY_OPTS="--server -Dcext.enabled=false -Xcompile.invokedynamic=false"
+# - JAVA_HOME is set to the appropriate value.
+
+# Additionally, Travis CI sets environment variables you can use in your build, e.g. to tag the build, or to run post-build deployments.
+
+# - TRAVIS_ALLOW_FAILURE: Set to true if the job is allowed to fail. false if not.
+# - TRAVIS_BRANCH: For builds not triggered by a pull request this is the name of the branch currently being built; whereas for builds triggered by a pull request this is the name of the branch targeted by the pull request (in many cases this will be master).
+# - TRAVIS_BUILD_DIR: The absolute path to the directory where the repository being built has been copied on the worker.
+# - TRAVIS_BUILD_ID: The id of the current build that Travis CI uses internally.
+# - TRAVIS_BUILD_NUMBER: The number of the current build (for example, “4”).
+# - TRAVIS_COMMIT: The commit that the current build is testing.
+# - TRAVIS_COMMIT_MESSAGE: The commit subject and body, unwrapped.
+# - TRAVIS_COMMIT_RANGE: The range of commits that were included in the push or pull request. (Note that this is empty for builds triggered by the initial commit of a new branch.)
+# - TRAVIS_EVENT_TYPE: Indicates how the build was triggered. One of push, pull_request, api, cron.
+# - TRAVIS_JOB_ID: The id of the current job that Travis CI uses internally.
+# - TRAVIS_JOB_NUMBER: The number of the current job (for example, “4.1”).
+# - TRAVIS_OS_NAME: On multi-OS builds, this value indicates the platform the job is running on. Values are linux and osx currently, to be extended in the future.
+# - TRAVIS_PULL_REQUEST: The pull request number if the current job is a pull request, “false” if it’s not a pull request.
+# - TRAVIS_PULL_REQUEST_BRANCH: If the current job is a pull request, the name of the branch from which the PR originated. "" if the current job is a push build.
+# - TRAVIS_PULL_REQUEST_SHA: If the current job is a pull request, the commit SHA of the HEAD commit of the PR. If it is a push build, "".
+# - TRAVIS_PULL_REQUEST_SLUG: If the current job is a pull request, the slug (in the form owner_name/repo_name) of the repository from which the PR originated. If it is a push build, "".
+# - TRAVIS_REPO_SLUG: The slug (in form: owner_name/repo_name) of the repository currently being built. (for example, “travis-ci/travis-build”).
+# - TRAVIS_SECURE_ENV_VARS: Whether or not encrypted environment vars are being used. This value is either “true” or “false”.
+# - TRAVIS_SUDO: true or false based on whether sudo is enabled.
+# - TRAVIS_TEST_RESULT: is set to 0 if the build is successful and 1 if the build is broken.
+# - TRAVIS_TAG: If the current build is for a git tag, this variable is set to the tag’s name.
+
+# Language-specific builds expose additional environment variables representing the current version being used to run the build. Whether or not they’re set depends on the language you’re using.
+
+# - TRAVIS_DART_VERSION
+# - TRAVIS_GO_VERSION
+# - TRAVIS_HAXE_VERSION
+# - TRAVIS_JDK_VERSION
+# - TRAVIS_JULIA_VERSION
+# - TRAVIS_NODE_VERSION
+# - TRAVIS_OTP_RELEASE
+# - TRAVIS_PERL_VERSION
+# - TRAVIS_PHP_VERSION
+# - TRAVIS_PYTHON_VERSION
+# - TRAVIS_R_VERSION
+# - TRAVIS_RUBY_VERSION
+# - TRAVIS_RUST_VERSION
+# - TRAVIS_SCALA_VERSION
