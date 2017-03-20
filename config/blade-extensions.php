@@ -30,8 +30,8 @@ return [
 //        },
 
     ],
-    // These directives will be ignored. Only unit-tests will include these.
-    // copy/paste to 'directives' to activate.
+    // `optional` directives are only used for **unit-testing**
+    // If you want to use any of the `optional` directives, you have to **manually copy/paste** them to `directives`.
     'optional'          => [
         'macro'    => 'Radic\\BladeExtensions\\Directives\\MacroDirective',
         'endmacro' => 'Radic\\BladeExtensions\\Directives\\EndmacroDirective',

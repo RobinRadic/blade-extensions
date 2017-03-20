@@ -69,7 +69,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             $directives = new DirectiveRegistry($app);
             $directives->register($app[ 'config' ][ 'blade-extensions.directives' ]);
             if ($this->app->environment() === 'testing') {
-                $directives->register($app[ 'config' ][ 'blade-extensions.optional' ]);
+                $directives->register($app[ 'config' ]->get('blade-extensions.optional', []));
             }
             $directives->setVersionOverrides($app[ 'config' ][ 'blade-extensions.version_overrides' ]);
 

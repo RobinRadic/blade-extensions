@@ -23,7 +23,8 @@ subtitle: Blade Extensions
   - [@minify / @endminify](directives/minify.md)  Minify inline code. Supports CSS, JS and HTML.
   - [@macro / @endmacro/ @macrodef](directives/macro.md) Defining and running macros
   - [@markdown/ @endmarkdown](directives/markdown.md) Render markdown content
-  - [@spaceless / @endspaceless](directives/spaceless.md) Render the content without spaces 
+  - [@spaceless / @endspaceless](directives/spaceless.md) Render the content without spaces
+  - [@ifsection](directives/ifsection.md) check section
 - Develop
   - [Overview](develop/overview.md) Explains how `BladeExtensions` is structured and executed. 
   - [Directives](develop/directives.md) Explains how to add, extend and test directives.
@@ -133,6 +134,18 @@ return [
         // manually by uncommenting 
         //'spaceless' => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
         //'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
+    ],
+    // `optional` directives are only used for **unit-testing**
+    // If you want to use any of the `optional` directives, you have to **manually copy/paste** them to `directives`.
+    'optional' => [       
+        // prefered, will call the 'handle' function. 
+        'directiveName' => 'Full\\Qualified\\Class\\Path',
+        
+        // alternatively you can let it call some other function
+        'directiveName2' => 'Full\\Qualified\\Class\\Path@fire',
+        
+        // Also possible, but shouldn't really 
+        'directiveName3' => function($value){}        
     ],
     
     // For most people, Version Overrides aren't interesting.

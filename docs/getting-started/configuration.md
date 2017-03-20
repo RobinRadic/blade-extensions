@@ -9,10 +9,13 @@ Using the published configuration file `config/blade-extensions.php`
 
 ## Directives
 
-> Tip: Comment out all directives you won't be using and uncomment all directives you want to use.
+> Tip: Comment out all directives you won't be using.
 
-Directives are named in the configuration file. So you can easily transform (for example) `@markdown` to `@md`.  
-Directives are either class paths, class paths with @ sign or closures.
+- Directives are named in the configuration file. So you can easily transform (for example) `@markdown` to `@md`.  
+- Directives are either class paths, class paths with @ sign or closures.
+- `optional` directives are only used for **unit-testing**
+- If you want to use any of the `optional` directives, you have to **manually copy/paste** them to `directives`.
+
 ```php
 [                                                                                                                                                                                                                                            
     'directives' => [
@@ -26,9 +29,22 @@ Directives are either class paths, class paths with @ sign or closures.
         'directiveName3' => function($value){
             return 'value: ' . ((int) $value + 50); 
         }
+    ],
+    'optional'          => [
+        // prefered, will call the 'handle' function. 
+        'directiveName4' => 'Full\\Qualified\\Class\\Path',
+        
+        // alternatively you can let it call some other function
+        'directiveName5' => 'Full\\Qualified\\Class\\Path@fire',
+        
+        // Also possible to use a closure. Not advisable 
+        'directiveName6' => function($value){
+            return 'value: ' . ((int) $value + 50); 
+        }
     ]
 ];
 ```
+
 
 ## Version overrides
 Override configured directives based on Laravel version. It uses [Composers version constraints](https://getcomposer.org/doc/articles/versions.md).
