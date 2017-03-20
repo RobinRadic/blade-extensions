@@ -11,6 +11,10 @@ if [ "$TRAVIS_PHP_VERSION" != "5.6" -o "$MINOR_VERSION" != "4" ]; then
     echo "Skipping. TRAVIS_PHP_VERSION=${TRAVIS_PHP_VERSION} MINOR_VERSION=${MINOR_VERSION}"
     exit 0
 fi
+if [ "$TRAVIS_BRANCH" == "master" ]; then
+    echo "Skipping, TRAVIS_BRANCH = $TRAVIS_BRANCH"
+    exit 0
+fi
 
 DONE="0"
 while [ $DONE -lt 1 ]; do

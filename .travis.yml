@@ -14,16 +14,15 @@ php:
   - 5.6
   - 7.0
 
-
 env:
-  # laravel/testbench minor versions. see 'install'
-  - MINOR_VERSION="0"
-  - MINOR_VERSION="1"
-  - MINOR_VERSION="2"
-  - MINOR_VERSION="3"
-  - MINOR_VERSION="4"
-
-
+  global:
+    secure: NW/EmJatN5pgd2RiwmZr5lK/+KX0JT+qaTi2i56h3uwNdq5w7iENI5RyJ8Gwz7RsKko3viAOKHmxJO5gYOA4FDR8Jc9l8Ioa6Pvw9Tw5l2Nv+KvIX2UPp4UuxLeJulMuqRnumR4S+dLpPh6xfDf/3aNyxVdZPp4Oui89PEnU/eY=
+  matrix:
+    - MINOR_VERSION="0"
+    - MINOR_VERSION="1"
+    - MINOR_VERSION="2"
+    - MINOR_VERSION="3"
+    - MINOR_VERSION="4"
 
 
 ###############
