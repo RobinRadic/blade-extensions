@@ -33,7 +33,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/blade-extensions.php' => config_path('blade-extensions.php'),
+            __DIR__.'/../config/blade-extensions.php' => config_path('blade-extensions.php'),
         ], 'config');
     }
 
@@ -44,7 +44,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/blade-extensions.php', 'blade-extensions');
+        $this->mergeConfigFrom(__DIR__.'/../config/blade-extensions.php', 'blade-extensions');
 
         $this->registerDirectiveRegistry();
 
@@ -91,12 +91,10 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
     protected function registerAliases()
     {
-
-
         $aliases = [
-            'blade-extensions'            => [ BladeExtensions::class, Contracts\BladeExtensions::class ],
-            'blade-extensions.directives' => [ DirectiveRegistry::class, Contracts\DirectiveRegistry::class ],
-            'blade-extensions.helpers'    => [ HelperRepository::class, Contracts\HelperRepository::class ],
+            'blade-extensions'            => [BladeExtensions::class, Contracts\BladeExtensions::class],
+            'blade-extensions.directives' => [DirectiveRegistry::class, Contracts\DirectiveRegistry::class],
+            'blade-extensions.helpers'    => [HelperRepository::class, Contracts\HelperRepository::class],
         ];
 
         foreach ($aliases as $key => $aliases) {
@@ -107,7 +105,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     }
 
     /**
-     * registerContextualBindings method
+     * registerContextualBindings method.
      *
      * @return void
      */

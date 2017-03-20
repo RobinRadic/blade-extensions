@@ -15,5 +15,4 @@ class EndIfSectionDirective  extends AbstractDirective
 {
     /** @var string */
     protected $replace = '$1<?php endif; ?>$2';
-
 }

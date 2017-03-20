@@ -30,7 +30,6 @@ foreach(app('blade-extensions.helpers')->get('loop')->getLastStack()->getItems()
 ?>
 EOT;
 
-
     /**
      * DumpDirective constructor.
      */
@@ -38,5 +37,4 @@ EOT;
     {
         $helpers->put('loop', new \Radic\BladeExtensions\Helpers\Loop\LoopHelper());
     }
-
 }

@@ -93,7 +93,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
         if (null === $this->hooker) {
             foreach ($this->getNames() as $name) {
                 $this->getCompiler()->extend(function ($value) use ($name) {
-                    return $this->call($name, [ $value ]);
+                    return $this->call($name, [$value]);
                 });
             }
         } else {
@@ -115,7 +115,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
     public function register($name, $handler = null)
     {
         if ($handler === null) {
-            foreach ((array)$name as $directiveName => $directiveHandler) {
+            foreach ((array) $name as $directiveName => $directiveHandler) {
                 $this->register($directiveName, $directiveHandler);
             }
         } elseif ($handler instanceof DirectiveInterface && false === $handler::isCompatible()) {
@@ -161,18 +161,18 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
             $handler = $this->get($name);
             if ($handler instanceof Closure) {
                 $this->resolved[ $name ] = function ($value) use ($name, $handler) {
-                    return call_user_func_array($handler, [ $value ]);
+                    return call_user_func_array($handler, [$value]);
                 };
             } else {
-                $class    = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
-                $method   = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
+                $class = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
+                $method = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
                 $instance = $this->app->make($class);
                 if ($instance instanceof DirectiveInterface === false) {
                     throw InvalidDirectiveClassException::forClass($instance);
                 }
                 $instance->setName($name);
                 $this->resolved[ $name ] = function ($value) use ($name, $instance, $method) {
-                    return call_user_func_array([ $instance, $method ], [ $value ]);
+                    return call_user_func_array([$instance, $method], [$value]);
                 };
             }
         }

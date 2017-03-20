@@ -13,7 +13,6 @@ namespace Radic\BladeExtensions\Directives;
 
 use Radic\BladeExtensions\Contracts\HelperRepository;
 
-
 /**
  * This is the class DumpDirective.
  *
@@ -41,6 +40,4 @@ EOT;
     {
         $helpers->put('dump', new \Radic\BladeExtensions\Helpers\DumpHelper());
     }
-
-
 }

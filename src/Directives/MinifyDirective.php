@@ -34,6 +34,4 @@ EOT;
     {
         $helpers->put('minifier', new MinifierHelper);
     }
-
-
 }

@@ -11,7 +11,6 @@
 
 namespace Radic\BladeExtensions\Helpers\Markdown;
 
-
 /**
  * Markdown transformer Helpers.
  *
@@ -47,7 +46,7 @@ class MarkdownHelper
     }
 
     /**
-     * Set the parser value
+     * Set the parser value.
      *
      * @param \Radic\BladeExtensions\Helpers\Markdown\MarkdownParserInterface $parser
      *
@@ -56,8 +55,7 @@ class MarkdownHelper
     public function setParser(MarkdownParserInterface $parser)
     {
         $this->parser = $parser;
+
         return $this;
     }
-
-
 }

@@ -14,7 +14,6 @@ namespace Radic\BladeExtensions\Directives;
 /**
  * This is the class IfSectionDirective.
  *
- * @package Radic\BladeExtensions\Directives
  * @author  Robin Radic
  */
 class IfSectionDirective extends AbstractDirective
