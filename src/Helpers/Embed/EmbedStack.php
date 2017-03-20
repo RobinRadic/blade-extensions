@@ -161,7 +161,7 @@ class EmbedStack implements Factory
      */
     protected function write($content, $name = null)
     {
-        $tmpDir = storage_path('blade-extensions');
+        $tmpDir = storage_path('framework/views/blade-extensions');
         if (! $this->files->exists($tmpDir)) {
             $this->files->makeDirectory($tmpDir);
         }
@@ -183,7 +183,7 @@ class EmbedStack implements Factory
      */
     protected function remove($name)
     {
-        $tmpDir = storage_path('blade-extensions');
+        $tmpDir = storage_path('framework/views/blade-extensions');
         $path = path_join($tmpDir, $name);
         $this->files->delete($path);
 
@@ -294,5 +294,17 @@ class EmbedStack implements Factory
     public function replaceNamespace($namespace, $hints)
     {
         return call_user_func_array([$this->viewFactory, 'replaceNamespace'], func_get_args());
+    }
+
+    /**
+     * Dynamically call the view factory instance.
+     *
+     * @param  string  $method
+     * @param  array   $parameters
+     * @return mixed
+     */
+    public function __call($method, $parameters)
+    {
+        return call_user_func_array([$this->viewFactory, $method], $parameters);
     }
 }

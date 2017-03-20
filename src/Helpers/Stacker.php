@@ -46,7 +46,7 @@ abstract class Stacker
      */
     public function start()
     {
-        $stackItem = static::create(func_get_args());
+        $stackItem = static::create($args = func_get_args());
         array_push($this->stack, $stackItem);
         $stackItem->start();
 

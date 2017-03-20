@@ -27,7 +27,7 @@ class EmbedDirective extends AbstractDirective
 $1<?php app('blade-extensions.helpers')->get('embed')->start($2); ?>
 $1<?php app('blade-extensions.helpers')->get('embed')->current()->setData(\$__data)->setContent(<<<'EOT_'
 $3
-\EOT_
+EOT_
 ); ?>
 $1<?php app('blade-extensions.helpers')->get('embed')->end(); ?>
 EOT;
