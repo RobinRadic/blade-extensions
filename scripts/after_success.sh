@@ -48,4 +48,11 @@ git commit -m "Apply style fixes for ${TRAVIS_BUILD_ID} [skip ci]"
 HASH=$(cat .git/HEAD)
 git checkout $TRAVIS_BRANCH
 git cherry-pick $HASH
-git push
+git push origin $TRAVIS_BRANCH
+
+if [ "$TRAVIS_BRANCH" == "develop" ]; then
+    git remote set-branches --add origin master
+    git checkout master
+    git merge develop
+    git push origin master
+fi

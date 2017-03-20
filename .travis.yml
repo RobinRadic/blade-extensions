@@ -46,20 +46,20 @@ script:
   - vendor/bin/php-cs-fixer -q fix src --config-file=.php_cs || true
   - vendor/bin/phpunit
 
-#after_success:
-#  - ./scripts/after_success.sh
-
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: scripts/after_success.sh
-  on:
-    repo: RobinRadic/blade-extensions
-    tags: false
-#    all_branches: true
-    php: 5.6
-    condition: $MINOR_VERSION = "4"
-    branch: develop
+after_success:
+  - ./scripts/after_success.sh
+#
+#deploy:
+#  skip_cleanup: true
+#  provider: script
+#  script: scripts/after_success.sh
+#  on:
+#    repo: RobinRadic/blade-extensions
+#    tags: false
+##    all_branches: true
+#    php: 5.6
+#    condition: $MINOR_VERSION = "4"
+#    branch: develop
 
 
 #  - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
