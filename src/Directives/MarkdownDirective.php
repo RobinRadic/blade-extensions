@@ -11,6 +11,10 @@
 
 namespace Radic\BladeExtensions\Directives;
 
+use Radic\BladeExtensions\Contracts\HelperRepository;
+use Radic\BladeExtensions\Helpers\Markdown\MarkdownHelper;
+use Radic\BladeExtensions\Helpers\Markdown\MarkdownParserInterface;
+
 /**
  * This is the class MarkdownDirective.
  *
@@ -18,9 +22,21 @@ namespace Radic\BladeExtensions\Directives;
  */
 class MarkdownDirective extends AbstractDirective
 {
-    protected $pattern = '/(?<!\\w)(\\s*)@NAME(?!\\()(\\s*)/';
+    protected $pattern = '/(?<!\w)(\s*)@NAME(?!\()(\s*)/';
 
     protected $replace = <<<'EOT'
 $1<?php echo app("blade-extensions.helpers")->get('markdown')->parse(<<<'EOT'$2
 EOT;
+
+    /**
+     * MarkdownDirective constructor.
+     *
+     * @param \Radic\BladeExtensions\Contracts\HelperRepository               $helpers
+     * @param \Radic\BladeExtensions\Helpers\Markdown\MarkdownParserInterface $markdown
+     */
+    public function __construct(HelperRepository $helpers, MarkdownParserInterface $markdown)
+    {
+        $helpers->put('markdown', $helper = new MarkdownHelper());
+        $helper->setParser($markdown);
+    }
 }

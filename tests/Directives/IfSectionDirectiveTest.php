@@ -10,17 +10,12 @@
  */
 namespace Radic\Tests\BladeExtensions\Directives;
 
-use Radic\BladeExtensions\Helpers\BladeMatchers;
+use Radic\BladeExtensions\Directives\AbstractDirective;
 use Radic\Tests\BladeExtensions\DirectiveTestCase;
 
 class IfSectionDirectiveTest extends DirectiveTestCase
 {
-    public function testSettersAndGetters()
-    {
-        $this->testSetPattern = BladeMatchers::$createMatcher;
-        parent::testSettersAndGetters();
-    }
-
+    protected $testSetPattern = AbstractDirective::OPEN_MATCHER;
 
     /**
      * getDirectiveClass method.

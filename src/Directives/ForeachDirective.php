@@ -11,6 +11,8 @@
 
 namespace Radic\BladeExtensions\Directives;
 
+use Radic\BladeExtensions\Contracts\HelperRepository;
+
 /**
  * This is the class ForeachDirective.
  *
@@ -27,4 +29,14 @@ foreach(app('blade-extensions.helpers')->get('loop')->getLastStack()->getItems()
     $loop = app('blade-extensions.helpers')->get('loop')->loop();
 ?>
 EOT;
+
+
+    /**
+     * DumpDirective constructor.
+     */
+    public function __construct(HelperRepository $helpers)
+    {
+        $helpers->put('loop', new \Radic\BladeExtensions\Helpers\Loop\LoopHelper());
+    }
+
 }

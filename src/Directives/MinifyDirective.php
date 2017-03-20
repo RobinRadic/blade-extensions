@@ -11,6 +11,9 @@
 
 namespace Radic\BladeExtensions\Directives;
 
+use Radic\BladeExtensions\Contracts\HelperRepository;
+use Radic\BladeExtensions\Helpers\Minifier\MinifierHelper;
+
 /**
  * This is the class MinifyDirective.
  *
@@ -23,4 +26,14 @@ class MinifyDirective extends AbstractDirective
     protected $replace = <<<'EOT'
 $1<?php echo app("blade-extensions.helpers")->get('minifier')->open$2; ?>
 EOT;
+
+    /**
+     * MinifyDirective constructor.
+     */
+    public function __construct(HelperRepository $helpers)
+    {
+        $helpers->put('minifier', new MinifierHelper);
+    }
+
+
 }

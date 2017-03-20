@@ -11,6 +11,9 @@
 
 namespace Radic\BladeExtensions\Directives;
 
+use Radic\BladeExtensions\Contracts\HelperRepository;
+
+
 /**
  * This is the class DumpDirective.
  *
@@ -19,6 +22,7 @@ namespace Radic\BladeExtensions\Directives;
 class DumpDirective extends AbstractDirective
 {
     protected $pattern = self::OPEN_MATCHER;
+
     protected $replace = <<<'EOT'
     $1<?php 
     app('blade-extensions.helpers')
@@ -29,4 +33,14 @@ class DumpDirective extends AbstractDirective
         ->dump$2 
     ?>$3
 EOT;
+
+    /**
+     * DumpDirective constructor.
+     */
+    public function __construct(HelperRepository $helpers)
+    {
+        $helpers->put('dump', new \Radic\BladeExtensions\Helpers\DumpHelper());
+    }
+
+
 }

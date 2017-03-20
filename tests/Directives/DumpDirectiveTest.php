@@ -6,14 +6,14 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\Tests\BladeExtensions\Directives;
 
 use Radic\Tests\BladeExtensions\DirectiveTestCase;
 
-class DebugDirectiveTest extends DirectiveTestCase
+class DumpDirectiveTest extends DirectiveTestCase
 {
     /**
      * getDirectiveClass method.
@@ -21,6 +21,6 @@ class DebugDirectiveTest extends DirectiveTestCase
      */
     protected function getDirectiveClass()
     {
-        return 'Radic\BladeExtensions\Directives\DebugDirective';
+        return 'Radic\BladeExtensions\Directives\DumpDirective';
     }
 }

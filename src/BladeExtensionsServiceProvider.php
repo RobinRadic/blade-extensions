@@ -19,6 +19,9 @@
 namespace Radic\BladeExtensions;
 
 use Illuminate\Support\ServiceProvider;
+use Radic\BladeExtensions\Directives\MarkdownDirective;
+use Radic\BladeExtensions\Helpers\Markdown\CebeMarkdownParser;
+use Radic\BladeExtensions\Helpers\Markdown\MarkdownParserInterface;
 
 /**
  * This is the class BladeExtensionsServiceProvider.
@@ -51,6 +54,8 @@ class BladeExtensionsServiceProvider extends ServiceProvider
 
         $this->registerAliases();
 
+        $this->registerContextualBindings();
+
         $this->app->booted(function ($app) {
             $app[ 'blade-extensions.directives' ]->hookToCompiler();
         });
@@ -80,18 +85,14 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected function registerHelperRepository()
     {
         $this->app->singleton('blade-extensions.helpers', function ($app) {
-            $helpers = new HelperRepository();
-            $helpers->put('loop', $app->build(Helpers\Loop\LoopHelper::class));
-            $helpers->put('embed', $app->build(Helpers\Embed\EmbedHelper::class));
-            $helpers->put('minifier', $app->build(Helpers\Minifier\MinifierHelper::class));
-            $helpers->put('markdown', $app->build(Helpers\Markdown\MarkdownHelper::class));
-            $helpers->put('dump', $app->build(Helpers\DumpHelper::class));
-            return $helpers;
+            return new HelperRepository();
         });
     }
 
     protected function registerAliases()
     {
+
+
         $aliases = [
             'blade-extensions'            => [ BladeExtensions::class, Contracts\BladeExtensions::class ],
             'blade-extensions.directives' => [ DirectiveRegistry::class, Contracts\DirectiveRegistry::class ],
@@ -103,5 +104,15 @@ class BladeExtensionsServiceProvider extends ServiceProvider
                 $this->app->alias($key, $alias);
             }
         }
+    }
+
+    /**
+     * registerContextualBindings method
+     *
+     * @return void
+     */
+    protected function registerContextualBindings()
+    {
+        $this->app->when(MarkdownDirective::class)->needs(MarkdownParserInterface::class)->give(CebeMarkdownParser::class);
     }
 }
