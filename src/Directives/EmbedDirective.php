@@ -13,7 +13,6 @@ namespace Radic\BladeExtensions\Directives;
 
 use Illuminate\Contracts\Container\Container;
 use Radic\BladeExtensions\Contracts\HelperRepository;
-use Radic\BladeExtensions\Helpers\Stacker;
 
 /**
  * This is the class EmbedDirective.
@@ -40,5 +39,4 @@ EOT;
     {
         $helpers->put('embed', $container->make(\Radic\BladeExtensions\Helpers\Embed\EmbedHelper::class));
     }
-
 }

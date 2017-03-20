@@ -11,13 +11,10 @@
 
 namespace Radic\BladeExtensions\Directives;
 
-use Radic\BladeExtensions\Helpers\BladeMatchers;
-
 class ElseIfSectionDirective extends AbstractDirective
 {
     /** @var string */
     protected $replace = '$1<?php elseif( $__env->hasSection$2 ) : ?>$3';
 
     protected $pattern = self::OPEN_MATCHER;
-
 }

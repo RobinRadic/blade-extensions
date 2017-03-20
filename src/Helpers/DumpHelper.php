@@ -11,11 +11,9 @@
 
 namespace Radic\BladeExtensions\Helpers;
 
-
 /**
  * This is the class DumpHelper.
  *
- * @package Radic\BladeExtensions\Helpers
  * @author  Robin Radic
  */
 class DumpHelper
@@ -46,7 +44,7 @@ class DumpHelper
     }
 
     /**
-     * setEnv method
+     * setEnv method.
      *
      * @param \Illuminate\View\Factory $env
      * @param array                    $vars
@@ -57,14 +55,15 @@ class DumpHelper
      */
     public function setEnvData($env, $vars, $path = null)
     {
-        $this->env  = $env;
+        $this->env = $env;
         $this->vars = $vars;
         $this->path = $path;
+
         return $this;
     }
 
     /**
-     * dump method
+     * dump method.
      *
      * @param mixed ...$vars
      *
@@ -85,11 +84,12 @@ class DumpHelper
                 $dumper($var);
             }
         }
+
         return $this;
     }
 
     /**
-     * resolveDumper method
+     * resolveDumper method.
      *
      * @return \Closure
      */
@@ -103,11 +103,12 @@ class DumpHelper
                 }
             }
         }
+
         return $this->dumper;
     }
 
     /**
-     * setDefaultDumpers method
+     * setDefaultDumpers method.
      *
      * @return void
      */
@@ -160,7 +161,7 @@ class DumpHelper
     }
 
     /**
-     * Set the dumpers value
+     * Set the dumpers value.
      *
      * @param array $dumpers
      *
@@ -169,11 +170,12 @@ class DumpHelper
     public function setDumpers($dumpers)
     {
         $this->dumpers = $dumpers;
+
         return $this;
     }
 
     /**
-     * Set the env value
+     * Set the env value.
      *
      * @param \Illuminate\View\Factory $env
      *
@@ -182,11 +184,12 @@ class DumpHelper
     public function setEnv($env)
     {
         $this->env = $env;
+
         return $this;
     }
 
     /**
-     * Set the vars value
+     * Set the vars value.
      *
      * @param array $vars
      *
@@ -195,11 +198,12 @@ class DumpHelper
     public function setVars($vars)
     {
         $this->vars = $vars;
+
         return $this;
     }
 
     /**
-     * Set the path value
+     * Set the path value.
      *
      * @param null|string $path
      *
@@ -208,8 +212,7 @@ class DumpHelper
     public function setPath($path = null)
     {
         $this->path = $path;
+
         return $this;
     }
-
-
 }
