@@ -15,8 +15,7 @@ return [
         'unset' => 'Radic\\BladeExtensions\\Directives\\UnsetDirective',
 
         'breakpoint' => 'Radic\\BladeExtensions\\Directives\\BreakpointDirective',
-        'debug'      => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
-        'dump'       => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
+        'dump'       => 'Radic\\BladeExtensions\\Directives\\DumpDirective',
 
         'foreach'    => 'Radic\\BladeExtensions\\Directives\\ForeachDirective',
         'endforeach' => 'Radic\\BladeExtensions\\Directives\\EndforeachDirective',

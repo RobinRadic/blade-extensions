@@ -85,7 +85,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             $helpers->put('embed', $app->build(Helpers\Embed\EmbedHelper::class));
             $helpers->put('minifier', $app->build(Helpers\Minifier\MinifierHelper::class));
             $helpers->put('markdown', $app->build(Helpers\Markdown\MarkdownHelper::class));
-
+            $helpers->put('dump', $app->build(Helpers\DumpHelper::class));
             return $helpers;
         });
     }

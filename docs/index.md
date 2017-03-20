@@ -17,7 +17,7 @@ subtitle: Blade Extensions
   - [Push To Stack](features/push-to-stack.md) Programatically push content to a stack inside blade views. 
 - Directives  
   - [@set / @unset](directives/set-unset.md) Setting and unsetting of values
-  - [@breakpoint / @debug / @dump](directives/breakpoint-debug-dump.md) Dump values and set breakpoints in views
+  - [@breakpoint / @dump](directives/breakpoint-dump.md) Dump values to screen and set breakpoints in views
   - [@foreach / @break / @continue](directives/foreach-break-continue.md) Loop data and extras (similair to twig `$loop`)
   - [@embed](directives/embed.md) Think of embed as combining the behaviour of include and extends. (similair to twig `embed`)
   - [@minify / @endminify](directives/minify.md)  Minify inline code. Supports CSS, JS and HTML.

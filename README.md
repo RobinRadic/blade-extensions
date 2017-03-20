@@ -27,7 +27,7 @@ The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high l
 #### Directives
 All directives can be disabled, extended or replaced.
 - [@set / @unset](docs/directives/set-unset.md) Setting and unsetting of values
-- [@breakpoint / @debug / @dump](docs/directives/breakpoint-debug-dump.md) Dump values and set breakpoints in views
+- [@breakpoint / @dump](docs/directives/breakpoint-dump.md) Dump values to screen and set breakpoints in views
 - [@foreach / @break / @continue](docs/directives/foreach-break-continue.md) Loop data and extras (similair to twig `$loop`)
 - [@embed](docs/directives/embed.md) Think of embed as combining the behaviour of include and extends. (similair to twig `embed`)
 - [@minify / @endminify](docs/directives/minify.md)  Minify inline code. Supports CSS, JS and HTML.

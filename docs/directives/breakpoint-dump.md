@@ -17,12 +17,12 @@ Radic\BladeExtensions\Directives\BreakpointAbstractDirective::setFunction('other
 
 
 @dump
------
-The `@dump` directive will dump the entire view environment in the same way the `@debug` displays it.
-
-@debug
 ------
-The `@debug($var)` directive will dump the `$var` using the either `raveren/kint`, Symfony's `VarDumper` or the regular `var_dump` method. 
+
+1. The `@dump()` directive will dump the entire view environment.
+2. The `@dump($var)` directive will dump the `$var`.
+ 
+Using the either `raveren/kint`, Laravels `HtmlDumper`, Symfony's `VarDumper` or the regular `var_dump` method. 
 
 #### Kint?
 By installing the `raveren/kint` package. The debug output will be greatly improved. For more information, check out [this page](https://github.com/raveren/kint).
