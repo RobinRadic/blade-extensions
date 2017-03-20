@@ -56,7 +56,8 @@ git push origin $TRAVIS_BRANCH
 
 if [ "$TRAVIS_BRANCH" == "develop" ]; then
     git remote set-branches --add origin master
-    git checkout master
+    git fetch
+    git checkout -b master origin/master
     git merge develop
     git push origin master
 fi
