@@ -66,10 +66,11 @@ abstract class AbstractDirective implements DirectiveInterface
     public function handle($value)
     {
         $replacement = preg_replace($this->getProcessedPattern(), $this->getReplace(), $value);
-        $error       = array_flip(get_defined_constants(true)[ 'pcre' ])[ preg_last_error() ];
+        $error = array_flip(get_defined_constants(true)[ 'pcre' ])[ preg_last_error() ];
         if ($error !== 'PREG_NO_ERROR') {
             throw PregReplaceException::error($error, get_called_class());
         }
+
         return $replacement;
     }
 

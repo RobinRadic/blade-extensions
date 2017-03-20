@@ -14,12 +14,12 @@ namespace Radic\BladeExtensions\Exceptions;
 use RuntimeException;
 
 /**
- * {@inheritDoc}
+ * {@inheritdoc}
  */
 class PregReplaceException extends RuntimeException
 {
     /**
-     * error method
+     * error method.
      *
      * @param $error
      * @param $class
