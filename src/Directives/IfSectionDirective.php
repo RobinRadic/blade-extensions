@@ -11,8 +11,6 @@
 
 namespace Radic\BladeExtensions\Directives;
 
-use Radic\BladeExtensions\Helpers\BladeMatchers;
-
 /**
  * This is the class IfSectionDirective.
  *
@@ -24,15 +22,5 @@ class IfSectionDirective extends AbstractDirective
     /** @var string */
     protected $replace = '$1<?php if( $__env->hasSection$2 ) : ?>$3';
 
-
-    /**
-     * getPattern method
-     *
-     * @return string
-     */
-    public function getPattern()
-    {
-        return BladeMatchers::$createMatcher;
-    }
-
+    protected $pattern = self::OPEN_MATCHER;
 }

@@ -34,8 +34,15 @@ class IfSectionDirectiveTest extends DirectiveTestCase
 
     public function testView()
     {
-        $rendered = $this->render('directives.if-section.if-section', []);
+        $this->assertIfSection('title', [ 'title:title' ]);
+        $this->assertIfSection('title-content', [ 'title:title', 'content:content' ]);
+        $this->assertIfSection('title-sidebar-content', [ 'title:title', 'sidebar:sidebar', 'content:content' ]);
+    }
 
-        $this->assertTrue(true);
+    protected function assertIfSection($view, array $arr)
+    {
+        $out = explode(';', preg_replace("/\n/", "", $this->render('directives.if-section.' . $view)));
+        array_pop($out);
+        $this->assertEquals($arr, $out);
     }
 }

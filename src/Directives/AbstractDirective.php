@@ -5,8 +5,8 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license   https://radic.mit-license.org MIT License
- * @version   7.0.0 Radic\BladeExtensions
+ * @license https://radic.mit-license.org MIT License
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Directives;
@@ -20,8 +20,11 @@ use Radic\BladeExtensions\Helpers\Util;
  */
 abstract class AbstractDirective implements DirectiveInterface
 {
+    const PLAIN_MATCHER = '/(?<!\w)(\s*)@NAME(\s*)/';
+    const OPEN_MATCHER = '/(?<!\w)(\s*)@NAME(\s*\(.*\))/';
+
     /** @var string */
-    protected $pattern = '/(?<!\\w)(\\s*)@NAME(\\s*)/';
+    protected $pattern = self::PLAIN_MATCHER;
 
     /** @var string The string to use for replacement */
     protected $replace;

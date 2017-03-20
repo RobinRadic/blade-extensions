@@ -30,7 +30,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/blade-extensions.php' => config_path('blade-extensions.php'),
+            __DIR__ . '/../config/blade-extensions.php' => config_path('blade-extensions.php'),
         ], 'config');
     }
 
@@ -41,7 +41,7 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/blade-extensions.php', 'blade-extensions');
+        $this->mergeConfigFrom(__DIR__ . '/../config/blade-extensions.php', 'blade-extensions');
 
         $this->registerDirectiveRegistry();
 
@@ -52,14 +52,14 @@ class BladeExtensionsServiceProvider extends ServiceProvider
         $this->registerAliases();
 
         $this->app->booted(function ($app) {
-            $app['blade-extensions.directives']->hookToCompiler();
+            $app[ 'blade-extensions.directives' ]->hookToCompiler();
         });
     }
 
     protected function registerBladeExtensions()
     {
         $this->app->singleton('blade-extensions', function ($app) {
-            return new BladeExtensions($app['blade-extensions.directives'], $app['blade-extensions.helpers']);
+            return new BladeExtensions($app[ 'blade-extensions.directives' ], $app[ 'blade-extensions.helpers' ]);
         });
     }
 
@@ -67,8 +67,11 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $this->app->singleton('blade-extensions.directives', function ($app) {
             $directives = new DirectiveRegistry($app);
-            $directives->register($app['config']['blade-extensions.directives']);
-            $directives->setVersionOverrides($app['config']['blade-extensions.version_overrides']);
+            $directives->register($app[ 'config' ][ 'blade-extensions.directives' ]);
+            if ($this->app->environment() === 'testing') {
+                $directives->register($app[ 'config' ][ 'blade-extensions.optional' ]);
+            }
+            $directives->setVersionOverrides($app[ 'config' ][ 'blade-extensions.version_overrides' ]);
 
             return $directives;
         });
@@ -90,9 +93,9 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected function registerAliases()
     {
         $aliases = [
-            'blade-extensions'            => [BladeExtensions::class, Contracts\BladeExtensions::class],
-            'blade-extensions.directives' => [DirectiveRegistry::class, Contracts\DirectiveRegistry::class],
-            'blade-extensions.helpers'    => [HelperRepository::class, Contracts\HelperRepository::class],
+            'blade-extensions'            => [ BladeExtensions::class, Contracts\BladeExtensions::class ],
+            'blade-extensions.directives' => [ DirectiveRegistry::class, Contracts\DirectiveRegistry::class ],
+            'blade-extensions.helpers'    => [ HelperRepository::class, Contracts\HelperRepository::class ],
         ];
 
         foreach ($aliases as $key => $aliases) {

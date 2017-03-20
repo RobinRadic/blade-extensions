@@ -16,13 +16,23 @@ return [
 
         'breakpoint' => 'Radic\\BladeExtensions\\Directives\\BreakpointDirective',
         'debug'      => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
-//        'dump'       => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
+        'dump'       => 'Radic\\BladeExtensions\\Directives\\DebugDirective',
 
         'foreach'    => 'Radic\\BladeExtensions\\Directives\\ForeachDirective',
         'endforeach' => 'Radic\\BladeExtensions\\Directives\\EndforeachDirective',
         'break'      => 'Radic\\BladeExtensions\\Directives\\BreakDirective',
         'continue'   => 'Radic\\BladeExtensions\\Directives\\ContinueDirective',
 
+        'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective'
+
+//        'closure' => function ($value) {
+//            return $value;
+//        },
+
+    ],
+    // These directives will be ignored. Only unit-tests will include these.
+    // copy/paste to 'directives' to activate.
+    'optional'          => [
         'macro'    => 'Radic\\BladeExtensions\\Directives\\MacroDirective',
         'endmacro' => 'Radic\\BladeExtensions\\Directives\\EndmacroDirective',
         'macrodef' => 'Radic\\BladeExtensions\\Directives\\MacrodefDirective',
@@ -33,17 +43,12 @@ return [
         'minify'    => 'Radic\\BladeExtensions\\Directives\\MinifyDirective',
         'endminify' => 'Radic\\BladeExtensions\\Directives\\EndminifyDirective',
 
-        'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
+        'spaceless'    => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
+        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
 
-//        'spaceless'    => 'Radic\\BladeExtensions\\Directives\\SpacelessDirective',
-//        'endspaceless' => 'Radic\\BladeExtensions\\Directives\\EndspacelessDirective',
-
-        'ifSection' => 'Radic\\BladeExtensions\\Directives\\IfSectionDirective',
-        'elseIfSection' => 'Radic\\BladeExtensions\\Directives\\ElseIfSectionDirective',
-        'endIfSection' => 'Radic\\BladeExtensions\\Directives\\EndIfSectionDirective',
-//        'closure' => function ($value) {
-//            return $value;
-//        },
+        'ifsection'     => 'Radic\\BladeExtensions\\Directives\\IfSectionDirective',
+        'elseifsection' => 'Radic\\BladeExtensions\\Directives\\ElseIfSectionDirective',
+        'endifsection'  => 'Radic\\BladeExtensions\\Directives\\EndIfSectionDirective',
     ],
     'version_overrides' => [
 
@@ -53,8 +58,8 @@ return [
         // NOTE: If you have used blade-extensions's @foreach before blade-extensions:7.0.0, you probably want to remove this
         // TL:DR: upgrading to blade-extension 7.0.0? then remove this
         '>=5.3' => [
-            'break'    => null,
-            'continue' => null,
+            'break'      => null,
+            'continue'   => null,
             'foreach'    => null,
             'endforeach' => null,
         ],

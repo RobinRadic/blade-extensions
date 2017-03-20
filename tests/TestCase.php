@@ -6,7 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
- * @version 7.0.0
+ * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\Tests\BladeExtensions;
@@ -28,9 +28,6 @@ abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->app->config->set('blade_extensions.markdown.views', true);
-        $this->app->config->set('blade_extensions.markdown.enabled', true);
-        $this->app->config->set('blade_extensions.markdown.renderer', 'Radic\\BladeExtensions\\Renderers\\ParsedownRenderer');
     }
 
     /** @var DataGenerator */
