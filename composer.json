@@ -49,6 +49,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "7.0.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Radic\\BladeExtensions\\BladeExtensionsServiceProvider"
+            ]
         }
     }
 }
