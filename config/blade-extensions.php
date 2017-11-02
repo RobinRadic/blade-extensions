@@ -22,7 +22,7 @@ return [
         'break'      => 'Radic\\BladeExtensions\\Directives\\BreakDirective',
         'continue'   => 'Radic\\BladeExtensions\\Directives\\ContinueDirective',
 
-        'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective'
+        'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
 
 //        'closure' => function ($value) {
 //            return $value;
