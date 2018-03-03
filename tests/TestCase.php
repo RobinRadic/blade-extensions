@@ -1,17 +1,16 @@
 <?php
 /**
- * Copyright (c) 2017. Robin Radic.
+ * Copyright (c) 2018. Robin Radic.
  *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
- * @copyright 2017 Robin Radic
+ * @copyright 2018 Robin Radic
  * @license https://radic.mit-license.org MIT License
  * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\Tests\BladeExtensions;
 
-use Laradic\Testing\Laravel\Traits\ViewTester;
 use PHPUnit\Framework\Assert;
 
 /**
