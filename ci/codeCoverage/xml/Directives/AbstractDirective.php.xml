@@ -1,0 +1,1061 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="AbstractDirective.php" path="/Directives">
+    <totals>
+      <lines total="149" comments="72" code="77" executable="16" executed="14" percent="87.50"/>
+      <methods count="9" tested="7" percent="77.78"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="0" percent="0.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Radic\BladeExtensions\Directives\AbstractDirective" start="23" executable="16" executed="14" crap="10.2">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="Radic\BladeExtensions\Directives"/>
+      <method name="isCompatible" signature="isCompatible()" start="45" end="48" crap="2.00" executable="1" executed="0" coverage="0"/>
+      <method name="getProcessedPattern" signature="getProcessedPattern()" start="55" end="58" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="handle" signature="handle($value)" start="67" end="76" crap="2.03" executable="5" executed="4" coverage="80"/>
+      <method name="getPattern" signature="getPattern()" start="83" end="86" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setPattern" signature="setPattern($pattern)" start="95" end="100" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="getReplace" signature="getReplace()" start="107" end="110" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setReplace" signature="setReplace($replace)" start="119" end="124" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="getName" signature="getName()" start="131" end="134" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setName" signature="setName($name)" start="143" end="148" crap="1" executable="2" executed="2" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="57">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+      </line>
+      <line nr="69">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+      </line>
+      <line nr="70">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+      </line>
+      <line nr="71">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+      </line>
+      <line nr="75">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+      </line>
+      <line nr="85">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+      <line nr="97">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+      <line nr="99">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+      <line nr="109">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+      <line nr="121">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+      <line nr="123">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+      <line nr="133">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+      <line nr="145">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+      <line nr="147">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testReplace"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ContinueDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\DumpDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndforeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndmarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndminifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EndspacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\ForeachDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacroDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MacrodefDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MinifyDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SpacelessDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testSettersAndGetters"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="3">
+        <token name="T_DOC_COMMENT"> * Copyright (c) 2017. Robin Radic.</token>
+      </line>
+      <line no="4">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="5">
+        <token name="T_DOC_COMMENT"> * The license can be found in the package and online at https://radic.mit-license.org.</token>
+      </line>
+      <line no="6">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="7">
+        <token name="T_DOC_COMMENT"> * @copyright 2017 Robin Radic</token>
+      </line>
+      <line no="8">
+        <token name="T_DOC_COMMENT"> * @license https://radic.mit-license.org MIT License</token>
+      </line>
+      <line no="9">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="10">
+        <token name="T_DOC_COMMENT"> * @version 7.0.0 Radic\BladeExtensions</token>
+      </line>
+      <line no="11">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="12"/>
+      <line no="13">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Radic</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">BladeExtensions</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Directives</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="14"/>
+      <line no="15">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Radic</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">BladeExtensions</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Exceptions</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">PregReplaceException</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="16">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Radic</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">BladeExtensions</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Helpers</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Util</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="17"/>
+      <line no="18">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="19">
+        <token name="T_DOC_COMMENT"> * This is the class Directive.</token>
+      </line>
+      <line no="20">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="21">
+        <token name="T_DOC_COMMENT"> * @author  Robin Radic</token>
+      </line>
+      <line no="22">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="23">
+        <token name="T_ABSTRACT">abstract</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">AbstractDirective</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DirectiveInterface</token>
+      </line>
+      <line no="24">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">PLAIN_MATCHER</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'/(?&lt;!\w)(\s*)@NAME(\s*)/'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">OPEN_MATCHER</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'/(?&lt;!\w)(\s*)@NAME(\s*\(.*\))/'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="27"/>
+      <line no="28">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/** @var string */</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$pattern</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">self</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">PLAIN_MATCHER</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="30"/>
+      <line no="31">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/** @var string The string to use for replacement */</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$replace</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="33"/>
+      <line no="34">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/** @var string The name to use */</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="36"/>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/** @var string */</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STATIC">static</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$compatibility</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'5.*'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="39"/>
+      <line no="40">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="41">
+        <token name="T_DOC_COMMENT">     * isCompatible method.</token>
+      </line>
+      <line no="42">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="43">
+        <token name="T_DOC_COMMENT">     * @return bool</token>
+      </line>
+      <line no="44">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STATIC">static</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">isCompatible</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="46">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="47">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Util</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">isCompatibleVersionConstraint</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STATIC">static</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_VARIABLE">$compatibility</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="49"/>
+      <line no="50">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="51">
+        <token name="T_DOC_COMMENT">     * getProcessedPattern method.</token>
+      </line>
+      <line no="52">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="53">
+        <token name="T_DOC_COMMENT">     * @return mixed</token>
+      </line>
+      <line no="54">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="55">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getProcessedPattern</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="57">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">str_replace</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'NAME'</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getPattern</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="58">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="59"/>
+      <line no="60">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="61">
+        <token name="T_DOC_COMMENT">     * handle method.</token>
+      </line>
+      <line no="62">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="63">
+        <token name="T_DOC_COMMENT">     * @param $value</token>
+      </line>
+      <line no="64">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="65">
+        <token name="T_DOC_COMMENT">     * @return mixed</token>
+      </line>
+      <line no="66">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="67">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">handle</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$value</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="68">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="69">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$replacement</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">preg_replace</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getProcessedPattern</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getReplace</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$value</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="70">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$error</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">array_flip</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">get_defined_constants</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">true</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'pcre'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_STRING">preg_last_error</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="71">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$error</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_NOT_IDENTICAL">!==</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'PREG_NO_ERROR'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="72">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">PregReplaceException</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">error</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$error</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">get_called_class</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="73">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="74"/>
+      <line no="75">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$replacement</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="76">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="77"/>
+      <line no="78">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="79">
+        <token name="T_DOC_COMMENT">     * getPattern method.</token>
+      </line>
+      <line no="80">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="81">
+        <token name="T_DOC_COMMENT">     * @return string</token>
+      </line>
+      <line no="82">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="83">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getPattern</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="84">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="85">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">pattern</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="86">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="87"/>
+      <line no="88">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="89">
+        <token name="T_DOC_COMMENT">     * setPattern method.</token>
+      </line>
+      <line no="90">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="91">
+        <token name="T_DOC_COMMENT">     * @param string $pattern</token>
+      </line>
+      <line no="92">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="93">
+        <token name="T_DOC_COMMENT">     * @return $this</token>
+      </line>
+      <line no="94">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="95">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setPattern</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$pattern</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="96">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="97">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">pattern</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$pattern</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="98"/>
+      <line no="99">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="100">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="101"/>
+      <line no="102">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="103">
+        <token name="T_DOC_COMMENT">     * getReplace method.</token>
+      </line>
+      <line no="104">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="105">
+        <token name="T_DOC_COMMENT">     * @return string</token>
+      </line>
+      <line no="106">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="107">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getReplace</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="108">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="109">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">replace</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="110">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="111"/>
+      <line no="112">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="113">
+        <token name="T_DOC_COMMENT">     * setReplace method.</token>
+      </line>
+      <line no="114">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="115">
+        <token name="T_DOC_COMMENT">     * @param string $replace</token>
+      </line>
+      <line no="116">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="117">
+        <token name="T_DOC_COMMENT">     * @return $this</token>
+      </line>
+      <line no="118">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="119">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setReplace</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$replace</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="120">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="121">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">replace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$replace</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="122"/>
+      <line no="123">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="124">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="125"/>
+      <line no="126">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="127">
+        <token name="T_DOC_COMMENT">     * getName method.</token>
+      </line>
+      <line no="128">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="129">
+        <token name="T_DOC_COMMENT">     * @return string</token>
+      </line>
+      <line no="130">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="131">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="132">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="133">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">name</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="134">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="135"/>
+      <line no="136">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="137">
+        <token name="T_DOC_COMMENT">     * setName method.</token>
+      </line>
+      <line no="138">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="139">
+        <token name="T_DOC_COMMENT">     * @param string $name</token>
+      </line>
+      <line no="140">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="141">
+        <token name="T_DOC_COMMENT">     * @return $this</token>
+      </line>
+      <line no="142">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="143">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="144">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="145">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">name</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="146"/>
+      <line no="147">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="148">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="149">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="150"/>
+    </source>
+  </file>
+</phpunit>

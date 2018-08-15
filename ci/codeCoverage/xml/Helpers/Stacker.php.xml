@@ -1,0 +1,819 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="Stacker.php" path="/Helpers">
+    <totals>
+      <lines total="139" comments="69" code="70" executable="19" executed="19" percent="100.00"/>
+      <methods count="9" tested="9" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Radic\BladeExtensions\Helpers\Stacker" start="28" executable="19" executed="19" crap="11">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="Radic\BladeExtensions\Helpers"/>
+      <method name="__construct" signature="__construct(Container $container)" start="39" end="42" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="start" signature="start()" start="47" end="54" crap="1" executable="4" executed="4" coverage="100"/>
+      <method name="create" signature="create($args = [])" start="63" end="63" crap="1" executable="0" executed="0" coverage="100"/>
+      <method name="getStack" signature="getStack()" start="70" end="73" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="reset" signature="reset()" start="78" end="81" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="current" signature="current()" start="88" end="93" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="end" signature="end()" start="98" end="104" crap="2" executable="4" executed="4" coverage="100"/>
+      <method name="isEmpty" signature="isEmpty()" start="111" end="114" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getContainer" signature="getContainer()" start="121" end="124" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setContainer" signature="setContainer($container)" start="133" end="138" crap="1" executable="2" executed="2" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="41">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetSetContainer"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testTest"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetSetContainer"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testTest"/>
+      </line>
+      <line nr="42">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\EmbedDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetSetContainer"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testTest"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetSetContainer"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testTest"/>
+      </line>
+      <line nr="49">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="50">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="51">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="53">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="72">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+      </line>
+      <line nr="80">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+      </line>
+      <line nr="81">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testResetEndStack"/>
+      </line>
+      <line nr="90">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="92">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="100">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="101">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="102">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="104">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="113">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetCurrentOrEmptyStack"/>
+      </line>
+      <line nr="123">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetSetContainer"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetStartStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testResetEndStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetCurrentOrEmptyStack"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetSetContainer"/>
+      </line>
+      <line nr="135">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetSetContainer"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetSetContainer"/>
+      </line>
+      <line nr="137">
+        <covered by="Radic\Tests\BladeExtensions\Helpers\Embed\EmbedStackerTest::testGetSetContainer"/>
+        <covered by="Radic\Tests\BladeExtensions\Helpers\StackerTest::testGetSetContainer"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="3">
+        <token name="T_DOC_COMMENT"> * Copyright (c) 2017. Robin Radic.</token>
+      </line>
+      <line no="4">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="5">
+        <token name="T_DOC_COMMENT"> * The license can be found in the package and online at https://radic.mit-license.org.</token>
+      </line>
+      <line no="6">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="7">
+        <token name="T_DOC_COMMENT"> * @copyright 2017 Robin Radic</token>
+      </line>
+      <line no="8">
+        <token name="T_DOC_COMMENT"> * @license https://radic.mit-license.org MIT License</token>
+      </line>
+      <line no="9">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="10">
+        <token name="T_DOC_COMMENT"> * @version 7.0.0 Radic\BladeExtensions</token>
+      </line>
+      <line no="11">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="12"/>
+      <line no="13">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Radic</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">BladeExtensions</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Helpers</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="14"/>
+      <line no="15">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Illuminate</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Contracts</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Container</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Container</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="16"/>
+      <line no="17">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="18">
+        <token name="T_DOC_COMMENT"> * Manages the Loop instances.</token>
+      </line>
+      <line no="19">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="20">
+        <token name="T_DOC_COMMENT"> * @version        2.1.0</token>
+      </line>
+      <line no="21">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="22">
+        <token name="T_DOC_COMMENT"> * @author         Robin Radic</token>
+      </line>
+      <line no="23">
+        <token name="T_DOC_COMMENT"> * @license        MIT License - http://radic.mit-license.org</token>
+      </line>
+      <line no="24">
+        <token name="T_DOC_COMMENT"> * @copyright      (2011-2014, Robin Radic - Radic Technologies</token>
+      </line>
+      <line no="25">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="26">
+        <token name="T_DOC_COMMENT"> * @see           http://robin.radic.nl/blade-extensions</token>
+      </line>
+      <line no="27">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="28">
+        <token name="T_ABSTRACT">abstract</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Stacker</token>
+      </line>
+      <line no="29">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$container</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="31"/>
+      <line no="32">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="33">
+        <token name="T_DOC_COMMENT">     * The stack of Loop instances.</token>
+      </line>
+      <line no="34">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="35">
+        <token name="T_DOC_COMMENT">     * @var array</token>
+      </line>
+      <line no="36">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$stack</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="38"/>
+      <line no="39">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Container</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$container</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">container</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$container</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="43"/>
+      <line no="44">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="45">
+        <token name="T_DOC_COMMENT">     * Adds a Loop to the stack.</token>
+      </line>
+      <line no="46">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="47">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">start</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$stackItem</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STATIC">static</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">create</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$args</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">func_get_args</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">array_push</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stack</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$stackItem</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$stackItem</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">start</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="52"/>
+      <line no="53">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$stackItem</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="54">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="55"/>
+      <line no="56">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="57">
+        <token name="T_DOC_COMMENT">     * create.</token>
+      </line>
+      <line no="58">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="59">
+        <token name="T_DOC_COMMENT">     * @param array $args</token>
+      </line>
+      <line no="60">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="61">
+        <token name="T_DOC_COMMENT">     * @return mixed</token>
+      </line>
+      <line no="62">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="63">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ABSTRACT">abstract</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">create</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$args</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="64"/>
+      <line no="65">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="66">
+        <token name="T_DOC_COMMENT">     * Returns the stack.</token>
+      </line>
+      <line no="67">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="68">
+        <token name="T_DOC_COMMENT">     * @return array</token>
+      </line>
+      <line no="69">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="70">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getStack</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="71">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="72">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stack</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="73">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="74"/>
+      <line no="75">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="76">
+        <token name="T_DOC_COMMENT">     * Resets the stack.</token>
+      </line>
+      <line no="77">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="78">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">reset</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="79">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="80">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stack</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="81">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="82"/>
+      <line no="83">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="84">
+        <token name="T_DOC_COMMENT">     * To be called first inside the foreach loop. Returns the current loop.</token>
+      </line>
+      <line no="85">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="86">
+        <token name="T_DOC_COMMENT">     * @return mixed $current The current loop data</token>
+      </line>
+      <line no="87">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="88">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">current</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="89">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="90">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$current</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">end</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stack</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="91"/>
+      <line no="92">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$current</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="93">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="94"/>
+      <line no="95">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="96">
+        <token name="T_DOC_COMMENT">     * To be called before the end of the loop.</token>
+      </line>
+      <line no="97">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="98">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">end</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="99">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="100">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">isEmpty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="101">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STATIC">static</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">current</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">end</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="102">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STRING">array_pop</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stack</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="103">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="104">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="105"/>
+      <line no="106">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="107">
+        <token name="T_DOC_COMMENT">     * isEmpty method.</token>
+      </line>
+      <line no="108">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="109">
+        <token name="T_DOC_COMMENT">     * @return bool</token>
+      </line>
+      <line no="110">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="111">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">isEmpty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="112">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="113">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">count</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stack</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">0</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="114">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="115"/>
+      <line no="116">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="117">
+        <token name="T_DOC_COMMENT">     * get container value.</token>
+      </line>
+      <line no="118">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="119">
+        <token name="T_DOC_COMMENT">     * @return \Illuminate\Contracts\Container\Container</token>
+      </line>
+      <line no="120">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="121">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getContainer</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="122">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="123">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">container</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="124">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="125"/>
+      <line no="126">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="127">
+        <token name="T_DOC_COMMENT">     * Set the container value.</token>
+      </line>
+      <line no="128">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="129">
+        <token name="T_DOC_COMMENT">     * @param \Illuminate\Contracts\Container\Container $container</token>
+      </line>
+      <line no="130">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="131">
+        <token name="T_DOC_COMMENT">     * @return Stacker</token>
+      </line>
+      <line no="132">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="133">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setContainer</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$container</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="134">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="135">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">container</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$container</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="136"/>
+      <line no="137">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="138">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="139">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="140"/>
+    </source>
+  </file>
+</phpunit>

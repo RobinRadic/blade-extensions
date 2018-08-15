@@ -11,7 +11,6 @@
 
 namespace Radic\Tests\BladeExtensions;
 
-use Laradic\Testing\Laravel\Traits\ViewTester;
 
 /**
  * {@inheritdoc}

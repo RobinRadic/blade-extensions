@@ -21,7 +21,6 @@ use PHPUnit\Framework\Assert;
  */
 abstract class TestCase extends \Laradic\Testing\Laravel\AbstractTestCase
 {
-    use ViewTester;
 
     /** {@inheritdoc} */
     public function setUp()

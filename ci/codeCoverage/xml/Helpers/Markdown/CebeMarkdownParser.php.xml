@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="CebeMarkdownParser.php" path="/Helpers/Markdown">
+    <totals>
+      <lines total="52" comments="30" code="22" executable="4" executed="3" percent="75.00"/>
+      <methods count="2" tested="1" percent="50.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="0" percent="0.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Radic\BladeExtensions\Helpers\Markdown\CebeMarkdownParser" start="22" executable="4" executed="3" crap="2.06">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="Radic\BladeExtensions\Helpers\Markdown"/>
+      <method name="__construct" signature="__construct(GithubMarkdown $markdown)" start="31" end="35" crap="1" executable="3" executed="3" coverage="100"/>
+      <method name="parse" signature="parse($text)" start="48" end="51" crap="2.00" executable="1" executed="0" coverage="0"/>
+    </class>
+    <coverage>
+      <line nr="33">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+      </line>
+      <line nr="34">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+      </line>
+      <line nr="35">
+        <covered by="Radic\Tests\BladeExtensions\Directives\BreakpointDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\IfSectionDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testPatternIsValidRegex"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\MarkdownDirectiveTest::testSettersAndGetters"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\SetDirectiveTest::testView"/>
+        <covered by="Radic\Tests\BladeExtensions\Directives\UnsetDirectiveTest::testView"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="3">
+        <token name="T_DOC_COMMENT"> * Copyright (c) 2017. Robin Radic.</token>
+      </line>
+      <line no="4">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="5">
+        <token name="T_DOC_COMMENT"> * The license can be found in the package and online at https://radic.mit-license.org.</token>
+      </line>
+      <line no="6">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="7">
+        <token name="T_DOC_COMMENT"> * @copyright 2017 Robin Radic</token>
+      </line>
+      <line no="8">
+        <token name="T_DOC_COMMENT"> * @license https://radic.mit-license.org MIT License</token>
+      </line>
+      <line no="9">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="10">
+        <token name="T_DOC_COMMENT"> * @version 7.0.0 Radic\BladeExtensions</token>
+      </line>
+      <line no="11">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="12"/>
+      <line no="13">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Radic</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">BladeExtensions</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Helpers</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">Markdown</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="14"/>
+      <line no="15">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">cebe</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">markdown</token>
+        <token name="T_NS_SEPARATOR">\</token>
+        <token name="T_STRING">GithubMarkdown</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="16"/>
+      <line no="17">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="18">
+        <token name="T_DOC_COMMENT"> * This is the class CebeMarkdownParser.</token>
+      </line>
+      <line no="19">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="20">
+        <token name="T_DOC_COMMENT"> * @author  Robin Radic</token>
+      </line>
+      <line no="21">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="22">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">CebeMarkdownParser</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MarkdownParserInterface</token>
+      </line>
+      <line no="23">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$markdown</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="25"/>
+      <line no="26">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="27">
+        <token name="T_DOC_COMMENT">     * CebeMarkdownParser constructor.</token>
+      </line>
+      <line no="28">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="29">
+        <token name="T_DOC_COMMENT">     * @param \cebe\markdown\GithubMarkdown $markdown</token>
+      </line>
+      <line no="30">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">GithubMarkdown</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$markdown</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">markdown</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$markdown</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$markdown</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">html5</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">true</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="36"/>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="38">
+        <token name="T_DOC_COMMENT">     * {@inheritdoc}</token>
+      </line>
+      <line no="39">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="40"/>
+      <line no="41">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="42">
+        <token name="T_DOC_COMMENT">     * parse method.</token>
+      </line>
+      <line no="43">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="44">
+        <token name="T_DOC_COMMENT">     * @param string $text</token>
+      </line>
+      <line no="45">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="46">
+        <token name="T_DOC_COMMENT">     * @return string</token>
+      </line>
+      <line no="47">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">parse</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$text</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">markdown</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">parse</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$text</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="52">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="53"/>
+    </source>
+  </file>
+</phpunit>
