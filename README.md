@@ -13,16 +13,22 @@ A _Laravel_ package providing additional Blade functionality.
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 
+
 ### Version 7.0
 <!-- [**Documentation**](http://robin.radic.nl/blade-extensions) (or alternatively read it [**here**](docs/index.md) on github) -->
 - [**Documentation**](docs/index.md)
-- [**Changelog & Upgrade guide**](docs/prologue/changelog-upgrade-guide.md)
+- [**Changelog**](docs/prologue/changelog-upgrade-guide.md)
+- [**Code of Conduct**](docs/CODE_OF_CONDUCT.md)  
+- [**Contributing**](docs/CONTRIBUTING.md)  
+- [**Pull Request Template**](docs/PULL_REQUEST_TEMPLATE.md)  
+- [**Issue Template**](docs/ISSUE_TEMPLATE.md)
 
 #### Features
 - Compatible with [all Laravel 5 versions](https://travis-ci.org/RobinRadic/blade-extensions)
-- **20+** Configurable, extendable, replaceable, testable directives.
+- **20+** Configurable, nameable, extendable, replaceable, testable directives.
 - Compile Blade strings **with** variables `BladeExtensions::compileString($string, array $vars = [])`
 - Progamatically push content to a stack inside blade view(s) `BladeExtensions::pushToStack($stack, $views, $content)`
+- Even if you **don't use any of the directives**, Blade Extensions provides you with a great method to manage your directives.
 
 #### Directives
 All directives can be disabled, extended or replaced.

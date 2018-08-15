@@ -10,7 +10,6 @@
  * @version   7.0.0 Radic\BladeExtensions
  */
 
-
 /*
  * reads travis build JSON
  * checks:                      > returns:
@@ -27,7 +26,7 @@ function ex($msg)
     exit(0);
 }
 
-$content = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . '.curl-output');
+$content = file_get_contents(__DIR__.DIRECTORY_SEPARATOR.'.curl-output');
 if ($content === false) {
     ex('error');
 }
@@ -38,7 +37,7 @@ if ($state === 'failed' || $state === 'canceled') {
     ex('fail');
 }
 
-$total  = count($content[ 'jobs' ]);
+$total = count($content[ 'jobs' ]);
 $passed = 0;
 foreach ($content[ 'jobs' ] as $job) {
     $state = $job[ 'state' ];
@@ -51,9 +50,9 @@ foreach ($content[ 'jobs' ] as $job) {
 }
 
 // -1 : there will be 1 job doing this script that is started and not finished
-if ($passed < ($total -1)) {
+if ($passed < ($total - 1)) {
     ex('wait');
-} elseif ($passed === ($total -1)) {
+} elseif ($passed === ($total - 1)) {
     ex('pass');
 } else {
     ex('error');

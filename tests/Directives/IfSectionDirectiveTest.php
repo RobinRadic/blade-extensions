@@ -8,6 +8,7 @@
  * @license https://radic.mit-license.org MIT License
  * @version 7.0.0 Radic\BladeExtensions
  */
+
 namespace Radic\Tests\BladeExtensions\Directives;
 
 use Radic\BladeExtensions\Directives\AbstractDirective;
@@ -29,14 +30,14 @@ class IfSectionDirectiveTest extends DirectiveTestCase
 
     public function testView()
     {
-        $this->assertIfSection('title', [ 'title:title' ]);
-        $this->assertIfSection('title-content', [ 'title:title', 'content:content' ]);
-        $this->assertIfSection('title-sidebar-content', [ 'title:title', 'sidebar:sidebar', 'content:content' ]);
+        $this->assertIfSection('title', ['title:title']);
+        $this->assertIfSection('title-content', ['title:title', 'content:content']);
+        $this->assertIfSection('title-sidebar-content', ['title:title', 'sidebar:sidebar', 'content:content']);
     }
 
     protected function assertIfSection($view, array $arr)
     {
-        $out = explode(';', preg_replace("/\n/", "", $this->render('directives.if-section.' . $view)));
+        $out = explode(';', preg_replace("/\n/", '', $this->render('directives.if-section.'.$view)));
         array_pop($out);
         $this->assertEquals($arr, $out);
     }

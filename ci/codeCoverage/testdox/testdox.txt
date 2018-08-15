@@ -1,0 +1,1 @@
+Radic\Tests\BladeExtensions\BladeExtensionsServiceProvider
