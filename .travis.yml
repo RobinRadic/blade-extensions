@@ -39,10 +39,13 @@ before_install:
 
 
 install:
-  - composer require orchestra/testbench:3.${MINOR_VERSION}.*
 #  - composer require phpunit/phpunit:${PHPUNIT_VERSION}.*
   #- composer require friendsofphp/php-cs-fixer:~2.0
   - composer install --prefer-source --no-interaction
+  - composer require orchestra/testbench:3.${MINOR_VERSION}.* --no-interaction
+  - php --version
+  - composer --version
+  - vendor/bin/phpunit --version
 
 script:
   #- vendor/bin/php-cs-fixer -q fix src --config-file=.php_cs || true
