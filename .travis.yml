@@ -39,10 +39,8 @@ before_install:
 
 
 install:
-#  - composer require phpunit/phpunit:${PHPUNIT_VERSION}.*
   #- composer require friendsofphp/php-cs-fixer:~2.0
-  - composer install --prefer-source --no-interaction
-  - composer require orchestra/testbench:3.${MINOR_VERSION}.* --no-interaction
+  - composer require phpunit/phpunit:~${PHPUNIT_VERSION}.0 orchestra/testbench:3.${MINOR_VERSION}.* --no-interaction
   - php --version
   - composer --version
   - vendor/bin/phpunit --version
