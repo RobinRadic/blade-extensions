@@ -41,15 +41,15 @@ before_install:
 install:
   - composer require orchestra/testbench:3.${MINOR_VERSION}.*
   - composer require phpunit/phpunit:*
-  - composer require friendsofphp/php-cs-fixer:~2.0
+  #- composer require friendsofphp/php-cs-fixer:~2.0
   - composer install --prefer-source --no-interaction
 
 script:
-  - vendor/bin/php-cs-fixer -q fix src --config-file=.php_cs || true
+  #- vendor/bin/php-cs-fixer -q fix src --config-file=.php_cs || true
   - vendor/bin/phpunit
 
-after_success:
-  - ./scripts/after_success.sh
+#after_success:
+#  - ./scripts/after_success.sh
 #
 #deploy:
 #  skip_cleanup: true
