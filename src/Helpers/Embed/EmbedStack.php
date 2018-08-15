@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -20,10 +21,12 @@ use Radic\BladeExtensions\Helpers\UsesSections;
  * Manages the Loop instances.
  *
  * @version        2.1.0
+ *
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright      (2011-2014, Robin Radic - Radic Technologies
- * @link           http://robin.radic.nl/blade-extensions
+ *
+ * @see           http://robin.radic.nl/blade-extensions
  */
 class EmbedStack implements Factory
 {
@@ -134,6 +137,7 @@ class EmbedStack implements Factory
      * getViewFileContent.
      *
      * @return string
+     *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     protected function getViewFileContent()
@@ -162,10 +166,10 @@ class EmbedStack implements Factory
     protected function write($content, $name = null)
     {
         $tmpDir = storage_path('framework/views/blade-extensions');
-        if (! $this->files->exists($tmpDir)) {
+        if (!$this->files->exists($tmpDir)) {
             $this->files->makeDirectory($tmpDir);
         }
-        if (is_null($name)) {
+        if (null === $name) {
             $name = str_slug($this->viewPath).'__'.uniqid(time(), true);
         }
         $path = path_join($tmpDir, $name);
@@ -193,7 +197,7 @@ class EmbedStack implements Factory
     /**
      * Determine if a given view exists.
      *
-     * @param  string $view
+     * @param string $view
      *
      * @return bool
      */
@@ -205,9 +209,9 @@ class EmbedStack implements Factory
     /**
      * Get the evaluated view contents for the given path.
      *
-     * @param  string $path
-     * @param  array  $data
-     * @param  array  $mergeData
+     * @param string $path
+     * @param array  $data
+     * @param array  $mergeData
      *
      * @return \Illuminate\Contracts\View\View
      */
@@ -219,9 +223,9 @@ class EmbedStack implements Factory
     /**
      * Get the evaluated view contents for the given view.
      *
-     * @param  string $view
-     * @param  array  $data
-     * @param  array  $mergeData
+     * @param string $view
+     * @param array  $data
+     * @param array  $mergeData
      *
      * @return \Illuminate\Contracts\View\View
      */
@@ -233,8 +237,8 @@ class EmbedStack implements Factory
     /**
      * Add a piece of shared data to the environment.
      *
-     * @param  array|string $key
-     * @param  mixed        $value
+     * @param array|string $key
+     * @param mixed        $value
      *
      * @return mixed
      */
@@ -246,9 +250,9 @@ class EmbedStack implements Factory
     /**
      * Register a view composer event.
      *
-     * @param  array|string    $views
-     * @param  \Closure|string $callback
-     * @param  int|null        $priority
+     * @param array|string    $views
+     * @param \Closure|string $callback
+     * @param int|null        $priority
      *
      * @return array
      */
@@ -260,8 +264,8 @@ class EmbedStack implements Factory
     /**
      * Register a view creator event.
      *
-     * @param  array|string    $views
-     * @param  \Closure|string $callback
+     * @param array|string    $views
+     * @param \Closure|string $callback
      *
      * @return array
      */
@@ -273,10 +277,8 @@ class EmbedStack implements Factory
     /**
      * Add a new namespace to the loader.
      *
-     * @param  string       $namespace
-     * @param  string|array $hints
-     *
-     * @return void
+     * @param string       $namespace
+     * @param string|array $hints
      */
     public function addNamespace($namespace, $hints)
     {
@@ -286,8 +288,8 @@ class EmbedStack implements Factory
     /**
      * Replace the namespace hints for the given namespace.
      *
-     * @param  string       $namespace
-     * @param  string|array $hints
+     * @param string       $namespace
+     * @param string|array $hints
      *
      * @return $this
      */
@@ -299,8 +301,9 @@ class EmbedStack implements Factory
     /**
      * Dynamically call the view factory instance.
      *
-     * @param  string  $method
-     * @param  array   $parameters
+     * @param string $method
+     * @param array  $parameters
+     *
      * @return mixed
      */
     public function __call($method, $parameters)

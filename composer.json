@@ -21,6 +21,7 @@
         "laradic/support": "~1.0",
         "composer/semver": "~1.4",
         "illuminate/filesystem": "~5.0",
+        "illuminate/contracts": "~5.0",
         "illuminate/support": "~5.0",
         "illuminate/view": "~5.0"
     },
@@ -31,7 +32,7 @@
     },
     "require-dev": {
         "laradic/testing": "~1.0.1",
-        "mockery/mockery": "0.9.*",
+        "mockery/mockery": "*",
         "cebe/markdown": "~1.1",
         "matthiasmullie/minify": "~1.3"
     },

@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -25,7 +26,7 @@ trait BladeMatchers
     /**
      * Get the regular expression for a generic Blade function.
      *
-     * @param  string $function
+     * @param string $function
      *
      * @return string
      */
@@ -37,7 +38,7 @@ trait BladeMatchers
     /**
      * Get the regular expression for a generic Blade function.
      *
-     * @param  string $function
+     * @param string $function
      *
      * @return string
      */
@@ -49,7 +50,7 @@ trait BladeMatchers
     /**
      * Create a plain Blade matcher.
      *
-     * @param  string $function
+     * @param string $function
      *
      * @return string
      */

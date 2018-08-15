@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -34,7 +35,7 @@ class HelperRepository implements Contracts\HelperRepository
      */
     public function put($key, $instance)
     {
-        $this->helpers[ $key ] = $instance;
+        $this->helpers[$key] = $instance;
     }
 
     /**
@@ -42,7 +43,7 @@ class HelperRepository implements Contracts\HelperRepository
      */
     public function has($key)
     {
-        return isset($this->helpers[ $key ]);
+        return isset($this->helpers[$key]);
     }
 
     /**
@@ -50,6 +51,6 @@ class HelperRepository implements Contracts\HelperRepository
      */
     public function get($key, $default = null)
     {
-        return $this->has($key) ? $this->helpers[ $key ] : $default;
+        return $this->has($key) ? $this->helpers[$key] : $default;
     }
 }

@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0
  */
 
@@ -58,7 +59,7 @@ class MinifierHelper
     {
         $types = ['html', 'css', 'js'];
 
-        if (! in_array($type, $types, true)) {
+        if (!in_array($type, $types, true)) {
             $typeStr = implode(', ', $types);
             throw new \InvalidArgumentException("BladeExtensions Minifier could not minify your code, you haven't specified a valid type. Given: [{$type}]. Allowed: [{$typeStr}]");
         }
@@ -108,13 +109,13 @@ class MinifierHelper
         if ($this->shouldMinify($value)) {
             $replace = [
                 '/<!--[^\[](.*?)[^\]]-->/s' => '',
-                '/<\?php/'                  => '<?php ',
-                '/\n([\S])/'                => ' $1',
-                '/\r/'                      => '',
-                '/\n/'                      => '',
-                '/\t/'                      => ' ',
-                '/ +/'                      => ' ',
-                '/>\s</'                    => '><',
+                '/<\?php/' => '<?php ',
+                '/\n([\S])/' => ' $1',
+                '/\r/' => '',
+                '/\n/' => '',
+                '/\t/' => ' ',
+                '/ +/' => ' ',
+                '/>\s</' => '><',
             ];
 
             return preg_replace(

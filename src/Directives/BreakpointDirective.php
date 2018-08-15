@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -15,6 +16,7 @@ namespace Radic\BladeExtensions\Directives;
  * This is the class BreakpointDirective.
  *
  * @blade-directive @breakpoint
+ *
  * @author  Robin Radic
  */
 class BreakpointDirective extends AbstractDirective

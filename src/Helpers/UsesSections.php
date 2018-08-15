@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0
  */
 
@@ -19,7 +20,8 @@ use Illuminate\Contracts\View\Factory;
  * @author      Robin Radic
  * @license     MIT
  * @copyright   2011-2015, Robin Radic
- * @link        http://radic.mit-license.org
+ *
+ * @see        http://radic.mit-license.org
  */
 trait UsesSections
 {
@@ -42,6 +44,7 @@ trait UsesSections
      * setViewFactory.
      *
      * @param \Illuminate\Contracts\View\Factory $factory
+     *
      * @return $this
      */
     public function setViewFactory(Factory $factory)
@@ -64,9 +67,8 @@ trait UsesSections
     /**
      * Start injecting content into a section.
      *
-     * @param  string $section
-     * @param  string $content
-     * @return void
+     * @param string $section
+     * @param string $content
      */
     public function startSection($section, $content = '')
     {
@@ -82,8 +84,9 @@ trait UsesSections
     /**
      * Inject inline content into a section.
      *
-     * @param  string $section
-     * @param  string $content
+     * @param string $section
+     * @param string $content
+     *
      * @return SectionsTrait
      */
     public function inject($section, $content)
@@ -106,7 +109,8 @@ trait UsesSections
     /**
      * Stop injecting content into a section.
      *
-     * @param  bool $overwrite
+     * @param bool $overwrite
+     *
      * @return string
      */
     public function stopSection($overwrite = false)
@@ -143,8 +147,9 @@ trait UsesSections
     /**
      * Append content to a given section.
      *
-     * @param  string $section
-     * @param  string $content
+     * @param string $section
+     * @param string $content
+     *
      * @return SectionsTrait
      */
     protected function extendSection($section, $content)
@@ -161,8 +166,9 @@ trait UsesSections
     /**
      * Get the string contents of a section.
      *
-     * @param  string $section
-     * @param  string $default
+     * @param string $section
+     * @param string $default
+     *
      * @return string
      */
     public function yieldContent($section, $default = '')
@@ -223,7 +229,8 @@ trait UsesSections
     /**
      * Check if section exists.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return bool
      */
     public function hasSection($name)

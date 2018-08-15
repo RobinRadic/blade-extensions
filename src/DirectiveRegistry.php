@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -106,7 +107,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
      */
     public function getCompiler()
     {
-        return $this->app[ 'view' ]->getEngineResolver()->resolve('blade')->getCompiler();
+        return $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler();
     }
 
     /**
@@ -121,7 +122,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
         } elseif ($handler instanceof DirectiveInterface && false === $handler::isCompatible()) {
             return $this;
         } else {
-            $this->directives[ $name ] = $handler;
+            $this->directives[$name] = $handler;
         }
 
         return $this;
@@ -140,7 +141,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
      */
     public function get($name)
     {
-        return $this->directives[ $name ];
+        return $this->directives[$name];
     }
 
     /**
@@ -153,6 +154,7 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
 
     /**
      * {@inheritdoc}
+     *
      * @throws \Radic\BladeExtensions\Exceptions\InvalidDirectiveClassException
      */
     public function call($name, $params = [])
@@ -160,24 +162,24 @@ class DirectiveRegistry implements Contracts\DirectiveRegistry
         if (false === array_key_exists($name, $this->resolved)) {
             $handler = $this->get($name);
             if ($handler instanceof Closure) {
-                $this->resolved[ $name ] = function ($value) use ($name, $handler) {
+                $this->resolved[$name] = function ($value) use ($name, $handler) {
                     return call_user_func_array($handler, [$value]);
                 };
             } else {
-                $class = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 0 ] : $handler;
-                $method = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[ 1 ] : 'handle';
+                $class = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[0] : $handler;
+                $method = $this->isCallableWithAtSign($handler) ? explode('@', $handler)[1] : 'handle';
                 $instance = $this->app->make($class);
                 if ($instance instanceof DirectiveInterface === false) {
                     throw InvalidDirectiveClassException::forClass($instance);
                 }
                 $instance->setName($name);
-                $this->resolved[ $name ] = function ($value) use ($name, $instance, $method) {
+                $this->resolved[$name] = function ($value) use ($name, $instance, $method) {
                     return call_user_func_array([$instance, $method], [$value]);
                 };
             }
         }
 
-        return call_user_func_array($this->resolved[ $name ], $params);
+        return call_user_func_array($this->resolved[$name], $params);
     }
 
     /**

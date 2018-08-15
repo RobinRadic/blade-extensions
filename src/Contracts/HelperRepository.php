@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -40,8 +41,8 @@ interface HelperRepository
     /**
      * Get a helper instance from the repository.
      *
-     * @param     string $key The accessor key
-     * @param null $default The
+     * @param string $key     The accessor key
+     * @param null   $default The
      *
      * @return mixed
      */

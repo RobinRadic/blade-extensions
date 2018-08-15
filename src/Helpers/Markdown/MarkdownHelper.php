@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -15,10 +16,12 @@ namespace Radic\BladeExtensions\Helpers\Markdown;
  * Markdown transformer Helpers.
  *
  * @version                 2.1.0
+ *
  * @author                  Robin Radic
  * @license                 MIT License - http://radic.mit-license.org
  * @copyright               2011-2015, Robin Radic
- * @link                    http://robin.radic.nl/blade-extensions
+ *
+ * @see                    http://robin.radic.nl/blade-extensions
  */
 class MarkdownHelper
 {

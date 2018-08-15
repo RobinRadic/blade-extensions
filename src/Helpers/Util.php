@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license   https://radic.mit-license.org MIT License
+ *
  * @version   7.0.0 Radic\BladeExtensions
  */
 
@@ -27,7 +28,7 @@ class Util
      */
     public static function getLaravelVersion()
     {
-        return preg_split('/\s/', \Illuminate\Foundation\Application::VERSION)[ 0 ];
+        return preg_split('/\s/', \Illuminate\Foundation\Application::VERSION)[0];
     }
 
     /**

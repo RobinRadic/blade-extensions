@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -45,17 +46,18 @@ class BladeExtensions implements Contracts\BladeExtensions
     {
         $this->directives = $directives;
         $this->helpers = $helpers;
-        $this->fs = new Filesystem;
+        $this->fs = new Filesystem();
         $this->cachePath = storage_path('blade-extensions');
     }
 
     /**
      * getCompiler method.
+     *
      * @return \Illuminate\View\Compilers\BladeCompiler
      */
     protected function getCompiler()
     {
-        if (! isset($this->compiler)) {
+        if (!isset($this->compiler)) {
             if ($this->fs->exists($this->cachePath) === false) {
                 $this->fs->makeDirectory($this->cachePath);
             }
@@ -93,7 +95,7 @@ class BladeExtensions implements Contracts\BladeExtensions
      */
     protected function getCompiledContent($filePath, array $vars = [])
     {
-        if (is_array($vars) && ! empty($vars)) {
+        if (is_array($vars) && !empty($vars)) {
             extract($vars, EXTR_OVERWRITE);
         }
         ob_start();

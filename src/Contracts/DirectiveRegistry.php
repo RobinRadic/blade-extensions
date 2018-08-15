@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -22,6 +23,7 @@ interface DirectiveRegistry
 {
     /**
      * isHooked method.
+     *
      * @return bool
      */
     public function isHooked();
@@ -48,10 +50,11 @@ interface DirectiveRegistry
     /**
      * Register a directive (or array of directives).
      *
-     * @param      string|array         $name
-     * @param      null|string|\Closure $handler
+     * @param string|array         $name
+     * @param null|string|\Closure $handler
      *
      * @return \Radic\BladeExtensions\DirectiveRegistry
+     *
      * @internal param bool $override
      */
     public function register($name, $handler = null);

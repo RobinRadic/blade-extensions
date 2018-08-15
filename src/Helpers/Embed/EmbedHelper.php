@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -18,10 +19,12 @@ use Radic\BladeExtensions\Helpers\Stacker;
  * Manages the Loop instances.
  *
  * @version        2.1.0
+ *
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright      (2011-2014, Robin Radic - Radic Technologies
- * @link           http://robin.radic.nl/blade-extensions
+ *
+ * @see           http://robin.radic.nl/blade-extensions
  */
 class EmbedHelper extends Stacker
 {

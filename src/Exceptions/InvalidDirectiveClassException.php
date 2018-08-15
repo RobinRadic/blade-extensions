@@ -5,8 +5,9 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license https://radic.mit-license.org MIT License
- * @version 7.0.0 Radic\BladeExtensions
+ * @license   https://radic.mit-license.org MIT License
+ *
+ * @version   7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Exceptions;
@@ -39,7 +40,9 @@ class InvalidDirectiveClassException extends Exception
      */
     public function __construct($class, $code = 500, \Exception $previous = null)
     {
-        $class = is_string($class) ?: get_class($class);
+        if ( ! \is_string($class)) {
+            $class = \get_class($class);
+        }
         $message = "The class [{$class}] is not a valid directive. Ensure it extends the [Radic\\BladeExtensions\\Directive] class";
         parent::__construct($message, $code, $previous);
     }

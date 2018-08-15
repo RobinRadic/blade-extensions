@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -36,6 +37,7 @@ class CebeMarkdownParser implements MarkdownParserInterface
     /**
      * {@inheritdoc}
      */
+
     /**
      * parse method.
      *

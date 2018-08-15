@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -15,22 +16,21 @@ namespace Radic\BladeExtensions\Helpers\Loop;
  * Represents the $loop variable in the foreach directive. Handles all data.
  *
  * @version        2.1.0
+ *
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright      2011-2015, Robin Radic - Radic Technologies
- * @link           http://robin.radic.nl/blade-extensions
+ *
+ * @see           http://robin.radic.nl/blade-extensions
  *
  * @property bool      $odd
  * @property bool      $even
- *
  * @property int       index        The index of the current loop iteration (starts at 0).
  * @property int       $index1      The current loop iteration (starts at 1).
  * @property int       iteration    The current loop iteration (starts at 1).
- *
  * @property int       $revindex1   The iteration remaining in the loop.
  * @property int       $revindex    The iteration remaining in the loop.
  * @property int       remaining    The iteration remaining in the loop.
- *
  * @property int       count        The total number of items in the array being iterated.
  * @property int       $total       The total number of items in the array being iterated.
  * @property bool      first        Whether this is the first iteration through the loop.
@@ -70,7 +70,6 @@ class Loop
      * Sets the parent loop.
      *
      * @param Loop $parentLoop
-     * {@inheritdoc}
      */
     public function setParentLoop(Loop $parentLoop)
     {
@@ -100,7 +99,7 @@ class Loop
      * Instantiates the class.
      *
      * @param \Radic\BladeExtensions\Helpers\Loop\LoopHelper $loopHelper
-     * @param array                                          $items The array that's being iterated
+     * @param array                                          $items      The array that's being iterated
      */
     public function __construct(LoopHelper $loopHelper, $items)
     {
@@ -121,15 +120,15 @@ class Loop
         $this->items = $items;
         $total = count($items);
         $this->data = [
-            'index1'    => 1,
-            'index'     => 0,
+            'index1' => 1,
+            'index' => 0,
             'revindex1' => $total,
-            'revindex'  => $total - 1,
-            'first'     => true,
-            'last'      => false,
-            'odd'       => false,
-            'even'      => true,
-            'length'    => $total,
+            'revindex' => $total - 1,
+            'first' => true,
+            'last' => false,
+            'odd' => false,
+            'even' => true,
+            'length' => $total,
         ];
     }
 
@@ -155,7 +154,7 @@ class Loop
         $aliases = [
             'iteration' => 'index1',
             'remaining' => 'revindex1',
-            'parentLoop'    => 'parent',
+            'parentLoop' => 'parent',
             'count' => 'length',
         ];
         if (array_key_exists($key, $aliases)) {
@@ -170,8 +169,6 @@ class Loop
      *
      * @param $key
      * @param $val
-     *
-     * @return void
      */
     public function __set($key, $val)
     {
@@ -219,9 +216,9 @@ class Loop
      */
     public function after()
     {
-        $this->data['index']++;
-        $this->data['index1']++;
-        $this->data['revindex']--;
-        $this->data['revindex1']--;
+        ++$this->data['index'];
+        ++$this->data['index1'];
+        --$this->data['revindex'];
+        --$this->data['revindex1'];
     }
 }

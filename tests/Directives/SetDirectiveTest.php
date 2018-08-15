@@ -31,6 +31,7 @@ class SetDirectiveTest extends DirectiveTestCase
     }
 
     /**
+     * @e
      * Test the set directive.
      */
     public function testView()

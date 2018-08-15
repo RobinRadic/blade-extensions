@@ -6,6 +6,7 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
@@ -30,7 +31,7 @@ class DumpHelper
     /** @var array */
     protected $vars;
 
-    /** @var  string */
+    /** @var string */
     protected $path;
 
     /**
@@ -48,7 +49,6 @@ class DumpHelper
      *
      * @param \Illuminate\View\Factory $env
      * @param array                    $vars
-     *
      * @param null|string              $path
      *
      * @return $this
@@ -75,8 +75,8 @@ class DumpHelper
 
         if (null === $vars) {
             $dumper([
-                'path'      => $this->path === null ? 'null' : $this->path,
-                'env'       => $this->env,
+                'path' => $this->path === null ? 'null' : $this->path,
+                'env' => $this->env,
                 'variables' => $this->vars,
             ]);
         } else {
@@ -97,8 +97,8 @@ class DumpHelper
     {
         if (null === $this->dumper) {
             foreach ($this->dumpers as $dumper) {
-                if (call_user_func($dumper[ 0 ]) === true) {
-                    $this->dumper = $dumper[ 1 ];
+                if (call_user_func($dumper[0]) === true) {
+                    $this->dumper = $dumper[1];
                     break;
                 }
             }
@@ -109,8 +109,6 @@ class DumpHelper
 
     /**
      * setDefaultDumpers method.
-     *
-     * @return void
      */
     protected function setDefaultDumpers()
     {
@@ -128,7 +126,7 @@ class DumpHelper
                     return class_exists('Illuminate\Support\Debug\Dumper');
                 },
                 function ($var) {
-                    (new \Illuminate\Support\Debug\Dumper)->dump($var);
+                    (new \Illuminate\Support\Debug\Dumper())->dump($var);
                 },
             ],
             [

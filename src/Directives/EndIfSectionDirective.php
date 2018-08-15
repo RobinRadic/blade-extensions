@@ -6,12 +6,13 @@
  *
  * @copyright 2017 Robin Radic
  * @license https://radic.mit-license.org MIT License
+ *
  * @version 7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Directives;
 
-class EndIfSectionDirective  extends AbstractDirective
+class EndIfSectionDirective extends AbstractDirective
 {
     /** @var string */
     protected $replace = '$1<?php endif; ?>$2';
