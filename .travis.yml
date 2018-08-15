@@ -19,13 +19,13 @@ env:
   global:
     secure: NW/EmJatN5pgd2RiwmZr5lK/+KX0JT+qaTi2i56h3uwNdq5w7iENI5RyJ8Gwz7RsKko3viAOKHmxJO5gYOA4FDR8Jc9l8Ioa6Pvw9Tw5l2Nv+KvIX2UPp4UuxLeJulMuqRnumR4S+dLpPh6xfDf/3aNyxVdZPp4Oui89PEnU/eY=
   matrix:
-    - MINOR_VERSION="0"
-    - MINOR_VERSION="1"
-    - MINOR_VERSION="2"
-    - MINOR_VERSION="3"
-    - MINOR_VERSION="4"
-    - MINOR_VERSION="5"
-    - MINOR_VERSION="6"
+    - MINOR_VERSION="0" PHPUNIT_VERSION="5"
+    - MINOR_VERSION="1" PHPUNIT_VERSION="5"
+    - MINOR_VERSION="2" PHPUNIT_VERSION="5"
+    - MINOR_VERSION="3" PHPUNIT_VERSION="5"
+    - MINOR_VERSION="4" PHPUNIT_VERSION="5"
+    - MINOR_VERSION="5" PHPUNIT_VERSION="6"
+    - MINOR_VERSION="6" PHPUNIT_VERSION="7"
 
 
 ###############
@@ -34,13 +34,13 @@ env:
 
 
 before_install:
-  - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
+  - phpenv config-rm xdebug.ini
   - travis_retry composer self-update
 
 
 install:
   - composer require orchestra/testbench:3.${MINOR_VERSION}.*
-  - composer require phpunit/phpunit:*
+  - composer require phpunit/phpunit:${PHPUNIT_VERSION}.*
   #- composer require friendsofphp/php-cs-fixer:~2.0
   - composer install --prefer-source --no-interaction
 
