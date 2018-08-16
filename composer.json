@@ -31,7 +31,7 @@
         "matthiasmullie/minify": "Enables the use of @minify directives (~1.3)"
     },
     "require-dev": {
-        "laradic/testing": "~1.0.1",
+        "laradic/testing": "~1.0.3",
         "mockery/mockery": "*",
         "cebe/markdown": "~1.1",
         "matthiasmullie/minify": "~1.3"
