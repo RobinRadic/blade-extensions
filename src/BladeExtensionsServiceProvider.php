@@ -14,8 +14,13 @@ namespace Radic\BladeExtensions;
 
 use Illuminate\Support\ServiceProvider;
 use Radic\BladeExtensions\Directives\MarkdownDirective;
+use Radic\BladeExtensions\Helpers\DumpHelper;
+use Radic\BladeExtensions\Helpers\Embed\EmbedHelper;
+use Radic\BladeExtensions\Helpers\Loop\LoopHelper;
 use Radic\BladeExtensions\Helpers\Markdown\CebeMarkdownParser;
+use Radic\BladeExtensions\Helpers\Markdown\MarkdownHelper;
 use Radic\BladeExtensions\Helpers\Markdown\MarkdownParserInterface;
+use Radic\BladeExtensions\Helpers\Minifier\MinifierHelper;
 
 /**
  * This is the class BladeExtensionsServiceProvider.
@@ -38,7 +43,6 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/blade-extensions.php', 'blade-extensions');
 
-//        $this->commands([ Commands\IdeaCommand::class ]);
         $this->registerDirectiveRegistry();
 
         $this->registerHelperRepository();
@@ -78,7 +82,13 @@ class BladeExtensionsServiceProvider extends ServiceProvider
     protected function registerHelperRepository()
     {
         $this->app->singleton('blade-extensions.helpers', function ($app) {
-            return new HelperRepository();
+            $helpers = new HelperRepository($app);
+            $helpers->register('minifier', MinifierHelper::class);
+            $helpers->register('markdown', MarkdownHelper::class);
+            $helpers->register('embed', EmbedHelper::class);
+            $helpers->register('loop', LoopHelper::class);
+            $helpers->register('dump', DumpHelper::class);
+            return $helpers;
         });
     }
 
@@ -90,8 +100,8 @@ class BladeExtensionsServiceProvider extends ServiceProvider
             'blade-extensions.helpers' => [HelperRepository::class, Contracts\HelperRepository::class],
         ];
 
-        foreach ($aliases as $key => $aliases) {
-            foreach ($aliases as $alias) {
+        foreach ($aliases as $key => $_aliases) {
+            foreach ($_aliases as $alias) {
                 $this->app->alias($key, $alias);
             }
         }
@@ -102,6 +112,9 @@ class BladeExtensionsServiceProvider extends ServiceProvider
      */
     protected function registerContextualBindings()
     {
-        $this->app->when(MarkdownDirective::class)->needs(MarkdownParserInterface::class)->give(CebeMarkdownParser::class);
+        $this->app
+            ->when(MarkdownDirective::class)
+            ->needs(MarkdownParserInterface::class)
+            ->give(CebeMarkdownParser::class);
     }
 }

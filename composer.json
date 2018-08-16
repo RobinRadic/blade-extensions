@@ -26,15 +26,17 @@
         "illuminate/view": "~5.0"
     },
     "suggest": {
-        "raveren/kint": "Improved @debug output (1.0.*)",
+        "raveren/kint": "Improved @dump output (1.0.*)",
         "cebe/markdown": "Enables the use of @markdown directives (~1.5)",
-        "matthiasmullie/minify": "Enables the use of @minify directives (~1.3)"
+        "matthiasmullie/minify": "Enables the use of @minify('css') or @minify('js') directive (~1.3)",
+        "zaininnari/html-minifier": "Improves the @minify('html') directive"
     },
     "require-dev": {
         "laradic/testing": "~1.0.3",
-        "mockery/mockery": "*",
+        "mockery/mockery": "~0.9|~1.0",
         "cebe/markdown": "~1.1",
-        "matthiasmullie/minify": "~1.3"
+        "matthiasmullie/minify": "~1.3",
+        "zaininnari/html-minifier":"~0.4"
     },
 
     "autoload": {

@@ -5,9 +5,9 @@
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license https://radic.mit-license.org MIT License
+ * @license   https://radic.mit-license.org MIT License
  *
- * @version 7.0.0 Radic\BladeExtensions
+ * @version   7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Helpers\Loop;
@@ -21,7 +21,7 @@ namespace Radic\BladeExtensions\Helpers\Loop;
  * @license        MIT License - http://radic.mit-license.org
  * @copyright      2011-2015, Robin Radic - Radic Technologies
  *
- * @see           http://robin.radic.nl/blade-extensions
+ * @see            http://robin.radic.nl/blade-extensions
  *
  * @property bool      $odd
  * @property bool      $even
@@ -73,8 +73,8 @@ class Loop
      */
     public function setParentLoop(Loop $parentLoop)
     {
-        $this->parentLoop = $parentLoop;
-        $this->data['parent'] = $parentLoop;
+        $this->parentLoop       = $parentLoop;
+        $this->data[ 'parent' ] = $parentLoop;
     }
 
     /**
@@ -99,7 +99,7 @@ class Loop
      * Instantiates the class.
      *
      * @param \Radic\BladeExtensions\Helpers\Loop\LoopHelper $loopHelper
-     * @param array                                          $items      The array that's being iterated
+     * @param array                                          $items The array that's being iterated
      */
     public function __construct(LoopHelper $loopHelper, $items)
     {
@@ -118,17 +118,17 @@ class Loop
             return;
         }
         $this->items = $items;
-        $total = count($items);
-        $this->data = [
-            'index1' => 1,
-            'index' => 0,
+        $total       = count($items);
+        $this->data  = [
+            'index1'    => 1,
+            'index'     => 0,
             'revindex1' => $total,
-            'revindex' => $total - 1,
-            'first' => true,
-            'last' => false,
-            'odd' => false,
-            'even' => true,
-            'length' => $total,
+            'revindex'  => $total - 1,
+            'first'     => true,
+            'last'      => false,
+            'odd'       => false,
+            'even'      => true,
+            'length'    => $total,
         ];
     }
 
@@ -152,16 +152,16 @@ class Loop
     public function __get($key)
     {
         $aliases = [
-            'iteration' => 'index1',
-            'remaining' => 'revindex1',
+            'iteration'  => 'index1',
+            'remaining'  => 'revindex1',
             'parentLoop' => 'parent',
-            'count' => 'length',
+            'count'      => 'length',
         ];
         if (array_key_exists($key, $aliases)) {
-            return $this->data[$aliases[$key]];
+            return $this->data[ $aliases[ $key ] ];
         }
 
-        return $this->data[$key];
+        return $this->data[ $key ];
     }
 
     /**
@@ -184,7 +184,7 @@ class Loop
      */
     public function __isset($key)
     {
-        return isset($this->data[$key]);
+        return isset($this->data[ $key ]);
     }
 
     /**
@@ -192,22 +192,22 @@ class Loop
      */
     public function before()
     {
-        if ($this->data['index'] % 2 == 0) {
-            $this->data['odd'] = false;
-            $this->data['even'] = true;
+        if ($this->data[ 'index' ] % 2 == 0) {
+            $this->data[ 'odd' ]  = false;
+            $this->data[ 'even' ] = true;
         } else {
-            $this->data['odd'] = true;
-            $this->data['even'] = false;
+            $this->data[ 'odd' ]  = true;
+            $this->data[ 'even' ] = false;
         }
-        if ($this->data['index'] == 0) {
-            $this->data['first'] = true;
+        if ($this->data[ 'index' ] == 0) {
+            $this->data[ 'first' ] = true;
         } else {
-            $this->data['first'] = false;
+            $this->data[ 'first' ] = false;
         }
-        if ($this->data['revindex'] == 0) {
-            $this->data['last'] = true;
+        if ($this->data[ 'revindex' ] == 0) {
+            $this->data[ 'last' ] = true;
         } else {
-            $this->data['last'] = false;
+            $this->data[ 'last' ] = false;
         }
     }
 
@@ -216,9 +216,23 @@ class Loop
      */
     public function after()
     {
-        ++$this->data['index'];
-        ++$this->data['index1'];
-        --$this->data['revindex'];
-        --$this->data['revindex1'];
+        $this->data[ 'index' ]++;
+        $this->data[ 'index1' ]++;
+        $this->data[ 'revindex' ]--;
+        $this->data[ 'revindex1' ]--;
     }
+
+    /**
+     * @return array
+     */
+    public function getData()
+    {
+        $data = $this->data;
+        if (isset($data[ 'parent' ])) {
+            $data[ 'parent' ] = $data[ 'parent' ]->getData();
+        }
+        return $data;
+    }
+
+
 }
