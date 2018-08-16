@@ -22,7 +22,7 @@ use Radic\BladeExtensions\Contracts\HelperRepository;
  */
 class EmbedDirective extends AbstractDirective
 {
-    protected $pattern = '/(?<!\\w)(\\s*)@NAME\\s*\\((.*?)\\)\\s*$((?>(?!@(?:end)?NAME).|(?0))*)@endNAME/sm';
+    protected $pattern = '/(?<!\w)(\s*)@NAME\s*\((.*?)\)\s*$((?>(?!@(?:end)?NAME).|(?0))*)@endNAME/sm';
 
     protected $replace = <<<'EOT'
 $1<?php app('blade-extensions.helpers')->get('embed')->start($2); ?>

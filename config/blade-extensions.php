@@ -22,8 +22,6 @@ return [
         'break'      => 'Radic\\BladeExtensions\\Directives\\BreakDirective',
         'continue'   => 'Radic\\BladeExtensions\\Directives\\ContinueDirective',
 
-        'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
-
 //        'closure' => function ($value) {
 //            return $value;
 //        },
@@ -32,6 +30,11 @@ return [
     // `optional` directives are only used for **unit-testing**
     // If you want to use any of the `optional` directives, you have to **manually copy/paste** them to `directives`.
     'optional'          => [
+
+        // If possible, use components instead: https://laravel.com/docs/5.6/blade#components-and-slots
+        'embed' => 'Radic\\BladeExtensions\\Directives\\EmbedDirective',
+
+        // If possible, use components instead: https://laravel.com/docs/5.6/blade#components-and-slots
         'macro'    => 'Radic\\BladeExtensions\\Directives\\MacroDirective',
         'endmacro' => 'Radic\\BladeExtensions\\Directives\\EndmacroDirective',
         'macrodef' => 'Radic\\BladeExtensions\\Directives\\MacrodefDirective',

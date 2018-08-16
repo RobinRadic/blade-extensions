@@ -13,8 +13,7 @@ A _Laravel_ package providing additional Blade functionality.
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 
-
-### Version 7.0
+### Version 7.1
 <!-- [**Documentation**](http://robin.radic.nl/blade-extensions) (or alternatively read it [**here**](docs/index.md) on github) -->
 - [**Documentation**](docs/index.md)
 - [**Changelog**](docs/prologue/changelog-upgrade-guide.md)
@@ -41,13 +40,14 @@ All directives can be disabled, extended or replaced.
 - [@markdown/ @endmarkdown](docs/directives/markdown.md)
 - [@spaceless / @endspaceless](docs/directives/spaceless.md)
 - and more...
-`
+
+
 
 ### Installation
 
 #### 1. Composer
 ```JSON
-"radic/blade-extensions": "~7.0"
+"radic/blade-extensions": "~7.1"
 ```
 
 #### 2. Laravel
@@ -55,13 +55,9 @@ All directives can be disabled, extended or replaced.
 Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 ```
 
-#### 3. Console
-```bash
-php artisan publish --tag=config --provider="Radic\BladeExtensions\BladeExtensionsServiceProvider"
-```
+#### 3.Configuration
 
-### Contribute 
-[Read the contribution guide](docs/prologue/contribution-guide.md)
+The first version of this package was created for Laravel 4.2. In the later releases Laravel introduced quite a few similar directives/functionality like the [foreach loop variable](https://laravel.com/docs/5.6/blade#the-loop-variable), [Components & Slots](https://laravel.com/docs/5.6/blade#components-and-slots), etc. This package automaticly disables some directives depending on your Laravel version. The configuration file allows you to fully configure this behaviour. Make sure to check it out.
 
 ### Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 
