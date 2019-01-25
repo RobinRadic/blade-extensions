@@ -67,7 +67,11 @@ abstract class AbstractDirective implements DirectiveInterface
     public function handle($value)
     {
         $replacement = preg_replace($this->getProcessedPattern(), $this->getReplace(), $value);
-        $error = array_flip(get_defined_constants(true)['pcre'])[preg_last_error()];
+        // PHP 7.3 adds a new PCRE constant, PCRE_JIT_SUPPORT that is a boolean, and that causes the array_flip
+        // to throw an error, so we need to remove that from the array first.
+        $pcreConstants = get_defined_constants(true)['pcre'];
+        unset($pcreConstants['PCRE_JIT_SUPPORT']);
+        $error = array_flip($pcreConstants)[preg_last_error()];
         if ($error !== 'PREG_NO_ERROR') {
             throw PregReplaceException::error($error, get_called_class());
         }
