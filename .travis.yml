@@ -19,13 +19,16 @@ env:
   global:
     secure: NW/EmJatN5pgd2RiwmZr5lK/+KX0JT+qaTi2i56h3uwNdq5w7iENI5RyJ8Gwz7RsKko3viAOKHmxJO5gYOA4FDR8Jc9l8Ioa6Pvw9Tw5l2Nv+KvIX2UPp4UuxLeJulMuqRnumR4S+dLpPh6xfDf/3aNyxVdZPp4Oui89PEnU/eY=
   matrix:
-    - MINOR_VERSION="0" PHPUNIT_VERSION="5"
-    - MINOR_VERSION="1" PHPUNIT_VERSION="5"
-    - MINOR_VERSION="2" PHPUNIT_VERSION="5"
-    - MINOR_VERSION="3" PHPUNIT_VERSION="5"
-    - MINOR_VERSION="4" PHPUNIT_VERSION="5"
-    - MINOR_VERSION="5" PHPUNIT_VERSION="6"
-    - MINOR_VERSION="6" PHPUNIT_VERSION="7"
+    - MAJOR_VERSION="3" MINOR_VERSION="0" PHPUNIT_VERSION="5"
+    - MAJOR_VERSION="3" MINOR_VERSION="1" PHPUNIT_VERSION="5"
+    - MAJOR_VERSION="3" MINOR_VERSION="2" PHPUNIT_VERSION="5"
+    - MAJOR_VERSION="3" MINOR_VERSION="3" PHPUNIT_VERSION="5"
+    - MAJOR_VERSION="3" MINOR_VERSION="4" PHPUNIT_VERSION="5"
+    - MAJOR_VERSION="3" MINOR_VERSION="5" PHPUNIT_VERSION="6"
+    - MAJOR_VERSION="3" MINOR_VERSION="6" PHPUNIT_VERSION="7"
+    - MAJOR_VERSION="3" MINOR_VERSION="7" PHPUNIT_VERSION="7"
+    - MAJOR_VERSION="3" MINOR_VERSION="8" PHPUNIT_VERSION="7"
+    - MAJOR_VERSION="4" MINOR_VERSION="0" PHPUNIT_VERSION="8"
 
 
 ###############
@@ -40,7 +43,7 @@ before_install:
 
 install:
   #- composer require friendsofphp/php-cs-fixer:~2.0
-  - composer require phpunit/phpunit:~${PHPUNIT_VERSION}.0 orchestra/testbench:3.${MINOR_VERSION}.* --no-interaction
+  - composer require phpunit/phpunit:~${PHPUNIT_VERSION}.0 orchestra/testbench:${MAJOR_VERSION}.${MINOR_VERSION}.* --no-interaction
   - php --version
   - composer --version
   - vendor/bin/phpunit --version
