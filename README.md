@@ -9,7 +9,7 @@
 <!-- [![Code Coverage](https://img.shields.io/badge/coverage-100%-green.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/coverage) -->
 A _Laravel_ package providing additional Blade functionality. 
 
-**Tested on all Laravel 5.x|6.x versions.**
+**Tested on all Laravel 5.x & 6.x versions.**
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 
@@ -57,7 +57,10 @@ Radic\BladeExtensions\BladeExtensionsServiceProvider::class
 
 #### 3.Configuration
 
-The first version of this package was created for Laravel 4.2. In the later releases Laravel introduced quite a few similar directives/functionality like the [foreach loop variable](https://laravel.com/docs/5.6/blade#the-loop-variable), [Components & Slots](https://laravel.com/docs/5.6/blade#components-and-slots), etc. This package automaticly disables some directives depending on your Laravel version. The configuration file allows you to fully configure this behaviour. Make sure to check it out.
+The first version of this package was created for Laravel 4.2. In the later releases Laravel introduced quite a few similar directives/functionality like the 
+[foreach loop variable](https://laravel.com/docs/5.6/blade#the-loop-variable), [Components & Slots](https://laravel.com/docs/5.6/blade#components-and-slots), etc. 
+This package automaticly disables some directives depending on your Laravel version. The configuration file allows you to fully configure this behaviour.
+Make sure to check it out.
 
 ### Copyright/License
 Copyright 2015 [Robin Radic](https://github.com/RobinRadic) - [MIT Licensed](http://radic.mit-license.org) 
