@@ -1,17 +1,16 @@
 <?php
 /**
  * Copyright (c) 2017. Robin Radic.
- *
  * The license can be found in the package and online at https://radic.mit-license.org.
  *
  * @copyright 2017 Robin Radic
- * @license https://radic.mit-license.org MIT License
- *
- * @version 7.0.0 Radic\BladeExtensions
+ * @license   https://radic.mit-license.org MIT License
+ * @version   7.0.0 Radic\BladeExtensions
  */
 
 namespace Radic\BladeExtensions\Helpers\Embed;
 
+use Illuminate\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\View\Compilers\BladeCompiler;
@@ -21,7 +20,6 @@ use Radic\BladeExtensions\Helpers\UsesSections;
  * Manages the Loop instances.
  *
  * @version        2.1.0
- *
  * @author         Robin Radic
  * @license        MIT License - http://radic.mit-license.org
  * @copyright      (2011-2014, Robin Radic - Radic Technologies
@@ -56,17 +54,16 @@ class EmbedStack implements Factory
     public function __construct(Factory $viewFactory, Filesystem $files, BladeCompiler $bladeCompiler, $viewPath, $vars = [])
     {
         $this->setViewFactory($viewFactory);
-        $this->files = $files;
+        $this->files         = $files;
         $this->bladeCompiler = $bladeCompiler;
-        $this->viewPath = $viewPath;
-        $this->vars = $vars;
+        $this->viewPath      = $viewPath;
+        $this->vars          = $vars;
     }
 
     /**
      * setData method.
      *
      * @param $_data
-     *
      * @return $this
      */
     public function setData($_data)
@@ -90,7 +87,6 @@ class EmbedStack implements Factory
      * setContent method.
      *
      * @param $content
-     *
      * @return $this
      */
     public function setContent($content)
@@ -107,12 +103,12 @@ class EmbedStack implements Factory
      */
     public function end()
     {
-        $content = $this->bladeCompiler->compileString($this->content);
+        $content     = $this->bladeCompiler->compileString($this->content);
         $viewContent = $this->getBladeCompiledViewFileContent();
-        list($name, $path) = $this->write($content.$viewContent);
+        list($name, $path) = $this->write($content . $viewContent);
         extract($this->_data);
         $__data = $this->_data;
-        $__env = $this;
+        $__env  = $this;
         extract($this->vars);
         ob_start();
         include $path;
@@ -137,7 +133,6 @@ class EmbedStack implements Factory
      * getViewFileContent.
      *
      * @return string
-     *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     protected function getViewFileContent()
@@ -160,35 +155,33 @@ class EmbedStack implements Factory
      *
      * @param      $content
      * @param null $name
-     *
      * @return array
      */
     protected function write($content, $name = null)
     {
         $tmpDir = storage_path('framework/views/blade-extensions');
-        if (!$this->files->exists($tmpDir)) {
+        if ( ! $this->files->exists($tmpDir)) {
             $this->files->makeDirectory($tmpDir);
         }
         if (null === $name) {
-            $name = str_slug($this->viewPath).'__'.uniqid(time(), true);
+            $name = Str::slug($this->viewPath) . '__' . uniqid(time(), true);
         }
-        $path = path_join($tmpDir, $name);
+        $path = $tmpDir . DIRECTORY_SEPARATOR . $name;
         $this->files->put($path, $content);
 
-        return [$name, $path];
+        return [ $name, $path ];
     }
 
     /**
      * remove method.
      *
      * @param $name
-     *
      * @return $this
      */
     protected function remove($name)
     {
         $tmpDir = storage_path('framework/views/blade-extensions');
-        $path = path_join($tmpDir, $name);
+        $path   = $tmpDir . DIRECTORY_SEPARATOR . $name;
         $this->files->delete($path);
 
         return $this;
@@ -198,12 +191,11 @@ class EmbedStack implements Factory
      * Determine if a given view exists.
      *
      * @param string $view
-     *
      * @return bool
      */
     public function exists($view)
     {
-        return call_user_func_array([$this->viewFactory, 'exists'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'exists' ], func_get_args());
     }
 
     /**
@@ -212,12 +204,11 @@ class EmbedStack implements Factory
      * @param string $path
      * @param array  $data
      * @param array  $mergeData
-     *
      * @return \Illuminate\Contracts\View\View
      */
     public function file($path, $data = [], $mergeData = [])
     {
-        return call_user_func_array([$this->viewFactory, 'file'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'file' ], func_get_args());
     }
 
     /**
@@ -226,12 +217,11 @@ class EmbedStack implements Factory
      * @param string $view
      * @param array  $data
      * @param array  $mergeData
-     *
      * @return \Illuminate\Contracts\View\View
      */
     public function make($view, $data = [], $mergeData = [])
     {
-        return call_user_func_array([$this->viewFactory, 'make'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'make' ], func_get_args());
     }
 
     /**
@@ -239,12 +229,11 @@ class EmbedStack implements Factory
      *
      * @param array|string $key
      * @param mixed        $value
-     *
      * @return mixed
      */
     public function share($key, $value = null)
     {
-        return call_user_func_array([$this->viewFactory, 'share'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'share' ], func_get_args());
     }
 
     /**
@@ -253,12 +242,11 @@ class EmbedStack implements Factory
      * @param array|string    $views
      * @param \Closure|string $callback
      * @param int|null        $priority
-     *
      * @return array
      */
     public function composer($views, $callback, $priority = null)
     {
-        return call_user_func_array([$this->viewFactory, 'composer'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'composer' ], func_get_args());
     }
 
     /**
@@ -266,12 +254,11 @@ class EmbedStack implements Factory
      *
      * @param array|string    $views
      * @param \Closure|string $callback
-     *
      * @return array
      */
     public function creator($views, $callback)
     {
-        return call_user_func_array([$this->viewFactory, 'creator'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'creator' ], func_get_args());
     }
 
     /**
@@ -282,7 +269,7 @@ class EmbedStack implements Factory
      */
     public function addNamespace($namespace, $hints)
     {
-        return call_user_func_array([$this->viewFactory, 'addNamespace'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'addNamespace' ], func_get_args());
     }
 
     /**
@@ -290,12 +277,11 @@ class EmbedStack implements Factory
      *
      * @param string       $namespace
      * @param string|array $hints
-     *
      * @return $this
      */
     public function replaceNamespace($namespace, $hints)
     {
-        return call_user_func_array([$this->viewFactory, 'replaceNamespace'], func_get_args());
+        return call_user_func_array([ $this->viewFactory, 'replaceNamespace' ], func_get_args());
     }
 
     /**
@@ -303,11 +289,10 @@ class EmbedStack implements Factory
      *
      * @param string $method
      * @param array  $parameters
-     *
      * @return mixed
      */
     public function __call($method, $parameters)
     {
-        return call_user_func_array([$this->viewFactory, $method], $parameters);
+        return call_user_func_array([ $this->viewFactory, $method ], $parameters);
     }
 }

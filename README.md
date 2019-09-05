@@ -9,11 +9,11 @@
 <!-- [![Code Coverage](https://img.shields.io/badge/coverage-100%-green.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/coverage) -->
 A _Laravel_ package providing additional Blade functionality. 
 
-**Tested on all Laravel 5.x versions.**
+**Tested on all Laravel 5.x|6.x versions.**
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 
-### Version 7.1
+### Version 7.3
 <!-- [**Documentation**](http://robin.radic.nl/blade-extensions) (or alternatively read it [**here**](docs/index.md) on github) -->
 - [**Documentation**](docs/index.md)
 - [**Changelog**](docs/prologue/changelog-upgrade-guide.md)
@@ -23,7 +23,7 @@ The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high l
 - [**Issue Template**](docs/ISSUE_TEMPLATE.md)
 
 #### Features
-- Compatible with [all Laravel 5 versions](https://travis-ci.org/RobinRadic/blade-extensions)
+- Compatible with [all Laravel 5 & 6 versions](https://travis-ci.org/RobinRadic/blade-extensions)
 - **20+** Configurable, nameable, extendable, replaceable, testable directives.
 - Compile Blade strings **with** variables `BladeExtensions::compileString($string, array $vars = [])`
 - Progamatically push content to a stack inside blade view(s) `BladeExtensions::pushToStack($stack, $views, $content)`
