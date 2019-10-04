@@ -12,7 +12,6 @@
 namespace Radic\Tests\BladeExtensions;
 
 use Illuminate\Filesystem\Filesystem;
-use Laradic\Support\Path;
 
 /**
  * Data generator
@@ -41,8 +40,8 @@ class DataGenerator
     {
         $fs = new Filesystem();
         if (! isset(static::$values) || ! isset(static::$records)) {
-            static::$values = json_decode($fs->get(Path::join(__DIR__, 'data/values.json')), true)[0];
-            static::$records = json_decode($fs->get(Path::join(__DIR__, 'data/records.json')), true);
+            static::$values = json_decode($fs->get(__DIR__. '/data/values.json'), true)[0];
+            static::$records = json_decode($fs->get(__DIR__. '/data/records.json'), true);
         }
     }
 
