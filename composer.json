@@ -18,11 +18,11 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "composer/semver": "~1.4",
-        "illuminate/filesystem": "~5.0|~6.0",
-        "illuminate/contracts": "~5.0|~6.0",
-        "illuminate/support": "~5.0|~6.0",
-        "illuminate/view": "~5.0|~6.0"
+        "illuminate/filesystem": "~5.0|~6.0|~7.0",
+        "illuminate/contracts": "~5.0|~6.0|~7.0",
+        "illuminate/support": "~5.0|~6.0|~7.0",
+        "illuminate/view": "~5.0|~6.0|~7.0",
+        "composer/semver": "~1.4"
     },
     "suggest": {
         "raveren/kint": "Improved @dump output (1.0.*)",
@@ -31,7 +31,7 @@
         "zaininnari/html-minifier": "Improves the @minify('html') directive"
     },
     "require-dev": {
-        "laradic/testing": "~1.0.3",
+        "laradic/testing": "~1.0.4",
         "mockery/mockery": "~0.9|~1.0",
         "cebe/markdown": "~1.1",
         "matthiasmullie/minify": "~1.3",
