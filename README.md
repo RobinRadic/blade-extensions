@@ -9,7 +9,7 @@
 <!-- [![Code Coverage](https://img.shields.io/badge/coverage-100%-green.svg?style=flat-square)](http://robin.radic.nl/blade-extensions/coverage) -->
 A _Laravel_ package providing additional Blade functionality. 
 
-**Tested on all Laravel 5.x & 6.x versions.**
+**Tested on all Laravel 5.x & 6.x & 7.x versions.**
 
 The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
 
